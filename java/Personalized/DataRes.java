@@ -87,32 +87,38 @@ public final class DataRes extends Message {
     public final UserFollowLive user_follow_live;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ActiveCenter active_center;
         public AgeSexModule age_sex;
         public Anti anti;
         public BannerList banner_list;
-        public List<CardForum> card_forum;
-        public List<CardGod> card_god;
-        public List<CardTopic> card_topic;
+        public List card_forum;
+        public List card_god;
+        public List card_topic;
         public FavoritePanel favorite_panel;
         public FloatInfo float_info;
         public Integer fresh_ctrl_num;
         public DiscoverHotForum hot_recomforum;
-        public List<TagStruct> interestion;
+        public List interestion;
         public Integer is_new_url;
-        public List<SimpleForum> like_forums;
+        public List like_forums;
         public LiveAnswer live_answer;
         public RecomPostTopic recom_post_topic;
-        public List<Resource> resource_list;
+        public List resource_list;
         public String stat_key;
         public Integer style_ab_tag;
         public Integer sug_seconds;
-        public List<TagInfo> tag_list;
-        public List<ThreadInfo> thread_list;
-        public List<ThreadPersonalized> thread_personalized;
+        public List tag_list;
+        public List thread_list;
+        public List thread_personalized;
         public UserFollowLive user_follow_live;
 
         public Builder() {
@@ -181,14 +187,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -219,10 +222,6 @@ public final class DataRes extends Message {
         DEFAULT_FRESH_CTRL_NUM = 0;
     }
 
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
@@ -242,31 +241,31 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<TagInfo> list = builder.tag_list;
+            List list = builder.tag_list;
             if (list == null) {
                 this.tag_list = DEFAULT_TAG_LIST;
             } else {
                 this.tag_list = Message.immutableCopyOf(list);
             }
-            List<ThreadInfo> list2 = builder.thread_list;
+            List list2 = builder.thread_list;
             if (list2 == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {
                 this.thread_list = Message.immutableCopyOf(list2);
             }
-            List<Resource> list3 = builder.resource_list;
+            List list3 = builder.resource_list;
             if (list3 == null) {
                 this.resource_list = DEFAULT_RESOURCE_LIST;
             } else {
                 this.resource_list = Message.immutableCopyOf(list3);
             }
-            List<CardForum> list4 = builder.card_forum;
+            List list4 = builder.card_forum;
             if (list4 == null) {
                 this.card_forum = DEFAULT_CARD_FORUM;
             } else {
                 this.card_forum = Message.immutableCopyOf(list4);
             }
-            List<CardTopic> list5 = builder.card_topic;
+            List list5 = builder.card_topic;
             if (list5 == null) {
                 this.card_topic = DEFAULT_CARD_TOPIC;
             } else {
@@ -278,7 +277,7 @@ public final class DataRes extends Message {
             } else {
                 this.sug_seconds = num;
             }
-            List<ThreadPersonalized> list6 = builder.thread_personalized;
+            List list6 = builder.thread_personalized;
             if (list6 == null) {
                 this.thread_personalized = DEFAULT_THREAD_PERSONALIZED;
             } else {
@@ -292,13 +291,13 @@ public final class DataRes extends Message {
             }
             this.banner_list = builder.banner_list;
             this.age_sex = builder.age_sex;
-            List<TagStruct> list7 = builder.interestion;
+            List list7 = builder.interestion;
             if (list7 == null) {
                 this.interestion = DEFAULT_INTERESTION;
             } else {
                 this.interestion = Message.immutableCopyOf(list7);
             }
-            List<CardGod> list8 = builder.card_god;
+            List list8 = builder.card_god;
             if (list8 == null) {
                 this.card_god = DEFAULT_CARD_GOD;
             } else {
@@ -310,7 +309,7 @@ public final class DataRes extends Message {
             } else {
                 this.stat_key = str;
             }
-            List<SimpleForum> list9 = builder.like_forums;
+            List list9 = builder.like_forums;
             if (list9 == null) {
                 this.like_forums = DEFAULT_LIKE_FORUMS;
             } else {
@@ -362,5 +361,9 @@ public final class DataRes extends Message {
         this.active_center = builder.active_center;
         this.hot_recomforum = builder.hot_recomforum;
         this.favorite_panel = builder.favorite_panel;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

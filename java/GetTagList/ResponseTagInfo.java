@@ -25,7 +25,13 @@ public final class ResponseTagInfo extends Message {
     public final String tag_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ResponseTagInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_followed;
@@ -77,14 +83,11 @@ public final class ResponseTagInfo extends Message {
         public ResponseTagInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ResponseTagInfo(this, z, null) : (ResponseTagInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ResponseTagInfo(this, z, null);
+            }
+            return (ResponseTagInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -102,10 +105,6 @@ public final class ResponseTagInfo extends Message {
         }
         DEFAULT_TAG_ID = 0;
         DEFAULT_IS_FOLLOWED = 0;
-    }
-
-    public /* synthetic */ ResponseTagInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,5 +150,9 @@ public final class ResponseTagInfo extends Message {
         this.tag_id = builder.tag_id;
         this.tag_name = builder.tag_name;
         this.is_followed = builder.is_followed;
+    }
+
+    public /* synthetic */ ResponseTagInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

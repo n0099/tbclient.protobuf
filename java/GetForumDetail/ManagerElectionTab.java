@@ -31,7 +31,13 @@ public final class ManagerElectionTab extends Message {
     public final String toast_text;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ManagerElectionTab> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_new_strategy;
@@ -87,14 +93,11 @@ public final class ManagerElectionTab extends Message {
         public ManagerElectionTab build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ManagerElectionTab(this, z, null) : (ManagerElectionTab) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ManagerElectionTab(this, z, null);
+            }
+            return (ManagerElectionTab) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -112,10 +115,6 @@ public final class ManagerElectionTab extends Message {
         }
         DEFAULT_IS_NEW_STRATEGY = 0;
         DEFAULT_NEW_MANAGER_STATUS = 0;
-    }
-
-    public /* synthetic */ ManagerElectionTab(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -175,5 +174,9 @@ public final class ManagerElectionTab extends Message {
         this.new_manager_status = builder.new_manager_status;
         this.new_strategy_text = builder.new_strategy_text;
         this.toast_text = builder.toast_text;
+    }
+
+    public /* synthetic */ ManagerElectionTab(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

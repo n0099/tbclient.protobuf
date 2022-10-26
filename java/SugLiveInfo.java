@@ -19,7 +19,13 @@ public final class SugLiveInfo extends Message {
     public final String word;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SugLiveInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public AlaLiveInfo ala_info;
@@ -69,18 +75,11 @@ public final class SugLiveInfo extends Message {
         public SugLiveInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SugLiveInfo(this, z, null) : (SugLiveInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SugLiveInfo(this, z, null);
+            }
+            return (SugLiveInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ SugLiveInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -113,5 +112,9 @@ public final class SugLiveInfo extends Message {
         }
         this.word = builder.word;
         this.ala_info = builder.ala_info;
+    }
+
+    public /* synthetic */ SugLiveInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

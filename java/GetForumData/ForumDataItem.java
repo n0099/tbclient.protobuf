@@ -24,10 +24,16 @@ public final class ForumDataItem extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ForumDataItem> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ForumDataGroup> group;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List group;
         public Integer type;
 
         public Builder() {
@@ -74,14 +80,11 @@ public final class ForumDataItem extends Message {
         public ForumDataItem build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ForumDataItem(this, z, null) : (ForumDataItem) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ForumDataItem(this, z, null);
+            }
+            return (ForumDataItem) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class ForumDataItem extends Message {
         }
         DEFAULT_TYPE = 0;
         DEFAULT_GROUP = Collections.emptyList();
-    }
-
-    public /* synthetic */ ForumDataItem(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class ForumDataItem extends Message {
             } else {
                 this.type = num;
             }
-            List<ForumDataGroup> list = builder.group;
+            List list = builder.group;
             if (list == null) {
                 this.group = DEFAULT_GROUP;
                 return;
@@ -141,5 +140,9 @@ public final class ForumDataItem extends Message {
         }
         this.type = builder.type;
         this.group = Message.immutableCopyOf(builder.group);
+    }
+
+    public /* synthetic */ ForumDataItem(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

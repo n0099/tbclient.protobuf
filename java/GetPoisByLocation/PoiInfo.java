@@ -23,7 +23,13 @@ public final class PoiInfo extends Message {
     public final String sn;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PoiInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String addr;
@@ -75,18 +81,11 @@ public final class PoiInfo extends Message {
         public PoiInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PoiInfo(this, z, null) : (PoiInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PoiInfo(this, z, null);
+            }
+            return (PoiInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ PoiInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -132,5 +131,9 @@ public final class PoiInfo extends Message {
         this.name = builder.name;
         this.addr = builder.addr;
         this.sn = builder.sn;
+    }
+
+    public /* synthetic */ PoiInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -23,7 +23,13 @@ public final class RecGuide extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecGuide> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String document;
@@ -75,18 +81,11 @@ public final class RecGuide extends Message {
         public RecGuide build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecGuide(this, z, null) : (RecGuide) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecGuide(this, z, null);
+            }
+            return (RecGuide) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ RecGuide(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -132,5 +131,9 @@ public final class RecGuide extends Message {
         this.document = builder.document;
         this.url = builder.url;
         this.pic = builder.pic;
+    }
+
+    public /* synthetic */ RecGuide(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

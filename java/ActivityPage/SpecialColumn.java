@@ -40,7 +40,13 @@ public final class SpecialColumn extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SpecialColumn> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer agree_num;
@@ -102,14 +108,11 @@ public final class SpecialColumn extends Message {
         public SpecialColumn build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SpecialColumn(this, z, null) : (SpecialColumn) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SpecialColumn(this, z, null);
+            }
+            return (SpecialColumn) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -130,10 +133,6 @@ public final class SpecialColumn extends Message {
         DEFAULT_LIVE_ID = 0L;
         DEFAULT_FREQ_NUM = 0;
         DEFAULT_AGREE_NUM = 0;
-    }
-
-    public /* synthetic */ SpecialColumn(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -214,5 +213,9 @@ public final class SpecialColumn extends Message {
         this.text = builder.text;
         this.freq_num = builder.freq_num;
         this.agree_num = builder.agree_num;
+    }
+
+    public /* synthetic */ SpecialColumn(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

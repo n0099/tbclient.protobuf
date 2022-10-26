@@ -24,10 +24,16 @@ public final class UniversityTabInfo extends Message {
     public final String tab_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UniversityTabInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<UniversityInfo> content;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List content;
         public String tab_name;
 
         public Builder() {
@@ -74,14 +80,11 @@ public final class UniversityTabInfo extends Message {
         public UniversityTabInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UniversityTabInfo(this, z, null) : (UniversityTabInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UniversityTabInfo(this, z, null);
+            }
+            return (UniversityTabInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -98,10 +101,6 @@ public final class UniversityTabInfo extends Message {
             }
         }
         DEFAULT_CONTENT = Collections.emptyList();
-    }
-
-    public /* synthetic */ UniversityTabInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,7 +128,7 @@ public final class UniversityTabInfo extends Message {
             } else {
                 this.tab_name = str;
             }
-            List<UniversityInfo> list = builder.content;
+            List list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
                 return;
@@ -140,5 +139,9 @@ public final class UniversityTabInfo extends Message {
         }
         this.tab_name = builder.tab_name;
         this.content = Message.immutableCopyOf(builder.content);
+    }
+
+    public /* synthetic */ UniversityTabInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

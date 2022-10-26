@@ -24,11 +24,17 @@ public final class DataRes extends Message {
     public final List<ResponseTagInfo> taglist;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ResponseTagInfo> sex_taglist;
-        public List<ResponseTagInfo> taglist;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List sex_taglist;
+        public List taglist;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class DataRes extends Message {
         }
         DEFAULT_SEX_TAGLIST = Collections.emptyList();
         DEFAULT_TAGLIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -124,13 +123,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<ResponseTagInfo> list = builder.sex_taglist;
+            List list = builder.sex_taglist;
             if (list == null) {
                 this.sex_taglist = DEFAULT_SEX_TAGLIST;
             } else {
                 this.sex_taglist = Message.immutableCopyOf(list);
             }
-            List<ResponseTagInfo> list2 = builder.taglist;
+            List list2 = builder.taglist;
             if (list2 == null) {
                 this.taglist = DEFAULT_TAGLIST;
                 return;
@@ -141,5 +140,9 @@ public final class DataRes extends Message {
         }
         this.sex_taglist = Message.immutableCopyOf(builder.sex_taglist);
         this.taglist = Message.immutableCopyOf(builder.taglist);
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

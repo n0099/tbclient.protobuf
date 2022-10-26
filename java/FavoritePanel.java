@@ -34,7 +34,13 @@ public final class FavoritePanel extends Message {
     public final String sub_title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FavoritePanel> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String img_url;
@@ -92,14 +98,11 @@ public final class FavoritePanel extends Message {
         public FavoritePanel build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FavoritePanel(this, z, null) : (FavoritePanel) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FavoritePanel(this, z, null);
+            }
+            return (FavoritePanel) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -117,10 +120,6 @@ public final class FavoritePanel extends Message {
         }
         DEFAULT_NUMBER = 0L;
         DEFAULT_MAX_TIMES = 0;
-    }
-
-    public /* synthetic */ FavoritePanel(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -187,5 +186,9 @@ public final class FavoritePanel extends Message {
         this.img_url = builder.img_url;
         this.on_off = builder.on_off;
         this.max_times = builder.max_times;
+    }
+
+    public /* synthetic */ FavoritePanel(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -40,13 +40,19 @@ public final class Icon extends Message {
     public final Integer weight;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Icon> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String icon;
         public String name;
         public Position position;
-        public List<String> sprite_info;
+        public List sprite_info;
         public Terminal terminal;
         public String url;
         public Integer value;
@@ -102,14 +108,11 @@ public final class Icon extends Message {
         public Icon build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Icon(this, z, null) : (Icon) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Icon(this, z, null);
+            }
+            return (Icon) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -128,10 +131,6 @@ public final class Icon extends Message {
         DEFAULT_WEIGHT = 0;
         DEFAULT_VALUE = 0;
         DEFAULT_SPRITE_INFO = Collections.emptyList();
-    }
-
-    public /* synthetic */ Icon(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -185,7 +184,7 @@ public final class Icon extends Message {
             }
             this.terminal = builder.terminal;
             this.position = builder.position;
-            List<String> list = builder.sprite_info;
+            List list = builder.sprite_info;
             if (list == null) {
                 this.sprite_info = DEFAULT_SPRITE_INFO;
                 return;
@@ -202,5 +201,9 @@ public final class Icon extends Message {
         this.terminal = builder.terminal;
         this.position = builder.position;
         this.sprite_info = Message.immutableCopyOf(builder.sprite_info);
+    }
+
+    public /* synthetic */ Icon(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

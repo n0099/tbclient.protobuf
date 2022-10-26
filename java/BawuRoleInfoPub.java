@@ -45,7 +45,13 @@ public final class BawuRoleInfoPub extends Message {
     public final String user_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BawuRoleInfoPub> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public BaijiahaoInfo baijiahao_info;
@@ -111,14 +117,11 @@ public final class BawuRoleInfoPub extends Message {
         public BawuRoleInfoPub build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BawuRoleInfoPub(this, z, null) : (BawuRoleInfoPub) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BawuRoleInfoPub(this, z, null);
+            }
+            return (BawuRoleInfoPub) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -138,10 +141,6 @@ public final class BawuRoleInfoPub extends Message {
         DEFAULT_USER_ID = 0L;
         DEFAULT_ROLE_ID = 0;
         DEFAULT_USER_LEVEL = 0;
-    }
-
-    public /* synthetic */ BawuRoleInfoPub(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -230,5 +229,9 @@ public final class BawuRoleInfoPub extends Message {
         this.user_name = builder.user_name;
         this.name_show = builder.name_show;
         this.baijiahao_info = builder.baijiahao_info;
+    }
+
+    public /* synthetic */ BawuRoleInfoPub(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -52,7 +52,13 @@ public final class UserList extends Message {
     public final ThreadInfo thread_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UserList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer fans_num;
@@ -122,14 +128,11 @@ public final class UserList extends Message {
         public UserList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UserList(this, z, null) : (UserList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UserList(this, z, null);
+            }
+            return (UserList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -150,10 +153,6 @@ public final class UserList extends Message {
         DEFAULT_ID = 0L;
         DEFAULT_IS_GOD = 0;
         DEFAULT_LEVEL = 0;
-    }
-
-    public /* synthetic */ UserList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -251,5 +250,9 @@ public final class UserList extends Message {
         this.level = builder.level;
         this.thread_info = builder.thread_info;
         this.new_god_data = builder.new_god_data;
+    }
+
+    public /* synthetic */ UserList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

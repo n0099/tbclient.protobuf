@@ -26,12 +26,18 @@ public final class WorksInfo extends Message {
     public final List<RecomTopicList> topic_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<WorksInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_works;
         public VideoTags tag_list;
-        public List<RecomTopicList> topic_list;
+        public List topic_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -78,14 +84,11 @@ public final class WorksInfo extends Message {
         public WorksInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new WorksInfo(this, z, null) : (WorksInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new WorksInfo(this, z, null);
+            }
+            return (WorksInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -103,10 +106,6 @@ public final class WorksInfo extends Message {
         }
         DEFAULT_IS_WORKS = 0;
         DEFAULT_TOPIC_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ WorksInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -134,7 +133,7 @@ public final class WorksInfo extends Message {
             } else {
                 this.is_works = num;
             }
-            List<RecomTopicList> list = builder.topic_list;
+            List list = builder.topic_list;
             if (list == null) {
                 this.topic_list = DEFAULT_TOPIC_LIST;
             } else {
@@ -146,5 +145,9 @@ public final class WorksInfo extends Message {
         this.is_works = builder.is_works;
         this.topic_list = Message.immutableCopyOf(builder.topic_list);
         this.tag_list = builder.tag_list;
+    }
+
+    public /* synthetic */ WorksInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

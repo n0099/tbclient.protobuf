@@ -47,7 +47,13 @@ public final class DataReq extends Message {
     public final Integer with_floor;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataReq> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
@@ -56,7 +62,7 @@ public final class DataReq extends Message {
         public Integer floor_rn;
         public Integer is_comm_reverse;
         public Long kz;
-        public List<Long> post_id;
+        public List post_id;
         public Integer scr_h;
         public Integer scr_w;
         public Integer st_type;
@@ -113,14 +119,11 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataReq(this, z, null) : (DataReq) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataReq(this, z, null);
+            }
+            return (DataReq) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -144,10 +147,6 @@ public final class DataReq extends Message {
         DEFAULT_ST_TYPE = 0;
         DEFAULT_IS_COMM_REVERSE = 0;
         DEFAULT_FLOOR_RN = 0;
-    }
-
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -182,7 +181,7 @@ public final class DataReq extends Message {
             } else {
                 this.with_floor = num;
             }
-            List<Long> list = builder.post_id;
+            List list = builder.post_id;
             if (list == null) {
                 this.post_id = DEFAULT_POST_ID;
             } else {
@@ -230,5 +229,9 @@ public final class DataReq extends Message {
         this.st_type = builder.st_type;
         this.is_comm_reverse = builder.is_comm_reverse;
         this.floor_rn = builder.floor_rn;
+    }
+
+    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

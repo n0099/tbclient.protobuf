@@ -28,11 +28,17 @@ public final class DataRes extends Message {
     public final Integer has_more;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer cur_page;
-        public List<ForumList> forum_list;
+        public List forum_list;
         public Integer has_more;
 
         public Builder() {
@@ -80,14 +86,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -106,10 +109,6 @@ public final class DataRes extends Message {
         DEFAULT_FORUM_LIST = Collections.emptyList();
         DEFAULT_HAS_MORE = 0;
         DEFAULT_CUR_PAGE = 0;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -131,7 +130,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<ForumList> list = builder.forum_list;
+            List list = builder.forum_list;
             if (list == null) {
                 this.forum_list = DEFAULT_FORUM_LIST;
             } else {
@@ -155,5 +154,9 @@ public final class DataRes extends Message {
         this.forum_list = Message.immutableCopyOf(builder.forum_list);
         this.has_more = builder.has_more;
         this.cur_page = builder.cur_page;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

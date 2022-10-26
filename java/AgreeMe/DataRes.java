@@ -25,10 +25,16 @@ public final class DataRes extends Message {
     public final Integer has_more;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<AgreeList> agree_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List agree_list;
         public Integer has_more;
 
         public Builder() {
@@ -75,14 +81,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -100,10 +103,6 @@ public final class DataRes extends Message {
         }
         DEFAULT_HAS_MORE = 0;
         DEFAULT_AGREE_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -131,7 +130,7 @@ public final class DataRes extends Message {
             } else {
                 this.has_more = num;
             }
-            List<AgreeList> list = builder.agree_list;
+            List list = builder.agree_list;
             if (list == null) {
                 this.agree_list = DEFAULT_AGREE_LIST;
                 return;
@@ -142,5 +141,9 @@ public final class DataRes extends Message {
         }
         this.has_more = builder.has_more;
         this.agree_list = Message.immutableCopyOf(builder.agree_list);
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -42,13 +42,19 @@ public final class GraffitiRankListInfo extends Message {
     public final Integer total;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GraffitiRankListInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<User> consent_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List consent_list;
         public Integer has_more;
         public Integer has_state;
-        public List<GraffitiRankItem> list;
+        public List list;
         public Integer quick_list_count;
         public Integer show_list_count;
         public Long tid;
@@ -104,14 +110,11 @@ public final class GraffitiRankListInfo extends Message {
         public GraffitiRankListInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GraffitiRankListInfo(this, z, null) : (GraffitiRankListInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GraffitiRankListInfo(this, z, null);
+            }
+            return (GraffitiRankListInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -135,10 +138,6 @@ public final class GraffitiRankListInfo extends Message {
         DEFAULT_HAS_STATE = 0;
         DEFAULT_TID = 0L;
         DEFAULT_CONSENT_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ GraffitiRankListInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -172,7 +171,7 @@ public final class GraffitiRankListInfo extends Message {
             } else {
                 this.total = num2;
             }
-            List<GraffitiRankItem> list = builder.list;
+            List list = builder.list;
             if (list == null) {
                 this.list = DEFAULT_LIST;
             } else {
@@ -202,7 +201,7 @@ public final class GraffitiRankListInfo extends Message {
             } else {
                 this.tid = l;
             }
-            List<User> list2 = builder.consent_list;
+            List list2 = builder.consent_list;
             if (list2 == null) {
                 this.consent_list = DEFAULT_CONSENT_LIST;
                 return;
@@ -219,5 +218,9 @@ public final class GraffitiRankListInfo extends Message {
         this.has_state = builder.has_state;
         this.tid = builder.tid;
         this.consent_list = Message.immutableCopyOf(builder.consent_list);
+    }
+
+    public /* synthetic */ GraffitiRankListInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

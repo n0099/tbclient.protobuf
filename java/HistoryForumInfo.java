@@ -68,7 +68,13 @@ public final class HistoryForumInfo extends Message {
     public final String visit_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<HistoryForumInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
@@ -84,7 +90,7 @@ public final class HistoryForumInfo extends Message {
         public Integer level_id;
         public Boolean need_trans;
         public PostPrefix post_prefix;
-        public List<FrsTabInfo> tab_info;
+        public List tab_info;
         public RecomTagInfo tag_info;
         public ThemeColorInfo theme_color;
         public Integer unread_num;
@@ -150,14 +156,11 @@ public final class HistoryForumInfo extends Message {
         public HistoryForumInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HistoryForumInfo(this, z, null) : (HistoryForumInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new HistoryForumInfo(this, z, null);
+            }
+            return (HistoryForumInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -183,10 +186,6 @@ public final class HistoryForumInfo extends Message {
         DEFAULT_TAB_INFO = Collections.emptyList();
         DEFAULT_HAS_POSTPRE = Boolean.FALSE;
         DEFAULT_IS_FORUM_BUSINESS_ACCOUNT = 0;
-    }
-
-    public /* synthetic */ HistoryForumInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -270,7 +269,7 @@ public final class HistoryForumInfo extends Message {
             } else {
                 this.level_id = num5;
             }
-            List<FrsTabInfo> list = builder.tab_info;
+            List list = builder.tab_info;
             if (list == null) {
                 this.tab_info = DEFAULT_TAB_INFO;
             } else {
@@ -317,5 +316,9 @@ public final class HistoryForumInfo extends Message {
         this.is_forum_business_account = builder.is_forum_business_account;
         this.tag_info = builder.tag_info;
         this.first_category = builder.first_category;
+    }
+
+    public /* synthetic */ HistoryForumInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

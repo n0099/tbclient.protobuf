@@ -28,7 +28,13 @@ public final class StarTaskInfo extends Message {
     public final String task_title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<StarTaskInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String task_desc;
@@ -82,14 +88,11 @@ public final class StarTaskInfo extends Message {
         public StarTaskInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new StarTaskInfo(this, z, null) : (StarTaskInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new StarTaskInfo(this, z, null);
+            }
+            return (StarTaskInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -106,10 +109,6 @@ public final class StarTaskInfo extends Message {
             }
         }
         DEFAULT_TASK_STATUS = 0;
-    }
-
-    public /* synthetic */ StarTaskInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -162,5 +161,9 @@ public final class StarTaskInfo extends Message {
         this.task_desc = builder.task_desc;
         this.task_score_desc = builder.task_score_desc;
         this.task_status = builder.task_status;
+    }
+
+    public /* synthetic */ StarTaskInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

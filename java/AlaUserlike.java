@@ -18,7 +18,13 @@ public final class AlaUserlike extends Message {
     public final User user;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AlaUserlike> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public AlaLiveInfo ala_live_info;
@@ -68,18 +74,11 @@ public final class AlaUserlike extends Message {
         public AlaUserlike build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AlaUserlike(this, z, null) : (AlaUserlike) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AlaUserlike(this, z, null);
+            }
+            return (AlaUserlike) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ AlaUserlike(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -107,5 +106,9 @@ public final class AlaUserlike extends Message {
         }
         this.user = builder.user;
         this.ala_live_info = builder.ala_live_info;
+    }
+
+    public /* synthetic */ AlaUserlike(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -25,7 +25,13 @@ public final class AlaCoverLabel extends Message {
     public final String label_rgb;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AlaCoverLabel> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer label_id;
@@ -77,14 +83,11 @@ public final class AlaCoverLabel extends Message {
         public AlaCoverLabel build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AlaCoverLabel(this, z, null) : (AlaCoverLabel) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AlaCoverLabel(this, z, null);
+            }
+            return (AlaCoverLabel) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -101,10 +104,6 @@ public final class AlaCoverLabel extends Message {
             }
         }
         DEFAULT_LABEL_ID = 0;
-    }
-
-    public /* synthetic */ AlaCoverLabel(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -150,5 +149,9 @@ public final class AlaCoverLabel extends Message {
         this.label_id = builder.label_id;
         this.label_name = builder.label_name;
         this.label_rgb = builder.label_rgb;
+    }
+
+    public /* synthetic */ AlaCoverLabel(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

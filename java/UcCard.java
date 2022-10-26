@@ -33,14 +33,20 @@ public final class UcCard extends Message {
     public final List<UcCardInfo> uc_cards;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UcCard> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String doc;
         public String icon;
         public String jmp;
         public String name;
-        public List<UcCardInfo> uc_cards;
+        public List uc_cards;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -89,14 +95,11 @@ public final class UcCard extends Message {
         public UcCard build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UcCard(this, z, null) : (UcCard) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UcCard(this, z, null);
+            }
+            return (UcCard) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class UcCard extends Message {
             }
         }
         DEFAULT_UC_CARDS = Collections.emptyList();
-    }
-
-    public /* synthetic */ UcCard(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -162,7 +161,7 @@ public final class UcCard extends Message {
             } else {
                 this.jmp = str4;
             }
-            List<UcCardInfo> list = builder.uc_cards;
+            List list = builder.uc_cards;
             if (list == null) {
                 this.uc_cards = DEFAULT_UC_CARDS;
                 return;
@@ -176,5 +175,9 @@ public final class UcCard extends Message {
         this.doc = builder.doc;
         this.jmp = builder.jmp;
         this.uc_cards = Message.immutableCopyOf(builder.uc_cards);
+    }
+
+    public /* synthetic */ UcCard(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

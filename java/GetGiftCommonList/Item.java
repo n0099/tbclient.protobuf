@@ -40,7 +40,13 @@ public final class Item extends Message {
     public final String thumbnail_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Item> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer gift_id;
@@ -102,14 +108,11 @@ public final class Item extends Message {
         public Item build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Item(this, z, null) : (Item) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Item(this, z, null);
+            }
+            return (Item) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -129,10 +132,6 @@ public final class Item extends Message {
         DEFAULT_PRICE = 0;
         DEFAULT_IOS_PRICE = 0;
         DEFAULT_IOS_COUNT = 0;
-    }
-
-    public /* synthetic */ Item(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -213,5 +212,9 @@ public final class Item extends Message {
         this.ios_product_id = builder.ios_product_id;
         this.ios_price = builder.ios_price;
         this.ios_count = builder.ios_count;
+    }
+
+    public /* synthetic */ Item(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

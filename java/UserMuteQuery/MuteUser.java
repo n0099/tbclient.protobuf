@@ -31,7 +31,13 @@ public final class MuteUser extends Message {
     public final String user_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<MuteUser> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer mute_time;
@@ -87,14 +93,11 @@ public final class MuteUser extends Message {
         public MuteUser build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new MuteUser(this, z, null) : (MuteUser) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new MuteUser(this, z, null);
+            }
+            return (MuteUser) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -112,10 +115,6 @@ public final class MuteUser extends Message {
         }
         DEFAULT_USER_ID = 0L;
         DEFAULT_MUTE_TIME = 0;
-    }
-
-    public /* synthetic */ MuteUser(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -175,5 +174,9 @@ public final class MuteUser extends Message {
         this.mute_time = builder.mute_time;
         this.portrait = builder.portrait;
         this.name_show = builder.name_show;
+    }
+
+    public /* synthetic */ MuteUser(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

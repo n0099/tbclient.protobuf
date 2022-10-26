@@ -31,7 +31,13 @@ public final class HeadSdk extends Message {
     public final String sdk_params;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<HeadSdk> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String head_pic;
@@ -87,14 +93,11 @@ public final class HeadSdk extends Message {
         public HeadSdk build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HeadSdk(this, z, null) : (HeadSdk) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new HeadSdk(this, z, null);
+            }
+            return (HeadSdk) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -111,10 +114,6 @@ public final class HeadSdk extends Message {
             }
         }
         DEFAULT_HEAD_TYPE = 0;
-    }
-
-    public /* synthetic */ HeadSdk(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -174,5 +173,9 @@ public final class HeadSdk extends Message {
         this.sdk_name = builder.sdk_name;
         this.sdk_params = builder.sdk_params;
         this.head_type = builder.head_type;
+    }
+
+    public /* synthetic */ HeadSdk(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -24,11 +24,17 @@ public final class ForumDataGroup extends Message {
     public final List<ForumDataValue> values;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ForumDataGroup> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Double total;
-        public List<ForumDataValue> values;
+        public List values;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class ForumDataGroup extends Message {
         public ForumDataGroup build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ForumDataGroup(this, z, null) : (ForumDataGroup) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ForumDataGroup(this, z, null);
+            }
+            return (ForumDataGroup) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class ForumDataGroup extends Message {
         }
         DEFAULT_TOTAL = Double.valueOf(0.0d);
         DEFAULT_VALUES = Collections.emptyList();
-    }
-
-    public /* synthetic */ ForumDataGroup(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class ForumDataGroup extends Message {
             } else {
                 this.total = d;
             }
-            List<ForumDataValue> list = builder.values;
+            List list = builder.values;
             if (list == null) {
                 this.values = DEFAULT_VALUES;
                 return;
@@ -141,5 +140,9 @@ public final class ForumDataGroup extends Message {
         }
         this.total = builder.total;
         this.values = Message.immutableCopyOf(builder.values);
+    }
+
+    public /* synthetic */ ForumDataGroup(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

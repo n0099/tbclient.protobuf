@@ -34,7 +34,13 @@ public final class ApplyStatus extends Message {
     public final Integer next_desc_apply_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ApplyStatus> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer fdir_next_apply_time;
@@ -92,14 +98,11 @@ public final class ApplyStatus extends Message {
         public ApplyStatus build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ApplyStatus(this, z, null) : (ApplyStatus) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ApplyStatus(this, z, null);
+            }
+            return (ApplyStatus) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -121,10 +124,6 @@ public final class ApplyStatus extends Message {
         DEFAULT_NEXT_DESC_APPLY_TIME = 0;
         DEFAULT_IS_FDIR_APPLYING = 0;
         DEFAULT_FDIR_NEXT_APPLY_TIME = 0;
-    }
-
-    public /* synthetic */ ApplyStatus(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -191,5 +190,9 @@ public final class ApplyStatus extends Message {
         this.next_desc_apply_time = builder.next_desc_apply_time;
         this.is_fdir_applying = builder.is_fdir_applying;
         this.fdir_next_apply_time = builder.fdir_next_apply_time;
+    }
+
+    public /* synthetic */ ApplyStatus(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

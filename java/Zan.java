@@ -36,14 +36,20 @@ public final class Zan extends Message {
     public final Integer num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Zan> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer consent_type;
         public Integer is_liked;
         public Integer last_time;
-        public List<Long> liker_id;
-        public List<User> liker_list;
+        public List liker_id;
+        public List liker_list;
         public Integer num;
 
         public Builder() {
@@ -94,14 +100,11 @@ public final class Zan extends Message {
         public Zan build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Zan(this, z, null) : (Zan) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Zan(this, z, null);
+            }
+            return (Zan) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -123,10 +126,6 @@ public final class Zan extends Message {
         DEFAULT_LAST_TIME = 0;
         DEFAULT_LIKER_ID = Collections.emptyList();
         DEFAULT_CONSENT_TYPE = 0;
-    }
-
-    public /* synthetic */ Zan(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -154,7 +153,7 @@ public final class Zan extends Message {
             } else {
                 this.num = num;
             }
-            List<User> list = builder.liker_list;
+            List list = builder.liker_list;
             if (list == null) {
                 this.liker_list = DEFAULT_LIKER_LIST;
             } else {
@@ -172,7 +171,7 @@ public final class Zan extends Message {
             } else {
                 this.last_time = num3;
             }
-            List<Long> list2 = builder.liker_id;
+            List list2 = builder.liker_id;
             if (list2 == null) {
                 this.liker_id = DEFAULT_LIKER_ID;
             } else {
@@ -193,5 +192,9 @@ public final class Zan extends Message {
         this.last_time = builder.last_time;
         this.liker_id = Message.immutableCopyOf(builder.liker_id);
         this.consent_type = builder.consent_type;
+    }
+
+    public /* synthetic */ Zan(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

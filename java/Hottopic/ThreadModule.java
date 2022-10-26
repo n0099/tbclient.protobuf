@@ -20,7 +20,13 @@ public final class ThreadModule extends Message {
     public final CommonThread thread_module_3;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ThreadModule> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public CommonThread thread_module_1;
@@ -72,18 +78,11 @@ public final class ThreadModule extends Message {
         public ThreadModule build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThreadModule(this, z, null) : (ThreadModule) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThreadModule(this, z, null);
+            }
+            return (ThreadModule) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ ThreadModule(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -113,5 +112,9 @@ public final class ThreadModule extends Message {
         this.thread_module_1 = builder.thread_module_1;
         this.thread_module_2 = builder.thread_module_2;
         this.thread_module_3 = builder.thread_module_3;
+    }
+
+    public /* synthetic */ ThreadModule(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

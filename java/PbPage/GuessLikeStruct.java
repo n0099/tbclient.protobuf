@@ -25,10 +25,16 @@ public final class GuessLikeStruct extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GuessLikeStruct> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<GuessLikeThreadInfo> thread_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List thread_list;
         public String title;
 
         public Builder() {
@@ -75,14 +81,11 @@ public final class GuessLikeStruct extends Message {
         public GuessLikeStruct build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GuessLikeStruct(this, z, null) : (GuessLikeStruct) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GuessLikeStruct(this, z, null);
+            }
+            return (GuessLikeStruct) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class GuessLikeStruct extends Message {
             }
         }
         DEFAULT_THREAD_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ GuessLikeStruct(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class GuessLikeStruct extends Message {
             } else {
                 this.title = str;
             }
-            List<GuessLikeThreadInfo> list = builder.thread_list;
+            List list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
                 return;
@@ -141,5 +140,9 @@ public final class GuessLikeStruct extends Message {
         }
         this.title = builder.title;
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
+    }
+
+    public /* synthetic */ GuessLikeStruct(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

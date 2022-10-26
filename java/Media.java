@@ -85,7 +85,13 @@ public final class Media extends Message {
     public final Double wth_mid_loc;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Media> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String big_pic;
@@ -177,14 +183,11 @@ public final class Media extends Message {
         public Media build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Media(this, z, null) : (Media) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Media(this, z, null);
+            }
+            return (Media) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -213,10 +216,6 @@ public final class Media extends Message {
         Double valueOf = Double.valueOf(0.0d);
         DEFAULT_WTH_MID_LOC = valueOf;
         DEFAULT_HTH_MID_LOC = valueOf;
-    }
-
-    public /* synthetic */ Media(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -402,5 +401,9 @@ public final class Media extends Message {
         this.is_blocked_pic = builder.is_blocked_pic;
         this.wth_mid_loc = builder.wth_mid_loc;
         this.hth_mid_loc = builder.hth_mid_loc;
+    }
+
+    public /* synthetic */ Media(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

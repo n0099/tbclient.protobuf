@@ -157,7 +157,13 @@ public final class AlaLiveInfo extends Message {
     public final YyExt yy_ext;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AlaLiveInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer audience_count;
@@ -165,7 +171,7 @@ public final class AlaLiveInfo extends Message {
         public String cover;
         public String cover_wide;
         public String description;
-        public List<DislikeInfo> dislike_info;
+        public List dislike_info;
         public Long distance;
         public Integer duration;
         public String first_headline;
@@ -201,7 +207,7 @@ public final class AlaLiveInfo extends Message {
         public String session_id;
         public AlaShareInfo share_info;
         public Integer show_page;
-        public List<AlaStageDislikeInfo> stage_dislike_info;
+        public List stage_dislike_info;
         public String third_app_id;
         public String third_live_type;
         public String third_room_id;
@@ -299,14 +305,11 @@ public final class AlaLiveInfo extends Message {
         public AlaLiveInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AlaLiveInfo(this, z, null) : (AlaLiveInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AlaLiveInfo(this, z, null);
+            }
+            return (AlaLiveInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -344,10 +347,6 @@ public final class AlaLiveInfo extends Message {
         DEFAULT_ROOM_ID = 0L;
         DEFAULT_ROOM_STATUS = 0;
         DEFAULT_SHOW_PAGE = 0;
-    }
-
-    public /* synthetic */ AlaLiveInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -491,7 +490,7 @@ public final class AlaLiveInfo extends Message {
             } else {
                 this.thread_id = l4;
             }
-            List<AlaStageDislikeInfo> list = builder.stage_dislike_info;
+            List list = builder.stage_dislike_info;
             if (list == null) {
                 this.stage_dislike_info = DEFAULT_STAGE_DISLIKE_INFO;
             } else {
@@ -589,7 +588,7 @@ public final class AlaLiveInfo extends Message {
             } else {
                 this.open_recom_duration = num13;
             }
-            List<DislikeInfo> list2 = builder.dislike_info;
+            List list2 = builder.dislike_info;
             if (list2 == null) {
                 this.dislike_info = DEFAULT_DISLIKE_INFO;
             } else {
@@ -683,5 +682,9 @@ public final class AlaLiveInfo extends Message {
         this.cover_wide = builder.cover_wide;
         this.yy_ext = builder.yy_ext;
         this.show_page = builder.show_page;
+    }
+
+    public /* synthetic */ AlaLiveInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

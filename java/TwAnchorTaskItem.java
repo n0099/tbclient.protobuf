@@ -34,7 +34,13 @@ public final class TwAnchorTaskItem extends Message {
     public final String remark;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TwAnchorTaskItem> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer complete;
@@ -92,14 +98,11 @@ public final class TwAnchorTaskItem extends Message {
         public TwAnchorTaskItem build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TwAnchorTaskItem(this, z, null) : (TwAnchorTaskItem) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TwAnchorTaskItem(this, z, null);
+            }
+            return (TwAnchorTaskItem) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -117,10 +120,6 @@ public final class TwAnchorTaskItem extends Message {
         }
         DEFAULT_ID = 0;
         DEFAULT_COMPLETE = 0;
-    }
-
-    public /* synthetic */ TwAnchorTaskItem(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -187,5 +186,9 @@ public final class TwAnchorTaskItem extends Message {
         this.complete = builder.complete;
         this.remark = builder.remark;
         this.icon = builder.icon;
+    }
+
+    public /* synthetic */ TwAnchorTaskItem(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

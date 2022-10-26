@@ -42,16 +42,22 @@ public final class StarRank extends Message {
     public final String user_task_notice;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<StarRank> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<StarContriRecord> contri_record_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List contri_record_list;
         public String rank_name;
         public Integer rank_ranking;
         public String url;
         public Integer user_contri_score;
         public String user_current_score_notice;
-        public List<StarTaskInfo> user_task_info;
+        public List user_task_info;
         public String user_task_notice;
 
         public Builder() {
@@ -104,14 +110,11 @@ public final class StarRank extends Message {
         public StarRank build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new StarRank(this, z, null) : (StarRank) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new StarRank(this, z, null);
+            }
+            return (StarRank) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -131,10 +134,6 @@ public final class StarRank extends Message {
         DEFAULT_CONTRI_RECORD_LIST = Collections.emptyList();
         DEFAULT_USER_CONTRI_SCORE = 0;
         DEFAULT_USER_TASK_INFO = Collections.emptyList();
-    }
-
-    public /* synthetic */ StarRank(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -168,7 +167,7 @@ public final class StarRank extends Message {
             } else {
                 this.rank_ranking = num;
             }
-            List<StarContriRecord> list = builder.contri_record_list;
+            List list = builder.contri_record_list;
             if (list == null) {
                 this.contri_record_list = DEFAULT_CONTRI_RECORD_LIST;
             } else {
@@ -186,7 +185,7 @@ public final class StarRank extends Message {
             } else {
                 this.user_task_notice = str2;
             }
-            List<StarTaskInfo> list2 = builder.user_task_info;
+            List list2 = builder.user_task_info;
             if (list2 == null) {
                 this.user_task_info = DEFAULT_USER_TASK_INFO;
             } else {
@@ -215,5 +214,9 @@ public final class StarRank extends Message {
         this.user_task_info = Message.immutableCopyOf(builder.user_task_info);
         this.user_current_score_notice = builder.user_current_score_notice;
         this.url = builder.url;
+    }
+
+    public /* synthetic */ StarRank(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

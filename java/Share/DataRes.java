@@ -15,13 +15,22 @@ public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic;
     public static final Long DEFAULT_TID;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 2)
+    public final StarContri contri;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long tid;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public StarContri contri;
         public Long tid;
 
         public Builder() {
@@ -60,6 +69,7 @@ public final class DataRes extends Message {
                 return;
             }
             this.tid = dataRes.tid;
+            this.contri = dataRes.contri;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -67,14 +77,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -91,10 +98,6 @@ public final class DataRes extends Message {
             }
         }
         DEFAULT_TID = 0L;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -119,12 +122,17 @@ public final class DataRes extends Message {
             Long l = builder.tid;
             if (l == null) {
                 this.tid = DEFAULT_TID;
-                return;
             } else {
                 this.tid = l;
-                return;
             }
+            this.contri = builder.contri;
+            return;
         }
         this.tid = builder.tid;
+        this.contri = builder.contri;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

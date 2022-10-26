@@ -36,10 +36,16 @@ public final class WorldcupSkin extends Message {
     public final String worldcup_top_night;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<WorldcupSkin> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<TabSkin> tab_skin;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List tab_skin;
         public String worldcup_bottom;
         public String worldcup_bottom_night;
         public Integer worldcup_icon_height;
@@ -94,14 +100,11 @@ public final class WorldcupSkin extends Message {
         public WorldcupSkin build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new WorldcupSkin(this, z, null) : (WorldcupSkin) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new WorldcupSkin(this, z, null);
+            }
+            return (WorldcupSkin) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -119,10 +122,6 @@ public final class WorldcupSkin extends Message {
         }
         DEFAULT_WORLDCUP_ICON_HEIGHT = 0;
         DEFAULT_TAB_SKIN = Collections.emptyList();
-    }
-
-    public /* synthetic */ WorldcupSkin(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -174,7 +173,7 @@ public final class WorldcupSkin extends Message {
             } else {
                 this.worldcup_top_night = str4;
             }
-            List<TabSkin> list = builder.tab_skin;
+            List list = builder.tab_skin;
             if (list == null) {
                 this.tab_skin = DEFAULT_TAB_SKIN;
                 return;
@@ -189,5 +188,9 @@ public final class WorldcupSkin extends Message {
         this.worldcup_top = builder.worldcup_top;
         this.worldcup_top_night = builder.worldcup_top_night;
         this.tab_skin = Message.immutableCopyOf(builder.tab_skin);
+    }
+
+    public /* synthetic */ WorldcupSkin(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -30,10 +30,16 @@ public final class GameCategory extends Message {
     public final String name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GameCategory> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<String> game_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List game_list;
         public String icon_url;
         public Integer id;
         public String name;
@@ -84,14 +90,11 @@ public final class GameCategory extends Message {
         public GameCategory build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GameCategory(this, z, null) : (GameCategory) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GameCategory(this, z, null);
+            }
+            return (GameCategory) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -109,10 +112,6 @@ public final class GameCategory extends Message {
         }
         DEFAULT_ID = 0;
         DEFAULT_GAME_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ GameCategory(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -152,7 +151,7 @@ public final class GameCategory extends Message {
             } else {
                 this.icon_url = str2;
             }
-            List<String> list = builder.game_list;
+            List list = builder.game_list;
             if (list == null) {
                 this.game_list = DEFAULT_GAME_LIST;
                 return;
@@ -165,5 +164,9 @@ public final class GameCategory extends Message {
         this.name = builder.name;
         this.icon_url = builder.icon_url;
         this.game_list = Message.immutableCopyOf(builder.game_list);
+    }
+
+    public /* synthetic */ GameCategory(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

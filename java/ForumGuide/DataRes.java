@@ -43,17 +43,23 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> voice_room_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ForumCreateInfo forum_create_info;
-        public List<HotSearch> hot_search;
+        public List hot_search;
         public Integer is_login;
-        public List<LikeForum> like_forum;
+        public List like_forum;
         public Integer msign_level;
         public String msign_text;
         public Integer msign_valid;
-        public List<ThreadInfo> voice_room_list;
+        public List voice_room_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -105,14 +111,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -136,10 +139,6 @@ public final class DataRes extends Message {
         DEFAULT_VOICE_ROOM_LIST = Collections.emptyList();
     }
 
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
@@ -159,13 +158,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<HotSearch> list = builder.hot_search;
+            List list = builder.hot_search;
             if (list == null) {
                 this.hot_search = DEFAULT_HOT_SEARCH;
             } else {
                 this.hot_search = Message.immutableCopyOf(list);
             }
-            List<LikeForum> list2 = builder.like_forum;
+            List list2 = builder.like_forum;
             if (list2 == null) {
                 this.like_forum = DEFAULT_LIKE_FORUM;
             } else {
@@ -196,7 +195,7 @@ public final class DataRes extends Message {
             } else {
                 this.msign_level = num3;
             }
-            List<ThreadInfo> list3 = builder.voice_room_list;
+            List list3 = builder.voice_room_list;
             if (list3 == null) {
                 this.voice_room_list = DEFAULT_VOICE_ROOM_LIST;
                 return;
@@ -213,5 +212,9 @@ public final class DataRes extends Message {
         this.msign_text = builder.msign_text;
         this.msign_level = builder.msign_level;
         this.voice_room_list = Message.immutableCopyOf(builder.voice_room_list);
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

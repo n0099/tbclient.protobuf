@@ -27,12 +27,18 @@ public final class CardTopic extends Message {
     public final List<TopicInfo> topic_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CardTopic> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String card_title;
         public Integer position;
-        public List<TopicInfo> topic_list;
+        public List topic_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -79,14 +85,11 @@ public final class CardTopic extends Message {
         public CardTopic build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CardTopic(this, z, null) : (CardTopic) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CardTopic(this, z, null);
+            }
+            return (CardTopic) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +107,6 @@ public final class CardTopic extends Message {
         }
         DEFAULT_TOPIC_LIST = Collections.emptyList();
         DEFAULT_POSITION = 0;
-    }
-
-    public /* synthetic */ CardTopic(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -135,7 +134,7 @@ public final class CardTopic extends Message {
             } else {
                 this.card_title = str;
             }
-            List<TopicInfo> list = builder.topic_list;
+            List list = builder.topic_list;
             if (list == null) {
                 this.topic_list = DEFAULT_TOPIC_LIST;
             } else {
@@ -153,5 +152,9 @@ public final class CardTopic extends Message {
         this.card_title = builder.card_title;
         this.topic_list = Message.immutableCopyOf(builder.topic_list);
         this.position = builder.position;
+    }
+
+    public /* synthetic */ CardTopic(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

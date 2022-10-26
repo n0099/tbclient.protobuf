@@ -78,7 +78,13 @@ public final class DataReq extends Message {
     public final Integer tab_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataReq> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String ad_bear_context;
@@ -166,14 +172,11 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataReq(this, z, null) : (DataReq) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataReq(this, z, null);
+            }
+            return (DataReq) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -204,10 +207,6 @@ public final class DataReq extends Message {
         DEFAULT_HAS_AD_BEAR = 0;
         DEFAULT_AD_BEAR_SID_PRICE = Double.valueOf(0.0d);
         DEFAULT_REQUEST_TIMES = 0;
-    }
-
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -367,5 +366,9 @@ public final class DataReq extends Message {
         this.ad_bear_sid = builder.ad_bear_sid;
         this.ad_bear_sid_price = builder.ad_bear_sid_price;
         this.request_times = builder.request_times;
+    }
+
+    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

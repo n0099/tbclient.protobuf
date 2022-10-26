@@ -23,7 +23,13 @@ public final class BannerImage extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BannerImage> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String ahead_url;
@@ -75,18 +81,11 @@ public final class BannerImage extends Message {
         public BannerImage build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BannerImage(this, z, null) : (BannerImage) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BannerImage(this, z, null);
+            }
+            return (BannerImage) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ BannerImage(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -132,5 +131,9 @@ public final class BannerImage extends Message {
         this.img_url = builder.img_url;
         this.ahead_url = builder.ahead_url;
         this.title = builder.title;
+    }
+
+    public /* synthetic */ BannerImage(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

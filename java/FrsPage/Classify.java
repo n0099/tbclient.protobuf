@@ -28,7 +28,13 @@ public final class Classify extends Message {
     public final String name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Classify> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer class_id;
@@ -82,14 +88,11 @@ public final class Classify extends Message {
         public Classify build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Classify(this, z, null) : (Classify) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Classify(this, z, null);
+            }
+            return (Classify) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +110,6 @@ public final class Classify extends Message {
         }
         DEFAULT_ID = 0L;
         DEFAULT_CLASS_ID = 0;
-    }
-
-    public /* synthetic */ Classify(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,5 +162,9 @@ public final class Classify extends Message {
         this.id = builder.id;
         this.class_id = builder.class_id;
         this.class_name = builder.class_name;
+    }
+
+    public /* synthetic */ Classify(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

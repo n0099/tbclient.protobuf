@@ -25,11 +25,17 @@ public final class RecommendUserList extends Message {
     public final List<User> user_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecommendUserList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer floor_position;
-        public List<User> user_list;
+        public List user_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -75,14 +81,11 @@ public final class RecommendUserList extends Message {
         public RecommendUserList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecommendUserList(this, z, null) : (RecommendUserList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecommendUserList(this, z, null);
+            }
+            return (RecommendUserList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -100,10 +103,6 @@ public final class RecommendUserList extends Message {
         }
         DEFAULT_FLOOR_POSITION = 0;
         DEFAULT_USER_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ RecommendUserList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -131,7 +130,7 @@ public final class RecommendUserList extends Message {
             } else {
                 this.floor_position = num;
             }
-            List<User> list = builder.user_list;
+            List list = builder.user_list;
             if (list == null) {
                 this.user_list = DEFAULT_USER_LIST;
                 return;
@@ -142,5 +141,9 @@ public final class RecommendUserList extends Message {
         }
         this.floor_position = builder.floor_position;
         this.user_list = Message.immutableCopyOf(builder.user_list);
+    }
+
+    public /* synthetic */ RecommendUserList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

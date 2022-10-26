@@ -62,22 +62,28 @@ public final class DataRes extends Message {
     public final List<User> user_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<AdMixFloor> ad_mix_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List ad_mix_list;
         public String ad_sample_map_key;
         public Integer ad_show_select;
-        public List<App> app_list;
-        public List<ThreadInfo> general_list;
+        public List app_list;
+        public List general_list;
         public Integer has_more;
         public ItemInfo item_info;
         public Integer new_thread_num;
-        public List<SortOption> sort_option;
+        public List sort_option;
         public Integer sort_type;
         public SportPageHeadInfo sport_head_info;
         public SportScheduleInfo sport_schedule_info;
-        public List<User> user_list;
+        public List user_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -134,14 +140,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -168,10 +171,6 @@ public final class DataRes extends Message {
         DEFAULT_AD_MIX_LIST = Collections.emptyList();
     }
 
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
@@ -191,7 +190,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<ThreadInfo> list = builder.general_list;
+            List list = builder.general_list;
             if (list == null) {
                 this.general_list = DEFAULT_GENERAL_LIST;
             } else {
@@ -203,7 +202,7 @@ public final class DataRes extends Message {
             } else {
                 this.has_more = num;
             }
-            List<User> list2 = builder.user_list;
+            List list2 = builder.user_list;
             if (list2 == null) {
                 this.user_list = DEFAULT_USER_LIST;
             } else {
@@ -224,13 +223,13 @@ public final class DataRes extends Message {
                 this.sort_type = num3;
             }
             this.item_info = builder.item_info;
-            List<SortOption> list3 = builder.sort_option;
+            List list3 = builder.sort_option;
             if (list3 == null) {
                 this.sort_option = DEFAULT_SORT_OPTION;
             } else {
                 this.sort_option = Message.immutableCopyOf(list3);
             }
-            List<App> list4 = builder.app_list;
+            List list4 = builder.app_list;
             if (list4 == null) {
                 this.app_list = DEFAULT_APP_LIST;
             } else {
@@ -242,7 +241,7 @@ public final class DataRes extends Message {
             } else {
                 this.ad_show_select = num4;
             }
-            List<AdMixFloor> list5 = builder.ad_mix_list;
+            List list5 = builder.ad_mix_list;
             if (list5 == null) {
                 this.ad_mix_list = DEFAULT_AD_MIX_LIST;
             } else {
@@ -270,5 +269,9 @@ public final class DataRes extends Message {
         this.ad_show_select = builder.ad_show_select;
         this.ad_mix_list = Message.immutableCopyOf(builder.ad_mix_list);
         this.ad_sample_map_key = builder.ad_sample_map_key;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

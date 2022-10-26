@@ -22,7 +22,13 @@ public final class SortOption extends Message {
     public final Integer sort_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SortOption> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String name;
@@ -72,14 +78,11 @@ public final class SortOption extends Message {
         public SortOption build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SortOption(this, z, null) : (SortOption) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SortOption(this, z, null);
+            }
+            return (SortOption) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +99,6 @@ public final class SortOption extends Message {
             }
         }
         DEFAULT_SORT_TYPE = 0;
-    }
-
-    public /* synthetic */ SortOption(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class SortOption extends Message {
         }
         this.name = builder.name;
         this.sort_type = builder.sort_type;
+    }
+
+    public /* synthetic */ SortOption(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

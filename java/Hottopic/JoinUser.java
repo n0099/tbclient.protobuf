@@ -24,10 +24,16 @@ public final class JoinUser extends Message {
     public final Long join_user_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<JoinUser> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<UserInfo> join_user;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List join_user;
         public Long join_user_num;
 
         public Builder() {
@@ -74,14 +80,11 @@ public final class JoinUser extends Message {
         public JoinUser build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new JoinUser(this, z, null) : (JoinUser) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new JoinUser(this, z, null);
+            }
+            return (JoinUser) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class JoinUser extends Message {
         }
         DEFAULT_JOIN_USER = Collections.emptyList();
         DEFAULT_JOIN_USER_NUM = 0L;
-    }
-
-    public /* synthetic */ JoinUser(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -124,7 +123,7 @@ public final class JoinUser extends Message {
             }
         }
         if (z) {
-            List<UserInfo> list = builder.join_user;
+            List list = builder.join_user;
             if (list == null) {
                 this.join_user = DEFAULT_JOIN_USER;
             } else {
@@ -141,5 +140,9 @@ public final class JoinUser extends Message {
         }
         this.join_user = Message.immutableCopyOf(builder.join_user);
         this.join_user_num = builder.join_user_num;
+    }
+
+    public /* synthetic */ JoinUser(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

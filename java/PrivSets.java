@@ -43,7 +43,13 @@ public final class PrivSets extends Message {
     public final Integer reply;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PrivSets> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer bazhu_show_inside;
@@ -107,14 +113,11 @@ public final class PrivSets extends Message {
         public PrivSets build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PrivSets(this, z, null) : (PrivSets) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PrivSets(this, z, null);
+            }
+            return (PrivSets) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -139,10 +142,6 @@ public final class PrivSets extends Message {
         DEFAULT_REPLY = 0;
         DEFAULT_BAZHU_SHOW_INSIDE = 0;
         DEFAULT_BAZHU_SHOW_OUTSIDE = 0;
-    }
-
-    public /* synthetic */ PrivSets(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -230,5 +229,9 @@ public final class PrivSets extends Message {
         this.reply = builder.reply;
         this.bazhu_show_inside = builder.bazhu_show_inside;
         this.bazhu_show_outside = builder.bazhu_show_outside;
+    }
+
+    public /* synthetic */ PrivSets(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

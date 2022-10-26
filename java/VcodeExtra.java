@@ -29,7 +29,13 @@ public final class VcodeExtra extends Message {
     public final String textimg;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<VcodeExtra> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String endpoint;
@@ -85,18 +91,11 @@ public final class VcodeExtra extends Message {
         public VcodeExtra build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new VcodeExtra(this, z, null) : (VcodeExtra) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new VcodeExtra(this, z, null);
+            }
+            return (VcodeExtra) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ VcodeExtra(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -156,5 +155,9 @@ public final class VcodeExtra extends Message {
         this.endpoint = builder.endpoint;
         this.successimg = builder.successimg;
         this.slideendpoint = builder.slideendpoint;
+    }
+
+    public /* synthetic */ VcodeExtra(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

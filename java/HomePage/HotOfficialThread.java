@@ -31,7 +31,13 @@ public final class HotOfficialThread extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<HotOfficialThread> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
@@ -87,14 +93,11 @@ public final class HotOfficialThread extends Message {
         public HotOfficialThread build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HotOfficialThread(this, z, null) : (HotOfficialThread) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new HotOfficialThread(this, z, null);
+            }
+            return (HotOfficialThread) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -112,10 +115,6 @@ public final class HotOfficialThread extends Message {
         }
         DEFAULT_TID = 0L;
         DEFAULT_ICON_TYPE = 0;
-    }
-
-    public /* synthetic */ HotOfficialThread(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -175,5 +174,9 @@ public final class HotOfficialThread extends Message {
         this._abstract = builder._abstract;
         this.icon_type = builder.icon_type;
         this.thread_pic = builder.thread_pic;
+    }
+
+    public /* synthetic */ HotOfficialThread(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

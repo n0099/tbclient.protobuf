@@ -57,7 +57,13 @@ public final class ActInfo extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ActInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer activity_id;
@@ -131,14 +137,11 @@ public final class ActInfo extends Message {
         public ActInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ActInfo(this, z, null) : (ActInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ActInfo(this, z, null);
+            }
+            return (ActInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -164,10 +167,6 @@ public final class ActInfo extends Message {
         DEFAULT_COMPONENT_ID = 0;
         DEFAULT_IS_SENIOR = Boolean.FALSE;
         DEFAULT_SHOW_TOTAL_NUM = 0;
-    }
-
-    public /* synthetic */ ActInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -285,5 +284,9 @@ public final class ActInfo extends Message {
         this.banner_img_size = builder.banner_img_size;
         this.lottery_senior = builder.lottery_senior;
         this.show_total_num = builder.show_total_num;
+    }
+
+    public /* synthetic */ ActInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

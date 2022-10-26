@@ -27,10 +27,16 @@ public final class VipCloseAd extends Message {
     public final Integer vip_close;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<VipCloseAd> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<Integer> forum_close;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List forum_close;
         public Integer is_open;
         public Integer vip_close;
 
@@ -79,14 +85,11 @@ public final class VipCloseAd extends Message {
         public VipCloseAd build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new VipCloseAd(this, z, null) : (VipCloseAd) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new VipCloseAd(this, z, null);
+            }
+            return (VipCloseAd) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -105,10 +108,6 @@ public final class VipCloseAd extends Message {
         DEFAULT_IS_OPEN = 0;
         DEFAULT_VIP_CLOSE = 0;
         DEFAULT_FORUM_CLOSE = Collections.emptyList();
-    }
-
-    public /* synthetic */ VipCloseAd(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -142,7 +141,7 @@ public final class VipCloseAd extends Message {
             } else {
                 this.vip_close = num2;
             }
-            List<Integer> list = builder.forum_close;
+            List list = builder.forum_close;
             if (list == null) {
                 this.forum_close = DEFAULT_FORUM_CLOSE;
                 return;
@@ -154,5 +153,9 @@ public final class VipCloseAd extends Message {
         this.is_open = builder.is_open;
         this.vip_close = builder.vip_close;
         this.forum_close = Message.immutableCopyOf(builder.forum_close);
+    }
+
+    public /* synthetic */ VipCloseAd(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

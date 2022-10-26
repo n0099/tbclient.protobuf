@@ -28,7 +28,13 @@ public final class SubClassItem extends Message {
     public final String sub_class_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SubClassItem> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer enable;
@@ -82,14 +88,11 @@ public final class SubClassItem extends Message {
         public SubClassItem build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SubClassItem(this, z, null) : (SubClassItem) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SubClassItem(this, z, null);
+            }
+            return (SubClassItem) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +110,6 @@ public final class SubClassItem extends Message {
         }
         DEFAULT_SUB_CLASS_ID = 0;
         DEFAULT_ENABLE = 0;
-    }
-
-    public /* synthetic */ SubClassItem(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,5 +162,9 @@ public final class SubClassItem extends Message {
         this.sub_class_name = builder.sub_class_name;
         this.sub_class_icon = builder.sub_class_icon;
         this.enable = builder.enable;
+    }
+
+    public /* synthetic */ SubClassItem(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

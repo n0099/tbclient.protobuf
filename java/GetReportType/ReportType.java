@@ -22,7 +22,13 @@ public final class ReportType extends Message {
     public final String type_text;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ReportType> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer type_id;
@@ -72,14 +78,11 @@ public final class ReportType extends Message {
         public ReportType build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ReportType(this, z, null) : (ReportType) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ReportType(this, z, null);
+            }
+            return (ReportType) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +99,6 @@ public final class ReportType extends Message {
             }
         }
         DEFAULT_TYPE_ID = 0;
-    }
-
-    public /* synthetic */ ReportType(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class ReportType extends Message {
         }
         this.type_id = builder.type_id;
         this.type_text = builder.type_text;
+    }
+
+    public /* synthetic */ ReportType(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

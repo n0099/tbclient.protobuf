@@ -22,7 +22,13 @@ public final class LiveCoverStatus extends Message {
     public final Integer status_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LiveCoverStatus> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String status;
@@ -72,14 +78,11 @@ public final class LiveCoverStatus extends Message {
         public LiveCoverStatus build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LiveCoverStatus(this, z, null) : (LiveCoverStatus) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LiveCoverStatus(this, z, null);
+            }
+            return (LiveCoverStatus) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +99,6 @@ public final class LiveCoverStatus extends Message {
             }
         }
         DEFAULT_STATUS_NUM = 0;
-    }
-
-    public /* synthetic */ LiveCoverStatus(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class LiveCoverStatus extends Message {
         }
         this.status_num = builder.status_num;
         this.status = builder.status;
+    }
+
+    public /* synthetic */ LiveCoverStatus(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

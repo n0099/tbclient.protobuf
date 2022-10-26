@@ -31,7 +31,13 @@ public final class FansRankUserInfo extends Message {
     public final String user_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FansRankUserInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String portrait;
@@ -87,14 +93,11 @@ public final class FansRankUserInfo extends Message {
         public FansRankUserInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FansRankUserInfo(this, z, null) : (FansRankUserInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FansRankUserInfo(this, z, null);
+            }
+            return (FansRankUserInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -112,10 +115,6 @@ public final class FansRankUserInfo extends Message {
         }
         DEFAULT_USER_ID = 0;
         DEFAULT_PRESENT_NUM = 0;
-    }
-
-    public /* synthetic */ FansRankUserInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -175,5 +174,9 @@ public final class FansRankUserInfo extends Message {
         this.present_num = builder.present_num;
         this.present_scores = builder.present_scores;
         this.portrait = builder.portrait;
+    }
+
+    public /* synthetic */ FansRankUserInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

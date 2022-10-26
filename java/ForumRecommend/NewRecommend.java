@@ -31,7 +31,13 @@ public final class NewRecommend extends Message {
     public final Integer member_count;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<NewRecommend> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
@@ -87,14 +93,11 @@ public final class NewRecommend extends Message {
         public NewRecommend build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new NewRecommend(this, z, null) : (NewRecommend) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new NewRecommend(this, z, null);
+            }
+            return (NewRecommend) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class NewRecommend extends Message {
         DEFAULT_FORUM_ID = 0L;
         DEFAULT_MEMBER_COUNT = 0;
         DEFAULT_IS_BRAND_FORUM = 0;
-    }
-
-    public /* synthetic */ NewRecommend(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -176,5 +175,9 @@ public final class NewRecommend extends Message {
         this.member_count = builder.member_count;
         this.avatar = builder.avatar;
         this.is_brand_forum = builder.is_brand_forum;
+    }
+
+    public /* synthetic */ NewRecommend(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

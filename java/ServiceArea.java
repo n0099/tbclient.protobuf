@@ -41,7 +41,13 @@ public final class ServiceArea extends Message {
     public final String version;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ServiceArea> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public SmartApp area_smart_app;
@@ -50,7 +56,7 @@ public final class ServiceArea extends Message {
         public String service_type;
         public String servicename;
         public String serviceurl;
-        public List<String> third_statistics_url;
+        public List third_statistics_url;
         public String version;
 
         public Builder() {
@@ -103,14 +109,11 @@ public final class ServiceArea extends Message {
         public ServiceArea build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ServiceArea(this, z, null) : (ServiceArea) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ServiceArea(this, z, null);
+            }
+            return (ServiceArea) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -127,10 +130,6 @@ public final class ServiceArea extends Message {
             }
         }
         DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
-    }
-
-    public /* synthetic */ ServiceArea(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -189,7 +188,7 @@ public final class ServiceArea extends Message {
             } else {
                 this.schema = str6;
             }
-            List<String> list = builder.third_statistics_url;
+            List list = builder.third_statistics_url;
             if (list == null) {
                 this.third_statistics_url = DEFAULT_THIRD_STATISTICS_URL;
                 return;
@@ -206,5 +205,9 @@ public final class ServiceArea extends Message {
         this.area_smart_app = builder.area_smart_app;
         this.schema = builder.schema;
         this.third_statistics_url = Message.immutableCopyOf(builder.third_statistics_url);
+    }
+
+    public /* synthetic */ ServiceArea(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

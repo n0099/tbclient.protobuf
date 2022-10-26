@@ -46,7 +46,13 @@ public final class SearchForum extends Message {
     public final List<FrsTabInfo> tab_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SearchForum> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
@@ -57,7 +63,7 @@ public final class SearchForum extends Message {
         public String intro;
         public String post_num;
         public String slogan;
-        public List<FrsTabInfo> tab_info;
+        public List tab_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -110,14 +116,11 @@ public final class SearchForum extends Message {
         public SearchForum build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SearchForum(this, z, null) : (SearchForum) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SearchForum(this, z, null);
+            }
+            return (SearchForum) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -136,10 +139,6 @@ public final class SearchForum extends Message {
         DEFAULT_FORUM_ID = 0L;
         DEFAULT_HAS_CONCERNED = 0;
         DEFAULT_TAB_INFO = Collections.emptyList();
-    }
-
-    public /* synthetic */ SearchForum(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -209,7 +208,7 @@ public final class SearchForum extends Message {
             } else {
                 this.has_concerned = num;
             }
-            List<FrsTabInfo> list = builder.tab_info;
+            List list = builder.tab_info;
             if (list == null) {
                 this.tab_info = DEFAULT_TAB_INFO;
                 return;
@@ -227,5 +226,9 @@ public final class SearchForum extends Message {
         this.intro = builder.intro;
         this.has_concerned = builder.has_concerned;
         this.tab_info = Message.immutableCopyOf(builder.tab_info);
+    }
+
+    public /* synthetic */ SearchForum(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

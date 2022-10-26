@@ -25,7 +25,13 @@ public final class Badges extends Message {
     public final String webview;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Badges> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer badge_id;
@@ -77,14 +83,11 @@ public final class Badges extends Message {
         public Badges build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Badges(this, z, null) : (Badges) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Badges(this, z, null);
+            }
+            return (Badges) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -101,10 +104,6 @@ public final class Badges extends Message {
             }
         }
         DEFAULT_BADGE_ID = 0;
-    }
-
-    public /* synthetic */ Badges(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -150,5 +149,9 @@ public final class Badges extends Message {
         this.badge_id = builder.badge_id;
         this.badge_url = builder.badge_url;
         this.webview = builder.webview;
+    }
+
+    public /* synthetic */ Badges(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

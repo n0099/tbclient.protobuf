@@ -30,11 +30,17 @@ public final class WorldCupGame extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<WorldCupGame> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String status;
-        public List<WorldCupGameTeam> team;
+        public List team;
         public String title;
         public String url;
 
@@ -84,14 +90,11 @@ public final class WorldCupGame extends Message {
         public WorldCupGame build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new WorldCupGame(this, z, null) : (WorldCupGame) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new WorldCupGame(this, z, null);
+            }
+            return (WorldCupGame) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class WorldCupGame extends Message {
             }
         }
         DEFAULT_TEAM = Collections.emptyList();
-    }
-
-    public /* synthetic */ WorldCupGame(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,7 +150,7 @@ public final class WorldCupGame extends Message {
             } else {
                 this.url = str3;
             }
-            List<WorldCupGameTeam> list = builder.team;
+            List list = builder.team;
             if (list == null) {
                 this.team = DEFAULT_TEAM;
                 return;
@@ -164,5 +163,9 @@ public final class WorldCupGame extends Message {
         this.status = builder.status;
         this.url = builder.url;
         this.team = Message.immutableCopyOf(builder.team);
+    }
+
+    public /* synthetic */ WorldCupGame(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -30,10 +30,16 @@ public final class AddPostList extends Message {
     public final Integer total_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AddPostList> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<SubPostList> add_post_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List add_post_list;
         public Long pid;
         public Integer total_count;
         public Integer total_num;
@@ -84,14 +90,11 @@ public final class AddPostList extends Message {
         public AddPostList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AddPostList(this, z, null) : (AddPostList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AddPostList(this, z, null);
+            }
+            return (AddPostList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -111,10 +114,6 @@ public final class AddPostList extends Message {
         DEFAULT_TOTAL_NUM = 0;
         DEFAULT_TOTAL_COUNT = 0;
         DEFAULT_ADD_POST_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ AddPostList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -154,7 +153,7 @@ public final class AddPostList extends Message {
             } else {
                 this.total_count = num2;
             }
-            List<SubPostList> list = builder.add_post_list;
+            List list = builder.add_post_list;
             if (list == null) {
                 this.add_post_list = DEFAULT_ADD_POST_LIST;
                 return;
@@ -167,5 +166,9 @@ public final class AddPostList extends Message {
         this.total_num = builder.total_num;
         this.total_count = builder.total_count;
         this.add_post_list = Message.immutableCopyOf(builder.add_post_list);
+    }
+
+    public /* synthetic */ AddPostList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

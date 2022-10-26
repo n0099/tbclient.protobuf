@@ -61,7 +61,13 @@ public final class AppPosInfo extends Message {
     public final Long mercator_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AppPosInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long addr_timestamp;
@@ -137,14 +143,11 @@ public final class AppPosInfo extends Message {
         public AppPosInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AppPosInfo(this, z, null) : (AppPosInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AppPosInfo(this, z, null);
+            }
+            return (AppPosInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -164,10 +167,6 @@ public final class AppPosInfo extends Message {
         DEFAULT_ADDR_TIMESTAMP = 0L;
         DEFAULT_MERCATOR_TIME = 0L;
         DEFAULT_MERCATOR_CITY = 0;
-    }
-
-    public /* synthetic */ AppPosInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -297,5 +296,9 @@ public final class AppPosInfo extends Message {
         this.mercator_province_name = builder.mercator_province_name;
         this.mercator_city_name = builder.mercator_city_name;
         this.mercator_district_name = builder.mercator_district_name;
+    }
+
+    public /* synthetic */ AppPosInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

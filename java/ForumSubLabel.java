@@ -22,7 +22,13 @@ public final class ForumSubLabel extends Message {
     public final String sub_label_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ForumSubLabel> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer id;
@@ -72,14 +78,11 @@ public final class ForumSubLabel extends Message {
         public ForumSubLabel build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ForumSubLabel(this, z, null) : (ForumSubLabel) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ForumSubLabel(this, z, null);
+            }
+            return (ForumSubLabel) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +99,6 @@ public final class ForumSubLabel extends Message {
             }
         }
         DEFAULT_ID = 0;
-    }
-
-    public /* synthetic */ ForumSubLabel(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class ForumSubLabel extends Message {
         }
         this.id = builder.id;
         this.sub_label_name = builder.sub_label_name;
+    }
+
+    public /* synthetic */ ForumSubLabel(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -27,11 +27,17 @@ public final class Info extends Message {
     public final Integer user_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Info> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer post_num;
-        public List<RecmForumInfo> recm_forum_list;
+        public List recm_forum_list;
         public Integer user_num;
 
         public Builder() {
@@ -79,14 +85,11 @@ public final class Info extends Message {
         public Info build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Info(this, z, null) : (Info) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Info(this, z, null);
+            }
+            return (Info) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -105,10 +108,6 @@ public final class Info extends Message {
         DEFAULT_USER_NUM = 0;
         DEFAULT_POST_NUM = 0;
         DEFAULT_RECM_FORUM_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ Info(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -142,7 +141,7 @@ public final class Info extends Message {
             } else {
                 this.post_num = num2;
             }
-            List<RecmForumInfo> list = builder.recm_forum_list;
+            List list = builder.recm_forum_list;
             if (list == null) {
                 this.recm_forum_list = DEFAULT_RECM_FORUM_LIST;
                 return;
@@ -154,5 +153,9 @@ public final class Info extends Message {
         this.user_num = builder.user_num;
         this.post_num = builder.post_num;
         this.recm_forum_list = Message.immutableCopyOf(builder.recm_forum_list);
+    }
+
+    public /* synthetic */ Info(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

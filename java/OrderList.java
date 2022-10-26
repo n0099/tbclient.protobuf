@@ -61,7 +61,13 @@ public final class OrderList extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<OrderList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_desc;
@@ -137,14 +143,11 @@ public final class OrderList extends Message {
         public OrderList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new OrderList(this, z, null) : (OrderList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new OrderList(this, z, null);
+            }
+            return (OrderList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -170,10 +173,6 @@ public final class OrderList extends Message {
         Double valueOf = Double.valueOf(0.0d);
         DEFAULT_ORDER_YY_AMOUNT = valueOf;
         DEFAULT_ORDER_AMOUNT = valueOf;
-    }
-
-    public /* synthetic */ OrderList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -303,5 +302,9 @@ public final class OrderList extends Message {
         this.price_type = builder.price_type;
         this.order_yy_amount = builder.order_yy_amount;
         this.order_amount = builder.order_amount;
+    }
+
+    public /* synthetic */ OrderList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

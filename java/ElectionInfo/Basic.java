@@ -45,7 +45,13 @@ public final class Basic extends Message {
     public final Integer total_vote_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Basic> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String begin_apply_time;
@@ -111,14 +117,11 @@ public final class Basic extends Message {
         public Basic build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Basic(this, z, null) : (Basic) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Basic(this, z, null);
+            }
+            return (Basic) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -138,10 +141,6 @@ public final class Basic extends Message {
         DEFAULT_CANDIDATE_NUM = 0;
         DEFAULT_TOTAL_VOTE_NUM = 0;
         DEFAULT_IS_VOTED = Boolean.FALSE;
-    }
-
-    public /* synthetic */ Basic(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -231,5 +230,9 @@ public final class Basic extends Message {
         this.is_voted = builder.is_voted;
         this.notice = builder.notice;
         this.begin_audit_time = builder.begin_audit_time;
+    }
+
+    public /* synthetic */ Basic(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

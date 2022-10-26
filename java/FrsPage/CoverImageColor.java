@@ -22,7 +22,13 @@ public final class CoverImageColor extends Message {
     public final String value;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CoverImageColor> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer model;
@@ -72,14 +78,11 @@ public final class CoverImageColor extends Message {
         public CoverImageColor build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CoverImageColor(this, z, null) : (CoverImageColor) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CoverImageColor(this, z, null);
+            }
+            return (CoverImageColor) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +99,6 @@ public final class CoverImageColor extends Message {
             }
         }
         DEFAULT_MODEL = 0;
-    }
-
-    public /* synthetic */ CoverImageColor(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class CoverImageColor extends Message {
         }
         this.value = builder.value;
         this.model = builder.model;
+    }
+
+    public /* synthetic */ CoverImageColor(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

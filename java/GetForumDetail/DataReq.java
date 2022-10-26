@@ -13,8 +13,9 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes9.dex */
 public final class DataReq extends Message {
-    public static /* synthetic */ Interceptable $ic;
+    public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_FORUM_ID;
+    public static final String DEFAULT_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2)
 
@@ -22,15 +23,24 @@ public final class DataReq extends Message {
     public final CommonReq f1183common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long forum_id;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataReq> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
         public CommonReq f1184common;
         public Long forum_id;
+        public String url;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -69,6 +79,7 @@ public final class DataReq extends Message {
             }
             this.forum_id = dataReq.forum_id;
             this.f1184common = dataReq.f1183common;
+            this.url = dataReq.url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -76,14 +87,11 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataReq(this, z, null) : (DataReq) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataReq(this, z, null);
+            }
+            return (DataReq) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -100,10 +108,6 @@ public final class DataReq extends Message {
             }
         }
         DEFAULT_FORUM_ID = 0L;
-    }
-
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -132,9 +136,21 @@ public final class DataReq extends Message {
                 this.forum_id = l;
             }
             this.f1183common = builder.f1184common;
-            return;
+            String str = builder.url;
+            if (str == null) {
+                this.url = "";
+                return;
+            } else {
+                this.url = str;
+                return;
+            }
         }
         this.forum_id = builder.forum_id;
         this.f1183common = builder.f1184common;
+        this.url = builder.url;
+    }
+
+    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -16,7 +16,13 @@ public final class CloseAdReqIdl extends Message {
     public final DataReq data;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CloseAdReqIdl> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public DataReq data;
@@ -64,18 +70,11 @@ public final class CloseAdReqIdl extends Message {
         public CloseAdReqIdl build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CloseAdReqIdl(this, z, null) : (CloseAdReqIdl) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CloseAdReqIdl(this, z, null);
+            }
+            return (CloseAdReqIdl) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ CloseAdReqIdl(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -101,5 +100,9 @@ public final class CloseAdReqIdl extends Message {
         } else {
             this.data = builder.data;
         }
+    }
+
+    public /* synthetic */ CloseAdReqIdl(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

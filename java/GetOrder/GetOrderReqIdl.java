@@ -17,13 +17,13 @@ public final class GetOrderReqIdl extends Message {
 
     /* renamed from: tbclient.GetOrder.GetOrderReqIdl$1  reason: invalid class name */
     /* loaded from: classes9.dex */
-    public static /* synthetic */ class AnonymousClass1 {
+    public /* synthetic */ class AnonymousClass1 {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GetOrderReqIdl> {
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public DataReq data;
@@ -71,12 +71,11 @@ public final class GetOrderReqIdl extends Message {
         public GetOrderReqIdl build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GetOrderReqIdl(this, z, null) : (GetOrderReqIdl) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GetOrderReqIdl(this, z, null);
+            }
+            return (GetOrderReqIdl) invokeZ.objValue;
         }
-    }
-
-    public /* synthetic */ GetOrderReqIdl(Builder builder, boolean z, AnonymousClass1 anonymousClass1) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -102,5 +101,9 @@ public final class GetOrderReqIdl extends Message {
         } else {
             this.data = builder.data;
         }
+    }
+
+    public /* synthetic */ GetOrderReqIdl(Builder builder, boolean z, AnonymousClass1 anonymousClass1) {
+        this(builder, z);
     }
 }

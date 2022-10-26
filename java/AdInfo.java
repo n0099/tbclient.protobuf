@@ -42,7 +42,13 @@ public final class AdInfo extends Message {
     public final Integer show_rule;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AdInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String ad_desc;
@@ -50,7 +56,7 @@ public final class AdInfo extends Message {
         public String ad_pic;
         public Integer ad_type;
         public String ad_url;
-        public List<Media> media;
+        public List media;
         public String portrait;
         public Integer show_rule;
 
@@ -104,14 +110,11 @@ public final class AdInfo extends Message {
         public AdInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AdInfo(this, z, null) : (AdInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AdInfo(this, z, null);
+            }
+            return (AdInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -130,10 +133,6 @@ public final class AdInfo extends Message {
         DEFAULT_SHOW_RULE = 0;
         DEFAULT_AD_TYPE = 0;
         DEFAULT_MEDIA = Collections.emptyList();
-    }
-
-    public /* synthetic */ AdInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -197,7 +196,7 @@ public final class AdInfo extends Message {
             } else {
                 this.portrait = str5;
             }
-            List<Media> list = builder.media;
+            List list = builder.media;
             if (list == null) {
                 this.media = DEFAULT_MEDIA;
                 return;
@@ -214,5 +213,9 @@ public final class AdInfo extends Message {
         this.ad_name = builder.ad_name;
         this.portrait = builder.portrait;
         this.media = Message.immutableCopyOf(builder.media);
+    }
+
+    public /* synthetic */ AdInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

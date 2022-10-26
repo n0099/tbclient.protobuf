@@ -34,7 +34,13 @@ public final class UserAgreeInfo extends Message {
     public final Long video_agree_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UserAgreeInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long ala_agree_num;
@@ -92,14 +98,11 @@ public final class UserAgreeInfo extends Message {
         public UserAgreeInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UserAgreeInfo(this, z, null) : (UserAgreeInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UserAgreeInfo(this, z, null);
+            }
+            return (UserAgreeInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -121,10 +124,6 @@ public final class UserAgreeInfo extends Message {
         DEFAULT_VIDEO_AGREE_NUM = 0L;
         DEFAULT_ALA_AGREE_NUM = 0L;
         DEFAULT_HAS_USER_AGREE = 0;
-    }
-
-    public /* synthetic */ UserAgreeInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -191,5 +190,9 @@ public final class UserAgreeInfo extends Message {
         this.video_agree_num = builder.video_agree_num;
         this.ala_agree_num = builder.ala_agree_num;
         this.has_user_agree = builder.has_user_agree;
+    }
+
+    public /* synthetic */ UserAgreeInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -45,7 +45,13 @@ public final class TogetherHi extends Message {
     public final Integer start_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TogetherHi> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long album_id;
@@ -54,8 +60,8 @@ public final class TogetherHi extends Message {
         public String location;
         public Integer num_join;
         public Integer num_signup;
-        public List<String> pic_urls;
-        public List<String> potraits;
+        public List pic_urls;
+        public List potraits;
         public Integer start_time;
 
         public Builder() {
@@ -109,14 +115,11 @@ public final class TogetherHi extends Message {
         public TogetherHi build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TogetherHi(this, z, null) : (TogetherHi) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TogetherHi(this, z, null);
+            }
+            return (TogetherHi) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -139,10 +142,6 @@ public final class TogetherHi extends Message {
         DEFAULT_POTRAITS = Collections.emptyList();
         DEFAULT_NUM_JOIN = 0;
         DEFAULT_PIC_URLS = Collections.emptyList();
-    }
-
-    public /* synthetic */ TogetherHi(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -200,7 +199,7 @@ public final class TogetherHi extends Message {
             } else {
                 this.num_signup = num3;
             }
-            List<String> list = builder.potraits;
+            List list = builder.potraits;
             if (list == null) {
                 this.potraits = DEFAULT_POTRAITS;
             } else {
@@ -212,7 +211,7 @@ public final class TogetherHi extends Message {
             } else {
                 this.num_join = num4;
             }
-            List<String> list2 = builder.pic_urls;
+            List list2 = builder.pic_urls;
             if (list2 == null) {
                 this.pic_urls = DEFAULT_PIC_URLS;
                 return;
@@ -230,5 +229,9 @@ public final class TogetherHi extends Message {
         this.potraits = Message.immutableCopyOf(builder.potraits);
         this.num_join = builder.num_join;
         this.pic_urls = Message.immutableCopyOf(builder.pic_urls);
+    }
+
+    public /* synthetic */ TogetherHi(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

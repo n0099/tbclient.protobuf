@@ -30,13 +30,19 @@ public final class RecomThreadList extends Message {
     public final List<User> user_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecomThreadList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long current_pv;
         public String recommend_date;
-        public List<ThreadInfo> thread_list;
-        public List<User> user_list;
+        public List thread_list;
+        public List user_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -84,14 +90,11 @@ public final class RecomThreadList extends Message {
         public RecomThreadList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecomThreadList(this, z, null) : (RecomThreadList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecomThreadList(this, z, null);
+            }
+            return (RecomThreadList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -110,10 +113,6 @@ public final class RecomThreadList extends Message {
         DEFAULT_USER_LIST = Collections.emptyList();
         DEFAULT_THREAD_LIST = Collections.emptyList();
         DEFAULT_CURRENT_PV = 0L;
-    }
-
-    public /* synthetic */ RecomThreadList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -135,13 +134,13 @@ public final class RecomThreadList extends Message {
             }
         }
         if (z) {
-            List<User> list = builder.user_list;
+            List list = builder.user_list;
             if (list == null) {
                 this.user_list = DEFAULT_USER_LIST;
             } else {
                 this.user_list = Message.immutableCopyOf(list);
             }
-            List<ThreadInfo> list2 = builder.thread_list;
+            List list2 = builder.thread_list;
             if (list2 == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {
@@ -166,5 +165,9 @@ public final class RecomThreadList extends Message {
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
         this.recommend_date = builder.recommend_date;
         this.current_pv = builder.current_pv;
+    }
+
+    public /* synthetic */ RecomThreadList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

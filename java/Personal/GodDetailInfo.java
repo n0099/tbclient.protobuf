@@ -28,7 +28,13 @@ public final class GodDetailInfo extends Message {
     public final Long user_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GodDetailInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String detail_intro;
@@ -82,14 +88,11 @@ public final class GodDetailInfo extends Message {
         public GodDetailInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GodDetailInfo(this, z, null) : (GodDetailInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GodDetailInfo(this, z, null);
+            }
+            return (GodDetailInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +110,6 @@ public final class GodDetailInfo extends Message {
         }
         DEFAULT_GOD_ID = 0L;
         DEFAULT_USER_ID = 0L;
-    }
-
-    public /* synthetic */ GodDetailInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,5 +162,9 @@ public final class GodDetailInfo extends Message {
         this.user_id = builder.user_id;
         this.intro = builder.intro;
         this.detail_intro = builder.detail_intro;
+    }
+
+    public /* synthetic */ GodDetailInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

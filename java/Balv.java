@@ -25,7 +25,13 @@ public final class Balv extends Message {
     public final Integer is_block;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Balv> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer days_tofree;
@@ -77,14 +83,11 @@ public final class Balv extends Message {
         public Balv build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Balv(this, z, null) : (Balv) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Balv(this, z, null);
+            }
+            return (Balv) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -103,10 +106,6 @@ public final class Balv extends Message {
         DEFAULT_IS_BLACK = 0;
         DEFAULT_IS_BLOCK = 0;
         DEFAULT_DAYS_TOFREE = 0;
-    }
-
-    public /* synthetic */ Balv(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -152,5 +151,9 @@ public final class Balv extends Message {
         this.is_black = builder.is_black;
         this.is_block = builder.is_block;
         this.days_tofree = builder.days_tofree;
+    }
+
+    public /* synthetic */ Balv(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

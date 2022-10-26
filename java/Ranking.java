@@ -24,7 +24,13 @@ public final class Ranking extends Message {
     public final RankingParam ranking_param;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Ranking> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String name;
@@ -76,14 +82,11 @@ public final class Ranking extends Message {
         public Ranking build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Ranking(this, z, null) : (Ranking) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Ranking(this, z, null);
+            }
+            return (Ranking) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -100,10 +103,6 @@ public final class Ranking extends Message {
             }
         }
         DEFAULT_RANK_NUM = 0;
-    }
-
-    public /* synthetic */ Ranking(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -143,5 +142,9 @@ public final class Ranking extends Message {
         this.name = builder.name;
         this.rank_num = builder.rank_num;
         this.ranking_param = builder.ranking_param;
+    }
+
+    public /* synthetic */ Ranking(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -22,7 +22,13 @@ public final class ForumLevelInfo extends Message {
     public final String name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ForumLevelInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer id;
@@ -72,14 +78,11 @@ public final class ForumLevelInfo extends Message {
         public ForumLevelInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ForumLevelInfo(this, z, null) : (ForumLevelInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ForumLevelInfo(this, z, null);
+            }
+            return (ForumLevelInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +99,6 @@ public final class ForumLevelInfo extends Message {
             }
         }
         DEFAULT_ID = 0;
-    }
-
-    public /* synthetic */ ForumLevelInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class ForumLevelInfo extends Message {
         }
         this.id = builder.id;
         this.name = builder.name;
+    }
+
+    public /* synthetic */ ForumLevelInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

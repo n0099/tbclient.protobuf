@@ -16,6 +16,7 @@ public final class Tab extends Message {
     public static final String DEFAULT_SEQ = "";
     public static final Long DEFAULT_TAB_ID;
     public static final String DEFAULT_TAB_NAME = "";
+    public static final Integer DEFAULT_TAB_TYPE;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String seq;
@@ -23,14 +24,23 @@ public final class Tab extends Message {
     public final Long tab_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tab_name;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+    public final Integer tab_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Tab> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String seq;
         public Long tab_id;
         public String tab_name;
+        public Integer tab_type;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -70,6 +80,7 @@ public final class Tab extends Message {
             this.tab_id = tab.tab_id;
             this.tab_name = tab.tab_name;
             this.seq = tab.seq;
+            this.tab_type = tab.tab_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -77,14 +88,11 @@ public final class Tab extends Message {
         public Tab build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Tab(this, z, null) : (Tab) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Tab(this, z, null);
+            }
+            return (Tab) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -101,10 +109,7 @@ public final class Tab extends Message {
             }
         }
         DEFAULT_TAB_ID = 0L;
-    }
-
-    public /* synthetic */ Tab(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        DEFAULT_TAB_TYPE = 0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -141,14 +146,25 @@ public final class Tab extends Message {
             String str2 = builder.seq;
             if (str2 == null) {
                 this.seq = "";
-                return;
             } else {
                 this.seq = str2;
+            }
+            Integer num = builder.tab_type;
+            if (num == null) {
+                this.tab_type = DEFAULT_TAB_TYPE;
+                return;
+            } else {
+                this.tab_type = num;
                 return;
             }
         }
         this.tab_id = builder.tab_id;
         this.tab_name = builder.tab_name;
         this.seq = builder.seq;
+        this.tab_type = builder.tab_type;
+    }
+
+    public /* synthetic */ Tab(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

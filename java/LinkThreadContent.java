@@ -34,7 +34,13 @@ public final class LinkThreadContent extends Message {
     public final Integer link_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LinkThreadContent> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String link_abstract;
@@ -92,14 +98,11 @@ public final class LinkThreadContent extends Message {
         public LinkThreadContent build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LinkThreadContent(this, z, null) : (LinkThreadContent) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LinkThreadContent(this, z, null);
+            }
+            return (LinkThreadContent) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -116,10 +119,6 @@ public final class LinkThreadContent extends Message {
             }
         }
         DEFAULT_LINK_TYPE = 0;
-    }
-
-    public /* synthetic */ LinkThreadContent(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -186,5 +185,9 @@ public final class LinkThreadContent extends Message {
         this.link_head_pic = builder.link_head_pic;
         this.link_head_small_pic = builder.link_head_small_pic;
         this.link_head_big_pic = builder.link_head_big_pic;
+    }
+
+    public /* synthetic */ LinkThreadContent(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

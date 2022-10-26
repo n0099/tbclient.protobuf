@@ -25,7 +25,13 @@ public final class PriManagerApplyInfo extends Message {
     public final Integer assist_left_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PriManagerApplyInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer assist_apply_status;
@@ -77,14 +83,11 @@ public final class PriManagerApplyInfo extends Message {
         public PriManagerApplyInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PriManagerApplyInfo(this, z, null) : (PriManagerApplyInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PriManagerApplyInfo(this, z, null);
+            }
+            return (PriManagerApplyInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -102,10 +105,6 @@ public final class PriManagerApplyInfo extends Message {
         }
         DEFAULT_ASSIST_LEFT_NUM = 0;
         DEFAULT_ASSIST_APPLY_STATUS = 0;
-    }
-
-    public /* synthetic */ PriManagerApplyInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,5 +150,9 @@ public final class PriManagerApplyInfo extends Message {
         this.assist_left_num = builder.assist_left_num;
         this.assist_apply_url = builder.assist_apply_url;
         this.assist_apply_status = builder.assist_apply_status;
+    }
+
+    public /* synthetic */ PriManagerApplyInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

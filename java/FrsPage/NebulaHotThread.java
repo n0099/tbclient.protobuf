@@ -43,11 +43,17 @@ public final class NebulaHotThread extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<NebulaHotThread> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer comment_number;
-        public List<PbContent> content;
+        public List content;
         public String group_name;
         public Integer rank;
         public String thread_id;
@@ -105,14 +111,11 @@ public final class NebulaHotThread extends Message {
         public NebulaHotThread build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new NebulaHotThread(this, z, null) : (NebulaHotThread) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new NebulaHotThread(this, z, null);
+            }
+            return (NebulaHotThread) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -132,10 +135,6 @@ public final class NebulaHotThread extends Message {
         DEFAULT_RANK = 0;
         DEFAULT_THREAD_THUMBNAIL_TYPE = 0;
         DEFAULT_CONTENT = Collections.emptyList();
-    }
-
-    public /* synthetic */ NebulaHotThread(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -199,7 +198,7 @@ public final class NebulaHotThread extends Message {
             } else {
                 this.thread_thumbnail = str4;
             }
-            List<PbContent> list = builder.content;
+            List list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
                 return;
@@ -216,5 +215,9 @@ public final class NebulaHotThread extends Message {
         this.thread_thumbnail_type = builder.thread_thumbnail_type;
         this.thread_thumbnail = builder.thread_thumbnail;
         this.content = Message.immutableCopyOf(builder.content);
+    }
+
+    public /* synthetic */ NebulaHotThread(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -52,7 +52,13 @@ public final class ThemeBgProp extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ThemeBgProp> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_url;
@@ -122,14 +128,11 @@ public final class ThemeBgProp extends Message {
         public ThemeBgProp build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThemeBgProp(this, z, null) : (ThemeBgProp) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThemeBgProp(this, z, null);
+            }
+            return (ThemeBgProp) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -149,10 +152,6 @@ public final class ThemeBgProp extends Message {
         DEFAULT_IN_USE = 0;
         DEFAULT_FREE_USER_LEVEL = 0;
         DEFAULT_IS_FINISHED = 0;
-    }
-
-    public /* synthetic */ ThemeBgProp(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -261,5 +260,9 @@ public final class ThemeBgProp extends Message {
         this.is_finished = builder.is_finished;
         this.dynamic_url = builder.dynamic_url;
         this.dynamic_url_small = builder.dynamic_url_small;
+    }
+
+    public /* synthetic */ ThemeBgProp(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -27,12 +27,18 @@ public final class BannerUserStory extends Message {
     public final List<UserStory> user_story;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BannerUserStory> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer _switch;
-        public List<AlaLiveInfo> ala_live_list;
-        public List<UserStory> user_story;
+        public List ala_live_list;
+        public List user_story;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -79,14 +85,11 @@ public final class BannerUserStory extends Message {
         public BannerUserStory build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BannerUserStory(this, z, null) : (BannerUserStory) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BannerUserStory(this, z, null);
+            }
+            return (BannerUserStory) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -105,10 +108,6 @@ public final class BannerUserStory extends Message {
         DEFAULT_USER_STORY = Collections.emptyList();
         DEFAULT_SWITCH = 0;
         DEFAULT_ALA_LIVE_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ BannerUserStory(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class BannerUserStory extends Message {
             }
         }
         if (z) {
-            List<UserStory> list = builder.user_story;
+            List list = builder.user_story;
             if (list == null) {
                 this.user_story = DEFAULT_USER_STORY;
             } else {
@@ -142,7 +141,7 @@ public final class BannerUserStory extends Message {
             } else {
                 this._switch = num;
             }
-            List<AlaLiveInfo> list2 = builder.ala_live_list;
+            List list2 = builder.ala_live_list;
             if (list2 == null) {
                 this.ala_live_list = DEFAULT_ALA_LIVE_LIST;
                 return;
@@ -154,5 +153,9 @@ public final class BannerUserStory extends Message {
         this.user_story = Message.immutableCopyOf(builder.user_story);
         this._switch = builder._switch;
         this.ala_live_list = Message.immutableCopyOf(builder.ala_live_list);
+    }
+
+    public /* synthetic */ BannerUserStory(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

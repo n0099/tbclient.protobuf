@@ -27,11 +27,17 @@ public final class ActPost extends Message {
     public final String list_head;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ActPost> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ActHot> act_hot;
-        public List<LinkInfo> link_info;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List act_hot;
+        public List link_info;
         public String list_head;
 
         public Builder() {
@@ -79,14 +85,11 @@ public final class ActPost extends Message {
         public ActPost build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ActPost(this, z, null) : (ActPost) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ActPost(this, z, null);
+            }
+            return (ActPost) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +107,6 @@ public final class ActPost extends Message {
         }
         DEFAULT_ACT_HOT = Collections.emptyList();
         DEFAULT_LINK_INFO = Collections.emptyList();
-    }
-
-    public /* synthetic */ ActPost(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,7 +128,7 @@ public final class ActPost extends Message {
             }
         }
         if (z) {
-            List<ActHot> list = builder.act_hot;
+            List list = builder.act_hot;
             if (list == null) {
                 this.act_hot = DEFAULT_ACT_HOT;
             } else {
@@ -141,7 +140,7 @@ public final class ActPost extends Message {
             } else {
                 this.list_head = str;
             }
-            List<LinkInfo> list2 = builder.link_info;
+            List list2 = builder.link_info;
             if (list2 == null) {
                 this.link_info = DEFAULT_LINK_INFO;
                 return;
@@ -153,5 +152,9 @@ public final class ActPost extends Message {
         this.act_hot = Message.immutableCopyOf(builder.act_hot);
         this.list_head = builder.list_head;
         this.link_info = Message.immutableCopyOf(builder.link_info);
+    }
+
+    public /* synthetic */ ActPost(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

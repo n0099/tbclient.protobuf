@@ -128,7 +128,13 @@ public final class DataReq extends Message {
     public final Integer tag_code;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataReq> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String ad_context_list;
@@ -142,7 +148,7 @@ public final class DataReq extends Message {
         public String da_idfa;
         public String first_dir;
         public Long from_tid;
-        public List<String> interest_tag;
+        public List interest_tag;
         public String invoke_source;
         public Integer issdk;
         public String lastids;
@@ -248,14 +254,11 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataReq(this, z, null) : (DataReq) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataReq(this, z, null);
+            }
+            return (DataReq) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -292,10 +295,6 @@ public final class DataReq extends Message {
         DEFAULT_NEW_INSTALL = 0;
         DEFAULT_REQUEST_TIMES = 0;
         DEFAULT_PUSH_TID = 0L;
-    }
-
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -420,7 +419,7 @@ public final class DataReq extends Message {
             } else {
                 this.need_age_module = num11;
             }
-            List<String> list = builder.interest_tag;
+            List list = builder.interest_tag;
             if (list == null) {
                 this.interest_tag = DEFAULT_INTEREST_TAG;
             } else {
@@ -557,5 +556,9 @@ public final class DataReq extends Message {
         this.ad_ext_params = builder.ad_ext_params;
         this.app_transmit_data = builder.app_transmit_data;
         this.push_tid = builder.push_tid;
+    }
+
+    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

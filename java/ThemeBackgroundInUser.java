@@ -1,4 +1,4 @@
-package tbclient.GetRemindLiveRooms;
+package tbclient;
 
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
@@ -10,25 +10,37 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import java.util.Collections;
-import java.util.List;
 /* loaded from: classes9.dex */
-public final class DataRes extends Message {
+public final class ThemeBackgroundInUser extends Message {
     public static /* synthetic */ Interceptable $ic = null;
-    public static final String DEFAULT_IS_END = "";
-    public static final List<YyLiveInfoSimple> DEFAULT_LIVE_LIST;
+    public static final String DEFAULT_DYNAMIC = "";
+    public static final String DEFAULT_EXCLUSIVE_NO = "";
+    public static final String DEFAULT_JUMP_URL = "";
+    public static final Long DEFAULT_PROPS_ID;
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(tag = 1, type = Message.Datatype.STRING)
-    public final String is_end;
-    @ProtoField(label = Message.Label.REPEATED, tag = 2)
-    public final List<YyLiveInfoSimple> live_list;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String dynamic;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String exclusive_no;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String jump_url;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long props_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public String is_end;
-        public List<YyLiveInfoSimple> live_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public String dynamic;
+        public String exclusive_no;
+        public String jump_url;
+        public Long props_id;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -45,13 +57,13 @@ public final class DataRes extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(DataRes dataRes) {
-            super(dataRes);
+        public Builder(ThemeBackgroundInUser themeBackgroundInUser) {
+            super(themeBackgroundInUser);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {dataRes};
+                Object[] objArr = {themeBackgroundInUser};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -62,50 +74,45 @@ public final class DataRes extends Message {
                     return;
                 }
             }
-            if (dataRes == null) {
+            if (themeBackgroundInUser == null) {
                 return;
             }
-            this.is_end = dataRes.is_end;
-            this.live_list = Message.copyOf(dataRes.live_list);
+            this.props_id = themeBackgroundInUser.props_id;
+            this.exclusive_no = themeBackgroundInUser.exclusive_no;
+            this.jump_url = themeBackgroundInUser.jump_url;
+            this.dynamic = themeBackgroundInUser.dynamic;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public DataRes build(boolean z) {
+        public ThemeBackgroundInUser build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThemeBackgroundInUser(this, z, null);
+            }
+            return (ThemeBackgroundInUser) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
         InterceptResult invokeClinit;
         ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-2060728327, "Ltbclient/GetRemindLiveRooms/DataRes;")) != null) {
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(2102056254, "Ltbclient/ThemeBackgroundInUser;")) != null) {
             Interceptable interceptable = invokeClinit.interceptor;
             if (interceptable != null) {
                 $ic = interceptable;
             }
             if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-2060728327, "Ltbclient/GetRemindLiveRooms/DataRes;");
+                classClinitInterceptable.invokePostClinit(2102056254, "Ltbclient/ThemeBackgroundInUser;");
                 return;
             }
         }
-        DEFAULT_LIVE_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        DEFAULT_PROPS_ID = 0L;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DataRes(Builder builder, boolean z) {
+    public ThemeBackgroundInUser(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -123,22 +130,40 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            String str = builder.is_end;
-            if (str == null) {
-                this.is_end = "";
+            Long l = builder.props_id;
+            if (l == null) {
+                this.props_id = DEFAULT_PROPS_ID;
             } else {
-                this.is_end = str;
+                this.props_id = l;
             }
-            List<YyLiveInfoSimple> list = builder.live_list;
-            if (list == null) {
-                this.live_list = DEFAULT_LIVE_LIST;
+            String str = builder.exclusive_no;
+            if (str == null) {
+                this.exclusive_no = "";
+            } else {
+                this.exclusive_no = str;
+            }
+            String str2 = builder.jump_url;
+            if (str2 == null) {
+                this.jump_url = "";
+            } else {
+                this.jump_url = str2;
+            }
+            String str3 = builder.dynamic;
+            if (str3 == null) {
+                this.dynamic = "";
                 return;
             } else {
-                this.live_list = Message.immutableCopyOf(list);
+                this.dynamic = str3;
                 return;
             }
         }
-        this.is_end = builder.is_end;
-        this.live_list = Message.immutableCopyOf(builder.live_list);
+        this.props_id = builder.props_id;
+        this.exclusive_no = builder.exclusive_no;
+        this.jump_url = builder.jump_url;
+        this.dynamic = builder.dynamic;
+    }
+
+    public /* synthetic */ ThemeBackgroundInUser(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -26,7 +26,13 @@ public final class WorldCupPk extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<WorldCupPk> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String prize_url;
@@ -80,18 +86,11 @@ public final class WorldCupPk extends Message {
         public WorldCupPk build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new WorldCupPk(this, z, null) : (WorldCupPk) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new WorldCupPk(this, z, null);
+            }
+            return (WorldCupPk) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ WorldCupPk(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -144,5 +143,9 @@ public final class WorldCupPk extends Message {
         this.sum_bonus = builder.sum_bonus;
         this.prize_url = builder.prize_url;
         this.url = builder.url;
+    }
+
+    public /* synthetic */ WorldCupPk(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

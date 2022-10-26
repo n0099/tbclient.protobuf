@@ -28,7 +28,13 @@ public final class BusinessPromotInfo extends Message {
     public final SendCardInfo send_card_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BusinessPromotInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_headlinepost;
@@ -82,14 +88,11 @@ public final class BusinessPromotInfo extends Message {
         public BusinessPromotInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BusinessPromotInfo(this, z, null) : (BusinessPromotInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BusinessPromotInfo(this, z, null);
+            }
+            return (BusinessPromotInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class BusinessPromotInfo extends Message {
         DEFAULT_IS_PROMOT = 0L;
         DEFAULT_IS_HEADLINEPOST = 0;
         DEFAULT_IS_S_CARD = 0;
-    }
-
-    public /* synthetic */ BusinessPromotInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -158,5 +157,9 @@ public final class BusinessPromotInfo extends Message {
         this.is_headlinepost = builder.is_headlinepost;
         this.is_s_card = builder.is_s_card;
         this.send_card_info = builder.send_card_info;
+    }
+
+    public /* synthetic */ BusinessPromotInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -25,7 +25,13 @@ public final class GeneralResource extends Message {
     public final String res_link;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GeneralResource> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer res_floor;
@@ -77,14 +83,11 @@ public final class GeneralResource extends Message {
         public GeneralResource build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GeneralResource(this, z, null) : (GeneralResource) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GeneralResource(this, z, null);
+            }
+            return (GeneralResource) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -101,10 +104,6 @@ public final class GeneralResource extends Message {
             }
         }
         DEFAULT_RES_FLOOR = 0;
-    }
-
-    public /* synthetic */ GeneralResource(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -150,5 +149,9 @@ public final class GeneralResource extends Message {
         this.res_image = builder.res_image;
         this.res_link = builder.res_link;
         this.res_floor = builder.res_floor;
+    }
+
+    public /* synthetic */ GeneralResource(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

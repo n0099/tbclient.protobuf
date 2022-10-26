@@ -22,7 +22,13 @@ public final class UserManChannelInfo extends Message {
     public final Integer man_channel;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UserManChannelInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer follow_channel;
@@ -72,14 +78,11 @@ public final class UserManChannelInfo extends Message {
         public UserManChannelInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UserManChannelInfo(this, z, null) : (UserManChannelInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UserManChannelInfo(this, z, null);
+            }
+            return (UserManChannelInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -97,10 +100,6 @@ public final class UserManChannelInfo extends Message {
         }
         DEFAULT_MAN_CHANNEL = 0;
         DEFAULT_FOLLOW_CHANNEL = 0;
-    }
-
-    public /* synthetic */ UserManChannelInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -139,5 +138,9 @@ public final class UserManChannelInfo extends Message {
         }
         this.man_channel = builder.man_channel;
         this.follow_channel = builder.follow_channel;
+    }
+
+    public /* synthetic */ UserManChannelInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

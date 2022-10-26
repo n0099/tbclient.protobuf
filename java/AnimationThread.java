@@ -20,7 +20,13 @@ public final class AnimationThread extends Message {
     public final String video_pic;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AnimationThread> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String jump_url;
@@ -70,18 +76,11 @@ public final class AnimationThread extends Message {
         public AnimationThread build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AnimationThread(this, z, null) : (AnimationThread) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AnimationThread(this, z, null);
+            }
+            return (AnimationThread) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ AnimationThread(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -120,5 +119,9 @@ public final class AnimationThread extends Message {
         }
         this.video_pic = builder.video_pic;
         this.jump_url = builder.jump_url;
+    }
+
+    public /* synthetic */ AnimationThread(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

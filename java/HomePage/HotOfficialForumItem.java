@@ -42,7 +42,13 @@ public final class HotOfficialForumItem extends Message {
     public final HotOfficialThread recommend_thread;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<HotOfficialForumItem> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String forum_avator;
@@ -106,14 +112,11 @@ public final class HotOfficialForumItem extends Message {
         public HotOfficialForumItem build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HotOfficialForumItem(this, z, null) : (HotOfficialForumItem) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new HotOfficialForumItem(this, z, null);
+            }
+            return (HotOfficialForumItem) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -135,10 +138,6 @@ public final class HotOfficialForumItem extends Message {
         DEFAULT_IS_LIKED = 0;
         DEFAULT_IS_OFFICIAL = 0;
         DEFAULT_IS_SHOW_VICON = 0;
-    }
-
-    public /* synthetic */ HotOfficialForumItem(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -220,5 +219,9 @@ public final class HotOfficialForumItem extends Message {
         this.is_official = builder.is_official;
         this.is_show_vicon = builder.is_show_vicon;
         this.recommend_thread = builder.recommend_thread;
+    }
+
+    public /* synthetic */ HotOfficialForumItem(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -47,10 +47,16 @@ public final class HotPost extends Message {
     public final String user_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<HotPost> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<PbContent> content;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List content;
         public Integer create_time;
         public Integer floor;
         public String portrait;
@@ -113,14 +119,11 @@ public final class HotPost extends Message {
         public HotPost build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HotPost(this, z, null) : (HotPost) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new HotPost(this, z, null);
+            }
+            return (HotPost) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -143,10 +146,6 @@ public final class HotPost extends Message {
         DEFAULT_CONTENT = Collections.emptyList();
         DEFAULT_CREATE_TIME = 0;
         DEFAULT_FLOOR = 0;
-    }
-
-    public /* synthetic */ HotPost(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -199,7 +198,7 @@ public final class HotPost extends Message {
             } else {
                 this.post_num = num;
             }
-            List<PbContent> list = builder.content;
+            List list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {
@@ -236,5 +235,9 @@ public final class HotPost extends Message {
         this.create_time = builder.create_time;
         this.floor = builder.floor;
         this.portrait = builder.portrait;
+    }
+
+    public /* synthetic */ HotPost(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

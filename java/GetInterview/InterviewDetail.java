@@ -23,7 +23,13 @@ public final class InterviewDetail extends Message {
     public final InterviewInfo question;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<InterviewDetail> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public InterviewInfo answer;
@@ -75,14 +81,11 @@ public final class InterviewDetail extends Message {
         public InterviewDetail build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new InterviewDetail(this, z, null) : (InterviewDetail) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new InterviewDetail(this, z, null);
+            }
+            return (InterviewDetail) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class InterviewDetail extends Message {
             }
         }
         DEFAULT_ORDER_ID = 0L;
-    }
-
-    public /* synthetic */ InterviewDetail(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class InterviewDetail extends Message {
         this.question = builder.question;
         this.answer = builder.answer;
         this.order_id = builder.order_id;
+    }
+
+    public /* synthetic */ InterviewDetail(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

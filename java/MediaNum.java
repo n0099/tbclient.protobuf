@@ -19,7 +19,13 @@ public final class MediaNum extends Message {
     public final Integer pic;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<MediaNum> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer pic;
@@ -67,14 +73,11 @@ public final class MediaNum extends Message {
         public MediaNum build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new MediaNum(this, z, null) : (MediaNum) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new MediaNum(this, z, null);
+            }
+            return (MediaNum) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -91,10 +94,6 @@ public final class MediaNum extends Message {
             }
         }
         DEFAULT_PIC = 0;
-    }
-
-    public /* synthetic */ MediaNum(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -126,5 +125,9 @@ public final class MediaNum extends Message {
             }
         }
         this.pic = builder.pic;
+    }
+
+    public /* synthetic */ MediaNum(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

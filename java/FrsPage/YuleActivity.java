@@ -31,7 +31,13 @@ public final class YuleActivity extends Message {
     public final String activity_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<YuleActivity> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_all_icon;
@@ -87,14 +93,11 @@ public final class YuleActivity extends Message {
         public YuleActivity build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new YuleActivity(this, z, null) : (YuleActivity) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new YuleActivity(this, z, null);
+            }
+            return (YuleActivity) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -112,10 +115,6 @@ public final class YuleActivity extends Message {
         }
         DEFAULT_ACTIVITY_ID = 0L;
         DEFAULT_ACTIVITY_TYPE = 0;
-    }
-
-    public /* synthetic */ YuleActivity(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -175,5 +174,9 @@ public final class YuleActivity extends Message {
         this.activity_url = builder.activity_url;
         this.activity_all_icon = builder.activity_all_icon;
         this.activity_half_icon = builder.activity_half_icon;
+    }
+
+    public /* synthetic */ YuleActivity(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

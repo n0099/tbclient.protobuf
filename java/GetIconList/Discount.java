@@ -22,7 +22,13 @@ public final class Discount extends Message {
     public final Integer recharge;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Discount> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer rebate;
@@ -72,14 +78,11 @@ public final class Discount extends Message {
         public Discount build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Discount(this, z, null) : (Discount) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Discount(this, z, null);
+            }
+            return (Discount) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -97,10 +100,6 @@ public final class Discount extends Message {
         }
         DEFAULT_RECHARGE = 0;
         DEFAULT_REBATE = 0;
-    }
-
-    public /* synthetic */ Discount(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -139,5 +138,9 @@ public final class Discount extends Message {
         }
         this.recharge = builder.recharge;
         this.rebate = builder.rebate;
+    }
+
+    public /* synthetic */ Discount(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

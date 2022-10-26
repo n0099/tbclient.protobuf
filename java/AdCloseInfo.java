@@ -32,12 +32,18 @@ public final class AdCloseInfo extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AdCloseInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ActionControl action_control;
         public String confirm_title;
-        public List<String> reasons;
+        public List reasons;
         public Integer support_close;
         public String title;
 
@@ -88,14 +94,11 @@ public final class AdCloseInfo extends Message {
         public AdCloseInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AdCloseInfo(this, z, null) : (AdCloseInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AdCloseInfo(this, z, null);
+            }
+            return (AdCloseInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class AdCloseInfo extends Message {
         }
         DEFAULT_SUPPORT_CLOSE = 0;
         DEFAULT_REASONS = Collections.emptyList();
-    }
-
-    public /* synthetic */ AdCloseInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -150,7 +149,7 @@ public final class AdCloseInfo extends Message {
             } else {
                 this.title = str;
             }
-            List<String> list = builder.reasons;
+            List list = builder.reasons;
             if (list == null) {
                 this.reasons = DEFAULT_REASONS;
             } else {
@@ -170,5 +169,9 @@ public final class AdCloseInfo extends Message {
         this.reasons = Message.immutableCopyOf(builder.reasons);
         this.confirm_title = builder.confirm_title;
         this.action_control = builder.action_control;
+    }
+
+    public /* synthetic */ AdCloseInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -34,7 +34,13 @@ public final class PersonalForum extends Message {
     public final String weight;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PersonalForum> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
@@ -92,14 +98,11 @@ public final class PersonalForum extends Message {
         public PersonalForum build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PersonalForum(this, z, null) : (PersonalForum) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PersonalForum(this, z, null);
+            }
+            return (PersonalForum) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -117,10 +120,6 @@ public final class PersonalForum extends Message {
         }
         DEFAULT_FORUM_ID = 0L;
         DEFAULT_IS_LIKE = 0;
-    }
-
-    public /* synthetic */ PersonalForum(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -187,5 +186,9 @@ public final class PersonalForum extends Message {
         this.is_like = builder.is_like;
         this.weight = builder.weight;
         this.recom_reason = builder.recom_reason;
+    }
+
+    public /* synthetic */ PersonalForum(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

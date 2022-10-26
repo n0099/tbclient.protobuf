@@ -37,7 +37,13 @@ public final class Timgs extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Timgs> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String big_cdn_url;
@@ -97,14 +103,11 @@ public final class Timgs extends Message {
         public Timgs build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Timgs(this, z, null) : (Timgs) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Timgs(this, z, null);
+            }
+            return (Timgs) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -121,10 +124,6 @@ public final class Timgs extends Message {
             }
         }
         DEFAULT_FLAG = 0;
-    }
-
-    public /* synthetic */ Timgs(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -198,5 +197,9 @@ public final class Timgs extends Message {
         this.des_sub = builder.des_sub;
         this.bsize = builder.bsize;
         this.big_cdn_url = builder.big_cdn_url;
+    }
+
+    public /* synthetic */ Timgs(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

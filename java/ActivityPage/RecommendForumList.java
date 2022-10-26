@@ -28,12 +28,18 @@ public final class RecommendForumList extends Message {
     public final List<RecommendForumInfo> forum_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecommendForumList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String class_name;
         public Integer floor_position;
-        public List<RecommendForumInfo> forum_list;
+        public List forum_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -80,14 +86,11 @@ public final class RecommendForumList extends Message {
         public RecommendForumList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecommendForumList(this, z, null) : (RecommendForumList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecommendForumList(this, z, null);
+            }
+            return (RecommendForumList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -105,10 +108,6 @@ public final class RecommendForumList extends Message {
         }
         DEFAULT_FLOOR_POSITION = 0;
         DEFAULT_FORUM_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ RecommendForumList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -142,7 +141,7 @@ public final class RecommendForumList extends Message {
             } else {
                 this.class_name = str;
             }
-            List<RecommendForumInfo> list = builder.forum_list;
+            List list = builder.forum_list;
             if (list == null) {
                 this.forum_list = DEFAULT_FORUM_LIST;
                 return;
@@ -154,5 +153,9 @@ public final class RecommendForumList extends Message {
         this.floor_position = builder.floor_position;
         this.class_name = builder.class_name;
         this.forum_list = Message.immutableCopyOf(builder.forum_list);
+    }
+
+    public /* synthetic */ RecommendForumList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

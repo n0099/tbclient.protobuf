@@ -30,11 +30,17 @@ public final class BottomMenu extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BottomMenu> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String name;
-        public List<SubBottomMenu> submenu;
+        public List submenu;
         public Integer type;
         public String url;
 
@@ -84,14 +90,11 @@ public final class BottomMenu extends Message {
         public BottomMenu build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BottomMenu(this, z, null) : (BottomMenu) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BottomMenu(this, z, null);
+            }
+            return (BottomMenu) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -109,10 +112,6 @@ public final class BottomMenu extends Message {
         }
         DEFAULT_SUBMENU = Collections.emptyList();
         DEFAULT_TYPE = 0;
-    }
-
-    public /* synthetic */ BottomMenu(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -146,7 +145,7 @@ public final class BottomMenu extends Message {
             } else {
                 this.url = str2;
             }
-            List<SubBottomMenu> list = builder.submenu;
+            List list = builder.submenu;
             if (list == null) {
                 this.submenu = DEFAULT_SUBMENU;
             } else {
@@ -165,5 +164,9 @@ public final class BottomMenu extends Message {
         this.url = builder.url;
         this.submenu = Message.immutableCopyOf(builder.submenu);
         this.type = builder.type;
+    }
+
+    public /* synthetic */ BottomMenu(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -28,7 +28,13 @@ public final class AdMixFloor extends Message {
     public final Integer floor_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AdMixFloor> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long ad_id;
@@ -82,14 +88,11 @@ public final class AdMixFloor extends Message {
         public AdMixFloor build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AdMixFloor(this, z, null) : (AdMixFloor) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AdMixFloor(this, z, null);
+            }
+            return (AdMixFloor) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class AdMixFloor extends Message {
         DEFAULT_AD_TYPE = 0;
         DEFAULT_FLOOR_NUM = 0;
         DEFAULT_AD_ID = 0L;
-    }
-
-    public /* synthetic */ AdMixFloor(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -164,5 +163,9 @@ public final class AdMixFloor extends Message {
         this.floor_num = builder.floor_num;
         this.ad_id = builder.ad_id;
         this.advertise_id = builder.advertise_id;
+    }
+
+    public /* synthetic */ AdMixFloor(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

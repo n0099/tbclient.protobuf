@@ -28,7 +28,13 @@ public final class TagInfo extends Message {
     public final String tag_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TagInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer class_id;
@@ -82,14 +88,11 @@ public final class TagInfo extends Message {
         public TagInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TagInfo(this, z, null) : (TagInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TagInfo(this, z, null);
+            }
+            return (TagInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class TagInfo extends Message {
         DEFAULT_RANK_TYPE = 0;
         DEFAULT_CLASS_ID = 0;
         DEFAULT_TAB_ID = 0;
-    }
-
-    public /* synthetic */ TagInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -164,5 +163,9 @@ public final class TagInfo extends Message {
         this.class_id = builder.class_id;
         this.tab_id = builder.tab_id;
         this.tag_name = builder.tag_name;
+    }
+
+    public /* synthetic */ TagInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

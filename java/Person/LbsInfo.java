@@ -25,7 +25,13 @@ public final class LbsInfo extends Message {
     public final Long time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LbsInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String distance;
@@ -77,14 +83,11 @@ public final class LbsInfo extends Message {
         public LbsInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LbsInfo(this, z, null) : (LbsInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LbsInfo(this, z, null);
+            }
+            return (LbsInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -102,10 +105,6 @@ public final class LbsInfo extends Message {
         }
         DEFAULT_TIME = 0L;
         DEFAULT_IS_HIDE = 0;
-    }
-
-    public /* synthetic */ LbsInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,5 +150,9 @@ public final class LbsInfo extends Message {
         this.distance = builder.distance;
         this.time = builder.time;
         this.is_hide = builder.is_hide;
+    }
+
+    public /* synthetic */ LbsInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

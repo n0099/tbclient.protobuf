@@ -34,7 +34,13 @@ public final class Gift extends Message {
     public final String thumbnail_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Gift> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer gift_id;
@@ -92,14 +98,11 @@ public final class Gift extends Message {
         public Gift build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Gift(this, z, null) : (Gift) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Gift(this, z, null);
+            }
+            return (Gift) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -118,10 +121,6 @@ public final class Gift extends Message {
         DEFAULT_GIFT_ID = 0;
         DEFAULT_SEND_TIME = 0;
         DEFAULT_NUM = 0;
-    }
-
-    public /* synthetic */ Gift(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -188,5 +187,9 @@ public final class Gift extends Message {
         this.thumbnail_url = builder.thumbnail_url;
         this.send_time = builder.send_time;
         this.num = builder.num;
+    }
+
+    public /* synthetic */ Gift(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

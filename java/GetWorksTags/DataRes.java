@@ -24,11 +24,17 @@ public final class DataRes extends Message {
     public final List<Tag> tags;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<Category> category;
-        public List<Tag> tags;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List category;
+        public List tags;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class DataRes extends Message {
         }
         DEFAULT_CATEGORY = Collections.emptyList();
         DEFAULT_TAGS = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -124,13 +123,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<Category> list = builder.category;
+            List list = builder.category;
             if (list == null) {
                 this.category = DEFAULT_CATEGORY;
             } else {
                 this.category = Message.immutableCopyOf(list);
             }
-            List<Tag> list2 = builder.tags;
+            List list2 = builder.tags;
             if (list2 == null) {
                 this.tags = DEFAULT_TAGS;
                 return;
@@ -141,5 +140,9 @@ public final class DataRes extends Message {
         }
         this.category = Message.immutableCopyOf(builder.category);
         this.tags = Message.immutableCopyOf(builder.tags);
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

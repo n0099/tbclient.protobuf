@@ -34,7 +34,13 @@ public final class RankingParam extends Message {
     public final Integer tab_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RankingParam> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer pn;
@@ -92,14 +98,11 @@ public final class RankingParam extends Message {
         public RankingParam build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RankingParam(this, z, null) : (RankingParam) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RankingParam(this, z, null);
+            }
+            return (RankingParam) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -120,10 +123,6 @@ public final class RankingParam extends Message {
         DEFAULT_TAB_ID = 0;
         DEFAULT_PN = 0;
         DEFAULT_RN = 0;
-    }
-
-    public /* synthetic */ RankingParam(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -190,5 +189,9 @@ public final class RankingParam extends Message {
         this.tab_id = builder.tab_id;
         this.pn = builder.pn;
         this.rn = builder.rn;
+    }
+
+    public /* synthetic */ RankingParam(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -25,10 +25,16 @@ public final class MemberGodInfo extends Message {
     public final Integer forum_god_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<MemberGodInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<User> forum_god_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List forum_god_list;
         public Integer forum_god_num;
 
         public Builder() {
@@ -75,14 +81,11 @@ public final class MemberGodInfo extends Message {
         public MemberGodInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new MemberGodInfo(this, z, null) : (MemberGodInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new MemberGodInfo(this, z, null);
+            }
+            return (MemberGodInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -100,10 +103,6 @@ public final class MemberGodInfo extends Message {
         }
         DEFAULT_FORUM_GOD_LIST = Collections.emptyList();
         DEFAULT_FORUM_GOD_NUM = 0;
-    }
-
-    public /* synthetic */ MemberGodInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -125,7 +124,7 @@ public final class MemberGodInfo extends Message {
             }
         }
         if (z) {
-            List<User> list = builder.forum_god_list;
+            List list = builder.forum_god_list;
             if (list == null) {
                 this.forum_god_list = DEFAULT_FORUM_GOD_LIST;
             } else {
@@ -142,5 +141,9 @@ public final class MemberGodInfo extends Message {
         }
         this.forum_god_list = Message.immutableCopyOf(builder.forum_god_list);
         this.forum_god_num = builder.forum_god_num;
+    }
+
+    public /* synthetic */ MemberGodInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -61,7 +61,13 @@ public final class SignActivityInfo extends Message {
     public final String image_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SignActivityInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer activity_duration;
@@ -137,14 +143,11 @@ public final class SignActivityInfo extends Message {
         public SignActivityInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SignActivityInfo(this, z, null) : (SignActivityInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SignActivityInfo(this, z, null);
+            }
+            return (SignActivityInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -166,10 +169,6 @@ public final class SignActivityInfo extends Message {
         DEFAULT_ACTIVITY_DURATION = 0;
         DEFAULT_GIFT_TYPE = 0;
         DEFAULT_ICON_LIFECYCLE = 0;
-    }
-
-    public /* synthetic */ SignActivityInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -299,5 +298,9 @@ public final class SignActivityInfo extends Message {
         this.icon_lifecycle = builder.icon_lifecycle;
         this.activity_name = builder.activity_name;
         this.image_url = builder.image_url;
+    }
+
+    public /* synthetic */ SignActivityInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -45,11 +45,17 @@ public final class UserInfos extends Message {
     public final String userdetail;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UserInfos> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Double distance;
-        public List<Icon> iconinfo;
+        public List iconinfo;
         public Integer lastest_time;
         public LbsInfo location;
         public String portrait;
@@ -109,14 +115,11 @@ public final class UserInfos extends Message {
         public UserInfos build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UserInfos(this, z, null) : (UserInfos) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UserInfos(this, z, null);
+            }
+            return (UserInfos) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -136,10 +139,6 @@ public final class UserInfos extends Message {
         DEFAULT_DISTANCE = Double.valueOf(0.0d);
         DEFAULT_LASTEST_TIME = 0;
         DEFAULT_ICONINFO = Collections.emptyList();
-    }
-
-    public /* synthetic */ UserInfos(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -197,7 +196,7 @@ public final class UserInfos extends Message {
             } else {
                 this.lastest_time = num;
             }
-            List<Icon> list = builder.iconinfo;
+            List list = builder.iconinfo;
             if (list == null) {
                 this.iconinfo = DEFAULT_ICONINFO;
             } else {
@@ -221,5 +220,9 @@ public final class UserInfos extends Message {
         this.iconinfo = Message.immutableCopyOf(builder.iconinfo);
         this.userdetail = builder.userdetail;
         this.location = builder.location;
+    }
+
+    public /* synthetic */ UserInfos(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

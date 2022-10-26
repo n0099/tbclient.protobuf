@@ -52,7 +52,13 @@ public final class DataRes extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String audit_opinion;
@@ -64,7 +70,7 @@ public final class DataRes extends Message {
         public Integer is_manager;
         public String preface;
         public String publish_time;
-        public List<ForumRule> rules;
+        public List rules;
         public String title;
 
         public Builder() {
@@ -120,14 +126,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -147,10 +150,6 @@ public final class DataRes extends Message {
         DEFAULT_AUDIT_STATUS = 0;
         DEFAULT_IS_MANAGER = 0;
         DEFAULT_FORUM_RULE_ID = 0L;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -185,7 +184,7 @@ public final class DataRes extends Message {
             } else {
                 this.preface = str2;
             }
-            List<ForumRule> list = builder.rules;
+            List list = builder.rules;
             if (list == null) {
                 this.rules = DEFAULT_RULES;
             } else {
@@ -242,5 +241,9 @@ public final class DataRes extends Message {
         this.publish_time = builder.publish_time;
         this.bazhu = builder.bazhu;
         this.cur_time = builder.cur_time;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

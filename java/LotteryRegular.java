@@ -24,10 +24,16 @@ public final class LotteryRegular extends Message {
     public final String regular;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LotteryRegular> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<Integer> chance;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List chance;
         public String regular;
 
         public Builder() {
@@ -74,14 +80,11 @@ public final class LotteryRegular extends Message {
         public LotteryRegular build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LotteryRegular(this, z, null) : (LotteryRegular) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LotteryRegular(this, z, null);
+            }
+            return (LotteryRegular) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -98,10 +101,6 @@ public final class LotteryRegular extends Message {
             }
         }
         DEFAULT_CHANCE = Collections.emptyList();
-    }
-
-    public /* synthetic */ LotteryRegular(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,7 +128,7 @@ public final class LotteryRegular extends Message {
             } else {
                 this.regular = str;
             }
-            List<Integer> list = builder.chance;
+            List list = builder.chance;
             if (list == null) {
                 this.chance = DEFAULT_CHANCE;
                 return;
@@ -140,5 +139,9 @@ public final class LotteryRegular extends Message {
         }
         this.regular = builder.regular;
         this.chance = Message.immutableCopyOf(builder.chance);
+    }
+
+    public /* synthetic */ LotteryRegular(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

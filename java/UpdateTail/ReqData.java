@@ -33,7 +33,13 @@ public final class ReqData extends Message {
     public final Integer tailId;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ReqData> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
@@ -91,14 +97,11 @@ public final class ReqData extends Message {
         public ReqData build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ReqData(this, z, null) : (ReqData) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ReqData(this, z, null);
+            }
+            return (ReqData) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -115,10 +118,6 @@ public final class ReqData extends Message {
             }
         }
         DEFAULT_TAILID = 0;
-    }
-
-    public /* synthetic */ ReqData(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -172,5 +171,9 @@ public final class ReqData extends Message {
         this.fontColor = builder.fontColor;
         this.fontKeyName = builder.fontKeyName;
         this.f1375common = builder.f1376common;
+    }
+
+    public /* synthetic */ ReqData(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

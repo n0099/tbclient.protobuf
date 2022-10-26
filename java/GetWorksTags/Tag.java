@@ -27,12 +27,18 @@ public final class Tag extends Message {
     public final List<String> tags;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Tag> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String first_class;
         public String second_class;
-        public List<String> tags;
+        public List tags;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -79,14 +85,11 @@ public final class Tag extends Message {
         public Tag build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Tag(this, z, null) : (Tag) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Tag(this, z, null);
+            }
+            return (Tag) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -103,10 +106,6 @@ public final class Tag extends Message {
             }
         }
         DEFAULT_TAGS = Collections.emptyList();
-    }
-
-    public /* synthetic */ Tag(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -140,7 +139,7 @@ public final class Tag extends Message {
             } else {
                 this.second_class = str2;
             }
-            List<String> list = builder.tags;
+            List list = builder.tags;
             if (list == null) {
                 this.tags = DEFAULT_TAGS;
                 return;
@@ -152,5 +151,9 @@ public final class Tag extends Message {
         this.first_class = builder.first_class;
         this.second_class = builder.second_class;
         this.tags = Message.immutableCopyOf(builder.tags);
+    }
+
+    public /* synthetic */ Tag(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

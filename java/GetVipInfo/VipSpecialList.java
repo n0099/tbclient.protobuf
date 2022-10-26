@@ -15,12 +15,16 @@ import java.util.List;
 /* loaded from: classes9.dex */
 public final class VipSpecialList extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final List<VipBannerItem> DEFAULT_BANNER_ITEM;
     public static final String DEFAULT_CARD_ID = "";
     public static final String DEFAULT_CLASS_NAME = "";
     public static final String DEFAULT_CLASS_URL = "";
     public static final String DEFAULT_CLASS_URL_NAME = "";
     public static final List<VipSpecialItem> DEFAULT_ITEM;
+    public static final String DEFAULT_SUB_CLASS_NAME = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(label = Message.Label.REPEATED, tag = 7)
+    public final List<VipBannerItem> banner_item;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String card_id;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -31,16 +35,26 @@ public final class VipSpecialList extends Message {
     public final String class_url_name;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<VipSpecialItem> item;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String sub_class_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<VipSpecialList> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List banner_item;
         public String card_id;
         public String class_name;
         public String class_url;
         public String class_url_name;
-        public List<VipSpecialItem> item;
+        public List item;
+        public String sub_class_name;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -82,6 +96,8 @@ public final class VipSpecialList extends Message {
             this.class_url = vipSpecialList.class_url;
             this.item = Message.copyOf(vipSpecialList.item);
             this.card_id = vipSpecialList.card_id;
+            this.sub_class_name = vipSpecialList.sub_class_name;
+            this.banner_item = Message.copyOf(vipSpecialList.banner_item);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -89,14 +105,11 @@ public final class VipSpecialList extends Message {
         public VipSpecialList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new VipSpecialList(this, z, null) : (VipSpecialList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new VipSpecialList(this, z, null);
+            }
+            return (VipSpecialList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +126,7 @@ public final class VipSpecialList extends Message {
             }
         }
         DEFAULT_ITEM = Collections.emptyList();
-    }
-
-    public /* synthetic */ VipSpecialList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        DEFAULT_BANNER_ITEM = Collections.emptyList();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -156,7 +166,7 @@ public final class VipSpecialList extends Message {
             } else {
                 this.class_url = str3;
             }
-            List<VipSpecialItem> list = builder.item;
+            List list = builder.item;
             if (list == null) {
                 this.item = DEFAULT_ITEM;
             } else {
@@ -165,9 +175,21 @@ public final class VipSpecialList extends Message {
             String str4 = builder.card_id;
             if (str4 == null) {
                 this.card_id = "";
-                return;
             } else {
                 this.card_id = str4;
+            }
+            String str5 = builder.sub_class_name;
+            if (str5 == null) {
+                this.sub_class_name = "";
+            } else {
+                this.sub_class_name = str5;
+            }
+            List list2 = builder.banner_item;
+            if (list2 == null) {
+                this.banner_item = DEFAULT_BANNER_ITEM;
+                return;
+            } else {
+                this.banner_item = Message.immutableCopyOf(list2);
                 return;
             }
         }
@@ -176,5 +198,11 @@ public final class VipSpecialList extends Message {
         this.class_url = builder.class_url;
         this.item = Message.immutableCopyOf(builder.item);
         this.card_id = builder.card_id;
+        this.sub_class_name = builder.sub_class_name;
+        this.banner_item = Message.immutableCopyOf(builder.banner_item);
+    }
+
+    public /* synthetic */ VipSpecialList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -28,7 +28,13 @@ public final class BirthdayInfo extends Message {
     public final String constellation;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BirthdayInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer age;
@@ -82,14 +88,11 @@ public final class BirthdayInfo extends Message {
         public BirthdayInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BirthdayInfo(this, z, null) : (BirthdayInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BirthdayInfo(this, z, null);
+            }
+            return (BirthdayInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class BirthdayInfo extends Message {
         DEFAULT_BIRTHDAY_TIME = 0L;
         DEFAULT_BIRTHDAY_SHOW_STATUS = 0;
         DEFAULT_AGE = 0;
-    }
-
-    public /* synthetic */ BirthdayInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -164,5 +163,9 @@ public final class BirthdayInfo extends Message {
         this.birthday_show_status = builder.birthday_show_status;
         this.constellation = builder.constellation;
         this.age = builder.age;
+    }
+
+    public /* synthetic */ BirthdayInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -15,6 +15,7 @@ public final class StateInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ICON = "";
     public static final Integer DEFAULT_ICON_PID;
+    public static final Long DEFAULT_ICON_PID_NEW;
     public static final Integer DEFAULT_ICON_TYPE;
     public static final String DEFAULT_TEXT = "";
     public transient /* synthetic */ FieldHolder $fh;
@@ -22,17 +23,26 @@ public final class StateInfo extends Message {
     public final String icon;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer icon_pid;
+    @ProtoField(tag = 5, type = Message.Datatype.INT64)
+    public final Long icon_pid_new;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer icon_type;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String text;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<StateInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String icon;
         public Integer icon_pid;
+        public Long icon_pid_new;
         public Integer icon_type;
         public String text;
 
@@ -75,6 +85,7 @@ public final class StateInfo extends Message {
             this.text = stateInfo.text;
             this.icon_type = stateInfo.icon_type;
             this.icon_pid = stateInfo.icon_pid;
+            this.icon_pid_new = stateInfo.icon_pid_new;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -82,14 +93,11 @@ public final class StateInfo extends Message {
         public StateInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new StateInfo(this, z, null) : (StateInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new StateInfo(this, z, null);
+            }
+            return (StateInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +115,7 @@ public final class StateInfo extends Message {
         }
         DEFAULT_ICON_TYPE = 0;
         DEFAULT_ICON_PID = 0;
-    }
-
-    public /* synthetic */ StateInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        DEFAULT_ICON_PID_NEW = 0L;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -153,9 +158,15 @@ public final class StateInfo extends Message {
             Integer num2 = builder.icon_pid;
             if (num2 == null) {
                 this.icon_pid = DEFAULT_ICON_PID;
-                return;
             } else {
                 this.icon_pid = num2;
+            }
+            Long l = builder.icon_pid_new;
+            if (l == null) {
+                this.icon_pid_new = DEFAULT_ICON_PID_NEW;
+                return;
+            } else {
+                this.icon_pid_new = l;
                 return;
             }
         }
@@ -163,5 +174,10 @@ public final class StateInfo extends Message {
         this.text = builder.text;
         this.icon_type = builder.icon_type;
         this.icon_pid = builder.icon_pid;
+        this.icon_pid_new = builder.icon_pid_new;
+    }
+
+    public /* synthetic */ StateInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -87,11 +87,17 @@ public final class Custom extends Message {
     public final Integer validity;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Custom> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String create_time;
-        public List<Discount> discount;
+        public List discount;
         public Integer dubi;
         public Integer dubi_ios;
         public Integer duration;
@@ -179,14 +185,11 @@ public final class Custom extends Message {
         public Custom build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Custom(this, z, null) : (Custom) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Custom(this, z, null);
+            }
+            return (Custom) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -214,10 +217,6 @@ public final class Custom extends Message {
         DEFAULT_VALIDITY = 0;
         DEFAULT_IS_CUSTOM_PRICE = 0;
         DEFAULT_IS_DEFAULT = 0;
-    }
-
-    public /* synthetic */ Custom(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -287,7 +286,7 @@ public final class Custom extends Message {
             } else {
                 this.hide = num7;
             }
-            List<Discount> list = builder.discount;
+            List list = builder.discount;
             if (list == null) {
                 this.discount = DEFAULT_DISCOUNT;
             } else {
@@ -403,5 +402,9 @@ public final class Custom extends Message {
         this.icon_name = builder.icon_name;
         this.icon_pic = builder.icon_pic;
         this.is_default = builder.is_default;
+    }
+
+    public /* synthetic */ Custom(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

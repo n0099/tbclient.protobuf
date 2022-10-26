@@ -44,16 +44,22 @@ public final class DataRes extends Message {
     public final DealWindow window;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ForumDynamic> concerned_forum_list;
-        public List<DynamicInfo> dynamic_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List concerned_forum_list;
+        public List dynamic_list;
         public Integer has_more;
         public Integer pn;
         public User user;
         public UserGodInfo user_god_info;
-        public List<ThreadInfo> video_page;
+        public List video_page;
         public DealWindow window;
 
         public Builder() {
@@ -106,14 +112,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -136,10 +139,6 @@ public final class DataRes extends Message {
         DEFAULT_HAS_MORE = 0;
     }
 
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
@@ -160,19 +159,19 @@ public final class DataRes extends Message {
         }
         if (z) {
             this.user = builder.user;
-            List<ThreadInfo> list = builder.video_page;
+            List list = builder.video_page;
             if (list == null) {
                 this.video_page = DEFAULT_VIDEO_PAGE;
             } else {
                 this.video_page = Message.immutableCopyOf(list);
             }
-            List<DynamicInfo> list2 = builder.dynamic_list;
+            List list2 = builder.dynamic_list;
             if (list2 == null) {
                 this.dynamic_list = DEFAULT_DYNAMIC_LIST;
             } else {
                 this.dynamic_list = Message.immutableCopyOf(list2);
             }
-            List<ForumDynamic> list3 = builder.concerned_forum_list;
+            List list3 = builder.concerned_forum_list;
             if (list3 == null) {
                 this.concerned_forum_list = DEFAULT_CONCERNED_FORUM_LIST;
             } else {
@@ -202,5 +201,9 @@ public final class DataRes extends Message {
         this.has_more = builder.has_more;
         this.user_god_info = builder.user_god_info;
         this.window = builder.window;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

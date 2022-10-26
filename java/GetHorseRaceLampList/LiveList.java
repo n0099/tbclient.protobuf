@@ -37,7 +37,13 @@ public final class LiveList extends Message {
     public final String user_nickname;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LiveList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer amount;
@@ -97,14 +103,11 @@ public final class LiveList extends Message {
         public LiveList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LiveList(this, z, null) : (LiveList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LiveList(this, z, null);
+            }
+            return (LiveList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -125,10 +128,6 @@ public final class LiveList extends Message {
         DEFAULT_AMOUNT = 0;
         DEFAULT_ROB_END_TM = 0L;
         DEFAULT_SCREEN_DIRECTION = 0;
-    }
-
-    public /* synthetic */ LiveList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -202,5 +201,9 @@ public final class LiveList extends Message {
         this.amount = builder.amount;
         this.rob_end_tm = builder.rob_end_tm;
         this.screen_direction = builder.screen_direction;
+    }
+
+    public /* synthetic */ LiveList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

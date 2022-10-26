@@ -28,7 +28,13 @@ public final class AwardInfo extends Message {
     public final String award_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AwardInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long award_act_id;
@@ -82,14 +88,11 @@ public final class AwardInfo extends Message {
         public AwardInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AwardInfo(this, z, null) : (AwardInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AwardInfo(this, z, null);
+            }
+            return (AwardInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +110,6 @@ public final class AwardInfo extends Message {
         }
         DEFAULT_AWARD_ID = 0L;
         DEFAULT_AWARD_ACT_ID = 0L;
-    }
-
-    public /* synthetic */ AwardInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,5 +162,9 @@ public final class AwardInfo extends Message {
         this.award_act_id = builder.award_act_id;
         this.award_name = builder.award_name;
         this.award_imgsrc = builder.award_imgsrc;
+    }
+
+    public /* synthetic */ AwardInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

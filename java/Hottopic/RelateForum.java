@@ -40,7 +40,13 @@ public final class RelateForum extends Message {
     public final Integer thread_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RelateForum> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
@@ -102,14 +108,11 @@ public final class RelateForum extends Message {
         public RelateForum build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RelateForum(this, z, null) : (RelateForum) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RelateForum(this, z, null);
+            }
+            return (RelateForum) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -130,10 +133,6 @@ public final class RelateForum extends Message {
         DEFAULT_THREAD_NUM = 0;
         DEFAULT_POST_NUM = 0;
         DEFAULT_IS_LIKED = 0;
-    }
-
-    public /* synthetic */ RelateForum(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -214,5 +213,9 @@ public final class RelateForum extends Message {
         this.thread_num = builder.thread_num;
         this.post_num = builder.post_num;
         this.is_liked = builder.is_liked;
+    }
+
+    public /* synthetic */ RelateForum(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

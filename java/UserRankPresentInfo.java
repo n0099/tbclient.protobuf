@@ -31,7 +31,13 @@ public final class UserRankPresentInfo extends Message {
     public final String user_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UserRankPresentInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String portrait;
@@ -87,14 +93,11 @@ public final class UserRankPresentInfo extends Message {
         public UserRankPresentInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UserRankPresentInfo(this, z, null) : (UserRankPresentInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UserRankPresentInfo(this, z, null);
+            }
+            return (UserRankPresentInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class UserRankPresentInfo extends Message {
         DEFAULT_USER_ID = 0;
         DEFAULT_PRESENT_NUM = 0;
         DEFAULT_PRESENT_SCORES = 0L;
-    }
-
-    public /* synthetic */ UserRankPresentInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -176,5 +175,9 @@ public final class UserRankPresentInfo extends Message {
         this.present_num = builder.present_num;
         this.present_scores = builder.present_scores;
         this.portrait = builder.portrait;
+    }
+
+    public /* synthetic */ UserRankPresentInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

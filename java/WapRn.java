@@ -22,7 +22,13 @@ public final class WapRn extends Message {
     public final Integer pbrn;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<WapRn> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer frsrn;
@@ -72,14 +78,11 @@ public final class WapRn extends Message {
         public WapRn build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new WapRn(this, z, null) : (WapRn) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new WapRn(this, z, null);
+            }
+            return (WapRn) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -97,10 +100,6 @@ public final class WapRn extends Message {
         }
         DEFAULT_FRSRN = 0;
         DEFAULT_PBRN = 0;
-    }
-
-    public /* synthetic */ WapRn(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -139,5 +138,9 @@ public final class WapRn extends Message {
         }
         this.frsrn = builder.frsrn;
         this.pbrn = builder.pbrn;
+    }
+
+    public /* synthetic */ WapRn(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -24,10 +24,16 @@ public final class TimeLine extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TimeLine> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<TimeLineInfo> timeline_info;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List timeline_info;
         public String title;
 
         public Builder() {
@@ -74,14 +80,11 @@ public final class TimeLine extends Message {
         public TimeLine build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TimeLine(this, z, null) : (TimeLine) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TimeLine(this, z, null);
+            }
+            return (TimeLine) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -98,10 +101,6 @@ public final class TimeLine extends Message {
             }
         }
         DEFAULT_TIMELINE_INFO = Collections.emptyList();
-    }
-
-    public /* synthetic */ TimeLine(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,7 +128,7 @@ public final class TimeLine extends Message {
             } else {
                 this.title = str;
             }
-            List<TimeLineInfo> list = builder.timeline_info;
+            List list = builder.timeline_info;
             if (list == null) {
                 this.timeline_info = DEFAULT_TIMELINE_INFO;
                 return;
@@ -140,5 +139,9 @@ public final class TimeLine extends Message {
         }
         this.title = builder.title;
         this.timeline_info = Message.immutableCopyOf(builder.timeline_info);
+    }
+
+    public /* synthetic */ TimeLine(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

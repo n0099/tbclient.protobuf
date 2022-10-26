@@ -36,11 +36,17 @@ public final class RecommendBook extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecommendBook> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String book_id;
-        public List<String> desc;
+        public List desc;
         public String image;
         public String link_url;
         public String title;
@@ -94,14 +100,11 @@ public final class RecommendBook extends Message {
         public RecommendBook build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecommendBook(this, z, null) : (RecommendBook) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecommendBook(this, z, null);
+            }
+            return (RecommendBook) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -119,10 +122,6 @@ public final class RecommendBook extends Message {
         }
         DEFAULT_TYPE = 0;
         DEFAULT_DESC = Collections.emptyList();
-    }
-
-    public /* synthetic */ RecommendBook(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -168,7 +167,7 @@ public final class RecommendBook extends Message {
             } else {
                 this.image = str3;
             }
-            List<String> list = builder.desc;
+            List list = builder.desc;
             if (list == null) {
                 this.desc = DEFAULT_DESC;
             } else {
@@ -189,5 +188,9 @@ public final class RecommendBook extends Message {
         this.image = builder.image;
         this.desc = Message.immutableCopyOf(builder.desc);
         this.link_url = builder.link_url;
+    }
+
+    public /* synthetic */ RecommendBook(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

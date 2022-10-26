@@ -31,7 +31,13 @@ public final class TimeLineInfo extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TimeLineInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String bg_color;
@@ -87,14 +93,11 @@ public final class TimeLineInfo extends Message {
         public TimeLineInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TimeLineInfo(this, z, null) : (TimeLineInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TimeLineInfo(this, z, null);
+            }
+            return (TimeLineInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -111,10 +114,6 @@ public final class TimeLineInfo extends Message {
             }
         }
         DEFAULT_TID = 0L;
-    }
-
-    public /* synthetic */ TimeLineInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -174,5 +173,9 @@ public final class TimeLineInfo extends Message {
         this.show_time = builder.show_time;
         this.bg_color = builder.bg_color;
         this.small_title = builder.small_title;
+    }
+
+    public /* synthetic */ TimeLineInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

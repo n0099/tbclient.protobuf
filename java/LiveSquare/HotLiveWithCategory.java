@@ -43,16 +43,22 @@ public final class HotLiveWithCategory extends Message {
     public final Integer tab_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<HotLiveWithCategory> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String bitmap_wh_ratio;
         public Integer entry_id;
         public String entry_name;
         public String label_name;
-        public List<ThreadInfo> live;
+        public List live;
         public Integer live_tab_type;
-        public List<String> sub_type_list;
+        public List sub_type_list;
         public Integer tab_id;
 
         public Builder() {
@@ -105,14 +111,11 @@ public final class HotLiveWithCategory extends Message {
         public HotLiveWithCategory build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HotLiveWithCategory(this, z, null) : (HotLiveWithCategory) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new HotLiveWithCategory(this, z, null);
+            }
+            return (HotLiveWithCategory) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -133,10 +136,6 @@ public final class HotLiveWithCategory extends Message {
         DEFAULT_LIVE_TAB_TYPE = 0;
         DEFAULT_TAB_ID = 0;
         DEFAULT_SUB_TYPE_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ HotLiveWithCategory(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -176,7 +175,7 @@ public final class HotLiveWithCategory extends Message {
             } else {
                 this.bitmap_wh_ratio = str2;
             }
-            List<ThreadInfo> list = builder.live;
+            List list = builder.live;
             if (list == null) {
                 this.live = DEFAULT_LIVE;
             } else {
@@ -200,7 +199,7 @@ public final class HotLiveWithCategory extends Message {
             } else {
                 this.tab_id = num3;
             }
-            List<String> list2 = builder.sub_type_list;
+            List list2 = builder.sub_type_list;
             if (list2 == null) {
                 this.sub_type_list = DEFAULT_SUB_TYPE_LIST;
                 return;
@@ -217,5 +216,9 @@ public final class HotLiveWithCategory extends Message {
         this.live_tab_type = builder.live_tab_type;
         this.tab_id = builder.tab_id;
         this.sub_type_list = Message.immutableCopyOf(builder.sub_type_list);
+    }
+
+    public /* synthetic */ HotLiveWithCategory(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

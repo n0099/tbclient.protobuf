@@ -25,7 +25,13 @@ public final class LabelInfo extends Message {
     public final String labelId;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LabelInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String labelContent;
@@ -77,14 +83,11 @@ public final class LabelInfo extends Message {
         public LabelInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LabelInfo(this, z, null) : (LabelInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LabelInfo(this, z, null);
+            }
+            return (LabelInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -101,10 +104,6 @@ public final class LabelInfo extends Message {
             }
         }
         DEFAULT_LABELHOT = 0;
-    }
-
-    public /* synthetic */ LabelInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -150,5 +149,9 @@ public final class LabelInfo extends Message {
         this.labelHot = builder.labelHot;
         this.labelContent = builder.labelContent;
         this.labelId = builder.labelId;
+    }
+
+    public /* synthetic */ LabelInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

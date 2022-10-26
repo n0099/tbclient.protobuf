@@ -25,7 +25,13 @@ public final class MemberBlockInfo extends Message {
     public final Integer is_permanent_ban;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<MemberBlockInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_auto_pay;
@@ -77,14 +83,11 @@ public final class MemberBlockInfo extends Message {
         public MemberBlockInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new MemberBlockInfo(this, z, null) : (MemberBlockInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new MemberBlockInfo(this, z, null);
+            }
+            return (MemberBlockInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -103,10 +106,6 @@ public final class MemberBlockInfo extends Message {
         DEFAULT_IS_PERMANENT_BAN = 0;
         DEFAULT_IS_AUTO_PAY = 0;
         DEFAULT_IS_BAN = 0;
-    }
-
-    public /* synthetic */ MemberBlockInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -152,5 +151,9 @@ public final class MemberBlockInfo extends Message {
         this.is_permanent_ban = builder.is_permanent_ban;
         this.is_auto_pay = builder.is_auto_pay;
         this.is_ban = builder.is_ban;
+    }
+
+    public /* synthetic */ MemberBlockInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

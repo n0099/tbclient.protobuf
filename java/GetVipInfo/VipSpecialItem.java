@@ -52,7 +52,13 @@ public final class VipSpecialItem extends Message {
     public final String update_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<VipSpecialItem> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String button_text_finish;
@@ -122,14 +128,11 @@ public final class VipSpecialItem extends Message {
         public VipSpecialItem build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new VipSpecialItem(this, z, null) : (VipSpecialItem) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new VipSpecialItem(this, z, null);
+            }
+            return (VipSpecialItem) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -149,10 +152,6 @@ public final class VipSpecialItem extends Message {
         DEFAULT_TYPE = 0;
         DEFAULT_TASK_ID = 0;
         DEFAULT_IS_FINISH = 0;
-    }
-
-    public /* synthetic */ VipSpecialItem(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -261,5 +260,9 @@ public final class VipSpecialItem extends Message {
         this.is_finish = builder.is_finish;
         this.button_text_initial = builder.button_text_initial;
         this.button_text_finish = builder.button_text_finish;
+    }
+
+    public /* synthetic */ VipSpecialItem(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

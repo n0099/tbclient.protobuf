@@ -24,11 +24,17 @@ public final class CommonThread extends Message {
     public final List<GoodThread> thread_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CommonThread> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String module_name;
-        public List<GoodThread> thread_list;
+        public List thread_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class CommonThread extends Message {
         public CommonThread build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CommonThread(this, z, null) : (CommonThread) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CommonThread(this, z, null);
+            }
+            return (CommonThread) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -98,10 +101,6 @@ public final class CommonThread extends Message {
             }
         }
         DEFAULT_THREAD_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ CommonThread(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,7 +128,7 @@ public final class CommonThread extends Message {
             } else {
                 this.module_name = str;
             }
-            List<GoodThread> list = builder.thread_list;
+            List list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
                 return;
@@ -140,5 +139,9 @@ public final class CommonThread extends Message {
         }
         this.module_name = builder.module_name;
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
+    }
+
+    public /* synthetic */ CommonThread(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

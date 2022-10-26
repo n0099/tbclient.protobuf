@@ -60,7 +60,13 @@ public final class FrsTabInfo extends Message {
     public final Integer tab_version;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FrsTabInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String click_monitor_url;
@@ -136,14 +142,11 @@ public final class FrsTabInfo extends Message {
         public FrsTabInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FrsTabInfo(this, z, null) : (FrsTabInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FrsTabInfo(this, z, null);
+            }
+            return (FrsTabInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -165,10 +168,6 @@ public final class FrsTabInfo extends Message {
         DEFAULT_TAB_VERSION = 0;
         DEFAULT_IS_DEFAULT = 0;
         DEFAULT_NEED_PAGE = 0;
-    }
-
-    public /* synthetic */ FrsTabInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -293,5 +292,9 @@ public final class FrsTabInfo extends Message {
         this.exposure_monitor_url = builder.exposure_monitor_url;
         this.click_monitor_url = builder.click_monitor_url;
         this.demote_url = builder.demote_url;
+    }
+
+    public /* synthetic */ FrsTabInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

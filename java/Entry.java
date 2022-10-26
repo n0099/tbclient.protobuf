@@ -31,7 +31,13 @@ public final class Entry extends Message {
     public final String name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Entry> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String bitmap_wh_ratio;
@@ -87,14 +93,11 @@ public final class Entry extends Message {
         public Entry build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Entry(this, z, null) : (Entry) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Entry(this, z, null);
+            }
+            return (Entry) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -112,10 +115,6 @@ public final class Entry extends Message {
         }
         DEFAULT_ID = 0;
         DEFAULT_ICON_TYPE = 0;
-    }
-
-    public /* synthetic */ Entry(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -175,5 +174,9 @@ public final class Entry extends Message {
         this.id = builder.id;
         this.bitmap_wh_ratio = builder.bitmap_wh_ratio;
         this.icon_type = builder.icon_type;
+    }
+
+    public /* synthetic */ Entry(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

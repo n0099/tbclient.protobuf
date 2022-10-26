@@ -22,10 +22,16 @@ public final class AlaLiveInsert extends Message {
     public final List<ThreadInfo> ala_live_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AlaLiveInsert> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ThreadInfo> ala_live_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List ala_live_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -70,14 +76,11 @@ public final class AlaLiveInsert extends Message {
         public AlaLiveInsert build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AlaLiveInsert(this, z, null) : (AlaLiveInsert) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AlaLiveInsert(this, z, null);
+            }
+            return (AlaLiveInsert) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -94,10 +97,6 @@ public final class AlaLiveInsert extends Message {
             }
         }
         DEFAULT_ALA_LIVE_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ AlaLiveInsert(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -119,7 +118,7 @@ public final class AlaLiveInsert extends Message {
             }
         }
         if (z) {
-            List<ThreadInfo> list = builder.ala_live_list;
+            List list = builder.ala_live_list;
             if (list == null) {
                 this.ala_live_list = DEFAULT_ALA_LIVE_LIST;
                 return;
@@ -129,5 +128,9 @@ public final class AlaLiveInsert extends Message {
             }
         }
         this.ala_live_list = Message.immutableCopyOf(builder.ala_live_list);
+    }
+
+    public /* synthetic */ AlaLiveInsert(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

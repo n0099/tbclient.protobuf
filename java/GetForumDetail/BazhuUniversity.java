@@ -27,12 +27,18 @@ public final class BazhuUniversity extends Message {
     public final List<UniversityTabInfo> tab;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BazhuUniversity> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<UniversityInfo> banner;
-        public List<UniversityInfo> entrance;
-        public List<UniversityTabInfo> tab;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List banner;
+        public List entrance;
+        public List tab;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -79,14 +85,11 @@ public final class BazhuUniversity extends Message {
         public BazhuUniversity build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BazhuUniversity(this, z, null) : (BazhuUniversity) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BazhuUniversity(this, z, null);
+            }
+            return (BazhuUniversity) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -105,10 +108,6 @@ public final class BazhuUniversity extends Message {
         DEFAULT_ENTRANCE = Collections.emptyList();
         DEFAULT_BANNER = Collections.emptyList();
         DEFAULT_TAB = Collections.emptyList();
-    }
-
-    public /* synthetic */ BazhuUniversity(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,19 +129,19 @@ public final class BazhuUniversity extends Message {
             }
         }
         if (z) {
-            List<UniversityInfo> list = builder.entrance;
+            List list = builder.entrance;
             if (list == null) {
                 this.entrance = DEFAULT_ENTRANCE;
             } else {
                 this.entrance = Message.immutableCopyOf(list);
             }
-            List<UniversityInfo> list2 = builder.banner;
+            List list2 = builder.banner;
             if (list2 == null) {
                 this.banner = DEFAULT_BANNER;
             } else {
                 this.banner = Message.immutableCopyOf(list2);
             }
-            List<UniversityTabInfo> list3 = builder.tab;
+            List list3 = builder.tab;
             if (list3 == null) {
                 this.tab = DEFAULT_TAB;
                 return;
@@ -154,5 +153,9 @@ public final class BazhuUniversity extends Message {
         this.entrance = Message.immutableCopyOf(builder.entrance);
         this.banner = Message.immutableCopyOf(builder.banner);
         this.tab = Message.immutableCopyOf(builder.tab);
+    }
+
+    public /* synthetic */ BazhuUniversity(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

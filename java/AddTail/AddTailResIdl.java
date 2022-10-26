@@ -19,7 +19,13 @@ public final class AddTailResIdl extends Message {
     public final Error error;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AddTailResIdl> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ResData data;
@@ -69,18 +75,11 @@ public final class AddTailResIdl extends Message {
         public AddTailResIdl build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AddTailResIdl(this, z, null) : (AddTailResIdl) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AddTailResIdl(this, z, null);
+            }
+            return (AddTailResIdl) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ AddTailResIdl(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -108,5 +107,9 @@ public final class AddTailResIdl extends Message {
         }
         this.data = builder.data;
         this.error = builder.error;
+    }
+
+    public /* synthetic */ AddTailResIdl(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

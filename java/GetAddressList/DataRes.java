@@ -30,12 +30,18 @@ public final class DataRes extends Message {
     public final Long timestamp;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<listData> address_list;
-        public List<deleteList> deleted_list;
-        public List<robotsList> robots_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List address_list;
+        public List deleted_list;
+        public List robots_list;
         public Long timestamp;
 
         public Builder() {
@@ -84,14 +90,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class DataRes extends Message {
         DEFAULT_ROBOTS_LIST = Collections.emptyList();
     }
 
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
@@ -136,13 +135,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<listData> list = builder.address_list;
+            List list = builder.address_list;
             if (list == null) {
                 this.address_list = DEFAULT_ADDRESS_LIST;
             } else {
                 this.address_list = Message.immutableCopyOf(list);
             }
-            List<deleteList> list2 = builder.deleted_list;
+            List list2 = builder.deleted_list;
             if (list2 == null) {
                 this.deleted_list = DEFAULT_DELETED_LIST;
             } else {
@@ -154,7 +153,7 @@ public final class DataRes extends Message {
             } else {
                 this.timestamp = l;
             }
-            List<robotsList> list3 = builder.robots_list;
+            List list3 = builder.robots_list;
             if (list3 == null) {
                 this.robots_list = DEFAULT_ROBOTS_LIST;
                 return;
@@ -167,5 +166,9 @@ public final class DataRes extends Message {
         this.deleted_list = Message.immutableCopyOf(builder.deleted_list);
         this.timestamp = builder.timestamp;
         this.robots_list = Message.immutableCopyOf(builder.robots_list);
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

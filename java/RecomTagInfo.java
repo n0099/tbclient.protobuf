@@ -28,7 +28,13 @@ public final class RecomTagInfo extends Message {
     public final String pic;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecomTagInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String first_class;
@@ -82,14 +88,11 @@ public final class RecomTagInfo extends Message {
         public RecomTagInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecomTagInfo(this, z, null) : (RecomTagInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecomTagInfo(this, z, null);
+            }
+            return (RecomTagInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -106,10 +109,6 @@ public final class RecomTagInfo extends Message {
             }
         }
         DEFAULT_ID = 0;
-    }
-
-    public /* synthetic */ RecomTagInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -162,5 +161,9 @@ public final class RecomTagInfo extends Message {
         this.name = builder.name;
         this.pic = builder.pic;
         this.first_class = builder.first_class;
+    }
+
+    public /* synthetic */ RecomTagInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

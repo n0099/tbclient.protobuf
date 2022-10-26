@@ -21,10 +21,16 @@ public final class RankInfo extends Message {
     public final List<RankItem> rank_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RankInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<RankItem> rank_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List rank_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -69,14 +75,11 @@ public final class RankInfo extends Message {
         public RankInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RankInfo(this, z, null) : (RankInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RankInfo(this, z, null);
+            }
+            return (RankInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -93,10 +96,6 @@ public final class RankInfo extends Message {
             }
         }
         DEFAULT_RANK_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ RankInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -118,7 +117,7 @@ public final class RankInfo extends Message {
             }
         }
         if (z) {
-            List<RankItem> list = builder.rank_list;
+            List list = builder.rank_list;
             if (list == null) {
                 this.rank_list = DEFAULT_RANK_LIST;
                 return;
@@ -128,5 +127,9 @@ public final class RankInfo extends Message {
             }
         }
         this.rank_list = Message.immutableCopyOf(builder.rank_list);
+    }
+
+    public /* synthetic */ RankInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -24,11 +24,17 @@ public final class DiscoverHotForum extends Message {
     public final List<DiscoverTabCard> tab_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DiscoverHotForum> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer floor;
-        public List<DiscoverTabCard> tab_list;
+        public List tab_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class DiscoverHotForum extends Message {
         public DiscoverHotForum build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DiscoverHotForum(this, z, null) : (DiscoverHotForum) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DiscoverHotForum(this, z, null);
+            }
+            return (DiscoverHotForum) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class DiscoverHotForum extends Message {
         }
         DEFAULT_TAB_LIST = Collections.emptyList();
         DEFAULT_FLOOR = 0;
-    }
-
-    public /* synthetic */ DiscoverHotForum(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -124,7 +123,7 @@ public final class DiscoverHotForum extends Message {
             }
         }
         if (z) {
-            List<DiscoverTabCard> list = builder.tab_list;
+            List list = builder.tab_list;
             if (list == null) {
                 this.tab_list = DEFAULT_TAB_LIST;
             } else {
@@ -141,5 +140,9 @@ public final class DiscoverHotForum extends Message {
         }
         this.tab_list = Message.immutableCopyOf(builder.tab_list);
         this.floor = builder.floor;
+    }
+
+    public /* synthetic */ DiscoverHotForum(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

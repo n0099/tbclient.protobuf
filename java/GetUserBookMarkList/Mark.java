@@ -43,7 +43,13 @@ public final class Mark extends Message {
     public final Integer word_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Mark> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String book_id;
@@ -107,14 +113,11 @@ public final class Mark extends Message {
         public Mark build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Mark(this, z, null) : (Mark) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Mark(this, z, null);
+            }
+            return (Mark) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -136,10 +139,6 @@ public final class Mark extends Message {
         DEFAULT_WORD_ID = 0;
         DEFAULT_POSITION = 0L;
         DEFAULT_UPDATE_TIME = 0;
-    }
-
-    public /* synthetic */ Mark(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -227,5 +226,9 @@ public final class Mark extends Message {
         this.position = builder.position;
         this.content = builder.content;
         this.update_time = builder.update_time;
+    }
+
+    public /* synthetic */ Mark(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

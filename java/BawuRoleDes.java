@@ -24,10 +24,16 @@ public final class BawuRoleDes extends Message {
     public final String role_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BawuRoleDes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<BawuRoleInfoPub> role_info;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List role_info;
         public String role_name;
 
         public Builder() {
@@ -74,14 +80,11 @@ public final class BawuRoleDes extends Message {
         public BawuRoleDes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BawuRoleDes(this, z, null) : (BawuRoleDes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BawuRoleDes(this, z, null);
+            }
+            return (BawuRoleDes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -98,10 +101,6 @@ public final class BawuRoleDes extends Message {
             }
         }
         DEFAULT_ROLE_INFO = Collections.emptyList();
-    }
-
-    public /* synthetic */ BawuRoleDes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,7 +128,7 @@ public final class BawuRoleDes extends Message {
             } else {
                 this.role_name = str;
             }
-            List<BawuRoleInfoPub> list = builder.role_info;
+            List list = builder.role_info;
             if (list == null) {
                 this.role_info = DEFAULT_ROLE_INFO;
                 return;
@@ -140,5 +139,9 @@ public final class BawuRoleDes extends Message {
         }
         this.role_name = builder.role_name;
         this.role_info = Message.immutableCopyOf(builder.role_info);
+    }
+
+    public /* synthetic */ BawuRoleDes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

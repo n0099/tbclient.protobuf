@@ -19,7 +19,13 @@ public final class RedNotify extends Message {
     public final Integer notify_status;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RedNotify> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer notify_status;
@@ -67,14 +73,11 @@ public final class RedNotify extends Message {
         public RedNotify build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RedNotify(this, z, null) : (RedNotify) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RedNotify(this, z, null);
+            }
+            return (RedNotify) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -91,10 +94,6 @@ public final class RedNotify extends Message {
             }
         }
         DEFAULT_NOTIFY_STATUS = 0;
-    }
-
-    public /* synthetic */ RedNotify(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -126,5 +125,9 @@ public final class RedNotify extends Message {
             }
         }
         this.notify_status = builder.notify_status;
+    }
+
+    public /* synthetic */ RedNotify(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

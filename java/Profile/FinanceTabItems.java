@@ -35,7 +35,13 @@ public final class FinanceTabItems extends Message {
     public final String tab_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FinanceTabItems> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String desc_text;
@@ -95,18 +101,11 @@ public final class FinanceTabItems extends Message {
         public FinanceTabItems build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FinanceTabItems(this, z, null) : (FinanceTabItems) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FinanceTabItems(this, z, null);
+            }
+            return (FinanceTabItems) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ FinanceTabItems(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -180,5 +179,9 @@ public final class FinanceTabItems extends Message {
         this.tab_bubble = builder.tab_bubble;
         this.tab_type = builder.tab_type;
         this.statistic = builder.statistic;
+    }
+
+    public /* synthetic */ FinanceTabItems(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

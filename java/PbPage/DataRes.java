@@ -16,8 +16,11 @@ import tbclient.AlaLiveInfo;
 import tbclient.Anti;
 import tbclient.BannerList;
 import tbclient.BusinessAccountInfo;
+import tbclient.EditConfig;
+import tbclient.EditInfo;
 import tbclient.FineBannerPb;
 import tbclient.ForumRuleStatus;
+import tbclient.GameHotRankEntry;
 import tbclient.GraffitiRankListInfo;
 import tbclient.Lbs;
 import tbclient.ManagerElection;
@@ -97,6 +100,10 @@ public final class DataRes extends Message {
     public final BusinessPromotInfo business_promot_info;
     @ProtoField(tag = 39)
     public final SimpleForum display_forum;
+    @ProtoField(tag = 71)
+    public final EditConfig edit_config;
+    @ProtoField(tag = 72)
+    public final EditInfo edit_info;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer exp_guide_today;
     @ProtoField(tag = 45, type = Message.Datatype.INT32)
@@ -125,6 +132,8 @@ public final class DataRes extends Message {
     public final ForumRuleStatus forum_rule;
     @ProtoField(label = Message.Label.REPEATED, tag = 36)
     public final List<SimpleForum> from_forum_list;
+    @ProtoField(tag = 74)
+    public final GameHotRankEntry game_hot_rank_entry;
     @ProtoField(tag = 23)
     public final GodCard god_card;
     @ProtoField(tag = 21)
@@ -219,7 +228,13 @@ public final class DataRes extends Message {
     public final List<User> user_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public AddPost add_post;
@@ -228,15 +243,17 @@ public final class DataRes extends Message {
         public AppealInfo appeal_info;
         public String asp_shown_info;
         public BannerList banner_list;
-        public List<ThreadInfo> bjh_recommend;
+        public List bjh_recommend;
         public BusinessAccountInfo business_account_info;
         public BusinessPromotInfo business_promot_info;
         public SimpleForum display_forum;
+        public EditConfig edit_config;
+        public EditInfo edit_info;
         public Integer exp_guide_today;
         public Integer exp_news_today;
         public FeedExtInfo feed_info;
-        public List<ThreadInfo> feed_thread_list;
-        public List<FineBannerPb> fine_banner;
+        public List feed_thread_list;
+        public List fine_banner;
         public Post first_floor_post;
         public FloatingIcon floating_icon;
         public Long fold_comment_num;
@@ -245,7 +262,8 @@ public final class DataRes extends Message {
         public SimpleForum forum;
         public ForumHeadlineImgInfo forum_headline_img_info;
         public ForumRuleStatus forum_rule;
-        public List<SimpleForum> from_forum_list;
+        public List from_forum_list;
+        public GameHotRankEntry game_hot_rank_entry;
         public GodCard god_card;
         public GraffitiRankListInfo graffiti_rank_list_info;
         public GuessLikeStruct guess_like;
@@ -263,22 +281,22 @@ public final class DataRes extends Message {
         public ManagerElection manager_election;
         public String multi_forum_text;
         public NaGuide na_guide;
-        public List<SimpleUser> new_agree_user;
+        public List new_agree_user;
         public NewsInfo news_info;
         public Page page;
         public String partial_visible_toast;
         public String pb_notice;
         public Integer pb_notice_type;
-        public List<PbSortType> pb_sort_info;
-        public List<PsRankListItem> play_rank_list;
-        public List<PostBanner> post_banner;
-        public List<Post> post_list;
+        public List pb_sort_info;
+        public List play_rank_list;
+        public List post_banner;
+        public List post_list;
         public Promotion promotion;
         public AlaLiveInfo recom_ala_info;
-        public List<ThreadInfo> recom_thread_info;
+        public List recom_thread_info;
         public RecommendBook recommend_book;
-        public List<RecommendThread> recommend_threads;
-        public List<SimpleForum> repost_recommend_forum_list;
+        public List recommend_threads;
+        public List repost_recommend_forum_list;
         public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
         public Integer show_adsense;
@@ -286,12 +304,12 @@ public final class DataRes extends Message {
         public Integer switch_read_open;
         public ThreadInfo thread;
         public Long thread_freq_num;
-        public List<RecomTopicList> thread_topic;
+        public List thread_topic;
         public PbTopAgreePost top_agree_post_list;
         public Post top_answer;
         public TwZhiBoAnti twzhibo_anti;
         public User user;
-        public List<User> user_list;
+        public List user_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -397,7 +415,10 @@ public final class DataRes extends Message {
             this.pb_notice = dataRes.pb_notice;
             this.has_fold_comment = dataRes.has_fold_comment;
             this.fold_comment_num = dataRes.fold_comment_num;
+            this.edit_config = dataRes.edit_config;
+            this.edit_info = dataRes.edit_info;
             this.top_answer = dataRes.top_answer;
+            this.game_hot_rank_entry = dataRes.game_hot_rank_entry;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -405,14 +426,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -461,10 +479,6 @@ public final class DataRes extends Message {
         DEFAULT_FOLD_COMMENT_NUM = 0L;
     }
 
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
@@ -489,7 +503,7 @@ public final class DataRes extends Message {
             this.page = builder.page;
             this.anti = builder.anti;
             this.add_post = builder.add_post;
-            List<Post> list = builder.post_list;
+            List list = builder.post_list;
             if (list == null) {
                 this.post_list = DEFAULT_POST_LIST;
             } else {
@@ -509,14 +523,14 @@ public final class DataRes extends Message {
             } else {
                 this.is_new_url = num2;
             }
-            List<PostBanner> list2 = builder.post_banner;
+            List list2 = builder.post_banner;
             if (list2 == null) {
                 this.post_banner = DEFAULT_POST_BANNER;
             } else {
                 this.post_banner = Message.immutableCopyOf(list2);
             }
             this.banner_list = builder.banner_list;
-            List<User> list3 = builder.user_list;
+            List list3 = builder.user_list;
             if (list3 == null) {
                 this.user_list = DEFAULT_USER_LIST;
             } else {
@@ -529,13 +543,13 @@ public final class DataRes extends Message {
                 this.server_time = num3;
             }
             this.news_info = builder.news_info;
-            List<RecommendThread> list4 = builder.recommend_threads;
+            List list4 = builder.recommend_threads;
             if (list4 == null) {
                 this.recommend_threads = DEFAULT_RECOMMEND_THREADS;
             } else {
                 this.recommend_threads = Message.immutableCopyOf(list4);
             }
-            List<FineBannerPb> list5 = builder.fine_banner;
+            List list5 = builder.fine_banner;
             if (list5 == null) {
                 this.fine_banner = DEFAULT_FINE_BANNER;
             } else {
@@ -547,7 +561,7 @@ public final class DataRes extends Message {
             this.graffiti_rank_list_info = builder.graffiti_rank_list_info;
             this.appeal_info = builder.appeal_info;
             this.god_card = builder.god_card;
-            List<PsRankListItem> list6 = builder.play_rank_list;
+            List list6 = builder.play_rank_list;
             if (list6 == null) {
                 this.play_rank_list = DEFAULT_PLAY_RANK_LIST;
             } else {
@@ -563,7 +577,7 @@ public final class DataRes extends Message {
                 this.asp_shown_info = str;
             }
             this.guess_like = builder.guess_like;
-            List<ThreadInfo> list7 = builder.feed_thread_list;
+            List list7 = builder.feed_thread_list;
             if (list7 == null) {
                 this.feed_thread_list = DEFAULT_FEED_THREAD_LIST;
             } else {
@@ -583,13 +597,13 @@ public final class DataRes extends Message {
             }
             this.feed_info = builder.feed_info;
             this.top_agree_post_list = builder.top_agree_post_list;
-            List<SimpleForum> list8 = builder.repost_recommend_forum_list;
+            List list8 = builder.repost_recommend_forum_list;
             if (list8 == null) {
                 this.repost_recommend_forum_list = DEFAULT_REPOST_RECOMMEND_FORUM_LIST;
             } else {
                 this.repost_recommend_forum_list = Message.immutableCopyOf(list8);
             }
-            List<SimpleForum> list9 = builder.from_forum_list;
+            List list9 = builder.from_forum_list;
             if (list9 == null) {
                 this.from_forum_list = DEFAULT_FROM_FORUM_LIST;
             } else {
@@ -603,7 +617,7 @@ public final class DataRes extends Message {
             }
             this.first_floor_post = builder.first_floor_post;
             this.display_forum = builder.display_forum;
-            List<SimpleUser> list10 = builder.new_agree_user;
+            List list10 = builder.new_agree_user;
             if (list10 == null) {
                 this.new_agree_user = DEFAULT_NEW_AGREE_USER;
             } else {
@@ -641,13 +655,13 @@ public final class DataRes extends Message {
             } else {
                 this.multi_forum_text = str4;
             }
-            List<RecomTopicList> list11 = builder.thread_topic;
+            List list11 = builder.thread_topic;
             if (list11 == null) {
                 this.thread_topic = DEFAULT_THREAD_TOPIC;
             } else {
                 this.thread_topic = Message.immutableCopyOf(list11);
             }
-            List<PbSortType> list12 = builder.pb_sort_info;
+            List list12 = builder.pb_sort_info;
             if (list12 == null) {
                 this.pb_sort_info = DEFAULT_PB_SORT_INFO;
             } else {
@@ -660,7 +674,7 @@ public final class DataRes extends Message {
                 this.sort_type = num8;
             }
             this.manager_election = builder.manager_election;
-            List<ThreadInfo> list13 = builder.bjh_recommend;
+            List list13 = builder.bjh_recommend;
             if (list13 == null) {
                 this.bjh_recommend = DEFAULT_BJH_RECOMMEND;
             } else {
@@ -682,7 +696,7 @@ public final class DataRes extends Message {
                 this.jumptotab2 = str5;
             }
             this.business_account_info = builder.business_account_info;
-            List<ThreadInfo> list14 = builder.recom_thread_info;
+            List list14 = builder.recom_thread_info;
             if (list14 == null) {
                 this.recom_thread_info = DEFAULT_RECOM_THREAD_INFO;
             } else {
@@ -738,7 +752,10 @@ public final class DataRes extends Message {
             } else {
                 this.fold_comment_num = l2;
             }
+            this.edit_config = builder.edit_config;
+            this.edit_info = builder.edit_info;
             this.top_answer = builder.top_answer;
+            this.game_hot_rank_entry = builder.game_hot_rank_entry;
             return;
         }
         this.user = builder.user;
@@ -810,6 +827,13 @@ public final class DataRes extends Message {
         this.pb_notice = builder.pb_notice;
         this.has_fold_comment = builder.has_fold_comment;
         this.fold_comment_num = builder.fold_comment_num;
+        this.edit_config = builder.edit_config;
+        this.edit_info = builder.edit_info;
         this.top_answer = builder.top_answer;
+        this.game_hot_rank_entry = builder.game_hot_rank_entry;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

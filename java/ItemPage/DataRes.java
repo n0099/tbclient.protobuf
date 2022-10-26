@@ -54,20 +54,26 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> thread_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<AlbumElement> album_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List album_list;
         public Integer discussion_id;
-        public List<ThreadInfo> discussion_list;
+        public List discussion_list;
         public Integer has_tornado;
         public ItemGameCode item_game_code;
         public ItemGameInfo item_game_info;
         public ItemInfo item_info;
         public String link;
-        public List<RecommendForumInfo> recommend_forum;
-        public List<ItemInfo> recommend_item;
-        public List<ThreadInfo> thread_list;
+        public List recommend_forum;
+        public List recommend_item;
+        public List thread_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -122,14 +128,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -154,10 +157,6 @@ public final class DataRes extends Message {
         DEFAULT_HAS_TORNADO = 0;
     }
 
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
@@ -178,19 +177,19 @@ public final class DataRes extends Message {
         }
         if (z) {
             this.item_info = builder.item_info;
-            List<ThreadInfo> list = builder.thread_list;
+            List list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {
                 this.thread_list = Message.immutableCopyOf(list);
             }
-            List<ItemInfo> list2 = builder.recommend_item;
+            List list2 = builder.recommend_item;
             if (list2 == null) {
                 this.recommend_item = DEFAULT_RECOMMEND_ITEM;
             } else {
                 this.recommend_item = Message.immutableCopyOf(list2);
             }
-            List<RecommendForumInfo> list3 = builder.recommend_forum;
+            List list3 = builder.recommend_forum;
             if (list3 == null) {
                 this.recommend_forum = DEFAULT_RECOMMEND_FORUM;
             } else {
@@ -202,13 +201,13 @@ public final class DataRes extends Message {
             } else {
                 this.link = str;
             }
-            List<AlbumElement> list4 = builder.album_list;
+            List list4 = builder.album_list;
             if (list4 == null) {
                 this.album_list = DEFAULT_ALBUM_LIST;
             } else {
                 this.album_list = Message.immutableCopyOf(list4);
             }
-            List<ThreadInfo> list5 = builder.discussion_list;
+            List list5 = builder.discussion_list;
             if (list5 == null) {
                 this.discussion_list = DEFAULT_DISCUSSION_LIST;
             } else {
@@ -242,5 +241,9 @@ public final class DataRes extends Message {
         this.item_game_info = builder.item_game_info;
         this.item_game_code = builder.item_game_code;
         this.has_tornado = builder.has_tornado;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -29,12 +29,18 @@ public final class DataRes extends Message {
     public final List<HistoryForumInfo> this_week_forums;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<HistoryForumInfo> history_forum;
-        public List<FrsTabInfo> nav_tab_info;
-        public List<HistoryForumInfo> this_week_forums;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List history_forum;
+        public List nav_tab_info;
+        public List this_week_forums;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -81,14 +87,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +110,6 @@ public final class DataRes extends Message {
         DEFAULT_HISTORY_FORUM = Collections.emptyList();
         DEFAULT_NAV_TAB_INFO = Collections.emptyList();
         DEFAULT_THIS_WEEK_FORUMS = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -132,19 +131,19 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<HistoryForumInfo> list = builder.history_forum;
+            List list = builder.history_forum;
             if (list == null) {
                 this.history_forum = DEFAULT_HISTORY_FORUM;
             } else {
                 this.history_forum = Message.immutableCopyOf(list);
             }
-            List<FrsTabInfo> list2 = builder.nav_tab_info;
+            List list2 = builder.nav_tab_info;
             if (list2 == null) {
                 this.nav_tab_info = DEFAULT_NAV_TAB_INFO;
             } else {
                 this.nav_tab_info = Message.immutableCopyOf(list2);
             }
-            List<HistoryForumInfo> list3 = builder.this_week_forums;
+            List list3 = builder.this_week_forums;
             if (list3 == null) {
                 this.this_week_forums = DEFAULT_THIS_WEEK_FORUMS;
                 return;
@@ -156,5 +155,9 @@ public final class DataRes extends Message {
         this.history_forum = Message.immutableCopyOf(builder.history_forum);
         this.nav_tab_info = Message.immutableCopyOf(builder.nav_tab_info);
         this.this_week_forums = Message.immutableCopyOf(builder.this_week_forums);
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

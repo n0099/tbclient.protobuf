@@ -28,12 +28,18 @@ public final class DataRes extends Message {
     public final List<SimpleForum> recommend_forum_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer priv_thread;
         public String recommend_ext;
-        public List<SimpleForum> recommend_forum_list;
+        public List recommend_forum_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -80,14 +86,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -105,10 +108,6 @@ public final class DataRes extends Message {
         }
         DEFAULT_RECOMMEND_FORUM_LIST = Collections.emptyList();
         DEFAULT_PRIV_THREAD = 0;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<SimpleForum> list = builder.recommend_forum_list;
+            List list = builder.recommend_forum_list;
             if (list == null) {
                 this.recommend_forum_list = DEFAULT_RECOMMEND_FORUM_LIST;
             } else {
@@ -154,5 +153,9 @@ public final class DataRes extends Message {
         this.recommend_forum_list = Message.immutableCopyOf(builder.recommend_forum_list);
         this.recommend_ext = builder.recommend_ext;
         this.priv_thread = builder.priv_thread;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

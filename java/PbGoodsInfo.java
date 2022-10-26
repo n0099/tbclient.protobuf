@@ -40,7 +40,13 @@ public final class PbGoodsInfo extends Message {
     public final Integer sort;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PbGoodsInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String goods_from;
@@ -102,14 +108,11 @@ public final class PbGoodsInfo extends Message {
         public PbGoodsInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PbGoodsInfo(this, z, null) : (PbGoodsInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PbGoodsInfo(this, z, null);
+            }
+            return (PbGoodsInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -127,10 +130,6 @@ public final class PbGoodsInfo extends Message {
         }
         DEFAULT_SORT = 0;
         DEFAULT_GOODS_ID = 0L;
-    }
-
-    public /* synthetic */ PbGoodsInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -211,5 +210,9 @@ public final class PbGoodsInfo extends Message {
         this.goods_from = builder.goods_from;
         this.goods_url_h5 = builder.goods_url_h5;
         this.goods_id = builder.goods_id;
+    }
+
+    public /* synthetic */ PbGoodsInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

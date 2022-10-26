@@ -38,13 +38,19 @@ public final class ActiveCenter extends Message {
     public final String win_title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ActiveCenter> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_first_up;
         public Integer is_new_window;
         public ActiveCenterMission mission;
-        public List<ActiveCenterStatus> mission_status_list;
+        public List mission_status_list;
         public String win_desc;
         public Integer win_jump_time;
         public String win_title;
@@ -98,14 +104,11 @@ public final class ActiveCenter extends Message {
         public ActiveCenter build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ActiveCenter(this, z, null) : (ActiveCenter) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ActiveCenter(this, z, null);
+            }
+            return (ActiveCenter) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -125,10 +128,6 @@ public final class ActiveCenter extends Message {
         DEFAULT_WIN_JUMP_TIME = 0;
         DEFAULT_IS_NEW_WINDOW = 0;
         DEFAULT_IS_FIRST_UP = 0;
-    }
-
-    public /* synthetic */ ActiveCenter(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,7 +162,7 @@ public final class ActiveCenter extends Message {
                 this.win_desc = str2;
             }
             this.mission = builder.mission;
-            List<ActiveCenterStatus> list = builder.mission_status_list;
+            List list = builder.mission_status_list;
             if (list == null) {
                 this.mission_status_list = DEFAULT_MISSION_STATUS_LIST;
             } else {
@@ -197,5 +196,9 @@ public final class ActiveCenter extends Message {
         this.win_jump_time = builder.win_jump_time;
         this.is_new_window = builder.is_new_window;
         this.is_first_up = builder.is_first_up;
+    }
+
+    public /* synthetic */ ActiveCenter(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

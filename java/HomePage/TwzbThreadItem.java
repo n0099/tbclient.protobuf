@@ -31,7 +31,13 @@ public final class TwzbThreadItem extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TwzbThreadItem> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
@@ -87,14 +93,11 @@ public final class TwzbThreadItem extends Message {
         public TwzbThreadItem build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TwzbThreadItem(this, z, null) : (TwzbThreadItem) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TwzbThreadItem(this, z, null);
+            }
+            return (TwzbThreadItem) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -111,10 +114,6 @@ public final class TwzbThreadItem extends Message {
             }
         }
         DEFAULT_TID = 0L;
-    }
-
-    public /* synthetic */ TwzbThreadItem(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -174,5 +173,9 @@ public final class TwzbThreadItem extends Message {
         this._abstract = builder._abstract;
         this.pic_url = builder.pic_url;
         this.link_url = builder.link_url;
+    }
+
+    public /* synthetic */ TwzbThreadItem(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

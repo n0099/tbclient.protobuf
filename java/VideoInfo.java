@@ -82,7 +82,13 @@ public final class VideoInfo extends Message {
     public final Double wth_mid_loc;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<VideoInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String first_frame_thumbnail;
@@ -96,7 +102,7 @@ public final class VideoInfo extends Message {
         public Integer thumbnail_height;
         public String thumbnail_url;
         public Integer thumbnail_width;
-        public List<VideoDesc> video_desc;
+        public List video_desc;
         public Integer video_duration;
         public VideoDesc video_h265;
         public Integer video_height;
@@ -172,14 +178,11 @@ public final class VideoInfo extends Message {
         public VideoInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new VideoInfo(this, z, null) : (VideoInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new VideoInfo(this, z, null);
+            }
+            return (VideoInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -209,10 +212,6 @@ public final class VideoInfo extends Message {
         Double valueOf = Double.valueOf(0.0d);
         DEFAULT_WTH_MID_LOC = valueOf;
         DEFAULT_HTH_MID_LOC = valueOf;
-    }
-
-    public /* synthetic */ VideoInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -300,7 +299,7 @@ public final class VideoInfo extends Message {
             } else {
                 this.media_subtitle = str4;
             }
-            List<VideoDesc> list = builder.video_desc;
+            List list = builder.video_desc;
             if (list == null) {
                 this.video_desc = DEFAULT_VIDEO_DESC;
             } else {
@@ -381,5 +380,9 @@ public final class VideoInfo extends Message {
         this.hth_mid_loc = builder.hth_mid_loc;
         this.small_thumbnail_url = builder.small_thumbnail_url;
         this.first_frame_thumbnail = builder.first_frame_thumbnail;
+    }
+
+    public /* synthetic */ VideoInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

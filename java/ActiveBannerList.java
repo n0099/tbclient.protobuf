@@ -34,7 +34,13 @@ public final class ActiveBannerList extends Message {
     public final String skip_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ActiveBannerList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String active_desc;
@@ -92,14 +98,11 @@ public final class ActiveBannerList extends Message {
         public ActiveBannerList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ActiveBannerList(this, z, null) : (ActiveBannerList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ActiveBannerList(this, z, null);
+            }
+            return (ActiveBannerList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -117,10 +120,6 @@ public final class ActiveBannerList extends Message {
         }
         DEFAULT_ID = 0;
         DEFAULT_ACTIVE_TYPE = 0;
-    }
-
-    public /* synthetic */ ActiveBannerList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -187,5 +186,9 @@ public final class ActiveBannerList extends Message {
         this.active_desc = builder.active_desc;
         this.skip_url = builder.skip_url;
         this.active_type = builder.active_type;
+    }
+
+    public /* synthetic */ ActiveBannerList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

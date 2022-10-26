@@ -27,12 +27,18 @@ public final class ModuleInfo extends Message {
     public final List<ThreadModule> module_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ModuleInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer max_module_num;
         public Integer max_module_thread_num;
-        public List<ThreadModule> module_list;
+        public List module_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -79,14 +85,11 @@ public final class ModuleInfo extends Message {
         public ModuleInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ModuleInfo(this, z, null) : (ModuleInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ModuleInfo(this, z, null);
+            }
+            return (ModuleInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -105,10 +108,6 @@ public final class ModuleInfo extends Message {
         DEFAULT_MODULE_LIST = Collections.emptyList();
         DEFAULT_MAX_MODULE_NUM = 0;
         DEFAULT_MAX_MODULE_THREAD_NUM = 0;
-    }
-
-    public /* synthetic */ ModuleInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class ModuleInfo extends Message {
             }
         }
         if (z) {
-            List<ThreadModule> list = builder.module_list;
+            List list = builder.module_list;
             if (list == null) {
                 this.module_list = DEFAULT_MODULE_LIST;
             } else {
@@ -154,5 +153,9 @@ public final class ModuleInfo extends Message {
         this.module_list = Message.immutableCopyOf(builder.module_list);
         this.max_module_num = builder.max_module_num;
         this.max_module_thread_num = builder.max_module_thread_num;
+    }
+
+    public /* synthetic */ ModuleInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

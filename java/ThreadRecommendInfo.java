@@ -54,7 +54,13 @@ public final class ThreadRecommendInfo extends Message {
     public final Long topic_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ThreadRecommendInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ThemeColorInfo background_color;
@@ -128,14 +134,11 @@ public final class ThreadRecommendInfo extends Message {
         public ThreadRecommendInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThreadRecommendInfo(this, z, null) : (ThreadRecommendInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThreadRecommendInfo(this, z, null);
+            }
+            return (ThreadRecommendInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -153,10 +156,6 @@ public final class ThreadRecommendInfo extends Message {
         }
         DEFAULT_SHOW_NUM = 0;
         DEFAULT_TOPIC_ID = 0L;
-    }
-
-    public /* synthetic */ ThreadRecommendInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -259,5 +258,9 @@ public final class ThreadRecommendInfo extends Message {
         this.strip_color = builder.strip_color;
         this.background_color = builder.background_color;
         this.jump_link = builder.jump_link;
+    }
+
+    public /* synthetic */ ThreadRecommendInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

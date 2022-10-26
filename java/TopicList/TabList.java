@@ -32,7 +32,13 @@ public final class TabList extends Message {
     public final String tab_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TabList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String share_desc;
@@ -90,18 +96,11 @@ public final class TabList extends Message {
         public TabList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TabList(this, z, null) : (TabList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TabList(this, z, null);
+            }
+            return (TabList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ TabList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -168,5 +167,9 @@ public final class TabList extends Message {
         this.share_title = builder.share_title;
         this.share_desc = builder.share_desc;
         this.share_url = builder.share_url;
+    }
+
+    public /* synthetic */ TabList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

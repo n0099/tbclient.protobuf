@@ -31,7 +31,13 @@ public final class friendInfo extends Message {
     public final String user_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<friendInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String key;
@@ -87,14 +93,11 @@ public final class friendInfo extends Message {
         public friendInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new friendInfo(this, z, null) : (friendInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new friendInfo(this, z, null);
+            }
+            return (friendInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -111,10 +114,6 @@ public final class friendInfo extends Message {
             }
         }
         DEFAULT_USER_ID = 0L;
-    }
-
-    public /* synthetic */ friendInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -174,5 +173,9 @@ public final class friendInfo extends Message {
         this.user_id = builder.user_id;
         this.quanpin = builder.quanpin;
         this.key = builder.key;
+    }
+
+    public /* synthetic */ friendInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

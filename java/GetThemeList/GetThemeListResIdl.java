@@ -19,7 +19,13 @@ public final class GetThemeListResIdl extends Message {
     public final Error error;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GetThemeListResIdl> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public DataRes data;
@@ -69,18 +75,11 @@ public final class GetThemeListResIdl extends Message {
         public GetThemeListResIdl build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GetThemeListResIdl(this, z, null) : (GetThemeListResIdl) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GetThemeListResIdl(this, z, null);
+            }
+            return (GetThemeListResIdl) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ GetThemeListResIdl(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -108,5 +107,9 @@ public final class GetThemeListResIdl extends Message {
         }
         this.data = builder.data;
         this.error = builder.error;
+    }
+
+    public /* synthetic */ GetThemeListResIdl(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

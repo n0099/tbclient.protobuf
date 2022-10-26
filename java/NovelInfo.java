@@ -55,7 +55,13 @@ public final class NovelInfo extends Message {
     public final Long percent;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<NovelInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String author;
@@ -127,14 +133,11 @@ public final class NovelInfo extends Message {
         public NovelInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new NovelInfo(this, z, null) : (NovelInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new NovelInfo(this, z, null);
+            }
+            return (NovelInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -153,10 +156,6 @@ public final class NovelInfo extends Message {
         DEFAULT_NOVEL_ID = 0L;
         DEFAULT_PERCENT = 0L;
         DEFAULT_CHAPTERS = 0L;
-    }
-
-    public /* synthetic */ NovelInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -272,5 +271,9 @@ public final class NovelInfo extends Message {
         this.member_text = builder.member_text;
         this.member_img = builder.member_img;
         this.buy_url = builder.buy_url;
+    }
+
+    public /* synthetic */ NovelInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

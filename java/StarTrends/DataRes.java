@@ -29,12 +29,18 @@ public final class DataRes extends Message {
     public final List<User> user_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer has_more;
-        public List<ThreadInfo> thread_list;
-        public List<User> user_list;
+        public List thread_list;
+        public List user_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -81,14 +87,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +110,6 @@ public final class DataRes extends Message {
         DEFAULT_USER_LIST = Collections.emptyList();
         DEFAULT_THREAD_LIST = Collections.emptyList();
         DEFAULT_HAS_MORE = 0;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -132,13 +131,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<User> list = builder.user_list;
+            List list = builder.user_list;
             if (list == null) {
                 this.user_list = DEFAULT_USER_LIST;
             } else {
                 this.user_list = Message.immutableCopyOf(list);
             }
-            List<ThreadInfo> list2 = builder.thread_list;
+            List list2 = builder.thread_list;
             if (list2 == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {
@@ -156,5 +155,9 @@ public final class DataRes extends Message {
         this.user_list = Message.immutableCopyOf(builder.user_list);
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
         this.has_more = builder.has_more;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

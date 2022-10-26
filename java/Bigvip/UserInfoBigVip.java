@@ -40,7 +40,13 @@ public final class UserInfoBigVip extends Message {
     public final String user_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UserInfoBigVip> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer message_accept;
@@ -102,14 +108,11 @@ public final class UserInfoBigVip extends Message {
         public UserInfoBigVip build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UserInfoBigVip(this, z, null) : (UserInfoBigVip) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UserInfoBigVip(this, z, null);
+            }
+            return (UserInfoBigVip) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -128,10 +131,6 @@ public final class UserInfoBigVip extends Message {
         DEFAULT_USER_ID = 0L;
         DEFAULT_MESSAGE_ACCEPT = 0;
         DEFAULT_MUTE_NOTIFICATIONS = 0;
-    }
-
-    public /* synthetic */ UserInfoBigVip(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -212,5 +211,9 @@ public final class UserInfoBigVip extends Message {
         this.portrait = builder.portrait;
         this.portraith = builder.portraith;
         this.mute_notifications = builder.mute_notifications;
+    }
+
+    public /* synthetic */ UserInfoBigVip(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

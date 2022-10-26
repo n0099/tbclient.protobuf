@@ -34,15 +34,21 @@ public final class DataRes extends Message {
     public final List<AlaLiveInfo> live_pic_second_floor;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public IconRes icon;
         public LevelRes level;
         public LiveRes live;
-        public List<AlaLiveInfo> live_follow_second_floor;
-        public List<AlaLiveInfo> live_index_second_floor;
-        public List<AlaLiveInfo> live_pic_second_floor;
+        public List live_follow_second_floor;
+        public List live_index_second_floor;
+        public List live_pic_second_floor;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -92,14 +98,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -118,10 +121,6 @@ public final class DataRes extends Message {
         DEFAULT_LIVE_FOLLOW_SECOND_FLOOR = Collections.emptyList();
         DEFAULT_LIVE_INDEX_SECOND_FLOOR = Collections.emptyList();
         DEFAULT_LIVE_PIC_SECOND_FLOOR = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -146,19 +145,19 @@ public final class DataRes extends Message {
             this.live = builder.live;
             this.level = builder.level;
             this.icon = builder.icon;
-            List<AlaLiveInfo> list = builder.live_follow_second_floor;
+            List list = builder.live_follow_second_floor;
             if (list == null) {
                 this.live_follow_second_floor = DEFAULT_LIVE_FOLLOW_SECOND_FLOOR;
             } else {
                 this.live_follow_second_floor = Message.immutableCopyOf(list);
             }
-            List<AlaLiveInfo> list2 = builder.live_index_second_floor;
+            List list2 = builder.live_index_second_floor;
             if (list2 == null) {
                 this.live_index_second_floor = DEFAULT_LIVE_INDEX_SECOND_FLOOR;
             } else {
                 this.live_index_second_floor = Message.immutableCopyOf(list2);
             }
-            List<AlaLiveInfo> list3 = builder.live_pic_second_floor;
+            List list3 = builder.live_pic_second_floor;
             if (list3 == null) {
                 this.live_pic_second_floor = DEFAULT_LIVE_PIC_SECOND_FLOOR;
                 return;
@@ -173,5 +172,9 @@ public final class DataRes extends Message {
         this.live_follow_second_floor = Message.immutableCopyOf(builder.live_follow_second_floor);
         this.live_index_second_floor = Message.immutableCopyOf(builder.live_index_second_floor);
         this.live_pic_second_floor = Message.immutableCopyOf(builder.live_pic_second_floor);
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

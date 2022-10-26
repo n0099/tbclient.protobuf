@@ -45,7 +45,13 @@ public final class RecForumInfo extends Message {
     public final List<ThreadList> threadlist;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecForumInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
@@ -56,7 +62,7 @@ public final class RecForumInfo extends Message {
         public Boolean need_trans;
         public ThemeColorInfo theme_color;
         public Integer thread_count;
-        public List<ThreadList> threadlist;
+        public List threadlist;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -109,14 +115,11 @@ public final class RecForumInfo extends Message {
         public RecForumInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecForumInfo(this, z, null) : (RecForumInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecForumInfo(this, z, null);
+            }
+            return (RecForumInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -136,10 +139,6 @@ public final class RecForumInfo extends Message {
         DEFAULT_THREAD_COUNT = 0;
         DEFAULT_THREADLIST = Collections.emptyList();
         DEFAULT_NEED_TRANS = Boolean.FALSE;
-    }
-
-    public /* synthetic */ RecForumInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -197,7 +196,7 @@ public final class RecForumInfo extends Message {
             } else {
                 this.from = str4;
             }
-            List<ThreadList> list = builder.threadlist;
+            List list = builder.threadlist;
             if (list == null) {
                 this.threadlist = DEFAULT_THREADLIST;
             } else {
@@ -222,5 +221,9 @@ public final class RecForumInfo extends Message {
         this.threadlist = Message.immutableCopyOf(builder.threadlist);
         this.theme_color = builder.theme_color;
         this.need_trans = builder.need_trans;
+    }
+
+    public /* synthetic */ RecForumInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -16,10 +16,12 @@ public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_ACCOUNT_ID;
     public static final Integer DEFAULT_ACCOUNT_TYPE;
+    public static final String DEFAULT_ATTACH = "";
     public static final Long DEFAULT_BENEFIT_USERID;
     public static final String DEFAULT_BENEFIT_USERNAME = "";
     public static final Integer DEFAULT_CURRENCY;
     public static final Integer DEFAULT_GIFT_ID;
+    public static final Integer DEFAULT_IS_COMBO;
     public static final Integer DEFAULT_NUM;
     public static final Long DEFAULT_POST_ID;
     public static final String DEFAULT_SCENE_FROM = "";
@@ -29,6 +31,8 @@ public final class DataReq extends Message {
     public final Long account_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer account_type;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String attach;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long benefit_userid;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -41,6 +45,8 @@ public final class DataReq extends Message {
     public final Integer currency;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer gift_id;
+    @ProtoField(tag = 11, type = Message.Datatype.UINT32)
+    public final Integer is_combo;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer num;
     @ProtoField(tag = 8, type = Message.Datatype.UINT64)
@@ -51,11 +57,18 @@ public final class DataReq extends Message {
     public final Long thread_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataReq> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long account_id;
         public Integer account_type;
+        public String attach;
         public Long benefit_userid;
         public String benefit_username;
 
@@ -63,6 +76,7 @@ public final class DataReq extends Message {
         public CommonReq f1314common;
         public Integer currency;
         public Integer gift_id;
+        public Integer is_combo;
         public Integer num;
         public Long post_id;
         public String scene_from;
@@ -113,6 +127,8 @@ public final class DataReq extends Message {
             this.post_id = dataReq.post_id;
             this.account_id = dataReq.account_id;
             this.account_type = dataReq.account_type;
+            this.is_combo = dataReq.is_combo;
+            this.attach = dataReq.attach;
             this.currency = dataReq.currency;
         }
 
@@ -121,14 +137,11 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataReq(this, z, null) : (DataReq) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataReq(this, z, null);
+            }
+            return (DataReq) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -151,11 +164,8 @@ public final class DataReq extends Message {
         DEFAULT_POST_ID = 0L;
         DEFAULT_ACCOUNT_ID = 0L;
         DEFAULT_ACCOUNT_TYPE = 0;
+        DEFAULT_IS_COMBO = 0;
         DEFAULT_CURRENCY = 0;
-    }
-
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -232,12 +242,24 @@ public final class DataReq extends Message {
             } else {
                 this.account_type = num3;
             }
-            Integer num4 = builder.currency;
+            Integer num4 = builder.is_combo;
             if (num4 == null) {
+                this.is_combo = DEFAULT_IS_COMBO;
+            } else {
+                this.is_combo = num4;
+            }
+            String str3 = builder.attach;
+            if (str3 == null) {
+                this.attach = "";
+            } else {
+                this.attach = str3;
+            }
+            Integer num5 = builder.currency;
+            if (num5 == null) {
                 this.currency = DEFAULT_CURRENCY;
                 return;
             } else {
-                this.currency = num4;
+                this.currency = num5;
                 return;
             }
         }
@@ -251,6 +273,12 @@ public final class DataReq extends Message {
         this.post_id = builder.post_id;
         this.account_id = builder.account_id;
         this.account_type = builder.account_type;
+        this.is_combo = builder.is_combo;
+        this.attach = builder.attach;
         this.currency = builder.currency;
+    }
+
+    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

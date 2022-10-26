@@ -31,7 +31,13 @@ public final class SmRankItem extends Message {
     public final Integer win;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SmRankItem> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String portrait;
@@ -87,14 +93,11 @@ public final class SmRankItem extends Message {
         public SmRankItem build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SmRankItem(this, z, null) : (SmRankItem) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SmRankItem(this, z, null);
+            }
+            return (SmRankItem) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class SmRankItem extends Message {
         DEFAULT_USER_LEVEL = 0;
         DEFAULT_WIN = 0;
         DEFAULT_USER_ID = 0L;
-    }
-
-    public /* synthetic */ SmRankItem(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -176,5 +175,9 @@ public final class SmRankItem extends Message {
         this.user_name = builder.user_name;
         this.win = builder.win;
         this.user_id = builder.user_id;
+    }
+
+    public /* synthetic */ SmRankItem(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

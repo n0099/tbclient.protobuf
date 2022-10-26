@@ -51,10 +51,16 @@ public final class IconInfo extends Message {
     public final String tag_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<IconInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<Discount> discount;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List discount;
         public Integer dubi;
         public Integer duration;
         public Integer hide;
@@ -119,14 +125,11 @@ public final class IconInfo extends Message {
         public IconInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new IconInfo(this, z, null) : (IconInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new IconInfo(this, z, null);
+            }
+            return (IconInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -148,10 +151,6 @@ public final class IconInfo extends Message {
         DEFAULT_HIDE = 0;
         DEFAULT_DISCOUNT = Collections.emptyList();
         DEFAULT_IS_DEFAULT = 0;
-    }
-
-    public /* synthetic */ IconInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -215,7 +214,7 @@ public final class IconInfo extends Message {
             } else {
                 this.hide = num4;
             }
-            List<Discount> list = builder.discount;
+            List list = builder.discount;
             if (list == null) {
                 this.discount = DEFAULT_DISCOUNT;
             } else {
@@ -253,5 +252,9 @@ public final class IconInfo extends Message {
         this.sign = builder.sign;
         this.tag_name = builder.tag_name;
         this.is_default = builder.is_default;
+    }
+
+    public /* synthetic */ IconInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

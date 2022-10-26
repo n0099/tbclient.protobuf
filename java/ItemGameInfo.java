@@ -23,10 +23,16 @@ public final class ItemGameInfo extends Message {
     public final RecentUpdate recent_update;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ItemGameInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ThreadInfo> hot_videos;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List hot_videos;
         public RecentUpdate recent_update;
 
         public Builder() {
@@ -73,14 +79,11 @@ public final class ItemGameInfo extends Message {
         public ItemGameInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ItemGameInfo(this, z, null) : (ItemGameInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ItemGameInfo(this, z, null);
+            }
+            return (ItemGameInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -97,10 +100,6 @@ public final class ItemGameInfo extends Message {
             }
         }
         DEFAULT_HOT_VIDEOS = Collections.emptyList();
-    }
-
-    public /* synthetic */ ItemGameInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -122,7 +121,7 @@ public final class ItemGameInfo extends Message {
             }
         }
         if (z) {
-            List<ThreadInfo> list = builder.hot_videos;
+            List list = builder.hot_videos;
             if (list == null) {
                 this.hot_videos = DEFAULT_HOT_VIDEOS;
             } else {
@@ -133,5 +132,9 @@ public final class ItemGameInfo extends Message {
         }
         this.hot_videos = Message.immutableCopyOf(builder.hot_videos);
         this.recent_update = builder.recent_update;
+    }
+
+    public /* synthetic */ ItemGameInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

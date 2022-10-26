@@ -28,7 +28,13 @@ public final class AwardUser extends Message {
     public final String user_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AwardUser> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String award_name;
@@ -82,14 +88,11 @@ public final class AwardUser extends Message {
         public AwardUser build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AwardUser(this, z, null) : (AwardUser) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AwardUser(this, z, null);
+            }
+            return (AwardUser) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +110,6 @@ public final class AwardUser extends Message {
         }
         DEFAULT_USER_ID = 0L;
         DEFAULT_AWARD_TIME = 0;
-    }
-
-    public /* synthetic */ AwardUser(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,5 +162,9 @@ public final class AwardUser extends Message {
         this.user_name = builder.user_name;
         this.award_name = builder.award_name;
         this.award_time = builder.award_time;
+    }
+
+    public /* synthetic */ AwardUser(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

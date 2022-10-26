@@ -31,7 +31,13 @@ public final class UcCardInfo extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UcCardInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String jmp;
@@ -87,14 +93,11 @@ public final class UcCardInfo extends Message {
         public UcCardInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UcCardInfo(this, z, null) : (UcCardInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UcCardInfo(this, z, null);
+            }
+            return (UcCardInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -111,10 +114,6 @@ public final class UcCardInfo extends Message {
             }
         }
         DEFAULT_ST = 0;
-    }
-
-    public /* synthetic */ UcCardInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -174,5 +173,9 @@ public final class UcCardInfo extends Message {
         this.jmp = builder.jmp;
         this.tip = builder.tip;
         this.st = builder.st;
+    }
+
+    public /* synthetic */ UcCardInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

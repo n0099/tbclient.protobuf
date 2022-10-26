@@ -17,25 +17,42 @@ public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_MD5 = "";
     public static final List<Offpack> DEFAULT_OFFPACK_LIST;
+    public static final List<PackageInfo> DEFAULT_PATCH;
     public static final String DEFAULT_SRC = "";
+    public static final String DEFAULT_VERSION = "";
     public static final String DEFAULT_WEBVIEW_VERSION = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 4)
+    public final PackageInfo latest;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String md5;
     @ProtoField(label = Message.Label.REPEATED, tag = 7)
     public final List<Offpack> offpack_list;
+    @ProtoField(label = Message.Label.REPEATED, tag = 5)
+    public final List<PackageInfo> patch;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String src;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String version;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String webview_version;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public PackageInfo latest;
         public String md5;
-        public List<Offpack> offpack_list;
+        public List offpack_list;
+        public List patch;
         public String src;
+        public String version;
         public String webview_version;
 
         public Builder() {
@@ -76,6 +93,9 @@ public final class DataRes extends Message {
             this.src = dataRes.src;
             this.webview_version = dataRes.webview_version;
             this.md5 = dataRes.md5;
+            this.latest = dataRes.latest;
+            this.patch = Message.copyOf(dataRes.patch);
+            this.version = dataRes.version;
             this.offpack_list = Message.copyOf(dataRes.offpack_list);
         }
 
@@ -84,14 +104,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,11 +124,8 @@ public final class DataRes extends Message {
                 return;
             }
         }
+        DEFAULT_PATCH = Collections.emptyList();
         DEFAULT_OFFPACK_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,18 +165,38 @@ public final class DataRes extends Message {
             } else {
                 this.md5 = str3;
             }
-            List<Offpack> list = builder.offpack_list;
+            this.latest = builder.latest;
+            List list = builder.patch;
             if (list == null) {
+                this.patch = DEFAULT_PATCH;
+            } else {
+                this.patch = Message.immutableCopyOf(list);
+            }
+            String str4 = builder.version;
+            if (str4 == null) {
+                this.version = "";
+            } else {
+                this.version = str4;
+            }
+            List list2 = builder.offpack_list;
+            if (list2 == null) {
                 this.offpack_list = DEFAULT_OFFPACK_LIST;
                 return;
             } else {
-                this.offpack_list = Message.immutableCopyOf(list);
+                this.offpack_list = Message.immutableCopyOf(list2);
                 return;
             }
         }
         this.src = builder.src;
         this.webview_version = builder.webview_version;
         this.md5 = builder.md5;
+        this.latest = builder.latest;
+        this.patch = Message.immutableCopyOf(builder.patch);
+        this.version = builder.version;
         this.offpack_list = Message.immutableCopyOf(builder.offpack_list);
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

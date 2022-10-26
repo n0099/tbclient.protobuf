@@ -13,6 +13,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.FansRankUserInfo;
+import tbclient.NobilityTdou;
 import tbclient.PresentMyList;
 import tbclient.PresetMyGiftPage;
 /* loaded from: classes9.dex */
@@ -38,6 +39,8 @@ public final class DataRes extends Message {
     public final Integer money;
     @ProtoField(tag = 3)
     public final presentMoneyTxt money_txt;
+    @ProtoField(tag = 10)
+    public final NobilityTdou nobility_tdou;
     @ProtoField(tag = 5)
     public final PresetMyGiftPage page;
     @ProtoField(label = Message.Label.REPEATED, tag = 9)
@@ -48,17 +51,24 @@ public final class DataRes extends Message {
     public final Integer total_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer blue_diamond;
         public presentMoneyTxt blue_diamond_txt;
         public Integer currency;
-        public List<PresentMyList> gift_list;
+        public List gift_list;
         public Integer money;
         public presentMoneyTxt money_txt;
+        public NobilityTdou nobility_tdou;
         public PresetMyGiftPage page;
-        public List<FansRankUserInfo> rank_list;
+        public List rank_list;
         public Integer scene_id;
         public Integer total_num;
 
@@ -106,6 +116,7 @@ public final class DataRes extends Message {
             this.blue_diamond = dataRes.blue_diamond;
             this.blue_diamond_txt = dataRes.blue_diamond_txt;
             this.rank_list = Message.copyOf(dataRes.rank_list);
+            this.nobility_tdou = dataRes.nobility_tdou;
             this.currency = dataRes.currency;
         }
 
@@ -114,14 +125,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -144,10 +152,6 @@ public final class DataRes extends Message {
         DEFAULT_BLUE_DIAMOND = 0;
         DEFAULT_RANK_LIST = Collections.emptyList();
         DEFAULT_CURRENCY = 0;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -182,7 +186,7 @@ public final class DataRes extends Message {
                 this.money = num2;
             }
             this.money_txt = builder.money_txt;
-            List<PresentMyList> list = builder.gift_list;
+            List list = builder.gift_list;
             if (list == null) {
                 this.gift_list = DEFAULT_GIFT_LIST;
             } else {
@@ -202,12 +206,13 @@ public final class DataRes extends Message {
                 this.blue_diamond = num4;
             }
             this.blue_diamond_txt = builder.blue_diamond_txt;
-            List<FansRankUserInfo> list2 = builder.rank_list;
+            List list2 = builder.rank_list;
             if (list2 == null) {
                 this.rank_list = DEFAULT_RANK_LIST;
             } else {
                 this.rank_list = Message.immutableCopyOf(list2);
             }
+            this.nobility_tdou = builder.nobility_tdou;
             Integer num5 = builder.currency;
             if (num5 == null) {
                 this.currency = DEFAULT_CURRENCY;
@@ -226,6 +231,11 @@ public final class DataRes extends Message {
         this.blue_diamond = builder.blue_diamond;
         this.blue_diamond_txt = builder.blue_diamond_txt;
         this.rank_list = Message.immutableCopyOf(builder.rank_list);
+        this.nobility_tdou = builder.nobility_tdou;
         this.currency = builder.currency;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

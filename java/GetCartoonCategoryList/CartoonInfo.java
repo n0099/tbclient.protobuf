@@ -37,7 +37,13 @@ public final class CartoonInfo extends Message {
     public final Integer total_chapter;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CartoonInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long cartoon_id;
@@ -97,14 +103,11 @@ public final class CartoonInfo extends Message {
         public CartoonInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CartoonInfo(this, z, null) : (CartoonInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CartoonInfo(this, z, null);
+            }
+            return (CartoonInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -124,10 +127,6 @@ public final class CartoonInfo extends Message {
         DEFAULT_CARTOON_ID = 0L;
         DEFAULT_IS_FINISH = 0;
         DEFAULT_TOTAL_CHAPTER = 0;
-    }
-
-    public /* synthetic */ CartoonInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -201,5 +200,9 @@ public final class CartoonInfo extends Message {
         this.is_finish = builder.is_finish;
         this.cover_img = builder.cover_img;
         this.total_chapter = builder.total_chapter;
+    }
+
+    public /* synthetic */ CartoonInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

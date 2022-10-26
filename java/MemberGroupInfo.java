@@ -27,10 +27,16 @@ public final class MemberGroupInfo extends Message {
     public final String member_group_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<MemberGroupInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<BawuRoleInfoPub> member_group_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List member_group_list;
         public Integer member_group_num;
         public String member_group_type;
 
@@ -79,14 +85,11 @@ public final class MemberGroupInfo extends Message {
         public MemberGroupInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new MemberGroupInfo(this, z, null) : (MemberGroupInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new MemberGroupInfo(this, z, null);
+            }
+            return (MemberGroupInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +107,6 @@ public final class MemberGroupInfo extends Message {
         }
         DEFAULT_MEMBER_GROUP_NUM = 0;
         DEFAULT_MEMBER_GROUP_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ MemberGroupInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -141,7 +140,7 @@ public final class MemberGroupInfo extends Message {
             } else {
                 this.member_group_num = num;
             }
-            List<BawuRoleInfoPub> list = builder.member_group_list;
+            List list = builder.member_group_list;
             if (list == null) {
                 this.member_group_list = DEFAULT_MEMBER_GROUP_LIST;
                 return;
@@ -153,5 +152,9 @@ public final class MemberGroupInfo extends Message {
         this.member_group_type = builder.member_group_type;
         this.member_group_num = builder.member_group_num;
         this.member_group_list = Message.immutableCopyOf(builder.member_group_list);
+    }
+
+    public /* synthetic */ MemberGroupInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -19,7 +19,13 @@ public final class ClientPlatform extends Message {
     public final StarSchedule star_schedule;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ClientPlatform> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String schedule_cal;
@@ -69,18 +75,11 @@ public final class ClientPlatform extends Message {
         public ClientPlatform build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ClientPlatform(this, z, null) : (ClientPlatform) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ClientPlatform(this, z, null);
+            }
+            return (ClientPlatform) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ ClientPlatform(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -113,5 +112,9 @@ public final class ClientPlatform extends Message {
         }
         this.schedule_cal = builder.schedule_cal;
         this.star_schedule = builder.star_schedule;
+    }
+
+    public /* synthetic */ ClientPlatform(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

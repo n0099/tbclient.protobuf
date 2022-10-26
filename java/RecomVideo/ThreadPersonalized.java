@@ -36,11 +36,17 @@ public final class ThreadPersonalized extends Message {
     public final String weight;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ThreadPersonalized> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String abtest_tag;
-        public List<DislikeReason> dislike_resource;
+        public List dislike_resource;
         public String extra;
         public String source;
         public Long tid;
@@ -94,14 +100,11 @@ public final class ThreadPersonalized extends Message {
         public ThreadPersonalized build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThreadPersonalized(this, z, null) : (ThreadPersonalized) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThreadPersonalized(this, z, null);
+            }
+            return (ThreadPersonalized) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -119,10 +122,6 @@ public final class ThreadPersonalized extends Message {
         }
         DEFAULT_TID = 0L;
         DEFAULT_DISLIKE_RESOURCE = Collections.emptyList();
-    }
-
-    public /* synthetic */ ThreadPersonalized(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -168,7 +167,7 @@ public final class ThreadPersonalized extends Message {
             } else {
                 this.abtest_tag = str3;
             }
-            List<DislikeReason> list = builder.dislike_resource;
+            List list = builder.dislike_resource;
             if (list == null) {
                 this.dislike_resource = DEFAULT_DISLIKE_RESOURCE;
             } else {
@@ -189,5 +188,9 @@ public final class ThreadPersonalized extends Message {
         this.abtest_tag = builder.abtest_tag;
         this.dislike_resource = Message.immutableCopyOf(builder.dislike_resource);
         this.extra = builder.extra;
+    }
+
+    public /* synthetic */ ThreadPersonalized(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -27,10 +27,16 @@ public final class ForumMemberInfo extends Message {
     public final String total;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ForumMemberInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<User> member_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List member_list;
         public String title;
         public String total;
 
@@ -79,14 +85,11 @@ public final class ForumMemberInfo extends Message {
         public ForumMemberInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ForumMemberInfo(this, z, null) : (ForumMemberInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ForumMemberInfo(this, z, null);
+            }
+            return (ForumMemberInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -103,10 +106,6 @@ public final class ForumMemberInfo extends Message {
             }
         }
         DEFAULT_MEMBER_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ ForumMemberInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -140,7 +139,7 @@ public final class ForumMemberInfo extends Message {
             } else {
                 this.title = str2;
             }
-            List<User> list = builder.member_list;
+            List list = builder.member_list;
             if (list == null) {
                 this.member_list = DEFAULT_MEMBER_LIST;
                 return;
@@ -152,5 +151,9 @@ public final class ForumMemberInfo extends Message {
         this.total = builder.total;
         this.title = builder.title;
         this.member_list = Message.immutableCopyOf(builder.member_list);
+    }
+
+    public /* synthetic */ ForumMemberInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

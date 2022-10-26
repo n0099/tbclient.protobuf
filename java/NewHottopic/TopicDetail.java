@@ -40,7 +40,13 @@ public final class TopicDetail extends Message {
     public final String topic_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TopicDetail> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String bg_image;
@@ -102,14 +108,11 @@ public final class TopicDetail extends Message {
         public TopicDetail build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TopicDetail(this, z, null) : (TopicDetail) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TopicDetail(this, z, null);
+            }
+            return (TopicDetail) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -127,10 +130,6 @@ public final class TopicDetail extends Message {
         }
         DEFAULT_TOPIC_ID = 0L;
         DEFAULT_DISCUSS_NUM = 0L;
-    }
-
-    public /* synthetic */ TopicDetail(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -211,5 +210,9 @@ public final class TopicDetail extends Message {
         this.share_title = builder.share_title;
         this.share_pic = builder.share_pic;
         this.bg_image = builder.bg_image;
+    }
+
+    public /* synthetic */ TopicDetail(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

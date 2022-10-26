@@ -20,7 +20,13 @@ public final class AcrossForum extends Message {
     public final String forum_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AcrossForum> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String desc;
@@ -70,18 +76,11 @@ public final class AcrossForum extends Message {
         public AcrossForum build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AcrossForum(this, z, null) : (AcrossForum) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AcrossForum(this, z, null);
+            }
+            return (AcrossForum) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ AcrossForum(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -120,5 +119,9 @@ public final class AcrossForum extends Message {
         }
         this.forum_name = builder.forum_name;
         this.desc = builder.desc;
+    }
+
+    public /* synthetic */ AcrossForum(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

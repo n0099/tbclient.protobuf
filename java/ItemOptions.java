@@ -20,7 +20,13 @@ public final class ItemOptions extends Message {
     public final String value;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ItemOptions> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String key;
@@ -70,18 +76,11 @@ public final class ItemOptions extends Message {
         public ItemOptions build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ItemOptions(this, z, null) : (ItemOptions) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ItemOptions(this, z, null);
+            }
+            return (ItemOptions) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ ItemOptions(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -120,5 +119,9 @@ public final class ItemOptions extends Message {
         }
         this.key = builder.key;
         this.value = builder.value;
+    }
+
+    public /* synthetic */ ItemOptions(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

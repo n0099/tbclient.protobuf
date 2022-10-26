@@ -28,7 +28,13 @@ public final class TabPicDesc extends Message {
     public final String unselected_pic_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TabPicDesc> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer pic_height;
@@ -82,14 +88,11 @@ public final class TabPicDesc extends Message {
         public TabPicDesc build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TabPicDesc(this, z, null) : (TabPicDesc) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TabPicDesc(this, z, null);
+            }
+            return (TabPicDesc) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +110,6 @@ public final class TabPicDesc extends Message {
         }
         DEFAULT_PIC_HEIGHT = 0;
         DEFAULT_PIC_WIDTH = 0;
-    }
-
-    public /* synthetic */ TabPicDesc(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,5 +162,9 @@ public final class TabPicDesc extends Message {
         this.unselected_pic_url = builder.unselected_pic_url;
         this.pic_height = builder.pic_height;
         this.pic_width = builder.pic_width;
+    }
+
+    public /* synthetic */ TabPicDesc(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

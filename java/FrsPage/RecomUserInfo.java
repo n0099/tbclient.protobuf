@@ -34,14 +34,20 @@ public final class RecomUserInfo extends Message {
     public final UserInfo user_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecomUserInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<CommonForum> common_forum;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List common_forum;
         public CommonDistance distanceinfo;
         public String message;
         public String pos_name;
-        public List<PostInfo> post_info;
+        public List post_info;
         public UserInfo user_info;
 
         public Builder() {
@@ -92,14 +98,11 @@ public final class RecomUserInfo extends Message {
         public RecomUserInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecomUserInfo(this, z, null) : (RecomUserInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecomUserInfo(this, z, null);
+            }
+            return (RecomUserInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -117,10 +120,6 @@ public final class RecomUserInfo extends Message {
         }
         DEFAULT_COMMON_FORUM = Collections.emptyList();
         DEFAULT_POST_INFO = Collections.emptyList();
-    }
-
-    public /* synthetic */ RecomUserInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -143,13 +142,13 @@ public final class RecomUserInfo extends Message {
         }
         if (z) {
             this.user_info = builder.user_info;
-            List<CommonForum> list = builder.common_forum;
+            List list = builder.common_forum;
             if (list == null) {
                 this.common_forum = DEFAULT_COMMON_FORUM;
             } else {
                 this.common_forum = Message.immutableCopyOf(list);
             }
-            List<PostInfo> list2 = builder.post_info;
+            List list2 = builder.post_info;
             if (list2 == null) {
                 this.post_info = DEFAULT_POST_INFO;
             } else {
@@ -176,5 +175,9 @@ public final class RecomUserInfo extends Message {
         this.pos_name = builder.pos_name;
         this.message = builder.message;
         this.distanceinfo = builder.distanceinfo;
+    }
+
+    public /* synthetic */ RecomUserInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -25,7 +25,13 @@ public final class ManagerApplyInfo extends Message {
     public final Integer manager_left_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ManagerApplyInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer manager_apply_status;
@@ -77,14 +83,11 @@ public final class ManagerApplyInfo extends Message {
         public ManagerApplyInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ManagerApplyInfo(this, z, null) : (ManagerApplyInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ManagerApplyInfo(this, z, null);
+            }
+            return (ManagerApplyInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -102,10 +105,6 @@ public final class ManagerApplyInfo extends Message {
         }
         DEFAULT_MANAGER_LEFT_NUM = 0;
         DEFAULT_MANAGER_APPLY_STATUS = 0;
-    }
-
-    public /* synthetic */ ManagerApplyInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,5 +150,9 @@ public final class ManagerApplyInfo extends Message {
         this.manager_left_num = builder.manager_left_num;
         this.manager_apply_url = builder.manager_apply_url;
         this.manager_apply_status = builder.manager_apply_status;
+    }
+
+    public /* synthetic */ ManagerApplyInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

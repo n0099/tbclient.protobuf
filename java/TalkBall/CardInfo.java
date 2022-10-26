@@ -19,7 +19,13 @@ public final class CardInfo extends Message {
     public final ThreadInfo thread_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CardInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public InsertFloor insert_floor;
@@ -69,18 +75,11 @@ public final class CardInfo extends Message {
         public CardInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CardInfo(this, z, null) : (CardInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CardInfo(this, z, null);
+            }
+            return (CardInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ CardInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -108,5 +107,9 @@ public final class CardInfo extends Message {
         }
         this.thread_info = builder.thread_info;
         this.insert_floor = builder.insert_floor;
+    }
+
+    public /* synthetic */ CardInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

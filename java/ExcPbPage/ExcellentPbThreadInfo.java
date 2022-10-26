@@ -58,12 +58,18 @@ public final class ExcellentPbThreadInfo extends Message {
     public final ZanInfo zan;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ExcellentPbThreadInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
         public String abtest;
-        public List<ExcContent> content;
+        public List content;
         public Long excid;
         public postForumInfo forum;
         public Long post_id;
@@ -132,14 +138,11 @@ public final class ExcellentPbThreadInfo extends Message {
         public ExcellentPbThreadInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ExcellentPbThreadInfo(this, z, null) : (ExcellentPbThreadInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ExcellentPbThreadInfo(this, z, null);
+            }
+            return (ExcellentPbThreadInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -163,10 +166,6 @@ public final class ExcellentPbThreadInfo extends Message {
         DEFAULT_PUBLISH_TIME = 0;
         DEFAULT_POST_ID = 0L;
         DEFAULT_POST_NUM = 0L;
-    }
-
-    public /* synthetic */ ExcellentPbThreadInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -224,7 +223,7 @@ public final class ExcellentPbThreadInfo extends Message {
             } else {
                 this._abstract = str3;
             }
-            List<ExcContent> list = builder.content;
+            List list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {
@@ -279,5 +278,9 @@ public final class ExcellentPbThreadInfo extends Message {
         this.post_id = builder.post_id;
         this.zan = builder.zan;
         this.post_num = builder.post_num;
+    }
+
+    public /* synthetic */ ExcellentPbThreadInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

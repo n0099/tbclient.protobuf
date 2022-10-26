@@ -49,7 +49,13 @@ public final class VipThemeItem extends Message {
     public final String update_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<VipThemeItem> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String desc;
@@ -117,14 +123,11 @@ public final class VipThemeItem extends Message {
         public VipThemeItem build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new VipThemeItem(this, z, null) : (VipThemeItem) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new VipThemeItem(this, z, null);
+            }
+            return (VipThemeItem) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -144,10 +147,6 @@ public final class VipThemeItem extends Message {
         DEFAULT_PROPS_CATEGORY = 0;
         DEFAULT_TYPE = 0;
         DEFAULT_ID = 0;
-    }
-
-    public /* synthetic */ VipThemeItem(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -249,5 +248,9 @@ public final class VipThemeItem extends Message {
         this.update_time = builder.update_time;
         this.type = builder.type;
         this.id = builder.id;
+    }
+
+    public /* synthetic */ VipThemeItem(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

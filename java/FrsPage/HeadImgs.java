@@ -98,7 +98,13 @@ public final class HeadImgs extends Message {
     public final List<VideoImageColor> video_image_color;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<HeadImgs> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String btn_text;
@@ -125,9 +131,9 @@ public final class HeadImgs extends Message {
         public String subtitle;
         public String tag_name_url;
         public String tag_name_wh;
-        public List<String> third_statistics_url;
+        public List third_statistics_url;
         public String title;
-        public List<VideoImageColor> video_image_color;
+        public List video_image_color;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -198,14 +204,11 @@ public final class HeadImgs extends Message {
         public HeadImgs build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HeadImgs(this, z, null) : (HeadImgs) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new HeadImgs(this, z, null);
+            }
+            return (HeadImgs) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -226,10 +229,6 @@ public final class HeadImgs extends Message {
         DEFAULT_DOWNLOAD_IS_THIRDPAGE = 0;
         DEFAULT_DOWNLOAD_ITEM_ID = 0;
         DEFAULT_VIDEO_IMAGE_COLOR = Collections.emptyList();
-    }
-
-    public /* synthetic */ HeadImgs(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -299,7 +298,7 @@ public final class HeadImgs extends Message {
             } else {
                 this.schema = str8;
             }
-            List<String> list = builder.third_statistics_url;
+            List list = builder.third_statistics_url;
             if (list == null) {
                 this.third_statistics_url = DEFAULT_THIRD_STATISTICS_URL;
             } else {
@@ -402,7 +401,7 @@ public final class HeadImgs extends Message {
                 this.play_url = str21;
             }
             this.cover_image_color = builder.cover_image_color;
-            List<VideoImageColor> list2 = builder.video_image_color;
+            List list2 = builder.video_image_color;
             if (list2 == null) {
                 this.video_image_color = DEFAULT_VIDEO_IMAGE_COLOR;
                 return;
@@ -438,5 +437,9 @@ public final class HeadImgs extends Message {
         this.play_url = builder.play_url;
         this.cover_image_color = builder.cover_image_color;
         this.video_image_color = Message.immutableCopyOf(builder.video_image_color);
+    }
+
+    public /* synthetic */ HeadImgs(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

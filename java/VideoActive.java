@@ -42,7 +42,13 @@ public final class VideoActive extends Message {
     public final List<ThreadInfo> thread_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<VideoActive> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String active_name;
@@ -52,7 +58,7 @@ public final class VideoActive extends Message {
         public Integer id;
         public String native_url;
         public String remark;
-        public List<ThreadInfo> thread_list;
+        public List thread_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -104,14 +110,11 @@ public final class VideoActive extends Message {
         public VideoActive build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new VideoActive(this, z, null) : (VideoActive) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new VideoActive(this, z, null);
+            }
+            return (VideoActive) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -129,10 +132,6 @@ public final class VideoActive extends Message {
         }
         DEFAULT_ID = 0;
         DEFAULT_THREAD_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ VideoActive(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -196,7 +195,7 @@ public final class VideoActive extends Message {
             } else {
                 this.remark = str6;
             }
-            List<ThreadInfo> list = builder.thread_list;
+            List list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
                 return;
@@ -213,5 +212,9 @@ public final class VideoActive extends Message {
         this.banner_url = builder.banner_url;
         this.remark = builder.remark;
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
+    }
+
+    public /* synthetic */ VideoActive(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

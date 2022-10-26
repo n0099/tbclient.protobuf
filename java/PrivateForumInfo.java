@@ -22,7 +22,13 @@ public final class PrivateForumInfo extends Message {
     public final Integer private_forum_status;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PrivateForumInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer private_forum_audit_status;
@@ -72,14 +78,11 @@ public final class PrivateForumInfo extends Message {
         public PrivateForumInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PrivateForumInfo(this, z, null) : (PrivateForumInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PrivateForumInfo(this, z, null);
+            }
+            return (PrivateForumInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -97,10 +100,6 @@ public final class PrivateForumInfo extends Message {
         }
         DEFAULT_PRIVATE_FORUM_STATUS = 0;
         DEFAULT_PRIVATE_FORUM_AUDIT_STATUS = 0;
-    }
-
-    public /* synthetic */ PrivateForumInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -139,5 +138,9 @@ public final class PrivateForumInfo extends Message {
         }
         this.private_forum_status = builder.private_forum_status;
         this.private_forum_audit_status = builder.private_forum_audit_status;
+    }
+
+    public /* synthetic */ PrivateForumInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

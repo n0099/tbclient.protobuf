@@ -37,14 +37,20 @@ public final class DataRes extends Message {
     public final String video_template_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_url;
         public String back_url;
         public Integer topic_id;
         public String topic_name;
-        public List<VideoTemplateContent> video_template_content;
+        public List video_template_content;
         public String video_template_url;
 
         public Builder() {
@@ -95,14 +101,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -120,10 +123,6 @@ public final class DataRes extends Message {
         }
         DEFAULT_VIDEO_TEMPLATE_CONTENT = Collections.emptyList();
         DEFAULT_TOPIC_ID = 0;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -145,7 +144,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<VideoTemplateContent> list = builder.video_template_content;
+            List list = builder.video_template_content;
             if (list == null) {
                 this.video_template_content = DEFAULT_VIDEO_TEMPLATE_CONTENT;
             } else {
@@ -190,5 +189,9 @@ public final class DataRes extends Message {
         this.back_url = builder.back_url;
         this.video_template_url = builder.video_template_url;
         this.activity_url = builder.activity_url;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

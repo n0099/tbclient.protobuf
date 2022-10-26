@@ -48,12 +48,18 @@ public final class RecommendBook extends Message {
     public final String suggest_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecommendBook> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String book_cover;
         public String book_id;
-        public List<String> book_tips;
+        public List book_tips;
         public String book_title;
         public Integer book_type;
         public String botton_text;
@@ -114,14 +120,11 @@ public final class RecommendBook extends Message {
         public RecommendBook build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecommendBook(this, z, null) : (RecommendBook) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecommendBook(this, z, null);
+            }
+            return (RecommendBook) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -139,10 +142,6 @@ public final class RecommendBook extends Message {
         }
         DEFAULT_BOOK_TYPE = 0;
         DEFAULT_BOOK_TIPS = Collections.emptyList();
-    }
-
-    public /* synthetic */ RecommendBook(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -206,7 +205,7 @@ public final class RecommendBook extends Message {
             } else {
                 this.book_title = str6;
             }
-            List<String> list = builder.book_tips;
+            List list = builder.book_tips;
             if (list == null) {
                 this.book_tips = DEFAULT_BOOK_TIPS;
             } else {
@@ -237,5 +236,9 @@ public final class RecommendBook extends Message {
         this.book_tips = Message.immutableCopyOf(builder.book_tips);
         this.botton_text = builder.botton_text;
         this.subscript_icon = builder.subscript_icon;
+    }
+
+    public /* synthetic */ RecommendBook(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

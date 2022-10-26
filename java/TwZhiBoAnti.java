@@ -25,7 +25,13 @@ public final class TwZhiBoAnti extends Message {
     public final Integer can_show_pb_headline;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TwZhiBoAnti> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer can_add_live_post;
@@ -77,14 +83,11 @@ public final class TwZhiBoAnti extends Message {
         public TwZhiBoAnti build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TwZhiBoAnti(this, z, null) : (TwZhiBoAnti) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TwZhiBoAnti(this, z, null);
+            }
+            return (TwZhiBoAnti) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -103,10 +106,6 @@ public final class TwZhiBoAnti extends Message {
         DEFAULT_CAN_ADD_LIVE_POST = 0;
         DEFAULT_CAN_DEL_LIVE_POST = 0;
         DEFAULT_CAN_SHOW_PB_HEADLINE = 0;
-    }
-
-    public /* synthetic */ TwZhiBoAnti(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -152,5 +151,9 @@ public final class TwZhiBoAnti extends Message {
         this.can_add_live_post = builder.can_add_live_post;
         this.can_del_live_post = builder.can_del_live_post;
         this.can_show_pb_headline = builder.can_show_pb_headline;
+    }
+
+    public /* synthetic */ TwZhiBoAnti(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

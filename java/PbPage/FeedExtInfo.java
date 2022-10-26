@@ -24,11 +24,17 @@ public final class FeedExtInfo extends Message {
     public final List<String> feed_tab;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FeedExtInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<String> feed_bar;
-        public List<String> feed_tab;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List feed_bar;
+        public List feed_tab;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class FeedExtInfo extends Message {
         public FeedExtInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FeedExtInfo(this, z, null) : (FeedExtInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FeedExtInfo(this, z, null);
+            }
+            return (FeedExtInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class FeedExtInfo extends Message {
         }
         DEFAULT_FEED_TAB = Collections.emptyList();
         DEFAULT_FEED_BAR = Collections.emptyList();
-    }
-
-    public /* synthetic */ FeedExtInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -124,13 +123,13 @@ public final class FeedExtInfo extends Message {
             }
         }
         if (z) {
-            List<String> list = builder.feed_tab;
+            List list = builder.feed_tab;
             if (list == null) {
                 this.feed_tab = DEFAULT_FEED_TAB;
             } else {
                 this.feed_tab = Message.immutableCopyOf(list);
             }
-            List<String> list2 = builder.feed_bar;
+            List list2 = builder.feed_bar;
             if (list2 == null) {
                 this.feed_bar = DEFAULT_FEED_BAR;
                 return;
@@ -141,5 +140,9 @@ public final class FeedExtInfo extends Message {
         }
         this.feed_tab = Message.immutableCopyOf(builder.feed_tab);
         this.feed_bar = Message.immutableCopyOf(builder.feed_bar);
+    }
+
+    public /* synthetic */ FeedExtInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

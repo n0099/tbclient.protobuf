@@ -47,7 +47,13 @@ public final class CardLinkInfo extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CardLinkInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String btn_style;
@@ -115,18 +121,11 @@ public final class CardLinkInfo extends Message {
         public CardLinkInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CardLinkInfo(this, z, null) : (CardLinkInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CardLinkInfo(this, z, null);
+            }
+            return (CardLinkInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ CardLinkInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -228,5 +227,9 @@ public final class CardLinkInfo extends Message {
         this.btn_text = builder.btn_text;
         this.text_btn_status = builder.text_btn_status;
         this.url = builder.url;
+    }
+
+    public /* synthetic */ CardLinkInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

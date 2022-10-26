@@ -33,12 +33,18 @@ public final class ForumPopupInfo extends Message {
     public final Integer thread_count_static;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ForumPopupInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer forum_id;
         public String forum_name;
-        public List<String> forum_names;
+        public List forum_names;
         public Integer mem_count_static;
         public Integer thread_count_static;
 
@@ -89,14 +95,11 @@ public final class ForumPopupInfo extends Message {
         public ForumPopupInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ForumPopupInfo(this, z, null) : (ForumPopupInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ForumPopupInfo(this, z, null);
+            }
+            return (ForumPopupInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -116,10 +119,6 @@ public final class ForumPopupInfo extends Message {
         DEFAULT_MEM_COUNT_STATIC = 0;
         DEFAULT_THREAD_COUNT_STATIC = 0;
         DEFAULT_FORUM_NAMES = Collections.emptyList();
-    }
-
-    public /* synthetic */ ForumPopupInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -159,7 +158,7 @@ public final class ForumPopupInfo extends Message {
             } else {
                 this.thread_count_static = num3;
             }
-            List<String> list = builder.forum_names;
+            List list = builder.forum_names;
             if (list == null) {
                 this.forum_names = DEFAULT_FORUM_NAMES;
             } else {
@@ -179,5 +178,9 @@ public final class ForumPopupInfo extends Message {
         this.thread_count_static = builder.thread_count_static;
         this.forum_names = Message.immutableCopyOf(builder.forum_names);
         this.forum_name = builder.forum_name;
+    }
+
+    public /* synthetic */ ForumPopupInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

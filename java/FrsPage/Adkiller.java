@@ -33,11 +33,17 @@ public final class Adkiller extends Message {
     public final Integer show_hint;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Adkiller> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer ad_left_num;
-        public List<AdkillerAd> ad_list;
+        public List ad_list;
         public String hint_url;
         public Integer show_ad;
         public Integer show_hint;
@@ -89,14 +95,11 @@ public final class Adkiller extends Message {
         public Adkiller build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Adkiller(this, z, null) : (Adkiller) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Adkiller(this, z, null);
+            }
+            return (Adkiller) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -116,10 +119,6 @@ public final class Adkiller extends Message {
         DEFAULT_SHOW_AD = 0;
         DEFAULT_AD_LEFT_NUM = 0;
         DEFAULT_AD_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ Adkiller(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -165,7 +164,7 @@ public final class Adkiller extends Message {
             } else {
                 this.ad_left_num = num3;
             }
-            List<AdkillerAd> list = builder.ad_list;
+            List list = builder.ad_list;
             if (list == null) {
                 this.ad_list = DEFAULT_AD_LIST;
                 return;
@@ -179,5 +178,9 @@ public final class Adkiller extends Message {
         this.hint_url = builder.hint_url;
         this.ad_left_num = builder.ad_left_num;
         this.ad_list = Message.immutableCopyOf(builder.ad_list);
+    }
+
+    public /* synthetic */ Adkiller(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

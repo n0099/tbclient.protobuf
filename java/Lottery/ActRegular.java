@@ -28,7 +28,13 @@ public final class ActRegular extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ActRegular> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String btn_name;
@@ -82,14 +88,11 @@ public final class ActRegular extends Message {
         public ActRegular build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ActRegular(this, z, null) : (ActRegular) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ActRegular(this, z, null);
+            }
+            return (ActRegular) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +110,6 @@ public final class ActRegular extends Message {
         }
         DEFAULT_TYPE = 0;
         DEFAULT_CHANCE = 0;
-    }
-
-    public /* synthetic */ ActRegular(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,5 +162,9 @@ public final class ActRegular extends Message {
         this.chance = builder.chance;
         this.url = builder.url;
         this.btn_name = builder.btn_name;
+    }
+
+    public /* synthetic */ ActRegular(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

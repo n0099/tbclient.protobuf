@@ -23,7 +23,13 @@ public final class RetDataList extends Message {
     public final TaskInfoItem task_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RetDataList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public DialogItem dialog;
@@ -75,14 +81,11 @@ public final class RetDataList extends Message {
         public RetDataList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RetDataList(this, z, null) : (RetDataList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RetDataList(this, z, null);
+            }
+            return (RetDataList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class RetDataList extends Message {
             }
         }
         DEFAULT_NEED_DIALOG = 0;
-    }
-
-    public /* synthetic */ RetDataList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class RetDataList extends Message {
         this.dialog = builder.dialog;
         this.task_info = builder.task_info;
         this.need_dialog = builder.need_dialog;
+    }
+
+    public /* synthetic */ RetDataList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

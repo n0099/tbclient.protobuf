@@ -22,7 +22,13 @@ public final class TagStruct extends Message {
     public final String tag_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TagStruct> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer selected;
@@ -72,14 +78,11 @@ public final class TagStruct extends Message {
         public TagStruct build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TagStruct(this, z, null) : (TagStruct) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TagStruct(this, z, null);
+            }
+            return (TagStruct) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +99,6 @@ public final class TagStruct extends Message {
             }
         }
         DEFAULT_SELECTED = 0;
-    }
-
-    public /* synthetic */ TagStruct(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class TagStruct extends Message {
         }
         this.tag_name = builder.tag_name;
         this.selected = builder.selected;
+    }
+
+    public /* synthetic */ TagStruct(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

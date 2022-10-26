@@ -28,7 +28,13 @@ public final class UserStory extends Message {
     public final String user_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UserStory> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer has_read;
@@ -82,14 +88,11 @@ public final class UserStory extends Message {
         public UserStory build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UserStory(this, z, null) : (UserStory) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UserStory(this, z, null);
+            }
+            return (UserStory) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +110,6 @@ public final class UserStory extends Message {
         }
         DEFAULT_USER_ID = 0L;
         DEFAULT_HAS_READ = 0;
-    }
-
-    public /* synthetic */ UserStory(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,5 +162,9 @@ public final class UserStory extends Message {
         this.user_name = builder.user_name;
         this.portrait = builder.portrait;
         this.has_read = builder.has_read;
+    }
+
+    public /* synthetic */ UserStory(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

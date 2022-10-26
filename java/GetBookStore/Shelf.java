@@ -37,7 +37,13 @@ public final class Shelf extends Message {
     public final Long update_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Shelf> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long cartoon_id;
@@ -97,14 +103,11 @@ public final class Shelf extends Message {
         public Shelf build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Shelf(this, z, null) : (Shelf) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Shelf(this, z, null);
+            }
+            return (Shelf) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -125,10 +128,6 @@ public final class Shelf extends Message {
         DEFAULT_TOTAL_CHAPTER = 0;
         DEFAULT_FIRST_CHAPTER_ID = 0;
         DEFAULT_UPDATE_TIME = 0L;
-    }
-
-    public /* synthetic */ Shelf(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -202,5 +201,9 @@ public final class Shelf extends Message {
         this.first_chapter_id = builder.first_chapter_id;
         this.cover_img = builder.cover_img;
         this.update_time = builder.update_time;
+    }
+
+    public /* synthetic */ Shelf(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

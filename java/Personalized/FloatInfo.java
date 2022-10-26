@@ -39,11 +39,17 @@ public final class FloatInfo extends Message {
     public final Long start_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FloatInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long activity_id;
-        public List<String> dynamic_url;
+        public List dynamic_url;
         public Long end_time;
         public String float_url;
         public String jump_url;
@@ -99,14 +105,11 @@ public final class FloatInfo extends Message {
         public FloatInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FloatInfo(this, z, null) : (FloatInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FloatInfo(this, z, null);
+            }
+            return (FloatInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -127,10 +130,6 @@ public final class FloatInfo extends Message {
         DEFAULT_DYNAMIC_URL = Collections.emptyList();
         DEFAULT_ACTIVITY_ID = 0L;
         DEFAULT_SHOW_TYPE = 0;
-    }
-
-    public /* synthetic */ FloatInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -170,7 +169,7 @@ public final class FloatInfo extends Message {
             } else {
                 this.end_time = l2;
             }
-            List<String> list = builder.dynamic_url;
+            List list = builder.dynamic_url;
             if (list == null) {
                 this.dynamic_url = DEFAULT_DYNAMIC_URL;
             } else {
@@ -204,5 +203,9 @@ public final class FloatInfo extends Message {
         this.activity_id = builder.activity_id;
         this.jump_url = builder.jump_url;
         this.show_type = builder.show_type;
+    }
+
+    public /* synthetic */ FloatInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

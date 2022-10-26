@@ -31,7 +31,13 @@ public final class MultipleForum extends Message {
     public final Integer is_deleted;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<MultipleForum> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String bawu_type;
@@ -87,14 +93,11 @@ public final class MultipleForum extends Message {
         public MultipleForum build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new MultipleForum(this, z, null) : (MultipleForum) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new MultipleForum(this, z, null);
+            }
+            return (MultipleForum) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class MultipleForum extends Message {
         DEFAULT_FORUM_ID = 0L;
         DEFAULT_IS_BAWU = 0;
         DEFAULT_IS_DELETED = 0;
-    }
-
-    public /* synthetic */ MultipleForum(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -176,5 +175,9 @@ public final class MultipleForum extends Message {
         this.is_bawu = builder.is_bawu;
         this.bawu_type = builder.bawu_type;
         this.is_deleted = builder.is_deleted;
+    }
+
+    public /* synthetic */ MultipleForum(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

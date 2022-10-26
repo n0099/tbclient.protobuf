@@ -20,7 +20,13 @@ public final class AppealInfo extends Message {
     public final String source;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AppealInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String appeal_url;
@@ -70,18 +76,11 @@ public final class AppealInfo extends Message {
         public AppealInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AppealInfo(this, z, null) : (AppealInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AppealInfo(this, z, null);
+            }
+            return (AppealInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ AppealInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -120,5 +119,9 @@ public final class AppealInfo extends Message {
         }
         this.source = builder.source;
         this.appeal_url = builder.appeal_url;
+    }
+
+    public /* synthetic */ AppealInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

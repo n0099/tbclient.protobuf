@@ -59,13 +59,13 @@ public final class NotifyPopup extends Message {
 
     /* renamed from: tbclient.GetOrder.NotifyPopup$1  reason: invalid class name */
     /* loaded from: classes9.dex */
-    public static /* synthetic */ class AnonymousClass1 {
+    public /* synthetic */ class AnonymousClass1 {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<NotifyPopup> {
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer app_size;
@@ -139,7 +139,10 @@ public final class NotifyPopup extends Message {
         public NotifyPopup build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new NotifyPopup(this, z, null) : (NotifyPopup) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new NotifyPopup(this, z, null);
+            }
+            return (NotifyPopup) invokeZ.objValue;
         }
     }
 
@@ -161,10 +164,6 @@ public final class NotifyPopup extends Message {
         DEFAULT_POPUP_TYPE = 0;
         DEFAULT_APP_SIZE = 0;
         DEFAULT_APPENDIX_OPTIONAL = 0;
-    }
-
-    public /* synthetic */ NotifyPopup(Builder builder, boolean z, AnonymousClass1 anonymousClass1) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -287,5 +286,9 @@ public final class NotifyPopup extends Message {
         this.y_btn_link = builder.y_btn_link;
         this.n_btn_text = builder.n_btn_text;
         this.n_btn_link = builder.n_btn_link;
+    }
+
+    public /* synthetic */ NotifyPopup(Builder builder, boolean z, AnonymousClass1 anonymousClass1) {
+        this(builder, z);
     }
 }

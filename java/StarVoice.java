@@ -26,7 +26,13 @@ public final class StarVoice extends Message {
     public final String voice_md5;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<StarVoice> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
@@ -80,18 +86,11 @@ public final class StarVoice extends Message {
         public StarVoice build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new StarVoice(this, z, null) : (StarVoice) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new StarVoice(this, z, null);
+            }
+            return (StarVoice) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ StarVoice(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -144,5 +143,9 @@ public final class StarVoice extends Message {
         this.title = builder.title;
         this.desc = builder.desc;
         this.voice_md5 = builder.voice_md5;
+    }
+
+    public /* synthetic */ StarVoice(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

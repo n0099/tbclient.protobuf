@@ -126,7 +126,13 @@ public final class GameInfo extends Message {
     public final String version;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GameInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
@@ -145,7 +151,7 @@ public final class GameInfo extends Message {
         public String game_id;
         public String game_link;
         public String game_name;
-        public List<String> game_pic;
+        public List game_pic;
         public Integer game_type;
         public String icon_pic1;
         public String icon_pic2;
@@ -244,14 +250,11 @@ public final class GameInfo extends Message {
         public GameInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GameInfo(this, z, null) : (GameInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GameInfo(this, z, null);
+            }
+            return (GameInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -277,10 +280,6 @@ public final class GameInfo extends Message {
         DEFAULT_DEADLINE = 0L;
         DEFAULT_APP_ID = 0;
         DEFAULT_SCORE = 0;
-    }
-
-    public /* synthetic */ GameInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -374,7 +373,7 @@ public final class GameInfo extends Message {
             } else {
                 this.schema_url = str9;
             }
-            List<String> list = builder.game_pic;
+            List list = builder.game_pic;
             if (list == null) {
                 this.game_pic = DEFAULT_GAME_PIC;
             } else {
@@ -557,5 +556,9 @@ public final class GameInfo extends Message {
         this.launchComponent = builder.launchComponent;
         this.category_name_sim = builder.category_name_sim;
         this.score = builder.score;
+    }
+
+    public /* synthetic */ GameInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

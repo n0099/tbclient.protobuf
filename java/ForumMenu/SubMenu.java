@@ -40,7 +40,13 @@ public final class SubMenu extends Message {
     public final Integer update_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SubMenu> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer action_type;
@@ -102,14 +108,11 @@ public final class SubMenu extends Message {
         public SubMenu build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SubMenu(this, z, null) : (SubMenu) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SubMenu(this, z, null);
+            }
+            return (SubMenu) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -131,10 +134,6 @@ public final class SubMenu extends Message {
         DEFAULT_PARENT_ID = 0;
         DEFAULT_ACTION_TYPE = 0;
         DEFAULT_UPDATE_TIME = 0;
-    }
-
-    public /* synthetic */ SubMenu(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -215,5 +214,9 @@ public final class SubMenu extends Message {
         this.action_type = builder.action_type;
         this.update_time = builder.update_time;
         this.content = builder.content;
+    }
+
+    public /* synthetic */ SubMenu(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -25,7 +25,13 @@ public final class LiveRoomInfo extends Message {
     public final Integer own_room_count;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LiveRoomInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String btn_title;
@@ -77,14 +83,11 @@ public final class LiveRoomInfo extends Message {
         public LiveRoomInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LiveRoomInfo(this, z, null) : (LiveRoomInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LiveRoomInfo(this, z, null);
+            }
+            return (LiveRoomInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -101,10 +104,6 @@ public final class LiveRoomInfo extends Message {
             }
         }
         DEFAULT_OWN_ROOM_COUNT = 0;
-    }
-
-    public /* synthetic */ LiveRoomInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -150,5 +149,9 @@ public final class LiveRoomInfo extends Message {
         this.btn_title = builder.btn_title;
         this.own_room_count = builder.own_room_count;
         this.jump_url = builder.jump_url;
+    }
+
+    public /* synthetic */ LiveRoomInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

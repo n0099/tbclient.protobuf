@@ -28,12 +28,18 @@ public final class NavTabInfo extends Message {
     public final List<FrsTabInfo> tab;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<NavTabInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<FrsTabInfo> head;
-        public List<FrsTabInfo> menu;
-        public List<FrsTabInfo> tab;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List head;
+        public List menu;
+        public List tab;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -80,14 +86,11 @@ public final class NavTabInfo extends Message {
         public NavTabInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new NavTabInfo(this, z, null) : (NavTabInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new NavTabInfo(this, z, null);
+            }
+            return (NavTabInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -106,10 +109,6 @@ public final class NavTabInfo extends Message {
         DEFAULT_TAB = Collections.emptyList();
         DEFAULT_MENU = Collections.emptyList();
         DEFAULT_HEAD = Collections.emptyList();
-    }
-
-    public /* synthetic */ NavTabInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -131,19 +130,19 @@ public final class NavTabInfo extends Message {
             }
         }
         if (z) {
-            List<FrsTabInfo> list = builder.tab;
+            List list = builder.tab;
             if (list == null) {
                 this.tab = DEFAULT_TAB;
             } else {
                 this.tab = Message.immutableCopyOf(list);
             }
-            List<FrsTabInfo> list2 = builder.menu;
+            List list2 = builder.menu;
             if (list2 == null) {
                 this.menu = DEFAULT_MENU;
             } else {
                 this.menu = Message.immutableCopyOf(list2);
             }
-            List<FrsTabInfo> list3 = builder.head;
+            List list3 = builder.head;
             if (list3 == null) {
                 this.head = DEFAULT_HEAD;
                 return;
@@ -155,5 +154,9 @@ public final class NavTabInfo extends Message {
         this.tab = Message.immutableCopyOf(builder.tab);
         this.menu = Message.immutableCopyOf(builder.menu);
         this.head = Message.immutableCopyOf(builder.head);
+    }
+
+    public /* synthetic */ NavTabInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

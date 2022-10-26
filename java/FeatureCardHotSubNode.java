@@ -20,7 +20,13 @@ public final class FeatureCardHotSubNode extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FeatureCardHotSubNode> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String title;
@@ -70,18 +76,11 @@ public final class FeatureCardHotSubNode extends Message {
         public FeatureCardHotSubNode build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FeatureCardHotSubNode(this, z, null) : (FeatureCardHotSubNode) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FeatureCardHotSubNode(this, z, null);
+            }
+            return (FeatureCardHotSubNode) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ FeatureCardHotSubNode(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -120,5 +119,9 @@ public final class FeatureCardHotSubNode extends Message {
         }
         this.url = builder.url;
         this.title = builder.title;
+    }
+
+    public /* synthetic */ FeatureCardHotSubNode(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

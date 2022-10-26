@@ -88,13 +88,13 @@ public final class DataRes extends Message {
 
     /* renamed from: tbclient.GetOrder.DataRes$1  reason: invalid class name */
     /* loaded from: classes9.dex */
-    public static /* synthetic */ class AnonymousClass1 {
+    public /* synthetic */ class AnonymousClass1 {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String call_type;
@@ -188,7 +188,10 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
     }
 
@@ -213,10 +216,6 @@ public final class DataRes extends Message {
         DEFAULT_SDK = 0;
         DEFAULT_SDKSTYLE = 0;
         DEFAULT_SIGNTYPE = 0;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, AnonymousClass1 anonymousClass1) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -404,5 +403,9 @@ public final class DataRes extends Message {
         this.pay_url = builder.pay_url;
         this.call_type = builder.call_type;
         this.pay_channel = builder.pay_channel;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, AnonymousClass1 anonymousClass1) {
+        this(builder, z);
     }
 }

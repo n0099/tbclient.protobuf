@@ -61,10 +61,16 @@ public final class DataRes extends Message {
     public final CommonInteraction weiguan_module;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<Banner> banner;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List banner;
         public CommonInteraction bless_module;
         public CommonInteraction candle_module;
         public HotThread good_threads;
@@ -74,10 +80,10 @@ public final class DataRes extends Message {
         public MagicPost magic_post;
         public RecomTopicList next_topic;
         public PkModule pk_module;
-        public List<RelateForum> post_forum;
-        public List<RelateForum> relate_forum;
+        public List post_forum;
+        public List relate_forum;
         public String relate_forum_title;
-        public List<SpecialTopic> special_topic;
+        public List special_topic;
         public ThreadModule thread_module;
         public TopicInfo topic_info;
         public CommonInteraction weiguan_module;
@@ -141,14 +147,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -172,10 +175,6 @@ public final class DataRes extends Message {
         DEFAULT_BANNER = Collections.emptyList();
     }
 
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
@@ -195,7 +194,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<RelateForum> list = builder.relate_forum;
+            List list = builder.relate_forum;
             if (list == null) {
                 this.relate_forum = DEFAULT_RELATE_FORUM;
             } else {
@@ -215,7 +214,7 @@ public final class DataRes extends Message {
             } else {
                 this.is_new_url = num;
             }
-            List<RelateForum> list2 = builder.post_forum;
+            List list2 = builder.post_forum;
             if (list2 == null) {
                 this.post_forum = DEFAULT_POST_FORUM;
             } else {
@@ -227,7 +226,7 @@ public final class DataRes extends Message {
             } else {
                 this.is_global_block = num2;
             }
-            List<SpecialTopic> list3 = builder.special_topic;
+            List list3 = builder.special_topic;
             if (list3 == null) {
                 this.special_topic = DEFAULT_SPECIAL_TOPIC;
             } else {
@@ -240,7 +239,7 @@ public final class DataRes extends Message {
                 this.relate_forum_title = str;
             }
             this.weiguan_module = builder.weiguan_module;
-            List<Banner> list4 = builder.banner;
+            List list4 = builder.banner;
             if (list4 == null) {
                 this.banner = DEFAULT_BANNER;
             } else {
@@ -266,5 +265,9 @@ public final class DataRes extends Message {
         this.weiguan_module = builder.weiguan_module;
         this.banner = Message.immutableCopyOf(builder.banner);
         this.next_topic = builder.next_topic;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

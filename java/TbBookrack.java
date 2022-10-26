@@ -36,10 +36,16 @@ public final class TbBookrack extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TbBookrack> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<BookInfo> book_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List book_list;
         public String booktown;
         public String icon;
         public Integer num;
@@ -94,14 +100,11 @@ public final class TbBookrack extends Message {
         public TbBookrack build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TbBookrack(this, z, null) : (TbBookrack) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TbBookrack(this, z, null);
+            }
+            return (TbBookrack) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -119,10 +122,6 @@ public final class TbBookrack extends Message {
         }
         DEFAULT_NUM = 0;
         DEFAULT_BOOK_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ TbBookrack(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -156,7 +155,7 @@ public final class TbBookrack extends Message {
             } else {
                 this.num = num;
             }
-            List<BookInfo> list = builder.book_list;
+            List list = builder.book_list;
             if (list == null) {
                 this.book_list = DEFAULT_BOOK_LIST;
             } else {
@@ -189,5 +188,9 @@ public final class TbBookrack extends Message {
         this.title = builder.title;
         this.icon = builder.icon;
         this.tip = builder.tip;
+    }
+
+    public /* synthetic */ TbBookrack(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

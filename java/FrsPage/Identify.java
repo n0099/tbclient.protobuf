@@ -22,7 +22,13 @@ public final class Identify extends Message {
     public final Integer is_identify;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Identify> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String id;
@@ -72,14 +78,11 @@ public final class Identify extends Message {
         public Identify build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Identify(this, z, null) : (Identify) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Identify(this, z, null);
+            }
+            return (Identify) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +99,6 @@ public final class Identify extends Message {
             }
         }
         DEFAULT_IS_IDENTIFY = 0;
-    }
-
-    public /* synthetic */ Identify(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class Identify extends Message {
         }
         this.is_identify = builder.is_identify;
         this.id = builder.id;
+    }
+
+    public /* synthetic */ Identify(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

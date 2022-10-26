@@ -23,7 +23,13 @@ public final class TiebaPlusAd extends Message {
     public final String show_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TiebaPlusAd> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String ad_source;
@@ -75,18 +81,11 @@ public final class TiebaPlusAd extends Message {
         public TiebaPlusAd build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TiebaPlusAd(this, z, null) : (TiebaPlusAd) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TiebaPlusAd(this, z, null);
+            }
+            return (TiebaPlusAd) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ TiebaPlusAd(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -132,5 +131,9 @@ public final class TiebaPlusAd extends Message {
         this.cost_url = builder.cost_url;
         this.show_url = builder.show_url;
         this.ad_source = builder.ad_source;
+    }
+
+    public /* synthetic */ TiebaPlusAd(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

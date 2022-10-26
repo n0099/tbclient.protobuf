@@ -13,19 +13,33 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class Pendant extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_DYNAMIC_URL = "";
     public static final String DEFAULT_IMG_URL = "";
+    public static final String DEFAULT_JUMP_URL = "";
     public static final Long DEFAULT_PROPS_ID;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String dynamic_url;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String img_url;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String jump_url;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long props_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Pendant> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public String dynamic_url;
         public String img_url;
+        public String jump_url;
         public Long props_id;
 
         public Builder() {
@@ -65,6 +79,8 @@ public final class Pendant extends Message {
             }
             this.props_id = pendant.props_id;
             this.img_url = pendant.img_url;
+            this.dynamic_url = pendant.dynamic_url;
+            this.jump_url = pendant.jump_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -72,14 +88,11 @@ public final class Pendant extends Message {
         public Pendant build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Pendant(this, z, null) : (Pendant) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Pendant(this, z, null);
+            }
+            return (Pendant) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +109,6 @@ public final class Pendant extends Message {
             }
         }
         DEFAULT_PROPS_ID = 0L;
-    }
-
-    public /* synthetic */ Pendant(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,13 +139,31 @@ public final class Pendant extends Message {
             String str = builder.img_url;
             if (str == null) {
                 this.img_url = "";
-                return;
             } else {
                 this.img_url = str;
+            }
+            String str2 = builder.dynamic_url;
+            if (str2 == null) {
+                this.dynamic_url = "";
+            } else {
+                this.dynamic_url = str2;
+            }
+            String str3 = builder.jump_url;
+            if (str3 == null) {
+                this.jump_url = "";
+                return;
+            } else {
+                this.jump_url = str3;
                 return;
             }
         }
         this.props_id = builder.props_id;
         this.img_url = builder.img_url;
+        this.dynamic_url = builder.dynamic_url;
+        this.jump_url = builder.jump_url;
+    }
+
+    public /* synthetic */ Pendant(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

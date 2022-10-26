@@ -30,11 +30,17 @@ public final class RecommendThread extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecommendThread> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long post_num;
-        public List<String> term_list;
+        public List term_list;
         public Long tid;
         public String title;
 
@@ -84,14 +90,11 @@ public final class RecommendThread extends Message {
         public RecommendThread build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecommendThread(this, z, null) : (RecommendThread) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecommendThread(this, z, null);
+            }
+            return (RecommendThread) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -110,10 +113,6 @@ public final class RecommendThread extends Message {
         DEFAULT_TID = 0L;
         DEFAULT_POST_NUM = 0L;
         DEFAULT_TERM_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ RecommendThread(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -153,7 +152,7 @@ public final class RecommendThread extends Message {
             } else {
                 this.post_num = l2;
             }
-            List<String> list = builder.term_list;
+            List list = builder.term_list;
             if (list == null) {
                 this.term_list = DEFAULT_TERM_LIST;
                 return;
@@ -166,5 +165,9 @@ public final class RecommendThread extends Message {
         this.title = builder.title;
         this.post_num = builder.post_num;
         this.term_list = Message.immutableCopyOf(builder.term_list);
+    }
+
+    public /* synthetic */ RecommendThread(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

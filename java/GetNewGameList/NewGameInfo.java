@@ -180,7 +180,13 @@ public final class NewGameInfo extends Message {
     public final String version_ios;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<NewGameInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String andr_pk_name;
@@ -201,7 +207,7 @@ public final class NewGameInfo extends Message {
         public String game_id;
         public String game_link;
         public String game_name;
-        public List<String> game_pic;
+        public List game_pic;
         public Integer game_platform;
         public Integer game_type;
         public String gift_code;
@@ -219,7 +225,7 @@ public final class NewGameInfo extends Message {
         public String package_size;
         public Integer play_count;
         public String praise;
-        public List<String> recommend_platform;
+        public List recommend_platform;
         public String schema_url;
         public Integer score;
         public String secret_key;
@@ -334,14 +340,11 @@ public final class NewGameInfo extends Message {
         public NewGameInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new NewGameInfo(this, z, null) : (NewGameInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new NewGameInfo(this, z, null);
+            }
+            return (NewGameInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -375,10 +378,6 @@ public final class NewGameInfo extends Message {
         DEFAULT_CATEGORY_ID = 0;
         DEFAULT_STATUS = 0;
         DEFAULT_MARK = 0;
-    }
-
-    public /* synthetic */ NewGameInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -472,7 +471,7 @@ public final class NewGameInfo extends Message {
             } else {
                 this.game_desc = str8;
             }
-            List<String> list = builder.game_pic;
+            List list = builder.game_pic;
             if (list == null) {
                 this.game_pic = DEFAULT_GAME_PIC;
             } else {
@@ -490,7 +489,7 @@ public final class NewGameInfo extends Message {
             } else {
                 this.developer = str10;
             }
-            List<String> list2 = builder.recommend_platform;
+            List list2 = builder.recommend_platform;
             if (list2 == null) {
                 this.recommend_platform = DEFAULT_RECOMMEND_PLATFORM;
             } else {
@@ -781,5 +780,9 @@ public final class NewGameInfo extends Message {
         this.category_name = builder.category_name;
         this.icon_url = builder.icon_url;
         this.category_name_sim = builder.category_name_sim;
+    }
+
+    public /* synthetic */ NewGameInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

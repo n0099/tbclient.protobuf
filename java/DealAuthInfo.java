@@ -23,7 +23,13 @@ public final class DealAuthInfo extends Message {
     public final String item_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DealAuthInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String item_content;
@@ -75,18 +81,11 @@ public final class DealAuthInfo extends Message {
         public DealAuthInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DealAuthInfo(this, z, null) : (DealAuthInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DealAuthInfo(this, z, null);
+            }
+            return (DealAuthInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ DealAuthInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -132,5 +131,9 @@ public final class DealAuthInfo extends Message {
         this.item_name = builder.item_name;
         this.item_content = builder.item_content;
         this.item_url = builder.item_url;
+    }
+
+    public /* synthetic */ DealAuthInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

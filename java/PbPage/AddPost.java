@@ -37,7 +37,13 @@ public final class AddPost extends Message {
     public final String warn_msg;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AddPost> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer already_count;
@@ -97,14 +103,11 @@ public final class AddPost extends Message {
         public AddPost build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AddPost(this, z, null) : (AddPost) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AddPost(this, z, null);
+            }
+            return (AddPost) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -124,10 +127,6 @@ public final class AddPost extends Message {
         DEFAULT_ALREADY_COUNT = 0;
         DEFAULT_TOTAL_COUNT = 0;
         DEFAULT_LAST_ADDITION_TIME = 0;
-    }
-
-    public /* synthetic */ AddPost(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -201,5 +200,9 @@ public final class AddPost extends Message {
         this.last_addition_content = builder.last_addition_content;
         this.last_addition_time = builder.last_addition_time;
         this.warn_msg = builder.warn_msg;
+    }
+
+    public /* synthetic */ AddPost(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -46,7 +46,13 @@ public final class HotThreadItem extends Message {
     public final Long zan_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<HotThreadItem> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
@@ -112,14 +118,11 @@ public final class HotThreadItem extends Message {
         public HotThreadItem build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HotThreadItem(this, z, null) : (HotThreadItem) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new HotThreadItem(this, z, null);
+            }
+            return (HotThreadItem) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -141,10 +144,6 @@ public final class HotThreadItem extends Message {
         DEFAULT_PB_TYPE = 0;
         DEFAULT_ZAN_NUM = 0L;
         DEFAULT_COMMENT_NUM = 0L;
-    }
-
-    public /* synthetic */ HotThreadItem(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -239,5 +238,9 @@ public final class HotThreadItem extends Message {
         this.pic_url = builder.pic_url;
         this.zan_num = builder.zan_num;
         this.comment_num = builder.comment_num;
+    }
+
+    public /* synthetic */ HotThreadItem(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

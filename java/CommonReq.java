@@ -54,6 +54,7 @@ public final class CommonReq extends Message {
     public static final Integer DEFAULT_NET_TYPE;
     public static final String DEFAULT_OAID = "";
     public static final Integer DEFAULT_PERSONALIZED_REC_SWITCH;
+    public static final Integer DEFAULT_PURE_MODE;
     public static final String DEFAULT_PVERSION = "";
     public static final Integer DEFAULT_Q_TYPE;
     public static final String DEFAULT_SAMPLE_ID = "";
@@ -72,6 +73,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_TBS = "";
     public static final String DEFAULT_USER_AGENT = "";
     public static final String DEFAULT_VFDI = "";
+    public static final Integer DEFAULT_XCX_MODE;
     public static final String DEFAULT_Z_ID = "";
     public static final String DEFAULT__CLIENT_ID = "";
     public static final Integer DEFAULT__CLIENT_TYPE;
@@ -177,6 +179,8 @@ public final class CommonReq extends Message {
     public final String oaid;
     @ProtoField(tag = 63, type = Message.Datatype.INT32)
     public final Integer personalized_rec_switch;
+    @ProtoField(tag = 71, type = Message.Datatype.INT32)
+    public final Integer pure_mode;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String pversion;
     @ProtoField(tag = 40, type = Message.Datatype.INT32)
@@ -213,11 +217,19 @@ public final class CommonReq extends Message {
     public final String user_agent;
     @ProtoField(tag = 69, type = Message.Datatype.STRING)
     public final String vfdi;
+    @ProtoField(tag = 72, type = Message.Datatype.INT32)
+    public final Integer xcx_mode;
     @ProtoField(tag = 31, type = Message.Datatype.STRING)
     public final String z_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CommonReq> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String BDUSS;
@@ -268,6 +280,7 @@ public final class CommonReq extends Message {
         public Integer net_type;
         public String oaid;
         public Integer personalized_rec_switch;
+        public Integer pure_mode;
         public String pversion;
         public Integer q_type;
         public String sample_id;
@@ -286,6 +299,7 @@ public final class CommonReq extends Message {
         public String tbs;
         public String user_agent;
         public String vfdi;
+        public Integer xcx_mode;
         public String z_id;
 
         public Builder() {
@@ -390,6 +404,8 @@ public final class CommonReq extends Message {
             this.di_diordna = commonReq.di_diordna;
             this.vfdi = commonReq.vfdi;
             this.device_score = commonReq.device_score;
+            this.pure_mode = commonReq.pure_mode;
+            this.xcx_mode = commonReq.xcx_mode;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -397,14 +413,11 @@ public final class CommonReq extends Message {
         public CommonReq build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CommonReq(this, z, null) : (CommonReq) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CommonReq(this, z, null);
+            }
+            return (CommonReq) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -434,10 +447,8 @@ public final class CommonReq extends Message {
         DEFAULT_CMODE = 0;
         DEFAULT_START_TYPE = 0;
         DEFAULT_PERSONALIZED_REC_SWITCH = 0;
-    }
-
-    public /* synthetic */ CommonReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        DEFAULT_PURE_MODE = 0;
+        DEFAULT_XCX_MODE = 0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -858,9 +869,21 @@ public final class CommonReq extends Message {
             String str53 = builder.device_score;
             if (str53 == null) {
                 this.device_score = "";
-                return;
             } else {
                 this.device_score = str53;
+            }
+            Integer num10 = builder.pure_mode;
+            if (num10 == null) {
+                this.pure_mode = DEFAULT_PURE_MODE;
+            } else {
+                this.pure_mode = num10;
+            }
+            Integer num11 = builder.xcx_mode;
+            if (num11 == null) {
+                this.xcx_mode = DEFAULT_XCX_MODE;
+                return;
+            } else {
+                this.xcx_mode = num11;
                 return;
             }
         }
@@ -931,5 +954,11 @@ public final class CommonReq extends Message {
         this.di_diordna = builder.di_diordna;
         this.vfdi = builder.vfdi;
         this.device_score = builder.device_score;
+        this.pure_mode = builder.pure_mode;
+        this.xcx_mode = builder.xcx_mode;
+    }
+
+    public /* synthetic */ CommonReq(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

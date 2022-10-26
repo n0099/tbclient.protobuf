@@ -52,14 +52,20 @@ public final class PostAntiInfo extends Message {
     public final String vcode_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PostAntiInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public AccessState access_state;
         public String block_cancel;
         public String block_confirm;
         public String block_content;
-        public List<String> confilter_hitwords;
+        public List confilter_hitwords;
         public String need_vcode;
         public String pass_token;
         public VcodeExtra vcode_extra;
@@ -122,14 +128,11 @@ public final class PostAntiInfo extends Message {
         public PostAntiInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PostAntiInfo(this, z, null) : (PostAntiInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PostAntiInfo(this, z, null);
+            }
+            return (PostAntiInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -146,10 +149,6 @@ public final class PostAntiInfo extends Message {
             }
         }
         DEFAULT_CONFILTER_HITWORDS = Collections.emptyList();
-    }
-
-    public /* synthetic */ PostAntiInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -172,7 +171,7 @@ public final class PostAntiInfo extends Message {
         }
         if (z) {
             this.access_state = builder.access_state;
-            List<String> list = builder.confilter_hitwords;
+            List list = builder.confilter_hitwords;
             if (list == null) {
                 this.confilter_hitwords = DEFAULT_CONFILTER_HITWORDS;
             } else {
@@ -247,5 +246,9 @@ public final class PostAntiInfo extends Message {
         this.block_confirm = builder.block_confirm;
         this.vcode_pic_url = builder.vcode_pic_url;
         this.vcode_extra = builder.vcode_extra;
+    }
+
+    public /* synthetic */ PostAntiInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

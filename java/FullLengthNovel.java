@@ -25,7 +25,13 @@ public final class FullLengthNovel extends Message {
     public final String schema;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FullLengthNovel> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer button_heigh;
@@ -77,14 +83,11 @@ public final class FullLengthNovel extends Message {
         public FullLengthNovel build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FullLengthNovel(this, z, null) : (FullLengthNovel) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FullLengthNovel(this, z, null);
+            }
+            return (FullLengthNovel) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -101,10 +104,6 @@ public final class FullLengthNovel extends Message {
             }
         }
         DEFAULT_BUTTON_HEIGH = 0;
-    }
-
-    public /* synthetic */ FullLengthNovel(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -150,5 +149,9 @@ public final class FullLengthNovel extends Message {
         this.schema = builder.schema;
         this.has_truncate = builder.has_truncate;
         this.button_heigh = builder.button_heigh;
+    }
+
+    public /* synthetic */ FullLengthNovel(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

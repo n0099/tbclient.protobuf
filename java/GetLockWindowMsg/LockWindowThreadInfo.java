@@ -31,10 +31,16 @@ public final class LockWindowThreadInfo extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LockWindowThreadInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<PbContent> content;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List content;
         public Integer post_num;
         public Long tid;
         public String title;
@@ -85,14 +91,11 @@ public final class LockWindowThreadInfo extends Message {
         public LockWindowThreadInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LockWindowThreadInfo(this, z, null) : (LockWindowThreadInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LockWindowThreadInfo(this, z, null);
+            }
+            return (LockWindowThreadInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -111,10 +114,6 @@ public final class LockWindowThreadInfo extends Message {
         DEFAULT_TID = 0L;
         DEFAULT_CONTENT = Collections.emptyList();
         DEFAULT_POST_NUM = 0;
-    }
-
-    public /* synthetic */ LockWindowThreadInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -148,7 +147,7 @@ public final class LockWindowThreadInfo extends Message {
             } else {
                 this.title = str;
             }
-            List<PbContent> list = builder.content;
+            List list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {
@@ -167,5 +166,9 @@ public final class LockWindowThreadInfo extends Message {
         this.title = builder.title;
         this.content = Message.immutableCopyOf(builder.content);
         this.post_num = builder.post_num;
+    }
+
+    public /* synthetic */ LockWindowThreadInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

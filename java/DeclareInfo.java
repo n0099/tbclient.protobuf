@@ -31,7 +31,13 @@ public final class DeclareInfo extends Message {
     public final Integer is_declare;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DeclareInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer declare_id;
@@ -87,14 +93,11 @@ public final class DeclareInfo extends Message {
         public DeclareInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DeclareInfo(this, z, null) : (DeclareInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DeclareInfo(this, z, null);
+            }
+            return (DeclareInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class DeclareInfo extends Message {
         DEFAULT_DECLARE_ID = 0;
         DEFAULT_DECLARE_NUM = 0L;
         DEFAULT_IS_DECLARE = 0;
-    }
-
-    public /* synthetic */ DeclareInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -176,5 +175,9 @@ public final class DeclareInfo extends Message {
         this.declare_text = builder.declare_text;
         this.declare_num = builder.declare_num;
         this.is_declare = builder.is_declare;
+    }
+
+    public /* synthetic */ DeclareInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

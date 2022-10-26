@@ -25,7 +25,13 @@ public final class NovelFansInfo extends Message {
     public final String level_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<NovelFansInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer level;
@@ -77,14 +83,11 @@ public final class NovelFansInfo extends Message {
         public NovelFansInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new NovelFansInfo(this, z, null) : (NovelFansInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new NovelFansInfo(this, z, null);
+            }
+            return (NovelFansInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -101,10 +104,6 @@ public final class NovelFansInfo extends Message {
             }
         }
         DEFAULT_LEVEL = 0;
-    }
-
-    public /* synthetic */ NovelFansInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -150,5 +149,9 @@ public final class NovelFansInfo extends Message {
         this.level = builder.level;
         this.level_name = builder.level_name;
         this.level_icon = builder.level_icon;
+    }
+
+    public /* synthetic */ NovelFansInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

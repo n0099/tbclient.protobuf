@@ -24,10 +24,16 @@ public final class NewFloorInfo extends Message {
     public final Integer is_floor;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<NewFloorInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<PbContent> content;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List content;
         public Integer is_floor;
 
         public Builder() {
@@ -74,14 +80,11 @@ public final class NewFloorInfo extends Message {
         public NewFloorInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new NewFloorInfo(this, z, null) : (NewFloorInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new NewFloorInfo(this, z, null);
+            }
+            return (NewFloorInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class NewFloorInfo extends Message {
         }
         DEFAULT_CONTENT = Collections.emptyList();
         DEFAULT_IS_FLOOR = 0;
-    }
-
-    public /* synthetic */ NewFloorInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -124,7 +123,7 @@ public final class NewFloorInfo extends Message {
             }
         }
         if (z) {
-            List<PbContent> list = builder.content;
+            List list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {
@@ -141,5 +140,9 @@ public final class NewFloorInfo extends Message {
         }
         this.content = Message.immutableCopyOf(builder.content);
         this.is_floor = builder.is_floor;
+    }
+
+    public /* synthetic */ NewFloorInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

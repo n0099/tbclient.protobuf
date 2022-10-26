@@ -153,7 +153,13 @@ public final class BookInfo extends Message {
     public final Integer words;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BookInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String ad_code;
@@ -195,7 +201,7 @@ public final class BookInfo extends Message {
         public Integer read_count;
         public Integer sub_class_id;
         public String sub_class_name;
-        public List<BookTag> tags;
+        public List tags;
         public String title;
         public Integer total_chapter;
         public Integer total_page;
@@ -289,14 +295,11 @@ public final class BookInfo extends Message {
         public BookInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BookInfo(this, z, null) : (BookInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BookInfo(this, z, null);
+            }
+            return (BookInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -331,10 +334,6 @@ public final class BookInfo extends Message {
         DEFAULT_FIRST_CHAPTER = 0;
         DEFAULT_CHARGE_TYPE = 0;
         DEFAULT_MEMBER_SHOW_TYPE = 0;
-    }
-
-    public /* synthetic */ BookInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -428,7 +427,7 @@ public final class BookInfo extends Message {
             } else {
                 this.author_intro = str8;
             }
-            List<BookTag> list = builder.tags;
+            List list = builder.tags;
             if (list == null) {
                 this.tags = DEFAULT_TAGS;
             } else {
@@ -674,5 +673,9 @@ public final class BookInfo extends Message {
         this.first_chapter = builder.first_chapter;
         this.charge_type = builder.charge_type;
         this.member_show_type = builder.member_show_type;
+    }
+
+    public /* synthetic */ BookInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

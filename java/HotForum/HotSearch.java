@@ -24,7 +24,13 @@ public final class HotSearch extends Message {
     public final SearchValue search_value;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<HotSearch> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer jump_type;
@@ -76,14 +82,11 @@ public final class HotSearch extends Message {
         public HotSearch build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HotSearch(this, z, null) : (HotSearch) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new HotSearch(this, z, null);
+            }
+            return (HotSearch) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -100,10 +103,6 @@ public final class HotSearch extends Message {
             }
         }
         DEFAULT_JUMP_TYPE = 0;
-    }
-
-    public /* synthetic */ HotSearch(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -144,5 +143,9 @@ public final class HotSearch extends Message {
         this.search_title = builder.search_title;
         this.search_value = builder.search_value;
         this.jump_type = builder.jump_type;
+    }
+
+    public /* synthetic */ HotSearch(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

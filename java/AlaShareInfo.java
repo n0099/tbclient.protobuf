@@ -28,7 +28,13 @@ public final class AlaShareInfo extends Message {
     public final Integer share_user_count;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AlaShareInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String content;
@@ -82,14 +88,11 @@ public final class AlaShareInfo extends Message {
         public AlaShareInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AlaShareInfo(this, z, null) : (AlaShareInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AlaShareInfo(this, z, null);
+            }
+            return (AlaShareInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class AlaShareInfo extends Message {
         DEFAULT_SHARE_USER_COUNT = 0;
         DEFAULT_SHARE_COUNT = 0;
         DEFAULT_RECORD_TID = 0L;
-    }
-
-    public /* synthetic */ AlaShareInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -164,5 +163,9 @@ public final class AlaShareInfo extends Message {
         this.share_user_count = builder.share_user_count;
         this.share_count = builder.share_count;
         this.record_tid = builder.record_tid;
+    }
+
+    public /* synthetic */ AlaShareInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -52,7 +52,13 @@ public final class LikeForum extends Message {
     public final Integer thread_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LikeForum> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
@@ -122,14 +128,11 @@ public final class LikeForum extends Message {
         public LikeForum build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LikeForum(this, z, null) : (LikeForum) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LikeForum(this, z, null);
+            }
+            return (LikeForum) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -153,10 +156,6 @@ public final class LikeForum extends Message {
         DEFAULT_NEED_TRANS = Boolean.FALSE;
         DEFAULT_LEVEL_ID = 0;
         DEFAULT_IS_SIGN = 0;
-    }
-
-    public /* synthetic */ LikeForum(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -260,5 +259,9 @@ public final class LikeForum extends Message {
         this.level_id = builder.level_id;
         this.level_name = builder.level_name;
         this.is_sign = builder.is_sign;
+    }
+
+    public /* synthetic */ LikeForum(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

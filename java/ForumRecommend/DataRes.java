@@ -80,28 +80,34 @@ public final class DataRes extends Message {
     public final Integer time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<Banner> banner;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List banner;
         public ForumCreateInfo forum_create_info;
         public ForumPopupInfo forum_popup_info;
-        public List<FrequentlyForumInfo> frequently_forum_info;
+        public List frequently_forum_info;
         public HotSearch hot_search;
         public Integer is_login;
         public Integer is_mem;
-        public List<LikeForum> like_forum;
+        public List like_forum;
         public Integer msign_level;
         public String msign_text;
         public Integer msign_valid;
-        public List<FrsTabInfo> nav_tab_info;
-        public List<Banner> new_banner_info;
-        public List<NewRecommend> new_recommend;
+        public List nav_tab_info;
+        public List new_banner_info;
+        public List new_recommend;
         public PrivatePopInfo private_forum_popinfo;
-        public List<RecommendForumInfo> recommend_forum_info;
+        public List recommend_forum_info;
         public Integer redirect;
         public Integer sort_type;
-        public List<RecommendForumInfo> tag_recommend_forum;
+        public List tag_recommend_forum;
         public Integer time;
 
         public Builder() {
@@ -166,14 +172,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -206,10 +209,6 @@ public final class DataRes extends Message {
         DEFAULT_NAV_TAB_INFO = Collections.emptyList();
     }
 
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
@@ -229,19 +228,19 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<LikeForum> list = builder.like_forum;
+            List list = builder.like_forum;
             if (list == null) {
                 this.like_forum = DEFAULT_LIKE_FORUM;
             } else {
                 this.like_forum = Message.immutableCopyOf(list);
             }
-            List<Banner> list2 = builder.banner;
+            List list2 = builder.banner;
             if (list2 == null) {
                 this.banner = DEFAULT_BANNER;
             } else {
                 this.banner = Message.immutableCopyOf(list2);
             }
-            List<NewRecommend> list3 = builder.new_recommend;
+            List list3 = builder.new_recommend;
             if (list3 == null) {
                 this.new_recommend = DEFAULT_NEW_RECOMMEND;
             } else {
@@ -283,7 +282,7 @@ public final class DataRes extends Message {
             } else {
                 this.is_mem = num5;
             }
-            List<RecommendForumInfo> list4 = builder.recommend_forum_info;
+            List list4 = builder.recommend_forum_info;
             if (list4 == null) {
                 this.recommend_forum_info = DEFAULT_RECOMMEND_FORUM_INFO;
             } else {
@@ -296,19 +295,19 @@ public final class DataRes extends Message {
             } else {
                 this.redirect = num6;
             }
-            List<Banner> list5 = builder.new_banner_info;
+            List list5 = builder.new_banner_info;
             if (list5 == null) {
                 this.new_banner_info = DEFAULT_NEW_BANNER_INFO;
             } else {
                 this.new_banner_info = Message.immutableCopyOf(list5);
             }
-            List<FrequentlyForumInfo> list6 = builder.frequently_forum_info;
+            List list6 = builder.frequently_forum_info;
             if (list6 == null) {
                 this.frequently_forum_info = DEFAULT_FREQUENTLY_FORUM_INFO;
             } else {
                 this.frequently_forum_info = Message.immutableCopyOf(list6);
             }
-            List<RecommendForumInfo> list7 = builder.tag_recommend_forum;
+            List list7 = builder.tag_recommend_forum;
             if (list7 == null) {
                 this.tag_recommend_forum = DEFAULT_TAG_RECOMMEND_FORUM;
             } else {
@@ -322,7 +321,7 @@ public final class DataRes extends Message {
             }
             this.forum_create_info = builder.forum_create_info;
             this.private_forum_popinfo = builder.private_forum_popinfo;
-            List<FrsTabInfo> list8 = builder.nav_tab_info;
+            List list8 = builder.nav_tab_info;
             if (list8 == null) {
                 this.nav_tab_info = DEFAULT_NAV_TAB_INFO;
             } else {
@@ -351,5 +350,9 @@ public final class DataRes extends Message {
         this.private_forum_popinfo = builder.private_forum_popinfo;
         this.nav_tab_info = Message.immutableCopyOf(builder.nav_tab_info);
         this.forum_popup_info = builder.forum_popup_info;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -35,13 +35,19 @@ public final class SeniorLottery extends Message {
     public final LotteryTheme theme;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SeniorLottery> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String act_desc;
-        public List<LotteryRegular> act_regular;
-        public List<AwardInfo> award_info;
-        public List<AwardUser> luck_users;
+        public List act_regular;
+        public List award_info;
+        public List luck_users;
         public String myaward;
         public LotteryTheme theme;
 
@@ -93,14 +99,11 @@ public final class SeniorLottery extends Message {
         public SeniorLottery build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SeniorLottery(this, z, null) : (SeniorLottery) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SeniorLottery(this, z, null);
+            }
+            return (SeniorLottery) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -119,10 +122,6 @@ public final class SeniorLottery extends Message {
         DEFAULT_AWARD_INFO = Collections.emptyList();
         DEFAULT_LUCK_USERS = Collections.emptyList();
         DEFAULT_ACT_REGULAR = Collections.emptyList();
-    }
-
-    public /* synthetic */ SeniorLottery(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -145,7 +144,7 @@ public final class SeniorLottery extends Message {
         }
         if (z) {
             this.theme = builder.theme;
-            List<AwardInfo> list = builder.award_info;
+            List list = builder.award_info;
             if (list == null) {
                 this.award_info = DEFAULT_AWARD_INFO;
             } else {
@@ -157,7 +156,7 @@ public final class SeniorLottery extends Message {
             } else {
                 this.myaward = str;
             }
-            List<AwardUser> list2 = builder.luck_users;
+            List list2 = builder.luck_users;
             if (list2 == null) {
                 this.luck_users = DEFAULT_LUCK_USERS;
             } else {
@@ -169,7 +168,7 @@ public final class SeniorLottery extends Message {
             } else {
                 this.act_desc = str2;
             }
-            List<LotteryRegular> list3 = builder.act_regular;
+            List list3 = builder.act_regular;
             if (list3 == null) {
                 this.act_regular = DEFAULT_ACT_REGULAR;
                 return;
@@ -184,5 +183,9 @@ public final class SeniorLottery extends Message {
         this.luck_users = Message.immutableCopyOf(builder.luck_users);
         this.act_desc = builder.act_desc;
         this.act_regular = Message.immutableCopyOf(builder.act_regular);
+    }
+
+    public /* synthetic */ SeniorLottery(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

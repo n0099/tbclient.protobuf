@@ -25,10 +25,16 @@ public final class ThemeSkinInMain extends Message {
     public final String skin_category;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ThemeSkinInMain> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ThemeSkinPropMain> props;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List props;
         public String skin_category;
 
         public Builder() {
@@ -75,14 +81,11 @@ public final class ThemeSkinInMain extends Message {
         public ThemeSkinInMain build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThemeSkinInMain(this, z, null) : (ThemeSkinInMain) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThemeSkinInMain(this, z, null);
+            }
+            return (ThemeSkinInMain) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class ThemeSkinInMain extends Message {
             }
         }
         DEFAULT_PROPS = Collections.emptyList();
-    }
-
-    public /* synthetic */ ThemeSkinInMain(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class ThemeSkinInMain extends Message {
             } else {
                 this.skin_category = str;
             }
-            List<ThemeSkinPropMain> list = builder.props;
+            List list = builder.props;
             if (list == null) {
                 this.props = DEFAULT_PROPS;
                 return;
@@ -141,5 +140,9 @@ public final class ThemeSkinInMain extends Message {
         }
         this.skin_category = builder.skin_category;
         this.props = Message.immutableCopyOf(builder.props);
+    }
+
+    public /* synthetic */ ThemeSkinInMain(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

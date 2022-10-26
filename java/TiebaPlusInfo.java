@@ -84,7 +84,13 @@ public final class TiebaPlusInfo extends Message {
     public final String wx_thumbnail;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TiebaPlusInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String app_company;
@@ -176,14 +182,11 @@ public final class TiebaPlusInfo extends Message {
         public TiebaPlusInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TiebaPlusInfo(this, z, null) : (TiebaPlusInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TiebaPlusInfo(this, z, null);
+            }
+            return (TiebaPlusInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -204,10 +207,6 @@ public final class TiebaPlusInfo extends Message {
         DEFAULT_JUMP_TYPE = 0;
         DEFAULT_IS_APPOINT = 0;
         DEFAULT_JUMP_SETTING = 0;
-    }
-
-    public /* synthetic */ TiebaPlusInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -388,5 +387,9 @@ public final class TiebaPlusInfo extends Message {
         this.jump_setting = builder.jump_setting;
         this.wx_thumbnail = builder.wx_thumbnail;
         this.button_desc = builder.button_desc;
+    }
+
+    public /* synthetic */ TiebaPlusInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

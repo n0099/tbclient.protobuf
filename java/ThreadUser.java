@@ -23,10 +23,16 @@ public final class ThreadUser extends Message {
     public final User user_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ThreadUser> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ThreadInfo> thread_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List thread_list;
         public User user_info;
 
         public Builder() {
@@ -73,14 +79,11 @@ public final class ThreadUser extends Message {
         public ThreadUser build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThreadUser(this, z, null) : (ThreadUser) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThreadUser(this, z, null);
+            }
+            return (ThreadUser) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -97,10 +100,6 @@ public final class ThreadUser extends Message {
             }
         }
         DEFAULT_THREAD_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ ThreadUser(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -122,7 +121,7 @@ public final class ThreadUser extends Message {
             }
         }
         if (z) {
-            List<ThreadInfo> list = builder.thread_list;
+            List list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {
@@ -133,5 +132,9 @@ public final class ThreadUser extends Message {
         }
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
         this.user_info = builder.user_info;
+    }
+
+    public /* synthetic */ ThreadUser(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

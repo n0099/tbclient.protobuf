@@ -22,7 +22,13 @@ public final class AcrossForumIcon extends Message {
     public final Integer pic_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AcrossForumIcon> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String icon_url;
@@ -72,14 +78,11 @@ public final class AcrossForumIcon extends Message {
         public AcrossForumIcon build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AcrossForumIcon(this, z, null) : (AcrossForumIcon) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AcrossForumIcon(this, z, null);
+            }
+            return (AcrossForumIcon) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +99,6 @@ public final class AcrossForumIcon extends Message {
             }
         }
         DEFAULT_PIC_TYPE = 0;
-    }
-
-    public /* synthetic */ AcrossForumIcon(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class AcrossForumIcon extends Message {
         }
         this.icon_url = builder.icon_url;
         this.pic_type = builder.pic_type;
+    }
+
+    public /* synthetic */ AcrossForumIcon(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

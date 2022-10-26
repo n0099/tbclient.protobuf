@@ -22,7 +22,13 @@ public final class DeletedReasonInfo extends Message {
     public final Integer is_grays_cale_forum;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DeletedReasonInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_boomgrow;
@@ -72,14 +78,11 @@ public final class DeletedReasonInfo extends Message {
         public DeletedReasonInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DeletedReasonInfo(this, z, null) : (DeletedReasonInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DeletedReasonInfo(this, z, null);
+            }
+            return (DeletedReasonInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -97,10 +100,6 @@ public final class DeletedReasonInfo extends Message {
         }
         DEFAULT_IS_GRAYS_CALE_FORUM = 0;
         DEFAULT_IS_BOOMGROW = 0;
-    }
-
-    public /* synthetic */ DeletedReasonInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -139,5 +138,9 @@ public final class DeletedReasonInfo extends Message {
         }
         this.is_grays_cale_forum = builder.is_grays_cale_forum;
         this.is_boomgrow = builder.is_boomgrow;
+    }
+
+    public /* synthetic */ DeletedReasonInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -26,11 +26,17 @@ public final class DataRes extends Message {
     public final UserPointInfo user_point_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ImgInfo> img_list;
-        public List<PointTaskInfo> task_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List img_list;
+        public List task_list;
         public UserPointInfo user_point_info;
 
         public Builder() {
@@ -78,14 +84,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -103,10 +106,6 @@ public final class DataRes extends Message {
         }
         DEFAULT_TASK_LIST = Collections.emptyList();
         DEFAULT_IMG_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -128,13 +127,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<PointTaskInfo> list = builder.task_list;
+            List list = builder.task_list;
             if (list == null) {
                 this.task_list = DEFAULT_TASK_LIST;
             } else {
                 this.task_list = Message.immutableCopyOf(list);
             }
-            List<ImgInfo> list2 = builder.img_list;
+            List list2 = builder.img_list;
             if (list2 == null) {
                 this.img_list = DEFAULT_IMG_LIST;
             } else {
@@ -146,5 +145,9 @@ public final class DataRes extends Message {
         this.task_list = Message.immutableCopyOf(builder.task_list);
         this.img_list = Message.immutableCopyOf(builder.img_list);
         this.user_point_info = builder.user_point_info;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

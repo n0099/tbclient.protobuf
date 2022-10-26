@@ -30,7 +30,13 @@ public final class UserBfbInfo extends Message {
     public final Integer res_no;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UserBfbInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer activity_status;
@@ -86,14 +92,11 @@ public final class UserBfbInfo extends Message {
         public UserBfbInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UserBfbInfo(this, z, null) : (UserBfbInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UserBfbInfo(this, z, null);
+            }
+            return (UserBfbInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -111,10 +114,6 @@ public final class UserBfbInfo extends Message {
         }
         DEFAULT_ACTIVITY_STATUS = 0;
         DEFAULT_RES_NO = 0;
-    }
-
-    public /* synthetic */ UserBfbInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -168,5 +167,9 @@ public final class UserBfbInfo extends Message {
         this.maste_url = builder.maste_url;
         this.res_no = builder.res_no;
         this.android_bfb_sdk = builder.android_bfb_sdk;
+    }
+
+    public /* synthetic */ UserBfbInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

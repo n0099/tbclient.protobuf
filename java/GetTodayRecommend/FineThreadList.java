@@ -54,14 +54,20 @@ public final class FineThreadList extends Message {
     public final Long zan_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FineThreadList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
         public Long fromfid;
         public String fromfname;
         public Long ftid;
-        public List<String> pics;
+        public List pics;
         public Integer publish_time;
         public Long reply_num;
         public Integer thread_type;
@@ -124,14 +130,11 @@ public final class FineThreadList extends Message {
         public FineThreadList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FineThreadList(this, z, null) : (FineThreadList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FineThreadList(this, z, null);
+            }
+            return (FineThreadList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -156,10 +159,6 @@ public final class FineThreadList extends Message {
         DEFAULT_FROMFID = 0L;
         DEFAULT_THREAD_TYPE = 0;
         DEFAULT_PICS = Collections.emptyList();
-    }
-
-    public /* synthetic */ FineThreadList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -247,7 +246,7 @@ public final class FineThreadList extends Message {
             } else {
                 this.thread_type = num3;
             }
-            List<String> list = builder.pics;
+            List list = builder.pics;
             if (list == null) {
                 this.pics = DEFAULT_PICS;
                 return;
@@ -268,5 +267,9 @@ public final class FineThreadList extends Message {
         this.fromfid = builder.fromfid;
         this.thread_type = builder.thread_type;
         this.pics = Message.immutableCopyOf(builder.pics);
+    }
+
+    public /* synthetic */ FineThreadList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -34,7 +34,13 @@ public final class ForumArIno extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ForumArIno> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer _switch;
@@ -92,14 +98,11 @@ public final class ForumArIno extends Message {
         public ForumArIno build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ForumArIno(this, z, null) : (ForumArIno) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ForumArIno(this, z, null);
+            }
+            return (ForumArIno) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -118,10 +121,6 @@ public final class ForumArIno extends Message {
         DEFAULT_SWITCH = 0;
         DEFAULT_AR_ID = 0;
         DEFAULT_AR_TYPE = 0;
-    }
-
-    public /* synthetic */ ForumArIno(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -188,5 +187,9 @@ public final class ForumArIno extends Message {
         this.title = builder.title;
         this.animation_url = builder.animation_url;
         this.suspension_url = builder.suspension_url;
+    }
+
+    public /* synthetic */ ForumArIno(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -31,7 +31,13 @@ public final class ForumMember extends Message {
     public final Integer user_level;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ForumMember> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer cur_score;
@@ -87,14 +93,11 @@ public final class ForumMember extends Message {
         public ForumMember build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ForumMember(this, z, null) : (ForumMember) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ForumMember(this, z, null);
+            }
+            return (ForumMember) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -114,10 +117,6 @@ public final class ForumMember extends Message {
         DEFAULT_USER_LEVEL = 0;
         DEFAULT_CUR_SCORE = 0;
         DEFAULT_LEVELUP_SCORE = 0;
-    }
-
-    public /* synthetic */ ForumMember(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -177,5 +176,9 @@ public final class ForumMember extends Message {
         this.level_name = builder.level_name;
         this.cur_score = builder.cur_score;
         this.levelup_score = builder.levelup_score;
+    }
+
+    public /* synthetic */ ForumMember(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

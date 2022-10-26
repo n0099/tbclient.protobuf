@@ -32,11 +32,17 @@ public final class DataReq extends Message {
     public final Integer pn;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataReq> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer begin_id;
-        public List<Integer> classid_list;
+        public List classid_list;
 
         /* renamed from: common  reason: collision with root package name */
         public CommonReq f1268common;
@@ -88,14 +94,11 @@ public final class DataReq extends Message {
         public DataReq build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataReq(this, z, null) : (DataReq) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataReq(this, z, null);
+            }
+            return (DataReq) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -114,10 +117,6 @@ public final class DataReq extends Message {
         DEFAULT_CLASSID_LIST = Collections.emptyList();
         DEFAULT_BEGIN_ID = 0;
         DEFAULT_PN = 0;
-    }
-
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -140,7 +139,7 @@ public final class DataReq extends Message {
         }
         if (z) {
             this.f1267common = builder.f1268common;
-            List<Integer> list = builder.classid_list;
+            List list = builder.classid_list;
             if (list == null) {
                 this.classid_list = DEFAULT_CLASSID_LIST;
             } else {
@@ -165,5 +164,9 @@ public final class DataReq extends Message {
         this.classid_list = Message.immutableCopyOf(builder.classid_list);
         this.begin_id = builder.begin_id;
         this.pn = builder.pn;
+    }
+
+    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

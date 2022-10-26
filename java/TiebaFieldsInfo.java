@@ -27,12 +27,18 @@ public final class TiebaFieldsInfo extends Message {
     public final List<User> user_rank;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TiebaFieldsInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<String> tieba_fields;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List tieba_fields;
         public String tieba_name;
-        public List<User> user_rank;
+        public List user_rank;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -79,14 +85,11 @@ public final class TiebaFieldsInfo extends Message {
         public TiebaFieldsInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TiebaFieldsInfo(this, z, null) : (TiebaFieldsInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TiebaFieldsInfo(this, z, null);
+            }
+            return (TiebaFieldsInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +107,6 @@ public final class TiebaFieldsInfo extends Message {
         }
         DEFAULT_TIEBA_FIELDS = Collections.emptyList();
         DEFAULT_USER_RANK = Collections.emptyList();
-    }
-
-    public /* synthetic */ TiebaFieldsInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,7 +128,7 @@ public final class TiebaFieldsInfo extends Message {
             }
         }
         if (z) {
-            List<String> list = builder.tieba_fields;
+            List list = builder.tieba_fields;
             if (list == null) {
                 this.tieba_fields = DEFAULT_TIEBA_FIELDS;
             } else {
@@ -141,7 +140,7 @@ public final class TiebaFieldsInfo extends Message {
             } else {
                 this.tieba_name = str;
             }
-            List<User> list2 = builder.user_rank;
+            List list2 = builder.user_rank;
             if (list2 == null) {
                 this.user_rank = DEFAULT_USER_RANK;
                 return;
@@ -153,5 +152,9 @@ public final class TiebaFieldsInfo extends Message {
         this.tieba_fields = Message.immutableCopyOf(builder.tieba_fields);
         this.tieba_name = builder.tieba_name;
         this.user_rank = Message.immutableCopyOf(builder.user_rank);
+    }
+
+    public /* synthetic */ TiebaFieldsInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

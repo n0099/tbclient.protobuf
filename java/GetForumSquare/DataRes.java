@@ -34,14 +34,20 @@ public final class DataRes extends Message {
     public final List<String> second_class_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String class_name;
-        public List<RecommendForumInfo> forum_info;
+        public List forum_info;
         public Page page;
-        public List<String> page_structure;
-        public List<String> second_class_list;
+        public List page_structure;
+        public List second_class_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -90,14 +96,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -116,10 +119,6 @@ public final class DataRes extends Message {
         DEFAULT_PAGE_STRUCTURE = Collections.emptyList();
         DEFAULT_FORUM_INFO = Collections.emptyList();
         DEFAULT_SECOND_CLASS_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -141,13 +140,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<String> list = builder.page_structure;
+            List list = builder.page_structure;
             if (list == null) {
                 this.page_structure = DEFAULT_PAGE_STRUCTURE;
             } else {
                 this.page_structure = Message.immutableCopyOf(list);
             }
-            List<RecommendForumInfo> list2 = builder.forum_info;
+            List list2 = builder.forum_info;
             if (list2 == null) {
                 this.forum_info = DEFAULT_FORUM_INFO;
             } else {
@@ -160,7 +159,7 @@ public final class DataRes extends Message {
             } else {
                 this.class_name = str;
             }
-            List<String> list3 = builder.second_class_list;
+            List list3 = builder.second_class_list;
             if (list3 == null) {
                 this.second_class_list = DEFAULT_SECOND_CLASS_LIST;
                 return;
@@ -174,5 +173,9 @@ public final class DataRes extends Message {
         this.page = builder.page;
         this.class_name = builder.class_name;
         this.second_class_list = Message.immutableCopyOf(builder.second_class_list);
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -33,14 +33,20 @@ public final class DataRes extends Message {
     public final TopicListModule topic_manual;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<TopicList> frs_tab_topic;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List frs_tab_topic;
         public MediaTopic media_topic;
-        public List<TabList> tab_list;
+        public List tab_list;
         public TopicListModule topic_bang;
-        public List<NewTopicList> topic_list;
+        public List topic_list;
         public TopicListModule topic_manual;
 
         public Builder() {
@@ -91,14 +97,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -117,10 +120,6 @@ public final class DataRes extends Message {
         DEFAULT_TAB_LIST = Collections.emptyList();
         DEFAULT_FRS_TAB_TOPIC = Collections.emptyList();
         DEFAULT_TOPIC_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -145,19 +144,19 @@ public final class DataRes extends Message {
             this.topic_bang = builder.topic_bang;
             this.topic_manual = builder.topic_manual;
             this.media_topic = builder.media_topic;
-            List<TabList> list = builder.tab_list;
+            List list = builder.tab_list;
             if (list == null) {
                 this.tab_list = DEFAULT_TAB_LIST;
             } else {
                 this.tab_list = Message.immutableCopyOf(list);
             }
-            List<TopicList> list2 = builder.frs_tab_topic;
+            List list2 = builder.frs_tab_topic;
             if (list2 == null) {
                 this.frs_tab_topic = DEFAULT_FRS_TAB_TOPIC;
             } else {
                 this.frs_tab_topic = Message.immutableCopyOf(list2);
             }
-            List<NewTopicList> list3 = builder.topic_list;
+            List list3 = builder.topic_list;
             if (list3 == null) {
                 this.topic_list = DEFAULT_TOPIC_LIST;
                 return;
@@ -172,5 +171,9 @@ public final class DataRes extends Message {
         this.tab_list = Message.immutableCopyOf(builder.tab_list);
         this.frs_tab_topic = Message.immutableCopyOf(builder.frs_tab_topic);
         this.topic_list = Message.immutableCopyOf(builder.topic_list);
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

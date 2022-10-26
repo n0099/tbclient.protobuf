@@ -38,10 +38,16 @@ public final class SimpleThreadInfo extends Message {
     public final Zan zan;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SimpleThreadInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<Abstract> _abstract;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List _abstract;
         public Integer last_time_int;
         public Integer reply_num;
         public Long thread_type;
@@ -98,14 +104,11 @@ public final class SimpleThreadInfo extends Message {
         public SimpleThreadInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SimpleThreadInfo(this, z, null) : (SimpleThreadInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SimpleThreadInfo(this, z, null);
+            }
+            return (SimpleThreadInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -126,10 +129,6 @@ public final class SimpleThreadInfo extends Message {
         DEFAULT_LAST_TIME_INT = 0;
         DEFAULT_ABSTRACT = Collections.emptyList();
         DEFAULT_THREAD_TYPE = 0L;
-    }
-
-    public /* synthetic */ SimpleThreadInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -175,7 +174,7 @@ public final class SimpleThreadInfo extends Message {
             } else {
                 this.last_time_int = num2;
             }
-            List<Abstract> list = builder._abstract;
+            List list = builder._abstract;
             if (list == null) {
                 this._abstract = DEFAULT_ABSTRACT;
             } else {
@@ -198,5 +197,9 @@ public final class SimpleThreadInfo extends Message {
         this._abstract = Message.immutableCopyOf(builder._abstract);
         this.zan = builder.zan;
         this.thread_type = builder.thread_type;
+    }
+
+    public /* synthetic */ SimpleThreadInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

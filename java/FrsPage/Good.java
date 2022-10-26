@@ -19,7 +19,13 @@ public final class Good extends Message {
     public final Integer num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Good> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer num;
@@ -67,14 +73,11 @@ public final class Good extends Message {
         public Good build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Good(this, z, null) : (Good) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Good(this, z, null);
+            }
+            return (Good) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -91,10 +94,6 @@ public final class Good extends Message {
             }
         }
         DEFAULT_NUM = 0;
-    }
-
-    public /* synthetic */ Good(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -126,5 +125,9 @@ public final class Good extends Message {
             }
         }
         this.num = builder.num;
+    }
+
+    public /* synthetic */ Good(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

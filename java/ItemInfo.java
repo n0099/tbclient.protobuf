@@ -60,6 +60,8 @@ public final class ItemInfo extends Message {
     public final String icon_url;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer id;
+    @ProtoField(tag = 25)
+    public final ApkDetail ios_detail;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer is_school;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
@@ -84,7 +86,13 @@ public final class ItemInfo extends Message {
     public final ItemThemeColor theme_color;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ItemInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ApkDetail apk_detail;
@@ -100,15 +108,16 @@ public final class ItemInfo extends Message {
         public Double icon_size;
         public String icon_url;
         public Integer id;
+        public ApkDetail ios_detail;
         public Integer is_school;
         public String item_appid;
-        public List<ItemOptions> item_options;
+        public List item_options;
         public String name;
         public Ranking ranking;
         public ItemTable score;
         public ItemService service;
-        public List<TagInfo> tag_info;
-        public List<String> tags;
+        public List tag_info;
+        public List tags;
         public String template_name;
         public ItemThemeColor theme_color;
 
@@ -171,6 +180,7 @@ public final class ItemInfo extends Message {
             this.button_link_type = itemInfo.button_link_type;
             this.apk_name = itemInfo.apk_name;
             this.apk_detail = itemInfo.apk_detail;
+            this.ios_detail = itemInfo.ios_detail;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -178,14 +188,11 @@ public final class ItemInfo extends Message {
         public ItemInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ItemInfo(this, z, null) : (ItemInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ItemInfo(this, z, null);
+            }
+            return (ItemInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -208,10 +215,6 @@ public final class ItemInfo extends Message {
         DEFAULT_IS_SCHOOL = 0;
         DEFAULT_TAG_INFO = Collections.emptyList();
         DEFAULT_BUTTON_LINK_TYPE = 0;
-    }
-
-    public /* synthetic */ ItemInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -257,7 +260,7 @@ public final class ItemInfo extends Message {
             } else {
                 this.brief = str3;
             }
-            List<String> list = builder.tags;
+            List list = builder.tags;
             if (list == null) {
                 this.tags = DEFAULT_TAGS;
             } else {
@@ -269,7 +272,7 @@ public final class ItemInfo extends Message {
             } else {
                 this.icon_size = d;
             }
-            List<ItemOptions> list2 = builder.item_options;
+            List list2 = builder.item_options;
             if (list2 == null) {
                 this.item_options = DEFAULT_ITEM_OPTIONS;
             } else {
@@ -295,7 +298,7 @@ public final class ItemInfo extends Message {
             } else {
                 this.forum_name = str5;
             }
-            List<TagInfo> list3 = builder.tag_info;
+            List list3 = builder.tag_info;
             if (list3 == null) {
                 this.tag_info = DEFAULT_TAG_INFO;
             } else {
@@ -347,6 +350,7 @@ public final class ItemInfo extends Message {
                 this.apk_name = str11;
             }
             this.apk_detail = builder.apk_detail;
+            this.ios_detail = builder.ios_detail;
             return;
         }
         this.id = builder.id;
@@ -373,5 +377,10 @@ public final class ItemInfo extends Message {
         this.button_link_type = builder.button_link_type;
         this.apk_name = builder.apk_name;
         this.apk_detail = builder.apk_detail;
+        this.ios_detail = builder.ios_detail;
+    }
+
+    public /* synthetic */ ItemInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

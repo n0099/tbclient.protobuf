@@ -75,7 +75,13 @@ public final class User_Info extends Message {
     public final Integer userhide;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<User_Info> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public BaijiahaoInfo baijiahao_info;
@@ -161,14 +167,11 @@ public final class User_Info extends Message {
         public User_Info build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new User_Info(this, z, null) : (User_Info) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new User_Info(this, z, null);
+            }
+            return (User_Info) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -194,10 +197,6 @@ public final class User_Info extends Message {
         DEFAULT_USERHIDE = 0;
         DEFAULT_FANS_NUM = 0;
         DEFAULT_IS_BAWU = 0;
-    }
-
-    public /* synthetic */ User_Info(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -336,5 +335,9 @@ public final class User_Info extends Message {
         this.baijiahao_info = builder.baijiahao_info;
         this.new_god_data = builder.new_god_data;
         this.business_account_info = builder.business_account_info;
+    }
+
+    public /* synthetic */ User_Info(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

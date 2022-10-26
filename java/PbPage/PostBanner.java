@@ -34,7 +34,13 @@ public final class PostBanner extends Message {
     public final Integer link_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PostBanner> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String banner_name;
@@ -92,14 +98,11 @@ public final class PostBanner extends Message {
         public PostBanner build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PostBanner(this, z, null) : (PostBanner) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PostBanner(this, z, null);
+            }
+            return (PostBanner) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -118,10 +121,6 @@ public final class PostBanner extends Message {
         DEFAULT_BANNER_POSITION = 0;
         DEFAULT_LINK_TYPE = 0;
         DEFAULT_CLIENT_TYPE = 0;
-    }
-
-    public /* synthetic */ PostBanner(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -188,5 +187,9 @@ public final class PostBanner extends Message {
         this.link_type = builder.link_type;
         this.banner_url = builder.banner_url;
         this.client_type = builder.client_type;
+    }
+
+    public /* synthetic */ PostBanner(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

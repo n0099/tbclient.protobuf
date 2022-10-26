@@ -37,7 +37,13 @@ public final class PkItem extends Message {
     public final Long pk_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PkItem> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long has_clicked;
@@ -97,14 +103,11 @@ public final class PkItem extends Message {
         public PkItem build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PkItem(this, z, null) : (PkItem) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PkItem(this, z, null);
+            }
+            return (PkItem) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -123,10 +126,6 @@ public final class PkItem extends Message {
         DEFAULT_PK_NUM = 0L;
         DEFAULT_HAS_CLICKED = 0L;
         DEFAULT_PK_INDEX = 0L;
-    }
-
-    public /* synthetic */ PkItem(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -200,5 +199,9 @@ public final class PkItem extends Message {
         this.has_clicked = builder.has_clicked;
         this.pk_index = builder.pk_index;
         this.pk_icon_after = builder.pk_icon_after;
+    }
+
+    public /* synthetic */ PkItem(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

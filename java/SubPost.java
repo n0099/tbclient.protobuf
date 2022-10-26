@@ -24,11 +24,17 @@ public final class SubPost extends Message {
     public final List<SubPostList> sub_post_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SubPost> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long pid;
-        public List<SubPostList> sub_post_list;
+        public List sub_post_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class SubPost extends Message {
         public SubPost build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SubPost(this, z, null) : (SubPost) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SubPost(this, z, null);
+            }
+            return (SubPost) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class SubPost extends Message {
         }
         DEFAULT_PID = 0L;
         DEFAULT_SUB_POST_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ SubPost(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class SubPost extends Message {
             } else {
                 this.pid = l;
             }
-            List<SubPostList> list = builder.sub_post_list;
+            List list = builder.sub_post_list;
             if (list == null) {
                 this.sub_post_list = DEFAULT_SUB_POST_LIST;
                 return;
@@ -141,5 +140,9 @@ public final class SubPost extends Message {
         }
         this.pid = builder.pid;
         this.sub_post_list = Message.immutableCopyOf(builder.sub_post_list);
+    }
+
+    public /* synthetic */ SubPost(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

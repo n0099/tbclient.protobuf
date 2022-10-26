@@ -22,7 +22,13 @@ public final class PhotoInfo extends Message {
     public final String pic;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PhotoInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer num;
@@ -72,14 +78,11 @@ public final class PhotoInfo extends Message {
         public PhotoInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PhotoInfo(this, z, null) : (PhotoInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PhotoInfo(this, z, null);
+            }
+            return (PhotoInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +99,6 @@ public final class PhotoInfo extends Message {
             }
         }
         DEFAULT_NUM = 0;
-    }
-
-    public /* synthetic */ PhotoInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class PhotoInfo extends Message {
         }
         this.pic = builder.pic;
         this.num = builder.num;
+    }
+
+    public /* synthetic */ PhotoInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

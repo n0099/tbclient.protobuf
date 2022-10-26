@@ -34,7 +34,13 @@ public final class ActHot extends Message {
     public final String link;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ActHot> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String author_name;
@@ -92,14 +98,11 @@ public final class ActHot extends Message {
         public ActHot build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ActHot(this, z, null) : (ActHot) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ActHot(this, z, null);
+            }
+            return (ActHot) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -116,10 +119,6 @@ public final class ActHot extends Message {
             }
         }
         DEFAULT_IMG_TYPE = 0;
-    }
-
-    public /* synthetic */ ActHot(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -186,5 +185,9 @@ public final class ActHot extends Message {
         this.author_name = builder.author_name;
         this.img_des = builder.img_des;
         this.img_type = builder.img_type;
+    }
+
+    public /* synthetic */ ActHot(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

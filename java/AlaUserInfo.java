@@ -90,7 +90,13 @@ public final class AlaUserInfo extends Message {
     public final YyExt yy_ext;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AlaUserInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long ala_id;
@@ -186,14 +192,11 @@ public final class AlaUserInfo extends Message {
         public AlaUserInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AlaUserInfo(this, z, null) : (AlaUserInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AlaUserInfo(this, z, null);
+            }
+            return (AlaUserInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -224,10 +227,6 @@ public final class AlaUserInfo extends Message {
         DEFAULT_LEVEL_ID = 0;
         DEFAULT_USER_ID = 0L;
         DEFAULT_ANCHOR_FANS = 0;
-    }
-
-    public /* synthetic */ AlaUserInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -421,5 +420,9 @@ public final class AlaUserInfo extends Message {
         this.user_id = builder.user_id;
         this.anchor_fans = builder.anchor_fans;
         this.yy_ext = builder.yy_ext;
+    }
+
+    public /* synthetic */ AlaUserInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -31,7 +31,13 @@ public final class Chapters extends Message {
     public final Integer total_img_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Chapters> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer chapter_id;
@@ -87,14 +93,11 @@ public final class Chapters extends Message {
         public Chapters build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Chapters(this, z, null) : (Chapters) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Chapters(this, z, null);
+            }
+            return (Chapters) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -114,10 +117,6 @@ public final class Chapters extends Message {
         DEFAULT_RESOURCE_SIZE = 0;
         DEFAULT_TOTAL_IMG_NUM = 0;
         DEFAULT_CHAPTER_VIP = 0;
-    }
-
-    public /* synthetic */ Chapters(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -177,5 +176,9 @@ public final class Chapters extends Message {
         this.resource_size = builder.resource_size;
         this.total_img_num = builder.total_img_num;
         this.chapter_vip = builder.chapter_vip;
+    }
+
+    public /* synthetic */ Chapters(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -31,7 +31,13 @@ public final class SendCardInfo extends Message {
     public final Long packet_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SendCardInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer card_get_status;
@@ -87,14 +93,11 @@ public final class SendCardInfo extends Message {
         public SendCardInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SendCardInfo(this, z, null) : (SendCardInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SendCardInfo(this, z, null);
+            }
+            return (SendCardInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -112,10 +115,6 @@ public final class SendCardInfo extends Message {
         }
         DEFAULT_CARD_GET_STATUS = 0;
         DEFAULT_PACKET_ID = 0L;
-    }
-
-    public /* synthetic */ SendCardInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -175,5 +174,9 @@ public final class SendCardInfo extends Message {
         this.card_pro = builder.card_pro;
         this.card_get_status = builder.card_get_status;
         this.packet_id = builder.packet_id;
+    }
+
+    public /* synthetic */ SendCardInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

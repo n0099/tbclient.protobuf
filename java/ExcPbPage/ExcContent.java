@@ -55,7 +55,13 @@ public final class ExcContent extends Message {
     public final Long type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ExcContent> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer align;
@@ -127,14 +133,11 @@ public final class ExcContent extends Message {
         public ExcContent build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ExcContent(this, z, null) : (ExcContent) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ExcContent(this, z, null);
+            }
+            return (ExcContent) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -153,10 +156,6 @@ public final class ExcContent extends Message {
         DEFAULT_TYPE = 0L;
         DEFAULT_ALIGN = 0;
         DEFAULT_SIZE = 0;
-    }
-
-    public /* synthetic */ ExcContent(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -272,5 +271,9 @@ public final class ExcContent extends Message {
         this.align = builder.align;
         this.color = builder.color;
         this.size = builder.size;
+    }
+
+    public /* synthetic */ ExcContent(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

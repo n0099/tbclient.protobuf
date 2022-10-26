@@ -19,7 +19,13 @@ public final class UserPostPerm extends Message {
     public final Integer not_show_hide_thread;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UserPostPerm> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer not_show_hide_thread;
@@ -67,14 +73,11 @@ public final class UserPostPerm extends Message {
         public UserPostPerm build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UserPostPerm(this, z, null) : (UserPostPerm) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UserPostPerm(this, z, null);
+            }
+            return (UserPostPerm) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -91,10 +94,6 @@ public final class UserPostPerm extends Message {
             }
         }
         DEFAULT_NOT_SHOW_HIDE_THREAD = 0;
-    }
-
-    public /* synthetic */ UserPostPerm(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -126,5 +125,9 @@ public final class UserPostPerm extends Message {
             }
         }
         this.not_show_hide_thread = builder.not_show_hide_thread;
+    }
+
+    public /* synthetic */ UserPostPerm(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -29,12 +29,18 @@ public final class LikeUserInfo extends Message {
     public final UserInfo user_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LikeUserInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ForumInfo> forum_info;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List forum_info;
         public String message;
-        public List<PostInfo> post_info;
+        public List post_info;
         public UserInfo user_info;
 
         public Builder() {
@@ -83,14 +89,11 @@ public final class LikeUserInfo extends Message {
         public LikeUserInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LikeUserInfo(this, z, null) : (LikeUserInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LikeUserInfo(this, z, null);
+            }
+            return (LikeUserInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class LikeUserInfo extends Message {
         }
         DEFAULT_FORUM_INFO = Collections.emptyList();
         DEFAULT_POST_INFO = Collections.emptyList();
-    }
-
-    public /* synthetic */ LikeUserInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -134,13 +133,13 @@ public final class LikeUserInfo extends Message {
         }
         if (z) {
             this.user_info = builder.user_info;
-            List<ForumInfo> list = builder.forum_info;
+            List list = builder.forum_info;
             if (list == null) {
                 this.forum_info = DEFAULT_FORUM_INFO;
             } else {
                 this.forum_info = Message.immutableCopyOf(list);
             }
-            List<PostInfo> list2 = builder.post_info;
+            List list2 = builder.post_info;
             if (list2 == null) {
                 this.post_info = DEFAULT_POST_INFO;
             } else {
@@ -159,5 +158,9 @@ public final class LikeUserInfo extends Message {
         this.forum_info = Message.immutableCopyOf(builder.forum_info);
         this.post_info = Message.immutableCopyOf(builder.post_info);
         this.message = builder.message;
+    }
+
+    public /* synthetic */ LikeUserInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -58,7 +58,13 @@ public final class ThemeSkinPropMain extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ThemeSkinPropMain> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_url;
@@ -132,14 +138,11 @@ public final class ThemeSkinPropMain extends Message {
         public ThemeSkinPropMain build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThemeSkinPropMain(this, z, null) : (ThemeSkinPropMain) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThemeSkinPropMain(this, z, null);
+            }
+            return (ThemeSkinPropMain) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -161,10 +164,6 @@ public final class ThemeSkinPropMain extends Message {
         DEFAULT_IS_FINISHED = 0;
         DEFAULT_DAILY_PRIVILEGE_STATUS = 0;
         DEFAULT_END_TIME = 0L;
-    }
-
-    public /* synthetic */ ThemeSkinPropMain(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -287,5 +286,9 @@ public final class ThemeSkinPropMain extends Message {
         this.package_key = builder.package_key;
         this.daily_privilege_status = builder.daily_privilege_status;
         this.end_time = builder.end_time;
+    }
+
+    public /* synthetic */ ThemeSkinPropMain(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

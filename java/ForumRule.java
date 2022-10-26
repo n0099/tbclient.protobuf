@@ -27,10 +27,16 @@ public final class ForumRule extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ForumRule> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<PbContent> content;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List content;
         public Integer status;
         public String title;
 
@@ -79,14 +85,11 @@ public final class ForumRule extends Message {
         public ForumRule build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ForumRule(this, z, null) : (ForumRule) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ForumRule(this, z, null);
+            }
+            return (ForumRule) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +107,6 @@ public final class ForumRule extends Message {
         }
         DEFAULT_CONTENT = Collections.emptyList();
         DEFAULT_STATUS = 0;
-    }
-
-    public /* synthetic */ ForumRule(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -135,7 +134,7 @@ public final class ForumRule extends Message {
             } else {
                 this.title = str;
             }
-            List<PbContent> list = builder.content;
+            List list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {
@@ -153,5 +152,9 @@ public final class ForumRule extends Message {
         this.title = builder.title;
         this.content = Message.immutableCopyOf(builder.content);
         this.status = builder.status;
+    }
+
+    public /* synthetic */ ForumRule(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -31,7 +31,13 @@ public final class PsInfo extends Message {
     public final Long score;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PsInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long game_id;
@@ -87,14 +93,11 @@ public final class PsInfo extends Message {
         public PsInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PsInfo(this, z, null) : (PsInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PsInfo(this, z, null);
+            }
+            return (PsInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class PsInfo extends Message {
         DEFAULT_GAME_ID = 0L;
         DEFAULT_SCORE = 0L;
         DEFAULT_GAME_TYPE = 0L;
-    }
-
-    public /* synthetic */ PsInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -176,5 +175,9 @@ public final class PsInfo extends Message {
         this.game_type = builder.game_type;
         this.game_pic_url = builder.game_pic_url;
         this.game_intro = builder.game_intro;
+    }
+
+    public /* synthetic */ PsInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -43,7 +43,13 @@ public final class Resource extends Message {
     public final String user_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Resource> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String icon_text;
@@ -107,14 +113,11 @@ public final class Resource extends Message {
         public Resource build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Resource(this, z, null) : (Resource) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Resource(this, z, null);
+            }
+            return (Resource) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -132,10 +135,6 @@ public final class Resource extends Message {
         }
         DEFAULT_RES_ID = 0L;
         DEFAULT_POSITION = 0L;
-    }
-
-    public /* synthetic */ Resource(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -223,5 +222,9 @@ public final class Resource extends Message {
         this.res_link = builder.res_link;
         this.position = builder.position;
         this.icon_text = builder.icon_text;
+    }
+
+    public /* synthetic */ Resource(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

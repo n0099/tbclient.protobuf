@@ -22,7 +22,13 @@ public final class Bottle extends Message {
     public final Long tid;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Bottle> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer has_enter_display;
@@ -72,14 +78,11 @@ public final class Bottle extends Message {
         public Bottle build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Bottle(this, z, null) : (Bottle) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Bottle(this, z, null);
+            }
+            return (Bottle) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -97,10 +100,6 @@ public final class Bottle extends Message {
         }
         DEFAULT_HAS_ENTER_DISPLAY = 0;
         DEFAULT_TID = 0L;
-    }
-
-    public /* synthetic */ Bottle(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -139,5 +138,9 @@ public final class Bottle extends Message {
         }
         this.has_enter_display = builder.has_enter_display;
         this.tid = builder.tid;
+    }
+
+    public /* synthetic */ Bottle(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -49,7 +49,13 @@ public final class ConsentUser extends Message {
     public final String user_name_show;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ConsentUser> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long author_id;
@@ -117,14 +123,11 @@ public final class ConsentUser extends Message {
         public ConsentUser build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ConsentUser(this, z, null) : (ConsentUser) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ConsentUser(this, z, null);
+            }
+            return (ConsentUser) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -146,10 +149,6 @@ public final class ConsentUser extends Message {
         DEFAULT_POST_ID = 0L;
         DEFAULT_CREATE_TIME = 0;
         DEFAULT_GID = 0L;
-    }
-
-    public /* synthetic */ ConsentUser(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -251,5 +250,9 @@ public final class ConsentUser extends Message {
         this.gid = builder.gid;
         this.author_name_show = builder.author_name_show;
         this.user_name_show = builder.user_name_show;
+    }
+
+    public /* synthetic */ ConsentUser(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

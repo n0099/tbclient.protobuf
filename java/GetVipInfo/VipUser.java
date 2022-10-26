@@ -55,7 +55,13 @@ public final class VipUser extends Message {
     public final String vip_link;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<VipUser> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public VipParrScores Parr_scores;
@@ -129,14 +135,11 @@ public final class VipUser extends Message {
         public VipUser build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new VipUser(this, z, null) : (VipUser) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new VipUser(this, z, null);
+            }
+            return (VipUser) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -155,10 +158,6 @@ public final class VipUser extends Message {
         DEFAULT_ID = 0L;
         DEFAULT_NOW_TIME = 0;
         DEFAULT_TASK_SCORES = 0;
-    }
-
-    public /* synthetic */ VipUser(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -266,5 +265,9 @@ public final class VipUser extends Message {
         this.task_scores_link = builder.task_scores_link;
         this.vip_link = builder.vip_link;
         this.card_id = builder.card_id;
+    }
+
+    public /* synthetic */ VipUser(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

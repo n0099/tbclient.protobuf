@@ -27,12 +27,18 @@ public final class DataRes extends Message {
     public final List<ThemeList> theme_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ThemeCarousel> carousel;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List carousel;
         public ThemeRecommand recommend;
-        public List<ThemeList> theme_list;
+        public List theme_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -79,14 +85,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +107,6 @@ public final class DataRes extends Message {
         }
         DEFAULT_THEME_LIST = Collections.emptyList();
         DEFAULT_CAROUSEL = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,13 +128,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<ThemeList> list = builder.theme_list;
+            List list = builder.theme_list;
             if (list == null) {
                 this.theme_list = DEFAULT_THEME_LIST;
             } else {
                 this.theme_list = Message.immutableCopyOf(list);
             }
-            List<ThemeCarousel> list2 = builder.carousel;
+            List list2 = builder.carousel;
             if (list2 == null) {
                 this.carousel = DEFAULT_CAROUSEL;
             } else {
@@ -147,5 +146,9 @@ public final class DataRes extends Message {
         this.theme_list = Message.immutableCopyOf(builder.theme_list);
         this.carousel = Message.immutableCopyOf(builder.carousel);
         this.recommend = builder.recommend;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

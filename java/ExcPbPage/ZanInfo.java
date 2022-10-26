@@ -22,7 +22,13 @@ public final class ZanInfo extends Message {
     public final Long zansum;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ZanInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Boolean is_zan;
@@ -72,14 +78,11 @@ public final class ZanInfo extends Message {
         public ZanInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ZanInfo(this, z, null) : (ZanInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ZanInfo(this, z, null);
+            }
+            return (ZanInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -97,10 +100,6 @@ public final class ZanInfo extends Message {
         }
         DEFAULT_ZANSUM = 0L;
         DEFAULT_IS_ZAN = Boolean.FALSE;
-    }
-
-    public /* synthetic */ ZanInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -139,5 +138,9 @@ public final class ZanInfo extends Message {
         }
         this.zansum = builder.zansum;
         this.is_zan = builder.is_zan;
+    }
+
+    public /* synthetic */ ZanInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

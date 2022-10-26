@@ -40,7 +40,13 @@ public final class GameCodeList extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GameCodeList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer begin_time;
@@ -102,14 +108,11 @@ public final class GameCodeList extends Message {
         public GameCodeList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GameCodeList(this, z, null) : (GameCodeList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GameCodeList(this, z, null);
+            }
+            return (GameCodeList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -131,10 +134,6 @@ public final class GameCodeList extends Message {
         DEFAULT_END_TIME = 0;
         DEFAULT_ITEM_ID = 0;
         DEFAULT_CLAIMED_STATUS = 0;
-    }
-
-    public /* synthetic */ GameCodeList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -215,5 +214,9 @@ public final class GameCodeList extends Message {
         this.item_id = builder.item_id;
         this.claimed_status = builder.claimed_status;
         this.claimed_value = builder.claimed_value;
+    }
+
+    public /* synthetic */ GameCodeList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

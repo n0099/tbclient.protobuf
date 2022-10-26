@@ -28,7 +28,13 @@ public final class Calendar extends Message {
     public final String t;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Calendar> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer d;
@@ -82,14 +88,11 @@ public final class Calendar extends Message {
         public Calendar build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Calendar(this, z, null) : (Calendar) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Calendar(this, z, null);
+            }
+            return (Calendar) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class Calendar extends Message {
         DEFAULT_D = 0;
         DEFAULT_RANK = 0;
         DEFAULT_SIGN_TYPE = 0;
-    }
-
-    public /* synthetic */ Calendar(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -164,5 +163,9 @@ public final class Calendar extends Message {
         this.t = builder.t;
         this.rank = builder.rank;
         this.sign_type = builder.sign_type;
+    }
+
+    public /* synthetic */ Calendar(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

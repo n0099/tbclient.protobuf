@@ -40,7 +40,13 @@ public final class CommonInteraction extends Message {
     public final Long user_pk_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CommonInteraction> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String after_click_pic;
@@ -102,14 +108,11 @@ public final class CommonInteraction extends Message {
         public CommonInteraction build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CommonInteraction(this, z, null) : (CommonInteraction) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CommonInteraction(this, z, null);
+            }
+            return (CommonInteraction) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -129,10 +132,6 @@ public final class CommonInteraction extends Message {
         DEFAULT_HAS_CLICKED = 0;
         DEFAULT_PK_ID = 0L;
         DEFAULT_USER_PK_ID = 0L;
-    }
-
-    public /* synthetic */ CommonInteraction(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -213,5 +212,9 @@ public final class CommonInteraction extends Message {
         this.after_click_pic = builder.after_click_pic;
         this.pk_id = builder.pk_id;
         this.user_pk_id = builder.user_pk_id;
+    }
+
+    public /* synthetic */ CommonInteraction(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

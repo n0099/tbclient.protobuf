@@ -25,7 +25,13 @@ public final class BookThread extends Message {
     public final Long chapter_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BookThread> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String book_id;
@@ -77,14 +83,11 @@ public final class BookThread extends Message {
         public BookThread build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BookThread(this, z, null) : (BookThread) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BookThread(this, z, null);
+            }
+            return (BookThread) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -102,10 +105,6 @@ public final class BookThread extends Message {
         }
         DEFAULT_BOOK_TYPE = 0;
         DEFAULT_CHAPTER_ID = 0L;
-    }
-
-    public /* synthetic */ BookThread(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,5 +150,9 @@ public final class BookThread extends Message {
         this.book_id = builder.book_id;
         this.book_type = builder.book_type;
         this.chapter_id = builder.chapter_id;
+    }
+
+    public /* synthetic */ BookThread(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -71,6 +71,8 @@ public final class Post extends Message {
     public final Long author_id;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String bimg_url;
+    @ProtoField(tag = 64)
+    public final ThemeBubble bubble_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 59)
     public final List<CardLinkInfo> card_link_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
@@ -179,7 +181,13 @@ public final class Post extends Message {
     public final Zan zan;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Post> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ActPost act_post;
@@ -187,16 +195,17 @@ public final class Post extends Message {
         public Integer add_post_number;
         public Advertisement advertisement;
         public Agree agree;
-        public List<String> arr_video;
+        public List arr_video;
         public User author;
         public Long author_id;
         public String bimg_url;
-        public List<CardLinkInfo> card_link_info;
-        public List<PbContent> content;
+        public ThemeBubble bubble_info;
+        public List card_link_info;
+        public List content;
         public CustomFigure custom_figure;
         public CustomState custom_state;
         public String dynamic_url;
-        public List<TailInfo> ext_tails;
+        public List ext_tails;
         public Integer floor;
         public String fold_comment_apply_url;
         public Integer fold_comment_status;
@@ -218,7 +227,7 @@ public final class Post extends Message {
         public Integer is_vote;
         public Integer is_wonderful_post;
         public Item item;
-        public List<HeadItem> item_star;
+        public List item_star;
         public Lbs lbs_info;
         public String lego_card;
         public Integer need_log;
@@ -342,6 +351,7 @@ public final class Post extends Message {
             this.custom_state = post.custom_state;
             this.full_length_novel = post.full_length_novel;
             this.dynamic_url = post.dynamic_url;
+            this.bubble_info = post.bubble_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -349,14 +359,11 @@ public final class Post extends Message {
         public Post build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Post(this, z, null) : (Post) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Post(this, z, null);
+            }
+            return (Post) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -399,10 +406,6 @@ public final class Post extends Message {
         DEFAULT_ITEM_STAR = Collections.emptyList();
         DEFAULT_FOLD_COMMENT_STATUS = 0;
         DEFAULT_CARD_LINK_INFO = Collections.emptyList();
-    }
-
-    public /* synthetic */ Post(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -448,13 +451,13 @@ public final class Post extends Message {
             } else {
                 this.time = num2;
             }
-            List<PbContent> list = builder.content;
+            List list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {
                 this.content = Message.immutableCopyOf(list);
             }
-            List<String> list2 = builder.arr_video;
+            List list2 = builder.arr_video;
             if (list2 == null) {
                 this.arr_video = DEFAULT_ARR_VIDEO;
             } else {
@@ -550,7 +553,7 @@ public final class Post extends Message {
             } else {
                 this.is_hot_post = num10;
             }
-            List<TailInfo> list3 = builder.ext_tails;
+            List list3 = builder.ext_tails;
             if (list3 == null) {
                 this.ext_tails = DEFAULT_EXT_TAILS;
             } else {
@@ -634,7 +637,7 @@ public final class Post extends Message {
             } else {
                 this.is_wonderful_post = num18;
             }
-            List<HeadItem> list4 = builder.item_star;
+            List list4 = builder.item_star;
             if (list4 == null) {
                 this.item_star = DEFAULT_ITEM_STAR;
             } else {
@@ -656,7 +659,7 @@ public final class Post extends Message {
                 this.fold_comment_apply_url = str9;
             }
             this.novel_info = builder.novel_info;
-            List<CardLinkInfo> list5 = builder.card_link_info;
+            List list5 = builder.card_link_info;
             if (list5 == null) {
                 this.card_link_info = DEFAULT_CARD_LINK_INFO;
             } else {
@@ -668,11 +671,11 @@ public final class Post extends Message {
             String str10 = builder.dynamic_url;
             if (str10 == null) {
                 this.dynamic_url = "";
-                return;
             } else {
                 this.dynamic_url = str10;
-                return;
             }
+            this.bubble_info = builder.bubble_info;
+            return;
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -736,5 +739,10 @@ public final class Post extends Message {
         this.custom_state = builder.custom_state;
         this.full_length_novel = builder.full_length_novel;
         this.dynamic_url = builder.dynamic_url;
+        this.bubble_info = builder.bubble_info;
+    }
+
+    public /* synthetic */ Post(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

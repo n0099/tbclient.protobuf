@@ -26,7 +26,13 @@ public final class NativeApp extends Message {
     public final String jump_ios;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<NativeApp> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String download_and;
@@ -80,18 +86,11 @@ public final class NativeApp extends Message {
         public NativeApp build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new NativeApp(this, z, null) : (NativeApp) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new NativeApp(this, z, null);
+            }
+            return (NativeApp) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ NativeApp(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -144,5 +143,9 @@ public final class NativeApp extends Message {
         this.jump_ios = builder.jump_ios;
         this.download_and = builder.download_and;
         this.download_ios = builder.download_ios;
+    }
+
+    public /* synthetic */ NativeApp(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

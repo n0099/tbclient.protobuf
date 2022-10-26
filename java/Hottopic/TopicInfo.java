@@ -81,7 +81,13 @@ public final class TopicInfo extends Message {
     public final VideoInfo video_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TopicInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String bang_jump_desc;
@@ -171,14 +177,11 @@ public final class TopicInfo extends Message {
         public TopicInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TopicInfo(this, z, null) : (TopicInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TopicInfo(this, z, null);
+            }
+            return (TopicInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -203,10 +206,6 @@ public final class TopicInfo extends Message {
         DEFAULT_IS_DELETED = 0L;
         DEFAULT_IS_VIDEO_TOPIC = 0;
         DEFAULT_PLAY_COUNT = 0;
-    }
-
-    public /* synthetic */ TopicInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -375,5 +374,9 @@ public final class TopicInfo extends Message {
         this.is_video_topic = builder.is_video_topic;
         this.play_count = builder.play_count;
         this.head_background_url = builder.head_background_url;
+    }
+
+    public /* synthetic */ TopicInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

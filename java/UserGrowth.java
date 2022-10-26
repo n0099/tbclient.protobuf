@@ -33,13 +33,19 @@ public final class UserGrowth extends Message {
     public final Double tmoney;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UserGrowth> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer level_id;
         public Long score;
         public Long target_score;
-        public List<UserTaskInfo> task_info;
+        public List task_info;
         public Double tmoney;
 
         public Builder() {
@@ -89,14 +95,11 @@ public final class UserGrowth extends Message {
         public UserGrowth build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UserGrowth(this, z, null) : (UserGrowth) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UserGrowth(this, z, null);
+            }
+            return (UserGrowth) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -117,10 +120,6 @@ public final class UserGrowth extends Message {
         DEFAULT_TARGET_SCORE = 0L;
         DEFAULT_TMONEY = Double.valueOf(0.0d);
         DEFAULT_TASK_INFO = Collections.emptyList();
-    }
-
-    public /* synthetic */ UserGrowth(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -166,7 +165,7 @@ public final class UserGrowth extends Message {
             } else {
                 this.tmoney = d;
             }
-            List<UserTaskInfo> list = builder.task_info;
+            List list = builder.task_info;
             if (list == null) {
                 this.task_info = DEFAULT_TASK_INFO;
                 return;
@@ -180,5 +179,9 @@ public final class UserGrowth extends Message {
         this.target_score = builder.target_score;
         this.tmoney = builder.tmoney;
         this.task_info = Message.immutableCopyOf(builder.task_info);
+    }
+
+    public /* synthetic */ UserGrowth(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

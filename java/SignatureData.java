@@ -30,10 +30,16 @@ public final class SignatureData extends Message {
     public final Integer signature_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SignatureData> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<SignatureContent> content;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List content;
         public String fontColor;
         public String fontKeyName;
         public Integer signature_id;
@@ -84,14 +90,11 @@ public final class SignatureData extends Message {
         public SignatureData build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SignatureData(this, z, null) : (SignatureData) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SignatureData(this, z, null);
+            }
+            return (SignatureData) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -109,10 +112,6 @@ public final class SignatureData extends Message {
         }
         DEFAULT_SIGNATURE_ID = 0;
         DEFAULT_CONTENT = Collections.emptyList();
-    }
-
-    public /* synthetic */ SignatureData(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -152,7 +151,7 @@ public final class SignatureData extends Message {
             } else {
                 this.fontColor = str2;
             }
-            List<SignatureContent> list = builder.content;
+            List list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
                 return;
@@ -165,5 +164,9 @@ public final class SignatureData extends Message {
         this.fontKeyName = builder.fontKeyName;
         this.fontColor = builder.fontColor;
         this.content = Message.immutableCopyOf(builder.content);
+    }
+
+    public /* synthetic */ SignatureData(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -31,7 +31,13 @@ public final class PluginUser extends Message {
     public final Integer user_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PluginUser> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_download_card_whiteuser;
@@ -87,14 +93,11 @@ public final class PluginUser extends Message {
         public PluginUser build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PluginUser(this, z, null) : (PluginUser) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PluginUser(this, z, null);
+            }
+            return (PluginUser) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class PluginUser extends Message {
         DEFAULT_USER_ID = 0L;
         DEFAULT_USER_TYPE = 0;
         DEFAULT_IS_DOWNLOAD_CARD_WHITEUSER = 0;
-    }
-
-    public /* synthetic */ PluginUser(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -176,5 +175,9 @@ public final class PluginUser extends Message {
         this.user_type = builder.user_type;
         this.user_photo = builder.user_photo;
         this.is_download_card_whiteuser = builder.is_download_card_whiteuser;
+    }
+
+    public /* synthetic */ PluginUser(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

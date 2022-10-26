@@ -27,12 +27,18 @@ public final class InsertFloor extends Message {
     public final List<VideoCard> wander_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<InsertFloor> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer topic_id;
         public String topic_name;
-        public List<VideoCard> wander_list;
+        public List wander_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -79,14 +85,11 @@ public final class InsertFloor extends Message {
         public InsertFloor build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new InsertFloor(this, z, null) : (InsertFloor) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new InsertFloor(this, z, null);
+            }
+            return (InsertFloor) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +107,6 @@ public final class InsertFloor extends Message {
         }
         DEFAULT_TOPIC_ID = 0;
         DEFAULT_WANDER_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ InsertFloor(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -141,7 +140,7 @@ public final class InsertFloor extends Message {
             } else {
                 this.topic_name = str;
             }
-            List<VideoCard> list = builder.wander_list;
+            List list = builder.wander_list;
             if (list == null) {
                 this.wander_list = DEFAULT_WANDER_LIST;
                 return;
@@ -153,5 +152,9 @@ public final class InsertFloor extends Message {
         this.topic_id = builder.topic_id;
         this.topic_name = builder.topic_name;
         this.wander_list = Message.immutableCopyOf(builder.wander_list);
+    }
+
+    public /* synthetic */ InsertFloor(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -63,7 +63,13 @@ public final class tinfo extends Message {
     public final Integer zan_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<tinfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
@@ -75,7 +81,7 @@ public final class tinfo extends Message {
         public Integer is_livepost;
         public Integer is_membertop;
         public Integer is_top;
-        public List<Pic> pics;
+        public List pics;
         public Integer reply_num;
         public Long thread_id;
         public String title;
@@ -139,14 +145,11 @@ public final class tinfo extends Message {
         public tinfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new tinfo(this, z, null) : (tinfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new tinfo(this, z, null);
+            }
+            return (tinfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -174,10 +177,6 @@ public final class tinfo extends Message {
         DEFAULT_IS_MEMBERTOP = 0;
         DEFAULT_IS_ACTIVITY = 0;
         DEFAULT_IS_LIVEPOST = 0;
-    }
-
-    public /* synthetic */ tinfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -253,7 +252,7 @@ public final class tinfo extends Message {
             } else {
                 this.type = num3;
             }
-            List<Pic> list = builder.pics;
+            List list = builder.pics;
             if (list == null) {
                 this.pics = DEFAULT_PICS;
             } else {
@@ -307,5 +306,9 @@ public final class tinfo extends Message {
         this.is_membertop = builder.is_membertop;
         this.is_activity = builder.is_activity;
         this.is_livepost = builder.is_livepost;
+    }
+
+    public /* synthetic */ tinfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

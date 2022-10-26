@@ -27,11 +27,17 @@ public final class DataRes extends Message {
     public final Integer update_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer has_menu;
-        public List<Menu> parent_menu;
+        public List parent_menu;
         public Integer update_time;
 
         public Builder() {
@@ -79,14 +85,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -105,10 +108,6 @@ public final class DataRes extends Message {
         DEFAULT_PARENT_MENU = Collections.emptyList();
         DEFAULT_UPDATE_TIME = 0;
         DEFAULT_HAS_MENU = 0;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<Menu> list = builder.parent_menu;
+            List list = builder.parent_menu;
             if (list == null) {
                 this.parent_menu = DEFAULT_PARENT_MENU;
             } else {
@@ -154,5 +153,9 @@ public final class DataRes extends Message {
         this.parent_menu = Message.immutableCopyOf(builder.parent_menu);
         this.update_time = builder.update_time;
         this.has_menu = builder.has_menu;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

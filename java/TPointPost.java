@@ -55,16 +55,22 @@ public final class TPointPost extends Message {
     public final Integer template_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TPointPost> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ActBtn> act_btn;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List act_btn;
         public DetailInfo detail_info;
         public Integer hidden_day;
         public Integer is_tuiguang;
         public String monitor_id;
         public String position;
-        public List<Timgs> t_imgs;
+        public List t_imgs;
         public VideoInfo t_video;
         public String tag_name;
         public String tag_name_url;
@@ -127,14 +133,11 @@ public final class TPointPost extends Message {
         public TPointPost build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TPointPost(this, z, null) : (TPointPost) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TPointPost(this, z, null);
+            }
+            return (TPointPost) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -156,10 +159,6 @@ public final class TPointPost extends Message {
         DEFAULT_ACT_BTN = Collections.emptyList();
         DEFAULT_T_IMGS = Collections.emptyList();
         DEFAULT_HIDDEN_DAY = 0;
-    }
-
-    public /* synthetic */ TPointPost(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -205,13 +204,13 @@ public final class TPointPost extends Message {
             } else {
                 this.template_type = num2;
             }
-            List<ActBtn> list = builder.act_btn;
+            List list = builder.act_btn;
             if (list == null) {
                 this.act_btn = DEFAULT_ACT_BTN;
             } else {
                 this.act_btn = Message.immutableCopyOf(list);
             }
-            List<Timgs> list2 = builder.t_imgs;
+            List list2 = builder.t_imgs;
             if (list2 == null) {
                 this.t_imgs = DEFAULT_T_IMGS;
             } else {
@@ -265,5 +264,9 @@ public final class TPointPost extends Message {
         this.tag_name = builder.tag_name;
         this.tag_name_url = builder.tag_name_url;
         this.tag_name_wh = builder.tag_name_wh;
+    }
+
+    public /* synthetic */ TPointPost(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

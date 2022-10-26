@@ -20,7 +20,13 @@ public final class PostTopic extends Message {
     public final String title_topic;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PostTopic> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String content_topic;
@@ -70,18 +76,11 @@ public final class PostTopic extends Message {
         public PostTopic build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PostTopic(this, z, null) : (PostTopic) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PostTopic(this, z, null);
+            }
+            return (PostTopic) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ PostTopic(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -120,5 +119,9 @@ public final class PostTopic extends Message {
         }
         this.title_topic = builder.title_topic;
         this.content_topic = builder.content_topic;
+    }
+
+    public /* synthetic */ PostTopic(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

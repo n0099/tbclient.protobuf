@@ -43,7 +43,13 @@ public final class GodInfo extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GodInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer can_send_msg;
@@ -107,14 +113,11 @@ public final class GodInfo extends Message {
         public GodInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GodInfo(this, z, null) : (GodInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GodInfo(this, z, null);
+            }
+            return (GodInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -135,10 +138,6 @@ public final class GodInfo extends Message {
         DEFAULT_FID = 0L;
         DEFAULT_FOLLOWED = 0;
         DEFAULT_CAN_SEND_MSG = 0;
-    }
-
-    public /* synthetic */ GodInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -226,5 +225,9 @@ public final class GodInfo extends Message {
         this.forum_name = builder.forum_name;
         this.can_send_msg = builder.can_send_msg;
         this.prefix = builder.prefix;
+    }
+
+    public /* synthetic */ GodInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

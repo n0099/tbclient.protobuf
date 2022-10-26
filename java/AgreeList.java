@@ -40,7 +40,13 @@ public final class AgreeList extends Message {
     public final String virtual_image_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AgreeList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public User agreeer;
@@ -104,14 +110,11 @@ public final class AgreeList extends Message {
         public AgreeList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AgreeList(this, z, null) : (AgreeList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AgreeList(this, z, null);
+            }
+            return (AgreeList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -132,10 +135,6 @@ public final class AgreeList extends Message {
         DEFAULT_TYPE = 0;
         DEFAULT_ID = 0L;
         DEFAULT_SNAPSHOOT_PIC_ID = 0;
-    }
-
-    public /* synthetic */ AgreeList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -208,5 +207,9 @@ public final class AgreeList extends Message {
         this.post_info = builder.post_info;
         this.virtual_image_url = builder.virtual_image_url;
         this.snapshoot_pic_id = builder.snapshoot_pic_id;
+    }
+
+    public /* synthetic */ AgreeList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

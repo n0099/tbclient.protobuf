@@ -28,7 +28,13 @@ public final class ForumCreateInfo extends Message {
     public final Integer is_show_create;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ForumCreateInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String can_create_errdata;
@@ -82,14 +88,11 @@ public final class ForumCreateInfo extends Message {
         public ForumCreateInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ForumCreateInfo(this, z, null) : (ForumCreateInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ForumCreateInfo(this, z, null);
+            }
+            return (ForumCreateInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class ForumCreateInfo extends Message {
         DEFAULT_IS_SHOW_CREATE = 0;
         DEFAULT_IS_CAN_CREATE = 0;
         DEFAULT_CAN_CREATE_ERRNO = 0;
-    }
-
-    public /* synthetic */ ForumCreateInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -164,5 +163,9 @@ public final class ForumCreateInfo extends Message {
         this.is_can_create = builder.is_can_create;
         this.can_create_errno = builder.can_create_errno;
         this.can_create_errdata = builder.can_create_errdata;
+    }
+
+    public /* synthetic */ ForumCreateInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

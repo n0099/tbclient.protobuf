@@ -24,10 +24,16 @@ public final class Module extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Module> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<Menu> menu_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List menu_list;
         public Integer type;
 
         public Builder() {
@@ -74,14 +80,11 @@ public final class Module extends Message {
         public Module build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Module(this, z, null) : (Module) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Module(this, z, null);
+            }
+            return (Module) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class Module extends Message {
         }
         DEFAULT_TYPE = 0;
         DEFAULT_MENU_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ Module(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class Module extends Message {
             } else {
                 this.type = num;
             }
-            List<Menu> list = builder.menu_list;
+            List list = builder.menu_list;
             if (list == null) {
                 this.menu_list = DEFAULT_MENU_LIST;
                 return;
@@ -141,5 +140,9 @@ public final class Module extends Message {
         }
         this.type = builder.type;
         this.menu_list = Message.immutableCopyOf(builder.menu_list);
+    }
+
+    public /* synthetic */ Module(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

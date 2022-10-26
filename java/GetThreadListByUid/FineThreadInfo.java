@@ -37,12 +37,18 @@ public final class FineThreadInfo extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FineThreadInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
         public Long ftid;
-        public List<Media> media;
+        public List media;
         public Integer publish_time;
         public String title;
         public Integer type;
@@ -95,14 +101,11 @@ public final class FineThreadInfo extends Message {
         public FineThreadInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FineThreadInfo(this, z, null) : (FineThreadInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FineThreadInfo(this, z, null);
+            }
+            return (FineThreadInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -122,10 +125,6 @@ public final class FineThreadInfo extends Message {
         DEFAULT_TYPE = 0;
         DEFAULT_MEDIA = Collections.emptyList();
         DEFAULT_PUBLISH_TIME = 0;
-    }
-
-    public /* synthetic */ FineThreadInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -171,7 +170,7 @@ public final class FineThreadInfo extends Message {
             } else {
                 this._abstract = str2;
             }
-            List<Media> list = builder.media;
+            List list = builder.media;
             if (list == null) {
                 this.media = DEFAULT_MEDIA;
             } else {
@@ -192,5 +191,9 @@ public final class FineThreadInfo extends Message {
         this._abstract = builder._abstract;
         this.media = Message.immutableCopyOf(builder.media);
         this.publish_time = builder.publish_time;
+    }
+
+    public /* synthetic */ FineThreadInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

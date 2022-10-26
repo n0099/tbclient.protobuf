@@ -114,7 +114,13 @@ public final class App extends Message {
     public final String web_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<App> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String abtest;
@@ -128,7 +134,7 @@ public final class App extends Message {
         public String deep_url;
         public String ext_info;
         public String first_name;
-        public List<GoodsInfo> goods_info;
+        public List goods_info;
         public String icon_link;
         public String icon_url;
         public String id;
@@ -224,14 +230,11 @@ public final class App extends Message {
         public App build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new App(this, z, null) : (App) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new App(this, z, null);
+            }
+            return (App) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -254,10 +257,6 @@ public final class App extends Message {
         DEFAULT_CPID = 0;
         DEFAULT_PLAN_ID = 0;
         DEFAULT_GOODS_INFO = Collections.emptyList();
-    }
-
-    public /* synthetic */ App(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -453,7 +452,7 @@ public final class App extends Message {
             } else {
                 this.ext_info = str23;
             }
-            List<GoodsInfo> list = builder.goods_info;
+            List list = builder.goods_info;
             if (list == null) {
                 this.goods_info = DEFAULT_GOODS_INFO;
             } else {
@@ -506,5 +505,9 @@ public final class App extends Message {
         this.goods_info = Message.immutableCopyOf(builder.goods_info);
         this.loc_code = builder.loc_code;
         this.deep_url = builder.deep_url;
+    }
+
+    public /* synthetic */ App(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

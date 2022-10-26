@@ -22,7 +22,13 @@ public final class WorldCup extends Message {
     public final WorldCupPk pk;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<WorldCup> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public WorldCupGame game;
@@ -76,18 +82,11 @@ public final class WorldCup extends Message {
         public WorldCup build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new WorldCup(this, z, null) : (WorldCup) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new WorldCup(this, z, null);
+            }
+            return (WorldCup) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ WorldCup(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -119,5 +118,9 @@ public final class WorldCup extends Message {
         this.pk = builder.pk;
         this.lottery = builder.lottery;
         this.game = builder.game;
+    }
+
+    public /* synthetic */ WorldCup(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

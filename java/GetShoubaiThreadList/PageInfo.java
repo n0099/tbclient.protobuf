@@ -25,7 +25,13 @@ public final class PageInfo extends Message {
     public final Integer page_size;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PageInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long cursor;
@@ -77,14 +83,11 @@ public final class PageInfo extends Message {
         public PageInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PageInfo(this, z, null) : (PageInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PageInfo(this, z, null);
+            }
+            return (PageInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -103,10 +106,6 @@ public final class PageInfo extends Message {
         DEFAULT_PAGE_SIZE = 0;
         DEFAULT_CURSOR = 0L;
         DEFAULT_HAS_MORE = 0;
-    }
-
-    public /* synthetic */ PageInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -152,5 +151,9 @@ public final class PageInfo extends Message {
         this.page_size = builder.page_size;
         this.cursor = builder.cursor;
         this.has_more = builder.has_more;
+    }
+
+    public /* synthetic */ PageInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -37,7 +37,13 @@ public final class ForumGodDetailInfo extends Message {
     public final Long user_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ForumGodDetailInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
@@ -97,14 +103,11 @@ public final class ForumGodDetailInfo extends Message {
         public ForumGodDetailInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ForumGodDetailInfo(this, z, null) : (ForumGodDetailInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ForumGodDetailInfo(this, z, null);
+            }
+            return (ForumGodDetailInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -123,10 +126,6 @@ public final class ForumGodDetailInfo extends Message {
         DEFAULT_GOD_ID = 0L;
         DEFAULT_USER_ID = 0L;
         DEFAULT_FORUM_ID = 0L;
-    }
-
-    public /* synthetic */ ForumGodDetailInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -200,5 +199,9 @@ public final class ForumGodDetailInfo extends Message {
         this.forum_id = builder.forum_id;
         this.forum_name = builder.forum_name;
         this.avatar = builder.avatar;
+    }
+
+    public /* synthetic */ ForumGodDetailInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

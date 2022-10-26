@@ -27,12 +27,18 @@ public final class GradeDesc extends Message {
     public final List<GradeRight> rights;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GradeDesc> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String grade;
         public Integer point;
-        public List<GradeRight> rights;
+        public List rights;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -79,14 +85,11 @@ public final class GradeDesc extends Message {
         public GradeDesc build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GradeDesc(this, z, null) : (GradeDesc) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GradeDesc(this, z, null);
+            }
+            return (GradeDesc) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +107,6 @@ public final class GradeDesc extends Message {
         }
         DEFAULT_POINT = 0;
         DEFAULT_RIGHTS = Collections.emptyList();
-    }
-
-    public /* synthetic */ GradeDesc(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -141,7 +140,7 @@ public final class GradeDesc extends Message {
             } else {
                 this.point = num;
             }
-            List<GradeRight> list = builder.rights;
+            List list = builder.rights;
             if (list == null) {
                 this.rights = DEFAULT_RIGHTS;
                 return;
@@ -153,5 +152,9 @@ public final class GradeDesc extends Message {
         this.grade = builder.grade;
         this.point = builder.point;
         this.rights = Message.immutableCopyOf(builder.rights);
+    }
+
+    public /* synthetic */ GradeDesc(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

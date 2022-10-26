@@ -27,10 +27,16 @@ public final class GiftList extends Message {
     public final String type_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GiftList> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<Item> item;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List item;
         public Integer type_id;
         public String type_name;
 
@@ -79,14 +85,11 @@ public final class GiftList extends Message {
         public GiftList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GiftList(this, z, null) : (GiftList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GiftList(this, z, null);
+            }
+            return (GiftList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +107,6 @@ public final class GiftList extends Message {
         }
         DEFAULT_TYPE_ID = 0;
         DEFAULT_ITEM = Collections.emptyList();
-    }
-
-    public /* synthetic */ GiftList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -141,7 +140,7 @@ public final class GiftList extends Message {
             } else {
                 this.type_id = num;
             }
-            List<Item> list = builder.item;
+            List list = builder.item;
             if (list == null) {
                 this.item = DEFAULT_ITEM;
                 return;
@@ -153,5 +152,9 @@ public final class GiftList extends Message {
         this.type_name = builder.type_name;
         this.type_id = builder.type_id;
         this.item = Message.immutableCopyOf(builder.item);
+    }
+
+    public /* synthetic */ GiftList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

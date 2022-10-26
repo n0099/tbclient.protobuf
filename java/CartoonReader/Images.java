@@ -25,7 +25,13 @@ public final class Images extends Message {
     public final Integer width;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Images> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer height;
@@ -77,14 +83,11 @@ public final class Images extends Message {
         public Images build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Images(this, z, null) : (Images) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Images(this, z, null);
+            }
+            return (Images) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -102,10 +105,6 @@ public final class Images extends Message {
         }
         DEFAULT_HEIGHT = 0;
         DEFAULT_WIDTH = 0;
-    }
-
-    public /* synthetic */ Images(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,5 +150,9 @@ public final class Images extends Message {
         this.img_url = builder.img_url;
         this.height = builder.height;
         this.width = builder.width;
+    }
+
+    public /* synthetic */ Images(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

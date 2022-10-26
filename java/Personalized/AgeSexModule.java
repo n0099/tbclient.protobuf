@@ -24,11 +24,17 @@ public final class AgeSexModule extends Message {
     public final List<TagStruct> sex_tag;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AgeSexModule> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<TagStruct> age_tag;
-        public List<TagStruct> sex_tag;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List age_tag;
+        public List sex_tag;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class AgeSexModule extends Message {
         public AgeSexModule build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AgeSexModule(this, z, null) : (AgeSexModule) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AgeSexModule(this, z, null);
+            }
+            return (AgeSexModule) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class AgeSexModule extends Message {
         }
         DEFAULT_SEX_TAG = Collections.emptyList();
         DEFAULT_AGE_TAG = Collections.emptyList();
-    }
-
-    public /* synthetic */ AgeSexModule(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -124,13 +123,13 @@ public final class AgeSexModule extends Message {
             }
         }
         if (z) {
-            List<TagStruct> list = builder.sex_tag;
+            List list = builder.sex_tag;
             if (list == null) {
                 this.sex_tag = DEFAULT_SEX_TAG;
             } else {
                 this.sex_tag = Message.immutableCopyOf(list);
             }
-            List<TagStruct> list2 = builder.age_tag;
+            List list2 = builder.age_tag;
             if (list2 == null) {
                 this.age_tag = DEFAULT_AGE_TAG;
                 return;
@@ -141,5 +140,9 @@ public final class AgeSexModule extends Message {
         }
         this.sex_tag = Message.immutableCopyOf(builder.sex_tag);
         this.age_tag = Message.immutableCopyOf(builder.age_tag);
+    }
+
+    public /* synthetic */ AgeSexModule(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

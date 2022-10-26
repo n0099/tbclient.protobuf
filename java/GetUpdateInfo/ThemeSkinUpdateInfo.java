@@ -25,7 +25,13 @@ public final class ThemeSkinUpdateInfo extends Message {
     public final Integer props_version;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ThemeSkinUpdateInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String package_url;
@@ -77,14 +83,11 @@ public final class ThemeSkinUpdateInfo extends Message {
         public ThemeSkinUpdateInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThemeSkinUpdateInfo(this, z, null) : (ThemeSkinUpdateInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThemeSkinUpdateInfo(this, z, null);
+            }
+            return (ThemeSkinUpdateInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -102,10 +105,6 @@ public final class ThemeSkinUpdateInfo extends Message {
         }
         DEFAULT_PROPS_ID = 0;
         DEFAULT_PROPS_VERSION = 0;
-    }
-
-    public /* synthetic */ ThemeSkinUpdateInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,5 +150,9 @@ public final class ThemeSkinUpdateInfo extends Message {
         this.props_id = builder.props_id;
         this.props_version = builder.props_version;
         this.package_url = builder.package_url;
+    }
+
+    public /* synthetic */ ThemeSkinUpdateInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

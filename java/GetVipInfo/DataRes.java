@@ -60,13 +60,19 @@ public final class DataRes extends Message {
     public final VipUser user;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public AutoPayInfo autopay_info;
         public VipBannerList banner_list;
-        public List<VipBasicList> basic_list;
-        public List<String> card_order;
+        public List basic_list;
+        public List card_order;
         public VipSpecialList cooperate_list;
         public VipDailyList daily_list;
         public String grade_intro_link;
@@ -140,14 +146,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -168,10 +171,6 @@ public final class DataRes extends Message {
         DEFAULT_CARD_ORDER = Collections.emptyList();
         DEFAULT_UPDATE_TIME = 0;
         DEFAULT_BASIC_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -224,7 +223,7 @@ public final class DataRes extends Message {
             } else {
                 this.today_unget_score = num2;
             }
-            List<String> list = builder.card_order;
+            List list = builder.card_order;
             if (list == null) {
                 this.card_order = DEFAULT_CARD_ORDER;
             } else {
@@ -237,7 +236,7 @@ public final class DataRes extends Message {
                 this.update_time = num3;
             }
             this.cooperate_list = builder.cooperate_list;
-            List<VipBasicList> list2 = builder.basic_list;
+            List list2 = builder.basic_list;
             if (list2 == null) {
                 this.basic_list = DEFAULT_BASIC_LIST;
             } else {
@@ -264,5 +263,9 @@ public final class DataRes extends Message {
         this.basic_list = Message.immutableCopyOf(builder.basic_list);
         this.daily_list = builder.daily_list;
         this.autopay_info = builder.autopay_info;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -31,7 +31,13 @@ public final class AnchorPower extends Message {
     public final Integer have_power;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AnchorPower> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String anchor_message;
@@ -87,14 +93,11 @@ public final class AnchorPower extends Message {
         public AnchorPower build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AnchorPower(this, z, null) : (AnchorPower) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AnchorPower(this, z, null);
+            }
+            return (AnchorPower) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class AnchorPower extends Message {
         DEFAULT_HAVE_POWER = 0;
         DEFAULT_CAN_ADD_LIVE_POST = 0;
         DEFAULT_CAN_DEL_LIVE_POST = 0;
-    }
-
-    public /* synthetic */ AnchorPower(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -176,5 +175,9 @@ public final class AnchorPower extends Message {
         this.can_add_live_post = builder.can_add_live_post;
         this.can_del_live_post = builder.can_del_live_post;
         this.can_add_live_post_msg = builder.can_add_live_post_msg;
+    }
+
+    public /* synthetic */ AnchorPower(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

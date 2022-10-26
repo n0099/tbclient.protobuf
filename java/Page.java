@@ -58,7 +58,13 @@ public final class Page extends Message {
     public final Integer total_page;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Page> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer cur_good_id;
@@ -132,14 +138,11 @@ public final class Page extends Message {
         public Page build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Page(this, z, null) : (Page) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Page(this, z, null);
+            }
+            return (Page) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -169,10 +172,6 @@ public final class Page extends Message {
         DEFAULT_TOTAL_NUM = 0;
         DEFAULT_LZ_TOTAL_FLOOR = 0;
         DEFAULT_NEW_TOTAL_PAGE = 0;
-    }
-
-    public /* synthetic */ Page(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -295,5 +294,9 @@ public final class Page extends Message {
         this.total_num = builder.total_num;
         this.lz_total_floor = builder.lz_total_floor;
         this.new_total_page = builder.new_total_page;
+    }
+
+    public /* synthetic */ Page(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -28,7 +28,13 @@ public final class LiveAnswer extends Message {
     public final String jump_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LiveAnswer> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer banner_high;
@@ -82,14 +88,11 @@ public final class LiveAnswer extends Message {
         public LiveAnswer build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LiveAnswer(this, z, null) : (LiveAnswer) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LiveAnswer(this, z, null);
+            }
+            return (LiveAnswer) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +110,6 @@ public final class LiveAnswer extends Message {
         }
         DEFAULT_BANNER_WIDTH = 0;
         DEFAULT_BANNER_HIGH = 0;
-    }
-
-    public /* synthetic */ LiveAnswer(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,5 +162,9 @@ public final class LiveAnswer extends Message {
         this.banner_width = builder.banner_width;
         this.banner_high = builder.banner_high;
         this.jump_url = builder.jump_url;
+    }
+
+    public /* synthetic */ LiveAnswer(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

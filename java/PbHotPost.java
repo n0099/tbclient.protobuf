@@ -30,13 +30,19 @@ public final class PbHotPost extends Message {
     public final List<Post> post_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PbHotPost> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<HotPost> hot_post_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List hot_post_list;
         public Integer need_hot_post;
         public Integer need_post_zan;
-        public List<Post> post_list;
+        public List post_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -84,14 +90,11 @@ public final class PbHotPost extends Message {
         public PbHotPost build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PbHotPost(this, z, null) : (PbHotPost) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PbHotPost(this, z, null);
+            }
+            return (PbHotPost) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class PbHotPost extends Message {
         DEFAULT_HOT_POST_LIST = Collections.emptyList();
     }
 
-    public /* synthetic */ PbHotPost(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PbHotPost(Builder builder, boolean z) {
         super(builder);
@@ -136,7 +135,7 @@ public final class PbHotPost extends Message {
             }
         }
         if (z) {
-            List<Post> list = builder.post_list;
+            List list = builder.post_list;
             if (list == null) {
                 this.post_list = DEFAULT_POST_LIST;
             } else {
@@ -154,7 +153,7 @@ public final class PbHotPost extends Message {
             } else {
                 this.need_post_zan = num2;
             }
-            List<HotPost> list2 = builder.hot_post_list;
+            List list2 = builder.hot_post_list;
             if (list2 == null) {
                 this.hot_post_list = DEFAULT_HOT_POST_LIST;
                 return;
@@ -167,5 +166,9 @@ public final class PbHotPost extends Message {
         this.need_hot_post = builder.need_hot_post;
         this.need_post_zan = builder.need_post_zan;
         this.hot_post_list = Message.immutableCopyOf(builder.hot_post_list);
+    }
+
+    public /* synthetic */ PbHotPost(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

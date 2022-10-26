@@ -37,7 +37,13 @@ public final class AndroidBfbSdk extends Message {
     public final String version;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AndroidBfbSdk> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_no;
@@ -97,14 +103,11 @@ public final class AndroidBfbSdk extends Message {
         public AndroidBfbSdk build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AndroidBfbSdk(this, z, null) : (AndroidBfbSdk) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AndroidBfbSdk(this, z, null);
+            }
+            return (AndroidBfbSdk) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -122,10 +125,6 @@ public final class AndroidBfbSdk extends Message {
         }
         DEFAULT_SP_NO = 0;
         DEFAULT_SIGN_METHOD = 0;
-    }
-
-    public /* synthetic */ AndroidBfbSdk(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -199,5 +198,9 @@ public final class AndroidBfbSdk extends Message {
         this.return_url = builder.return_url;
         this.sign = builder.sign;
         this.sign_method = builder.sign_method;
+    }
+
+    public /* synthetic */ AndroidBfbSdk(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

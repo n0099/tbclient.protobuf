@@ -24,11 +24,17 @@ public final class RecommendInfo extends Message {
     public final List<SchoolRecomUserInfo> user_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecommendInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String title;
-        public List<SchoolRecomUserInfo> user_list;
+        public List user_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class RecommendInfo extends Message {
         public RecommendInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecommendInfo(this, z, null) : (RecommendInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecommendInfo(this, z, null);
+            }
+            return (RecommendInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -98,10 +101,6 @@ public final class RecommendInfo extends Message {
             }
         }
         DEFAULT_USER_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ RecommendInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,7 +128,7 @@ public final class RecommendInfo extends Message {
             } else {
                 this.title = str;
             }
-            List<SchoolRecomUserInfo> list = builder.user_list;
+            List list = builder.user_list;
             if (list == null) {
                 this.user_list = DEFAULT_USER_LIST;
                 return;
@@ -140,5 +139,9 @@ public final class RecommendInfo extends Message {
         }
         this.title = builder.title;
         this.user_list = Message.immutableCopyOf(builder.user_list);
+    }
+
+    public /* synthetic */ RecommendInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -25,11 +25,17 @@ public final class HotTopic extends Message {
     public final List<RecomTopicList> topic_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<HotTopic> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer floor_position;
-        public List<RecomTopicList> topic_list;
+        public List topic_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -75,14 +81,11 @@ public final class HotTopic extends Message {
         public HotTopic build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HotTopic(this, z, null) : (HotTopic) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new HotTopic(this, z, null);
+            }
+            return (HotTopic) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -100,10 +103,6 @@ public final class HotTopic extends Message {
         }
         DEFAULT_FLOOR_POSITION = 0;
         DEFAULT_TOPIC_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ HotTopic(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -131,7 +130,7 @@ public final class HotTopic extends Message {
             } else {
                 this.floor_position = num;
             }
-            List<RecomTopicList> list = builder.topic_list;
+            List list = builder.topic_list;
             if (list == null) {
                 this.topic_list = DEFAULT_TOPIC_LIST;
                 return;
@@ -142,5 +141,9 @@ public final class HotTopic extends Message {
         }
         this.floor_position = builder.floor_position;
         this.topic_list = Message.immutableCopyOf(builder.topic_list);
+    }
+
+    public /* synthetic */ HotTopic(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

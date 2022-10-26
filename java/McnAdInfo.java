@@ -40,7 +40,13 @@ public final class McnAdInfo extends Message {
     public final String pic_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<McnAdInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long ad_end_time;
@@ -102,14 +108,11 @@ public final class McnAdInfo extends Message {
         public McnAdInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new McnAdInfo(this, z, null) : (McnAdInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new McnAdInfo(this, z, null);
+            }
+            return (McnAdInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -129,10 +132,6 @@ public final class McnAdInfo extends Message {
         DEFAULT_AD_END_TIME = 0L;
         DEFAULT_EFFECT_TIME = 0L;
         DEFAULT_EXPIRE_TIME = 0L;
-    }
-
-    public /* synthetic */ McnAdInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -213,5 +212,9 @@ public final class McnAdInfo extends Message {
         this.button_title = builder.button_title;
         this.effect_time = builder.effect_time;
         this.expire_time = builder.expire_time;
+    }
+
+    public /* synthetic */ McnAdInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

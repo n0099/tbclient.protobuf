@@ -24,10 +24,16 @@ public final class PbPresent extends Message {
     public final Integer total;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PbPresent> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<PbPresentList> list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List list;
         public Integer total;
 
         public Builder() {
@@ -74,14 +80,11 @@ public final class PbPresent extends Message {
         public PbPresent build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PbPresent(this, z, null) : (PbPresent) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PbPresent(this, z, null);
+            }
+            return (PbPresent) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class PbPresent extends Message {
         }
         DEFAULT_TOTAL = 0;
         DEFAULT_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ PbPresent(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class PbPresent extends Message {
             } else {
                 this.total = num;
             }
-            List<PbPresentList> list = builder.list;
+            List list = builder.list;
             if (list == null) {
                 this.list = DEFAULT_LIST;
                 return;
@@ -141,5 +140,9 @@ public final class PbPresent extends Message {
         }
         this.total = builder.total;
         this.list = Message.immutableCopyOf(builder.list);
+    }
+
+    public /* synthetic */ PbPresent(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

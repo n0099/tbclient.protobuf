@@ -31,7 +31,13 @@ public final class NewGodInfo extends Message {
     public final String type_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<NewGodInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer field_id;
@@ -87,14 +93,11 @@ public final class NewGodInfo extends Message {
         public NewGodInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new NewGodInfo(this, z, null) : (NewGodInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new NewGodInfo(this, z, null);
+            }
+            return (NewGodInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class NewGodInfo extends Message {
         DEFAULT_STATUS = 0;
         DEFAULT_FIELD_ID = 0;
         DEFAULT_TYPE = 0;
-    }
-
-    public /* synthetic */ NewGodInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -176,5 +175,9 @@ public final class NewGodInfo extends Message {
         this.field_name = builder.field_name;
         this.type = builder.type;
         this.type_name = builder.type_name;
+    }
+
+    public /* synthetic */ NewGodInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

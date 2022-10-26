@@ -22,7 +22,13 @@ public final class Duxiaoman extends Message {
     public final Integer total_cash;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Duxiaoman> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_end;
@@ -72,14 +78,11 @@ public final class Duxiaoman extends Message {
         public Duxiaoman build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Duxiaoman(this, z, null) : (Duxiaoman) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Duxiaoman(this, z, null);
+            }
+            return (Duxiaoman) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -97,10 +100,6 @@ public final class Duxiaoman extends Message {
         }
         DEFAULT_TOTAL_CASH = 0;
         DEFAULT_IS_END = 0;
-    }
-
-    public /* synthetic */ Duxiaoman(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -139,5 +138,9 @@ public final class Duxiaoman extends Message {
         }
         this.total_cash = builder.total_cash;
         this.is_end = builder.is_end;
+    }
+
+    public /* synthetic */ Duxiaoman(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

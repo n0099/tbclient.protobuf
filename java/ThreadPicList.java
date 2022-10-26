@@ -17,7 +17,13 @@ public final class ThreadPicList extends Message {
     public final String pic;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ThreadPicList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String pic;
@@ -65,18 +71,11 @@ public final class ThreadPicList extends Message {
         public ThreadPicList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThreadPicList(this, z, null) : (ThreadPicList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThreadPicList(this, z, null);
+            }
+            return (ThreadPicList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ ThreadPicList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -108,5 +107,9 @@ public final class ThreadPicList extends Message {
             }
         }
         this.pic = builder.pic;
+    }
+
+    public /* synthetic */ ThreadPicList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

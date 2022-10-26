@@ -37,7 +37,13 @@ public final class NewsInfo extends Message {
     public final String summary;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<NewsInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String button_text;
@@ -97,14 +103,11 @@ public final class NewsInfo extends Message {
         public NewsInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new NewsInfo(this, z, null) : (NewsInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new NewsInfo(this, z, null);
+            }
+            return (NewsInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -122,10 +125,6 @@ public final class NewsInfo extends Message {
         }
         DEFAULT_POSITION = 0;
         DEFAULT_NEWS_TYPE = 0;
-    }
-
-    public /* synthetic */ NewsInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -199,5 +198,9 @@ public final class NewsInfo extends Message {
         this.news_icon = builder.news_icon;
         this.subtitle = builder.subtitle;
         this.button_text = builder.button_text;
+    }
+
+    public /* synthetic */ NewsInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

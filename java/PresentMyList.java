@@ -55,7 +55,13 @@ public final class PresentMyList extends Message {
     public final String thumbnail_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PresentMyList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer create_time;
@@ -127,14 +133,11 @@ public final class PresentMyList extends Message {
         public PresentMyList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PresentMyList(this, z, null) : (PresentMyList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PresentMyList(this, z, null);
+            }
+            return (PresentMyList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -156,10 +159,6 @@ public final class PresentMyList extends Message {
         DEFAULT_NUM = 0;
         DEFAULT_CURRENCY_UNIT = 0;
         DEFAULT_PRESENT_SCORES = 0L;
-    }
-
-    public /* synthetic */ PresentMyList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -275,5 +274,9 @@ public final class PresentMyList extends Message {
         this.currency_type = builder.currency_type;
         this.present_scores = builder.present_scores;
         this.name_show = builder.name_show;
+    }
+
+    public /* synthetic */ PresentMyList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

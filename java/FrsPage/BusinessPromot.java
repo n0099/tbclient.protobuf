@@ -108,11 +108,17 @@ public final class BusinessPromot extends Message {
     public final String video_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BusinessPromot> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer ban_dialog;
-        public List<BusinessPromotCommentList> comment_list;
+        public List comment_list;
         public String cover_url;
         public String download_appid;
         public String download_appname;
@@ -134,7 +140,7 @@ public final class BusinessPromot extends Message {
         public Integer join_num;
         public String package_name;
         public String schema;
-        public List<String> third_statistics_url;
+        public List third_statistics_url;
         public String thread_id;
         public Integer thread_type;
         public String title;
@@ -214,14 +220,11 @@ public final class BusinessPromot extends Message {
         public BusinessPromot build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BusinessPromot(this, z, null) : (BusinessPromot) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BusinessPromot(this, z, null);
+            }
+            return (BusinessPromot) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -248,10 +251,6 @@ public final class BusinessPromot extends Message {
         DEFAULT_IS_AD = bool;
         DEFAULT_IS_DOWNLOAD = bool;
         DEFAULT_BAN_DIALOG = 0;
-    }
-
-    public /* synthetic */ BusinessPromot(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -315,7 +314,7 @@ public final class BusinessPromot extends Message {
             } else {
                 this.join_num = num2;
             }
-            List<BusinessPromotCommentList> list = builder.comment_list;
+            List list = builder.comment_list;
             if (list == null) {
                 this.comment_list = DEFAULT_COMMENT_LIST;
             } else {
@@ -339,7 +338,7 @@ public final class BusinessPromot extends Message {
             } else {
                 this.schema = str6;
             }
-            List<String> list2 = builder.third_statistics_url;
+            List list2 = builder.third_statistics_url;
             if (list2 == null) {
                 this.third_statistics_url = DEFAULT_THIRD_STATISTICS_URL;
             } else {
@@ -486,5 +485,9 @@ public final class BusinessPromot extends Message {
         this.cover_url = builder.cover_url;
         this.video_url = builder.video_url;
         this.ban_dialog = builder.ban_dialog;
+    }
+
+    public /* synthetic */ BusinessPromot(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

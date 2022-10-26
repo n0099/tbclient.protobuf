@@ -34,7 +34,13 @@ public final class Agree extends Message {
     public final Integer lz_agree;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Agree> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long agree_num;
@@ -92,14 +98,11 @@ public final class Agree extends Message {
         public Agree build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Agree(this, z, null) : (Agree) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Agree(this, z, null);
+            }
+            return (Agree) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -121,10 +124,6 @@ public final class Agree extends Message {
         DEFAULT_DISAGREE_NUM = 0L;
         DEFAULT_DIFF_AGREE_NUM = 0L;
         DEFAULT_LZ_AGREE = 0;
-    }
-
-    public /* synthetic */ Agree(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -191,5 +190,9 @@ public final class Agree extends Message {
         this.disagree_num = builder.disagree_num;
         this.diff_agree_num = builder.diff_agree_num;
         this.lz_agree = builder.lz_agree;
+    }
+
+    public /* synthetic */ Agree(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

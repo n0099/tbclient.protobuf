@@ -40,7 +40,13 @@ public final class PkModule extends Message {
     public final Integer user_pk_index;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PkModule> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String module_name;
@@ -104,14 +110,11 @@ public final class PkModule extends Message {
         public PkModule build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PkModule(this, z, null) : (PkModule) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PkModule(this, z, null);
+            }
+            return (PkModule) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -131,10 +134,6 @@ public final class PkModule extends Message {
         DEFAULT_USER_PK_INDEX = 0;
         DEFAULT_PK_ID = 0L;
         DEFAULT_USER_PK_ID = 0L;
-    }
-
-    public /* synthetic */ PkModule(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -207,5 +206,9 @@ public final class PkModule extends Message {
         this.user_pk_index = builder.user_pk_index;
         this.pk_id = builder.pk_id;
         this.user_pk_id = builder.user_pk_id;
+    }
+
+    public /* synthetic */ PkModule(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

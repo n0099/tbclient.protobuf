@@ -28,7 +28,13 @@ public final class AdkillerAd extends Message {
     public final String tag;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AdkillerAd> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public App app;
@@ -82,14 +88,11 @@ public final class AdkillerAd extends Message {
         public AdkillerAd build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AdkillerAd(this, z, null) : (AdkillerAd) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AdkillerAd(this, z, null);
+            }
+            return (AdkillerAd) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -106,10 +109,6 @@ public final class AdkillerAd extends Message {
             }
         }
         DEFAULT_CAN_CLOSE = 0;
-    }
-
-    public /* synthetic */ AdkillerAd(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -157,5 +156,9 @@ public final class AdkillerAd extends Message {
         this.game_url = builder.game_url;
         this.app = builder.app;
         this.can_close = builder.can_close;
+    }
+
+    public /* synthetic */ AdkillerAd(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

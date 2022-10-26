@@ -46,7 +46,13 @@ public final class StarEnter extends Message {
     public final Integer weight;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<StarEnter> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer bazhu_mark;
@@ -112,14 +118,11 @@ public final class StarEnter extends Message {
         public StarEnter build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new StarEnter(this, z, null) : (StarEnter) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new StarEnter(this, z, null);
+            }
+            return (StarEnter) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -140,10 +143,6 @@ public final class StarEnter extends Message {
         DEFAULT_TIME = 0;
         DEFAULT_RANK_NUM = 0;
         DEFAULT_BAZHU_MARK = 0;
-    }
-
-    public /* synthetic */ StarEnter(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -238,5 +237,9 @@ public final class StarEnter extends Message {
         this.text = builder.text;
         this.rank_num = builder.rank_num;
         this.bazhu_mark = builder.bazhu_mark;
+    }
+
+    public /* synthetic */ StarEnter(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -63,10 +63,16 @@ public final class Props extends Message {
     public final String used_status;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Props> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<String> _word;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List _word;
         public String end_time;
         public String expired_notify;
         public String expiring_notify;
@@ -74,7 +80,7 @@ public final class Props extends Message {
         public String notice;
         public Integer num;
         public String open_status;
-        public List<String> pattern;
+        public List pattern;
         public String props_category;
         public Integer props_id;
         public String props_type;
@@ -139,14 +145,11 @@ public final class Props extends Message {
         public Props build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Props(this, z, null) : (Props) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Props(this, z, null);
+            }
+            return (Props) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -168,10 +171,6 @@ public final class Props extends Message {
         DEFAULT_UPDATE_TIME = 0;
         DEFAULT__WORD = Collections.emptyList();
         DEFAULT_PATTERN = Collections.emptyList();
-    }
-
-    public /* synthetic */ Props(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -271,13 +270,13 @@ public final class Props extends Message {
             } else {
                 this.title = str9;
             }
-            List<String> list = builder._word;
+            List list = builder._word;
             if (list == null) {
                 this._word = DEFAULT__WORD;
             } else {
                 this._word = Message.immutableCopyOf(list);
             }
-            List<String> list2 = builder.pattern;
+            List list2 = builder.pattern;
             if (list2 == null) {
                 this.pattern = DEFAULT_PATTERN;
                 return;
@@ -301,5 +300,9 @@ public final class Props extends Message {
         this.title = builder.title;
         this._word = Message.immutableCopyOf(builder._word);
         this.pattern = Message.immutableCopyOf(builder.pattern);
+    }
+
+    public /* synthetic */ Props(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -33,14 +33,20 @@ public final class BrandForumInfo extends Message {
     public final List<OriForumInfo> relation_forum;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BrandForumInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String brand_desc;
         public HeadImgs head_imgs;
         public String jump_desc;
         public String jump_url;
-        public List<OriForumInfo> relation_forum;
+        public List relation_forum;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -89,14 +95,11 @@ public final class BrandForumInfo extends Message {
         public BrandForumInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BrandForumInfo(this, z, null) : (BrandForumInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BrandForumInfo(this, z, null);
+            }
+            return (BrandForumInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class BrandForumInfo extends Message {
             }
         }
         DEFAULT_RELATION_FORUM = Collections.emptyList();
-    }
-
-    public /* synthetic */ BrandForumInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,7 +137,7 @@ public final class BrandForumInfo extends Message {
             }
         }
         if (z) {
-            List<OriForumInfo> list = builder.relation_forum;
+            List list = builder.relation_forum;
             if (list == null) {
                 this.relation_forum = DEFAULT_RELATION_FORUM;
             } else {
@@ -171,5 +170,9 @@ public final class BrandForumInfo extends Message {
         this.brand_desc = builder.brand_desc;
         this.jump_url = builder.jump_url;
         this.jump_desc = builder.jump_desc;
+    }
+
+    public /* synthetic */ BrandForumInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

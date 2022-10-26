@@ -25,7 +25,13 @@ public final class TabSkin extends Message {
     public final Integer tab_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TabSkin> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String icon;
@@ -77,14 +83,11 @@ public final class TabSkin extends Message {
         public TabSkin build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TabSkin(this, z, null) : (TabSkin) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TabSkin(this, z, null);
+            }
+            return (TabSkin) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -101,10 +104,6 @@ public final class TabSkin extends Message {
             }
         }
         DEFAULT_TAB_ID = 0;
-    }
-
-    public /* synthetic */ TabSkin(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -150,5 +149,9 @@ public final class TabSkin extends Message {
         this.tab_id = builder.tab_id;
         this.icon = builder.icon;
         this.icon_night = builder.icon_night;
+    }
+
+    public /* synthetic */ TabSkin(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

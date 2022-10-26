@@ -43,7 +43,13 @@ public final class AlbumList extends Message {
     public final Integer update_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AlbumList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String album_id;
@@ -107,14 +113,11 @@ public final class AlbumList extends Message {
         public AlbumList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AlbumList(this, z, null) : (AlbumList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AlbumList(this, z, null);
+            }
+            return (AlbumList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -135,10 +138,6 @@ public final class AlbumList extends Message {
         DEFAULT_CREATE_TIME = 0;
         DEFAULT_UPDATE_TIME = 0;
         DEFAULT_IS_NETDISK = 0;
-    }
-
-    public /* synthetic */ AlbumList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -226,5 +225,9 @@ public final class AlbumList extends Message {
         this.create_time = builder.create_time;
         this.update_time = builder.update_time;
         this.is_netdisk = builder.is_netdisk;
+    }
+
+    public /* synthetic */ AlbumList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

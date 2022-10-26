@@ -37,7 +37,13 @@ public final class GiftInfo extends Message {
     public final String sender_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GiftInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer gift_id;
@@ -97,14 +103,11 @@ public final class GiftInfo extends Message {
         public GiftInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GiftInfo(this, z, null) : (GiftInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GiftInfo(this, z, null);
+            }
+            return (GiftInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -123,10 +126,6 @@ public final class GiftInfo extends Message {
         DEFAULT_NUM = 0;
         DEFAULT_GIFT_ID = 0;
         DEFAULT_SENDER_ID = 0L;
-    }
-
-    public /* synthetic */ GiftInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -200,5 +199,9 @@ public final class GiftInfo extends Message {
         this.large_thumbnail_url = builder.large_thumbnail_url;
         this.sender_id = builder.sender_id;
         this.sender_name = builder.sender_name;
+    }
+
+    public /* synthetic */ GiftInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

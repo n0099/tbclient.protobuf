@@ -34,7 +34,13 @@ public final class CodeInfo extends Message {
     public final Integer user_status;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CodeInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer code_status;
@@ -92,14 +98,11 @@ public final class CodeInfo extends Message {
         public CodeInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CodeInfo(this, z, null) : (CodeInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CodeInfo(this, z, null);
+            }
+            return (CodeInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -119,10 +122,6 @@ public final class CodeInfo extends Message {
         DEFAULT_CODE_STATUS = 0;
         DEFAULT_KAIFU_ID = 0;
         DEFAULT_CODE_TYPE = 0;
-    }
-
-    public /* synthetic */ CodeInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -189,5 +188,9 @@ public final class CodeInfo extends Message {
         this.code_type = builder.code_type;
         this.gift_code = builder.gift_code;
         this.game_code = builder.game_code;
+    }
+
+    public /* synthetic */ CodeInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -46,7 +46,13 @@ public final class ParrScores extends Message {
     public final Integer update_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ParrScores> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long i_money;
@@ -112,14 +118,11 @@ public final class ParrScores extends Message {
         public ParrScores build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ParrScores(this, z, null) : (ParrScores) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ParrScores(this, z, null);
+            }
+            return (ParrScores) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -145,10 +148,6 @@ public final class ParrScores extends Message {
         DEFAULT_I_TOTAL = 0L;
         DEFAULT_I_MONEY = 0L;
         DEFAULT_I_OTHER = 0L;
-    }
-
-    public /* synthetic */ ParrScores(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -243,5 +242,9 @@ public final class ParrScores extends Message {
         this.i_total = builder.i_total;
         this.i_money = builder.i_money;
         this.i_other = builder.i_other;
+    }
+
+    public /* synthetic */ ParrScores(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

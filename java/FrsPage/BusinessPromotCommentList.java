@@ -28,7 +28,13 @@ public final class BusinessPromotCommentList extends Message {
     public final String username;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BusinessPromotCommentList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_lz;
@@ -82,14 +88,11 @@ public final class BusinessPromotCommentList extends Message {
         public BusinessPromotCommentList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BusinessPromotCommentList(this, z, null) : (BusinessPromotCommentList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BusinessPromotCommentList(this, z, null);
+            }
+            return (BusinessPromotCommentList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +110,6 @@ public final class BusinessPromotCommentList extends Message {
         }
         DEFAULT_UID = 0L;
         DEFAULT_IS_LZ = 0;
-    }
-
-    public /* synthetic */ BusinessPromotCommentList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,5 +162,9 @@ public final class BusinessPromotCommentList extends Message {
         this.username = builder.username;
         this.uid = builder.uid;
         this.is_lz = builder.is_lz;
+    }
+
+    public /* synthetic */ BusinessPromotCommentList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -20,7 +20,13 @@ public final class NormalConfig extends Message {
     public final String icon_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<NormalConfig> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String icon_scheme;
@@ -70,18 +76,11 @@ public final class NormalConfig extends Message {
         public NormalConfig build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new NormalConfig(this, z, null) : (NormalConfig) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new NormalConfig(this, z, null);
+            }
+            return (NormalConfig) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ NormalConfig(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -120,5 +119,9 @@ public final class NormalConfig extends Message {
         }
         this.icon_url = builder.icon_url;
         this.icon_scheme = builder.icon_scheme;
+    }
+
+    public /* synthetic */ NormalConfig(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

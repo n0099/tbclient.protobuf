@@ -93,7 +93,13 @@ public final class RecommendGame extends Message {
     public final String version;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecommendGame> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String andr_pk_name;
@@ -107,7 +113,7 @@ public final class RecommendGame extends Message {
         public String game_id;
         public String game_link;
         public String game_name;
-        public List<String> game_pic;
+        public List game_pic;
         public Integer game_type;
         public String icon_url;
         public String introduce;
@@ -189,14 +195,11 @@ public final class RecommendGame extends Message {
         public RecommendGame build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecommendGame(this, z, null) : (RecommendGame) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecommendGame(this, z, null);
+            }
+            return (RecommendGame) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -220,10 +223,6 @@ public final class RecommendGame extends Message {
         DEFAULT_STAR = 0;
         DEFAULT_CATEGORY_ID = 0;
         DEFAULT_DEADLINE = 0L;
-    }
-
-    public /* synthetic */ RecommendGame(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -323,7 +322,7 @@ public final class RecommendGame extends Message {
             } else {
                 this.schema_url = str10;
             }
-            List<String> list = builder.game_pic;
+            List list = builder.game_pic;
             if (list == null) {
                 this.game_pic = DEFAULT_GAME_PIC;
             } else {
@@ -423,5 +422,9 @@ public final class RecommendGame extends Message {
         this.version = builder.version;
         this.deadline = builder.deadline;
         this.editor_rec = builder.editor_rec;
+    }
+
+    public /* synthetic */ RecommendGame(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

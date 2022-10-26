@@ -51,13 +51,19 @@ public final class RecomTopicList extends Message {
     public final Long update_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecomTopicList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String author;
         public Long discuss_num;
         public Integer is_video_topic;
-        public List<Media> media;
+        public List media;
         public Integer tag;
         public String topic_desc;
         public Long topic_id;
@@ -119,14 +125,11 @@ public final class RecomTopicList extends Message {
         public RecomTopicList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecomTopicList(this, z, null) : (RecomTopicList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecomTopicList(this, z, null);
+            }
+            return (RecomTopicList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -149,10 +152,6 @@ public final class RecomTopicList extends Message {
         DEFAULT_UPDATE_TIME = 0L;
         DEFAULT_MEDIA = Collections.emptyList();
         DEFAULT_IS_VIDEO_TOPIC = 0;
-    }
-
-    public /* synthetic */ RecomTopicList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -228,7 +227,7 @@ public final class RecomTopicList extends Message {
             } else {
                 this.author = str4;
             }
-            List<Media> list = builder.media;
+            List list = builder.media;
             if (list == null) {
                 this.media = DEFAULT_MEDIA;
             } else {
@@ -254,5 +253,9 @@ public final class RecomTopicList extends Message {
         this.author = builder.author;
         this.media = Message.immutableCopyOf(builder.media);
         this.is_video_topic = builder.is_video_topic;
+    }
+
+    public /* synthetic */ RecomTopicList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

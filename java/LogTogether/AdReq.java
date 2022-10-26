@@ -73,7 +73,13 @@ public final class AdReq extends Message {
     public final String ext;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AdReq> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String da_cpid;
@@ -157,14 +163,11 @@ public final class AdReq extends Message {
         public AdReq build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AdReq(this, z, null) : (AdReq) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AdReq(this, z, null);
+            }
+            return (AdReq) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -186,10 +189,6 @@ public final class AdReq extends Message {
         DEFAULT_DA_UTIME = 0L;
         DEFAULT_DA_PN = 0;
         DEFAULT_DA_ISCACHE = Boolean.FALSE;
-    }
-
-    public /* synthetic */ AdReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -347,5 +346,9 @@ public final class AdReq extends Message {
         this.da_utime = builder.da_utime;
         this.da_pn = builder.da_pn;
         this.da_iscache = builder.da_iscache;
+    }
+
+    public /* synthetic */ AdReq(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

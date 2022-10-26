@@ -27,13 +27,19 @@ public final class MparrProps extends Message {
     public final List<Props> props;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<MparrProps> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public AvatarFrame avatarframe;
         public Level level;
         public Portrait portrait;
-        public List<Props> props;
+        public List props;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -81,14 +87,11 @@ public final class MparrProps extends Message {
         public MparrProps build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new MparrProps(this, z, null) : (MparrProps) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new MparrProps(this, z, null);
+            }
+            return (MparrProps) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -105,10 +108,6 @@ public final class MparrProps extends Message {
             }
         }
         DEFAULT_PROPS = Collections.emptyList();
-    }
-
-    public /* synthetic */ MparrProps(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -133,7 +132,7 @@ public final class MparrProps extends Message {
             this.avatarframe = builder.avatarframe;
             this.portrait = builder.portrait;
             this.level = builder.level;
-            List<Props> list = builder.props;
+            List list = builder.props;
             if (list == null) {
                 this.props = DEFAULT_PROPS;
                 return;
@@ -146,5 +145,9 @@ public final class MparrProps extends Message {
         this.portrait = builder.portrait;
         this.level = builder.level;
         this.props = Message.immutableCopyOf(builder.props);
+    }
+
+    public /* synthetic */ MparrProps(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

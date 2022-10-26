@@ -57,7 +57,13 @@ public final class ChapterInfo extends Message {
     public final Integer words;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ChapterInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long chapter_id;
@@ -68,7 +74,7 @@ public final class ChapterInfo extends Message {
         public Integer page_id;
         public Integer pages;
         public Integer paragraph_id;
-        public List<Integer> paragraphs;
+        public List paragraphs;
         public Integer price;
         public Long thread_id;
         public String title;
@@ -129,14 +135,11 @@ public final class ChapterInfo extends Message {
         public ChapterInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ChapterInfo(this, z, null) : (ChapterInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ChapterInfo(this, z, null);
+            }
+            return (ChapterInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -164,10 +167,6 @@ public final class ChapterInfo extends Message {
         DEFAULT_ORIGNAL_PRICE = 0;
         DEFAULT_CHAPTER_NO = 0;
         DEFAULT_THREAD_ID = 0L;
-    }
-
-    public /* synthetic */ ChapterInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -231,7 +230,7 @@ public final class ChapterInfo extends Message {
             } else {
                 this.pages = num5;
             }
-            List<Integer> list = builder.paragraphs;
+            List list = builder.paragraphs;
             if (list == null) {
                 this.paragraphs = DEFAULT_PARAGRAPHS;
             } else {
@@ -283,5 +282,9 @@ public final class ChapterInfo extends Message {
         this.orignal_price = builder.orignal_price;
         this.chapter_no = builder.chapter_no;
         this.thread_id = builder.thread_id;
+    }
+
+    public /* synthetic */ ChapterInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

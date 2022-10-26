@@ -22,7 +22,13 @@ public final class ThreadIdListInfo extends Message {
     public final Long tid;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ThreadIdListInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_partial_visible;
@@ -72,14 +78,11 @@ public final class ThreadIdListInfo extends Message {
         public ThreadIdListInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThreadIdListInfo(this, z, null) : (ThreadIdListInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThreadIdListInfo(this, z, null);
+            }
+            return (ThreadIdListInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -97,10 +100,6 @@ public final class ThreadIdListInfo extends Message {
         }
         DEFAULT_TID = 0L;
         DEFAULT_IS_PARTIAL_VISIBLE = 0;
-    }
-
-    public /* synthetic */ ThreadIdListInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -139,5 +138,9 @@ public final class ThreadIdListInfo extends Message {
         }
         this.tid = builder.tid;
         this.is_partial_visible = builder.is_partial_visible;
+    }
+
+    public /* synthetic */ ThreadIdListInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

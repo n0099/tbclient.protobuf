@@ -24,11 +24,17 @@ public final class Category extends Message {
     public final List<String> second_class;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Category> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String first_class;
-        public List<String> second_class;
+        public List second_class;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class Category extends Message {
         public Category build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Category(this, z, null) : (Category) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Category(this, z, null);
+            }
+            return (Category) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -98,10 +101,6 @@ public final class Category extends Message {
             }
         }
         DEFAULT_SECOND_CLASS = Collections.emptyList();
-    }
-
-    public /* synthetic */ Category(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,7 +128,7 @@ public final class Category extends Message {
             } else {
                 this.first_class = str;
             }
-            List<String> list = builder.second_class;
+            List list = builder.second_class;
             if (list == null) {
                 this.second_class = DEFAULT_SECOND_CLASS;
                 return;
@@ -140,5 +139,9 @@ public final class Category extends Message {
         }
         this.first_class = builder.first_class;
         this.second_class = Message.immutableCopyOf(builder.second_class);
+    }
+
+    public /* synthetic */ Category(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

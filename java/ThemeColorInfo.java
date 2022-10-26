@@ -20,7 +20,13 @@ public final class ThemeColorInfo extends Message {
     public final ThemeElement night;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ThemeColorInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ThemeElement dark;
@@ -72,18 +78,11 @@ public final class ThemeColorInfo extends Message {
         public ThemeColorInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThemeColorInfo(this, z, null) : (ThemeColorInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThemeColorInfo(this, z, null);
+            }
+            return (ThemeColorInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ ThemeColorInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -113,5 +112,9 @@ public final class ThemeColorInfo extends Message {
         this.day = builder.day;
         this.night = builder.night;
         this.dark = builder.dark;
+    }
+
+    public /* synthetic */ ThemeColorInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

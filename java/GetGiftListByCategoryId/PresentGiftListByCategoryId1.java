@@ -25,6 +25,7 @@ public final class PresentGiftListByCategoryId1 extends Message {
     public static final String DEFAULT_GIFT_NAME = "";
     public static final Integer DEFAULT_IOS_DISCOUNT;
     public static final Integer DEFAULT_IOS_PRICE;
+    public static final Integer DEFAULT_IS_COMBO;
     public static final String DEFAULT_MARK_URL = "";
     public static final Integer DEFAULT_PITCH_ON;
     public static final Integer DEFAULT_PRICE;
@@ -55,6 +56,8 @@ public final class PresentGiftListByCategoryId1 extends Message {
     public final Integer ios_discount;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer ios_price;
+    @ProtoField(tag = 17, type = Message.Datatype.UINT32)
+    public final Integer is_combo;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String mark_url;
     @ProtoField(tag = 14, type = Message.Datatype.UINT32)
@@ -67,7 +70,13 @@ public final class PresentGiftListByCategoryId1 extends Message {
     public final String thumbnail_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PresentGiftListByCategoryId1> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer activity_type;
@@ -82,6 +91,7 @@ public final class PresentGiftListByCategoryId1 extends Message {
         public String gift_name;
         public Integer ios_discount;
         public Integer ios_price;
+        public Integer is_combo;
         public String mark_url;
         public Integer pitch_on;
         public Integer price;
@@ -139,6 +149,7 @@ public final class PresentGiftListByCategoryId1 extends Message {
             this.pitch_on = presentGiftListByCategoryId1.pitch_on;
             this.gift_count = presentGiftListByCategoryId1.gift_count;
             this.currency_unit = presentGiftListByCategoryId1.currency_unit;
+            this.is_combo = presentGiftListByCategoryId1.is_combo;
             this.currency = presentGiftListByCategoryId1.currency;
         }
 
@@ -147,14 +158,11 @@ public final class PresentGiftListByCategoryId1 extends Message {
         public PresentGiftListByCategoryId1 build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PresentGiftListByCategoryId1(this, z, null) : (PresentGiftListByCategoryId1) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PresentGiftListByCategoryId1(this, z, null);
+            }
+            return (PresentGiftListByCategoryId1) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -182,11 +190,8 @@ public final class PresentGiftListByCategoryId1 extends Message {
         DEFAULT_PITCH_ON = 0;
         DEFAULT_GIFT_COUNT = 0;
         DEFAULT_CURRENCY_UNIT = 0;
+        DEFAULT_IS_COMBO = 0;
         DEFAULT_CURRENCY = 0;
-    }
-
-    public /* synthetic */ PresentGiftListByCategoryId1(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -304,12 +309,18 @@ public final class PresentGiftListByCategoryId1 extends Message {
             } else {
                 this.currency_unit = num12;
             }
-            Integer num13 = builder.currency;
+            Integer num13 = builder.is_combo;
             if (num13 == null) {
+                this.is_combo = DEFAULT_IS_COMBO;
+            } else {
+                this.is_combo = num13;
+            }
+            Integer num14 = builder.currency;
+            if (num14 == null) {
                 this.currency = DEFAULT_CURRENCY;
                 return;
             } else {
-                this.currency = num13;
+                this.currency = num14;
                 return;
             }
         }
@@ -329,6 +340,11 @@ public final class PresentGiftListByCategoryId1 extends Message {
         this.pitch_on = builder.pitch_on;
         this.gift_count = builder.gift_count;
         this.currency_unit = builder.currency_unit;
+        this.is_combo = builder.is_combo;
         this.currency = builder.currency;
+    }
+
+    public /* synthetic */ PresentGiftListByCategoryId1(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

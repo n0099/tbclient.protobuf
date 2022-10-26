@@ -31,11 +31,17 @@ public final class FeatureCardHot extends Message {
     public final String type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FeatureCardHot> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer floor;
-        public List<FeatureCardHotSubNode> sub_nodes;
+        public List sub_nodes;
         public String title;
         public String type;
 
@@ -85,14 +91,11 @@ public final class FeatureCardHot extends Message {
         public FeatureCardHot build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FeatureCardHot(this, z, null) : (FeatureCardHot) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FeatureCardHot(this, z, null);
+            }
+            return (FeatureCardHot) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -110,10 +113,6 @@ public final class FeatureCardHot extends Message {
         }
         DEFAULT_SUB_NODES = Collections.emptyList();
         DEFAULT_FLOOR = 0;
-    }
-
-    public /* synthetic */ FeatureCardHot(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -135,7 +134,7 @@ public final class FeatureCardHot extends Message {
             }
         }
         if (z) {
-            List<FeatureCardHotSubNode> list = builder.sub_nodes;
+            List list = builder.sub_nodes;
             if (list == null) {
                 this.sub_nodes = DEFAULT_SUB_NODES;
             } else {
@@ -166,5 +165,9 @@ public final class FeatureCardHot extends Message {
         this.type = builder.type;
         this.title = builder.title;
         this.floor = builder.floor;
+    }
+
+    public /* synthetic */ FeatureCardHot(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -22,7 +22,13 @@ public final class CallFansInfo extends Message {
     public final Long thread_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CallFansInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer can_call;
@@ -72,14 +78,11 @@ public final class CallFansInfo extends Message {
         public CallFansInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CallFansInfo(this, z, null) : (CallFansInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CallFansInfo(this, z, null);
+            }
+            return (CallFansInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -97,10 +100,6 @@ public final class CallFansInfo extends Message {
         }
         DEFAULT_CAN_CALL = 0;
         DEFAULT_THREAD_ID = 0L;
-    }
-
-    public /* synthetic */ CallFansInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -139,5 +138,9 @@ public final class CallFansInfo extends Message {
         }
         this.can_call = builder.can_call;
         this.thread_id = builder.thread_id;
+    }
+
+    public /* synthetic */ CallFansInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

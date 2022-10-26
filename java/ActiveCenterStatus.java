@@ -31,7 +31,13 @@ public final class ActiveCenterStatus extends Message {
     public final String mission;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ActiveCenterStatus> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer day;
@@ -87,14 +93,11 @@ public final class ActiveCenterStatus extends Message {
         public ActiveCenterStatus build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ActiveCenterStatus(this, z, null) : (ActiveCenterStatus) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ActiveCenterStatus(this, z, null);
+            }
+            return (ActiveCenterStatus) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class ActiveCenterStatus extends Message {
         DEFAULT_DAY = 0;
         DEFAULT_IS_COMPLETED = 0;
         DEFAULT_IS_TODAY_MISSION = 0;
-    }
-
-    public /* synthetic */ ActiveCenterStatus(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -176,5 +175,9 @@ public final class ActiveCenterStatus extends Message {
         this.mission = builder.mission;
         this.is_today_mission = builder.is_today_mission;
         this.desc = builder.desc;
+    }
+
+    public /* synthetic */ ActiveCenterStatus(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -36,10 +36,16 @@ public final class HotUserRankEntry extends Message {
     public final Integer yesterday_rank;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<HotUserRankEntry> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ShortUserInfo> hot_user;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List hot_user;
         public Boolean is_in_rank;
         public String module_icon;
         public String module_name;
@@ -94,14 +100,11 @@ public final class HotUserRankEntry extends Message {
         public HotUserRankEntry build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HotUserRankEntry(this, z, null) : (HotUserRankEntry) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new HotUserRankEntry(this, z, null);
+            }
+            return (HotUserRankEntry) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -123,10 +126,6 @@ public final class HotUserRankEntry extends Message {
         DEFAULT_IS_IN_RANK = Boolean.FALSE;
     }
 
-    public /* synthetic */ HotUserRankEntry(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public HotUserRankEntry(Builder builder, boolean z) {
         super(builder);
@@ -146,7 +145,7 @@ public final class HotUserRankEntry extends Message {
             }
         }
         if (z) {
-            List<ShortUserInfo> list = builder.hot_user;
+            List list = builder.hot_user;
             if (list == null) {
                 this.hot_user = DEFAULT_HOT_USER;
             } else {
@@ -191,5 +190,9 @@ public final class HotUserRankEntry extends Message {
         this.today_rank = builder.today_rank;
         this.yesterday_rank = builder.yesterday_rank;
         this.is_in_rank = builder.is_in_rank;
+    }
+
+    public /* synthetic */ HotUserRankEntry(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

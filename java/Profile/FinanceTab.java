@@ -30,12 +30,18 @@ public final class FinanceTab extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FinanceTab> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String general_tab_text;
         public String general_tab_url;
-        public List<FinanceTabItems> tabs;
+        public List tabs;
         public String title;
 
         public Builder() {
@@ -84,14 +90,11 @@ public final class FinanceTab extends Message {
         public FinanceTab build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FinanceTab(this, z, null) : (FinanceTab) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FinanceTab(this, z, null);
+            }
+            return (FinanceTab) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class FinanceTab extends Message {
             }
         }
         DEFAULT_TABS = Collections.emptyList();
-    }
-
-    public /* synthetic */ FinanceTab(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,7 +150,7 @@ public final class FinanceTab extends Message {
             } else {
                 this.general_tab_url = str3;
             }
-            List<FinanceTabItems> list = builder.tabs;
+            List list = builder.tabs;
             if (list == null) {
                 this.tabs = DEFAULT_TABS;
                 return;
@@ -164,5 +163,9 @@ public final class FinanceTab extends Message {
         this.general_tab_text = builder.general_tab_text;
         this.general_tab_url = builder.general_tab_url;
         this.tabs = Message.immutableCopyOf(builder.tabs);
+    }
+
+    public /* synthetic */ FinanceTab(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

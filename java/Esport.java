@@ -26,11 +26,17 @@ public final class Esport extends Message {
     public final Integer floor_no;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Esport> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public EsportStatic _static;
-        public List<EsportRank> billboard;
+        public List billboard;
         public Integer floor_no;
 
         public Builder() {
@@ -78,14 +84,11 @@ public final class Esport extends Message {
         public Esport build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Esport(this, z, null) : (Esport) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Esport(this, z, null);
+            }
+            return (Esport) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -103,10 +106,6 @@ public final class Esport extends Message {
         }
         DEFAULT_FLOOR_NO = 0;
         DEFAULT_BILLBOARD = Collections.emptyList();
-    }
-
-    public /* synthetic */ Esport(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -135,7 +134,7 @@ public final class Esport extends Message {
             } else {
                 this.floor_no = num;
             }
-            List<EsportRank> list = builder.billboard;
+            List list = builder.billboard;
             if (list == null) {
                 this.billboard = DEFAULT_BILLBOARD;
                 return;
@@ -147,5 +146,9 @@ public final class Esport extends Message {
         this._static = builder._static;
         this.floor_no = builder.floor_no;
         this.billboard = Message.immutableCopyOf(builder.billboard);
+    }
+
+    public /* synthetic */ Esport(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

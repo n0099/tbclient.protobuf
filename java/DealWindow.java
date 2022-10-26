@@ -24,10 +24,16 @@ public final class DealWindow extends Message {
     public final Long total;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DealWindow> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<DisplayWindowInfo> list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List list;
         public Long total;
 
         public Builder() {
@@ -74,14 +80,11 @@ public final class DealWindow extends Message {
         public DealWindow build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DealWindow(this, z, null) : (DealWindow) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DealWindow(this, z, null);
+            }
+            return (DealWindow) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class DealWindow extends Message {
         }
         DEFAULT_LIST = Collections.emptyList();
         DEFAULT_TOTAL = 0L;
-    }
-
-    public /* synthetic */ DealWindow(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -124,7 +123,7 @@ public final class DealWindow extends Message {
             }
         }
         if (z) {
-            List<DisplayWindowInfo> list = builder.list;
+            List list = builder.list;
             if (list == null) {
                 this.list = DEFAULT_LIST;
             } else {
@@ -141,5 +140,9 @@ public final class DealWindow extends Message {
         }
         this.list = Message.immutableCopyOf(builder.list);
         this.total = builder.total;
+    }
+
+    public /* synthetic */ DealWindow(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

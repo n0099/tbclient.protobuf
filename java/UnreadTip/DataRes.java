@@ -33,11 +33,17 @@ public final class DataRes extends Message {
     public final Integer user_count;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long hide_unix;
-        public List<String> portrait_list;
+        public List portrait_list;
         public String show_tip;
         public Integer thread_count;
         public Integer user_count;
@@ -89,14 +95,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -116,10 +119,6 @@ public final class DataRes extends Message {
         DEFAULT_PORTRAIT_LIST = Collections.emptyList();
         DEFAULT_HIDE_UNIX = 0L;
         DEFAULT_THREAD_COUNT = 0;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -147,7 +146,7 @@ public final class DataRes extends Message {
             } else {
                 this.user_count = num;
             }
-            List<String> list = builder.portrait_list;
+            List list = builder.portrait_list;
             if (list == null) {
                 this.portrait_list = DEFAULT_PORTRAIT_LIST;
             } else {
@@ -179,5 +178,9 @@ public final class DataRes extends Message {
         this.hide_unix = builder.hide_unix;
         this.show_tip = builder.show_tip;
         this.thread_count = builder.thread_count;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

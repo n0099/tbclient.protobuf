@@ -25,7 +25,13 @@ public final class Voice extends Message {
     public final String voice_md5;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Voice> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer during_time;
@@ -77,14 +83,11 @@ public final class Voice extends Message {
         public Voice build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Voice(this, z, null) : (Voice) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Voice(this, z, null);
+            }
+            return (Voice) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -102,10 +105,6 @@ public final class Voice extends Message {
         }
         DEFAULT_TYPE = 0;
         DEFAULT_DURING_TIME = 0;
-    }
-
-    public /* synthetic */ Voice(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,5 +150,9 @@ public final class Voice extends Message {
         this.type = builder.type;
         this.during_time = builder.during_time;
         this.voice_md5 = builder.voice_md5;
+    }
+
+    public /* synthetic */ Voice(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -28,7 +28,13 @@ public final class Position extends Message {
     public final Integer pb;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Position> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer card;
@@ -82,14 +88,11 @@ public final class Position extends Message {
         public Position build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Position(this, z, null) : (Position) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Position(this, z, null);
+            }
+            return (Position) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -109,10 +112,6 @@ public final class Position extends Message {
         DEFAULT_PB = 0;
         DEFAULT_HOME = 0;
         DEFAULT_CARD = 0;
-    }
-
-    public /* synthetic */ Position(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -165,5 +164,9 @@ public final class Position extends Message {
         this.pb = builder.pb;
         this.home = builder.home;
         this.card = builder.card;
+    }
+
+    public /* synthetic */ Position(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

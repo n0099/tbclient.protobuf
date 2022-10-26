@@ -18,6 +18,7 @@ import tbclient.DiscoverHotForum;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_ABTEST_TAG = "";
     public static final List<App> DEFAULT_APP_LIST;
     public static final Integer DEFAULT_HAS_MORE;
     public static final String DEFAULT_LAST_TIPS = "";
@@ -29,6 +30,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_USER_TIPS = "";
     public static final Integer DEFAULT_USER_TIPS_TYPE;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String abtest_tag;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<App> app_list;
     @ProtoField(tag = 13)
@@ -61,10 +64,17 @@ public final class DataRes extends Message {
     public final Integer user_tips_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<App> app_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public String abtest_tag;
+        public List app_list;
         public BannerFollowLive banner_follow_live;
         public BannerUserStory banner_user_story;
         public Integer has_more;
@@ -72,11 +82,11 @@ public final class DataRes extends Message {
         public String last_tips;
         public String page_tag;
         public Long req_unix;
-        public List<ConcernData> thread_info;
+        public List thread_info;
         public String top_tips;
         public UserList top_user_info;
         public UserFollowLive user_follow_live;
-        public List<UserList> user_list;
+        public List user_list;
         public String user_tips;
         public Integer user_tips_type;
 
@@ -128,6 +138,7 @@ public final class DataRes extends Message {
             this.top_tips = dataRes.top_tips;
             this.banner_follow_live = dataRes.banner_follow_live;
             this.hot_recomforum = dataRes.hot_recomforum;
+            this.abtest_tag = dataRes.abtest_tag;
             this.app_list = Message.copyOf(dataRes.app_list);
             this.user_follow_live = dataRes.user_follow_live;
         }
@@ -137,14 +148,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -168,10 +176,6 @@ public final class DataRes extends Message {
         DEFAULT_APP_LIST = Collections.emptyList();
     }
 
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
@@ -191,7 +195,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<ConcernData> list = builder.thread_info;
+            List list = builder.thread_info;
             if (list == null) {
                 this.thread_info = DEFAULT_THREAD_INFO;
             } else {
@@ -203,7 +207,7 @@ public final class DataRes extends Message {
             } else {
                 this.page_tag = str;
             }
-            List<UserList> list2 = builder.user_list;
+            List list2 = builder.user_list;
             if (list2 == null) {
                 this.user_list = DEFAULT_USER_LIST;
             } else {
@@ -249,7 +253,13 @@ public final class DataRes extends Message {
             }
             this.banner_follow_live = builder.banner_follow_live;
             this.hot_recomforum = builder.hot_recomforum;
-            List<App> list3 = builder.app_list;
+            String str5 = builder.abtest_tag;
+            if (str5 == null) {
+                this.abtest_tag = "";
+            } else {
+                this.abtest_tag = str5;
+            }
+            List list3 = builder.app_list;
             if (list3 == null) {
                 this.app_list = DEFAULT_APP_LIST;
             } else {
@@ -271,7 +281,12 @@ public final class DataRes extends Message {
         this.top_tips = builder.top_tips;
         this.banner_follow_live = builder.banner_follow_live;
         this.hot_recomforum = builder.hot_recomforum;
+        this.abtest_tag = builder.abtest_tag;
         this.app_list = Message.immutableCopyOf(builder.app_list);
         this.user_follow_live = builder.user_follow_live;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

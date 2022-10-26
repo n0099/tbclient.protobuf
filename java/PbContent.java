@@ -136,7 +136,13 @@ public final class PbContent extends Message {
     public final Integer width;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PbContent> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _static;
@@ -266,14 +272,11 @@ public final class PbContent extends Message {
         public PbContent build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PbContent(this, z, null) : (PbContent) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PbContent(this, z, null);
+            }
+            return (PbContent) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -305,10 +308,6 @@ public final class PbContent extends Message {
         DEFAULT_SHOW_ORIGINAL_BTN = 0;
         DEFAULT_ITEM_ID = 0L;
         DEFAULT_PIC_ID = 0L;
-    }
-
-    public /* synthetic */ PbContent(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -597,5 +596,9 @@ public final class PbContent extends Message {
         this.tiebaplus_info = builder.tiebaplus_info;
         this.item = builder.item;
         this.pic_id = builder.pic_id;
+    }
+
+    public /* synthetic */ PbContent(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

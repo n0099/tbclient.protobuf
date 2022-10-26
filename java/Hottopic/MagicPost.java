@@ -24,11 +24,17 @@ public final class MagicPost extends Message {
     public final List<MagicPostList> mc_post_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<MagicPost> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String magic_title;
-        public List<MagicPostList> mc_post_list;
+        public List mc_post_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class MagicPost extends Message {
         public MagicPost build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new MagicPost(this, z, null) : (MagicPost) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new MagicPost(this, z, null);
+            }
+            return (MagicPost) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -98,10 +101,6 @@ public final class MagicPost extends Message {
             }
         }
         DEFAULT_MC_POST_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ MagicPost(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,7 +128,7 @@ public final class MagicPost extends Message {
             } else {
                 this.magic_title = str;
             }
-            List<MagicPostList> list = builder.mc_post_list;
+            List list = builder.mc_post_list;
             if (list == null) {
                 this.mc_post_list = DEFAULT_MC_POST_LIST;
                 return;
@@ -140,5 +139,9 @@ public final class MagicPost extends Message {
         }
         this.magic_title = builder.magic_title;
         this.mc_post_list = Message.immutableCopyOf(builder.mc_post_list);
+    }
+
+    public /* synthetic */ MagicPost(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

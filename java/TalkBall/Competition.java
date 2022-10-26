@@ -30,11 +30,17 @@ public final class Competition extends Message {
     public final String type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Competition> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String btn_title;
-        public List<Country> country;
+        public List country;
         public Long time;
         public String type;
 
@@ -84,14 +90,11 @@ public final class Competition extends Message {
         public Competition build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Competition(this, z, null) : (Competition) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Competition(this, z, null);
+            }
+            return (Competition) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -109,10 +112,6 @@ public final class Competition extends Message {
         }
         DEFAULT_COUNTRY = Collections.emptyList();
         DEFAULT_TIME = 0L;
-    }
-
-    public /* synthetic */ Competition(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -134,7 +133,7 @@ public final class Competition extends Message {
             }
         }
         if (z) {
-            List<Country> list = builder.country;
+            List list = builder.country;
             if (list == null) {
                 this.country = DEFAULT_COUNTRY;
             } else {
@@ -165,5 +164,9 @@ public final class Competition extends Message {
         this.time = builder.time;
         this.type = builder.type;
         this.btn_title = builder.btn_title;
+    }
+
+    public /* synthetic */ Competition(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

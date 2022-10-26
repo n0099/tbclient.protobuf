@@ -24,11 +24,17 @@ public final class TopicListModule extends Message {
     public final List<TopicList> topic_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TopicListModule> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String module_title;
-        public List<TopicList> topic_list;
+        public List topic_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class TopicListModule extends Message {
         public TopicListModule build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TopicListModule(this, z, null) : (TopicListModule) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TopicListModule(this, z, null);
+            }
+            return (TopicListModule) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -98,10 +101,6 @@ public final class TopicListModule extends Message {
             }
         }
         DEFAULT_TOPIC_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ TopicListModule(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,7 +128,7 @@ public final class TopicListModule extends Message {
             } else {
                 this.module_title = str;
             }
-            List<TopicList> list = builder.topic_list;
+            List list = builder.topic_list;
             if (list == null) {
                 this.topic_list = DEFAULT_TOPIC_LIST;
                 return;
@@ -140,5 +139,9 @@ public final class TopicListModule extends Message {
         }
         this.module_title = builder.module_title;
         this.topic_list = Message.immutableCopyOf(builder.topic_list);
+    }
+
+    public /* synthetic */ TopicListModule(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

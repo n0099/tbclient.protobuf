@@ -34,7 +34,13 @@ public final class EditInfo extends Message {
     public final Integer last_edit_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<EditInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer edit_enable;
@@ -92,14 +98,11 @@ public final class EditInfo extends Message {
         public EditInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new EditInfo(this, z, null) : (EditInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new EditInfo(this, z, null);
+            }
+            return (EditInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -120,10 +123,6 @@ public final class EditInfo extends Message {
         DEFAULT_LAST_EDIT_TIME = 0;
         DEFAULT_EDIT_FROM = 0;
         DEFAULT_EDIT_ERROR_NO = 0;
-    }
-
-    public /* synthetic */ EditInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -190,5 +189,9 @@ public final class EditInfo extends Message {
         this.last_edit_time = builder.last_edit_time;
         this.edit_from = builder.edit_from;
         this.edit_error_no = builder.edit_error_no;
+    }
+
+    public /* synthetic */ EditInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -75,7 +75,13 @@ public final class AnchorInfo extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AnchorInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long author_id;
@@ -161,14 +167,11 @@ public final class AnchorInfo extends Message {
         public AnchorInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AnchorInfo(this, z, null) : (AnchorInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AnchorInfo(this, z, null);
+            }
+            return (AnchorInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -195,10 +198,6 @@ public final class AnchorInfo extends Message {
         DEFAULT_IS_VIP = 0;
         DEFAULT_LABEL_ID = 0;
         DEFAULT_TYPE = 0;
-    }
-
-    public /* synthetic */ AnchorInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -357,5 +356,9 @@ public final class AnchorInfo extends Message {
         this.label_name = builder.label_name;
         this.type = builder.type;
         this.twzhibo_info = builder.twzhibo_info;
+    }
+
+    public /* synthetic */ AnchorInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

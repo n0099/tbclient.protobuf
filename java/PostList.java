@@ -40,17 +40,23 @@ public final class PostList extends Message {
     public final List<Voice> voice_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PostList> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<Abstract> _abstract;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List _abstract;
         public Agree agree;
         public User author;
         public Long author_id;
         public Long id;
-        public List<Media> media;
-        public List<MediaNum> media_num;
-        public List<Voice> voice_info;
+        public List media;
+        public List media_num;
+        public List voice_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -102,14 +108,11 @@ public final class PostList extends Message {
         public PostList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PostList(this, z, null) : (PostList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PostList(this, z, null);
+            }
+            return (PostList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -131,10 +134,6 @@ public final class PostList extends Message {
         DEFAULT_MEDIA_NUM = Collections.emptyList();
         DEFAULT_VOICE_INFO = Collections.emptyList();
         DEFAULT_AUTHOR_ID = 0L;
-    }
-
-    public /* synthetic */ PostList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,25 +162,25 @@ public final class PostList extends Message {
                 this.id = l;
             }
             this.author = builder.author;
-            List<Abstract> list = builder._abstract;
+            List list = builder._abstract;
             if (list == null) {
                 this._abstract = DEFAULT_ABSTRACT;
             } else {
                 this._abstract = Message.immutableCopyOf(list);
             }
-            List<Media> list2 = builder.media;
+            List list2 = builder.media;
             if (list2 == null) {
                 this.media = DEFAULT_MEDIA;
             } else {
                 this.media = Message.immutableCopyOf(list2);
             }
-            List<MediaNum> list3 = builder.media_num;
+            List list3 = builder.media_num;
             if (list3 == null) {
                 this.media_num = DEFAULT_MEDIA_NUM;
             } else {
                 this.media_num = Message.immutableCopyOf(list3);
             }
-            List<Voice> list4 = builder.voice_info;
+            List list4 = builder.voice_info;
             if (list4 == null) {
                 this.voice_info = DEFAULT_VOICE_INFO;
             } else {
@@ -204,5 +203,9 @@ public final class PostList extends Message {
         this.voice_info = Message.immutableCopyOf(builder.voice_info);
         this.author_id = builder.author_id;
         this.agree = builder.agree;
+    }
+
+    public /* synthetic */ PostList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

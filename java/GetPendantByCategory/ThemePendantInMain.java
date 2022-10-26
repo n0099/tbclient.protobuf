@@ -25,11 +25,17 @@ public final class ThemePendantInMain extends Message {
     public final List<ThemeBgProp> props;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ThemePendantInMain> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String pendant_category;
-        public List<ThemeBgProp> props;
+        public List props;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -75,14 +81,11 @@ public final class ThemePendantInMain extends Message {
         public ThemePendantInMain build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThemePendantInMain(this, z, null) : (ThemePendantInMain) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThemePendantInMain(this, z, null);
+            }
+            return (ThemePendantInMain) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class ThemePendantInMain extends Message {
             }
         }
         DEFAULT_PROPS = Collections.emptyList();
-    }
-
-    public /* synthetic */ ThemePendantInMain(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class ThemePendantInMain extends Message {
             } else {
                 this.pendant_category = str;
             }
-            List<ThemeBgProp> list = builder.props;
+            List list = builder.props;
             if (list == null) {
                 this.props = DEFAULT_PROPS;
                 return;
@@ -141,5 +140,9 @@ public final class ThemePendantInMain extends Message {
         }
         this.pendant_category = builder.pendant_category;
         this.props = Message.immutableCopyOf(builder.props);
+    }
+
+    public /* synthetic */ ThemePendantInMain(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

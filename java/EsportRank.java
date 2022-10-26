@@ -30,7 +30,13 @@ public final class EsportRank extends Message {
     public final EsportUser user;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<EsportRank> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer rank;
@@ -86,14 +92,11 @@ public final class EsportRank extends Message {
         public EsportRank build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new EsportRank(this, z, null) : (EsportRank) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new EsportRank(this, z, null);
+            }
+            return (EsportRank) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -110,10 +113,6 @@ public final class EsportRank extends Message {
             }
         }
         DEFAULT_RANK = 0;
-    }
-
-    public /* synthetic */ EsportRank(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -168,5 +167,9 @@ public final class EsportRank extends Message {
         this.user = builder.user;
         this.text = builder.text;
         this.url = builder.url;
+    }
+
+    public /* synthetic */ EsportRank(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -23,7 +23,13 @@ public final class TbreadDispatch extends Message {
     public final String product_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TbreadDispatch> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String floor_num;
@@ -75,18 +81,11 @@ public final class TbreadDispatch extends Message {
         public TbreadDispatch build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TbreadDispatch(this, z, null) : (TbreadDispatch) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TbreadDispatch(this, z, null);
+            }
+            return (TbreadDispatch) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ TbreadDispatch(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -132,5 +131,9 @@ public final class TbreadDispatch extends Message {
         this.floor_num = builder.floor_num;
         this.product_type = builder.product_type;
         this.product_id = builder.product_id;
+    }
+
+    public /* synthetic */ TbreadDispatch(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

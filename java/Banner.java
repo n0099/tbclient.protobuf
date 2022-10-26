@@ -39,7 +39,13 @@ public final class Banner extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Banner> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String desc;
@@ -101,14 +107,11 @@ public final class Banner extends Message {
         public Banner build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Banner(this, z, null) : (Banner) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Banner(this, z, null);
+            }
+            return (Banner) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -127,10 +130,6 @@ public final class Banner extends Message {
         DEFAULT_ID = 0;
         DEFAULT_START_TIME = 0L;
         DEFAULT_END_TIME = 0L;
-    }
-
-    public /* synthetic */ Banner(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -206,5 +205,9 @@ public final class Banner extends Message {
         this.id = builder.id;
         this.start_time = builder.start_time;
         this.end_time = builder.end_time;
+    }
+
+    public /* synthetic */ Banner(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

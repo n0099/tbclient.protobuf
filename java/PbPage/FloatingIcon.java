@@ -16,7 +16,13 @@ public final class FloatingIcon extends Message {
     public final FloatingIconItem pbpage;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FloatingIcon> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public FloatingIconItem pbpage;
@@ -64,18 +70,11 @@ public final class FloatingIcon extends Message {
         public FloatingIcon build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FloatingIcon(this, z, null) : (FloatingIcon) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FloatingIcon(this, z, null);
+            }
+            return (FloatingIcon) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ FloatingIcon(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -101,5 +100,9 @@ public final class FloatingIcon extends Message {
         } else {
             this.pbpage = builder.pbpage;
         }
+    }
+
+    public /* synthetic */ FloatingIcon(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

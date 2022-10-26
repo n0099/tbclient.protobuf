@@ -31,12 +31,18 @@ public final class RedIcon extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RedIcon> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String image;
         public String text;
-        public List<ThreadInfo> thread_list;
+        public List thread_list;
         public Integer type;
 
         public Builder() {
@@ -85,14 +91,11 @@ public final class RedIcon extends Message {
         public RedIcon build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RedIcon(this, z, null) : (RedIcon) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RedIcon(this, z, null);
+            }
+            return (RedIcon) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -110,10 +113,6 @@ public final class RedIcon extends Message {
         }
         DEFAULT_TYPE = 0;
         DEFAULT_THREAD_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ RedIcon(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -153,7 +152,7 @@ public final class RedIcon extends Message {
             } else {
                 this.image = str2;
             }
-            List<ThreadInfo> list = builder.thread_list;
+            List list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
                 return;
@@ -166,5 +165,9 @@ public final class RedIcon extends Message {
         this.text = builder.text;
         this.image = builder.image;
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
+    }
+
+    public /* synthetic */ RedIcon(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

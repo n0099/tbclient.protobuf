@@ -34,7 +34,13 @@ public final class PkView extends Message {
     public final Long pk_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PkView> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer has_clicked;
@@ -92,14 +98,11 @@ public final class PkView extends Message {
         public PkView build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PkView(this, z, null) : (PkView) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PkView(this, z, null);
+            }
+            return (PkView) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -118,10 +121,6 @@ public final class PkView extends Message {
         DEFAULT_PK_NUM = 0L;
         DEFAULT_PK_INDEX = 0;
         DEFAULT_HAS_CLICKED = 0;
-    }
-
-    public /* synthetic */ PkView(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -188,5 +187,9 @@ public final class PkView extends Message {
         this.has_clicked = builder.has_clicked;
         this.pk_icon = builder.pk_icon;
         this.pk_icon_after = builder.pk_icon_after;
+    }
+
+    public /* synthetic */ PkView(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -12,6 +12,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.ThemeTailInUser;
 /* loaded from: classes9.dex */
 public final class ResData extends Message {
     public static /* synthetic */ Interceptable $ic = null;
@@ -25,14 +26,23 @@ public final class ResData extends Message {
     public final String default_color;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<TailInfo> tailList;
+    @ProtoField(tag = 4)
+    public final ThemeTailInUser tail_style;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ResData> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ColorInfo> colorList;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List colorList;
         public String default_color;
-        public List<TailInfo> tailList;
+        public List tailList;
+        public ThemeTailInUser tail_style;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -72,6 +82,7 @@ public final class ResData extends Message {
             this.tailList = Message.copyOf(resData.tailList);
             this.colorList = Message.copyOf(resData.colorList);
             this.default_color = resData.default_color;
+            this.tail_style = resData.tail_style;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -79,14 +90,11 @@ public final class ResData extends Message {
         public ResData build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ResData(this, z, null) : (ResData) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ResData(this, z, null);
+            }
+            return (ResData) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +112,6 @@ public final class ResData extends Message {
         }
         DEFAULT_TAILLIST = Collections.emptyList();
         DEFAULT_COLORLIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ ResData(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,13 +133,13 @@ public final class ResData extends Message {
             }
         }
         if (z) {
-            List<TailInfo> list = builder.tailList;
+            List list = builder.tailList;
             if (list == null) {
                 this.tailList = DEFAULT_TAILLIST;
             } else {
                 this.tailList = Message.immutableCopyOf(list);
             }
-            List<ColorInfo> list2 = builder.colorList;
+            List list2 = builder.colorList;
             if (list2 == null) {
                 this.colorList = DEFAULT_COLORLIST;
             } else {
@@ -144,14 +148,19 @@ public final class ResData extends Message {
             String str = builder.default_color;
             if (str == null) {
                 this.default_color = "";
-                return;
             } else {
                 this.default_color = str;
-                return;
             }
+            this.tail_style = builder.tail_style;
+            return;
         }
         this.tailList = Message.immutableCopyOf(builder.tailList);
         this.colorList = Message.immutableCopyOf(builder.colorList);
         this.default_color = builder.default_color;
+        this.tail_style = builder.tail_style;
+    }
+
+    public /* synthetic */ ResData(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

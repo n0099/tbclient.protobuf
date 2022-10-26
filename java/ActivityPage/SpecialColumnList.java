@@ -27,11 +27,17 @@ public final class SpecialColumnList extends Message {
     public final String special_column_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SpecialColumnList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer floor_position;
-        public List<SpecialColumn> item_list;
+        public List item_list;
         public String special_column_name;
 
         public Builder() {
@@ -79,14 +85,11 @@ public final class SpecialColumnList extends Message {
         public SpecialColumnList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SpecialColumnList(this, z, null) : (SpecialColumnList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SpecialColumnList(this, z, null);
+            }
+            return (SpecialColumnList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +107,6 @@ public final class SpecialColumnList extends Message {
         }
         DEFAULT_FLOOR_POSITION = 0;
         DEFAULT_ITEM_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ SpecialColumnList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -141,7 +140,7 @@ public final class SpecialColumnList extends Message {
             } else {
                 this.special_column_name = str;
             }
-            List<SpecialColumn> list = builder.item_list;
+            List list = builder.item_list;
             if (list == null) {
                 this.item_list = DEFAULT_ITEM_LIST;
                 return;
@@ -153,5 +152,9 @@ public final class SpecialColumnList extends Message {
         this.floor_position = builder.floor_position;
         this.special_column_name = builder.special_column_name;
         this.item_list = Message.immutableCopyOf(builder.item_list);
+    }
+
+    public /* synthetic */ SpecialColumnList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

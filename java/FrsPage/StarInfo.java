@@ -58,11 +58,17 @@ public final class StarInfo extends Message {
     public final Video video;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<StarInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Fans fans;
-        public List<Focus> focus;
+        public List focus;
         public Integer gender;
         public Good good;
         public Integer has_frs_star;
@@ -138,14 +144,11 @@ public final class StarInfo extends Message {
         public StarInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new StarInfo(this, z, null) : (StarInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new StarInfo(this, z, null);
+            }
+            return (StarInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -164,10 +167,6 @@ public final class StarInfo extends Message {
         DEFAULT_HAS_FRS_STAR = 0;
         DEFAULT_GENDER = 0;
         DEFAULT_FOCUS = Collections.emptyList();
-    }
-
-    public /* synthetic */ StarInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -215,7 +214,7 @@ public final class StarInfo extends Message {
             }
             this.info = builder.info;
             this.fans = builder.fans;
-            List<Focus> list = builder.focus;
+            List list = builder.focus;
             if (list == null) {
                 this.focus = DEFAULT_FOCUS;
             } else {
@@ -256,5 +255,9 @@ public final class StarInfo extends Message {
         this.head_size = builder.head_size;
         this.trade = builder.trade;
         this.star_forum_headimg = builder.star_forum_headimg;
+    }
+
+    public /* synthetic */ StarInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

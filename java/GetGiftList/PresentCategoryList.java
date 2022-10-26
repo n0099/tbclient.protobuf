@@ -27,12 +27,18 @@ public final class PresentCategoryList extends Message {
     public final List<Integer> gift_ids;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PresentCategoryList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer category_id;
         public String category_name;
-        public List<Integer> gift_ids;
+        public List gift_ids;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -79,14 +85,11 @@ public final class PresentCategoryList extends Message {
         public PresentCategoryList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PresentCategoryList(this, z, null) : (PresentCategoryList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PresentCategoryList(this, z, null);
+            }
+            return (PresentCategoryList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +107,6 @@ public final class PresentCategoryList extends Message {
         }
         DEFAULT_CATEGORY_ID = 0;
         DEFAULT_GIFT_IDS = Collections.emptyList();
-    }
-
-    public /* synthetic */ PresentCategoryList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -141,7 +140,7 @@ public final class PresentCategoryList extends Message {
             } else {
                 this.category_name = str;
             }
-            List<Integer> list = builder.gift_ids;
+            List list = builder.gift_ids;
             if (list == null) {
                 this.gift_ids = DEFAULT_GIFT_IDS;
                 return;
@@ -153,5 +152,9 @@ public final class PresentCategoryList extends Message {
         this.category_id = builder.category_id;
         this.category_name = builder.category_name;
         this.gift_ids = Message.immutableCopyOf(builder.gift_ids);
+    }
+
+    public /* synthetic */ PresentCategoryList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

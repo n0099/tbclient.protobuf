@@ -53,7 +53,13 @@ public final class DuxiaomanEntry extends Message {
     public final String tip;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DuxiaomanEntry> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_desc;
@@ -125,18 +131,11 @@ public final class DuxiaomanEntry extends Message {
         public DuxiaomanEntry build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DuxiaomanEntry(this, z, null) : (DuxiaomanEntry) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DuxiaomanEntry(this, z, null);
+            }
+            return (DuxiaomanEntry) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ DuxiaomanEntry(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -252,5 +251,9 @@ public final class DuxiaomanEntry extends Message {
         this.activity_link_addr = builder.activity_link_addr;
         this.layout_type = builder.layout_type;
         this.encourage_icon_dark = builder.encourage_icon_dark;
+    }
+
+    public /* synthetic */ DuxiaomanEntry(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

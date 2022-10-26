@@ -42,7 +42,13 @@ public final class DisplayWindowInfo extends Message {
     public final Long unit_price;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DisplayWindowInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public DealMedia img;
@@ -106,14 +112,11 @@ public final class DisplayWindowInfo extends Message {
         public DisplayWindowInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DisplayWindowInfo(this, z, null) : (DisplayWindowInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DisplayWindowInfo(this, z, null);
+            }
+            return (DisplayWindowInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -135,10 +138,6 @@ public final class DisplayWindowInfo extends Message {
         DEFAULT_SHIP_FEE = 0L;
         DEFAULT_IS_DISPLAY = 0;
         DEFAULT_SALES = 0L;
-    }
-
-    public /* synthetic */ DisplayWindowInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -221,5 +220,9 @@ public final class DisplayWindowInfo extends Message {
         this.ship_fee = builder.ship_fee;
         this.is_display = builder.is_display;
         this.sales = builder.sales;
+    }
+
+    public /* synthetic */ DisplayWindowInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -22,7 +22,13 @@ public final class GconAccount extends Message {
     public final String menu_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GconAccount> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer has_account;
@@ -72,14 +78,11 @@ public final class GconAccount extends Message {
         public GconAccount build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GconAccount(this, z, null) : (GconAccount) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GconAccount(this, z, null);
+            }
+            return (GconAccount) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +99,6 @@ public final class GconAccount extends Message {
             }
         }
         DEFAULT_HAS_ACCOUNT = 0;
-    }
-
-    public /* synthetic */ GconAccount(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class GconAccount extends Message {
         }
         this.has_account = builder.has_account;
         this.menu_name = builder.menu_name;
+    }
+
+    public /* synthetic */ GconAccount(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

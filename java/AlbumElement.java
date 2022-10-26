@@ -31,7 +31,13 @@ public final class AlbumElement extends Message {
     public final Integer album_width;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AlbumElement> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer album_height;
@@ -87,14 +93,11 @@ public final class AlbumElement extends Message {
         public AlbumElement build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AlbumElement(this, z, null) : (AlbumElement) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AlbumElement(this, z, null);
+            }
+            return (AlbumElement) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class AlbumElement extends Message {
         DEFAULT_ALBUM_TYPE = 0;
         DEFAULT_ALBUM_HEIGHT = 0;
         DEFAULT_ALBUM_WIDTH = 0;
-    }
-
-    public /* synthetic */ AlbumElement(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -176,5 +175,9 @@ public final class AlbumElement extends Message {
         this.album_thumb_url = builder.album_thumb_url;
         this.album_height = builder.album_height;
         this.album_width = builder.album_width;
+    }
+
+    public /* synthetic */ AlbumElement(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

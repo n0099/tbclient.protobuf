@@ -28,7 +28,13 @@ public final class VipPayMemberInfo extends Message {
     public final Integer props_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<VipPayMemberInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer end_time;
@@ -82,14 +88,11 @@ public final class VipPayMemberInfo extends Message {
         public VipPayMemberInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new VipPayMemberInfo(this, z, null) : (VipPayMemberInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new VipPayMemberInfo(this, z, null);
+            }
+            return (VipPayMemberInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class VipPayMemberInfo extends Message {
         DEFAULT_PROPS_ID = 0;
         DEFAULT_END_TIME = 0;
         DEFAULT_NOW_TIME = 0;
-    }
-
-    public /* synthetic */ VipPayMemberInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -164,5 +163,9 @@ public final class VipPayMemberInfo extends Message {
         this.end_time = builder.end_time;
         this.pic_url = builder.pic_url;
         this.now_time = builder.now_time;
+    }
+
+    public /* synthetic */ VipPayMemberInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

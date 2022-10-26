@@ -34,13 +34,19 @@ public final class BazhuGrade extends Message {
     public final String grade_text;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BazhuGrade> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String estimation_left_text;
         public Integer estimation_left_time;
         public String grade;
-        public List<GradePoint> grade_point;
+        public List grade_point;
         public String grade_text;
 
         public Builder() {
@@ -90,14 +96,11 @@ public final class BazhuGrade extends Message {
         public BazhuGrade build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BazhuGrade(this, z, null) : (BazhuGrade) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BazhuGrade(this, z, null);
+            }
+            return (BazhuGrade) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -115,10 +118,6 @@ public final class BazhuGrade extends Message {
         }
         DEFAULT_GRADE_POINT = Collections.emptyList();
         DEFAULT_ESTIMATION_LEFT_TIME = 0;
-    }
-
-    public /* synthetic */ BazhuGrade(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -146,7 +145,7 @@ public final class BazhuGrade extends Message {
             } else {
                 this.grade = str;
             }
-            List<GradePoint> list = builder.grade_point;
+            List list = builder.grade_point;
             if (list == null) {
                 this.grade_point = DEFAULT_GRADE_POINT;
             } else {
@@ -178,5 +177,9 @@ public final class BazhuGrade extends Message {
         this.estimation_left_text = builder.estimation_left_text;
         this.grade_text = builder.grade_text;
         this.estimation_left_time = builder.estimation_left_time;
+    }
+
+    public /* synthetic */ BazhuGrade(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

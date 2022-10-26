@@ -49,19 +49,25 @@ public final class TAInfo extends Message {
     public final Integer userClientVersionIsLower;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TAInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public CommonDistance distanceinfo;
-        public List<String> foruminfo;
-        public List<String> friendinfo;
+        public List foruminfo;
+        public List friendinfo;
         public Integer friendnum;
-        public List<String> groupinfo;
+        public List groupinfo;
         public Integer groupnum;
         public String hide_user_feed;
         public Integer is_friend;
         public CommonLocation location;
-        public List<ReplyList> reply_list;
+        public List reply_list;
         public Integer userClientVersionIsLower;
 
         public Builder() {
@@ -117,14 +123,11 @@ public final class TAInfo extends Message {
         public TAInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TAInfo(this, z, null) : (TAInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TAInfo(this, z, null);
+            }
+            return (TAInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -150,10 +153,6 @@ public final class TAInfo extends Message {
         DEFAULT_USERCLIENTVERSIONISLOWER = 0;
     }
 
-    public /* synthetic */ TAInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public TAInfo(Builder builder, boolean z) {
         super(builder);
@@ -173,19 +172,19 @@ public final class TAInfo extends Message {
             }
         }
         if (z) {
-            List<String> list = builder.foruminfo;
+            List list = builder.foruminfo;
             if (list == null) {
                 this.foruminfo = DEFAULT_FORUMINFO;
             } else {
                 this.foruminfo = Message.immutableCopyOf(list);
             }
-            List<String> list2 = builder.groupinfo;
+            List list2 = builder.groupinfo;
             if (list2 == null) {
                 this.groupinfo = DEFAULT_GROUPINFO;
             } else {
                 this.groupinfo = Message.immutableCopyOf(list2);
             }
-            List<String> list3 = builder.friendinfo;
+            List list3 = builder.friendinfo;
             if (list3 == null) {
                 this.friendinfo = DEFAULT_FRIENDINFO;
             } else {
@@ -210,7 +209,7 @@ public final class TAInfo extends Message {
             } else {
                 this.is_friend = num3;
             }
-            List<ReplyList> list4 = builder.reply_list;
+            List list4 = builder.reply_list;
             if (list4 == null) {
                 this.reply_list = DEFAULT_REPLY_LIST;
             } else {
@@ -243,5 +242,9 @@ public final class TAInfo extends Message {
         this.userClientVersionIsLower = builder.userClientVersionIsLower;
         this.location = builder.location;
         this.hide_user_feed = builder.hide_user_feed;
+    }
+
+    public /* synthetic */ TAInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

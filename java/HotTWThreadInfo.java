@@ -24,11 +24,17 @@ public final class HotTWThreadInfo extends Message {
     public final List<User> user_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<HotTWThreadInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer fans_count;
-        public List<User> user_list;
+        public List user_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class HotTWThreadInfo extends Message {
         public HotTWThreadInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HotTWThreadInfo(this, z, null) : (HotTWThreadInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new HotTWThreadInfo(this, z, null);
+            }
+            return (HotTWThreadInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class HotTWThreadInfo extends Message {
         }
         DEFAULT_USER_LIST = Collections.emptyList();
         DEFAULT_FANS_COUNT = 0;
-    }
-
-    public /* synthetic */ HotTWThreadInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -124,7 +123,7 @@ public final class HotTWThreadInfo extends Message {
             }
         }
         if (z) {
-            List<User> list = builder.user_list;
+            List list = builder.user_list;
             if (list == null) {
                 this.user_list = DEFAULT_USER_LIST;
             } else {
@@ -141,5 +140,9 @@ public final class HotTWThreadInfo extends Message {
         }
         this.user_list = Message.immutableCopyOf(builder.user_list);
         this.fans_count = builder.fans_count;
+    }
+
+    public /* synthetic */ HotTWThreadInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

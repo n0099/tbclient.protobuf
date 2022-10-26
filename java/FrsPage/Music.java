@@ -28,7 +28,13 @@ public final class Music extends Message {
     public final Integer sid;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Music> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer isopen;
@@ -82,14 +88,11 @@ public final class Music extends Message {
         public Music build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Music(this, z, null) : (Music) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Music(this, z, null);
+            }
+            return (Music) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class Music extends Message {
         DEFAULT_NUM = 0;
         DEFAULT_SID = 0;
         DEFAULT_ISOPEN = 0;
-    }
-
-    public /* synthetic */ Music(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -164,5 +163,9 @@ public final class Music extends Message {
         this.num = builder.num;
         this.sid = builder.sid;
         this.isopen = builder.isopen;
+    }
+
+    public /* synthetic */ Music(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

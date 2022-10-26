@@ -33,13 +33,19 @@ public final class ItemTable extends Message {
     public final Integer total_point_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ItemTable> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer comment_star;
         public Integer is_commented;
-        public List<ItemPlot> item_plot;
-        public List<ItemPoint> item_point;
+        public List item_plot;
+        public List item_point;
         public Integer total_point_num;
 
         public Builder() {
@@ -89,14 +95,11 @@ public final class ItemTable extends Message {
         public ItemTable build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ItemTable(this, z, null) : (ItemTable) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ItemTable(this, z, null);
+            }
+            return (ItemTable) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -117,10 +120,6 @@ public final class ItemTable extends Message {
         DEFAULT_TOTAL_POINT_NUM = 0;
         DEFAULT_ITEM_POINT = Collections.emptyList();
         DEFAULT_ITEM_PLOT = Collections.emptyList();
-    }
-
-    public /* synthetic */ ItemTable(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -160,13 +159,13 @@ public final class ItemTable extends Message {
             } else {
                 this.total_point_num = num3;
             }
-            List<ItemPoint> list = builder.item_point;
+            List list = builder.item_point;
             if (list == null) {
                 this.item_point = DEFAULT_ITEM_POINT;
             } else {
                 this.item_point = Message.immutableCopyOf(list);
             }
-            List<ItemPlot> list2 = builder.item_plot;
+            List list2 = builder.item_plot;
             if (list2 == null) {
                 this.item_plot = DEFAULT_ITEM_PLOT;
                 return;
@@ -180,5 +179,9 @@ public final class ItemTable extends Message {
         this.total_point_num = builder.total_point_num;
         this.item_point = Message.immutableCopyOf(builder.item_point);
         this.item_plot = Message.immutableCopyOf(builder.item_plot);
+    }
+
+    public /* synthetic */ ItemTable(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -34,7 +34,13 @@ public final class VipRank extends Message {
     public final Integer tendency;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<VipRank> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String card_id;
@@ -92,14 +98,11 @@ public final class VipRank extends Message {
         public VipRank build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new VipRank(this, z, null) : (VipRank) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new VipRank(this, z, null);
+            }
+            return (VipRank) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -117,10 +120,6 @@ public final class VipRank extends Message {
         }
         DEFAULT_MY_SCORE_RANK = 0;
         DEFAULT_TENDENCY = 0;
-    }
-
-    public /* synthetic */ VipRank(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -187,5 +186,9 @@ public final class VipRank extends Message {
         this.my_score_rank = builder.my_score_rank;
         this.tendency = builder.tendency;
         this.card_id = builder.card_id;
+    }
+
+    public /* synthetic */ VipRank(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

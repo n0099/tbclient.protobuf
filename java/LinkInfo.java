@@ -23,7 +23,13 @@ public final class LinkInfo extends Message {
     public final String type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LinkInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String desc;
@@ -75,18 +81,11 @@ public final class LinkInfo extends Message {
         public LinkInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LinkInfo(this, z, null) : (LinkInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LinkInfo(this, z, null);
+            }
+            return (LinkInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ LinkInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -132,5 +131,9 @@ public final class LinkInfo extends Message {
         this.desc = builder.desc;
         this.link = builder.link;
         this.type = builder.type;
+    }
+
+    public /* synthetic */ LinkInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

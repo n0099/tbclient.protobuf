@@ -46,7 +46,13 @@ public final class SportScheduleInfo extends Message {
     public final Long update_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SportScheduleInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String guest_team_icon;
@@ -112,14 +118,11 @@ public final class SportScheduleInfo extends Message {
         public SportScheduleInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SportScheduleInfo(this, z, null) : (SportScheduleInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SportScheduleInfo(this, z, null);
+            }
+            return (SportScheduleInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -137,10 +140,6 @@ public final class SportScheduleInfo extends Message {
         }
         DEFAULT_SPORT_TYPE = 0;
         DEFAULT_UPDATE_TIME = 0L;
-    }
-
-    public /* synthetic */ SportScheduleInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -235,5 +234,9 @@ public final class SportScheduleInfo extends Message {
         this.match_bottom_info = builder.match_bottom_info;
         this.msg_url = builder.msg_url;
         this.update_time = builder.update_time;
+    }
+
+    public /* synthetic */ SportScheduleInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

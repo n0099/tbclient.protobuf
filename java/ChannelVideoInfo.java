@@ -64,7 +64,13 @@ public final class ChannelVideoInfo extends Message {
     public final Integer video_width;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ChannelVideoInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer create_time;
@@ -142,14 +148,11 @@ public final class ChannelVideoInfo extends Message {
         public ChannelVideoInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ChannelVideoInfo(this, z, null) : (ChannelVideoInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ChannelVideoInfo(this, z, null);
+            }
+            return (ChannelVideoInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -177,10 +180,6 @@ public final class ChannelVideoInfo extends Message {
         DEFAULT_THUMBNAIL_HEIGHT = 0;
         DEFAULT_IS_TOP = 0;
         DEFAULT_CREATE_TIME = 0;
-    }
-
-    public /* synthetic */ ChannelVideoInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -317,5 +316,9 @@ public final class ChannelVideoInfo extends Message {
         this.thumbnail_height = builder.thumbnail_height;
         this.is_top = builder.is_top;
         this.create_time = builder.create_time;
+    }
+
+    public /* synthetic */ ChannelVideoInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -61,7 +61,13 @@ public final class ForumBookInfo extends Message {
     public final Long show_paragraph_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ForumBookInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String author;
@@ -137,14 +143,11 @@ public final class ForumBookInfo extends Message {
         public ForumBookInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ForumBookInfo(this, z, null) : (ForumBookInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ForumBookInfo(this, z, null);
+            }
+            return (ForumBookInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -167,10 +170,6 @@ public final class ForumBookInfo extends Message {
         DEFAULT_HISTORY_PERCENT = 0L;
         DEFAULT_SHOW_PAGE_ID = 0L;
         DEFAULT_SHOW_PARAGRAPH_ID = 0L;
-    }
-
-    public /* synthetic */ ForumBookInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -300,5 +299,9 @@ public final class ForumBookInfo extends Message {
         this.history_percent = builder.history_percent;
         this.show_page_id = builder.show_page_id;
         this.show_paragraph_id = builder.show_paragraph_id;
+    }
+
+    public /* synthetic */ ForumBookInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

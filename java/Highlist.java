@@ -24,11 +24,17 @@ public final class Highlist extends Message {
     public final List<High> list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Highlist> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Boolean has_more;
-        public List<High> list;
+        public List list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -74,14 +80,11 @@ public final class Highlist extends Message {
         public Highlist build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Highlist(this, z, null) : (Highlist) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Highlist(this, z, null);
+            }
+            return (Highlist) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class Highlist extends Message {
         }
         DEFAULT_LIST = Collections.emptyList();
         DEFAULT_HAS_MORE = Boolean.FALSE;
-    }
-
-    public /* synthetic */ Highlist(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -124,7 +123,7 @@ public final class Highlist extends Message {
             }
         }
         if (z) {
-            List<High> list = builder.list;
+            List list = builder.list;
             if (list == null) {
                 this.list = DEFAULT_LIST;
             } else {
@@ -141,5 +140,9 @@ public final class Highlist extends Message {
         }
         this.list = Message.immutableCopyOf(builder.list);
         this.has_more = builder.has_more;
+    }
+
+    public /* synthetic */ Highlist(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

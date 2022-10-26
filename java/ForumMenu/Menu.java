@@ -42,7 +42,13 @@ public final class Menu extends Message {
     public final List<SubMenu> sub_menu;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Menu> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer action_type;
@@ -52,7 +58,7 @@ public final class Menu extends Message {
         public Integer id;
         public Integer level;
         public String name;
-        public List<SubMenu> sub_menu;
+        public List sub_menu;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -104,14 +110,11 @@ public final class Menu extends Message {
         public Menu build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Menu(this, z, null) : (Menu) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Menu(this, z, null);
+            }
+            return (Menu) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -133,10 +136,6 @@ public final class Menu extends Message {
         DEFAULT_ACTION_TYPE = 0;
         DEFAULT_CREATE_TIME = 0;
         DEFAULT_SUB_MENU = Collections.emptyList();
-    }
-
-    public /* synthetic */ Menu(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -200,7 +199,7 @@ public final class Menu extends Message {
             } else {
                 this.content = str2;
             }
-            List<SubMenu> list = builder.sub_menu;
+            List list = builder.sub_menu;
             if (list == null) {
                 this.sub_menu = DEFAULT_SUB_MENU;
                 return;
@@ -217,5 +216,9 @@ public final class Menu extends Message {
         this.create_time = builder.create_time;
         this.content = builder.content;
         this.sub_menu = Message.immutableCopyOf(builder.sub_menu);
+    }
+
+    public /* synthetic */ Menu(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

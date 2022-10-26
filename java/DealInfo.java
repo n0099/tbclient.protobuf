@@ -60,14 +60,20 @@ public final class DealInfo extends Message {
     public final Long unit_price;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DealInfo> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<DealAuthInfo> auth_info;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List auth_info;
         public String des;
         public Integer expire_time;
         public Boolean has_recommend;
-        public List<DealMedia> media;
+        public List media;
         public Long product_id;
         public Long recommendations;
         public Long sales;
@@ -134,14 +140,11 @@ public final class DealInfo extends Message {
         public DealInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DealInfo(this, z, null) : (DealInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DealInfo(this, z, null);
+            }
+            return (DealInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -168,10 +171,6 @@ public final class DealInfo extends Message {
         DEFAULT_MEDIA = Collections.emptyList();
         DEFAULT_AUTH_INFO = Collections.emptyList();
         DEFAULT_SHIP_FEE = 0L;
-    }
-
-    public /* synthetic */ DealInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -259,13 +258,13 @@ public final class DealInfo extends Message {
             } else {
                 this.status = num2;
             }
-            List<DealMedia> list = builder.media;
+            List list = builder.media;
             if (list == null) {
                 this.media = DEFAULT_MEDIA;
             } else {
                 this.media = Message.immutableCopyOf(list);
             }
-            List<DealAuthInfo> list2 = builder.auth_info;
+            List list2 = builder.auth_info;
             if (list2 == null) {
                 this.auth_info = DEFAULT_AUTH_INFO;
             } else {
@@ -294,5 +293,9 @@ public final class DealInfo extends Message {
         this.media = Message.immutableCopyOf(builder.media);
         this.auth_info = Message.immutableCopyOf(builder.auth_info);
         this.ship_fee = builder.ship_fee;
+    }
+
+    public /* synthetic */ DealInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

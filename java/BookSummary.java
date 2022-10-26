@@ -33,10 +33,16 @@ public final class BookSummary extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BookSummary> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<BookInfo> book_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List book_list;
         public String cover;
         public Long num;
         public String title;
@@ -89,14 +95,11 @@ public final class BookSummary extends Message {
         public BookSummary build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BookSummary(this, z, null) : (BookSummary) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BookSummary(this, z, null);
+            }
+            return (BookSummary) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -114,10 +117,6 @@ public final class BookSummary extends Message {
         }
         DEFAULT_NUM = 0L;
         DEFAULT_BOOK_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ BookSummary(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -157,7 +156,7 @@ public final class BookSummary extends Message {
             } else {
                 this.url = str2;
             }
-            List<BookInfo> list = builder.book_list;
+            List list = builder.book_list;
             if (list == null) {
                 this.book_list = DEFAULT_BOOK_LIST;
             } else {
@@ -177,5 +176,9 @@ public final class BookSummary extends Message {
         this.url = builder.url;
         this.book_list = Message.immutableCopyOf(builder.book_list);
         this.cover = builder.cover;
+    }
+
+    public /* synthetic */ BookSummary(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

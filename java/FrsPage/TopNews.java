@@ -20,7 +20,13 @@ public final class TopNews extends Message {
     public final String summary;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TopNews> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String news_link;
@@ -70,18 +76,11 @@ public final class TopNews extends Message {
         public TopNews build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TopNews(this, z, null) : (TopNews) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TopNews(this, z, null);
+            }
+            return (TopNews) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ TopNews(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -120,5 +119,9 @@ public final class TopNews extends Message {
         }
         this.news_link = builder.news_link;
         this.summary = builder.summary;
+    }
+
+    public /* synthetic */ TopNews(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

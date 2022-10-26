@@ -28,7 +28,13 @@ public final class Manager extends Message {
     public final String show_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Manager> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long id;
@@ -82,14 +88,11 @@ public final class Manager extends Message {
         public Manager build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Manager(this, z, null) : (Manager) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Manager(this, z, null);
+            }
+            return (Manager) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -106,10 +109,6 @@ public final class Manager extends Message {
             }
         }
         DEFAULT_ID = 0L;
-    }
-
-    public /* synthetic */ Manager(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -162,5 +161,9 @@ public final class Manager extends Message {
         this.name = builder.name;
         this.show_name = builder.show_name;
         this.portrait = builder.portrait;
+    }
+
+    public /* synthetic */ Manager(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

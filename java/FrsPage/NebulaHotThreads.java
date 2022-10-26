@@ -24,10 +24,16 @@ public final class NebulaHotThreads extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<NebulaHotThreads> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<NebulaHotThread> threads;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List threads;
         public String url;
 
         public Builder() {
@@ -74,14 +80,11 @@ public final class NebulaHotThreads extends Message {
         public NebulaHotThreads build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new NebulaHotThreads(this, z, null) : (NebulaHotThreads) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new NebulaHotThreads(this, z, null);
+            }
+            return (NebulaHotThreads) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -98,10 +101,6 @@ public final class NebulaHotThreads extends Message {
             }
         }
         DEFAULT_THREADS = Collections.emptyList();
-    }
-
-    public /* synthetic */ NebulaHotThreads(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -129,7 +128,7 @@ public final class NebulaHotThreads extends Message {
             } else {
                 this.url = str;
             }
-            List<NebulaHotThread> list = builder.threads;
+            List list = builder.threads;
             if (list == null) {
                 this.threads = DEFAULT_THREADS;
                 return;
@@ -140,5 +139,9 @@ public final class NebulaHotThreads extends Message {
         }
         this.url = builder.url;
         this.threads = Message.immutableCopyOf(builder.threads);
+    }
+
+    public /* synthetic */ NebulaHotThreads(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

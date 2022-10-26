@@ -1,4 +1,4 @@
-package tbclient.GetRemindLiveRooms;
+package tbclient.HighPage;
 
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -8,22 +8,29 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import tbclient.Error;
 /* loaded from: classes9.dex */
-public final class GetRemindLiveRoomsResIdl extends Message {
-    public static /* synthetic */ Interceptable $ic;
+public final class ZanUser extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_PORTRAIT = "";
+    public static final String DEFAULT_USER_NAME = "";
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(tag = 2)
-    public final DataRes data;
-    @ProtoField(tag = 1)
-    public final Error error;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String portrait;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String user_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GetRemindLiveRoomsResIdl> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public DataRes data;
-        public Error error;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public String portrait;
+        public String user_name;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -40,13 +47,13 @@ public final class GetRemindLiveRoomsResIdl extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(GetRemindLiveRoomsResIdl getRemindLiveRoomsResIdl) {
-            super(getRemindLiveRoomsResIdl);
+        public Builder(ZanUser zanUser) {
+            super(zanUser);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {getRemindLiveRoomsResIdl};
+                Object[] objArr = {zanUser};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -57,34 +64,27 @@ public final class GetRemindLiveRoomsResIdl extends Message {
                     return;
                 }
             }
-            if (getRemindLiveRoomsResIdl == null) {
+            if (zanUser == null) {
                 return;
             }
-            this.error = getRemindLiveRoomsResIdl.error;
-            this.data = getRemindLiveRoomsResIdl.data;
+            this.user_name = zanUser.user_name;
+            this.portrait = zanUser.portrait;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public GetRemindLiveRoomsResIdl build(boolean z) {
+        public ZanUser build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GetRemindLiveRoomsResIdl(this, z, null) : (GetRemindLiveRoomsResIdl) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ZanUser(this, z, null);
+            }
+            return (ZanUser) invokeZ.objValue;
         }
     }
 
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ GetRemindLiveRoomsResIdl(Builder builder, boolean z, a aVar) {
-        this(builder, z);
-    }
-
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public GetRemindLiveRoomsResIdl(Builder builder, boolean z) {
+    public ZanUser(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -102,11 +102,26 @@ public final class GetRemindLiveRoomsResIdl extends Message {
             }
         }
         if (z) {
-            this.error = builder.error;
-            this.data = builder.data;
-            return;
+            String str = builder.user_name;
+            if (str == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str;
+            }
+            String str2 = builder.portrait;
+            if (str2 == null) {
+                this.portrait = "";
+                return;
+            } else {
+                this.portrait = str2;
+                return;
+            }
         }
-        this.error = builder.error;
-        this.data = builder.data;
+        this.user_name = builder.user_name;
+        this.portrait = builder.portrait;
+    }
+
+    public /* synthetic */ ZanUser(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

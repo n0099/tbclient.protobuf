@@ -46,7 +46,13 @@ public final class Banner extends Message {
     public final String value;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Banner> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer banner_type;
@@ -112,14 +118,11 @@ public final class Banner extends Message {
         public Banner build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Banner(this, z, null) : (Banner) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Banner(this, z, null);
+            }
+            return (Banner) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -138,10 +141,6 @@ public final class Banner extends Message {
         DEFAULT_BANNER_TYPE = 0;
         DEFAULT_TYPE = 0;
         DEFAULT_TEMPLATE_ID = 0;
-    }
-
-    public /* synthetic */ Banner(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -236,5 +235,9 @@ public final class Banner extends Message {
         this.tag_name = builder.tag_name;
         this.tag_name_url = builder.tag_name_url;
         this.tag_name_wh = builder.tag_name_wh;
+    }
+
+    public /* synthetic */ Banner(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

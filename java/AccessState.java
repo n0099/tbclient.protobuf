@@ -22,7 +22,13 @@ public final class AccessState extends Message {
     public final UserSessionInfo userinfo;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AccessState> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String token;
@@ -74,18 +80,11 @@ public final class AccessState extends Message {
         public AccessState build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AccessState(this, z, null) : (AccessState) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AccessState(this, z, null);
+            }
+            return (AccessState) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ AccessState(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -125,5 +124,9 @@ public final class AccessState extends Message {
         this.type = builder.type;
         this.token = builder.token;
         this.userinfo = builder.userinfo;
+    }
+
+    public /* synthetic */ AccessState(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

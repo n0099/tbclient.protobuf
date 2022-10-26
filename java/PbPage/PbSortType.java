@@ -22,7 +22,13 @@ public final class PbSortType extends Message {
     public final Integer sort_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PbSortType> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String sort_name;
@@ -72,14 +78,11 @@ public final class PbSortType extends Message {
         public PbSortType build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PbSortType(this, z, null) : (PbSortType) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PbSortType(this, z, null);
+            }
+            return (PbSortType) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +99,6 @@ public final class PbSortType extends Message {
             }
         }
         DEFAULT_SORT_TYPE = 0;
-    }
-
-    public /* synthetic */ PbSortType(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class PbSortType extends Message {
         }
         this.sort_type = builder.sort_type;
         this.sort_name = builder.sort_name;
+    }
+
+    public /* synthetic */ PbSortType(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

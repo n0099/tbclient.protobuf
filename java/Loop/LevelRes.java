@@ -16,7 +16,13 @@ public final class LevelRes extends Message {
     public final LevelPop pop;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LevelRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public LevelPop pop;
@@ -64,18 +70,11 @@ public final class LevelRes extends Message {
         public LevelRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LevelRes(this, z, null) : (LevelRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LevelRes(this, z, null);
+            }
+            return (LevelRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ LevelRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -101,5 +100,9 @@ public final class LevelRes extends Message {
         } else {
             this.pop = builder.pop;
         }
+    }
+
+    public /* synthetic */ LevelRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -31,13 +31,19 @@ public final class HotThread extends Message {
     public final List<ThreadInfo> thread_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<HotThread> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String hot_title;
         public Integer is_new_url;
         public Page page;
-        public List<ThreadInfo> thread_list;
+        public List thread_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -85,14 +91,11 @@ public final class HotThread extends Message {
         public HotThread build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new HotThread(this, z, null) : (HotThread) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new HotThread(this, z, null);
+            }
+            return (HotThread) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -110,10 +113,6 @@ public final class HotThread extends Message {
         }
         DEFAULT_THREAD_LIST = Collections.emptyList();
         DEFAULT_IS_NEW_URL = 0;
-    }
-
-    public /* synthetic */ HotThread(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -141,7 +140,7 @@ public final class HotThread extends Message {
             } else {
                 this.hot_title = str;
             }
-            List<ThreadInfo> list = builder.thread_list;
+            List list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {
@@ -161,5 +160,9 @@ public final class HotThread extends Message {
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
         this.page = builder.page;
         this.is_new_url = builder.is_new_url;
+    }
+
+    public /* synthetic */ HotThread(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

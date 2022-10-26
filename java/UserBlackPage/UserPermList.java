@@ -31,7 +31,13 @@ public final class UserPermList extends Message {
     public final String user_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<UserPermList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String name_show;
@@ -87,14 +93,11 @@ public final class UserPermList extends Message {
         public UserPermList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new UserPermList(this, z, null) : (UserPermList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new UserPermList(this, z, null);
+            }
+            return (UserPermList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -111,10 +114,6 @@ public final class UserPermList extends Message {
             }
         }
         DEFAULT_UID = 0L;
-    }
-
-    public /* synthetic */ UserPermList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -169,5 +168,9 @@ public final class UserPermList extends Message {
         this.user_name = builder.user_name;
         this.name_show = builder.name_show;
         this.portrait = builder.portrait;
+    }
+
+    public /* synthetic */ UserPermList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

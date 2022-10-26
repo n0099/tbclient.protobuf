@@ -72,7 +72,13 @@ public final class SimpleForum extends Message {
     public final ThemeColorInfo theme_color;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SimpleForum> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
@@ -92,7 +98,7 @@ public final class SimpleForum extends Message {
         public String name;
         public Integer post_num;
         public String second_class;
-        public List<FrsTabInfo> tab_info;
+        public List tab_info;
         public ThemeColorInfo theme_color;
 
         public Builder() {
@@ -156,14 +162,11 @@ public final class SimpleForum extends Message {
         public SimpleForum build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SimpleForum(this, z, null) : (SimpleForum) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SimpleForum(this, z, null);
+            }
+            return (SimpleForum) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -189,10 +192,6 @@ public final class SimpleForum extends Message {
         DEFAULT_IS_BRAND_FORUM = 0;
         DEFAULT_TAB_INFO = Collections.emptyList();
         DEFAULT_IS_FRS_MASK = 0;
-    }
-
-    public /* synthetic */ SimpleForum(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -293,7 +292,7 @@ public final class SimpleForum extends Message {
             } else {
                 this.is_brand_forum = num7;
             }
-            List<FrsTabInfo> list = builder.tab_info;
+            List list = builder.tab_info;
             if (list == null) {
                 this.tab_info = DEFAULT_TAB_INFO;
             } else {
@@ -334,5 +333,9 @@ public final class SimpleForum extends Message {
         this.deleted_reason_info = builder.deleted_reason_info;
         this.is_frs_mask = builder.is_frs_mask;
         this.theme_color = builder.theme_color;
+    }
+
+    public /* synthetic */ SimpleForum(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

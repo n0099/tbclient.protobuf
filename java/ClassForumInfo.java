@@ -30,13 +30,19 @@ public final class ClassForumInfo extends Message {
     public final List<RecommendForumInfo> forum_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ClassForumInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String class_icon;
         public Integer class_id;
         public String class_name;
-        public List<RecommendForumInfo> forum_info;
+        public List forum_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -84,14 +90,11 @@ public final class ClassForumInfo extends Message {
         public ClassForumInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ClassForumInfo(this, z, null) : (ClassForumInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ClassForumInfo(this, z, null);
+            }
+            return (ClassForumInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -109,10 +112,6 @@ public final class ClassForumInfo extends Message {
         }
         DEFAULT_FORUM_INFO = Collections.emptyList();
         DEFAULT_CLASS_ID = 0;
-    }
-
-    public /* synthetic */ ClassForumInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -134,7 +133,7 @@ public final class ClassForumInfo extends Message {
             }
         }
         if (z) {
-            List<RecommendForumInfo> list = builder.forum_info;
+            List list = builder.forum_info;
             if (list == null) {
                 this.forum_info = DEFAULT_FORUM_INFO;
             } else {
@@ -165,5 +164,9 @@ public final class ClassForumInfo extends Message {
         this.class_id = builder.class_id;
         this.class_name = builder.class_name;
         this.class_icon = builder.class_icon;
+    }
+
+    public /* synthetic */ ClassForumInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -25,11 +25,17 @@ public final class BannerFollowLive extends Message {
     public final List<AlaLiveInfo> ala_live_list;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BannerFollowLive> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer _switch;
-        public List<AlaLiveInfo> ala_live_list;
+        public List ala_live_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -75,14 +81,11 @@ public final class BannerFollowLive extends Message {
         public BannerFollowLive build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BannerFollowLive(this, z, null) : (BannerFollowLive) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BannerFollowLive(this, z, null);
+            }
+            return (BannerFollowLive) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -100,10 +103,6 @@ public final class BannerFollowLive extends Message {
         }
         DEFAULT_ALA_LIVE_LIST = Collections.emptyList();
         DEFAULT_SWITCH = 0;
-    }
-
-    public /* synthetic */ BannerFollowLive(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -125,7 +124,7 @@ public final class BannerFollowLive extends Message {
             }
         }
         if (z) {
-            List<AlaLiveInfo> list = builder.ala_live_list;
+            List list = builder.ala_live_list;
             if (list == null) {
                 this.ala_live_list = DEFAULT_ALA_LIVE_LIST;
             } else {
@@ -142,5 +141,9 @@ public final class BannerFollowLive extends Message {
         }
         this.ala_live_list = Message.immutableCopyOf(builder.ala_live_list);
         this._switch = builder._switch;
+    }
+
+    public /* synthetic */ BannerFollowLive(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

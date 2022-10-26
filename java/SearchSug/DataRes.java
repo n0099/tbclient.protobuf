@@ -41,15 +41,21 @@ public final class DataRes extends Message {
     public final SugRankingInfo ranking_card;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public RecommendForumInfo forum_card;
-        public List<ForumInfo> forum_list;
+        public List forum_list;
         public Integer forum_loc;
         public Item item_card;
-        public List<String> list;
-        public List<SugLiveInfo> live_card;
+        public List list;
+        public List live_card;
         public SugRankingInfo ranking_card;
 
         public Builder() {
@@ -101,14 +107,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -128,10 +131,6 @@ public final class DataRes extends Message {
         DEFAULT_LIST = Collections.emptyList();
         DEFAULT_FORUM_LIST = Collections.emptyList();
         DEFAULT_LIVE_CARD = Collections.emptyList();
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -159,13 +158,13 @@ public final class DataRes extends Message {
             } else {
                 this.forum_loc = num;
             }
-            List<String> list = builder.list;
+            List list = builder.list;
             if (list == null) {
                 this.list = DEFAULT_LIST;
             } else {
                 this.list = Message.immutableCopyOf(list);
             }
-            List<ForumInfo> list2 = builder.forum_list;
+            List list2 = builder.forum_list;
             if (list2 == null) {
                 this.forum_list = DEFAULT_FORUM_LIST;
             } else {
@@ -173,7 +172,7 @@ public final class DataRes extends Message {
             }
             this.forum_card = builder.forum_card;
             this.item_card = builder.item_card;
-            List<SugLiveInfo> list3 = builder.live_card;
+            List list3 = builder.live_card;
             if (list3 == null) {
                 this.live_card = DEFAULT_LIVE_CARD;
             } else {
@@ -189,5 +188,9 @@ public final class DataRes extends Message {
         this.item_card = builder.item_card;
         this.live_card = Message.immutableCopyOf(builder.live_card);
         this.ranking_card = builder.ranking_card;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

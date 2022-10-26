@@ -24,10 +24,16 @@ public final class ItemGameCode extends Message {
     public final Integer unclaimed_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ItemGameCode> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<GameCodeList> game_code_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List game_code_list;
         public Integer unclaimed_num;
 
         public Builder() {
@@ -74,14 +80,11 @@ public final class ItemGameCode extends Message {
         public ItemGameCode build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ItemGameCode(this, z, null) : (ItemGameCode) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ItemGameCode(this, z, null);
+            }
+            return (ItemGameCode) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class ItemGameCode extends Message {
         }
         DEFAULT_UNCLAIMED_NUM = 0;
         DEFAULT_GAME_CODE_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ ItemGameCode(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class ItemGameCode extends Message {
             } else {
                 this.unclaimed_num = num;
             }
-            List<GameCodeList> list = builder.game_code_list;
+            List list = builder.game_code_list;
             if (list == null) {
                 this.game_code_list = DEFAULT_GAME_CODE_LIST;
                 return;
@@ -141,5 +140,9 @@ public final class ItemGameCode extends Message {
         }
         this.unclaimed_num = builder.unclaimed_num;
         this.game_code_list = Message.immutableCopyOf(builder.game_code_list);
+    }
+
+    public /* synthetic */ ItemGameCode(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

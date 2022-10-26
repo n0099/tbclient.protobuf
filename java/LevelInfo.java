@@ -25,7 +25,13 @@ public final class LevelInfo extends Message {
     public final Integer score;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<LevelInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer id;
@@ -77,14 +83,11 @@ public final class LevelInfo extends Message {
         public LevelInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new LevelInfo(this, z, null) : (LevelInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new LevelInfo(this, z, null);
+            }
+            return (LevelInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -102,10 +105,6 @@ public final class LevelInfo extends Message {
         }
         DEFAULT_ID = 0;
         DEFAULT_SCORE = 0;
-    }
-
-    public /* synthetic */ LevelInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,5 +150,9 @@ public final class LevelInfo extends Message {
         this.id = builder.id;
         this.name = builder.name;
         this.score = builder.score;
+    }
+
+    public /* synthetic */ LevelInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

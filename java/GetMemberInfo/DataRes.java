@@ -38,7 +38,13 @@ public final class DataRes extends Message {
     public final PriManagerApplyInfo primanager_apply_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ForumMember forum_member_info;
@@ -46,7 +52,7 @@ public final class DataRes extends Message {
         public Integer is_private_forum;
         public ManagerApplyInfo manager_apply_info;
         public MemberGodInfo member_god_info;
-        public List<MemberGroupInfo> member_group_info;
+        public List member_group_info;
         public PriManagerApplyInfo primanager_apply_info;
 
         public Builder() {
@@ -98,14 +104,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -124,10 +127,6 @@ public final class DataRes extends Message {
         DEFAULT_MEMBER_GROUP_INFO = Collections.emptyList();
         DEFAULT_IS_PRIVATE_FORUM = 0;
         DEFAULT_IS_BAWUAPPLY_SHOW = 0;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -149,7 +148,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List<MemberGroupInfo> list = builder.member_group_info;
+            List list = builder.member_group_info;
             if (list == null) {
                 this.member_group_info = DEFAULT_MEMBER_GROUP_INFO;
             } else {
@@ -180,5 +179,9 @@ public final class DataRes extends Message {
         this.is_private_forum = builder.is_private_forum;
         this.is_bawuapply_show = builder.is_bawuapply_show;
         this.primanager_apply_info = builder.primanager_apply_info;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

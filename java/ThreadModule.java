@@ -30,13 +30,19 @@ public final class ThreadModule extends Message {
     public final List<ThreadInfo> thread_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ThreadModule> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long module_id;
         public String module_name;
         public Long show_num;
-        public List<ThreadInfo> thread_info;
+        public List thread_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -84,14 +90,11 @@ public final class ThreadModule extends Message {
         public ThreadModule build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ThreadModule(this, z, null) : (ThreadModule) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ThreadModule(this, z, null);
+            }
+            return (ThreadModule) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -110,10 +113,6 @@ public final class ThreadModule extends Message {
         DEFAULT_MODULE_ID = 0L;
         DEFAULT_THREAD_INFO = Collections.emptyList();
         DEFAULT_SHOW_NUM = 0L;
-    }
-
-    public /* synthetic */ ThreadModule(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -147,7 +146,7 @@ public final class ThreadModule extends Message {
             } else {
                 this.module_name = str;
             }
-            List<ThreadInfo> list = builder.thread_info;
+            List list = builder.thread_info;
             if (list == null) {
                 this.thread_info = DEFAULT_THREAD_INFO;
             } else {
@@ -166,5 +165,9 @@ public final class ThreadModule extends Message {
         this.module_name = builder.module_name;
         this.thread_info = Message.immutableCopyOf(builder.thread_info);
         this.show_num = builder.show_num;
+    }
+
+    public /* synthetic */ ThreadModule(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

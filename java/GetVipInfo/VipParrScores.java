@@ -46,7 +46,13 @@ public final class VipParrScores extends Message {
     public final Integer update_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<VipParrScores> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer i_money;
@@ -112,14 +118,11 @@ public final class VipParrScores extends Message {
         public VipParrScores build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new VipParrScores(this, z, null) : (VipParrScores) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new VipParrScores(this, z, null);
+            }
+            return (VipParrScores) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -145,10 +148,6 @@ public final class VipParrScores extends Message {
         DEFAULT_I_OTHER = 0;
         DEFAULT_LEVEL = 0;
         DEFAULT_LIMIT = 0;
-    }
-
-    public /* synthetic */ VipParrScores(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -243,5 +242,9 @@ public final class VipParrScores extends Message {
         this.i_other = builder.i_other;
         this.level = builder.level;
         this.limit = builder.limit;
+    }
+
+    public /* synthetic */ VipParrScores(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

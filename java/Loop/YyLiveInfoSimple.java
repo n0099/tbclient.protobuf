@@ -73,7 +73,13 @@ public final class YyLiveInfoSimple extends Message {
     public final YyExt yy_ext;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<YyLiveInfoSimple> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer author_type;
@@ -157,14 +163,11 @@ public final class YyLiveInfoSimple extends Message {
         public YyLiveInfoSimple build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new YyLiveInfoSimple(this, z, null) : (YyLiveInfoSimple) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new YyLiveInfoSimple(this, z, null);
+            }
+            return (YyLiveInfoSimple) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -190,10 +193,6 @@ public final class YyLiveInfoSimple extends Message {
         DEFAULT_REMIND_TYPE = 0;
         DEFAULT_SHOW_PAGE = 0;
         DEFAULT_AUTHOR_TYPE = 0;
-    }
-
-    public /* synthetic */ YyLiveInfoSimple(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -346,5 +345,9 @@ public final class YyLiveInfoSimple extends Message {
         this.remind_type = builder.remind_type;
         this.show_page = builder.show_page;
         this.author_type = builder.author_type;
+    }
+
+    public /* synthetic */ YyLiveInfoSimple(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

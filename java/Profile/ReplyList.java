@@ -28,7 +28,13 @@ public final class ReplyList extends Message {
     public final Long user_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ReplyList> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long friend_id;
@@ -82,14 +88,11 @@ public final class ReplyList extends Message {
         public ReplyList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ReplyList(this, z, null) : (ReplyList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ReplyList(this, z, null);
+            }
+            return (ReplyList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class ReplyList extends Message {
         DEFAULT_USER_ID = 0L;
         DEFAULT_FRIEND_ID = 0L;
         DEFAULT_TIME = 0;
-    }
-
-    public /* synthetic */ ReplyList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -164,5 +163,9 @@ public final class ReplyList extends Message {
         this.friend_id = builder.friend_id;
         this.message = builder.message;
         this.time = builder.time;
+    }
+
+    public /* synthetic */ ReplyList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -59,7 +59,13 @@ public final class VirtualImageInfo extends Message {
     public final String virtual_image_url;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<VirtualImageInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer allow_customize;
@@ -72,7 +78,7 @@ public final class VirtualImageInfo extends Message {
         public StateInfo personal_state;
         public Integer recent_incr_agree;
         public Integer snapshoot_id;
-        public List<StateInfo> state_list;
+        public List state_list;
         public String virtual_background;
         public Integer virtual_background_type;
         public String virtual_image_url;
@@ -133,14 +139,11 @@ public final class VirtualImageInfo extends Message {
         public VirtualImageInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new VirtualImageInfo(this, z, null) : (VirtualImageInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new VirtualImageInfo(this, z, null);
+            }
+            return (VirtualImageInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -166,10 +169,6 @@ public final class VirtualImageInfo extends Message {
         DEFAULT_ALLOW_CUSTOMIZE = 0;
         DEFAULT_IS_DISPLAY = 0;
         DEFAULT_IS_BACKGROUND_FIRSTLY = 0;
-    }
-
-    public /* synthetic */ VirtualImageInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -240,7 +239,7 @@ public final class VirtualImageInfo extends Message {
                 this.snapshoot_id = num6;
             }
             this.personal_state = builder.personal_state;
-            List<StateInfo> list = builder.state_list;
+            List list = builder.state_list;
             if (list == null) {
                 this.state_list = DEFAULT_STATE_LIST;
             } else {
@@ -287,5 +286,9 @@ public final class VirtualImageInfo extends Message {
         this.is_display = builder.is_display;
         this.is_background_firstly = builder.is_background_firstly;
         this.dynamic_virtual_image_url = builder.dynamic_virtual_image_url;
+    }
+
+    public /* synthetic */ VirtualImageInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

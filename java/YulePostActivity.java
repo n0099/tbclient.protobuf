@@ -34,7 +34,13 @@ public final class YulePostActivity extends Message {
     public final Long start_time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<YulePostActivity> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_banner;
@@ -92,14 +98,11 @@ public final class YulePostActivity extends Message {
         public YulePostActivity build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new YulePostActivity(this, z, null) : (YulePostActivity) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new YulePostActivity(this, z, null);
+            }
+            return (YulePostActivity) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -117,10 +120,6 @@ public final class YulePostActivity extends Message {
         }
         DEFAULT_START_TIME = 0L;
         DEFAULT_END_TIME = 0L;
-    }
-
-    public /* synthetic */ YulePostActivity(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -187,5 +186,9 @@ public final class YulePostActivity extends Message {
         this.activity_url = builder.activity_url;
         this.activity_desc = builder.activity_desc;
         this.activity_button = builder.activity_button;
+    }
+
+    public /* synthetic */ YulePostActivity(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

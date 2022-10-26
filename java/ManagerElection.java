@@ -48,7 +48,13 @@ public final class ManagerElection extends Message {
     public final Integer vote_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ManagerElection> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer begin_vote_time;
@@ -57,9 +63,9 @@ public final class ManagerElection extends Message {
         public Integer remainder_time;
         public Integer status;
         public String tail_text;
-        public List<String> vote_condition;
-        public List<String> vote_condition_pic;
-        public List<String> vote_condition_title;
+        public List vote_condition;
+        public List vote_condition_pic;
+        public List vote_condition_title;
         public Integer vote_num;
 
         public Builder() {
@@ -114,14 +120,11 @@ public final class ManagerElection extends Message {
         public ManagerElection build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ManagerElection(this, z, null) : (ManagerElection) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ManagerElection(this, z, null);
+            }
+            return (ManagerElection) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -146,10 +149,6 @@ public final class ManagerElection extends Message {
         DEFAULT_STATUS = 0;
         DEFAULT_VOTE_CONDITION_TITLE = Collections.emptyList();
         DEFAULT_VOTE_CONDITION_PIC = Collections.emptyList();
-    }
-
-    public /* synthetic */ ManagerElection(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -189,7 +188,7 @@ public final class ManagerElection extends Message {
             } else {
                 this.begin_vote_time = num3;
             }
-            List<String> list = builder.vote_condition;
+            List list = builder.vote_condition;
             if (list == null) {
                 this.vote_condition = DEFAULT_VOTE_CONDITION;
             } else {
@@ -219,13 +218,13 @@ public final class ManagerElection extends Message {
             } else {
                 this.status = num6;
             }
-            List<String> list2 = builder.vote_condition_title;
+            List list2 = builder.vote_condition_title;
             if (list2 == null) {
                 this.vote_condition_title = DEFAULT_VOTE_CONDITION_TITLE;
             } else {
                 this.vote_condition_title = Message.immutableCopyOf(list2);
             }
-            List<String> list3 = builder.vote_condition_pic;
+            List list3 = builder.vote_condition_pic;
             if (list3 == null) {
                 this.vote_condition_pic = DEFAULT_VOTE_CONDITION_PIC;
                 return;
@@ -244,5 +243,9 @@ public final class ManagerElection extends Message {
         this.status = builder.status;
         this.vote_condition_title = Message.immutableCopyOf(builder.vote_condition_title);
         this.vote_condition_pic = Message.immutableCopyOf(builder.vote_condition_pic);
+    }
+
+    public /* synthetic */ ManagerElection(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

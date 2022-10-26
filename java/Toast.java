@@ -24,10 +24,16 @@ public final class Toast extends Message {
     public final Integer icon_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Toast> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<ToastContent> content;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List content;
         public Integer icon_type;
 
         public Builder() {
@@ -74,14 +80,11 @@ public final class Toast extends Message {
         public Toast build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Toast(this, z, null) : (Toast) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Toast(this, z, null);
+            }
+            return (Toast) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class Toast extends Message {
         }
         DEFAULT_ICON_TYPE = 0;
         DEFAULT_CONTENT = Collections.emptyList();
-    }
-
-    public /* synthetic */ Toast(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class Toast extends Message {
             } else {
                 this.icon_type = num;
             }
-            List<ToastContent> list = builder.content;
+            List list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
                 return;
@@ -141,5 +140,9 @@ public final class Toast extends Message {
         }
         this.icon_type = builder.icon_type;
         this.content = Message.immutableCopyOf(builder.content);
+    }
+
+    public /* synthetic */ Toast(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

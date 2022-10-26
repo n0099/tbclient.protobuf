@@ -22,6 +22,7 @@ public final class ExcellentThreadInfo extends Message {
     public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
     public static final Integer DEFAULT_FRS_TYPE;
+    public static final String DEFAULT_LEGO_CARD = "";
     public static final Integer DEFAULT_PB_TYPE;
     public static final Long DEFAULT_POST_NUM;
     public static final Integer DEFAULT_PUBLISH_TIME;
@@ -47,6 +48,8 @@ public final class ExcellentThreadInfo extends Message {
     public final String forum_name;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer frs_type;
+    @ProtoField(tag = 20, type = Message.Datatype.STRING)
+    public final String lego_card;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer pb_type;
     @ProtoField(tag = 11, type = Message.Datatype.UINT64)
@@ -75,7 +78,13 @@ public final class ExcellentThreadInfo extends Message {
     public final Long zansum;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ExcellentThreadInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
@@ -84,6 +93,7 @@ public final class ExcellentThreadInfo extends Message {
         public Long forum_id;
         public String forum_name;
         public Integer frs_type;
+        public String lego_card;
         public Integer pb_type;
         public Long post_num;
         public Integer publish_time;
@@ -93,7 +103,7 @@ public final class ExcellentThreadInfo extends Message {
         public String tag_name;
         public Long thread_id;
         public Integer thread_type;
-        public List<String> thumbnail;
+        public List thumbnail;
         public String title;
         public ZhiBoInfoTW twzhibo_info;
         public Long zansum;
@@ -152,6 +162,7 @@ public final class ExcellentThreadInfo extends Message {
             this.source = excellentThreadInfo.source;
             this.rank = excellentThreadInfo.rank;
             this.publish_time = excellentThreadInfo.publish_time;
+            this.lego_card = excellentThreadInfo.lego_card;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -159,14 +170,11 @@ public final class ExcellentThreadInfo extends Message {
         public ExcellentThreadInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ExcellentThreadInfo(this, z, null) : (ExcellentThreadInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ExcellentThreadInfo(this, z, null);
+            }
+            return (ExcellentThreadInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -195,10 +203,6 @@ public final class ExcellentThreadInfo extends Message {
         DEFAULT_SOURCE = 0;
         DEFAULT_RANK = 0L;
         DEFAULT_PUBLISH_TIME = 0;
-    }
-
-    public /* synthetic */ ExcellentThreadInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -256,7 +260,7 @@ public final class ExcellentThreadInfo extends Message {
             } else {
                 this._abstract = str2;
             }
-            List<String> list = builder.thumbnail;
+            List list = builder.thumbnail;
             if (list == null) {
                 this.thumbnail = DEFAULT_THUMBNAIL;
             } else {
@@ -326,9 +330,15 @@ public final class ExcellentThreadInfo extends Message {
             Integer num5 = builder.publish_time;
             if (num5 == null) {
                 this.publish_time = DEFAULT_PUBLISH_TIME;
-                return;
             } else {
                 this.publish_time = num5;
+            }
+            String str6 = builder.lego_card;
+            if (str6 == null) {
+                this.lego_card = "";
+                return;
+            } else {
+                this.lego_card = str6;
                 return;
             }
         }
@@ -351,5 +361,10 @@ public final class ExcellentThreadInfo extends Message {
         this.source = builder.source;
         this.rank = builder.rank;
         this.publish_time = builder.publish_time;
+        this.lego_card = builder.lego_card;
+    }
+
+    public /* synthetic */ ExcellentThreadInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -27,11 +27,17 @@ public final class DataRes extends Message {
     public final ThemeRecommand recommend;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer has_more;
-        public List<ThemePendantInMain> pendant;
+        public List pendant;
         public ThemeRecommand recommend;
 
         public Builder() {
@@ -79,14 +85,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +107,6 @@ public final class DataRes extends Message {
         }
         DEFAULT_PENDANT = Collections.emptyList();
         DEFAULT_HAS_MORE = 0;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,7 +129,7 @@ public final class DataRes extends Message {
         }
         if (z) {
             this.recommend = builder.recommend;
-            List<ThemePendantInMain> list = builder.pendant;
+            List list = builder.pendant;
             if (list == null) {
                 this.pendant = DEFAULT_PENDANT;
             } else {
@@ -148,5 +147,9 @@ public final class DataRes extends Message {
         this.recommend = builder.recommend;
         this.pendant = Message.immutableCopyOf(builder.pendant);
         this.has_more = builder.has_more;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

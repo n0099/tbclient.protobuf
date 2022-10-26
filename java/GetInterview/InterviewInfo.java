@@ -37,11 +37,17 @@ public final class InterviewInfo extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<InterviewInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public User author;
-        public List<PbContent> content;
+        public List content;
         public Long create_time;
         public Long main_pid;
         public Long post_id;
@@ -95,14 +101,11 @@ public final class InterviewInfo extends Message {
         public InterviewInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new InterviewInfo(this, z, null) : (InterviewInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new InterviewInfo(this, z, null);
+            }
+            return (InterviewInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -123,10 +126,6 @@ public final class InterviewInfo extends Message {
         DEFAULT_CREATE_TIME = 0L;
         DEFAULT_TYPE = 0;
         DEFAULT_MAIN_PID = 0L;
-    }
-
-    public /* synthetic */ InterviewInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -154,7 +153,7 @@ public final class InterviewInfo extends Message {
             } else {
                 this.post_id = l;
             }
-            List<PbContent> list = builder.content;
+            List list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {
@@ -188,5 +187,9 @@ public final class InterviewInfo extends Message {
         this.author = builder.author;
         this.type = builder.type;
         this.main_pid = builder.main_pid;
+    }
+
+    public /* synthetic */ InterviewInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

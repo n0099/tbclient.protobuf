@@ -13,6 +13,7 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class YyExt extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_FEED_ID = "";
     public static final String DEFAULT_ICON_URL = "";
     public static final Integer DEFAULT_IS_YY_GAME;
     public static final String DEFAULT_RANK_SHOW = "";
@@ -22,6 +23,8 @@ public final class YyExt extends Message {
     public static final String DEFAULT_TEMPLATE_ID = "";
     public static final String DEFAULT_YY_UID = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String feed_id;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String icon_url;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -40,9 +43,16 @@ public final class YyExt extends Message {
     public final String yy_uid;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<YyExt> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public String feed_id;
         public String icon_url;
         public Integer is_yy_game;
         public String rank_show;
@@ -95,6 +105,7 @@ public final class YyExt extends Message {
             this.stream_info = yyExt.stream_info;
             this.rank_show = yyExt.rank_show;
             this.icon_url = yyExt.icon_url;
+            this.feed_id = yyExt.feed_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -102,14 +113,11 @@ public final class YyExt extends Message {
         public YyExt build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new YyExt(this, z, null) : (YyExt) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new YyExt(this, z, null);
+            }
+            return (YyExt) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -126,10 +134,6 @@ public final class YyExt extends Message {
             }
         }
         DEFAULT_IS_YY_GAME = 0;
-    }
-
-    public /* synthetic */ YyExt(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -196,9 +200,15 @@ public final class YyExt extends Message {
             String str7 = builder.icon_url;
             if (str7 == null) {
                 this.icon_url = "";
-                return;
             } else {
                 this.icon_url = str7;
+            }
+            String str8 = builder.feed_id;
+            if (str8 == null) {
+                this.feed_id = "";
+                return;
+            } else {
+                this.feed_id = str8;
                 return;
             }
         }
@@ -210,5 +220,10 @@ public final class YyExt extends Message {
         this.stream_info = builder.stream_info;
         this.rank_show = builder.rank_show;
         this.icon_url = builder.icon_url;
+        this.feed_id = builder.feed_id;
+    }
+
+    public /* synthetic */ YyExt(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -49,7 +49,13 @@ public final class SignUser extends Message {
     public final Integer user_sign_rank;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<SignUser> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer c_sign_num;
@@ -117,14 +123,11 @@ public final class SignUser extends Message {
         public SignUser build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new SignUser(this, z, null) : (SignUser) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new SignUser(this, z, null);
+            }
+            return (SignUser) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -151,10 +154,6 @@ public final class SignUser extends Message {
         DEFAULT_HUN_SIGN_NUM = 0;
         DEFAULT_TOTAL_RESIGN_NUM = 0;
         DEFAULT_MISS_SIGN_NUM = 0;
-    }
-
-    public /* synthetic */ SignUser(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -256,5 +255,9 @@ public final class SignUser extends Message {
         this.hun_sign_num = builder.hun_sign_num;
         this.total_resign_num = builder.total_resign_num;
         this.miss_sign_num = builder.miss_sign_num;
+    }
+
+    public /* synthetic */ SignUser(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

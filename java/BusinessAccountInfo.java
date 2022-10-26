@@ -28,7 +28,13 @@ public final class BusinessAccountInfo extends Message {
     public final Integer is_forum_business_account;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BusinessAccountInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String business_name;
@@ -82,14 +88,11 @@ public final class BusinessAccountInfo extends Message {
         public BusinessAccountInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BusinessAccountInfo(this, z, null) : (BusinessAccountInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BusinessAccountInfo(this, z, null);
+            }
+            return (BusinessAccountInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -107,10 +110,6 @@ public final class BusinessAccountInfo extends Message {
         }
         DEFAULT_IS_BUSINESS_ACCOUNT = 0;
         DEFAULT_IS_FORUM_BUSINESS_ACCOUNT = 0;
-    }
-
-    public /* synthetic */ BusinessAccountInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,5 +162,9 @@ public final class BusinessAccountInfo extends Message {
         this.is_forum_business_account = builder.is_forum_business_account;
         this.business_name = builder.business_name;
         this.identifi_explain = builder.identifi_explain;
+    }
+
+    public /* synthetic */ BusinessAccountInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

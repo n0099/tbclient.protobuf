@@ -43,7 +43,13 @@ public final class GoodThread extends Message {
     public final Long zan_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GoodThread> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
@@ -107,14 +113,11 @@ public final class GoodThread extends Message {
         public GoodThread build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GoodThread(this, z, null) : (GoodThread) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GoodThread(this, z, null);
+            }
+            return (GoodThread) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -135,10 +138,6 @@ public final class GoodThread extends Message {
         DEFAULT_ZAN_NUM = 0L;
         DEFAULT_FID = 0L;
         DEFAULT_POST_ID = 0L;
-    }
-
-    public /* synthetic */ GoodThread(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -226,5 +225,9 @@ public final class GoodThread extends Message {
         this.fid = builder.fid;
         this.post_id = builder.post_id;
         this.head_pic = builder.head_pic;
+    }
+
+    public /* synthetic */ GoodThread(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -17,7 +17,13 @@ public final class WorkCreatorInfo extends Message {
     public final String auth_desc;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<WorkCreatorInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String auth_desc;
@@ -65,18 +71,11 @@ public final class WorkCreatorInfo extends Message {
         public WorkCreatorInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new WorkCreatorInfo(this, z, null) : (WorkCreatorInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new WorkCreatorInfo(this, z, null);
+            }
+            return (WorkCreatorInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ WorkCreatorInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -108,5 +107,9 @@ public final class WorkCreatorInfo extends Message {
             }
         }
         this.auth_desc = builder.auth_desc;
+    }
+
+    public /* synthetic */ WorkCreatorInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -31,7 +31,13 @@ public final class MyGroupInfo extends Message {
     public final String portrait;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<MyGroupInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long group_id;
@@ -87,14 +93,11 @@ public final class MyGroupInfo extends Message {
         public MyGroupInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new MyGroupInfo(this, z, null) : (MyGroupInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new MyGroupInfo(this, z, null);
+            }
+            return (MyGroupInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -113,10 +116,6 @@ public final class MyGroupInfo extends Message {
         DEFAULT_GROUP_ID = 0L;
         DEFAULT_MEMBER_NUM = 0;
         DEFAULT_MAX_MEMBER_NUM = 0;
-    }
-
-    public /* synthetic */ MyGroupInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -176,5 +175,9 @@ public final class MyGroupInfo extends Message {
         this.portrait = builder.portrait;
         this.member_num = builder.member_num;
         this.max_member_num = builder.max_member_num;
+    }
+
+    public /* synthetic */ MyGroupInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

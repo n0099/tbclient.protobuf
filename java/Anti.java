@@ -107,14 +107,20 @@ public final class Anti extends Message {
     public final String voice_message;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Anti> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public BlockPopInfo block_pop_info;
         public Integer block_stat;
         public Integer can_goods;
         public Integer days_tofree;
-        public List<DelThreadText> del_thread_text;
+        public List del_thread_text;
         public Integer forbid_flag;
         public String forbid_info;
         public Integer has_chance;
@@ -213,14 +219,11 @@ public final class Anti extends Message {
         public Anti build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Anti(this, z, null) : (Anti) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Anti(this, z, null);
+            }
+            return (Anti) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -254,10 +257,6 @@ public final class Anti extends Message {
         DEFAULT_CAN_GOODS = 0;
         DEFAULT_IS_SEXYFORUM = Boolean.FALSE;
         DEFAULT_USER_CHAT_BLOCK = 0;
-    }
-
-    public /* synthetic */ Anti(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -412,7 +411,7 @@ public final class Anti extends Message {
             } else {
                 this.reply_private_flag = num12;
             }
-            List<DelThreadText> list = builder.del_thread_text;
+            List list = builder.del_thread_text;
             if (list == null) {
                 this.del_thread_text = DEFAULT_DEL_THREAD_TEXT;
             } else {
@@ -487,5 +486,9 @@ public final class Anti extends Message {
         this.is_sexyforum = builder.is_sexyforum;
         this.teenmode_interval = builder.teenmode_interval;
         this.user_chat_block = builder.user_chat_block;
+    }
+
+    public /* synthetic */ Anti(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

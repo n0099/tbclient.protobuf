@@ -28,11 +28,17 @@ public final class GameForumSubTab extends Message {
     public final String sub_tab_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GameForumSubTab> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer id;
-        public List<ForumSubLabel> sub_label_list;
+        public List sub_label_list;
         public String sub_tab_name;
 
         public Builder() {
@@ -80,14 +86,11 @@ public final class GameForumSubTab extends Message {
         public GameForumSubTab build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GameForumSubTab(this, z, null) : (GameForumSubTab) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GameForumSubTab(this, z, null);
+            }
+            return (GameForumSubTab) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -105,10 +108,6 @@ public final class GameForumSubTab extends Message {
         }
         DEFAULT_ID = 0;
         DEFAULT_SUB_LABEL_LIST = Collections.emptyList();
-    }
-
-    public /* synthetic */ GameForumSubTab(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -142,7 +141,7 @@ public final class GameForumSubTab extends Message {
             } else {
                 this.sub_tab_name = str;
             }
-            List<ForumSubLabel> list = builder.sub_label_list;
+            List list = builder.sub_label_list;
             if (list == null) {
                 this.sub_label_list = DEFAULT_SUB_LABEL_LIST;
                 return;
@@ -154,5 +153,9 @@ public final class GameForumSubTab extends Message {
         this.id = builder.id;
         this.sub_tab_name = builder.sub_tab_name;
         this.sub_label_list = Message.immutableCopyOf(builder.sub_label_list);
+    }
+
+    public /* synthetic */ GameForumSubTab(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

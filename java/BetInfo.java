@@ -25,7 +25,13 @@ public final class BetInfo extends Message {
     public final Long score;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BetInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String bet;
@@ -77,14 +83,11 @@ public final class BetInfo extends Message {
         public BetInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BetInfo(this, z, null) : (BetInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BetInfo(this, z, null);
+            }
+            return (BetInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -102,10 +105,6 @@ public final class BetInfo extends Message {
         }
         DEFAULT_SCORE = 0L;
         DEFAULT_NO = 0;
-    }
-
-    public /* synthetic */ BetInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -151,5 +150,9 @@ public final class BetInfo extends Message {
         this.bet = builder.bet;
         this.score = builder.score;
         this.no = builder.no;
+    }
+
+    public /* synthetic */ BetInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

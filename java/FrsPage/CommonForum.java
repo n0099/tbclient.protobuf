@@ -17,7 +17,13 @@ public final class CommonForum extends Message {
     public final String common_forum;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CommonForum> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String common_forum;
@@ -65,18 +71,11 @@ public final class CommonForum extends Message {
         public CommonForum build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CommonForum(this, z, null) : (CommonForum) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CommonForum(this, z, null);
+            }
+            return (CommonForum) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ CommonForum(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -108,5 +107,9 @@ public final class CommonForum extends Message {
             }
         }
         this.common_forum = builder.common_forum;
+    }
+
+    public /* synthetic */ CommonForum(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

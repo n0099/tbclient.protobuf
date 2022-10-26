@@ -34,11 +34,17 @@ public final class PostData extends Message {
     public final Long time;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PostData> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public User author;
-        public List<PbContent> content;
+        public List content;
         public Long id;
         public String post_title;
         public Long time;
@@ -90,14 +96,11 @@ public final class PostData extends Message {
         public PostData build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PostData(this, z, null) : (PostData) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PostData(this, z, null);
+            }
+            return (PostData) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -116,10 +119,6 @@ public final class PostData extends Message {
         DEFAULT_ID = 0L;
         DEFAULT_CONTENT = Collections.emptyList();
         DEFAULT_TIME = 0L;
-    }
-
-    public /* synthetic */ PostData(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -147,7 +146,7 @@ public final class PostData extends Message {
             } else {
                 this.id = l;
             }
-            List<PbContent> list = builder.content;
+            List list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {
@@ -174,5 +173,9 @@ public final class PostData extends Message {
         this.post_title = builder.post_title;
         this.author = builder.author;
         this.time = builder.time;
+    }
+
+    public /* synthetic */ PostData(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

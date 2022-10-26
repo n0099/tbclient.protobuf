@@ -28,10 +28,16 @@ public final class RecommForum extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<RecommForum> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<RecommendForumInfo> forums;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List forums;
         public Integer page_size;
         public String title;
 
@@ -80,14 +86,11 @@ public final class RecommForum extends Message {
         public RecommForum build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new RecommForum(this, z, null) : (RecommForum) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new RecommForum(this, z, null);
+            }
+            return (RecommForum) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -105,10 +108,6 @@ public final class RecommForum extends Message {
         }
         DEFAULT_FORUMS = Collections.emptyList();
         DEFAULT_PAGE_SIZE = 0;
-    }
-
-    public /* synthetic */ RecommForum(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -136,7 +135,7 @@ public final class RecommForum extends Message {
             } else {
                 this.title = str;
             }
-            List<RecommendForumInfo> list = builder.forums;
+            List list = builder.forums;
             if (list == null) {
                 this.forums = DEFAULT_FORUMS;
             } else {
@@ -154,5 +153,9 @@ public final class RecommForum extends Message {
         this.title = builder.title;
         this.forums = Message.immutableCopyOf(builder.forums);
         this.page_size = builder.page_size;
+    }
+
+    public /* synthetic */ RecommForum(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

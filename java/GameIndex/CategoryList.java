@@ -28,10 +28,16 @@ public final class CategoryList extends Message {
     public final String category_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CategoryList> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<GameInfo> category_game_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List category_game_list;
         public Integer category_id;
         public String category_name;
 
@@ -80,14 +86,11 @@ public final class CategoryList extends Message {
         public CategoryList build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CategoryList(this, z, null) : (CategoryList) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CategoryList(this, z, null);
+            }
+            return (CategoryList) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -105,10 +108,6 @@ public final class CategoryList extends Message {
         }
         DEFAULT_CATEGORY_GAME_LIST = Collections.emptyList();
         DEFAULT_CATEGORY_ID = 0;
-    }
-
-    public /* synthetic */ CategoryList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -136,7 +135,7 @@ public final class CategoryList extends Message {
             } else {
                 this.category_name = str;
             }
-            List<GameInfo> list = builder.category_game_list;
+            List list = builder.category_game_list;
             if (list == null) {
                 this.category_game_list = DEFAULT_CATEGORY_GAME_LIST;
             } else {
@@ -154,5 +153,9 @@ public final class CategoryList extends Message {
         this.category_name = builder.category_name;
         this.category_game_list = Message.immutableCopyOf(builder.category_game_list);
         this.category_id = builder.category_id;
+    }
+
+    public /* synthetic */ CategoryList(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

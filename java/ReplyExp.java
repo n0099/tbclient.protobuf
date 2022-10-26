@@ -38,7 +38,13 @@ public final class ReplyExp extends Message {
     public final String question_msg;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ReplyExp> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String color_msg;
@@ -100,18 +106,11 @@ public final class ReplyExp extends Message {
         public ReplyExp build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ReplyExp(this, z, null) : (ReplyExp) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ReplyExp(this, z, null);
+            }
+            return (ReplyExp) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ ReplyExp(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -192,5 +191,9 @@ public final class ReplyExp extends Message {
         this.inc = builder.inc;
         this.question_msg = builder.question_msg;
         this.question_exp = builder.question_exp;
+    }
+
+    public /* synthetic */ ReplyExp(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

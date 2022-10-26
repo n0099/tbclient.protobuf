@@ -30,6 +30,7 @@ import tbclient.SmartApp;
 import tbclient.TbBookrack;
 import tbclient.ThreadInfo;
 import tbclient.UcCard;
+import tbclient.UcCardInfo;
 import tbclient.User;
 import tbclient.UserManChannelInfo;
 import tbclient.UserMap;
@@ -38,12 +39,14 @@ public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final List<AlaLiveInfo> DEFAULT_ALA_LIVE_RECORD;
     public static final List<BannerImage> DEFAULT_BANNER;
+    public static final List<UcCardInfo> DEFAULT_COMMON_CARD;
     public static final List<ForumDynamic> DEFAULT_CONCERNED_FORUM_LIST;
     public static final List<DynamicInfo> DEFAULT_DYNAMIC_LIST;
     public static final Integer DEFAULT_IS_BLACK_WHITE;
     public static final List<ThreadInfo> DEFAULT_NEWEST_DYNAMIC_LIST;
     public static final List<PostInfoList> DEFAULT_POST_LIST;
     public static final List<SmartApp> DEFAULT_RECOM_SWAN_LIST;
+    public static final Integer DEFAULT_SHOW_ANSWER;
     public static final String DEFAULT_UK = "";
     public static final List<UserMap> DEFAULT_URL_MAP;
     public static final Integer DEFAULT_WORK_TAB_ID;
@@ -60,6 +63,8 @@ public final class DataRes extends Message {
     public final MemberBlockInfo block_info;
     @ProtoField(tag = 38)
     public final BubbleInfo bubble_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 40)
+    public final List<UcCardInfo> common_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<ForumDynamic> concerned_forum_list;
     @ProtoField(tag = 24)
@@ -90,6 +95,8 @@ public final class DataRes extends Message {
     public final List<PostInfoList> post_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<SmartApp> recom_swan_list;
+    @ProtoField(tag = 21, type = Message.Datatype.INT32)
+    public final Integer show_answer;
     @ProtoField(tag = 3)
     public final TAInfo tainfo;
     @ProtoField(tag = 9)
@@ -116,19 +123,26 @@ public final class DataRes extends Message {
     public final Integer work_tab_id;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public AlaLiveInfo ala_live_info;
-        public List<AlaLiveInfo> ala_live_record;
+        public List ala_live_record;
         public Anti anti_stat;
-        public List<BannerImage> banner;
+        public List banner;
         public MemberBlockInfo block_info;
         public BubbleInfo bubble_info;
-        public List<ForumDynamic> concerned_forum_list;
+        public List common_card;
+        public List concerned_forum_list;
         public Duxiaoman duxiaoman;
         public DuxiaomanEntry duxiaoman_entry;
-        public List<DynamicInfo> dynamic_list;
+        public List dynamic_list;
         public Feedback feedback;
         public FinanceTab finance_tab;
         public GoodsWin goods_win;
@@ -136,15 +150,16 @@ public final class DataRes extends Message {
         public Integer is_black_white;
         public ModuleInfo module_info;
         public HotUserRankEntry new_god_rankinfo;
-        public List<ThreadInfo> newest_dynamic_list;
+        public List newest_dynamic_list;
         public NicknameInfo nickname_info;
-        public List<PostInfoList> post_list;
-        public List<SmartApp> recom_swan_list;
+        public List post_list;
+        public List recom_swan_list;
+        public Integer show_answer;
         public TAInfo tainfo;
         public TbBookrack tbbookrack;
         public UcCard uc_card;
         public String uk;
-        public List<UserMap> url_map;
+        public List url_map;
         public User user;
         public UserAgreeInfo user_agree_info;
         public UserGodInfo user_god_info;
@@ -207,6 +222,7 @@ public final class DataRes extends Message {
             this.nickname_info = dataRes.nickname_info;
             this.ala_live_record = Message.copyOf(dataRes.ala_live_record);
             this.url_map = Message.copyOf(dataRes.url_map);
+            this.show_answer = dataRes.show_answer;
             this.banner = Message.copyOf(dataRes.banner);
             this.recom_swan_list = Message.copyOf(dataRes.recom_swan_list);
             this.duxiaoman = dataRes.duxiaoman;
@@ -221,6 +237,7 @@ public final class DataRes extends Message {
             this.duxiaoman_entry = dataRes.duxiaoman_entry;
             this.bubble_info = dataRes.bubble_info;
             this.vip_banner = dataRes.vip_banner;
+            this.common_card = Message.copyOf(dataRes.common_card);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -228,14 +245,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -256,15 +270,13 @@ public final class DataRes extends Message {
         DEFAULT_CONCERNED_FORUM_LIST = Collections.emptyList();
         DEFAULT_ALA_LIVE_RECORD = Collections.emptyList();
         DEFAULT_URL_MAP = Collections.emptyList();
+        DEFAULT_SHOW_ANSWER = 0;
         DEFAULT_BANNER = Collections.emptyList();
         DEFAULT_RECOM_SWAN_LIST = Collections.emptyList();
         DEFAULT_NEWEST_DYNAMIC_LIST = Collections.emptyList();
         DEFAULT_IS_BLACK_WHITE = 0;
         DEFAULT_WORK_TAB_ID = 0;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        DEFAULT_COMMON_CARD = Collections.emptyList();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -289,7 +301,7 @@ public final class DataRes extends Message {
             this.user = builder.user;
             this.anti_stat = builder.anti_stat;
             this.tainfo = builder.tainfo;
-            List<PostInfoList> list = builder.post_list;
+            List list = builder.post_list;
             if (list == null) {
                 this.post_list = DEFAULT_POST_LIST;
             } else {
@@ -302,13 +314,13 @@ public final class DataRes extends Message {
             this.tbbookrack = builder.tbbookrack;
             this.feedback = builder.feedback;
             this.video_channel_info = builder.video_channel_info;
-            List<DynamicInfo> list2 = builder.dynamic_list;
+            List list2 = builder.dynamic_list;
             if (list2 == null) {
                 this.dynamic_list = DEFAULT_DYNAMIC_LIST;
             } else {
                 this.dynamic_list = Message.immutableCopyOf(list2);
             }
-            List<ForumDynamic> list3 = builder.concerned_forum_list;
+            List list3 = builder.concerned_forum_list;
             if (list3 == null) {
                 this.concerned_forum_list = DEFAULT_CONCERNED_FORUM_LIST;
             } else {
@@ -318,32 +330,38 @@ public final class DataRes extends Message {
             this.module_info = builder.module_info;
             this.ala_live_info = builder.ala_live_info;
             this.nickname_info = builder.nickname_info;
-            List<AlaLiveInfo> list4 = builder.ala_live_record;
+            List list4 = builder.ala_live_record;
             if (list4 == null) {
                 this.ala_live_record = DEFAULT_ALA_LIVE_RECORD;
             } else {
                 this.ala_live_record = Message.immutableCopyOf(list4);
             }
-            List<UserMap> list5 = builder.url_map;
+            List list5 = builder.url_map;
             if (list5 == null) {
                 this.url_map = DEFAULT_URL_MAP;
             } else {
                 this.url_map = Message.immutableCopyOf(list5);
             }
-            List<BannerImage> list6 = builder.banner;
+            Integer num = builder.show_answer;
+            if (num == null) {
+                this.show_answer = DEFAULT_SHOW_ANSWER;
+            } else {
+                this.show_answer = num;
+            }
+            List list6 = builder.banner;
             if (list6 == null) {
                 this.banner = DEFAULT_BANNER;
             } else {
                 this.banner = Message.immutableCopyOf(list6);
             }
-            List<SmartApp> list7 = builder.recom_swan_list;
+            List list7 = builder.recom_swan_list;
             if (list7 == null) {
                 this.recom_swan_list = DEFAULT_RECOM_SWAN_LIST;
             } else {
                 this.recom_swan_list = Message.immutableCopyOf(list7);
             }
             this.duxiaoman = builder.duxiaoman;
-            List<ThreadInfo> list8 = builder.newest_dynamic_list;
+            List list8 = builder.newest_dynamic_list;
             if (list8 == null) {
                 this.newest_dynamic_list = DEFAULT_NEWEST_DYNAMIC_LIST;
             } else {
@@ -357,24 +375,31 @@ public final class DataRes extends Message {
             } else {
                 this.uk = str;
             }
-            Integer num = builder.is_black_white;
-            if (num == null) {
+            Integer num2 = builder.is_black_white;
+            if (num2 == null) {
                 this.is_black_white = DEFAULT_IS_BLACK_WHITE;
             } else {
-                this.is_black_white = num;
+                this.is_black_white = num2;
             }
-            Integer num2 = builder.work_tab_id;
-            if (num2 == null) {
+            Integer num3 = builder.work_tab_id;
+            if (num3 == null) {
                 this.work_tab_id = DEFAULT_WORK_TAB_ID;
             } else {
-                this.work_tab_id = num2;
+                this.work_tab_id = num3;
             }
             this.finance_tab = builder.finance_tab;
             this.block_info = builder.block_info;
             this.duxiaoman_entry = builder.duxiaoman_entry;
             this.bubble_info = builder.bubble_info;
             this.vip_banner = builder.vip_banner;
-            return;
+            List list9 = builder.common_card;
+            if (list9 == null) {
+                this.common_card = DEFAULT_COMMON_CARD;
+                return;
+            } else {
+                this.common_card = Message.immutableCopyOf(list9);
+                return;
+            }
         }
         this.user = builder.user;
         this.anti_stat = builder.anti_stat;
@@ -395,6 +420,7 @@ public final class DataRes extends Message {
         this.nickname_info = builder.nickname_info;
         this.ala_live_record = Message.immutableCopyOf(builder.ala_live_record);
         this.url_map = Message.immutableCopyOf(builder.url_map);
+        this.show_answer = builder.show_answer;
         this.banner = Message.immutableCopyOf(builder.banner);
         this.recom_swan_list = Message.immutableCopyOf(builder.recom_swan_list);
         this.duxiaoman = builder.duxiaoman;
@@ -409,5 +435,10 @@ public final class DataRes extends Message {
         this.duxiaoman_entry = builder.duxiaoman_entry;
         this.bubble_info = builder.bubble_info;
         this.vip_banner = builder.vip_banner;
+        this.common_card = Message.immutableCopyOf(builder.common_card);
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

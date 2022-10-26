@@ -14,9 +14,12 @@ import com.squareup.wire.ProtoField;
 public final class TaskInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BGIMG = "";
+    public static final Integer DEFAULT_CARD_TYPE;
     public static final Long DEFAULT_END_TIME;
+    public static final String DEFAULT_FLOOR_GOD_REPLY = "";
     public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
+    public static final Integer DEFAULT_IS_GOD_REPLY;
     public static final String DEFAULT_OBJ_ID = "";
     public static final Long DEFAULT_START_TIME;
     public static final Long DEFAULT_TASK_ID;
@@ -26,14 +29,22 @@ public final class TaskInfo extends Message {
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String bgimg;
+    @ProtoField(tag = 15, type = Message.Datatype.INT32)
+    public final Integer card_type;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long end_time;
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    public final String floor_god_reply;
     @ProtoField(tag = 8, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String forum_name;
+    @ProtoField(tag = 13, type = Message.Datatype.INT32)
+    public final Integer is_god_reply;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String obj_id;
+    @ProtoField(tag = 12)
+    public final RewardCard reward_card;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long start_time;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -44,21 +55,34 @@ public final class TaskInfo extends Message {
     public final String thread_img;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String thread_img_size;
+    @ProtoField(tag = 11)
+    public final VoteSchema vote_schema;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<TaskInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String bgimg;
+        public Integer card_type;
         public Long end_time;
+        public String floor_god_reply;
         public Long forum_id;
         public String forum_name;
+        public Integer is_god_reply;
         public String obj_id;
+        public RewardCard reward_card;
         public Long start_time;
         public Long task_id;
         public Long thread_id;
         public String thread_img;
         public String thread_img_size;
+        public VoteSchema vote_schema;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -105,6 +129,11 @@ public final class TaskInfo extends Message {
             this.forum_id = taskInfo.forum_id;
             this.forum_name = taskInfo.forum_name;
             this.obj_id = taskInfo.obj_id;
+            this.vote_schema = taskInfo.vote_schema;
+            this.reward_card = taskInfo.reward_card;
+            this.is_god_reply = taskInfo.is_god_reply;
+            this.floor_god_reply = taskInfo.floor_god_reply;
+            this.card_type = taskInfo.card_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -112,14 +141,11 @@ public final class TaskInfo extends Message {
         public TaskInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new TaskInfo(this, z, null) : (TaskInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new TaskInfo(this, z, null);
+            }
+            return (TaskInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -140,10 +166,8 @@ public final class TaskInfo extends Message {
         DEFAULT_START_TIME = 0L;
         DEFAULT_END_TIME = 0L;
         DEFAULT_FORUM_ID = 0L;
-    }
-
-    public /* synthetic */ TaskInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        DEFAULT_IS_GOD_REPLY = 0;
+        DEFAULT_CARD_TYPE = 0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -222,9 +246,29 @@ public final class TaskInfo extends Message {
             String str5 = builder.obj_id;
             if (str5 == null) {
                 this.obj_id = "";
-                return;
             } else {
                 this.obj_id = str5;
+            }
+            this.vote_schema = builder.vote_schema;
+            this.reward_card = builder.reward_card;
+            Integer num = builder.is_god_reply;
+            if (num == null) {
+                this.is_god_reply = DEFAULT_IS_GOD_REPLY;
+            } else {
+                this.is_god_reply = num;
+            }
+            String str6 = builder.floor_god_reply;
+            if (str6 == null) {
+                this.floor_god_reply = "";
+            } else {
+                this.floor_god_reply = str6;
+            }
+            Integer num2 = builder.card_type;
+            if (num2 == null) {
+                this.card_type = DEFAULT_CARD_TYPE;
+                return;
+            } else {
+                this.card_type = num2;
                 return;
             }
         }
@@ -238,5 +282,14 @@ public final class TaskInfo extends Message {
         this.forum_id = builder.forum_id;
         this.forum_name = builder.forum_name;
         this.obj_id = builder.obj_id;
+        this.vote_schema = builder.vote_schema;
+        this.reward_card = builder.reward_card;
+        this.is_god_reply = builder.is_god_reply;
+        this.floor_god_reply = builder.floor_god_reply;
+        this.card_type = builder.card_type;
+    }
+
+    public /* synthetic */ TaskInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -28,7 +28,13 @@ public final class GradePoint extends Message {
     public final Integer point_type;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GradePoint> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer current_point;
@@ -82,14 +88,11 @@ public final class GradePoint extends Message {
         public GradePoint build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GradePoint(this, z, null) : (GradePoint) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GradePoint(this, z, null);
+            }
+            return (GradePoint) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -108,10 +111,6 @@ public final class GradePoint extends Message {
         DEFAULT_POINT_TYPE = 0;
         DEFAULT_CURRENT_POINT = 0;
         DEFAULT_NEXT_POINT = 0;
-    }
-
-    public /* synthetic */ GradePoint(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -164,5 +163,9 @@ public final class GradePoint extends Message {
         this.point_type = builder.point_type;
         this.current_point = builder.current_point;
         this.next_point = builder.next_point;
+    }
+
+    public /* synthetic */ GradePoint(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -45,7 +45,13 @@ public final class DataRes extends Message {
     public final ThreadInfo thread;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DataRes> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Anti anti;
@@ -55,7 +61,7 @@ public final class DataRes extends Message {
         public Page page;
         public Post post;
         public Integer server_time;
-        public List<SubPostList> subpost_list;
+        public List subpost_list;
         public ThreadInfo thread;
 
         public Builder() {
@@ -109,14 +115,11 @@ public final class DataRes extends Message {
         public DataRes build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DataRes(this, z, null) : (DataRes) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DataRes(this, z, null);
+            }
+            return (DataRes) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -135,10 +138,6 @@ public final class DataRes extends Message {
         DEFAULT_SUBPOST_LIST = Collections.emptyList();
         DEFAULT_SERVER_TIME = 0;
         DEFAULT_IS_BLACK_WHITE = 0;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -163,7 +162,7 @@ public final class DataRes extends Message {
             this.page = builder.page;
             this.anti = builder.anti;
             this.post = builder.post;
-            List<SubPostList> list = builder.subpost_list;
+            List list = builder.subpost_list;
             if (list == null) {
                 this.subpost_list = DEFAULT_SUBPOST_LIST;
             } else {
@@ -196,5 +195,9 @@ public final class DataRes extends Message {
         this.server_time = builder.server_time;
         this.display_forum = builder.display_forum;
         this.is_black_white = builder.is_black_white;
+    }
+
+    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -27,12 +27,18 @@ public final class ContriInfo extends Message {
     public final List<ToastConfig> toast_config;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ContriInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String after_msg;
         public String color_msg;
-        public List<ToastConfig> toast_config;
+        public List toast_config;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -79,14 +85,11 @@ public final class ContriInfo extends Message {
         public ContriInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ContriInfo(this, z, null) : (ContriInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ContriInfo(this, z, null);
+            }
+            return (ContriInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -103,10 +106,6 @@ public final class ContriInfo extends Message {
             }
         }
         DEFAULT_TOAST_CONFIG = Collections.emptyList();
-    }
-
-    public /* synthetic */ ContriInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -140,7 +139,7 @@ public final class ContriInfo extends Message {
             } else {
                 this.after_msg = str2;
             }
-            List<ToastConfig> list = builder.toast_config;
+            List list = builder.toast_config;
             if (list == null) {
                 this.toast_config = DEFAULT_TOAST_CONFIG;
                 return;
@@ -152,5 +151,9 @@ public final class ContriInfo extends Message {
         this.color_msg = builder.color_msg;
         this.after_msg = builder.after_msg;
         this.toast_config = Message.immutableCopyOf(builder.toast_config);
+    }
+
+    public /* synthetic */ ContriInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

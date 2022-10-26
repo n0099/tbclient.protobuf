@@ -22,7 +22,13 @@ public final class PbPostZan extends Message {
     public final Long zan_num;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<PbPostZan> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer has_zan;
@@ -72,14 +78,11 @@ public final class PbPostZan extends Message {
         public PbPostZan build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new PbPostZan(this, z, null) : (PbPostZan) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new PbPostZan(this, z, null);
+            }
+            return (PbPostZan) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -97,10 +100,6 @@ public final class PbPostZan extends Message {
         }
         DEFAULT_ZAN_NUM = 0L;
         DEFAULT_HAS_ZAN = 0;
-    }
-
-    public /* synthetic */ PbPostZan(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -139,5 +138,9 @@ public final class PbPostZan extends Message {
         }
         this.zan_num = builder.zan_num;
         this.has_zan = builder.has_zan;
+    }
+
+    public /* synthetic */ PbPostZan(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

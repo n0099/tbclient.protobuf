@@ -43,7 +43,13 @@ public final class MissionInfo extends Message {
     public final Integer total_limit;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<MissionInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer activityid;
@@ -107,14 +113,11 @@ public final class MissionInfo extends Message {
         public MissionInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new MissionInfo(this, z, null) : (MissionInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new MissionInfo(this, z, null);
+            }
+            return (MissionInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -138,10 +141,6 @@ public final class MissionInfo extends Message {
         DEFAULT_ACTIVITYID = 0;
         DEFAULT_CLEARTYPE = 0;
         DEFAULT_CLEARTIME = 0;
-    }
-
-    public /* synthetic */ MissionInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -229,5 +228,9 @@ public final class MissionInfo extends Message {
         this.activityid = builder.activityid;
         this.cleartype = builder.cleartype;
         this.cleartime = builder.cleartime;
+    }
+
+    public /* synthetic */ MissionInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

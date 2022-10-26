@@ -34,7 +34,13 @@ public final class Wares extends Message {
     public final String wars_name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<Wares> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer money;
@@ -92,14 +98,11 @@ public final class Wares extends Message {
         public Wares build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new Wares(this, z, null) : (Wares) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new Wares(this, z, null);
+            }
+            return (Wares) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -118,10 +121,6 @@ public final class Wares extends Message {
         DEFAULT_PROPS_ID = 0;
         DEFAULT_MONEY = 0;
         DEFAULT_PROPS_MON = 0;
-    }
-
-    public /* synthetic */ Wares(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -188,5 +187,9 @@ public final class Wares extends Message {
         this.wars_name = builder.wars_name;
         this.wars_item = builder.wars_item;
         this.new_props_id = builder.new_props_id;
+    }
+
+    public /* synthetic */ Wares(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -27,10 +27,16 @@ public final class FrsPageUserExtend extends Message {
     public final Integer user_extend_storey;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<FrsPageUserExtend> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<User> data;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List data;
         public String tips;
         public Integer user_extend_storey;
 
@@ -79,14 +85,11 @@ public final class FrsPageUserExtend extends Message {
         public FrsPageUserExtend build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new FrsPageUserExtend(this, z, null) : (FrsPageUserExtend) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new FrsPageUserExtend(this, z, null);
+            }
+            return (FrsPageUserExtend) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -104,10 +107,6 @@ public final class FrsPageUserExtend extends Message {
         }
         DEFAULT_USER_EXTEND_STOREY = 0;
         DEFAULT_DATA = Collections.emptyList();
-    }
-
-    public /* synthetic */ FrsPageUserExtend(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -141,7 +140,7 @@ public final class FrsPageUserExtend extends Message {
             } else {
                 this.tips = str;
             }
-            List<User> list = builder.data;
+            List list = builder.data;
             if (list == null) {
                 this.data = DEFAULT_DATA;
                 return;
@@ -153,5 +152,9 @@ public final class FrsPageUserExtend extends Message {
         this.user_extend_storey = builder.user_extend_storey;
         this.tips = builder.tips;
         this.data = Message.immutableCopyOf(builder.data);
+    }
+
+    public /* synthetic */ FrsPageUserExtend(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

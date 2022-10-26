@@ -23,7 +23,13 @@ public final class AppTransmitData extends Message {
     public final String yy_version;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<AppTransmitData> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String wise_sample_id;
@@ -75,18 +81,11 @@ public final class AppTransmitData extends Message {
         public AppTransmitData build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new AppTransmitData(this, z, null) : (AppTransmitData) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new AppTransmitData(this, z, null);
+            }
+            return (AppTransmitData) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ AppTransmitData(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -132,5 +131,9 @@ public final class AppTransmitData extends Message {
         this.wise_sample_id = builder.wise_sample_id;
         this.yy_hdid = builder.yy_hdid;
         this.yy_version = builder.yy_version;
+    }
+
+    public /* synthetic */ AppTransmitData(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

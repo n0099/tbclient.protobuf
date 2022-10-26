@@ -14,18 +14,28 @@ import com.squareup.wire.ProtoField;
 public final class BubbleInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_BUBBLE_ID;
+    public static final String DEFAULT_BUBBLE_PIC = "";
     public static final String DEFAULT_BUBBLE_TEXT = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer bubble_id;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String bubble_pic;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String bubble_text;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<BubbleInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer bubble_id;
+        public String bubble_pic;
         public String bubble_text;
 
         public Builder() {
@@ -65,6 +75,7 @@ public final class BubbleInfo extends Message {
             }
             this.bubble_id = bubbleInfo.bubble_id;
             this.bubble_text = bubbleInfo.bubble_text;
+            this.bubble_pic = bubbleInfo.bubble_pic;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -72,14 +83,11 @@ public final class BubbleInfo extends Message {
         public BubbleInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new BubbleInfo(this, z, null) : (BubbleInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new BubbleInfo(this, z, null);
+            }
+            return (BubbleInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -96,10 +104,6 @@ public final class BubbleInfo extends Message {
             }
         }
         DEFAULT_BUBBLE_ID = 0;
-    }
-
-    public /* synthetic */ BubbleInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,13 +134,24 @@ public final class BubbleInfo extends Message {
             String str = builder.bubble_text;
             if (str == null) {
                 this.bubble_text = "";
-                return;
             } else {
                 this.bubble_text = str;
+            }
+            String str2 = builder.bubble_pic;
+            if (str2 == null) {
+                this.bubble_pic = "";
+                return;
+            } else {
+                this.bubble_pic = str2;
                 return;
             }
         }
         this.bubble_id = builder.bubble_id;
         this.bubble_text = builder.bubble_text;
+        this.bubble_pic = builder.bubble_pic;
+    }
+
+    public /* synthetic */ BubbleInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

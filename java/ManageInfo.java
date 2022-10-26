@@ -23,7 +23,13 @@ public final class ManageInfo extends Message {
     public final TiebaPlusInfo tiebaplus_info;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<ManageInfo> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Item item;
@@ -75,14 +81,11 @@ public final class ManageInfo extends Message {
         public ManageInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new ManageInfo(this, z, null) : (ManageInfo) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new ManageInfo(this, z, null);
+            }
+            return (ManageInfo) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -99,10 +102,6 @@ public final class ManageInfo extends Message {
             }
         }
         DEFAULT_ITEM_SOURCE = 0;
-    }
-
-    public /* synthetic */ ManageInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -138,5 +137,9 @@ public final class ManageInfo extends Message {
         this.item = builder.item;
         this.tiebaplus_info = builder.tiebaplus_info;
         this.item_source = builder.item_source;
+    }
+
+    public /* synthetic */ ManageInfo(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

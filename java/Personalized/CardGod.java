@@ -28,11 +28,17 @@ public final class CardGod extends Message {
     public final Integer position;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<CardGod> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String card_title;
-        public List<User> gods;
+        public List gods;
         public Integer position;
 
         public Builder() {
@@ -80,14 +86,11 @@ public final class CardGod extends Message {
         public CardGod build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new CardGod(this, z, null) : (CardGod) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new CardGod(this, z, null);
+            }
+            return (CardGod) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -105,10 +108,6 @@ public final class CardGod extends Message {
         }
         DEFAULT_GODS = Collections.emptyList();
         DEFAULT_POSITION = 0;
-    }
-
-    public /* synthetic */ CardGod(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -136,7 +135,7 @@ public final class CardGod extends Message {
             } else {
                 this.card_title = str;
             }
-            List<User> list = builder.gods;
+            List list = builder.gods;
             if (list == null) {
                 this.gods = DEFAULT_GODS;
             } else {
@@ -154,5 +153,9 @@ public final class CardGod extends Message {
         this.card_title = builder.card_title;
         this.gods = Message.immutableCopyOf(builder.gods);
         this.position = builder.position;
+    }
+
+    public /* synthetic */ CardGod(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

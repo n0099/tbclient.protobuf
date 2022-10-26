@@ -16,7 +16,13 @@ public final class GetSuggestionByAddrNameReqIdl extends Message {
     public final DataReq data;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<GetSuggestionByAddrNameReqIdl> {
+    public /* synthetic */ class a {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public DataReq data;
@@ -64,18 +70,11 @@ public final class GetSuggestionByAddrNameReqIdl extends Message {
         public GetSuggestionByAddrNameReqIdl build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new GetSuggestionByAddrNameReqIdl(this, z, null) : (GetSuggestionByAddrNameReqIdl) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new GetSuggestionByAddrNameReqIdl(this, z, null);
+            }
+            return (GetSuggestionByAddrNameReqIdl) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    public /* synthetic */ GetSuggestionByAddrNameReqIdl(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -101,5 +100,9 @@ public final class GetSuggestionByAddrNameReqIdl extends Message {
         } else {
             this.data = builder.data;
         }
+    }
+
+    public /* synthetic */ GetSuggestionByAddrNameReqIdl(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }

@@ -30,10 +30,16 @@ public final class DiscoverTabCard extends Message {
     public final String name;
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<DiscoverTabCard> {
+    public /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List<RecommendForumInfo> forum_list;
+    }
+
+    /* loaded from: classes9.dex */
+    public final class Builder extends Message.Builder {
+        public static /* synthetic */ Interceptable $ic;
+        public transient /* synthetic */ FieldHolder $fh;
+        public List forum_list;
         public Boolean is_show_order_number;
         public String jump_name;
         public String name;
@@ -84,14 +90,11 @@ public final class DiscoverTabCard extends Message {
         public DiscoverTabCard build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
-            return (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) ? new DiscoverTabCard(this, z, null) : (DiscoverTabCard) invokeZ.objValue;
+            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
+                return new DiscoverTabCard(this, z, null);
+            }
+            return (DiscoverTabCard) invokeZ.objValue;
         }
-    }
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
     }
 
     static {
@@ -109,10 +112,6 @@ public final class DiscoverTabCard extends Message {
         }
         DEFAULT_FORUM_LIST = Collections.emptyList();
         DEFAULT_IS_SHOW_ORDER_NUMBER = Boolean.FALSE;
-    }
-
-    public /* synthetic */ DiscoverTabCard(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -140,7 +139,7 @@ public final class DiscoverTabCard extends Message {
             } else {
                 this.name = str;
             }
-            List<RecommendForumInfo> list = builder.forum_list;
+            List list = builder.forum_list;
             if (list == null) {
                 this.forum_list = DEFAULT_FORUM_LIST;
             } else {
@@ -165,5 +164,9 @@ public final class DiscoverTabCard extends Message {
         this.forum_list = Message.immutableCopyOf(builder.forum_list);
         this.jump_name = builder.jump_name;
         this.is_show_order_number = builder.is_show_order_number;
+    }
+
+    public /* synthetic */ DiscoverTabCard(Builder builder, boolean z, a aVar) {
+        this(builder, z);
     }
 }
