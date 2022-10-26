@@ -23,6 +23,7 @@ import "SkinInfo.proto";
 import "SubPost.proto";
 import "TPointPost.proto";
 import "TailInfo.proto";
+import "ThemeBubble.proto";
 import "TogetherHi.proto";
 import "User.proto";
 import "VideoInfo.proto";
@@ -91,4 +92,5 @@ message Post {
     CustomState custom_state = 61;
     FullLengthNovel full_length_novel = 62;
     string dynamic_url = 63;
+    ThemeBubble bubble_info = 64;
 }

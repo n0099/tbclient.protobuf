@@ -40,6 +40,7 @@ import "FrsPage/PrivateForumTotalInfo.proto";
 import "FrsPage/PushThreadInfo.proto";
 import "FrsPage/RecomPostTopic.proto";
 import "FrsPage/RecommendBook.proto";
+import "FrsPage/RecreationRankInfo.proto";
 import "FrsPage/StarEnter.proto";
 import "FrsPage/StarInfo.proto";
 import "FrsPage/StarRank.proto";
@@ -178,4 +179,5 @@ message DataRes {
     PrivatePopInfo bawutask_pop = 115;
     repeated LiveFuseForumData live_fuse_forum = 116;
     int32 bawu_unread_notice_num = 117;
+    RecreationRankInfo recreation_rank_info = 118;
 }

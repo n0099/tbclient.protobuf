@@ -5,4 +5,5 @@ message StateInfo {
     string text = 2;
     int32 icon_type = 3;
     int32 icon_pid = 4;
+    int64 icon_pid_new = 5;
 }

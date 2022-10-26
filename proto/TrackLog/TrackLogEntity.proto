@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "BaseInfo.proto";
+import "DebugInfo.proto";
+import "Kpi.proto";
+
+message TrackLogEntity {
+    BaseInfo base_info = 1;
+    DebugInfo debug_info = 2;
+    Kpi kpi = 3;
+}

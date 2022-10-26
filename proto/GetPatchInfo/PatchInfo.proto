@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message PatchInfo {
+    string patch_name = 1;
+    string patch_version = 2;
+    string patch_url = 3;
+    string patch_md5 = 4;
+    int64 patch_size = 5;
+    string main_version = 6;
+    string main_url = 7;
+    string main_md5 = 8;
+    int64 main_size = 9;
+    int32 is_need_upgrade = 10;
+}

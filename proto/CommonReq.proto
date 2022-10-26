@@ -68,4 +68,6 @@ message CommonReq {
     string di_diordna = 68;
     string vfdi = 69;
     string device_score = 70;
+    int32 pure_mode = 71;
+    int32 xcx_mode = 72;
 }

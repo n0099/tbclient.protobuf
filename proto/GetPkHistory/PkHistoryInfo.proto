@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "AlaUserInfo.proto";
+import "PkInfo.proto";
+
+message PkHistoryInfo {
+    AlaUserInfo user_info = 1;
+    PkInfo pk_info = 2;
+    AlaUserInfo rival_info = 3;
+}

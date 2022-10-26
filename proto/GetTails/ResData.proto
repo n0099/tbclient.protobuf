@@ -2,9 +2,11 @@ syntax = "proto3";
 
 import "GetTails/ColorInfo.proto";
 import "TailInfo.proto";
+import "ThemeTailInUser.proto";
 
 message ResData {
     repeated TailInfo tailList = 1;
     repeated ColorInfo colorList = 2;
     string default_color = 3;
+    ThemeTailInUser tail_style = 4;
 }

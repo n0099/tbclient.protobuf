@@ -33,6 +33,7 @@ import "SimpleUser.proto";
 import "SpringVirtualUser.proto";
 import "TbVipInfo.proto";
 import "ThemeCardInUser.proto";
+import "ThemeTailInUser.proto";
 import "TshowInfo.proto";
 import "TwAnchorProfitItem.proto";
 import "TwZhiBoUser.proto";
@@ -173,4 +174,5 @@ message User {
     string editing_nickname = 129;
     VirtualImageInfo virtual_image_info = 136;
     string display_intro = 138;
+    ThemeTailInUser theme_tail = 141;
 }

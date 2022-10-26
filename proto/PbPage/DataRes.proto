@@ -4,8 +4,11 @@ import "AlaLiveInfo.proto";
 import "Anti.proto";
 import "BannerList.proto";
 import "BusinessAccountInfo.proto";
+import "EditConfig.proto";
+import "EditInfo.proto";
 import "FineBannerPb.proto";
 import "ForumRuleStatus.proto";
+import "GameHotRankEntry.proto";
 import "GraffitiRankListInfo.proto";
 import "Lbs.proto";
 import "ManagerElection.proto";
@@ -108,5 +111,8 @@ message DataRes {
     string pb_notice = 67;
     int32 has_fold_comment = 68;
     int64 fold_comment_num = 70;
+    EditConfig edit_config = 71;
+    EditInfo edit_info = 72;
     Post top_answer = 73;
+    GameHotRankEntry game_hot_rank_entry = 74;
 }
