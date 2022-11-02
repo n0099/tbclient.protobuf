@@ -27,16 +27,16 @@ public final class DataRes extends Message {
     public final String page_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List cards;
+        public List<String> cards;
         public Integer has_more;
         public String page_info;
 
@@ -134,7 +134,7 @@ public final class DataRes extends Message {
             } else {
                 this.page_info = str;
             }
-            List list = builder.cards;
+            List<String> list = builder.cards;
             if (list == null) {
                 this.cards = DEFAULT_CARDS;
             } else {

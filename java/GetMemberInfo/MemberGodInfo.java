@@ -25,16 +25,16 @@ public final class MemberGodInfo extends Message {
     public final Integer forum_god_num;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<MemberGodInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List forum_god_list;
+        public List<User> forum_god_list;
         public Integer forum_god_num;
 
         public Builder() {
@@ -124,7 +124,7 @@ public final class MemberGodInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.forum_god_list;
+            List<User> list = builder.forum_god_list;
             if (list == null) {
                 this.forum_god_list = DEFAULT_FORUM_GOD_LIST;
             } else {

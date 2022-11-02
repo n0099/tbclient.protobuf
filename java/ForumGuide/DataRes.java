@@ -43,23 +43,23 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> voice_room_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ForumCreateInfo forum_create_info;
-        public List hot_search;
+        public List<HotSearch> hot_search;
         public Integer is_login;
-        public List like_forum;
+        public List<LikeForum> like_forum;
         public Integer msign_level;
         public String msign_text;
         public Integer msign_valid;
-        public List voice_room_list;
+        public List<ThreadInfo> voice_room_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -158,13 +158,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.hot_search;
+            List<HotSearch> list = builder.hot_search;
             if (list == null) {
                 this.hot_search = DEFAULT_HOT_SEARCH;
             } else {
                 this.hot_search = Message.immutableCopyOf(list);
             }
-            List list2 = builder.like_forum;
+            List<LikeForum> list2 = builder.like_forum;
             if (list2 == null) {
                 this.like_forum = DEFAULT_LIKE_FORUM;
             } else {
@@ -195,7 +195,7 @@ public final class DataRes extends Message {
             } else {
                 this.msign_level = num3;
             }
-            List list3 = builder.voice_room_list;
+            List<ThreadInfo> list3 = builder.voice_room_list;
             if (list3 == null) {
                 this.voice_room_list = DEFAULT_VOICE_ROOM_LIST;
                 return;

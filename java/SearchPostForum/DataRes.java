@@ -23,17 +23,17 @@ public final class DataRes extends Message {
     public final List<SearchForum> fuzzy_match;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public SearchForum exact_match;
-        public List fuzzy_match;
+        public List<SearchForum> fuzzy_match;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -122,7 +122,7 @@ public final class DataRes extends Message {
         }
         if (z) {
             this.exact_match = builder.exact_match;
-            List list = builder.fuzzy_match;
+            List<SearchForum> list = builder.fuzzy_match;
             if (list == null) {
                 this.fuzzy_match = DEFAULT_FUZZY_MATCH;
                 return;

@@ -24,16 +24,16 @@ public final class UniversityTabInfo extends Message {
     public final String tab_name;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<UniversityTabInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List content;
+        public List<UniversityInfo> content;
         public String tab_name;
 
         public Builder() {
@@ -128,7 +128,7 @@ public final class UniversityTabInfo extends Message {
             } else {
                 this.tab_name = str;
             }
-            List list = builder.content;
+            List<UniversityInfo> list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
                 return;

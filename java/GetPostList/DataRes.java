@@ -22,16 +22,16 @@ public final class DataRes extends Message {
     public final List<Post> post_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List post_list;
+        public List<Post> post_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -118,7 +118,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.post_list;
+            List<Post> list = builder.post_list;
             if (list == null) {
                 this.post_list = DEFAULT_POST_LIST;
                 return;

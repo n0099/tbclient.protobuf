@@ -34,21 +34,21 @@ public final class BannerList extends Message {
     public final List<App> video_recommend_ad;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<BannerList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List app;
+        public List<App> app;
         public String applist;
-        public List feed_forum;
+        public List<FeedForumInfo> feed_forum;
         public RecomTopicInfo hot_topic;
         public App pb_banner_ad;
-        public List video_recommend_ad;
+        public List<App> video_recommend_ad;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -142,13 +142,13 @@ public final class BannerList extends Message {
             }
         }
         if (z) {
-            List list = builder.app;
+            List<App> list = builder.app;
             if (list == null) {
                 this.app = DEFAULT_APP;
             } else {
                 this.app = Message.immutableCopyOf(list);
             }
-            List list2 = builder.feed_forum;
+            List<FeedForumInfo> list2 = builder.feed_forum;
             if (list2 == null) {
                 this.feed_forum = DEFAULT_FEED_FORUM;
             } else {
@@ -162,7 +162,7 @@ public final class BannerList extends Message {
                 this.applist = str;
             }
             this.pb_banner_ad = builder.pb_banner_ad;
-            List list3 = builder.video_recommend_ad;
+            List<App> list3 = builder.video_recommend_ad;
             if (list3 == null) {
                 this.video_recommend_ad = DEFAULT_VIDEO_RECOMMEND_AD;
                 return;

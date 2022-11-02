@@ -33,20 +33,20 @@ public final class BrandForumInfo extends Message {
     public final List<OriForumInfo> relation_forum;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<BrandForumInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String brand_desc;
         public HeadImgs head_imgs;
         public String jump_desc;
         public String jump_url;
-        public List relation_forum;
+        public List<OriForumInfo> relation_forum;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -137,7 +137,7 @@ public final class BrandForumInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.relation_forum;
+            List<OriForumInfo> list = builder.relation_forum;
             if (list == null) {
                 this.relation_forum = DEFAULT_RELATION_FORUM;
             } else {

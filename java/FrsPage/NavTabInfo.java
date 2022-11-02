@@ -28,18 +28,18 @@ public final class NavTabInfo extends Message {
     public final List<FrsTabInfo> tab;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<NavTabInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List head;
-        public List menu;
-        public List tab;
+        public List<FrsTabInfo> head;
+        public List<FrsTabInfo> menu;
+        public List<FrsTabInfo> tab;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -130,19 +130,19 @@ public final class NavTabInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.tab;
+            List<FrsTabInfo> list = builder.tab;
             if (list == null) {
                 this.tab = DEFAULT_TAB;
             } else {
                 this.tab = Message.immutableCopyOf(list);
             }
-            List list2 = builder.menu;
+            List<FrsTabInfo> list2 = builder.menu;
             if (list2 == null) {
                 this.menu = DEFAULT_MENU;
             } else {
                 this.menu = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.head;
+            List<FrsTabInfo> list3 = builder.head;
             if (list3 == null) {
                 this.head = DEFAULT_HEAD;
                 return;

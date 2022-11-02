@@ -41,13 +41,13 @@ public final class ServiceArea extends Message {
     public final String version;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ServiceArea> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public SmartApp area_smart_app;
@@ -56,7 +56,7 @@ public final class ServiceArea extends Message {
         public String service_type;
         public String servicename;
         public String serviceurl;
-        public List third_statistics_url;
+        public List<String> third_statistics_url;
         public String version;
 
         public Builder() {
@@ -188,7 +188,7 @@ public final class ServiceArea extends Message {
             } else {
                 this.schema = str6;
             }
-            List list = builder.third_statistics_url;
+            List<String> list = builder.third_statistics_url;
             if (list == null) {
                 this.third_statistics_url = DEFAULT_THIRD_STATISTICS_URL;
                 return;

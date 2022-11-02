@@ -37,18 +37,18 @@ public final class FineThreadInfo extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<FineThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
         public Long ftid;
-        public List media;
+        public List<Media> media;
         public Integer publish_time;
         public String title;
         public Integer type;
@@ -170,7 +170,7 @@ public final class FineThreadInfo extends Message {
             } else {
                 this._abstract = str2;
             }
-            List list = builder.media;
+            List<Media> list = builder.media;
             if (list == null) {
                 this.media = DEFAULT_MEDIA;
             } else {

@@ -27,16 +27,16 @@ public final class GiftList extends Message {
     public final String type_name;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<GiftList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List item;
+        public List<Item> item;
         public Integer type_id;
         public String type_name;
 
@@ -140,7 +140,7 @@ public final class GiftList extends Message {
             } else {
                 this.type_id = num;
             }
-            List list = builder.item;
+            List<Item> list = builder.item;
             if (list == null) {
                 this.item = DEFAULT_ITEM;
                 return;

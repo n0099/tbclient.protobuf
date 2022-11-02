@@ -21,16 +21,16 @@ public final class DataRes extends Message {
     public final List<String> remind_time;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List remind_time;
+        public List<String> remind_time;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -117,7 +117,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.remind_time;
+            List<String> list = builder.remind_time;
             if (list == null) {
                 this.remind_time = DEFAULT_REMIND_TIME;
                 return;

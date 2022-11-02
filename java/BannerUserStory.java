@@ -27,18 +27,18 @@ public final class BannerUserStory extends Message {
     public final List<UserStory> user_story;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<BannerUserStory> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer _switch;
-        public List ala_live_list;
-        public List user_story;
+        public List<AlaLiveInfo> ala_live_list;
+        public List<UserStory> user_story;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -129,7 +129,7 @@ public final class BannerUserStory extends Message {
             }
         }
         if (z) {
-            List list = builder.user_story;
+            List<UserStory> list = builder.user_story;
             if (list == null) {
                 this.user_story = DEFAULT_USER_STORY;
             } else {
@@ -141,7 +141,7 @@ public final class BannerUserStory extends Message {
             } else {
                 this._switch = num;
             }
-            List list2 = builder.ala_live_list;
+            List<AlaLiveInfo> list2 = builder.ala_live_list;
             if (list2 == null) {
                 this.ala_live_list = DEFAULT_ALA_LIVE_LIST;
                 return;

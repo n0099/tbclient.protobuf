@@ -24,17 +24,17 @@ public final class MagicPost extends Message {
     public final List<MagicPostList> mc_post_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<MagicPost> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String magic_title;
-        public List mc_post_list;
+        public List<MagicPostList> mc_post_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -128,7 +128,7 @@ public final class MagicPost extends Message {
             } else {
                 this.magic_title = str;
             }
-            List list = builder.mc_post_list;
+            List<MagicPostList> list = builder.mc_post_list;
             if (list == null) {
                 this.mc_post_list = DEFAULT_MC_POST_LIST;
                 return;

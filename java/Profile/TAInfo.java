@@ -49,25 +49,25 @@ public final class TAInfo extends Message {
     public final Integer userClientVersionIsLower;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<TAInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public CommonDistance distanceinfo;
-        public List foruminfo;
-        public List friendinfo;
+        public List<String> foruminfo;
+        public List<String> friendinfo;
         public Integer friendnum;
-        public List groupinfo;
+        public List<String> groupinfo;
         public Integer groupnum;
         public String hide_user_feed;
         public Integer is_friend;
         public CommonLocation location;
-        public List reply_list;
+        public List<ReplyList> reply_list;
         public Integer userClientVersionIsLower;
 
         public Builder() {
@@ -172,19 +172,19 @@ public final class TAInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.foruminfo;
+            List<String> list = builder.foruminfo;
             if (list == null) {
                 this.foruminfo = DEFAULT_FORUMINFO;
             } else {
                 this.foruminfo = Message.immutableCopyOf(list);
             }
-            List list2 = builder.groupinfo;
+            List<String> list2 = builder.groupinfo;
             if (list2 == null) {
                 this.groupinfo = DEFAULT_GROUPINFO;
             } else {
                 this.groupinfo = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.friendinfo;
+            List<String> list3 = builder.friendinfo;
             if (list3 == null) {
                 this.friendinfo = DEFAULT_FRIENDINFO;
             } else {
@@ -209,7 +209,7 @@ public final class TAInfo extends Message {
             } else {
                 this.is_friend = num3;
             }
-            List list4 = builder.reply_list;
+            List<ReplyList> list4 = builder.reply_list;
             if (list4 == null) {
                 this.reply_list = DEFAULT_REPLY_LIST;
             } else {

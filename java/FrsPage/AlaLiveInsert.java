@@ -22,16 +22,16 @@ public final class AlaLiveInsert extends Message {
     public final List<ThreadInfo> ala_live_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<AlaLiveInsert> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List ala_live_list;
+        public List<ThreadInfo> ala_live_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -118,7 +118,7 @@ public final class AlaLiveInsert extends Message {
             }
         }
         if (z) {
-            List list = builder.ala_live_list;
+            List<ThreadInfo> list = builder.ala_live_list;
             if (list == null) {
                 this.ala_live_list = DEFAULT_ALA_LIVE_LIST;
                 return;

@@ -25,16 +25,16 @@ public final class DataRes extends Message {
     public final HotTopic hot_topic;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List forum_info;
+        public List<ForumInfo> forum_info;
         public HotSearch hot_search;
         public HotTopic hot_topic;
 
@@ -125,7 +125,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.forum_info;
+            List<ForumInfo> list = builder.forum_info;
             if (list == null) {
                 this.forum_info = DEFAULT_FORUM_INFO;
             } else {

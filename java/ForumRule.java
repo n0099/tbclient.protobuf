@@ -27,16 +27,16 @@ public final class ForumRule extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ForumRule> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List content;
+        public List<PbContent> content;
         public Integer status;
         public String title;
 
@@ -134,7 +134,7 @@ public final class ForumRule extends Message {
             } else {
                 this.title = str;
             }
-            List list = builder.content;
+            List<PbContent> list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {

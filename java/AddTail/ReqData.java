@@ -19,7 +19,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1103common;
+    public final CommonReq f1106common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String fontColor;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -28,18 +28,18 @@ public final class ReqData extends Message {
     public final String tailContent;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ReqData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1104common;
+        public CommonReq f1107common;
         public String fontColor;
         public String fontKeyName;
         public String tailContent;
@@ -82,7 +82,7 @@ public final class ReqData extends Message {
             this.tailContent = reqData.tailContent;
             this.fontColor = reqData.fontColor;
             this.fontKeyName = reqData.fontKeyName;
-            this.f1104common = reqData.f1103common;
+            this.f1107common = reqData.f1106common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -134,13 +134,13 @@ public final class ReqData extends Message {
             } else {
                 this.fontKeyName = str3;
             }
-            this.f1103common = builder.f1104common;
+            this.f1106common = builder.f1107common;
             return;
         }
         this.tailContent = builder.tailContent;
         this.fontColor = builder.fontColor;
         this.fontKeyName = builder.fontKeyName;
-        this.f1103common = builder.f1104common;
+        this.f1106common = builder.f1107common;
     }
 
     public /* synthetic */ ReqData(Builder builder, boolean z, a aVar) {

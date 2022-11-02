@@ -30,17 +30,17 @@ public final class BottomMenu extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<BottomMenu> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String name;
-        public List submenu;
+        public List<SubBottomMenu> submenu;
         public Integer type;
         public String url;
 
@@ -145,7 +145,7 @@ public final class BottomMenu extends Message {
             } else {
                 this.url = str2;
             }
-            List list = builder.submenu;
+            List<SubBottomMenu> list = builder.submenu;
             if (list == null) {
                 this.submenu = DEFAULT_SUBMENU;
             } else {

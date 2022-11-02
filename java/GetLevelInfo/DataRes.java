@@ -31,17 +31,17 @@ public final class DataRes extends Message {
     public final Integer user_level;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_like;
-        public List level_info;
+        public List<LevelInfo> level_info;
         public String level_name;
         public Integer user_level;
 
@@ -135,7 +135,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.level_info;
+            List<LevelInfo> list = builder.level_info;
             if (list == null) {
                 this.level_info = DEFAULT_LEVEL_INFO;
             } else {

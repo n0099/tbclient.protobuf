@@ -28,16 +28,16 @@ public final class DataRes extends Message {
     public final Long offset;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List ad_list;
+        public List<AdInfo> ad_list;
         public Integer has_more;
         public Long offset;
 
@@ -130,7 +130,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.ad_list;
+            List<AdInfo> list = builder.ad_list;
             if (list == null) {
                 this.ad_list = DEFAULT_AD_LIST;
             } else {

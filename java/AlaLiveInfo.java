@@ -157,13 +157,13 @@ public final class AlaLiveInfo extends Message {
     public final YyExt yy_ext;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<AlaLiveInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer audience_count;
@@ -171,7 +171,7 @@ public final class AlaLiveInfo extends Message {
         public String cover;
         public String cover_wide;
         public String description;
-        public List dislike_info;
+        public List<DislikeInfo> dislike_info;
         public Long distance;
         public Integer duration;
         public String first_headline;
@@ -207,7 +207,7 @@ public final class AlaLiveInfo extends Message {
         public String session_id;
         public AlaShareInfo share_info;
         public Integer show_page;
-        public List stage_dislike_info;
+        public List<AlaStageDislikeInfo> stage_dislike_info;
         public String third_app_id;
         public String third_live_type;
         public String third_room_id;
@@ -490,7 +490,7 @@ public final class AlaLiveInfo extends Message {
             } else {
                 this.thread_id = l4;
             }
-            List list = builder.stage_dislike_info;
+            List<AlaStageDislikeInfo> list = builder.stage_dislike_info;
             if (list == null) {
                 this.stage_dislike_info = DEFAULT_STAGE_DISLIKE_INFO;
             } else {
@@ -588,7 +588,7 @@ public final class AlaLiveInfo extends Message {
             } else {
                 this.open_recom_duration = num13;
             }
-            List list2 = builder.dislike_info;
+            List<DislikeInfo> list2 = builder.dislike_info;
             if (list2 == null) {
                 this.dislike_info = DEFAULT_DISLIKE_INFO;
             } else {

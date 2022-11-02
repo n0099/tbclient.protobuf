@@ -58,17 +58,17 @@ public final class TopicList extends Message {
     public final VideoInfo video_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<TopicList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long discuss_num;
-        public List media;
+        public List<Media> media;
         public Integer tag;
         public String topic_desc;
         public String topic_h5_url;
@@ -232,7 +232,7 @@ public final class TopicList extends Message {
             } else {
                 this.topic_user_name = str4;
             }
-            List list = builder.media;
+            List<Media> list = builder.media;
             if (list == null) {
                 this.media = DEFAULT_MEDIA;
             } else {

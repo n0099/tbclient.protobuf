@@ -21,16 +21,16 @@ public final class UserDynamic extends Message {
     public final List<User> concerned_user_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<UserDynamic> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List concerned_user_list;
+        public List<User> concerned_user_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -117,7 +117,7 @@ public final class UserDynamic extends Message {
             }
         }
         if (z) {
-            List list = builder.concerned_user_list;
+            List<User> list = builder.concerned_user_list;
             if (list == null) {
                 this.concerned_user_list = DEFAULT_CONCERNED_USER_LIST;
                 return;

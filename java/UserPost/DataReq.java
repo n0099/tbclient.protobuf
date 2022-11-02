@@ -61,7 +61,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 27)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1385common;
+    public final CommonReq f1388common;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
@@ -132,13 +132,13 @@ public final class DataReq extends Message {
     public final Integer work_tab_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long begin_thread_id;
@@ -146,7 +146,7 @@ public final class DataReq extends Message {
         public Integer check_login;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1386common;
+        public CommonReq f1389common;
         public String cookie;
         public String email;
         public Integer end_time;
@@ -243,7 +243,7 @@ public final class DataReq extends Message {
             this.email = dataReq.email;
             this.cookie = dataReq.cookie;
             this.pn = dataReq.pn;
-            this.f1386common = dataReq.f1385common;
+            this.f1389common = dataReq.f1388common;
             this.is_twzhibo = dataReq.is_twzhibo;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
@@ -489,7 +489,7 @@ public final class DataReq extends Message {
             } else {
                 this.pn = num16;
             }
-            this.f1385common = builder.f1386common;
+            this.f1388common = builder.f1389common;
             Integer num17 = builder.is_twzhibo;
             if (num17 == null) {
                 this.is_twzhibo = DEFAULT_IS_TWZHIBO;
@@ -585,7 +585,7 @@ public final class DataReq extends Message {
         this.email = builder.email;
         this.cookie = builder.cookie;
         this.pn = builder.pn;
-        this.f1385common = builder.f1386common;
+        this.f1388common = builder.f1389common;
         this.is_twzhibo = builder.is_twzhibo;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;

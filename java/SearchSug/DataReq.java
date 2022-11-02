@@ -18,25 +18,25 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1341common;
+    public final CommonReq f1344common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String isforum;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String word;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1342common;
+        public CommonReq f1345common;
         public String isforum;
         public String word;
 
@@ -75,7 +75,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1342common = dataReq.f1341common;
+            this.f1345common = dataReq.f1344common;
             this.word = dataReq.word;
             this.isforum = dataReq.isforum;
         }
@@ -111,7 +111,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1341common = builder.f1342common;
+            this.f1344common = builder.f1345common;
             String str = builder.word;
             if (str == null) {
                 this.word = "";
@@ -127,7 +127,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1341common = builder.f1342common;
+        this.f1344common = builder.f1345common;
         this.word = builder.word;
         this.isforum = builder.isforum;
     }

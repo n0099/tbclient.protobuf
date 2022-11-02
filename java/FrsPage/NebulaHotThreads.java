@@ -24,16 +24,16 @@ public final class NebulaHotThreads extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<NebulaHotThreads> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List threads;
+        public List<NebulaHotThread> threads;
         public String url;
 
         public Builder() {
@@ -128,7 +128,7 @@ public final class NebulaHotThreads extends Message {
             } else {
                 this.url = str;
             }
-            List list = builder.threads;
+            List<NebulaHotThread> list = builder.threads;
             if (list == null) {
                 this.threads = DEFAULT_THREADS;
                 return;

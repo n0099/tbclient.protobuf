@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1359common;
+    public final CommonReq f1362common;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -30,18 +30,18 @@ public final class DataReq extends Message {
     public final Long tid;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1360common;
+        public CommonReq f1363common;
         public Long fid;
         public Integer from;
         public Long tid;
@@ -81,7 +81,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1360common = dataReq.f1359common;
+            this.f1363common = dataReq.f1362common;
             this.tid = dataReq.tid;
             this.from = dataReq.from;
             this.fid = dataReq.fid;
@@ -136,7 +136,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1359common = builder.f1360common;
+            this.f1362common = builder.f1363common;
             Long l = builder.tid;
             if (l == null) {
                 this.tid = DEFAULT_TID;
@@ -158,7 +158,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1359common = builder.f1360common;
+        this.f1362common = builder.f1363common;
         this.tid = builder.tid;
         this.from = builder.from;
         this.fid = builder.fid;

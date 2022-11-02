@@ -24,17 +24,17 @@ public final class DataRes extends Message {
     public final List<ResponseTagInfo> taglist;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List sex_taglist;
-        public List taglist;
+        public List<ResponseTagInfo> sex_taglist;
+        public List<ResponseTagInfo> taglist;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -123,13 +123,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.sex_taglist;
+            List<ResponseTagInfo> list = builder.sex_taglist;
             if (list == null) {
                 this.sex_taglist = DEFAULT_SEX_TAGLIST;
             } else {
                 this.sex_taglist = Message.immutableCopyOf(list);
             }
-            List list2 = builder.taglist;
+            List<ResponseTagInfo> list2 = builder.taglist;
             if (list2 == null) {
                 this.taglist = DEFAULT_TAGLIST;
                 return;

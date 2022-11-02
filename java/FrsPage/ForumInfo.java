@@ -252,13 +252,13 @@ public final class ForumInfo extends Message {
     public final Zhibo zhibo;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ForumInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String accelerate_cotent;
@@ -268,7 +268,7 @@ public final class ForumInfo extends Message {
         public Integer album_open_photo_frs;
         public AnchorPower anchor_power;
         public String avatar;
-        public List badges;
+        public List<Badges> badges;
         public Banner banner;
         public BannerList banner_list;
         public Integer can_use_accelerate;
@@ -280,12 +280,12 @@ public final class ForumInfo extends Message {
         public ForumButton forum_button;
         public String forum_game_label;
         public String forum_share_link;
-        public List forum_sign_calendar;
+        public List<Calendar> forum_sign_calendar;
         public MemberShowIcon forumvip_show_icon;
-        public List game_card;
+        public List<GameInfo> game_card;
         public String game_name;
         public String game_url;
-        public List good_classify;
+        public List<Classify> good_classify;
         public Integer has_frs_star;
         public Integer has_game;
         public Integer has_paper;
@@ -312,7 +312,7 @@ public final class ForumInfo extends Message {
         public Integer level_id;
         public String level_name;
         public Integer levelup_score;
-        public List managers;
+        public List<Manager> managers;
         public Integer meizhi_tag;
         public Integer member_num;
         public String name;
@@ -321,7 +321,7 @@ public final class ForumInfo extends Message {
         public PostPrefix post_prefix;
         public PostTopic post_topic;
         public RealTime realtime_data;
-        public List recommend_forum;
+        public List<RecommendForum> recommend_forum;
         public RecomUserInfo recommend_user_info;
         public String risk_tip_notice;
         public String risk_tip_pop;
@@ -335,7 +335,7 @@ public final class ForumInfo extends Message {
         public ThemeColorInfo theme_color;
         public Integer thread_num;
         public String tids;
-        public List tip_list;
+        public List<TipInfo> tip_list;
         public TopCode top_code;
         public TopNotice top_notice;
         public String topic_special_icon;
@@ -638,13 +638,13 @@ public final class ForumInfo extends Message {
             }
             this.sign_in_info = builder.sign_in_info;
             this.zhibo = builder.zhibo;
-            List list = builder.managers;
+            List<Manager> list = builder.managers;
             if (list == null) {
                 this.managers = DEFAULT_MANAGERS;
             } else {
                 this.managers = Message.immutableCopyOf(list);
             }
-            List list2 = builder.forum_sign_calendar;
+            List<Calendar> list2 = builder.forum_sign_calendar;
             if (list2 == null) {
                 this.forum_sign_calendar = DEFAULT_FORUM_SIGN_CALENDAR;
             } else {
@@ -662,7 +662,7 @@ public final class ForumInfo extends Message {
             } else {
                 this.tids = str5;
             }
-            List list3 = builder.good_classify;
+            List<Classify> list3 = builder.good_classify;
             if (list3 == null) {
                 this.good_classify = DEFAULT_GOOD_CLASSIFY;
             } else {
@@ -720,7 +720,7 @@ public final class ForumInfo extends Message {
             }
             this.banner = builder.banner;
             this.banner_list = builder.banner_list;
-            List list4 = builder.badges;
+            List<Badges> list4 = builder.badges;
             if (list4 == null) {
                 this.badges = DEFAULT_BADGES;
             } else {
@@ -764,7 +764,7 @@ public final class ForumInfo extends Message {
             } else {
                 this.is_local_effect = num20;
             }
-            List list5 = builder.recommend_forum;
+            List<RecommendForum> list5 = builder.recommend_forum;
             if (list5 == null) {
                 this.recommend_forum = DEFAULT_RECOMMEND_FORUM;
             } else {
@@ -799,7 +799,7 @@ public final class ForumInfo extends Message {
             }
             this.top_code = builder.top_code;
             this.news_info = builder.news_info;
-            List list6 = builder.game_card;
+            List<GameInfo> list6 = builder.game_card;
             if (list6 == null) {
                 this.game_card = DEFAULT_GAME_CARD;
             } else {
@@ -927,7 +927,7 @@ public final class ForumInfo extends Message {
             } else {
                 this.risk_tip_pop_title = str23;
             }
-            List list7 = builder.tip_list;
+            List<TipInfo> list7 = builder.tip_list;
             if (list7 == null) {
                 this.tip_list = DEFAULT_TIP_LIST;
             } else {

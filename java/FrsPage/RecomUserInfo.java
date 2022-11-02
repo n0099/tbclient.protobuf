@@ -34,20 +34,20 @@ public final class RecomUserInfo extends Message {
     public final UserInfo user_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<RecomUserInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List common_forum;
+        public List<CommonForum> common_forum;
         public CommonDistance distanceinfo;
         public String message;
         public String pos_name;
-        public List post_info;
+        public List<PostInfo> post_info;
         public UserInfo user_info;
 
         public Builder() {
@@ -142,13 +142,13 @@ public final class RecomUserInfo extends Message {
         }
         if (z) {
             this.user_info = builder.user_info;
-            List list = builder.common_forum;
+            List<CommonForum> list = builder.common_forum;
             if (list == null) {
                 this.common_forum = DEFAULT_COMMON_FORUM;
             } else {
                 this.common_forum = Message.immutableCopyOf(list);
             }
-            List list2 = builder.post_info;
+            List<PostInfo> list2 = builder.post_info;
             if (list2 == null) {
                 this.post_info = DEFAULT_POST_INFO;
             } else {

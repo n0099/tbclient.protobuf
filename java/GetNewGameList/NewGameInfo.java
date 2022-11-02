@@ -180,13 +180,13 @@ public final class NewGameInfo extends Message {
     public final String version_ios;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<NewGameInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String andr_pk_name;
@@ -207,7 +207,7 @@ public final class NewGameInfo extends Message {
         public String game_id;
         public String game_link;
         public String game_name;
-        public List game_pic;
+        public List<String> game_pic;
         public Integer game_platform;
         public Integer game_type;
         public String gift_code;
@@ -225,7 +225,7 @@ public final class NewGameInfo extends Message {
         public String package_size;
         public Integer play_count;
         public String praise;
-        public List recommend_platform;
+        public List<String> recommend_platform;
         public String schema_url;
         public Integer score;
         public String secret_key;
@@ -471,7 +471,7 @@ public final class NewGameInfo extends Message {
             } else {
                 this.game_desc = str8;
             }
-            List list = builder.game_pic;
+            List<String> list = builder.game_pic;
             if (list == null) {
                 this.game_pic = DEFAULT_GAME_PIC;
             } else {
@@ -489,7 +489,7 @@ public final class NewGameInfo extends Message {
             } else {
                 this.developer = str10;
             }
-            List list2 = builder.recommend_platform;
+            List<String> list2 = builder.recommend_platform;
             if (list2 == null) {
                 this.recommend_platform = DEFAULT_RECOMMEND_PLATFORM;
             } else {

@@ -30,18 +30,18 @@ public final class FinanceTab extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<FinanceTab> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String general_tab_text;
         public String general_tab_url;
-        public List tabs;
+        public List<FinanceTabItems> tabs;
         public String title;
 
         public Builder() {
@@ -150,7 +150,7 @@ public final class FinanceTab extends Message {
             } else {
                 this.general_tab_url = str3;
             }
-            List list = builder.tabs;
+            List<FinanceTabItems> list = builder.tabs;
             if (list == null) {
                 this.tabs = DEFAULT_TABS;
                 return;

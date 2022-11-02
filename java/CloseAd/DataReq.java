@@ -19,23 +19,23 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1119common;
+    public final CommonReq f1122common;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer vip_close;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1120common;
+        public CommonReq f1123common;
         public Integer vip_close;
 
         public Builder() {
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1120common = dataReq.f1119common;
+            this.f1123common = dataReq.f1122common;
             this.vip_close = dataReq.vip_close;
         }
 
@@ -124,7 +124,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1119common = builder.f1120common;
+            this.f1122common = builder.f1123common;
             Integer num = builder.vip_close;
             if (num == null) {
                 this.vip_close = DEFAULT_VIP_CLOSE;
@@ -134,7 +134,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1119common = builder.f1120common;
+        this.f1122common = builder.f1123common;
         this.vip_close = builder.vip_close;
     }
 

@@ -30,19 +30,19 @@ public final class AdList extends Message {
     public final List<String> ad_pic;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<AdList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String ad_link_android;
         public String ad_link_ios;
         public String ad_link_webview;
-        public List ad_pic;
+        public List<String> ad_pic;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -150,7 +150,7 @@ public final class AdList extends Message {
             } else {
                 this.ad_link_ios = str3;
             }
-            List list = builder.ad_pic;
+            List<String> list = builder.ad_pic;
             if (list == null) {
                 this.ad_pic = DEFAULT_AD_PIC;
                 return;

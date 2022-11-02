@@ -24,16 +24,16 @@ public final class robotsList extends Message {
     public final String key;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<robotsList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List friend_list;
+        public List<friendList> friend_list;
         public String key;
 
         public Builder() {
@@ -128,7 +128,7 @@ public final class robotsList extends Message {
             } else {
                 this.key = str;
             }
-            List list = builder.friend_list;
+            List<friendList> list = builder.friend_list;
             if (list == null) {
                 this.friend_list = DEFAULT_FRIEND_LIST;
                 return;

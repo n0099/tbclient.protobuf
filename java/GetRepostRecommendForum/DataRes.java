@@ -28,18 +28,18 @@ public final class DataRes extends Message {
     public final List<SimpleForum> recommend_forum_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer priv_thread;
         public String recommend_ext;
-        public List recommend_forum_list;
+        public List<SimpleForum> recommend_forum_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -129,7 +129,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.recommend_forum_list;
+            List<SimpleForum> list = builder.recommend_forum_list;
             if (list == null) {
                 this.recommend_forum_list = DEFAULT_RECOMMEND_FORUM_LIST;
             } else {

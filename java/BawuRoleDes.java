@@ -24,16 +24,16 @@ public final class BawuRoleDes extends Message {
     public final String role_name;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<BawuRoleDes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List role_info;
+        public List<BawuRoleInfoPub> role_info;
         public String role_name;
 
         public Builder() {
@@ -128,7 +128,7 @@ public final class BawuRoleDes extends Message {
             } else {
                 this.role_name = str;
             }
-            List list = builder.role_info;
+            List<BawuRoleInfoPub> list = builder.role_info;
             if (list == null) {
                 this.role_info = DEFAULT_ROLE_INFO;
                 return;

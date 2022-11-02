@@ -21,16 +21,16 @@ public final class RankInfo extends Message {
     public final List<RankItem> rank_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<RankInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List rank_list;
+        public List<RankItem> rank_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -117,7 +117,7 @@ public final class RankInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.rank_list;
+            List<RankItem> list = builder.rank_list;
             if (list == null) {
                 this.rank_list = DEFAULT_RANK_LIST;
                 return;

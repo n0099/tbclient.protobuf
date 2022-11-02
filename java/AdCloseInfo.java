@@ -32,18 +32,18 @@ public final class AdCloseInfo extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<AdCloseInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ActionControl action_control;
         public String confirm_title;
-        public List reasons;
+        public List<String> reasons;
         public Integer support_close;
         public String title;
 
@@ -149,7 +149,7 @@ public final class AdCloseInfo extends Message {
             } else {
                 this.title = str;
             }
-            List list = builder.reasons;
+            List<String> list = builder.reasons;
             if (list == null) {
                 this.reasons = DEFAULT_REASONS;
             } else {

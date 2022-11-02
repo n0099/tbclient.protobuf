@@ -54,26 +54,26 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> thread_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List album_list;
+        public List<AlbumElement> album_list;
         public Integer discussion_id;
-        public List discussion_list;
+        public List<ThreadInfo> discussion_list;
         public Integer has_tornado;
         public ItemGameCode item_game_code;
         public ItemGameInfo item_game_info;
         public ItemInfo item_info;
         public String link;
-        public List recommend_forum;
-        public List recommend_item;
-        public List thread_list;
+        public List<RecommendForumInfo> recommend_forum;
+        public List<ItemInfo> recommend_item;
+        public List<ThreadInfo> thread_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -177,19 +177,19 @@ public final class DataRes extends Message {
         }
         if (z) {
             this.item_info = builder.item_info;
-            List list = builder.thread_list;
+            List<ThreadInfo> list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {
                 this.thread_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.recommend_item;
+            List<ItemInfo> list2 = builder.recommend_item;
             if (list2 == null) {
                 this.recommend_item = DEFAULT_RECOMMEND_ITEM;
             } else {
                 this.recommend_item = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.recommend_forum;
+            List<RecommendForumInfo> list3 = builder.recommend_forum;
             if (list3 == null) {
                 this.recommend_forum = DEFAULT_RECOMMEND_FORUM;
             } else {
@@ -201,13 +201,13 @@ public final class DataRes extends Message {
             } else {
                 this.link = str;
             }
-            List list4 = builder.album_list;
+            List<AlbumElement> list4 = builder.album_list;
             if (list4 == null) {
                 this.album_list = DEFAULT_ALBUM_LIST;
             } else {
                 this.album_list = Message.immutableCopyOf(list4);
             }
-            List list5 = builder.discussion_list;
+            List<ThreadInfo> list5 = builder.discussion_list;
             if (list5 == null) {
                 this.discussion_list = DEFAULT_DISCUSSION_LIST;
             } else {

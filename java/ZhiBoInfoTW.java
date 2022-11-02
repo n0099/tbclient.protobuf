@@ -79,13 +79,13 @@ public final class ZhiBoInfoTW extends Message {
     public final Zan zan;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ZhiBoInfoTW> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String content;
@@ -97,7 +97,7 @@ public final class ZhiBoInfoTW extends Message {
         public HotTWThreadInfo hot_tw_info;
         public Integer is_copytwzhibo;
         public Integer is_headline;
-        public List labelInfo;
+        public List<LabelInfo> labelInfo;
         public Long last_modified_time;
         public String livecover_src;
         public String livecover_src_bsize;
@@ -289,7 +289,7 @@ public final class ZhiBoInfoTW extends Message {
             }
             this.user = builder.user;
             this.hot_tw_info = builder.hot_tw_info;
-            List list = builder.labelInfo;
+            List<LabelInfo> list = builder.labelInfo;
             if (list == null) {
                 this.labelInfo = DEFAULT_LABELINFO;
             } else {

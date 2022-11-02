@@ -19,23 +19,23 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1147common;
+    public final CommonReq f1150common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long forum_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1148common;
+        public CommonReq f1151common;
         public Long forum_id;
 
         public Builder() {
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.forum_id = dataReq.forum_id;
-            this.f1148common = dataReq.f1147common;
+            this.f1151common = dataReq.f1150common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -130,11 +130,11 @@ public final class DataReq extends Message {
             } else {
                 this.forum_id = l;
             }
-            this.f1147common = builder.f1148common;
+            this.f1150common = builder.f1151common;
             return;
         }
         this.forum_id = builder.forum_id;
-        this.f1147common = builder.f1148common;
+        this.f1150common = builder.f1151common;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {

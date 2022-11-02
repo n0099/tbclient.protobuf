@@ -43,22 +43,22 @@ public final class HotLiveWithCategory extends Message {
     public final Integer tab_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<HotLiveWithCategory> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String bitmap_wh_ratio;
         public Integer entry_id;
         public String entry_name;
         public String label_name;
-        public List live;
+        public List<ThreadInfo> live;
         public Integer live_tab_type;
-        public List sub_type_list;
+        public List<String> sub_type_list;
         public Integer tab_id;
 
         public Builder() {
@@ -175,7 +175,7 @@ public final class HotLiveWithCategory extends Message {
             } else {
                 this.bitmap_wh_ratio = str2;
             }
-            List list = builder.live;
+            List<ThreadInfo> list = builder.live;
             if (list == null) {
                 this.live = DEFAULT_LIVE;
             } else {
@@ -199,7 +199,7 @@ public final class HotLiveWithCategory extends Message {
             } else {
                 this.tab_id = num3;
             }
-            List list2 = builder.sub_type_list;
+            List<String> list2 = builder.sub_type_list;
             if (list2 == null) {
                 this.sub_type_list = DEFAULT_SUB_TYPE_LIST;
                 return;

@@ -28,18 +28,18 @@ public final class DataRes extends Message {
     public final List<User> recom_user_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer current_page;
         public Integer has_more;
-        public List recom_user_list;
+        public List<User> recom_user_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -130,7 +130,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.recom_user_list;
+            List<User> list = builder.recom_user_list;
             if (list == null) {
                 this.recom_user_list = DEFAULT_RECOM_USER_LIST;
             } else {

@@ -18,25 +18,25 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1253common;
+    public final CommonReq f1256common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String shoubaicuid;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String token;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1254common;
+        public CommonReq f1257common;
         public String shoubaicuid;
         public String token;
 
@@ -75,7 +75,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1254common = dataReq.f1253common;
+            this.f1257common = dataReq.f1256common;
             this.token = dataReq.token;
             this.shoubaicuid = dataReq.shoubaicuid;
         }
@@ -111,7 +111,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1253common = builder.f1254common;
+            this.f1256common = builder.f1257common;
             String str = builder.token;
             if (str == null) {
                 this.token = "";
@@ -127,7 +127,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1253common = builder.f1254common;
+        this.f1256common = builder.f1257common;
         this.token = builder.token;
         this.shoubaicuid = builder.shoubaicuid;
     }

@@ -51,19 +51,19 @@ public final class RecomTopicList extends Message {
     public final Long update_time;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<RecomTopicList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String author;
         public Long discuss_num;
         public Integer is_video_topic;
-        public List media;
+        public List<Media> media;
         public Integer tag;
         public String topic_desc;
         public Long topic_id;
@@ -227,7 +227,7 @@ public final class RecomTopicList extends Message {
             } else {
                 this.author = str4;
             }
-            List list = builder.media;
+            List<Media> list = builder.media;
             if (list == null) {
                 this.media = DEFAULT_MEDIA;
             } else {

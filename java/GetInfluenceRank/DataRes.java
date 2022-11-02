@@ -36,13 +36,13 @@ public final class DataRes extends Message {
     public final List<User> user_rank;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public User current_user;
@@ -50,7 +50,7 @@ public final class DataRes extends Message {
         public Boolean has_more;
         public RankRuler rank_description;
         public Long timestamp;
-        public List user_rank;
+        public List<User> user_rank;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -144,7 +144,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.user_rank;
+            List<User> list = builder.user_rank;
             if (list == null) {
                 this.user_rank = DEFAULT_USER_RANK;
             } else {

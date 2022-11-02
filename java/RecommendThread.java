@@ -30,17 +30,17 @@ public final class RecommendThread extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<RecommendThread> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long post_num;
-        public List term_list;
+        public List<String> term_list;
         public Long tid;
         public String title;
 
@@ -152,7 +152,7 @@ public final class RecommendThread extends Message {
             } else {
                 this.post_num = l2;
             }
-            List list = builder.term_list;
+            List<String> list = builder.term_list;
             if (list == null) {
                 this.term_list = DEFAULT_TERM_LIST;
                 return;

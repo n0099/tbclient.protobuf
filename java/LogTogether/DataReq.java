@@ -23,22 +23,22 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1291common;
+    public final CommonReq f1294common;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List Ad;
+        public List<AdReq> Ad;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1292common;
+        public CommonReq f1295common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -76,7 +76,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.Ad = Message.copyOf(dataReq.Ad);
-            this.f1292common = dataReq.f1291common;
+            this.f1295common = dataReq.f1294common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -126,17 +126,17 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            List list = builder.Ad;
+            List<AdReq> list = builder.Ad;
             if (list == null) {
                 this.Ad = DEFAULT_AD;
             } else {
                 this.Ad = Message.immutableCopyOf(list);
             }
-            this.f1291common = builder.f1292common;
+            this.f1294common = builder.f1295common;
             return;
         }
         this.Ad = Message.immutableCopyOf(builder.Ad);
-        this.f1291common = builder.f1292common;
+        this.f1294common = builder.f1295common;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {

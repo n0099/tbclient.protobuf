@@ -17,23 +17,23 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1117common;
+    public final CommonReq f1120common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String obj_source;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1118common;
+        public CommonReq f1121common;
         public String obj_source;
 
         public Builder() {
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1118common = dataReq.f1117common;
+            this.f1121common = dataReq.f1120common;
             this.obj_source = dataReq.obj_source;
         }
 
@@ -106,7 +106,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1117common = builder.f1118common;
+            this.f1120common = builder.f1121common;
             String str = builder.obj_source;
             if (str == null) {
                 this.obj_source = "";
@@ -116,7 +116,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1117common = builder.f1118common;
+        this.f1120common = builder.f1121common;
         this.obj_source = builder.obj_source;
     }
 

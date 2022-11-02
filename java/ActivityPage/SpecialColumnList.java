@@ -27,17 +27,17 @@ public final class SpecialColumnList extends Message {
     public final String special_column_name;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<SpecialColumnList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer floor_position;
-        public List item_list;
+        public List<SpecialColumn> item_list;
         public String special_column_name;
 
         public Builder() {
@@ -140,7 +140,7 @@ public final class SpecialColumnList extends Message {
             } else {
                 this.special_column_name = str;
             }
-            List list = builder.item_list;
+            List<SpecialColumn> list = builder.item_list;
             if (list == null) {
                 this.item_list = DEFAULT_ITEM_LIST;
                 return;

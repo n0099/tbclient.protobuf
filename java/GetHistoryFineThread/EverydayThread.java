@@ -24,16 +24,16 @@ public final class EverydayThread extends Message {
     public final Integer show_time;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<EverydayThread> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List fine_thread_list;
+        public List<FineThreadInfo> fine_thread_list;
         public Integer show_time;
 
         public Builder() {
@@ -123,7 +123,7 @@ public final class EverydayThread extends Message {
             }
         }
         if (z) {
-            List list = builder.fine_thread_list;
+            List<FineThreadInfo> list = builder.fine_thread_list;
             if (list == null) {
                 this.fine_thread_list = DEFAULT_FINE_THREAD_LIST;
             } else {

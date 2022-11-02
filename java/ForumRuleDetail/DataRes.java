@@ -52,13 +52,13 @@ public final class DataRes extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String audit_opinion;
@@ -70,7 +70,7 @@ public final class DataRes extends Message {
         public Integer is_manager;
         public String preface;
         public String publish_time;
-        public List rules;
+        public List<ForumRule> rules;
         public String title;
 
         public Builder() {
@@ -184,7 +184,7 @@ public final class DataRes extends Message {
             } else {
                 this.preface = str2;
             }
-            List list = builder.rules;
+            List<ForumRule> list = builder.rules;
             if (list == null) {
                 this.rules = DEFAULT_RULES;
             } else {

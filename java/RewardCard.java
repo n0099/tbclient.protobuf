@@ -60,26 +60,26 @@ public final class RewardCard extends Message {
     public final String total_num;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<RewardCard> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String banner_jump_url;
         public String button_text;
         public String end_text;
         public String end_time;
-        public List head_imgs;
+        public List<String> head_imgs;
         public String icon;
         public String id;
         public String join_num;
         public String join_succ_text;
         public String jump_url;
-        public List reward_material;
+        public List<RewardMaterial> reward_material;
         public String start_text;
         public String title;
         public String total_num;
@@ -237,7 +237,7 @@ public final class RewardCard extends Message {
             } else {
                 this.join_num = str9;
             }
-            List list = builder.reward_material;
+            List<RewardMaterial> list = builder.reward_material;
             if (list == null) {
                 this.reward_material = DEFAULT_REWARD_MATERIAL;
             } else {
@@ -249,7 +249,7 @@ public final class RewardCard extends Message {
             } else {
                 this.total_num = str10;
             }
-            List list2 = builder.head_imgs;
+            List<String> list2 = builder.head_imgs;
             if (list2 == null) {
                 this.head_imgs = DEFAULT_HEAD_IMGS;
             } else {

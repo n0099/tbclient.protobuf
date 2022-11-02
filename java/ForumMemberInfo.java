@@ -27,16 +27,16 @@ public final class ForumMemberInfo extends Message {
     public final String total;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ForumMemberInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List member_list;
+        public List<User> member_list;
         public String title;
         public String total;
 
@@ -139,7 +139,7 @@ public final class ForumMemberInfo extends Message {
             } else {
                 this.title = str2;
             }
-            List list = builder.member_list;
+            List<User> list = builder.member_list;
             if (list == null) {
                 this.member_list = DEFAULT_MEMBER_LIST;
                 return;

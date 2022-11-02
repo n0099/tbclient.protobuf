@@ -105,6 +105,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_VIDEOBIGGIE_RECOMTHREAD;
     public static final Integer DEFAULT_IS_VOICE_THREAD;
     public static final Integer DEFAULT_IS_VOTE;
+    public static final Integer DEFAULT_IS_XIUXIU_THREAD;
     public static final List<HeadItem> DEFAULT_ITEM_STAR;
     public static final Long DEFAULT_LAST_READ_PID;
     public static final String DEFAULT_LAST_TIME = "";
@@ -131,7 +132,6 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_POST_NUM;
     public static final String DEFAULT_PRESENTATION_STYLE = "";
     public static final Integer DEFAULT_PUSH_END_TIME;
-    public static final Integer DEFAULT_READONLY;
     public static final String DEFAULT_RECOM_EXTRA = "";
     public static final String DEFAULT_RECOM_REASON = "";
     public static final String DEFAULT_RECOM_SOURCE = "";
@@ -380,6 +380,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_voice_thread;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer is_vote;
+    @ProtoField(tag = 214, type = Message.Datatype.INT32)
+    public final Integer is_xiuxiu_thread;
     @ProtoField(tag = 179)
     public final Item item;
     @ProtoField(label = Message.Label.REPEATED, tag = 180)
@@ -418,6 +420,8 @@ public final class ThreadInfo extends Message {
     public final String multi_forum_text;
     @ProtoField(label = Message.Label.REPEATED, tag = 122)
     public final List<MultipleForum> multiple_forum_list;
+    @ProtoField(tag = Cea708Decoder.COMMAND_DS4)
+    public final SmartApp naws_info;
     @ProtoField(tag = 164, type = Message.Datatype.STRING)
     public final String nid;
     @ProtoField(tag = 82, type = Message.Datatype.UINT32)
@@ -454,8 +458,6 @@ public final class ThreadInfo extends Message {
     public final Integer push_end_time;
     @ProtoField(tag = 91)
     public final PushStatus push_status;
-    @ProtoField(tag = 207, type = Message.Datatype.INT32)
-    public final Integer readonly;
     @ProtoField(tag = Cea708Decoder.COMMAND_SPA, type = Message.Datatype.STRING)
     public final String recom_extra;
     @ProtoField(tag = 109, type = Message.Datatype.STRING)
@@ -490,8 +492,6 @@ public final class ThreadInfo extends Message {
     public final StarRankIcon star_rank_icon;
     @ProtoField(tag = 68, type = Message.Datatype.INT32)
     public final Integer storecount;
-    @ProtoField(tag = Cea708Decoder.COMMAND_DS4)
-    public final SmartApp swan_info;
     @ProtoField(tag = 159, type = Message.Datatype.STRING)
     public final String t_share_img;
     @ProtoField(tag = HideBottomViewOnScrollBehavior.EXIT_ANIMATION_DURATION, type = Message.Datatype.INT32)
@@ -586,7 +586,7 @@ public final class ThreadInfo extends Message {
     public final Zan zan;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
@@ -720,19 +720,19 @@ public final class ThreadInfo extends Message {
             } else {
                 this.comment_num = num14;
             }
-            List list = builder._abstract;
+            List<Abstract> list = builder._abstract;
             if (list == null) {
                 this._abstract = DEFAULT_ABSTRACT;
             } else {
                 this._abstract = Message.immutableCopyOf(list);
             }
-            List list2 = builder.media;
+            List<Media> list2 = builder.media;
             if (list2 == null) {
                 this.media = DEFAULT_MEDIA;
             } else {
                 this.media = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.voice_info;
+            List<Voice> list3 = builder.voice_info;
             if (list3 == null) {
                 this.voice_info = DEFAULT_VOICE_INFO;
             } else {
@@ -744,7 +744,7 @@ public final class ThreadInfo extends Message {
             } else {
                 this.meizhi_pic = str3;
             }
-            List list4 = builder.media_num;
+            List<MediaNum> list4 = builder.media_num;
             if (list4 == null) {
                 this.media_num = DEFAULT_MEDIA_NUM;
             } else {
@@ -853,7 +853,7 @@ public final class ThreadInfo extends Message {
             } else {
                 this.is_pic = num21;
             }
-            List list5 = builder.post_list;
+            List<PostList> list5 = builder.post_list;
             if (list5 == null) {
                 this.post_list = DEFAULT_POST_LIST;
             } else {
@@ -959,7 +959,7 @@ public final class ThreadInfo extends Message {
             } else {
                 this.timeline = num31;
             }
-            List list6 = builder.act_info;
+            List<ActInfo> list6 = builder.act_info;
             if (list6 == null) {
                 this.act_info = DEFAULT_ACT_INFO;
             } else {
@@ -1051,7 +1051,7 @@ public final class ThreadInfo extends Message {
             }
             this.yule_post_activity = builder.yule_post_activity;
             this.app_code = builder.app_code;
-            List list7 = builder.ext_tails;
+            List<TailInfo> list7 = builder.ext_tails;
             if (list7 == null) {
                 this.ext_tails = DEFAULT_EXT_TAILS;
             } else {
@@ -1121,13 +1121,13 @@ public final class ThreadInfo extends Message {
                 this.recom_reason = str22;
             }
             this.video_ad_info = builder.video_ad_info;
-            List list8 = builder.rich_title;
+            List<PbContent> list8 = builder.rich_title;
             if (list8 == null) {
                 this.rich_title = DEFAULT_RICH_TITLE;
             } else {
                 this.rich_title = Message.immutableCopyOf(list8);
             }
-            List list9 = builder.rich_abstract;
+            List<PbContent> list9 = builder.rich_abstract;
             if (list9 == null) {
                 this.rich_abstract = DEFAULT_RICH_ABSTRACT;
             } else {
@@ -1148,26 +1148,26 @@ public final class ThreadInfo extends Message {
             }
             this.tbread_dispatch_info = builder.tbread_dispatch_info;
             this.app_info = builder.app_info;
-            List list10 = builder.report_info;
+            List<ReportInfo> list10 = builder.report_info;
             if (list10 == null) {
                 this.report_info = DEFAULT_REPORT_INFO;
             } else {
                 this.report_info = Message.immutableCopyOf(list10);
             }
             this.video_channel_info = builder.video_channel_info;
-            List list11 = builder.dislike_info;
+            List<DislikeInfo> list11 = builder.dislike_info;
             if (list11 == null) {
                 this.dislike_info = DEFAULT_DISLIKE_INFO;
             } else {
                 this.dislike_info = Message.immutableCopyOf(list11);
             }
-            List list12 = builder.declare_list;
+            List<DeclareInfo> list12 = builder.declare_list;
             if (list12 == null) {
                 this.declare_list = DEFAULT_DECLARE_LIST;
             } else {
                 this.declare_list = Message.immutableCopyOf(list12);
             }
-            List list13 = builder.multiple_forum_list;
+            List<MultipleForum> list13 = builder.multiple_forum_list;
             if (list13 == null) {
                 this.multiple_forum_list = DEFAULT_MULTIPLE_FORUM_LIST;
             } else {
@@ -1257,7 +1257,7 @@ public final class ThreadInfo extends Message {
                 this.middle_page_pass_flag = num56;
             }
             this.origin_thread_info = builder.origin_thread_info;
-            List list14 = builder.first_post_content;
+            List<PbContent> list14 = builder.first_post_content;
             if (list14 == null) {
                 this.first_post_content = DEFAULT_FIRST_POST_CONTENT;
             } else {
@@ -1326,7 +1326,7 @@ public final class ThreadInfo extends Message {
                 this.daily_paper_time = str29;
             }
             this.forum_info = builder.forum_info;
-            this.swan_info = builder.swan_info;
+            this.naws_info = builder.naws_info;
             this.video_segment = builder.video_segment;
             String str30 = builder.is_top_img;
             if (str30 == null) {
@@ -1420,14 +1420,14 @@ public final class ThreadInfo extends Message {
             } else {
                 this.wonderful_post_info = str38;
             }
-            List list15 = builder.pb_link_info;
+            List<PbLinkInfo> list15 = builder.pb_link_info;
             if (list15 == null) {
                 this.pb_link_info = DEFAULT_PB_LINK_INFO;
             } else {
                 this.pb_link_info = Message.immutableCopyOf(list15);
             }
             this.item = builder.item;
-            List list16 = builder.item_star;
+            List<HeadItem> list16 = builder.item_star;
             if (list16 == null) {
                 this.item_star = DEFAULT_ITEM_STAR;
             } else {
@@ -1445,7 +1445,7 @@ public final class ThreadInfo extends Message {
             } else {
                 this.hot_num = num67;
             }
-            List list17 = builder.pb_goods_info;
+            List<PbGoodsInfo> list17 = builder.pb_goods_info;
             if (list17 == null) {
                 this.pb_goods_info = DEFAULT_PB_GOODS_INFO;
             } else {
@@ -1483,7 +1483,7 @@ public final class ThreadInfo extends Message {
             } else {
                 this.collect_num = num71;
             }
-            List list18 = builder.thread_recommend_infos;
+            List<ThreadRecommendInfo> list18 = builder.thread_recommend_infos;
             if (list18 == null) {
                 this.thread_recommend_infos = DEFAULT_THREAD_RECOMMEND_INFOS;
             } else {
@@ -1559,21 +1559,21 @@ public final class ThreadInfo extends Message {
             } else {
                 this.click_monitor_url = str46;
             }
-            Integer num76 = builder.readonly;
-            if (num76 == null) {
-                this.readonly = DEFAULT_READONLY;
-            } else {
-                this.readonly = num76;
-            }
             this.thread_recommend_tag = builder.thread_recommend_tag;
             this.custom_figure = builder.custom_figure;
             this.custom_state = builder.custom_state;
-            Integer num77 = builder.is_highlight;
-            if (num77 == null) {
+            Integer num76 = builder.is_highlight;
+            if (num76 == null) {
                 this.is_highlight = DEFAULT_IS_HIGHLIGHT;
+            } else {
+                this.is_highlight = num76;
+            }
+            Integer num77 = builder.is_xiuxiu_thread;
+            if (num77 == null) {
+                this.is_xiuxiu_thread = DEFAULT_IS_XIUXIU_THREAD;
                 return;
             } else {
-                this.is_highlight = num77;
+                this.is_xiuxiu_thread = num77;
                 return;
             }
         }
@@ -1728,7 +1728,7 @@ public final class ThreadInfo extends Message {
         this.is_videobiggie_recomthread = builder.is_videobiggie_recomthread;
         this.daily_paper_time = builder.daily_paper_time;
         this.forum_info = builder.forum_info;
-        this.swan_info = builder.swan_info;
+        this.naws_info = builder.naws_info;
         this.video_segment = builder.video_segment;
         this.is_top_img = builder.is_top_img;
         this.t_share_img = builder.t_share_img;
@@ -1776,20 +1776,20 @@ public final class ThreadInfo extends Message {
         this.is_pictxt = builder.is_pictxt;
         this.exposure_monitor_url = builder.exposure_monitor_url;
         this.click_monitor_url = builder.click_monitor_url;
-        this.readonly = builder.readonly;
         this.thread_recommend_tag = builder.thread_recommend_tag;
         this.custom_figure = builder.custom_figure;
         this.custom_state = builder.custom_state;
         this.is_highlight = builder.is_highlight;
+        this.is_xiuxiu_thread = builder.is_xiuxiu_thread;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List _abstract;
+        public List<Abstract> _abstract;
         public String ab_tag;
-        public List act_info;
+        public List<ActInfo> act_info;
         public ActivityInfo activity_info;
         public Agree agree;
         public Integer agree_num;
@@ -1819,14 +1819,14 @@ public final class ThreadInfo extends Message {
         public CustomState custom_state;
         public String daily_paper_time;
         public DealInfo deal_info;
-        public List declare_list;
-        public List dislike_info;
+        public List<DeclareInfo> declare_list;
+        public List<DislikeInfo> dislike_info;
         public String ecom;
         public EditInfo edit_info;
         public String exposure_monitor_url;
-        public List ext_tails;
+        public List<TailInfo> ext_tails;
         public Long fid;
-        public List first_post_content;
+        public List<PbContent> first_post_content;
         public Long first_post_id;
         public String fname;
         public ForumFriendWatchingInfo forum_friend_watching_info;
@@ -1889,8 +1889,9 @@ public final class ThreadInfo extends Message {
         public Integer is_videobiggie_recomthread;
         public Integer is_voice_thread;
         public Integer is_vote;
+        public Integer is_xiuxiu_thread;
         public Item item;
-        public List item_star;
+        public List<HeadItem> item_star;
         public JNews jid;
         public Long last_read_pid;
         public User last_replyer;
@@ -1901,32 +1902,32 @@ public final class ThreadInfo extends Message {
         public String live_post_type;
         public String livecover_src;
         public Lbs location;
-        public List media;
-        public List media_num;
+        public List<Media> media;
+        public List<MediaNum> media_num;
         public String meizhi_pic;
         public Integer middle_page_num;
         public Integer middle_page_pass_flag;
         public String multi_forum_text;
-        public List multiple_forum_list;
+        public List<MultipleForum> multiple_forum_list;
+        public SmartApp naws_info;
         public String nid;
         public Integer operator_flag;
         public OriForumInfo ori_forum_info;
         public OriginThreadInfo origin_thread_info;
         public Integer pb_entry;
-        public List pb_goods_info;
-        public List pb_link_info;
+        public List<PbGoodsInfo> pb_goods_info;
+        public List<PbLinkInfo> pb_link_info;
         public Media pic_info;
         public Integer pic_num;
         public String pids;
         public PollInfo poll_info;
         public Long post_id;
-        public List post_list;
+        public List<PostList> post_list;
         public Integer post_num;
         public String presentation_style;
         public PsInfo ps_info;
         public Integer push_end_time;
         public PushStatus push_status;
-        public Integer readonly;
         public String recom_extra;
         public String recom_reason;
         public String recom_source;
@@ -1934,24 +1935,23 @@ public final class ThreadInfo extends Message {
         public String recom_weight;
         public RecommendTip recommend_tip;
         public Integer reply_num;
-        public List report_info;
+        public List<ReportInfo> report_info;
         public Integer repost_num;
-        public List rich_abstract;
-        public List rich_title;
+        public List<PbContent> rich_abstract;
+        public List<PbContent> rich_title;
         public String scard_packet_id;
         public Long share_num;
         public Integer show_commented;
         public SkinInfo skin_info;
         public StarRankIcon star_rank_icon;
         public Integer storecount;
-        public SmartApp swan_info;
         public String t_share_img;
         public Integer tab_id;
         public String tab_name;
         public Integer tab_show_mode;
         public TaskInfo task_info;
         public TbreadDispatch tbread_dispatch_info;
-        public List thread_recommend_infos;
+        public List<ThreadRecommendInfo> thread_recommend_infos;
         public ThreadRecommendTag thread_recommend_tag;
         public String thread_share_link;
         public Integer thread_type;
@@ -1985,7 +1985,7 @@ public final class ThreadInfo extends Message {
         public String video_swf;
         public VideoActive videoactive_info;
         public Integer view_num;
-        public List voice_info;
+        public List<Voice> voice_info;
         public VoiceRoom voice_room;
         public String wonderful_post_info;
         public WorksInfo works_info;
@@ -2178,7 +2178,7 @@ public final class ThreadInfo extends Message {
             this.is_videobiggie_recomthread = threadInfo.is_videobiggie_recomthread;
             this.daily_paper_time = threadInfo.daily_paper_time;
             this.forum_info = threadInfo.forum_info;
-            this.swan_info = threadInfo.swan_info;
+            this.naws_info = threadInfo.naws_info;
             this.video_segment = threadInfo.video_segment;
             this.is_top_img = threadInfo.is_top_img;
             this.t_share_img = threadInfo.t_share_img;
@@ -2226,11 +2226,11 @@ public final class ThreadInfo extends Message {
             this.is_pictxt = threadInfo.is_pictxt;
             this.exposure_monitor_url = threadInfo.exposure_monitor_url;
             this.click_monitor_url = threadInfo.click_monitor_url;
-            this.readonly = threadInfo.readonly;
             this.thread_recommend_tag = threadInfo.thread_recommend_tag;
             this.custom_figure = threadInfo.custom_figure;
             this.custom_state = threadInfo.custom_state;
             this.is_highlight = threadInfo.is_highlight;
+            this.is_xiuxiu_thread = threadInfo.is_xiuxiu_thread;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -2362,8 +2362,8 @@ public final class ThreadInfo extends Message {
         DEFAULT_IS_FRS_MASK = 0;
         DEFAULT_TAB_SHOW_MODE = 0;
         DEFAULT_IS_PICTXT = 0;
-        DEFAULT_READONLY = 0;
         DEFAULT_IS_HIGHLIGHT = 0;
+        DEFAULT_IS_XIUXIU_THREAD = 0;
     }
 
     public /* synthetic */ ThreadInfo(Builder builder, boolean z, a aVar) {

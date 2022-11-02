@@ -45,13 +45,13 @@ public final class RecForumInfo extends Message {
     public final List<ThreadList> threadlist;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<RecForumInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
@@ -62,7 +62,7 @@ public final class RecForumInfo extends Message {
         public Boolean need_trans;
         public ThemeColorInfo theme_color;
         public Integer thread_count;
-        public List threadlist;
+        public List<ThreadList> threadlist;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -196,7 +196,7 @@ public final class RecForumInfo extends Message {
             } else {
                 this.from = str4;
             }
-            List list = builder.threadlist;
+            List<ThreadList> list = builder.threadlist;
             if (list == null) {
                 this.threadlist = DEFAULT_THREADLIST;
             } else {

@@ -24,16 +24,16 @@ public final class LotteryRegular extends Message {
     public final String regular;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<LotteryRegular> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List chance;
+        public List<Integer> chance;
         public String regular;
 
         public Builder() {
@@ -128,7 +128,7 @@ public final class LotteryRegular extends Message {
             } else {
                 this.regular = str;
             }
-            List list = builder.chance;
+            List<Integer> list = builder.chance;
             if (list == null) {
                 this.chance = DEFAULT_CHANCE;
                 return;

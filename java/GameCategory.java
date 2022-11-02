@@ -30,16 +30,16 @@ public final class GameCategory extends Message {
     public final String name;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<GameCategory> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List game_list;
+        public List<String> game_list;
         public String icon_url;
         public Integer id;
         public String name;
@@ -151,7 +151,7 @@ public final class GameCategory extends Message {
             } else {
                 this.icon_url = str2;
             }
-            List list = builder.game_list;
+            List<String> list = builder.game_list;
             if (list == null) {
                 this.game_list = DEFAULT_GAME_LIST;
                 return;

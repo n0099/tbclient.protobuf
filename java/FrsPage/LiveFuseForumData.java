@@ -19,10 +19,9 @@ public final class LiveFuseForumData extends Message {
     public static final String DEFAULT_BJIMG_DARK_SMALL = "";
     public static final String DEFAULT_BJIMG_LIGHT_BIG = "";
     public static final String DEFAULT_BJIMG_LIGHT_SMALL = "";
-    public static final Integer DEFAULT_CARD_STYLE;
     public static final List<String> DEFAULT_HEAD_IMG;
+    public static final Integer DEFAULT_HEAD_IMG_STYLE;
     public static final String DEFAULT_ICON_URL = "";
-    public static final Integer DEFAULT_IS_ROUND;
     public static final String DEFAULT_ONLINE_USERS = "";
     public static final String DEFAULT_SCHEMA = "";
     public static final List<String> DEFAULT_TITLE;
@@ -37,14 +36,12 @@ public final class LiveFuseForumData extends Message {
     public final String bjimg_light_big;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String bjimg_light_small;
-    @ProtoField(tag = 12, type = Message.Datatype.INT32)
-    public final Integer card_style;
     @ProtoField(label = Message.Label.REPEATED, tag = 2, type = Message.Datatype.STRING)
     public final List<String> head_img;
+    @ProtoField(tag = 13, type = Message.Datatype.INT32)
+    public final Integer head_img_style;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String icon_url;
-    @ProtoField(tag = 13, type = Message.Datatype.INT32)
-    public final Integer is_round;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String online_users;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -57,26 +54,25 @@ public final class LiveFuseForumData extends Message {
     public final String yyext;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<LiveFuseForumData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String bjimg_dark_big;
         public String bjimg_dark_small;
         public String bjimg_light_big;
         public String bjimg_light_small;
-        public Integer card_style;
-        public List head_img;
+        public List<String> head_img;
+        public Integer head_img_style;
         public String icon_url;
-        public Integer is_round;
         public String online_users;
         public String schema;
-        public List title;
+        public List<String> title;
         public Integer type;
         public String yyext;
 
@@ -126,8 +122,7 @@ public final class LiveFuseForumData extends Message {
             this.bjimg_light_big = liveFuseForumData.bjimg_light_big;
             this.bjimg_dark_small = liveFuseForumData.bjimg_dark_small;
             this.bjimg_light_small = liveFuseForumData.bjimg_light_small;
-            this.card_style = liveFuseForumData.card_style;
-            this.is_round = liveFuseForumData.is_round;
+            this.head_img_style = liveFuseForumData.head_img_style;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -158,8 +153,7 @@ public final class LiveFuseForumData extends Message {
         DEFAULT_HEAD_IMG = Collections.emptyList();
         DEFAULT_TITLE = Collections.emptyList();
         DEFAULT_TYPE = 0;
-        DEFAULT_CARD_STYLE = 0;
-        DEFAULT_IS_ROUND = 0;
+        DEFAULT_HEAD_IMG_STYLE = 0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -187,13 +181,13 @@ public final class LiveFuseForumData extends Message {
             } else {
                 this.online_users = str;
             }
-            List list = builder.head_img;
+            List<String> list = builder.head_img;
             if (list == null) {
                 this.head_img = DEFAULT_HEAD_IMG;
             } else {
                 this.head_img = Message.immutableCopyOf(list);
             }
-            List list2 = builder.title;
+            List<String> list2 = builder.title;
             if (list2 == null) {
                 this.title = DEFAULT_TITLE;
             } else {
@@ -247,18 +241,12 @@ public final class LiveFuseForumData extends Message {
             } else {
                 this.bjimg_light_small = str8;
             }
-            Integer num2 = builder.card_style;
+            Integer num2 = builder.head_img_style;
             if (num2 == null) {
-                this.card_style = DEFAULT_CARD_STYLE;
-            } else {
-                this.card_style = num2;
-            }
-            Integer num3 = builder.is_round;
-            if (num3 == null) {
-                this.is_round = DEFAULT_IS_ROUND;
+                this.head_img_style = DEFAULT_HEAD_IMG_STYLE;
                 return;
             } else {
-                this.is_round = num3;
+                this.head_img_style = num2;
                 return;
             }
         }
@@ -273,8 +261,7 @@ public final class LiveFuseForumData extends Message {
         this.bjimg_light_big = builder.bjimg_light_big;
         this.bjimg_dark_small = builder.bjimg_dark_small;
         this.bjimg_light_small = builder.bjimg_light_small;
-        this.card_style = builder.card_style;
-        this.is_round = builder.is_round;
+        this.head_img_style = builder.head_img_style;
     }
 
     public /* synthetic */ LiveFuseForumData(Builder builder, boolean z, a aVar) {

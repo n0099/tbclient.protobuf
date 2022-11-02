@@ -20,25 +20,25 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1167common;
+    public final CommonReq f1170common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer scr_h;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer scr_w;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1168common;
+        public CommonReq f1171common;
         public Integer scr_h;
         public Integer scr_w;
 
@@ -77,7 +77,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1168common = dataReq.f1167common;
+            this.f1171common = dataReq.f1170common;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
         }
@@ -130,7 +130,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1167common = builder.f1168common;
+            this.f1170common = builder.f1171common;
             Integer num = builder.scr_w;
             if (num == null) {
                 this.scr_w = DEFAULT_SCR_W;
@@ -146,7 +146,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1167common = builder.f1168common;
+        this.f1170common = builder.f1171common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
     }

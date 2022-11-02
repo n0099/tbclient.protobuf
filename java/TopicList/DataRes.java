@@ -33,20 +33,20 @@ public final class DataRes extends Message {
     public final TopicListModule topic_manual;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List frs_tab_topic;
+        public List<TopicList> frs_tab_topic;
         public MediaTopic media_topic;
-        public List tab_list;
+        public List<TabList> tab_list;
         public TopicListModule topic_bang;
-        public List topic_list;
+        public List<NewTopicList> topic_list;
         public TopicListModule topic_manual;
 
         public Builder() {
@@ -144,19 +144,19 @@ public final class DataRes extends Message {
             this.topic_bang = builder.topic_bang;
             this.topic_manual = builder.topic_manual;
             this.media_topic = builder.media_topic;
-            List list = builder.tab_list;
+            List<TabList> list = builder.tab_list;
             if (list == null) {
                 this.tab_list = DEFAULT_TAB_LIST;
             } else {
                 this.tab_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.frs_tab_topic;
+            List<TopicList> list2 = builder.frs_tab_topic;
             if (list2 == null) {
                 this.frs_tab_topic = DEFAULT_FRS_TAB_TOPIC;
             } else {
                 this.frs_tab_topic = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.topic_list;
+            List<NewTopicList> list3 = builder.topic_list;
             if (list3 == null) {
                 this.topic_list = DEFAULT_TOPIC_LIST;
                 return;

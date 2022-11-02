@@ -27,16 +27,16 @@ public final class DialogItem extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DialogItem> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List button;
+        public List<ButtonItem> button;
         public String content;
         public String title;
 
@@ -139,7 +139,7 @@ public final class DialogItem extends Message {
             } else {
                 this.content = str2;
             }
-            List list = builder.button;
+            List<ButtonItem> list = builder.button;
             if (list == null) {
                 this.button = DEFAULT_BUTTON;
                 return;

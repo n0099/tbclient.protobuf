@@ -27,18 +27,18 @@ public final class ClassInfo extends Message {
     public final List<SubClassItem> sub_class_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ClassInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer class_id;
         public String class_name;
-        public List sub_class_list;
+        public List<SubClassItem> sub_class_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -140,7 +140,7 @@ public final class ClassInfo extends Message {
             } else {
                 this.class_name = str;
             }
-            List list = builder.sub_class_list;
+            List<SubClassItem> list = builder.sub_class_list;
             if (list == null) {
                 this.sub_class_list = DEFAULT_SUB_CLASS_LIST;
                 return;

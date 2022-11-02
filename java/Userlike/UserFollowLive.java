@@ -22,16 +22,16 @@ public final class UserFollowLive extends Message {
     public final List<AlaLiveInfo> user_follow_live;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<UserFollowLive> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List user_follow_live;
+        public List<AlaLiveInfo> user_follow_live;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -118,7 +118,7 @@ public final class UserFollowLive extends Message {
             }
         }
         if (z) {
-            List list = builder.user_follow_live;
+            List<AlaLiveInfo> list = builder.user_follow_live;
             if (list == null) {
                 this.user_follow_live = DEFAULT_USER_FOLLOW_LIVE;
                 return;

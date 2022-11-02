@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 6)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1199common;
+    public final CommonReq f1202common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -33,18 +33,18 @@ public final class DataReq extends Message {
     public final String tieba_name;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1200common;
+        public CommonReq f1203common;
         public Long forum_id;
         public Integer pn;
         public Integer rn;
@@ -89,7 +89,7 @@ public final class DataReq extends Message {
             this.forum_id = dataReq.forum_id;
             this.rn = dataReq.rn;
             this.pn = dataReq.pn;
-            this.f1200common = dataReq.f1199common;
+            this.f1203common = dataReq.f1202common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -165,14 +165,14 @@ public final class DataReq extends Message {
             } else {
                 this.pn = num2;
             }
-            this.f1199common = builder.f1200common;
+            this.f1202common = builder.f1203common;
             return;
         }
         this.tieba_name = builder.tieba_name;
         this.forum_id = builder.forum_id;
         this.rn = builder.rn;
         this.pn = builder.pn;
-        this.f1199common = builder.f1200common;
+        this.f1202common = builder.f1203common;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {

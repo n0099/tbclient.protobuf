@@ -19,22 +19,22 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1245common;
+    public final CommonReq f1248common;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String addr_name;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1246common;
+        public CommonReq f1249common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.addr_name = dataReq.addr_name;
-            this.f1246common = dataReq.f1245common;
+            this.f1249common = dataReq.f1248common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -112,11 +112,11 @@ public final class DataReq extends Message {
             } else {
                 this.addr_name = str;
             }
-            this.f1245common = builder.f1246common;
+            this.f1248common = builder.f1249common;
             return;
         }
         this.addr_name = builder.addr_name;
-        this.f1245common = builder.f1246common;
+        this.f1248common = builder.f1249common;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {

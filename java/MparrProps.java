@@ -27,19 +27,19 @@ public final class MparrProps extends Message {
     public final List<Props> props;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<MparrProps> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public AvatarFrame avatarframe;
         public Level level;
         public Portrait portrait;
-        public List props;
+        public List<Props> props;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -132,7 +132,7 @@ public final class MparrProps extends Message {
             this.avatarframe = builder.avatarframe;
             this.portrait = builder.portrait;
             this.level = builder.level;
-            List list = builder.props;
+            List<Props> list = builder.props;
             if (list == null) {
                 this.props = DEFAULT_PROPS;
                 return;

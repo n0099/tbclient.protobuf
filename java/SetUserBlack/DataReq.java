@@ -22,24 +22,24 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1357common;
+    public final CommonReq f1360common;
     @ProtoField(tag = 3)
     public final PermissionList perm_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long black_uid;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1358common;
+        public CommonReq f1361common;
         public PermissionList perm_list;
 
         public Builder() {
@@ -77,7 +77,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1358common = dataReq.f1357common;
+            this.f1361common = dataReq.f1360common;
             this.black_uid = dataReq.black_uid;
             this.perm_list = dataReq.perm_list;
         }
@@ -129,7 +129,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1357common = builder.f1358common;
+            this.f1360common = builder.f1361common;
             Long l = builder.black_uid;
             if (l == null) {
                 this.black_uid = DEFAULT_BLACK_UID;
@@ -139,7 +139,7 @@ public final class DataReq extends Message {
             this.perm_list = builder.perm_list;
             return;
         }
-        this.f1357common = builder.f1358common;
+        this.f1360common = builder.f1361common;
         this.black_uid = builder.black_uid;
         this.perm_list = builder.perm_list;
     }

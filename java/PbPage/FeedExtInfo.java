@@ -24,17 +24,17 @@ public final class FeedExtInfo extends Message {
     public final List<String> feed_tab;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<FeedExtInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List feed_bar;
-        public List feed_tab;
+        public List<String> feed_bar;
+        public List<String> feed_tab;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -123,13 +123,13 @@ public final class FeedExtInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.feed_tab;
+            List<String> list = builder.feed_tab;
             if (list == null) {
                 this.feed_tab = DEFAULT_FEED_TAB;
             } else {
                 this.feed_tab = Message.immutableCopyOf(list);
             }
-            List list2 = builder.feed_bar;
+            List<String> list2 = builder.feed_bar;
             if (list2 == null) {
                 this.feed_bar = DEFAULT_FEED_BAR;
                 return;

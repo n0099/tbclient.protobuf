@@ -45,13 +45,13 @@ public final class DataRes extends Message {
     public final ThreadInfo thread;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Anti anti;
@@ -61,7 +61,7 @@ public final class DataRes extends Message {
         public Page page;
         public Post post;
         public Integer server_time;
-        public List subpost_list;
+        public List<SubPostList> subpost_list;
         public ThreadInfo thread;
 
         public Builder() {
@@ -162,7 +162,7 @@ public final class DataRes extends Message {
             this.page = builder.page;
             this.anti = builder.anti;
             this.post = builder.post;
-            List list = builder.subpost_list;
+            List<SubPostList> list = builder.subpost_list;
             if (list == null) {
                 this.subpost_list = DEFAULT_SUBPOST_LIST;
             } else {

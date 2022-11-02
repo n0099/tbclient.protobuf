@@ -93,13 +93,13 @@ public final class RecommendGame extends Message {
     public final String version;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<RecommendGame> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String andr_pk_name;
@@ -113,7 +113,7 @@ public final class RecommendGame extends Message {
         public String game_id;
         public String game_link;
         public String game_name;
-        public List game_pic;
+        public List<String> game_pic;
         public Integer game_type;
         public String icon_url;
         public String introduce;
@@ -322,7 +322,7 @@ public final class RecommendGame extends Message {
             } else {
                 this.schema_url = str10;
             }
-            List list = builder.game_pic;
+            List<String> list = builder.game_pic;
             if (list == null) {
                 this.game_pic = DEFAULT_GAME_PIC;
             } else {

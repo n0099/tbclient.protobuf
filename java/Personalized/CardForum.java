@@ -30,18 +30,18 @@ public final class CardForum extends Message {
     public final Long position;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<CardForum> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String card_title;
         public Integer card_type;
-        public List forum_list;
+        public List<PersonalForum> forum_list;
         public Long position;
 
         public Builder() {
@@ -140,7 +140,7 @@ public final class CardForum extends Message {
             } else {
                 this.card_title = str;
             }
-            List list = builder.forum_list;
+            List<PersonalForum> list = builder.forum_list;
             if (list == null) {
                 this.forum_list = DEFAULT_FORUM_LIST;
             } else {

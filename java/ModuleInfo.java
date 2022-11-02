@@ -27,18 +27,18 @@ public final class ModuleInfo extends Message {
     public final List<ThreadModule> module_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ModuleInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer max_module_num;
         public Integer max_module_thread_num;
-        public List module_list;
+        public List<ThreadModule> module_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -129,7 +129,7 @@ public final class ModuleInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.module_list;
+            List<ThreadModule> list = builder.module_list;
             if (list == null) {
                 this.module_list = DEFAULT_MODULE_LIST;
             } else {

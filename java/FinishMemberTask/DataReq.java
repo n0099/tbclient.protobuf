@@ -19,23 +19,23 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1139common;
+    public final CommonReq f1142common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long task_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1140common;
+        public CommonReq f1143common;
         public Long task_id;
 
         public Builder() {
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1140common = dataReq.f1139common;
+            this.f1143common = dataReq.f1142common;
             this.task_id = dataReq.task_id;
         }
 
@@ -124,7 +124,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1139common = builder.f1140common;
+            this.f1142common = builder.f1143common;
             Long l = builder.task_id;
             if (l == null) {
                 this.task_id = DEFAULT_TASK_ID;
@@ -134,7 +134,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1139common = builder.f1140common;
+        this.f1142common = builder.f1143common;
         this.task_id = builder.task_id;
     }
 

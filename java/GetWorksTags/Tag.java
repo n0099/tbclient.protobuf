@@ -27,18 +27,18 @@ public final class Tag extends Message {
     public final List<String> tags;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Tag> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String first_class;
         public String second_class;
-        public List tags;
+        public List<String> tags;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -139,7 +139,7 @@ public final class Tag extends Message {
             } else {
                 this.second_class = str2;
             }
-            List list = builder.tags;
+            List<String> list = builder.tags;
             if (list == null) {
                 this.tags = DEFAULT_TAGS;
                 return;

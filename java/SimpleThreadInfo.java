@@ -38,16 +38,16 @@ public final class SimpleThreadInfo extends Message {
     public final Zan zan;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<SimpleThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List _abstract;
+        public List<Abstract> _abstract;
         public Integer last_time_int;
         public Integer reply_num;
         public Long thread_type;
@@ -174,7 +174,7 @@ public final class SimpleThreadInfo extends Message {
             } else {
                 this.last_time_int = num2;
             }
-            List list = builder._abstract;
+            List<Abstract> list = builder._abstract;
             if (list == null) {
                 this._abstract = DEFAULT_ABSTRACT;
             } else {

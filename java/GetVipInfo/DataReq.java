@@ -19,23 +19,23 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1269common;
+    public final CommonReq f1272common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer is_jail_broken;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1270common;
+        public CommonReq f1273common;
         public Integer is_jail_broken;
 
         public Builder() {
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1270common = dataReq.f1269common;
+            this.f1273common = dataReq.f1272common;
             this.is_jail_broken = dataReq.is_jail_broken;
         }
 
@@ -124,7 +124,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1269common = builder.f1270common;
+            this.f1272common = builder.f1273common;
             Integer num = builder.is_jail_broken;
             if (num == null) {
                 this.is_jail_broken = DEFAULT_IS_JAIL_BROKEN;
@@ -134,7 +134,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1269common = builder.f1270common;
+        this.f1272common = builder.f1273common;
         this.is_jail_broken = builder.is_jail_broken;
     }
 

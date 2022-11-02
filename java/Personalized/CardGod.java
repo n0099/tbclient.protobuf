@@ -28,17 +28,17 @@ public final class CardGod extends Message {
     public final Integer position;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<CardGod> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String card_title;
-        public List gods;
+        public List<User> gods;
         public Integer position;
 
         public Builder() {
@@ -135,7 +135,7 @@ public final class CardGod extends Message {
             } else {
                 this.card_title = str;
             }
-            List list = builder.gods;
+            List<User> list = builder.gods;
             if (list == null) {
                 this.gods = DEFAULT_GODS;
             } else {

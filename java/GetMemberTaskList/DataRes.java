@@ -26,17 +26,17 @@ public final class DataRes extends Message {
     public final UserPointInfo user_point_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List img_list;
-        public List task_list;
+        public List<ImgInfo> img_list;
+        public List<PointTaskInfo> task_list;
         public UserPointInfo user_point_info;
 
         public Builder() {
@@ -127,13 +127,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.task_list;
+            List<PointTaskInfo> list = builder.task_list;
             if (list == null) {
                 this.task_list = DEFAULT_TASK_LIST;
             } else {
                 this.task_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.img_list;
+            List<ImgInfo> list2 = builder.img_list;
             if (list2 == null) {
                 this.img_list = DEFAULT_IMG_LIST;
             } else {

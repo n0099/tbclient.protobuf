@@ -27,18 +27,18 @@ public final class PbTopAgreePost extends Message {
     public final List<Post> post_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<PbTopAgreePost> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String forum_top_list;
-        public List post_id_list;
-        public List post_list;
+        public List<Long> post_id_list;
+        public List<Post> post_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -128,13 +128,13 @@ public final class PbTopAgreePost extends Message {
             }
         }
         if (z) {
-            List list = builder.post_list;
+            List<Post> list = builder.post_list;
             if (list == null) {
                 this.post_list = DEFAULT_POST_LIST;
             } else {
                 this.post_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.post_id_list;
+            List<Long> list2 = builder.post_id_list;
             if (list2 == null) {
                 this.post_id_list = DEFAULT_POST_ID_LIST;
             } else {

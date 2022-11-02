@@ -24,17 +24,17 @@ public final class NaGuide extends Message {
     public final List<RecGuide> rec_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<NaGuide> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String dwnl_url;
-        public List rec_info;
+        public List<RecGuide> rec_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -128,7 +128,7 @@ public final class NaGuide extends Message {
             } else {
                 this.dwnl_url = str;
             }
-            List list = builder.rec_info;
+            List<RecGuide> list = builder.rec_info;
             if (list == null) {
                 this.rec_info = DEFAULT_REC_INFO;
                 return;

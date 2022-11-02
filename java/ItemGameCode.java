@@ -24,16 +24,16 @@ public final class ItemGameCode extends Message {
     public final Integer unclaimed_num;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ItemGameCode> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List game_code_list;
+        public List<GameCodeList> game_code_list;
         public Integer unclaimed_num;
 
         public Builder() {
@@ -129,7 +129,7 @@ public final class ItemGameCode extends Message {
             } else {
                 this.unclaimed_num = num;
             }
-            List list = builder.game_code_list;
+            List<GameCodeList> list = builder.game_code_list;
             if (list == null) {
                 this.game_code_list = DEFAULT_GAME_CODE_LIST;
                 return;

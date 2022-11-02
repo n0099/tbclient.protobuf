@@ -324,30 +324,30 @@ public final class DataRes extends Message {
     public final WorldcupSkin worldcup_skin;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ActivityConfig activity_config;
         public ActivityHead activityhead;
-        public List ad_mix_list;
+        public List<AdMixFloor> ad_mix_list;
         public String ad_sample_map_key;
         public Integer ad_show_select;
         public AddBawuPopInfo add_bawu_pop;
         public AgreeBanner agree_banner;
         public Integer ala_insert_floor;
-        public List ala_insert_thread;
+        public List<ThreadInfo> ala_insert_thread;
         public Integer ala_live_count;
         public AlaLiveInsert ala_live_insert;
-        public List ala_stage_list;
+        public List<ThreadInfo> ala_stage_list;
         public Anti anti;
         public String asp_shown_info;
-        public List banner_thread_list;
+        public List<BannerThreadInfo> banner_thread_list;
         public BannerUserStory banner_user_story;
         public String bawu_enter_url;
         public Integer bawu_unread_notice_num;
@@ -355,16 +355,16 @@ public final class DataRes extends Message {
         public WindowToast bazhu_exam_fail;
         public ForumBookInfo book_info;
         public Bottle bottle;
-        public List bottom_menu;
+        public List<BottomMenu> bottom_menu;
         public BrandForumInfo brand_forum_info;
         public BusinessPromot business_promot;
-        public List card_shipin_info;
-        public List card_shipin_new;
-        public List card_shipin_pos;
+        public List<ThreadInfo> card_shipin_info;
+        public List<ThreadInfo> card_shipin_new;
+        public List<Integer> card_shipin_pos;
         public CarrierEnter carrier_enter;
-        public List category_list;
+        public List<CategoryInfo> category_list;
         public ClientPlatform client_platform;
-        public List color_egg;
+        public List<ColorEgg> color_egg;
         public Integer ctime;
         public PopInfo enter_pop_info;
         public Esport esport;
@@ -374,13 +374,13 @@ public final class DataRes extends Message {
         public ForumArIno forum_ar_info;
         public ForumHeadIcon forum_head_icon;
         public ForumHeadlineImgInfo forum_headline_img_info;
-        public List forum_livegroup_list;
+        public List<AnchorInfo> forum_livegroup_list;
         public ForumPresentInfo forum_present_info;
         public ForumRuleStatus forum_rule;
-        public List frs_game_tab_info;
+        public List<FrsTabInfo> frs_game_tab_info;
         public StarInfo frs_star;
         public Integer frs_tab_default;
-        public List frs_tab_info;
+        public List<FrsTabInfo> frs_tab_info;
         public PopInfo frsmask_pop_info;
         public Integer game_default_tab_id;
         public GconAccount gcon_account;
@@ -394,7 +394,7 @@ public final class DataRes extends Message {
         public Integer is_new_url;
         public ItemInfo item_info;
         public AlaLiveNotify live_frs_notify;
-        public List live_fuse_forum;
+        public List<LiveFuseForumData> live_fuse_forum;
         public Long logid;
         public NaGuide na_guide;
         public NavTabInfo nav_tab_info;
@@ -415,33 +415,33 @@ public final class DataRes extends Message {
         public Integer school_recom_pos;
         public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
-        public List service_area;
+        public List<ServiceArea> service_area;
         public Integer show_adsense;
         public SignActivityInfo sign_activity_info;
         public SmartApp smart_app;
-        public List smart_app_avatar;
+        public List<String> smart_app_avatar;
         public Integer smart_frs_type;
         public Integer sort_type;
-        public List star_enter;
+        public List<StarEnter> star_enter;
         public StarRank star_rank_info;
         public StarVoice star_voice;
         public ThreadInfo store_card;
-        public List thread_id_list;
-        public List thread_id_list_info;
-        public List thread_list;
+        public List<Long> thread_id_list;
+        public List<ThreadIdListInfo> thread_id_list_info;
+        public List<ThreadInfo> thread_list;
         public Integer time;
         public Integer trends_redpoint;
-        public List twzhibo_info;
+        public List<ZhiBoInfoTW> twzhibo_info;
         public Integer twzhibo_pos;
         public User user;
         public FrsPageUserExtend user_extend;
-        public List user_list;
+        public List<User> user_list;
         public FrsVideo video;
         public Integer video_auto_play;
         public VitalityInfo vitality_info;
         public Integer voice_room_config;
-        public List voice_room_list;
-        public List window_toast;
+        public List<ThreadInfo> voice_room_list;
+        public List<WindowToast> window_toast;
         public WorldcupSkin worldcup_skin;
 
         public Builder() {
@@ -690,13 +690,13 @@ public final class DataRes extends Message {
             this.page = builder.page;
             this.anti = builder.anti;
             this.group = builder.group;
-            List list = builder.thread_list;
+            List<ThreadInfo> list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {
                 this.thread_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.thread_id_list;
+            List<Long> list2 = builder.thread_id_list;
             if (list2 == null) {
                 this.thread_id_list = DEFAULT_THREAD_ID_LIST;
             } else {
@@ -739,13 +739,13 @@ public final class DataRes extends Message {
                 this.server_time = num5;
             }
             this.info = builder.info;
-            List list3 = builder.forum_livegroup_list;
+            List<AnchorInfo> list3 = builder.forum_livegroup_list;
             if (list3 == null) {
                 this.forum_livegroup_list = DEFAULT_FORUM_LIVEGROUP_LIST;
             } else {
                 this.forum_livegroup_list = Message.immutableCopyOf(list3);
             }
-            List list4 = builder.user_list;
+            List<User> list4 = builder.user_list;
             if (list4 == null) {
                 this.user_list = DEFAULT_USER_LIST;
             } else {
@@ -758,26 +758,26 @@ public final class DataRes extends Message {
             } else {
                 this.fortune_desc = str;
             }
-            List list5 = builder.star_enter;
+            List<StarEnter> list5 = builder.star_enter;
             if (list5 == null) {
                 this.star_enter = DEFAULT_STAR_ENTER;
             } else {
                 this.star_enter = Message.immutableCopyOf(list5);
             }
-            List list6 = builder.color_egg;
+            List<ColorEgg> list6 = builder.color_egg;
             if (list6 == null) {
                 this.color_egg = DEFAULT_COLOR_EGG;
             } else {
                 this.color_egg = Message.immutableCopyOf(list6);
             }
-            List list7 = builder.frs_tab_info;
+            List<FrsTabInfo> list7 = builder.frs_tab_info;
             if (list7 == null) {
                 this.frs_tab_info = DEFAULT_FRS_TAB_INFO;
             } else {
                 this.frs_tab_info = Message.immutableCopyOf(list7);
             }
             this.activityhead = builder.activityhead;
-            List list8 = builder.twzhibo_info;
+            List<ZhiBoInfoTW> list8 = builder.twzhibo_info;
             if (list8 == null) {
                 this.twzhibo_info = DEFAULT_TWZHIBO_INFO;
             } else {
@@ -791,7 +791,7 @@ public final class DataRes extends Message {
             } else {
                 this.twzhibo_pos = num6;
             }
-            List list9 = builder.category_list;
+            List<CategoryInfo> list9 = builder.category_list;
             if (list9 == null) {
                 this.category_list = DEFAULT_CATEGORY_LIST;
             } else {
@@ -808,7 +808,7 @@ public final class DataRes extends Message {
             }
             this.client_platform = builder.client_platform;
             this.head_sdk = builder.head_sdk;
-            List list10 = builder.card_shipin_info;
+            List<ThreadInfo> list10 = builder.card_shipin_info;
             if (list10 == null) {
                 this.card_shipin_info = DEFAULT_CARD_SHIPIN_INFO;
             } else {
@@ -836,7 +836,7 @@ public final class DataRes extends Message {
             }
             this.vitality_info = builder.vitality_info;
             this.carrier_enter = builder.carrier_enter;
-            List list11 = builder.banner_thread_list;
+            List<BannerThreadInfo> list11 = builder.banner_thread_list;
             if (list11 == null) {
                 this.banner_thread_list = DEFAULT_BANNER_THREAD_LIST;
             } else {
@@ -865,13 +865,13 @@ public final class DataRes extends Message {
             this.forum_present_info = builder.forum_present_info;
             this.forum_headline_img_info = builder.forum_headline_img_info;
             this.ntspread = builder.ntspread;
-            List list12 = builder.card_shipin_pos;
+            List<Integer> list12 = builder.card_shipin_pos;
             if (list12 == null) {
                 this.card_shipin_pos = DEFAULT_CARD_SHIPIN_POS;
             } else {
                 this.card_shipin_pos = Message.immutableCopyOf(list12);
             }
-            List list13 = builder.card_shipin_new;
+            List<ThreadInfo> list13 = builder.card_shipin_new;
             if (list13 == null) {
                 this.card_shipin_new = DEFAULT_CARD_SHIPIN_NEW;
             } else {
@@ -898,7 +898,7 @@ public final class DataRes extends Message {
                 this.partial_visible_toast = str4;
             }
             this.esport = builder.esport;
-            List list14 = builder.thread_id_list_info;
+            List<ThreadIdListInfo> list14 = builder.thread_id_list_info;
             if (list14 == null) {
                 this.thread_id_list_info = DEFAULT_THREAD_ID_LIST_INFO;
             } else {
@@ -906,7 +906,7 @@ public final class DataRes extends Message {
             }
             this.agree_banner = builder.agree_banner;
             this.na_guide = builder.na_guide;
-            List list15 = builder.frs_game_tab_info;
+            List<FrsTabInfo> list15 = builder.frs_game_tab_info;
             if (list15 == null) {
                 this.frs_game_tab_info = DEFAULT_FRS_GAME_TAB_INFO;
             } else {
@@ -923,7 +923,7 @@ public final class DataRes extends Message {
             } else {
                 this.game_default_tab_id = num14;
             }
-            List list16 = builder.ala_insert_thread;
+            List<ThreadInfo> list16 = builder.ala_insert_thread;
             if (list16 == null) {
                 this.ala_insert_thread = DEFAULT_ALA_INSERT_THREAD;
             } else {
@@ -937,7 +937,7 @@ public final class DataRes extends Message {
                 this.ala_insert_floor = num15;
             }
             this.forum_ar_info = builder.forum_ar_info;
-            List list17 = builder.ala_stage_list;
+            List<ThreadInfo> list17 = builder.ala_stage_list;
             if (list17 == null) {
                 this.ala_stage_list = DEFAULT_ALA_STAGE_LIST;
             } else {
@@ -950,7 +950,7 @@ public final class DataRes extends Message {
             } else {
                 this.trends_redpoint = num16;
             }
-            List list18 = builder.window_toast;
+            List<WindowToast> list18 = builder.window_toast;
             if (list18 == null) {
                 this.window_toast = DEFAULT_WINDOW_TOAST;
             } else {
@@ -962,7 +962,7 @@ public final class DataRes extends Message {
             this.worldcup_skin = builder.worldcup_skin;
             this.redpacketrain = builder.redpacketrain;
             this.brand_forum_info = builder.brand_forum_info;
-            List list19 = builder.bottom_menu;
+            List<BottomMenu> list19 = builder.bottom_menu;
             if (list19 == null) {
                 this.bottom_menu = DEFAULT_BOTTOM_MENU;
             } else {
@@ -974,7 +974,7 @@ public final class DataRes extends Message {
             } else {
                 this.video_auto_play = num17;
             }
-            List list20 = builder.smart_app_avatar;
+            List<String> list20 = builder.smart_app_avatar;
             if (list20 == null) {
                 this.smart_app_avatar = DEFAULT_SMART_APP_AVATAR;
             } else {
@@ -985,7 +985,7 @@ public final class DataRes extends Message {
             this.private_forum_info = builder.private_forum_info;
             this.private_forum_active_info = builder.private_forum_active_info;
             this.business_promot = builder.business_promot;
-            List list21 = builder.service_area;
+            List<ServiceArea> list21 = builder.service_area;
             if (list21 == null) {
                 this.service_area = DEFAULT_SERVICE_AREA;
             } else {
@@ -1010,7 +1010,7 @@ public final class DataRes extends Message {
                 this.show_adsense = num19;
             }
             this.frsmask_pop_info = builder.frsmask_pop_info;
-            List list22 = builder.voice_room_list;
+            List<ThreadInfo> list22 = builder.voice_room_list;
             if (list22 == null) {
                 this.voice_room_list = DEFAULT_VOICE_ROOM_LIST;
             } else {
@@ -1028,7 +1028,7 @@ public final class DataRes extends Message {
             } else {
                 this.ad_show_select = num21;
             }
-            List list23 = builder.ad_mix_list;
+            List<AdMixFloor> list23 = builder.ad_mix_list;
             if (list23 == null) {
                 this.ad_mix_list = DEFAULT_AD_MIX_LIST;
             } else {
@@ -1041,7 +1041,7 @@ public final class DataRes extends Message {
                 this.ad_sample_map_key = str5;
             }
             this.bawutask_pop = builder.bawutask_pop;
-            List list24 = builder.live_fuse_forum;
+            List<LiveFuseForumData> list24 = builder.live_fuse_forum;
             if (list24 == null) {
                 this.live_fuse_forum = DEFAULT_LIVE_FUSE_FORUM;
             } else {

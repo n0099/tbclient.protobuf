@@ -36,16 +36,16 @@ public final class HotUserRankEntry extends Message {
     public final Integer yesterday_rank;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<HotUserRankEntry> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List hot_user;
+        public List<ShortUserInfo> hot_user;
         public Boolean is_in_rank;
         public String module_icon;
         public String module_name;
@@ -145,7 +145,7 @@ public final class HotUserRankEntry extends Message {
             }
         }
         if (z) {
-            List list = builder.hot_user;
+            List<ShortUserInfo> list = builder.hot_user;
             if (list == null) {
                 this.hot_user = DEFAULT_HOT_USER;
             } else {

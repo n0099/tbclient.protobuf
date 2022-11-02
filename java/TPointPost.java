@@ -55,22 +55,22 @@ public final class TPointPost extends Message {
     public final Integer template_type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<TPointPost> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List act_btn;
+        public List<ActBtn> act_btn;
         public DetailInfo detail_info;
         public Integer hidden_day;
         public Integer is_tuiguang;
         public String monitor_id;
         public String position;
-        public List t_imgs;
+        public List<Timgs> t_imgs;
         public VideoInfo t_video;
         public String tag_name;
         public String tag_name_url;
@@ -204,13 +204,13 @@ public final class TPointPost extends Message {
             } else {
                 this.template_type = num2;
             }
-            List list = builder.act_btn;
+            List<ActBtn> list = builder.act_btn;
             if (list == null) {
                 this.act_btn = DEFAULT_ACT_BTN;
             } else {
                 this.act_btn = Message.immutableCopyOf(list);
             }
-            List list2 = builder.t_imgs;
+            List<Timgs> list2 = builder.t_imgs;
             if (list2 == null) {
                 this.t_imgs = DEFAULT_T_IMGS;
             } else {

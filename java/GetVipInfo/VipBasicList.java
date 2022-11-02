@@ -36,13 +36,13 @@ public final class VipBasicList extends Message {
     public final List<VipSpecialItem> item;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<VipBasicList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String card_id;
@@ -50,7 +50,7 @@ public final class VipBasicList extends Message {
         public String class_name;
         public String class_url;
         public String class_url_name;
-        public List item;
+        public List<VipSpecialItem> item;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -143,7 +143,7 @@ public final class VipBasicList extends Message {
             }
         }
         if (z) {
-            List list = builder.item;
+            List<VipSpecialItem> list = builder.item;
             if (list == null) {
                 this.item = DEFAULT_ITEM;
             } else {

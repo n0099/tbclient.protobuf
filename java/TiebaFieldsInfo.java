@@ -27,18 +27,18 @@ public final class TiebaFieldsInfo extends Message {
     public final List<User> user_rank;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<TiebaFieldsInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List tieba_fields;
+        public List<String> tieba_fields;
         public String tieba_name;
-        public List user_rank;
+        public List<User> user_rank;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -128,7 +128,7 @@ public final class TiebaFieldsInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.tieba_fields;
+            List<String> list = builder.tieba_fields;
             if (list == null) {
                 this.tieba_fields = DEFAULT_TIEBA_FIELDS;
             } else {
@@ -140,7 +140,7 @@ public final class TiebaFieldsInfo extends Message {
             } else {
                 this.tieba_name = str;
             }
-            List list2 = builder.user_rank;
+            List<User> list2 = builder.user_rank;
             if (list2 == null) {
                 this.user_rank = DEFAULT_USER_RANK;
                 return;

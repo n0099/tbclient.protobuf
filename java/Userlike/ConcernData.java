@@ -33,18 +33,18 @@ public final class ConcernData extends Message {
     public final ThreadInfo thread_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ConcernData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public PostData post_data;
         public Integer recom_type;
-        public List recom_user_list;
+        public List<User> recom_user_list;
         public Integer source;
         public ThreadInfo thread_list;
 
@@ -153,7 +153,7 @@ public final class ConcernData extends Message {
             } else {
                 this.source = num2;
             }
-            List list = builder.recom_user_list;
+            List<User> list = builder.recom_user_list;
             if (list == null) {
                 this.recom_user_list = DEFAULT_RECOM_USER_LIST;
                 return;

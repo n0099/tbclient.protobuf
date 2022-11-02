@@ -24,17 +24,17 @@ public final class Highlist extends Message {
     public final List<High> list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Highlist> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Boolean has_more;
-        public List list;
+        public List<High> list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -123,7 +123,7 @@ public final class Highlist extends Message {
             }
         }
         if (z) {
-            List list = builder.list;
+            List<High> list = builder.list;
             if (list == null) {
                 this.list = DEFAULT_LIST;
             } else {

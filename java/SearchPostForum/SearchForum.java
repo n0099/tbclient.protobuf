@@ -46,13 +46,13 @@ public final class SearchForum extends Message {
     public final List<FrsTabInfo> tab_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<SearchForum> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
@@ -63,7 +63,7 @@ public final class SearchForum extends Message {
         public String intro;
         public String post_num;
         public String slogan;
-        public List tab_info;
+        public List<FrsTabInfo> tab_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -208,7 +208,7 @@ public final class SearchForum extends Message {
             } else {
                 this.has_concerned = num;
             }
-            List list = builder.tab_info;
+            List<FrsTabInfo> list = builder.tab_info;
             if (list == null) {
                 this.tab_info = DEFAULT_TAB_INFO;
                 return;

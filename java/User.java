@@ -334,6 +334,8 @@ public final class User extends Message {
     public final ThemeBackgroundInUser theme_background;
     @ProtoField(tag = 69)
     public final ThemeCardInUser theme_card;
+    @ProtoField(tag = Cea708Decoder.COMMAND_RST)
+    public final ThemeMyTab theme_my_tab;
     @ProtoField(tag = 141)
     public final ThemeTailInUser theme_tail;
     @ProtoField(tag = 87, type = Message.Datatype.INT32)
@@ -378,15 +380,17 @@ public final class User extends Message {
     public final Integer work_num;
     @ProtoField(tag = 119)
     public final CreationData workcreation_data;
+    @ProtoField(tag = Cea708Decoder.COMMAND_SPA)
+    public final WorldCupInfo world_cup_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<User> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String BDUSS;
@@ -424,17 +428,17 @@ public final class User extends Message {
         public Integer fans_num;
         public Integer favorite_num;
         public String follow_from;
-        public List forum_tool_auth;
+        public List<ForumToolPerm> forum_tool_auth;
         public Long friend_num;
         public Integer gender;
-        public List gift_list;
+        public List<GiftInfo> gift_list;
         public Integer gift_num;
         public GodInfo god_data;
-        public List groupList;
+        public List<MyGroupInfo> groupList;
         public Integer has_bottle_enter;
         public Integer has_concerned;
         public Integer heavy_user;
-        public List iconinfo;
+        public List<Icon> iconinfo;
         public Long id;
         public Integer influence;
         public String intro;
@@ -464,18 +468,18 @@ public final class User extends Message {
         public Integer level_id;
         public String level_influence;
         public String level_name;
-        public List likeForum;
+        public List<LikeForumInfo> likeForum;
         public LiveRoomInfo live_room_info;
-        public List manager_forum;
+        public List<BazhuSign> manager_forum;
         public Integer meizhi_level;
         public String modify_avatar_desc;
-        public List mute_user;
+        public List<SimpleUser> mute_user;
         public Integer my_like_num;
         public String name;
         public String name_show;
         public NewGodInfo new_god_data;
-        public List new_icon_url;
-        public List new_tshow_icon;
+        public List<String> new_icon_url;
+        public List<TshowInfo> new_tshow_icon;
         public NewUser new_user_info;
         public Integer nickname_update_time;
         public Integer no_post_high;
@@ -490,7 +494,7 @@ public final class User extends Message {
         public Integer post_num;
         public PrivSets priv_sets;
         public Integer priv_thread;
-        public List profit_list;
+        public List<TwAnchorProfitItem> profit_list;
         public String rank;
         public String seal_prefix;
         public Integer sex;
@@ -500,17 +504,18 @@ public final class User extends Message {
         public TbVipInfo tb_vip;
         public ThemeBackgroundInUser theme_background;
         public ThemeCardInUser theme_card;
+        public ThemeMyTab theme_my_tab;
         public ThemeTailInUser theme_tail;
         public Integer thread_num;
         public String tieba_uid;
         public Integer total_agree_num;
         public Integer total_visitor_num;
-        public List tshow_icon;
+        public List<TshowInfo> tshow_icon;
         public TwZhiBoUser tw_anchor_info;
         public Integer type;
         public String uk;
         public UserGrowth user_growth;
-        public List user_pics;
+        public List<UserPics> user_pics;
         public Integer user_type;
         public Integer userhide;
         public UserVideoChannelInfo video_channel_info;
@@ -522,6 +527,7 @@ public final class User extends Message {
         public WorkCreatorInfo work_creator_info;
         public Integer work_num;
         public CreationData workcreation_data;
+        public WorldCupInfo world_cup_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -691,6 +697,8 @@ public final class User extends Message {
             this.dynamic_url = user.dynamic_url;
             this.theme_tail = user.theme_tail;
             this.theme_background = user.theme_background;
+            this.theme_my_tab = user.theme_my_tab;
+            this.world_cup_info = user.world_cup_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -893,13 +901,13 @@ public final class User extends Message {
             } else {
                 this.is_interestman = num8;
             }
-            List list = builder.iconinfo;
+            List<Icon> list = builder.iconinfo;
             if (list == null) {
                 this.iconinfo = DEFAULT_ICONINFO;
             } else {
                 this.iconinfo = Message.immutableCopyOf(list);
             }
-            List list2 = builder.tshow_icon;
+            List<TshowInfo> list2 = builder.tshow_icon;
             if (list2 == null) {
                 this.tshow_icon = DEFAULT_TSHOW_ICON;
             } else {
@@ -1050,7 +1058,7 @@ public final class User extends Message {
             } else {
                 this.is_mask = num24;
             }
-            List list3 = builder.user_pics;
+            List<UserPics> list3 = builder.user_pics;
             if (list3 == null) {
                 this.user_pics = DEFAULT_USER_PICS;
             } else {
@@ -1063,13 +1071,13 @@ public final class User extends Message {
             } else {
                 this.is_friend = num25;
             }
-            List list4 = builder.likeForum;
+            List<LikeForumInfo> list4 = builder.likeForum;
             if (list4 == null) {
                 this.likeForum = DEFAULT_LIKEFORUM;
             } else {
                 this.likeForum = Message.immutableCopyOf(list4);
             }
-            List list5 = builder.groupList;
+            List<MyGroupInfo> list5 = builder.groupList;
             if (list5 == null) {
                 this.groupList = DEFAULT_GROUPLIST;
             } else {
@@ -1081,7 +1089,7 @@ public final class User extends Message {
             } else {
                 this.gift_num = num26;
             }
-            List list6 = builder.gift_list;
+            List<GiftInfo> list6 = builder.gift_list;
             if (list6 == null) {
                 this.gift_list = DEFAULT_GIFT_LIST;
             } else {
@@ -1111,7 +1119,7 @@ public final class User extends Message {
             } else {
                 this.bookmark_new_count = num30;
             }
-            List list7 = builder.mute_user;
+            List<SimpleUser> list7 = builder.mute_user;
             if (list7 == null) {
                 this.mute_user = DEFAULT_MUTE_USER;
             } else {
@@ -1146,14 +1154,14 @@ public final class User extends Message {
                 this.heavy_user = num31;
             }
             this.vip_show_info = builder.vip_show_info;
-            List list8 = builder.new_tshow_icon;
+            List<TshowInfo> list8 = builder.new_tshow_icon;
             if (list8 == null) {
                 this.new_tshow_icon = DEFAULT_NEW_TSHOW_ICON;
             } else {
                 this.new_tshow_icon = Message.immutableCopyOf(list8);
             }
             this.tw_anchor_info = builder.tw_anchor_info;
-            List list9 = builder.profit_list;
+            List<TwAnchorProfitItem> list9 = builder.profit_list;
             if (list9 == null) {
                 this.profit_list = DEFAULT_PROFIT_LIST;
             } else {
@@ -1318,7 +1326,7 @@ public final class User extends Message {
             } else {
                 this.appeal_thread_popover = str20;
             }
-            List list10 = builder.forum_tool_auth;
+            List<ForumToolPerm> list10 = builder.forum_tool_auth;
             if (list10 == null) {
                 this.forum_tool_auth = DEFAULT_FORUM_TOOL_AUTH;
             } else {
@@ -1355,7 +1363,7 @@ public final class User extends Message {
             } else {
                 this.follow_from = str22;
             }
-            List list11 = builder.manager_forum;
+            List<BazhuSign> list11 = builder.manager_forum;
             if (list11 == null) {
                 this.manager_forum = DEFAULT_MANAGER_FORUM;
             } else {
@@ -1401,7 +1409,7 @@ public final class User extends Message {
             } else {
                 this.display_intro = str26;
             }
-            List list12 = builder.new_icon_url;
+            List<String> list12 = builder.new_icon_url;
             if (list12 == null) {
                 this.new_icon_url = DEFAULT_NEW_ICON_URL;
             } else {
@@ -1415,6 +1423,8 @@ public final class User extends Message {
             }
             this.theme_tail = builder.theme_tail;
             this.theme_background = builder.theme_background;
+            this.theme_my_tab = builder.theme_my_tab;
+            this.world_cup_info = builder.world_cup_info;
             return;
         }
         this.is_login = builder.is_login;
@@ -1550,6 +1560,8 @@ public final class User extends Message {
         this.dynamic_url = builder.dynamic_url;
         this.theme_tail = builder.theme_tail;
         this.theme_background = builder.theme_background;
+        this.theme_my_tab = builder.theme_my_tab;
+        this.world_cup_info = builder.world_cup_info;
     }
 
     public /* synthetic */ User(Builder builder, boolean z, a aVar) {

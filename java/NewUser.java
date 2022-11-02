@@ -120,16 +120,16 @@ public final class NewUser extends Message {
     public final WapRn wap_rn;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<NewUser> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List appraise;
+        public List<Props> appraise;
         public String bg_id;
         public String billboard;
         public String card;
@@ -149,14 +149,14 @@ public final class NewUser extends Message {
         public Integer is_tenyear;
         public MparrProps m_parr_props;
         public Integer meizhi_level;
-        public List notice_mask;
+        public List<NoticeMask> notice_mask;
         public String paper;
         public ParrProps parr_props;
         public ParrScores parr_scores;
         public String portrait_time;
-        public List rpgoldicon;
+        public List<Rpgoldicon> rpgoldicon;
         public Integer superboy;
-        public List tbmall_month_icon;
+        public List<TbmallMonthIcon> tbmall_month_icon;
         public String tbscore_repeate_finish_time;
         public Integer use_sig;
         public Long user_id;
@@ -409,7 +409,7 @@ public final class NewUser extends Message {
             } else {
                 this.portrait_time = str6;
             }
-            List list = builder.appraise;
+            List<Props> list = builder.appraise;
             if (list == null) {
                 this.appraise = DEFAULT_APPRAISE;
             } else {
@@ -439,13 +439,13 @@ public final class NewUser extends Message {
             } else {
                 this.is_qun_spring = num13;
             }
-            List list2 = builder.notice_mask;
+            List<NoticeMask> list2 = builder.notice_mask;
             if (list2 == null) {
                 this.notice_mask = DEFAULT_NOTICE_MASK;
             } else {
                 this.notice_mask = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.rpgoldicon;
+            List<Rpgoldicon> list3 = builder.rpgoldicon;
             if (list3 == null) {
                 this.rpgoldicon = DEFAULT_RPGOLDICON;
             } else {
@@ -463,7 +463,7 @@ public final class NewUser extends Message {
             } else {
                 this.cdn_error = str9;
             }
-            List list4 = builder.tbmall_month_icon;
+            List<TbmallMonthIcon> list4 = builder.tbmall_month_icon;
             if (list4 == null) {
                 this.tbmall_month_icon = DEFAULT_TBMALL_MONTH_ICON;
             } else {

@@ -24,16 +24,16 @@ public final class BawuTeam extends Message {
     public final Integer total_num;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<BawuTeam> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List bawu_team_list;
+        public List<BawuRoleDes> bawu_team_list;
         public Integer total_num;
 
         public Builder() {
@@ -129,7 +129,7 @@ public final class BawuTeam extends Message {
             } else {
                 this.total_num = num;
             }
-            List list = builder.bawu_team_list;
+            List<BawuRoleDes> list = builder.bawu_team_list;
             if (list == null) {
                 this.bawu_team_list = DEFAULT_BAWU_TEAM_LIST;
                 return;

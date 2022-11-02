@@ -108,17 +108,17 @@ public final class BusinessPromot extends Message {
     public final String video_url;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<BusinessPromot> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer ban_dialog;
-        public List comment_list;
+        public List<BusinessPromotCommentList> comment_list;
         public String cover_url;
         public String download_appid;
         public String download_appname;
@@ -140,7 +140,7 @@ public final class BusinessPromot extends Message {
         public Integer join_num;
         public String package_name;
         public String schema;
-        public List third_statistics_url;
+        public List<String> third_statistics_url;
         public String thread_id;
         public Integer thread_type;
         public String title;
@@ -314,7 +314,7 @@ public final class BusinessPromot extends Message {
             } else {
                 this.join_num = num2;
             }
-            List list = builder.comment_list;
+            List<BusinessPromotCommentList> list = builder.comment_list;
             if (list == null) {
                 this.comment_list = DEFAULT_COMMENT_LIST;
             } else {
@@ -338,7 +338,7 @@ public final class BusinessPromot extends Message {
             } else {
                 this.schema = str6;
             }
-            List list2 = builder.third_statistics_url;
+            List<String> list2 = builder.third_statistics_url;
             if (list2 == null) {
                 this.third_statistics_url = DEFAULT_THIRD_STATISTICS_URL;
             } else {

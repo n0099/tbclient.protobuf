@@ -61,16 +61,16 @@ public final class DataRes extends Message {
     public final CommonInteraction weiguan_module;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List banner;
+        public List<Banner> banner;
         public CommonInteraction bless_module;
         public CommonInteraction candle_module;
         public HotThread good_threads;
@@ -80,10 +80,10 @@ public final class DataRes extends Message {
         public MagicPost magic_post;
         public RecomTopicList next_topic;
         public PkModule pk_module;
-        public List post_forum;
-        public List relate_forum;
+        public List<RelateForum> post_forum;
+        public List<RelateForum> relate_forum;
         public String relate_forum_title;
-        public List special_topic;
+        public List<SpecialTopic> special_topic;
         public ThreadModule thread_module;
         public TopicInfo topic_info;
         public CommonInteraction weiguan_module;
@@ -194,7 +194,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.relate_forum;
+            List<RelateForum> list = builder.relate_forum;
             if (list == null) {
                 this.relate_forum = DEFAULT_RELATE_FORUM;
             } else {
@@ -214,7 +214,7 @@ public final class DataRes extends Message {
             } else {
                 this.is_new_url = num;
             }
-            List list2 = builder.post_forum;
+            List<RelateForum> list2 = builder.post_forum;
             if (list2 == null) {
                 this.post_forum = DEFAULT_POST_FORUM;
             } else {
@@ -226,7 +226,7 @@ public final class DataRes extends Message {
             } else {
                 this.is_global_block = num2;
             }
-            List list3 = builder.special_topic;
+            List<SpecialTopic> list3 = builder.special_topic;
             if (list3 == null) {
                 this.special_topic = DEFAULT_SPECIAL_TOPIC;
             } else {
@@ -239,7 +239,7 @@ public final class DataRes extends Message {
                 this.relate_forum_title = str;
             }
             this.weiguan_module = builder.weiguan_module;
-            List list4 = builder.banner;
+            List<Banner> list4 = builder.banner;
             if (list4 == null) {
                 this.banner = DEFAULT_BANNER;
             } else {

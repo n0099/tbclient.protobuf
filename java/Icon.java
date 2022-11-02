@@ -40,19 +40,19 @@ public final class Icon extends Message {
     public final Integer weight;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Icon> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String icon;
         public String name;
         public Position position;
-        public List sprite_info;
+        public List<String> sprite_info;
         public Terminal terminal;
         public String url;
         public Integer value;
@@ -184,7 +184,7 @@ public final class Icon extends Message {
             }
             this.terminal = builder.terminal;
             this.position = builder.position;
-            List list = builder.sprite_info;
+            List<String> list = builder.sprite_info;
             if (list == null) {
                 this.sprite_info = DEFAULT_SPRITE_INFO;
                 return;

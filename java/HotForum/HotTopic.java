@@ -24,17 +24,17 @@ public final class HotTopic extends Message {
     public final List<HotTopicList> topic_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<HotTopic> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String title;
-        public List topic_list;
+        public List<HotTopicList> topic_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -128,7 +128,7 @@ public final class HotTopic extends Message {
             } else {
                 this.title = str;
             }
-            List list = builder.topic_list;
+            List<HotTopicList> list = builder.topic_list;
             if (list == null) {
                 this.topic_list = DEFAULT_TOPIC_LIST;
                 return;

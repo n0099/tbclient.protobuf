@@ -39,17 +39,17 @@ public final class RedpacketRain extends Message {
     public final Long start_time;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<RedpacketRain> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_id;
-        public List dynamic_img;
+        public List<String> dynamic_img;
         public Long end_time;
         public String float_url;
         public String jump_url;
@@ -174,7 +174,7 @@ public final class RedpacketRain extends Message {
             } else {
                 this.float_url = str2;
             }
-            List list = builder.dynamic_img;
+            List<String> list = builder.dynamic_img;
             if (list == null) {
                 this.dynamic_img = DEFAULT_DYNAMIC_IMG;
             } else {

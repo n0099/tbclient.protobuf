@@ -30,6 +30,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_NEW_URL;
     public static final List<SimpleForum> DEFAULT_LIKE_FORUMS;
     public static final List<Resource> DEFAULT_RESOURCE_LIST;
+    public static final Integer DEFAULT_SHOW_ADSENSE;
     public static final String DEFAULT_STAT_KEY = "";
     public static final Integer DEFAULT_STYLE_AB_TAG;
     public static final Integer DEFAULT_SUG_SECONDS;
@@ -57,6 +58,8 @@ public final class DataRes extends Message {
     public final FloatInfo float_info;
     @ProtoField(tag = 21, type = Message.Datatype.INT32)
     public final Integer fresh_ctrl_num;
+    @ProtoField(tag = 26)
+    public final HeaderCard header_card;
     @ProtoField(tag = 23)
     public final DiscoverHotForum hot_recomforum;
     @ProtoField(label = Message.Label.REPEATED, tag = 11)
@@ -71,6 +74,8 @@ public final class DataRes extends Message {
     public final RecomPostTopic recom_post_topic;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<Resource> resource_list;
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    public final Integer show_adsense;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String stat_key;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
@@ -87,38 +92,40 @@ public final class DataRes extends Message {
     public final UserFollowLive user_follow_live;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ActiveCenter active_center;
         public AgeSexModule age_sex;
         public Anti anti;
         public BannerList banner_list;
-        public List card_forum;
-        public List card_god;
-        public List card_topic;
+        public List<CardForum> card_forum;
+        public List<CardGod> card_god;
+        public List<CardTopic> card_topic;
         public FavoritePanel favorite_panel;
         public FloatInfo float_info;
         public Integer fresh_ctrl_num;
+        public HeaderCard header_card;
         public DiscoverHotForum hot_recomforum;
-        public List interestion;
+        public List<TagStruct> interestion;
         public Integer is_new_url;
-        public List like_forums;
+        public List<SimpleForum> like_forums;
         public LiveAnswer live_answer;
         public RecomPostTopic recom_post_topic;
-        public List resource_list;
+        public List<Resource> resource_list;
+        public Integer show_adsense;
         public String stat_key;
         public Integer style_ab_tag;
         public Integer sug_seconds;
-        public List tag_list;
-        public List thread_list;
-        public List thread_personalized;
+        public List<TagInfo> tag_list;
+        public List<ThreadInfo> thread_list;
+        public List<ThreadPersonalized> thread_personalized;
         public UserFollowLive user_follow_live;
 
         public Builder() {
@@ -180,6 +187,8 @@ public final class DataRes extends Message {
             this.active_center = dataRes.active_center;
             this.hot_recomforum = dataRes.hot_recomforum;
             this.favorite_panel = dataRes.favorite_panel;
+            this.show_adsense = dataRes.show_adsense;
+            this.header_card = dataRes.header_card;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -220,6 +229,7 @@ public final class DataRes extends Message {
         DEFAULT_LIKE_FORUMS = Collections.emptyList();
         DEFAULT_STYLE_AB_TAG = 0;
         DEFAULT_FRESH_CTRL_NUM = 0;
+        DEFAULT_SHOW_ADSENSE = 0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -241,31 +251,31 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.tag_list;
+            List<TagInfo> list = builder.tag_list;
             if (list == null) {
                 this.tag_list = DEFAULT_TAG_LIST;
             } else {
                 this.tag_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.thread_list;
+            List<ThreadInfo> list2 = builder.thread_list;
             if (list2 == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {
                 this.thread_list = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.resource_list;
+            List<Resource> list3 = builder.resource_list;
             if (list3 == null) {
                 this.resource_list = DEFAULT_RESOURCE_LIST;
             } else {
                 this.resource_list = Message.immutableCopyOf(list3);
             }
-            List list4 = builder.card_forum;
+            List<CardForum> list4 = builder.card_forum;
             if (list4 == null) {
                 this.card_forum = DEFAULT_CARD_FORUM;
             } else {
                 this.card_forum = Message.immutableCopyOf(list4);
             }
-            List list5 = builder.card_topic;
+            List<CardTopic> list5 = builder.card_topic;
             if (list5 == null) {
                 this.card_topic = DEFAULT_CARD_TOPIC;
             } else {
@@ -277,7 +287,7 @@ public final class DataRes extends Message {
             } else {
                 this.sug_seconds = num;
             }
-            List list6 = builder.thread_personalized;
+            List<ThreadPersonalized> list6 = builder.thread_personalized;
             if (list6 == null) {
                 this.thread_personalized = DEFAULT_THREAD_PERSONALIZED;
             } else {
@@ -291,13 +301,13 @@ public final class DataRes extends Message {
             }
             this.banner_list = builder.banner_list;
             this.age_sex = builder.age_sex;
-            List list7 = builder.interestion;
+            List<TagStruct> list7 = builder.interestion;
             if (list7 == null) {
                 this.interestion = DEFAULT_INTERESTION;
             } else {
                 this.interestion = Message.immutableCopyOf(list7);
             }
-            List list8 = builder.card_god;
+            List<CardGod> list8 = builder.card_god;
             if (list8 == null) {
                 this.card_god = DEFAULT_CARD_GOD;
             } else {
@@ -309,7 +319,7 @@ public final class DataRes extends Message {
             } else {
                 this.stat_key = str;
             }
-            List list9 = builder.like_forums;
+            List<SimpleForum> list9 = builder.like_forums;
             if (list9 == null) {
                 this.like_forums = DEFAULT_LIKE_FORUMS;
             } else {
@@ -335,6 +345,13 @@ public final class DataRes extends Message {
             this.active_center = builder.active_center;
             this.hot_recomforum = builder.hot_recomforum;
             this.favorite_panel = builder.favorite_panel;
+            Integer num5 = builder.show_adsense;
+            if (num5 == null) {
+                this.show_adsense = DEFAULT_SHOW_ADSENSE;
+            } else {
+                this.show_adsense = num5;
+            }
+            this.header_card = builder.header_card;
             return;
         }
         this.tag_list = Message.immutableCopyOf(builder.tag_list);
@@ -361,6 +378,8 @@ public final class DataRes extends Message {
         this.active_center = builder.active_center;
         this.hot_recomforum = builder.hot_recomforum;
         this.favorite_panel = builder.favorite_panel;
+        this.show_adsense = builder.show_adsense;
+        this.header_card = builder.header_card;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {

@@ -27,18 +27,18 @@ public final class BazhuUniversity extends Message {
     public final List<UniversityTabInfo> tab;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<BazhuUniversity> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List banner;
-        public List entrance;
-        public List tab;
+        public List<UniversityInfo> banner;
+        public List<UniversityInfo> entrance;
+        public List<UniversityTabInfo> tab;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -129,19 +129,19 @@ public final class BazhuUniversity extends Message {
             }
         }
         if (z) {
-            List list = builder.entrance;
+            List<UniversityInfo> list = builder.entrance;
             if (list == null) {
                 this.entrance = DEFAULT_ENTRANCE;
             } else {
                 this.entrance = Message.immutableCopyOf(list);
             }
-            List list2 = builder.banner;
+            List<UniversityInfo> list2 = builder.banner;
             if (list2 == null) {
                 this.banner = DEFAULT_BANNER;
             } else {
                 this.banner = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.tab;
+            List<UniversityTabInfo> list3 = builder.tab;
             if (list3 == null) {
                 this.tab = DEFAULT_TAB;
                 return;

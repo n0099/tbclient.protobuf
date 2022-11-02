@@ -30,19 +30,19 @@ public final class TopicListModule extends Message {
     public final List<TopicList> topic_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<TopicListModule> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String module_title;
         public String rule_jump_url;
         public String tips;
-        public List topic_list;
+        public List<TopicList> topic_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -138,7 +138,7 @@ public final class TopicListModule extends Message {
             } else {
                 this.module_title = str;
             }
-            List list = builder.topic_list;
+            List<TopicList> list = builder.topic_list;
             if (list == null) {
                 this.topic_list = DEFAULT_TOPIC_LIST;
             } else {

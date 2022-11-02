@@ -1,8 +1,6 @@
-package tbclient.GetRecentWatchRecord;
+package tbclient;
 
 import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
 import com.baidu.titan.sdk.runtime.InitContext;
 import com.baidu.titan.sdk.runtime.InterceptResult;
@@ -11,28 +9,24 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
-public final class Tag extends Message {
+public final class WorldCupInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
-    public static final Integer DEFAULT_TAG_TYPE;
-    public static final String DEFAULT_TAG_WORD = "";
+    public static final String DEFAULT_AVATAR_TEAMFLAG_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(tag = 2, type = Message.Datatype.INT32)
-    public final Integer tag_type;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
-    public final String tag_word;
+    public final String avatar_teamflag_url;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<WorldCupInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public Integer tag_type;
-        public String tag_word;
+        public String avatar_teamflag_url;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -49,13 +43,13 @@ public final class Tag extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(Tag tag) {
-            super(tag);
+        public Builder(WorldCupInfo worldCupInfo) {
+            super(worldCupInfo);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {tag};
+                Object[] objArr = {worldCupInfo};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -66,80 +60,56 @@ public final class Tag extends Message {
                     return;
                 }
             }
-            if (tag == null) {
+            if (worldCupInfo == null) {
                 return;
             }
-            this.tag_word = tag.tag_word;
-            this.tag_type = tag.tag_type;
+            this.avatar_teamflag_url = worldCupInfo.avatar_teamflag_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public Tag build(boolean z) {
+        public WorldCupInfo build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
             if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new Tag(this, z, null);
+                return new WorldCupInfo(this, z, null);
             }
-            return (Tag) invokeZ.objValue;
+            return (WorldCupInfo) invokeZ.objValue;
         }
-    }
-
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-647659401, "Ltbclient/GetRecentWatchRecord/Tag;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-647659401, "Ltbclient/GetRecentWatchRecord/Tag;");
-                return;
-            }
-        }
-        DEFAULT_TAG_TYPE = 0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Tag(Builder builder, boolean z) {
+    public WorldCupInfo(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
             InitContext newInitContext = TitanRuntime.newInitContext();
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
+            interceptable.invokeUnInit(65536, newInitContext);
             int i = newInitContext.flag;
             if ((i & 1) != 0) {
                 int i2 = i & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
+                interceptable.invokeInitBody(65536, newInitContext);
                 return;
             }
         }
         if (z) {
-            String str = builder.tag_word;
+            String str = builder.avatar_teamflag_url;
             if (str == null) {
-                this.tag_word = "";
-            } else {
-                this.tag_word = str;
-            }
-            Integer num = builder.tag_type;
-            if (num == null) {
-                this.tag_type = DEFAULT_TAG_TYPE;
+                this.avatar_teamflag_url = "";
                 return;
             } else {
-                this.tag_type = num;
+                this.avatar_teamflag_url = str;
                 return;
             }
         }
-        this.tag_word = builder.tag_word;
-        this.tag_type = builder.tag_type;
+        this.avatar_teamflag_url = builder.avatar_teamflag_url;
     }
 
-    public /* synthetic */ Tag(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ WorldCupInfo(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 }

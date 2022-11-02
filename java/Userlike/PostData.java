@@ -34,17 +34,17 @@ public final class PostData extends Message {
     public final Long time;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<PostData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public User author;
-        public List content;
+        public List<PbContent> content;
         public Long id;
         public String post_title;
         public Long time;
@@ -146,7 +146,7 @@ public final class PostData extends Message {
             } else {
                 this.id = l;
             }
-            List list = builder.content;
+            List<PbContent> list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {

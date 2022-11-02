@@ -22,24 +22,24 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1297common;
+    public final CommonReq f1300common;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long topic_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1298common;
+        public CommonReq f1301common;
         public Long topic_id;
 
         public Builder() {
@@ -77,7 +77,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1298common = dataReq.f1297common;
+            this.f1301common = dataReq.f1300common;
             this.topic_id = dataReq.topic_id;
             this.call_from = dataReq.call_from;
         }
@@ -129,7 +129,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1297common = builder.f1298common;
+            this.f1300common = builder.f1301common;
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
@@ -145,7 +145,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1297common = builder.f1298common;
+        this.f1300common = builder.f1301common;
         this.topic_id = builder.topic_id;
         this.call_from = builder.call_from;
     }

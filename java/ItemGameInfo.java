@@ -23,16 +23,16 @@ public final class ItemGameInfo extends Message {
     public final RecentUpdate recent_update;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ItemGameInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List hot_videos;
+        public List<ThreadInfo> hot_videos;
         public RecentUpdate recent_update;
 
         public Builder() {
@@ -121,7 +121,7 @@ public final class ItemGameInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.hot_videos;
+            List<ThreadInfo> list = builder.hot_videos;
             if (list == null) {
                 this.hot_videos = DEFAULT_HOT_VIDEOS;
             } else {

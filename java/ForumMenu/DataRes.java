@@ -27,17 +27,17 @@ public final class DataRes extends Message {
     public final Integer update_time;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer has_menu;
-        public List parent_menu;
+        public List<Menu> parent_menu;
         public Integer update_time;
 
         public Builder() {
@@ -129,7 +129,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.parent_menu;
+            List<Menu> list = builder.parent_menu;
             if (list == null) {
                 this.parent_menu = DEFAULT_PARENT_MENU;
             } else {

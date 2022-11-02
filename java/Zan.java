@@ -36,20 +36,20 @@ public final class Zan extends Message {
     public final Integer num;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Zan> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer consent_type;
         public Integer is_liked;
         public Integer last_time;
-        public List liker_id;
-        public List liker_list;
+        public List<Long> liker_id;
+        public List<User> liker_list;
         public Integer num;
 
         public Builder() {
@@ -153,7 +153,7 @@ public final class Zan extends Message {
             } else {
                 this.num = num;
             }
-            List list = builder.liker_list;
+            List<User> list = builder.liker_list;
             if (list == null) {
                 this.liker_list = DEFAULT_LIKER_LIST;
             } else {
@@ -171,7 +171,7 @@ public final class Zan extends Message {
             } else {
                 this.last_time = num3;
             }
-            List list2 = builder.liker_id;
+            List<Long> list2 = builder.liker_id;
             if (list2 == null) {
                 this.liker_id = DEFAULT_LIKER_ID;
             } else {

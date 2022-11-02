@@ -33,16 +33,16 @@ public final class BookSummary extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<BookSummary> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List book_list;
+        public List<BookInfo> book_list;
         public String cover;
         public Long num;
         public String title;
@@ -156,7 +156,7 @@ public final class BookSummary extends Message {
             } else {
                 this.url = str2;
             }
-            List list = builder.book_list;
+            List<BookInfo> list = builder.book_list;
             if (list == null) {
                 this.book_list = DEFAULT_BOOK_LIST;
             } else {

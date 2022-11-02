@@ -30,18 +30,18 @@ public final class DataRes extends Message {
     public final Long timestamp;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List address_list;
-        public List deleted_list;
-        public List robots_list;
+        public List<listData> address_list;
+        public List<deleteList> deleted_list;
+        public List<robotsList> robots_list;
         public Long timestamp;
 
         public Builder() {
@@ -135,13 +135,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.address_list;
+            List<listData> list = builder.address_list;
             if (list == null) {
                 this.address_list = DEFAULT_ADDRESS_LIST;
             } else {
                 this.address_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.deleted_list;
+            List<deleteList> list2 = builder.deleted_list;
             if (list2 == null) {
                 this.deleted_list = DEFAULT_DELETED_LIST;
             } else {
@@ -153,7 +153,7 @@ public final class DataRes extends Message {
             } else {
                 this.timestamp = l;
             }
-            List list3 = builder.robots_list;
+            List<robotsList> list3 = builder.robots_list;
             if (list3 == null) {
                 this.robots_list = DEFAULT_ROBOTS_LIST;
                 return;

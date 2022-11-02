@@ -58,18 +58,18 @@ public final class ExcellentPbThreadInfo extends Message {
     public final ZanInfo zan;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ExcellentPbThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
         public String abtest;
-        public List content;
+        public List<ExcContent> content;
         public Long excid;
         public postForumInfo forum;
         public Long post_id;
@@ -223,7 +223,7 @@ public final class ExcellentPbThreadInfo extends Message {
             } else {
                 this._abstract = str3;
             }
-            List list = builder.content;
+            List<ExcContent> list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {

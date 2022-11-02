@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1381common;
+    public final CommonReq f1384common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer mute_type;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -33,18 +33,18 @@ public final class DataReq extends Message {
     public final Long user_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1382common;
+        public CommonReq f1385common;
         public Integer mute_type;
         public Integer pn;
         public Integer rn;
@@ -86,7 +86,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.user_id = dataReq.user_id;
-            this.f1382common = dataReq.f1381common;
+            this.f1385common = dataReq.f1384common;
             this.mute_type = dataReq.mute_type;
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
@@ -148,7 +148,7 @@ public final class DataReq extends Message {
             } else {
                 this.user_id = l;
             }
-            this.f1381common = builder.f1382common;
+            this.f1384common = builder.f1385common;
             Integer num = builder.mute_type;
             if (num == null) {
                 this.mute_type = DEFAULT_MUTE_TYPE;
@@ -171,7 +171,7 @@ public final class DataReq extends Message {
             }
         }
         this.user_id = builder.user_id;
-        this.f1381common = builder.f1382common;
+        this.f1384common = builder.f1385common;
         this.mute_type = builder.mute_type;
         this.pn = builder.pn;
         this.rn = builder.rn;

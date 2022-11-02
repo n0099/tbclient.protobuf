@@ -34,19 +34,19 @@ public final class BazhuGrade extends Message {
     public final String grade_text;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<BazhuGrade> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String estimation_left_text;
         public Integer estimation_left_time;
         public String grade;
-        public List grade_point;
+        public List<GradePoint> grade_point;
         public String grade_text;
 
         public Builder() {
@@ -145,7 +145,7 @@ public final class BazhuGrade extends Message {
             } else {
                 this.grade = str;
             }
-            List list = builder.grade_point;
+            List<GradePoint> list = builder.grade_point;
             if (list == null) {
                 this.grade_point = DEFAULT_GRADE_POINT;
             } else {

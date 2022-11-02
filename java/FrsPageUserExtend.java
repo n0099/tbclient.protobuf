@@ -27,16 +27,16 @@ public final class FrsPageUserExtend extends Message {
     public final Integer user_extend_storey;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<FrsPageUserExtend> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List data;
+        public List<User> data;
         public String tips;
         public Integer user_extend_storey;
 
@@ -140,7 +140,7 @@ public final class FrsPageUserExtend extends Message {
             } else {
                 this.tips = str;
             }
-            List list = builder.data;
+            List<User> list = builder.data;
             if (list == null) {
                 this.data = DEFAULT_DATA;
                 return;

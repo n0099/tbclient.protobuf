@@ -24,17 +24,17 @@ public final class SubPost extends Message {
     public final List<SubPostList> sub_post_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<SubPost> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long pid;
-        public List sub_post_list;
+        public List<SubPostList> sub_post_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -129,7 +129,7 @@ public final class SubPost extends Message {
             } else {
                 this.pid = l;
             }
-            List list = builder.sub_post_list;
+            List<SubPostList> list = builder.sub_post_list;
             if (list == null) {
                 this.sub_post_list = DEFAULT_SUB_POST_LIST;
                 return;

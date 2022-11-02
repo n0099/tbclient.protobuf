@@ -27,17 +27,17 @@ public final class GameForumSubLabel extends Message {
     public final String sub_tab_name;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<GameForumSubLabel> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer id;
-        public List sub_label_list;
+        public List<GameForumSubLabel> sub_label_list;
         public String sub_tab_name;
 
         public Builder() {
@@ -140,7 +140,7 @@ public final class GameForumSubLabel extends Message {
             } else {
                 this.sub_tab_name = str;
             }
-            List list = builder.sub_label_list;
+            List<GameForumSubLabel> list = builder.sub_label_list;
             if (list == null) {
                 this.sub_label_list = DEFAULT_SUB_LABEL_LIST;
                 return;

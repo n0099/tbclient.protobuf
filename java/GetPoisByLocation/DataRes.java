@@ -24,17 +24,17 @@ public final class DataRes extends Message {
     public final List<PoiInfo> poi_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String formatted_address;
-        public List poi_info;
+        public List<PoiInfo> poi_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -128,7 +128,7 @@ public final class DataRes extends Message {
             } else {
                 this.formatted_address = str;
             }
-            List list = builder.poi_info;
+            List<PoiInfo> list = builder.poi_info;
             if (list == null) {
                 this.poi_info = DEFAULT_POI_INFO;
                 return;

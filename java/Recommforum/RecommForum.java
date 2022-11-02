@@ -28,16 +28,16 @@ public final class RecommForum extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<RecommForum> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List forums;
+        public List<RecommendForumInfo> forums;
         public Integer page_size;
         public String title;
 
@@ -135,7 +135,7 @@ public final class RecommForum extends Message {
             } else {
                 this.title = str;
             }
-            List list = builder.forums;
+            List<RecommendForumInfo> list = builder.forums;
             if (list == null) {
                 this.forums = DEFAULT_FORUMS;
             } else {

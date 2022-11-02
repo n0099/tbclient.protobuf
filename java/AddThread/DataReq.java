@@ -41,6 +41,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_IS_REPOST_TO_DYNAMIC = "";
     public static final String DEFAULT_IS_SHARE = "";
     public static final String DEFAULT_IS_WORKS = "";
+    public static final Integer DEFAULT_IS_XIUXIU_THREAD;
     public static final String DEFAULT_ITEM_ID = "";
     public static final String DEFAULT_KW = "";
     public static final String DEFAULT_LAT = "";
@@ -69,8 +70,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_SHARE_ABSTRACT = "";
     public static final String DEFAULT_SHARE_H5_URL = "";
     public static final String DEFAULT_SHARE_IMAGE = "";
-    public static final String DEFAULT_SHARE_SWAN_APP_KEY = "";
-    public static final String DEFAULT_SHARE_SWAN_PATH = "";
+    public static final String DEFAULT_SHARE_NAWS_APP_KEY = "";
+    public static final String DEFAULT_SHARE_NAWS_PATH = "";
     public static final Integer DEFAULT_SHOW_CUSTOM_FIGURE;
     public static final String DEFAULT_SIG = "";
     public static final String DEFAULT_SN = "";
@@ -110,7 +111,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1107common;
+    public final CommonReq f1110common;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String content;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -155,6 +156,8 @@ public final class DataReq extends Message {
     public final String is_share;
     @ProtoField(tag = 76, type = Message.Datatype.STRING)
     public final String is_works;
+    @ProtoField(tag = 86, type = Message.Datatype.INT32)
+    public final Integer is_xiuxiu_thread;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
     public final String item_id;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
@@ -212,9 +215,9 @@ public final class DataReq extends Message {
     @ProtoField(tag = 69, type = Message.Datatype.STRING)
     public final String share_image;
     @ProtoField(tag = 71, type = Message.Datatype.STRING)
-    public final String share_swan_app_key;
+    public final String share_naws_app_key;
     @ProtoField(tag = 72, type = Message.Datatype.STRING)
-    public final String share_swan_path;
+    public final String share_naws_path;
     @ProtoField(tag = 80, type = Message.Datatype.INT32)
     public final Integer show_custom_figure;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -267,13 +270,13 @@ public final class DataReq extends Message {
     public final String works_tag;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String anonymous;
@@ -283,7 +286,7 @@ public final class DataReq extends Message {
         public String comment_head;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1108common;
+        public CommonReq f1111common;
         public String content;
         public String during_time;
         public String entrance_type;
@@ -306,6 +309,7 @@ public final class DataReq extends Message {
         public String is_repost_to_dynamic;
         public String is_share;
         public String is_works;
+        public Integer is_xiuxiu_thread;
         public String item_id;
         public String kw;
         public String lat;
@@ -334,8 +338,8 @@ public final class DataReq extends Message {
         public String share_abstract;
         public String share_h5_url;
         public String share_image;
-        public String share_swan_app_key;
-        public String share_swan_path;
+        public String share_naws_app_key;
+        public String share_naws_path;
         public Integer show_custom_figure;
         public String sig;
         public String sn;
@@ -397,7 +401,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1108common = dataReq.f1107common;
+            this.f1111common = dataReq.f1110common;
             this.authsid = dataReq.authsid;
             this.sig = dataReq.sig;
             this.tbs = dataReq.tbs;
@@ -465,8 +469,8 @@ public final class DataReq extends Message {
             this.share_abstract = dataReq.share_abstract;
             this.share_image = dataReq.share_image;
             this.share_h5_url = dataReq.share_h5_url;
-            this.share_swan_app_key = dataReq.share_swan_app_key;
-            this.share_swan_path = dataReq.share_swan_path;
+            this.share_naws_app_key = dataReq.share_naws_app_key;
+            this.share_naws_path = dataReq.share_naws_path;
             this.real_lat = dataReq.real_lat;
             this.real_lng = dataReq.real_lng;
             this.name_show = dataReq.name_show;
@@ -480,6 +484,7 @@ public final class DataReq extends Message {
             this.is_question = dataReq.is_question;
             this.question_tag_id = dataReq.question_tag_id;
             this.is_create_tag = dataReq.is_create_tag;
+            this.is_xiuxiu_thread = dataReq.is_xiuxiu_thread;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -510,6 +515,7 @@ public final class DataReq extends Message {
         DEFAULT_SHOW_CUSTOM_FIGURE = 0;
         DEFAULT_IS_QUESTION = 0;
         DEFAULT_IS_CREATE_TAG = 0;
+        DEFAULT_IS_XIUXIU_THREAD = 0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -531,7 +537,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1107common = builder.f1108common;
+            this.f1110common = builder.f1111common;
             String str = builder.authsid;
             if (str == null) {
                 this.authsid = "";
@@ -934,17 +940,17 @@ public final class DataReq extends Message {
             } else {
                 this.share_h5_url = str67;
             }
-            String str68 = builder.share_swan_app_key;
+            String str68 = builder.share_naws_app_key;
             if (str68 == null) {
-                this.share_swan_app_key = "";
+                this.share_naws_app_key = "";
             } else {
-                this.share_swan_app_key = str68;
+                this.share_naws_app_key = str68;
             }
-            String str69 = builder.share_swan_path;
+            String str69 = builder.share_naws_path;
             if (str69 == null) {
-                this.share_swan_path = "";
+                this.share_naws_path = "";
             } else {
-                this.share_swan_path = str69;
+                this.share_naws_path = str69;
             }
             String str70 = builder.real_lat;
             if (str70 == null) {
@@ -1021,13 +1027,19 @@ public final class DataReq extends Message {
             Integer num3 = builder.is_create_tag;
             if (num3 == null) {
                 this.is_create_tag = DEFAULT_IS_CREATE_TAG;
-                return;
             } else {
                 this.is_create_tag = num3;
+            }
+            Integer num4 = builder.is_xiuxiu_thread;
+            if (num4 == null) {
+                this.is_xiuxiu_thread = DEFAULT_IS_XIUXIU_THREAD;
+                return;
+            } else {
+                this.is_xiuxiu_thread = num4;
                 return;
             }
         }
-        this.f1107common = builder.f1108common;
+        this.f1110common = builder.f1111common;
         this.authsid = builder.authsid;
         this.sig = builder.sig;
         this.tbs = builder.tbs;
@@ -1095,8 +1107,8 @@ public final class DataReq extends Message {
         this.share_abstract = builder.share_abstract;
         this.share_image = builder.share_image;
         this.share_h5_url = builder.share_h5_url;
-        this.share_swan_app_key = builder.share_swan_app_key;
-        this.share_swan_path = builder.share_swan_path;
+        this.share_naws_app_key = builder.share_naws_app_key;
+        this.share_naws_path = builder.share_naws_path;
         this.real_lat = builder.real_lat;
         this.real_lng = builder.real_lng;
         this.name_show = builder.name_show;
@@ -1110,6 +1122,7 @@ public final class DataReq extends Message {
         this.is_question = builder.is_question;
         this.question_tag_id = builder.question_tag_id;
         this.is_create_tag = builder.is_create_tag;
+        this.is_xiuxiu_thread = builder.is_xiuxiu_thread;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {

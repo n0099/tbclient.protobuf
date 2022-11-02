@@ -19,22 +19,22 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1389common;
+    public final CommonReq f1392common;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1390common;
+        public CommonReq f1393common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1390common = dataReq.f1389common;
+            this.f1393common = dataReq.f1392common;
             this.call_from = dataReq.call_from;
         }
 
@@ -106,7 +106,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1389common = builder.f1390common;
+            this.f1392common = builder.f1393common;
             String str = builder.call_from;
             if (str == null) {
                 this.call_from = "";
@@ -116,7 +116,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1389common = builder.f1390common;
+        this.f1392common = builder.f1393common;
         this.call_from = builder.call_from;
     }
 

@@ -25,17 +25,17 @@ public final class ThemeCardInMain extends Message {
     public final List<ThemeCardPropMain> props;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ThemeCardInMain> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String card_category;
-        public List props;
+        public List<ThemeCardPropMain> props;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -129,7 +129,7 @@ public final class ThemeCardInMain extends Message {
             } else {
                 this.card_category = str;
             }
-            List list = builder.props;
+            List<ThemeCardPropMain> list = builder.props;
             if (list == null) {
                 this.props = DEFAULT_PROPS;
                 return;

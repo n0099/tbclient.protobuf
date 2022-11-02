@@ -24,17 +24,17 @@ public final class PushStatus extends Message {
     public final List<PushType> types;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<PushStatus> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer status;
-        public List types;
+        public List<PushType> types;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -129,7 +129,7 @@ public final class PushStatus extends Message {
             } else {
                 this.status = num;
             }
-            List list = builder.types;
+            List<PushType> list = builder.types;
             if (list == null) {
                 this.types = DEFAULT_TYPES;
                 return;

@@ -25,16 +25,16 @@ public final class ThemeSkinInMain extends Message {
     public final String skin_category;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ThemeSkinInMain> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List props;
+        public List<ThemeSkinPropMain> props;
         public String skin_category;
 
         public Builder() {
@@ -129,7 +129,7 @@ public final class ThemeSkinInMain extends Message {
             } else {
                 this.skin_category = str;
             }
-            List list = builder.props;
+            List<ThemeSkinPropMain> list = builder.props;
             if (list == null) {
                 this.props = DEFAULT_PROPS;
                 return;

@@ -28,7 +28,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1227common;
+    public final CommonReq f1230common;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer floor_rn;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -47,22 +47,22 @@ public final class DataReq extends Message {
     public final Integer with_floor;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1228common;
+        public CommonReq f1231common;
         public Integer floor_rn;
         public Integer is_comm_reverse;
         public Long kz;
-        public List post_id;
+        public List<Long> post_id;
         public Integer scr_h;
         public Integer scr_w;
         public Integer st_type;
@@ -103,7 +103,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1228common = dataReq.f1227common;
+            this.f1231common = dataReq.f1230common;
             this.kz = dataReq.kz;
             this.with_floor = dataReq.with_floor;
             this.post_id = Message.copyOf(dataReq.post_id);
@@ -168,7 +168,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1227common = builder.f1228common;
+            this.f1230common = builder.f1231common;
             Long l = builder.kz;
             if (l == null) {
                 this.kz = DEFAULT_KZ;
@@ -181,7 +181,7 @@ public final class DataReq extends Message {
             } else {
                 this.with_floor = num;
             }
-            List list = builder.post_id;
+            List<Long> list = builder.post_id;
             if (list == null) {
                 this.post_id = DEFAULT_POST_ID;
             } else {
@@ -220,7 +220,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1227common = builder.f1228common;
+        this.f1230common = builder.f1231common;
         this.kz = builder.kz;
         this.with_floor = builder.with_floor;
         this.post_id = Message.immutableCopyOf(builder.post_id);

@@ -21,8 +21,8 @@ public final class SmartApp extends Message {
     public static final Integer DEFAULT_IS_RECOM;
     public static final String DEFAULT_LINK = "";
     public static final String DEFAULT_NAME = "";
+    public static final Long DEFAULT_NAWS_APP_ID;
     public static final String DEFAULT_PIC = "";
-    public static final Long DEFAULT_SWAN_APP_ID;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String _abstract;
@@ -40,19 +40,19 @@ public final class SmartApp extends Message {
     public final String link;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT64)
+    public final Long naws_app_id;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String pic;
-    @ProtoField(tag = 8, type = Message.Datatype.UINT64)
-    public final Long swan_app_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<SmartApp> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
@@ -63,8 +63,8 @@ public final class SmartApp extends Message {
         public Integer is_recom;
         public String link;
         public String name;
+        public Long naws_app_id;
         public String pic;
-        public Long swan_app_id;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -108,7 +108,7 @@ public final class SmartApp extends Message {
             this.h5_url = smartApp.h5_url;
             this.id = smartApp.id;
             this.link = smartApp.link;
-            this.swan_app_id = smartApp.swan_app_id;
+            this.naws_app_id = smartApp.naws_app_id;
             this.is_recom = smartApp.is_recom;
             this.is_game = smartApp.is_game;
         }
@@ -138,7 +138,7 @@ public final class SmartApp extends Message {
                 return;
             }
         }
-        DEFAULT_SWAN_APP_ID = 0L;
+        DEFAULT_NAWS_APP_ID = 0L;
         DEFAULT_IS_RECOM = 0;
         DEFAULT_IS_GAME = 0;
     }
@@ -204,11 +204,11 @@ public final class SmartApp extends Message {
             } else {
                 this.link = str7;
             }
-            Long l = builder.swan_app_id;
+            Long l = builder.naws_app_id;
             if (l == null) {
-                this.swan_app_id = DEFAULT_SWAN_APP_ID;
+                this.naws_app_id = DEFAULT_NAWS_APP_ID;
             } else {
-                this.swan_app_id = l;
+                this.naws_app_id = l;
             }
             Integer num = builder.is_recom;
             if (num == null) {
@@ -232,7 +232,7 @@ public final class SmartApp extends Message {
         this.h5_url = builder.h5_url;
         this.id = builder.id;
         this.link = builder.link;
-        this.swan_app_id = builder.swan_app_id;
+        this.naws_app_id = builder.naws_app_id;
         this.is_recom = builder.is_recom;
         this.is_game = builder.is_game;
     }

@@ -107,20 +107,20 @@ public final class Anti extends Message {
     public final String voice_message;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Anti> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public BlockPopInfo block_pop_info;
         public Integer block_stat;
         public Integer can_goods;
         public Integer days_tofree;
-        public List del_thread_text;
+        public List<DelThreadText> del_thread_text;
         public Integer forbid_flag;
         public String forbid_info;
         public Integer has_chance;
@@ -411,7 +411,7 @@ public final class Anti extends Message {
             } else {
                 this.reply_private_flag = num12;
             }
-            List list = builder.del_thread_text;
+            List<DelThreadText> list = builder.del_thread_text;
             if (list == null) {
                 this.del_thread_text = DEFAULT_DEL_THREAD_TEXT;
             } else {

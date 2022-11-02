@@ -21,16 +21,16 @@ public final class DataRes extends Message {
     public final List<String> pic_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List pic_info;
+        public List<String> pic_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -117,7 +117,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.pic_info;
+            List<String> list = builder.pic_info;
             if (list == null) {
                 this.pic_info = DEFAULT_PIC_INFO;
                 return;

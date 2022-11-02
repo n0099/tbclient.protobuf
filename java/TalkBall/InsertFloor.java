@@ -27,18 +27,18 @@ public final class InsertFloor extends Message {
     public final List<VideoCard> wander_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<InsertFloor> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer topic_id;
         public String topic_name;
-        public List wander_list;
+        public List<VideoCard> wander_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -140,7 +140,7 @@ public final class InsertFloor extends Message {
             } else {
                 this.topic_name = str;
             }
-            List list = builder.wander_list;
+            List<VideoCard> list = builder.wander_list;
             if (list == null) {
                 this.wander_list = DEFAULT_WANDER_LIST;
                 return;

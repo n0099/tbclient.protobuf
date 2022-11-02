@@ -28,18 +28,18 @@ public final class DataRes extends Message {
     public final List<ManageInfo> manage_recomm_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer has_more;
-        public List manage_list;
-        public List manage_recomm_list;
+        public List<ManageInfo> manage_list;
+        public List<ManageInfo> manage_recomm_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -130,13 +130,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.manage_list;
+            List<ManageInfo> list = builder.manage_list;
             if (list == null) {
                 this.manage_list = DEFAULT_MANAGE_LIST;
             } else {
                 this.manage_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.manage_recomm_list;
+            List<ManageInfo> list2 = builder.manage_recomm_list;
             if (list2 == null) {
                 this.manage_recomm_list = DEFAULT_MANAGE_RECOMM_LIST;
             } else {

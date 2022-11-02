@@ -42,13 +42,13 @@ public final class VideoActive extends Message {
     public final List<ThreadInfo> thread_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<VideoActive> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String active_name;
@@ -58,7 +58,7 @@ public final class VideoActive extends Message {
         public Integer id;
         public String native_url;
         public String remark;
-        public List thread_list;
+        public List<ThreadInfo> thread_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -195,7 +195,7 @@ public final class VideoActive extends Message {
             } else {
                 this.remark = str6;
             }
-            List list = builder.thread_list;
+            List<ThreadInfo> list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
                 return;

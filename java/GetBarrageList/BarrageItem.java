@@ -24,16 +24,16 @@ public final class BarrageItem extends Message {
     public final Double time;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<BarrageItem> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List list;
+        public List<Barrage> list;
         public Double time;
 
         public Builder() {
@@ -129,7 +129,7 @@ public final class BarrageItem extends Message {
             } else {
                 this.time = d;
             }
-            List list = builder.list;
+            List<Barrage> list = builder.list;
             if (list == null) {
                 this.list = DEFAULT_LIST;
                 return;

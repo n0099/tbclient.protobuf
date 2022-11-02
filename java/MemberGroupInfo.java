@@ -27,16 +27,16 @@ public final class MemberGroupInfo extends Message {
     public final String member_group_type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<MemberGroupInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List member_group_list;
+        public List<BawuRoleInfoPub> member_group_list;
         public Integer member_group_num;
         public String member_group_type;
 
@@ -140,7 +140,7 @@ public final class MemberGroupInfo extends Message {
             } else {
                 this.member_group_num = num;
             }
-            List list = builder.member_group_list;
+            List<BawuRoleInfoPub> list = builder.member_group_list;
             if (list == null) {
                 this.member_group_list = DEFAULT_MEMBER_GROUP_LIST;
                 return;

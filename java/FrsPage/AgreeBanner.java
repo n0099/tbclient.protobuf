@@ -31,18 +31,18 @@ public final class AgreeBanner extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<AgreeBanner> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String icon_url;
         public String text;
-        public List top_agree_user;
+        public List<SimpleUser> top_agree_user;
         public String url;
 
         public Builder() {
@@ -151,7 +151,7 @@ public final class AgreeBanner extends Message {
             } else {
                 this.url = str3;
             }
-            List list = builder.top_agree_user;
+            List<SimpleUser> list = builder.top_agree_user;
             if (list == null) {
                 this.top_agree_user = DEFAULT_TOP_AGREE_USER;
                 return;

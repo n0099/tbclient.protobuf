@@ -23,16 +23,16 @@ public final class ThreadUser extends Message {
     public final User user_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ThreadUser> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List thread_list;
+        public List<ThreadInfo> thread_list;
         public User user_info;
 
         public Builder() {
@@ -121,7 +121,7 @@ public final class ThreadUser extends Message {
             }
         }
         if (z) {
-            List list = builder.thread_list;
+            List<ThreadInfo> list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {

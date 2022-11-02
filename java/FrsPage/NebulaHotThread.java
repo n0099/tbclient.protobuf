@@ -43,17 +43,17 @@ public final class NebulaHotThread extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<NebulaHotThread> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer comment_number;
-        public List content;
+        public List<PbContent> content;
         public String group_name;
         public Integer rank;
         public String thread_id;
@@ -198,7 +198,7 @@ public final class NebulaHotThread extends Message {
             } else {
                 this.thread_thumbnail = str4;
             }
-            List list = builder.content;
+            List<PbContent> list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
                 return;

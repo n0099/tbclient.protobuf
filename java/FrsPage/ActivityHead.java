@@ -59,18 +59,18 @@ public final class ActivityHead extends Message {
     public final Size top_size;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ActivityHead> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_title;
         public Integer activity_type;
-        public List head_imgs;
+        public List<HeadImgs> head_imgs;
         public Boolean is_ad;
         public String obj_id;
         public String pull_down_click_url;
@@ -196,7 +196,7 @@ public final class ActivityHead extends Message {
             } else {
                 this.activity_title = str;
             }
-            List list = builder.head_imgs;
+            List<HeadImgs> list = builder.head_imgs;
             if (list == null) {
                 this.head_imgs = DEFAULT_HEAD_IMGS;
             } else {

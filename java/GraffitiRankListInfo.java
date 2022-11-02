@@ -42,19 +42,19 @@ public final class GraffitiRankListInfo extends Message {
     public final Integer total;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<GraffitiRankListInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List consent_list;
+        public List<User> consent_list;
         public Integer has_more;
         public Integer has_state;
-        public List list;
+        public List<GraffitiRankItem> list;
         public Integer quick_list_count;
         public Integer show_list_count;
         public Long tid;
@@ -171,7 +171,7 @@ public final class GraffitiRankListInfo extends Message {
             } else {
                 this.total = num2;
             }
-            List list = builder.list;
+            List<GraffitiRankItem> list = builder.list;
             if (list == null) {
                 this.list = DEFAULT_LIST;
             } else {
@@ -201,7 +201,7 @@ public final class GraffitiRankListInfo extends Message {
             } else {
                 this.tid = l;
             }
-            List list2 = builder.consent_list;
+            List<User> list2 = builder.consent_list;
             if (list2 == null) {
                 this.consent_list = DEFAULT_CONSENT_LIST;
                 return;

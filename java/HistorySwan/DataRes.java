@@ -16,22 +16,22 @@ import tbclient.SmartApp;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic;
-    public static final List<SmartApp> DEFAULT_SWAN_LIST;
+    public static final List<SmartApp> DEFAULT_NAWS_LIST;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
-    public final List<SmartApp> swan_list;
+    public final List<SmartApp> naws_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List swan_list;
+        public List<SmartApp> naws_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -68,7 +68,7 @@ public final class DataRes extends Message {
             if (dataRes == null) {
                 return;
             }
-            this.swan_list = Message.copyOf(dataRes.swan_list);
+            this.naws_list = Message.copyOf(dataRes.naws_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -96,7 +96,7 @@ public final class DataRes extends Message {
                 return;
             }
         }
-        DEFAULT_SWAN_LIST = Collections.emptyList();
+        DEFAULT_NAWS_LIST = Collections.emptyList();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -118,16 +118,16 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.swan_list;
+            List<SmartApp> list = builder.naws_list;
             if (list == null) {
-                this.swan_list = DEFAULT_SWAN_LIST;
+                this.naws_list = DEFAULT_NAWS_LIST;
                 return;
             } else {
-                this.swan_list = Message.immutableCopyOf(list);
+                this.naws_list = Message.immutableCopyOf(list);
                 return;
             }
         }
-        this.swan_list = Message.immutableCopyOf(builder.swan_list);
+        this.naws_list = Message.immutableCopyOf(builder.naws_list);
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {

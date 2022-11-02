@@ -26,17 +26,17 @@ public final class Esport extends Message {
     public final Integer floor_no;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Esport> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public EsportStatic _static;
-        public List billboard;
+        public List<EsportRank> billboard;
         public Integer floor_no;
 
         public Builder() {
@@ -134,7 +134,7 @@ public final class Esport extends Message {
             } else {
                 this.floor_no = num;
             }
-            List list = builder.billboard;
+            List<EsportRank> list = builder.billboard;
             if (list == null) {
                 this.billboard = DEFAULT_BILLBOARD;
                 return;

@@ -24,16 +24,16 @@ public final class DataRes extends Message {
     public final Page page;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List mute_user;
+        public List<MuteUser> mute_user;
         public Page page;
 
         public Builder() {
@@ -122,7 +122,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.mute_user;
+            List<MuteUser> list = builder.mute_user;
             if (list == null) {
                 this.mute_user = DEFAULT_MUTE_USER;
             } else {

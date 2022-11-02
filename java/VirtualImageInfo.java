@@ -59,13 +59,13 @@ public final class VirtualImageInfo extends Message {
     public final String virtual_image_url;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<VirtualImageInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer allow_customize;
@@ -78,7 +78,7 @@ public final class VirtualImageInfo extends Message {
         public StateInfo personal_state;
         public Integer recent_incr_agree;
         public Integer snapshoot_id;
-        public List state_list;
+        public List<StateInfo> state_list;
         public String virtual_background;
         public Integer virtual_background_type;
         public String virtual_image_url;
@@ -239,7 +239,7 @@ public final class VirtualImageInfo extends Message {
                 this.snapshoot_id = num6;
             }
             this.personal_state = builder.personal_state;
-            List list = builder.state_list;
+            List<StateInfo> list = builder.state_list;
             if (list == null) {
                 this.state_list = DEFAULT_STATE_LIST;
             } else {

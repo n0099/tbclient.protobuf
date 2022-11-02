@@ -17,23 +17,23 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1339common;
+    public final CommonReq f1342common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String word;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1340common;
+        public CommonReq f1343common;
         public String word;
 
         public Builder() {
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1340common = dataReq.f1339common;
+            this.f1343common = dataReq.f1342common;
             this.word = dataReq.word;
         }
 
@@ -106,7 +106,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1339common = builder.f1340common;
+            this.f1342common = builder.f1343common;
             String str = builder.word;
             if (str == null) {
                 this.word = "";
@@ -116,7 +116,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1339common = builder.f1340common;
+        this.f1342common = builder.f1343common;
         this.word = builder.word;
     }
 

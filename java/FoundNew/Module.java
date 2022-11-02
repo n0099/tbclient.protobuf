@@ -24,16 +24,16 @@ public final class Module extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Module> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List menu_list;
+        public List<Menu> menu_list;
         public Integer type;
 
         public Builder() {
@@ -129,7 +129,7 @@ public final class Module extends Message {
             } else {
                 this.type = num;
             }
-            List list = builder.menu_list;
+            List<Menu> list = builder.menu_list;
             if (list == null) {
                 this.menu_list = DEFAULT_MENU_LIST;
                 return;

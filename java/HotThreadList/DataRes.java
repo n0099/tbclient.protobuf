@@ -33,19 +33,19 @@ public final class DataRes extends Message {
     public final List<RecomTopicList> topic_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List hot_thread_tab_info;
-        public List inner_tabs;
-        public List thread_info;
-        public List topic_list;
+        public List<FrsTabInfo> hot_thread_tab_info;
+        public List<InnerTabInfo> inner_tabs;
+        public List<ThreadInfo> thread_info;
+        public List<RecomTopicList> topic_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -138,25 +138,25 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.topic_list;
+            List<RecomTopicList> list = builder.topic_list;
             if (list == null) {
                 this.topic_list = DEFAULT_TOPIC_LIST;
             } else {
                 this.topic_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.thread_info;
+            List<ThreadInfo> list2 = builder.thread_info;
             if (list2 == null) {
                 this.thread_info = DEFAULT_THREAD_INFO;
             } else {
                 this.thread_info = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.hot_thread_tab_info;
+            List<FrsTabInfo> list3 = builder.hot_thread_tab_info;
             if (list3 == null) {
                 this.hot_thread_tab_info = DEFAULT_HOT_THREAD_TAB_INFO;
             } else {
                 this.hot_thread_tab_info = Message.immutableCopyOf(list3);
             }
-            List list4 = builder.inner_tabs;
+            List<InnerTabInfo> list4 = builder.inner_tabs;
             if (list4 == null) {
                 this.inner_tabs = DEFAULT_INNER_TABS;
                 return;

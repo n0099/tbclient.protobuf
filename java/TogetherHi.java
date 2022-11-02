@@ -45,13 +45,13 @@ public final class TogetherHi extends Message {
     public final Integer start_time;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<TogetherHi> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long album_id;
@@ -60,8 +60,8 @@ public final class TogetherHi extends Message {
         public String location;
         public Integer num_join;
         public Integer num_signup;
-        public List pic_urls;
-        public List potraits;
+        public List<String> pic_urls;
+        public List<String> potraits;
         public Integer start_time;
 
         public Builder() {
@@ -199,7 +199,7 @@ public final class TogetherHi extends Message {
             } else {
                 this.num_signup = num3;
             }
-            List list = builder.potraits;
+            List<String> list = builder.potraits;
             if (list == null) {
                 this.potraits = DEFAULT_POTRAITS;
             } else {
@@ -211,7 +211,7 @@ public final class TogetherHi extends Message {
             } else {
                 this.num_join = num4;
             }
-            List list2 = builder.pic_urls;
+            List<String> list2 = builder.pic_urls;
             if (list2 == null) {
                 this.pic_urls = DEFAULT_PIC_URLS;
                 return;

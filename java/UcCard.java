@@ -33,20 +33,20 @@ public final class UcCard extends Message {
     public final List<UcCardInfo> uc_cards;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<UcCard> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String doc;
         public String icon;
         public String jmp;
         public String name;
-        public List uc_cards;
+        public List<UcCardInfo> uc_cards;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -161,7 +161,7 @@ public final class UcCard extends Message {
             } else {
                 this.jmp = str4;
             }
-            List list = builder.uc_cards;
+            List<UcCardInfo> list = builder.uc_cards;
             if (list == null) {
                 this.uc_cards = DEFAULT_UC_CARDS;
                 return;

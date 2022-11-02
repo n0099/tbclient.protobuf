@@ -19,23 +19,23 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1277common;
+    public final CommonReq f1280common;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer lyo;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1278common;
+        public CommonReq f1281common;
         public Integer lyo;
 
         public Builder() {
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1278common = dataReq.f1277common;
+            this.f1281common = dataReq.f1280common;
             this.lyo = dataReq.lyo;
         }
 
@@ -124,7 +124,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1277common = builder.f1278common;
+            this.f1280common = builder.f1281common;
             Integer num = builder.lyo;
             if (num == null) {
                 this.lyo = DEFAULT_LYO;
@@ -134,7 +134,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1277common = builder.f1278common;
+        this.f1280common = builder.f1281common;
         this.lyo = builder.lyo;
     }
 

@@ -57,13 +57,13 @@ public final class ChapterInfo extends Message {
     public final Integer words;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ChapterInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long chapter_id;
@@ -74,7 +74,7 @@ public final class ChapterInfo extends Message {
         public Integer page_id;
         public Integer pages;
         public Integer paragraph_id;
-        public List paragraphs;
+        public List<Integer> paragraphs;
         public Integer price;
         public Long thread_id;
         public String title;
@@ -230,7 +230,7 @@ public final class ChapterInfo extends Message {
             } else {
                 this.pages = num5;
             }
-            List list = builder.paragraphs;
+            List<Integer> list = builder.paragraphs;
             if (list == null) {
                 this.paragraphs = DEFAULT_PARAGRAPHS;
             } else {

@@ -32,19 +32,19 @@ public final class PushThreadInfo extends Message {
     public final List<User> user_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<PushThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer has_pushcard;
         public Integer has_pushplace;
-        public List thread_list;
-        public List user_list;
+        public List<ThreadInfo> thread_list;
+        public List<User> user_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -137,7 +137,7 @@ public final class PushThreadInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.thread_list;
+            List<ThreadInfo> list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {
@@ -155,7 +155,7 @@ public final class PushThreadInfo extends Message {
             } else {
                 this.has_pushplace = num2;
             }
-            List list2 = builder.user_list;
+            List<User> list2 = builder.user_list;
             if (list2 == null) {
                 this.user_list = DEFAULT_USER_LIST;
                 return;

@@ -24,16 +24,16 @@ public final class PbPresent extends Message {
     public final Integer total;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<PbPresent> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List list;
+        public List<PbPresentList> list;
         public Integer total;
 
         public Builder() {
@@ -129,7 +129,7 @@ public final class PbPresent extends Message {
             } else {
                 this.total = num;
             }
-            List list = builder.list;
+            List<PbPresentList> list = builder.list;
             if (list == null) {
                 this.list = DEFAULT_LIST;
                 return;

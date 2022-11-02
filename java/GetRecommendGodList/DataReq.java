@@ -20,25 +20,25 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1231common;
+    public final CommonReq f1234common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String portrait;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1232common;
+        public CommonReq f1235common;
         public Integer pn;
         public String portrait;
 
@@ -77,7 +77,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1232common = dataReq.f1231common;
+            this.f1235common = dataReq.f1234common;
             this.portrait = dataReq.portrait;
             this.pn = dataReq.pn;
         }
@@ -129,7 +129,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1231common = builder.f1232common;
+            this.f1234common = builder.f1235common;
             String str = builder.portrait;
             if (str == null) {
                 this.portrait = "";
@@ -145,7 +145,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1231common = builder.f1232common;
+        this.f1234common = builder.f1235common;
         this.portrait = builder.portrait;
         this.pn = builder.pn;
     }

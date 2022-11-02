@@ -38,19 +38,19 @@ public final class ActiveCenter extends Message {
     public final String win_title;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ActiveCenter> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer is_first_up;
         public Integer is_new_window;
         public ActiveCenterMission mission;
-        public List mission_status_list;
+        public List<ActiveCenterStatus> mission_status_list;
         public String win_desc;
         public Integer win_jump_time;
         public String win_title;
@@ -162,7 +162,7 @@ public final class ActiveCenter extends Message {
                 this.win_desc = str2;
             }
             this.mission = builder.mission;
-            List list = builder.mission_status_list;
+            List<ActiveCenterStatus> list = builder.mission_status_list;
             if (list == null) {
                 this.mission_status_list = DEFAULT_MISSION_STATUS_LIST;
             } else {

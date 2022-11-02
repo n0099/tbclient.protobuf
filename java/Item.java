@@ -62,13 +62,13 @@ public final class Item extends Message {
     public final List<String> tags;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Item> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ApkDetail apk_detail;
@@ -85,7 +85,7 @@ public final class Item extends Message {
         public String item_name;
         public Double score;
         public Integer star;
-        public List tags;
+        public List<String> tags;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -217,7 +217,7 @@ public final class Item extends Message {
             } else {
                 this.icon_url = str2;
             }
-            List list = builder.tags;
+            List<String> list = builder.tags;
             if (list == null) {
                 this.tags = DEFAULT_TAGS;
             } else {

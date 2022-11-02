@@ -21,22 +21,22 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1259common;
+    public final CommonReq f1262common;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long black_uid;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1260common;
+        public CommonReq f1263common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1260common = dataReq.f1259common;
+            this.f1263common = dataReq.f1262common;
             this.black_uid = dataReq.black_uid;
         }
 
@@ -124,7 +124,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1259common = builder.f1260common;
+            this.f1262common = builder.f1263common;
             Long l = builder.black_uid;
             if (l == null) {
                 this.black_uid = DEFAULT_BLACK_UID;
@@ -134,7 +134,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1259common = builder.f1260common;
+        this.f1262common = builder.f1263common;
         this.black_uid = builder.black_uid;
     }
 

@@ -24,16 +24,16 @@ public final class DataRes extends Message {
     public final ThemeRecommand recommend;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List bubbles;
+        public List<ThemeBubbleInMain> bubbles;
         public ThemeRecommand recommend;
 
         public Builder() {
@@ -123,7 +123,7 @@ public final class DataRes extends Message {
         }
         if (z) {
             this.recommend = builder.recommend;
-            List list = builder.bubbles;
+            List<ThemeBubbleInMain> list = builder.bubbles;
             if (list == null) {
                 this.bubbles = DEFAULT_BUBBLES;
                 return;

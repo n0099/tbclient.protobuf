@@ -20,25 +20,25 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1347common;
+    public final CommonReq f1350common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long props_id;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1348common;
+        public CommonReq f1351common;
         public Long props_id;
         public Integer type;
 
@@ -77,7 +77,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1348common = dataReq.f1347common;
+            this.f1351common = dataReq.f1350common;
             this.props_id = dataReq.props_id;
             this.type = dataReq.type;
         }
@@ -130,7 +130,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1347common = builder.f1348common;
+            this.f1350common = builder.f1351common;
             Long l = builder.props_id;
             if (l == null) {
                 this.props_id = DEFAULT_PROPS_ID;
@@ -146,7 +146,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1347common = builder.f1348common;
+        this.f1350common = builder.f1351common;
         this.props_id = builder.props_id;
         this.type = builder.type;
     }

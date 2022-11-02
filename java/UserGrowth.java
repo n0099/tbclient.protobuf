@@ -33,19 +33,19 @@ public final class UserGrowth extends Message {
     public final Double tmoney;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<UserGrowth> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer level_id;
         public Long score;
         public Long target_score;
-        public List task_info;
+        public List<UserTaskInfo> task_info;
         public Double tmoney;
 
         public Builder() {
@@ -165,7 +165,7 @@ public final class UserGrowth extends Message {
             } else {
                 this.tmoney = d;
             }
-            List list = builder.task_info;
+            List<UserTaskInfo> list = builder.task_info;
             if (list == null) {
                 this.task_info = DEFAULT_TASK_INFO;
                 return;

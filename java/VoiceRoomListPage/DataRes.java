@@ -22,16 +22,16 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> voice_room_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List voice_room_list;
+        public List<ThreadInfo> voice_room_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -118,7 +118,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.voice_room_list;
+            List<ThreadInfo> list = builder.voice_room_list;
             if (list == null) {
                 this.voice_room_list = DEFAULT_VOICE_ROOM_LIST;
                 return;

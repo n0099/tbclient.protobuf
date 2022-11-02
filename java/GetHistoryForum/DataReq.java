@@ -17,23 +17,23 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1195common;
+    public final CommonReq f1198common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String history;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1196common;
+        public CommonReq f1199common;
         public String history;
 
         public Builder() {
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1196common = dataReq.f1195common;
+            this.f1199common = dataReq.f1198common;
             this.history = dataReq.history;
         }
 
@@ -106,7 +106,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1195common = builder.f1196common;
+            this.f1198common = builder.f1199common;
             String str = builder.history;
             if (str == null) {
                 this.history = "";
@@ -116,7 +116,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1195common = builder.f1196common;
+        this.f1198common = builder.f1199common;
         this.history = builder.history;
     }
 

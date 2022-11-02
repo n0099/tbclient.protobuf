@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1281common;
+    public final CommonReq f1284common;
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -60,19 +60,19 @@ public final class DataReq extends Message {
     public final Long topic_tid;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1282common;
+        public CommonReq f1285common;
         public Long fid;
         public String first_dir;
         public Integer is_video_topic;
@@ -121,7 +121,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1282common = dataReq.f1281common;
+            this.f1285common = dataReq.f1284common;
             this.topic_id = dataReq.topic_id;
             this.topic_name = dataReq.topic_name;
             this.scr_w = dataReq.scr_w;
@@ -193,7 +193,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1281common = builder.f1282common;
+            this.f1284common = builder.f1285common;
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
@@ -275,7 +275,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1281common = builder.f1282common;
+        this.f1284common = builder.f1285common;
         this.topic_id = builder.topic_id;
         this.topic_name = builder.topic_name;
         this.scr_w = builder.scr_w;

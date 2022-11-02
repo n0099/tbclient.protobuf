@@ -31,19 +31,19 @@ public final class HotThread extends Message {
     public final List<ThreadInfo> thread_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<HotThread> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String hot_title;
         public Integer is_new_url;
         public Page page;
-        public List thread_list;
+        public List<ThreadInfo> thread_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -140,7 +140,7 @@ public final class HotThread extends Message {
             } else {
                 this.hot_title = str;
             }
-            List list = builder.thread_list;
+            List<ThreadInfo> list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {

@@ -22,24 +22,24 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1121common;
+    public final CommonReq f1124common;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String image_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer card_type;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1122common;
+        public CommonReq f1125common;
         public String image_info;
 
         public Builder() {
@@ -77,7 +77,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1122common = dataReq.f1121common;
+            this.f1125common = dataReq.f1124common;
             this.card_type = dataReq.card_type;
             this.image_info = dataReq.image_info;
         }
@@ -129,7 +129,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1121common = builder.f1122common;
+            this.f1124common = builder.f1125common;
             Integer num = builder.card_type;
             if (num == null) {
                 this.card_type = DEFAULT_CARD_TYPE;
@@ -145,7 +145,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1121common = builder.f1122common;
+        this.f1124common = builder.f1125common;
         this.card_type = builder.card_type;
         this.image_info = builder.image_info;
     }

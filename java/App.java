@@ -114,13 +114,13 @@ public final class App extends Message {
     public final String web_url;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<App> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String abtest;
@@ -134,7 +134,7 @@ public final class App extends Message {
         public String deep_url;
         public String ext_info;
         public String first_name;
-        public List goods_info;
+        public List<GoodsInfo> goods_info;
         public String icon_link;
         public String icon_url;
         public String id;
@@ -452,7 +452,7 @@ public final class App extends Message {
             } else {
                 this.ext_info = str23;
             }
-            List list = builder.goods_info;
+            List<GoodsInfo> list = builder.goods_info;
             if (list == null) {
                 this.goods_info = DEFAULT_GOODS_INFO;
             } else {

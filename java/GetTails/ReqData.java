@@ -17,23 +17,23 @@ public final class ReqData extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1249common;
+    public final CommonReq f1252common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String st_type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ReqData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1250common;
+        public CommonReq f1253common;
         public String st_type;
 
         public Builder() {
@@ -72,7 +72,7 @@ public final class ReqData extends Message {
                 return;
             }
             this.st_type = reqData.st_type;
-            this.f1250common = reqData.f1249common;
+            this.f1253common = reqData.f1252common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -112,11 +112,11 @@ public final class ReqData extends Message {
             } else {
                 this.st_type = str;
             }
-            this.f1249common = builder.f1250common;
+            this.f1252common = builder.f1253common;
             return;
         }
         this.st_type = builder.st_type;
-        this.f1249common = builder.f1250common;
+        this.f1252common = builder.f1253common;
     }
 
     public /* synthetic */ ReqData(Builder builder, boolean z, a aVar) {

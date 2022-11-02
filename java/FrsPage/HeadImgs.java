@@ -98,13 +98,13 @@ public final class HeadImgs extends Message {
     public final List<VideoImageColor> video_image_color;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<HeadImgs> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String btn_text;
@@ -131,9 +131,9 @@ public final class HeadImgs extends Message {
         public String subtitle;
         public String tag_name_url;
         public String tag_name_wh;
-        public List third_statistics_url;
+        public List<String> third_statistics_url;
         public String title;
-        public List video_image_color;
+        public List<VideoImageColor> video_image_color;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -298,7 +298,7 @@ public final class HeadImgs extends Message {
             } else {
                 this.schema = str8;
             }
-            List list = builder.third_statistics_url;
+            List<String> list = builder.third_statistics_url;
             if (list == null) {
                 this.third_statistics_url = DEFAULT_THIRD_STATISTICS_URL;
             } else {
@@ -401,7 +401,7 @@ public final class HeadImgs extends Message {
                 this.play_url = str21;
             }
             this.cover_image_color = builder.cover_image_color;
-            List list2 = builder.video_image_color;
+            List<VideoImageColor> list2 = builder.video_image_color;
             if (list2 == null) {
                 this.video_image_color = DEFAULT_VIDEO_IMAGE_COLOR;
                 return;

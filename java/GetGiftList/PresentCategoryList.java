@@ -27,18 +27,18 @@ public final class PresentCategoryList extends Message {
     public final List<Integer> gift_ids;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<PresentCategoryList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer category_id;
         public String category_name;
-        public List gift_ids;
+        public List<Integer> gift_ids;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -140,7 +140,7 @@ public final class PresentCategoryList extends Message {
             } else {
                 this.category_name = str;
             }
-            List list = builder.gift_ids;
+            List<Integer> list = builder.gift_ids;
             if (list == null) {
                 this.gift_ids = DEFAULT_GIFT_IDS;
                 return;

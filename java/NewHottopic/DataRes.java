@@ -29,18 +29,18 @@ public final class DataRes extends Message {
     public final TopicDetail topic_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public PkModule pk_module;
         public RelateThread relate_thread;
-        public List special_topic;
+        public List<SpecialTopic> special_topic;
         public TimeLine time_line;
         public TopicDetail topic_info;
 
@@ -136,7 +136,7 @@ public final class DataRes extends Message {
             this.topic_info = builder.topic_info;
             this.pk_module = builder.pk_module;
             this.time_line = builder.time_line;
-            List list = builder.special_topic;
+            List<SpecialTopic> list = builder.special_topic;
             if (list == null) {
                 this.special_topic = DEFAULT_SPECIAL_TOPIC;
             } else {

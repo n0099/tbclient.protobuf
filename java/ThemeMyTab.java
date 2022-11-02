@@ -1,4 +1,4 @@
-package tbclient.HighPage;
+package tbclient;
 
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -9,28 +9,32 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
-public final class ZanUser extends Message {
+public final class ThemeMyTab extends Message {
     public static /* synthetic */ Interceptable $ic = null;
-    public static final String DEFAULT_PORTRAIT = "";
-    public static final String DEFAULT_USER_NAME = "";
+    public static final String DEFAULT_BUTTON_COLOR = "";
+    public static final String DEFAULT_DYNAMIC_URL = "";
+    public static final String DEFAULT_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String button_color;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
-    public final String portrait;
+    public final String dynamic_url;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
-    public final String user_name;
+    public final String url;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ThemeMyTab> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public String portrait;
-        public String user_name;
+        public String button_color;
+        public String dynamic_url;
+        public String url;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -47,13 +51,13 @@ public final class ZanUser extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(ZanUser zanUser) {
-            super(zanUser);
+        public Builder(ThemeMyTab themeMyTab) {
+            super(themeMyTab);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {zanUser};
+                Object[] objArr = {themeMyTab};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -64,27 +68,28 @@ public final class ZanUser extends Message {
                     return;
                 }
             }
-            if (zanUser == null) {
+            if (themeMyTab == null) {
                 return;
             }
-            this.user_name = zanUser.user_name;
-            this.portrait = zanUser.portrait;
+            this.url = themeMyTab.url;
+            this.dynamic_url = themeMyTab.dynamic_url;
+            this.button_color = themeMyTab.button_color;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public ZanUser build(boolean z) {
+        public ThemeMyTab build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
             if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new ZanUser(this, z, null);
+                return new ThemeMyTab(this, z, null);
             }
-            return (ZanUser) invokeZ.objValue;
+            return (ThemeMyTab) invokeZ.objValue;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ZanUser(Builder builder, boolean z) {
+    public ThemeMyTab(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -102,26 +107,33 @@ public final class ZanUser extends Message {
             }
         }
         if (z) {
-            String str = builder.user_name;
+            String str = builder.url;
             if (str == null) {
-                this.user_name = "";
+                this.url = "";
             } else {
-                this.user_name = str;
+                this.url = str;
             }
-            String str2 = builder.portrait;
+            String str2 = builder.dynamic_url;
             if (str2 == null) {
-                this.portrait = "";
+                this.dynamic_url = "";
+            } else {
+                this.dynamic_url = str2;
+            }
+            String str3 = builder.button_color;
+            if (str3 == null) {
+                this.button_color = "";
                 return;
             } else {
-                this.portrait = str2;
+                this.button_color = str3;
                 return;
             }
         }
-        this.user_name = builder.user_name;
-        this.portrait = builder.portrait;
+        this.url = builder.url;
+        this.dynamic_url = builder.dynamic_url;
+        this.button_color = builder.button_color;
     }
 
-    public /* synthetic */ ZanUser(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ ThemeMyTab(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 }

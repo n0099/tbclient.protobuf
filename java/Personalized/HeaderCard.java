@@ -1,4 +1,4 @@
-package tbclient;
+package tbclient.Personalized;
 
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
@@ -10,37 +10,32 @@ import com.baidu.titan.sdk.runtime.Interceptable;
 import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
+import tbclient.ThreadInfo;
 /* loaded from: classes9.dex */
-public final class NobilityTdou extends Message {
-    public static /* synthetic */ Interceptable $ic;
-    public static final Integer DEFAULT_CLEAR_TIME;
-    public static final Integer DEFAULT_EXPIRE_TIME;
-    public static final Integer DEFAULT_STATUS;
-    public static final Long DEFAULT_TDOU_NUM;
+public final class HeaderCard extends Message {
+    public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_CARD_TITLE = "";
+    public static final List<ThreadInfo> DEFAULT_THREAD_LIST;
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
-    public final Integer clear_time;
-    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
-    public final Integer expire_time;
-    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-    public final Integer status;
-    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
-    public final Long tdou_num;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String card_title;
+    @ProtoField(label = Message.Label.REPEATED, tag = 2)
+    public final List<ThreadInfo> thread_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<HeaderCard> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public Integer clear_time;
-        public Integer expire_time;
-        public Integer status;
-        public Long tdou_num;
+        public String card_title;
+        public List<ThreadInfo> thread_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -57,13 +52,13 @@ public final class NobilityTdou extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(NobilityTdou nobilityTdou) {
-            super(nobilityTdou);
+        public Builder(HeaderCard headerCard) {
+            super(headerCard);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {nobilityTdou};
+                Object[] objArr = {headerCard};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -74,48 +69,43 @@ public final class NobilityTdou extends Message {
                     return;
                 }
             }
-            if (nobilityTdou == null) {
+            if (headerCard == null) {
                 return;
             }
-            this.tdou_num = nobilityTdou.tdou_num;
-            this.status = nobilityTdou.status;
-            this.expire_time = nobilityTdou.expire_time;
-            this.clear_time = nobilityTdou.clear_time;
+            this.card_title = headerCard.card_title;
+            this.thread_list = Message.copyOf(headerCard.thread_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public NobilityTdou build(boolean z) {
+        public HeaderCard build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
             if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new NobilityTdou(this, z, null);
+                return new HeaderCard(this, z, null);
             }
-            return (NobilityTdou) invokeZ.objValue;
+            return (HeaderCard) invokeZ.objValue;
         }
     }
 
     static {
         InterceptResult invokeClinit;
         ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-612902511, "Ltbclient/NobilityTdou;")) != null) {
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-173046871, "Ltbclient/Personalized/HeaderCard;")) != null) {
             Interceptable interceptable = invokeClinit.interceptor;
             if (interceptable != null) {
                 $ic = interceptable;
             }
             if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-612902511, "Ltbclient/NobilityTdou;");
+                classClinitInterceptable.invokePostClinit(-173046871, "Ltbclient/Personalized/HeaderCard;");
                 return;
             }
         }
-        DEFAULT_TDOU_NUM = 0L;
-        DEFAULT_STATUS = 0;
-        DEFAULT_EXPIRE_TIME = 0;
-        DEFAULT_CLEAR_TIME = 0;
+        DEFAULT_THREAD_LIST = Collections.emptyList();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public NobilityTdou(Builder builder, boolean z) {
+    public HeaderCard(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -133,40 +123,26 @@ public final class NobilityTdou extends Message {
             }
         }
         if (z) {
-            Long l = builder.tdou_num;
-            if (l == null) {
-                this.tdou_num = DEFAULT_TDOU_NUM;
+            String str = builder.card_title;
+            if (str == null) {
+                this.card_title = "";
             } else {
-                this.tdou_num = l;
+                this.card_title = str;
             }
-            Integer num = builder.status;
-            if (num == null) {
-                this.status = DEFAULT_STATUS;
-            } else {
-                this.status = num;
-            }
-            Integer num2 = builder.expire_time;
-            if (num2 == null) {
-                this.expire_time = DEFAULT_EXPIRE_TIME;
-            } else {
-                this.expire_time = num2;
-            }
-            Integer num3 = builder.clear_time;
-            if (num3 == null) {
-                this.clear_time = DEFAULT_CLEAR_TIME;
+            List<ThreadInfo> list = builder.thread_list;
+            if (list == null) {
+                this.thread_list = DEFAULT_THREAD_LIST;
                 return;
             } else {
-                this.clear_time = num3;
+                this.thread_list = Message.immutableCopyOf(list);
                 return;
             }
         }
-        this.tdou_num = builder.tdou_num;
-        this.status = builder.status;
-        this.expire_time = builder.expire_time;
-        this.clear_time = builder.clear_time;
+        this.card_title = builder.card_title;
+        this.thread_list = Message.immutableCopyOf(builder.thread_list);
     }
 
-    public /* synthetic */ NobilityTdou(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ HeaderCard(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 }

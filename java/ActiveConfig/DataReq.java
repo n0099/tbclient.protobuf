@@ -20,25 +20,25 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1089common;
+    public final CommonReq f1092common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer is_first_up;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer is_schema_up;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1090common;
+        public CommonReq f1093common;
         public Integer is_first_up;
         public Integer is_schema_up;
 
@@ -77,7 +77,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1090common = dataReq.f1089common;
+            this.f1093common = dataReq.f1092common;
             this.is_schema_up = dataReq.is_schema_up;
             this.is_first_up = dataReq.is_first_up;
         }
@@ -130,7 +130,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1089common = builder.f1090common;
+            this.f1092common = builder.f1093common;
             Integer num = builder.is_schema_up;
             if (num == null) {
                 this.is_schema_up = DEFAULT_IS_SCHEMA_UP;
@@ -146,7 +146,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1089common = builder.f1090common;
+        this.f1092common = builder.f1093common;
         this.is_schema_up = builder.is_schema_up;
         this.is_first_up = builder.is_first_up;
     }

@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1099common;
+    public final CommonReq f1102common;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -30,18 +30,18 @@ public final class DataReq extends Message {
     public final Long thread_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1100common;
+        public CommonReq f1103common;
         public Long forum_id;
         public String options;
         public Long thread_id;
@@ -83,7 +83,7 @@ public final class DataReq extends Message {
             }
             this.thread_id = dataReq.thread_id;
             this.options = dataReq.options;
-            this.f1100common = dataReq.f1099common;
+            this.f1103common = dataReq.f1102common;
             this.forum_id = dataReq.forum_id;
         }
 
@@ -147,7 +147,7 @@ public final class DataReq extends Message {
             } else {
                 this.options = str;
             }
-            this.f1099common = builder.f1100common;
+            this.f1102common = builder.f1103common;
             Long l2 = builder.forum_id;
             if (l2 == null) {
                 this.forum_id = DEFAULT_FORUM_ID;
@@ -159,7 +159,7 @@ public final class DataReq extends Message {
         }
         this.thread_id = builder.thread_id;
         this.options = builder.options;
-        this.f1099common = builder.f1100common;
+        this.f1102common = builder.f1103common;
         this.forum_id = builder.forum_id;
     }
 

@@ -22,13 +22,13 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_BRAND = "";
     public static final String DEFAULT_BRAND_TYPE = "";
     public static final String DEFAULT_C3_AID = "";
-    public static final String DEFAULT_CAID = "";
     public static final String DEFAULT_CAM = "";
     public static final Integer DEFAULT_CMODE;
     public static final String DEFAULT_CUID = "";
     public static final String DEFAULT_CUID_GALAXY2 = "";
     public static final String DEFAULT_CUID_GID = "";
     public static final String DEFAULT_DEVICE_SCORE = "";
+    public static final String DEFAULT_DIAC = "";
     public static final String DEFAULT_DI_DIORDNA = "";
     public static final String DEFAULT_EVENT_DAY = "";
     public static final String DEFAULT_EXTRA = "";
@@ -51,6 +51,7 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_M_RESULT = "";
     public static final String DEFAULT_M_SIZE_D = "";
     public static final String DEFAULT_M_SIZE_U = "";
+    public static final String DEFAULT_NAWS_GAME_VER = "";
     public static final Integer DEFAULT_NET_TYPE;
     public static final String DEFAULT_OAID = "";
     public static final Integer DEFAULT_PERSONALIZED_REC_SWITCH;
@@ -69,7 +70,6 @@ public final class CommonReq extends Message {
     public static final Integer DEFAULT_START_TYPE;
     public static final String DEFAULT_STOKEN = "";
     public static final String DEFAULT_SUBAPP_TYPE = "";
-    public static final String DEFAULT_SWAN_GAME_VER = "";
     public static final String DEFAULT_TBS = "";
     public static final String DEFAULT_USER_AGENT = "";
     public static final String DEFAULT_VFDI = "";
@@ -115,8 +115,6 @@ public final class CommonReq extends Message {
     public final String brand_type;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
     public final String c3_aid;
-    @ProtoField(tag = 46, type = Message.Datatype.STRING)
-    public final String caid;
     @ProtoField(tag = 66, type = Message.Datatype.STRING)
     public final String cam;
     @ProtoField(tag = 55, type = Message.Datatype.INT32)
@@ -131,6 +129,8 @@ public final class CommonReq extends Message {
     public final String device_score;
     @ProtoField(tag = 68, type = Message.Datatype.STRING)
     public final String di_diordna;
+    @ProtoField(tag = 46, type = Message.Datatype.STRING)
+    public final String diac;
     @ProtoField(tag = 53, type = Message.Datatype.STRING)
     public final String event_day;
     @ProtoField(tag = 61, type = Message.Datatype.STRING)
@@ -173,6 +173,8 @@ public final class CommonReq extends Message {
     public final String mac;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String model;
+    @ProtoField(tag = 44, type = Message.Datatype.STRING)
+    public final String naws_game_ver;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer net_type;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
@@ -209,8 +211,6 @@ public final class CommonReq extends Message {
     public final String stoken;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String subapp_type;
-    @ProtoField(tag = 44, type = Message.Datatype.STRING)
-    public final String swan_game_ver;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String tbs;
     @ProtoField(tag = 62, type = Message.Datatype.STRING)
@@ -223,13 +223,13 @@ public final class CommonReq extends Message {
     public final String z_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<CommonReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String BDUSS;
@@ -248,7 +248,6 @@ public final class CommonReq extends Message {
         public String brand;
         public String brand_type;
         public String c3_aid;
-        public String caid;
         public String cam;
         public Integer cmode;
         public String cuid;
@@ -256,6 +255,7 @@ public final class CommonReq extends Message {
         public String cuid_gid;
         public String device_score;
         public String di_diordna;
+        public String diac;
         public String event_day;
         public String extra;
         public Long first_install_time;
@@ -277,6 +277,7 @@ public final class CommonReq extends Message {
         public String m_size_u;
         public String mac;
         public String model;
+        public String naws_game_ver;
         public Integer net_type;
         public String oaid;
         public Integer personalized_rec_switch;
@@ -295,7 +296,6 @@ public final class CommonReq extends Message {
         public Integer start_type;
         public String stoken;
         public String subapp_type;
-        public String swan_game_ver;
         public String tbs;
         public String user_agent;
         public String vfdi;
@@ -380,9 +380,9 @@ public final class CommonReq extends Message {
             this.is_teenager = commonReq.is_teenager;
             this.sdk_ver = commonReq.sdk_ver;
             this.framework_ver = commonReq.framework_ver;
-            this.swan_game_ver = commonReq.swan_game_ver;
+            this.naws_game_ver = commonReq.naws_game_ver;
             this.idfa = commonReq.idfa;
-            this.caid = commonReq.caid;
+            this.diac = commonReq.diac;
             this.active_timestamp = commonReq.active_timestamp;
             this.first_install_time = commonReq.first_install_time;
             this.last_update_time = commonReq.last_update_time;
@@ -728,11 +728,11 @@ public final class CommonReq extends Message {
             } else {
                 this.framework_ver = str35;
             }
-            String str36 = builder.swan_game_ver;
+            String str36 = builder.naws_game_ver;
             if (str36 == null) {
-                this.swan_game_ver = "";
+                this.naws_game_ver = "";
             } else {
-                this.swan_game_ver = str36;
+                this.naws_game_ver = str36;
             }
             String str37 = builder.idfa;
             if (str37 == null) {
@@ -740,11 +740,11 @@ public final class CommonReq extends Message {
             } else {
                 this.idfa = str37;
             }
-            String str38 = builder.caid;
+            String str38 = builder.diac;
             if (str38 == null) {
-                this.caid = "";
+                this.diac = "";
             } else {
-                this.caid = str38;
+                this.diac = str38;
             }
             Long l2 = builder.active_timestamp;
             if (l2 == null) {
@@ -930,9 +930,9 @@ public final class CommonReq extends Message {
         this.is_teenager = builder.is_teenager;
         this.sdk_ver = builder.sdk_ver;
         this.framework_ver = builder.framework_ver;
-        this.swan_game_ver = builder.swan_game_ver;
+        this.naws_game_ver = builder.naws_game_ver;
         this.idfa = builder.idfa;
-        this.caid = builder.caid;
+        this.diac = builder.diac;
         this.active_timestamp = builder.active_timestamp;
         this.first_install_time = builder.first_install_time;
         this.last_update_time = builder.last_update_time;

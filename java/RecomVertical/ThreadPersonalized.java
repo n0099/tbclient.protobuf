@@ -36,17 +36,17 @@ public final class ThreadPersonalized extends Message {
     public final String weight;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ThreadPersonalized> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String abtest_tag;
-        public List dislike_resource;
+        public List<DislikeReason> dislike_resource;
         public String extra;
         public String source;
         public Long tid;
@@ -167,7 +167,7 @@ public final class ThreadPersonalized extends Message {
             } else {
                 this.abtest_tag = str3;
             }
-            List list = builder.dislike_resource;
+            List<DislikeReason> list = builder.dislike_resource;
             if (list == null) {
                 this.dislike_resource = DEFAULT_DISLIKE_RESOURCE;
             } else {

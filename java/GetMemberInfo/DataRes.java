@@ -38,13 +38,13 @@ public final class DataRes extends Message {
     public final PriManagerApplyInfo primanager_apply_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ForumMember forum_member_info;
@@ -52,7 +52,7 @@ public final class DataRes extends Message {
         public Integer is_private_forum;
         public ManagerApplyInfo manager_apply_info;
         public MemberGodInfo member_god_info;
-        public List member_group_info;
+        public List<MemberGroupInfo> member_group_info;
         public PriManagerApplyInfo primanager_apply_info;
 
         public Builder() {
@@ -148,7 +148,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.member_group_info;
+            List<MemberGroupInfo> list = builder.member_group_info;
             if (list == null) {
                 this.member_group_info = DEFAULT_MEMBER_GROUP_INFO;
             } else {

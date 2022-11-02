@@ -24,16 +24,16 @@ public final class NewFloorInfo extends Message {
     public final Integer is_floor;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<NewFloorInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List content;
+        public List<PbContent> content;
         public Integer is_floor;
 
         public Builder() {
@@ -123,7 +123,7 @@ public final class NewFloorInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.content;
+            List<PbContent> list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {

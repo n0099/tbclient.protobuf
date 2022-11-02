@@ -27,18 +27,18 @@ public final class DataRes extends Message {
     public final List<ThemeList> theme_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List carousel;
+        public List<ThemeCarousel> carousel;
         public ThemeRecommand recommend;
-        public List theme_list;
+        public List<ThemeList> theme_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -128,13 +128,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.theme_list;
+            List<ThemeList> list = builder.theme_list;
             if (list == null) {
                 this.theme_list = DEFAULT_THEME_LIST;
             } else {
                 this.theme_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.carousel;
+            List<ThemeCarousel> list2 = builder.carousel;
             if (list2 == null) {
                 this.carousel = DEFAULT_CAROUSEL;
             } else {

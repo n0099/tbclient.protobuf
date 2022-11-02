@@ -24,16 +24,16 @@ public final class TimeLine extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<TimeLine> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List timeline_info;
+        public List<TimeLineInfo> timeline_info;
         public String title;
 
         public Builder() {
@@ -128,7 +128,7 @@ public final class TimeLine extends Message {
             } else {
                 this.title = str;
             }
-            List list = builder.timeline_info;
+            List<TimeLineInfo> list = builder.timeline_info;
             if (list == null) {
                 this.timeline_info = DEFAULT_TIMELINE_INFO;
                 return;

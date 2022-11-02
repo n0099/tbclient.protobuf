@@ -45,23 +45,23 @@ public final class UserGodInfo extends Message {
     public final String total_thread;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<UserGodInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String address;
         public Integer age;
         public Integer cur_page;
-        public List forum_god_list;
+        public List<ForumGodDetailInfo> forum_god_list;
         public GodDetailInfo god_info;
         public Integer god_type;
         public Integer sex;
-        public List thread_list;
+        public List<ThreadInfo> thread_list;
         public String total_thread;
 
         public Builder() {
@@ -169,7 +169,7 @@ public final class UserGodInfo extends Message {
                 this.god_type = num;
             }
             this.god_info = builder.god_info;
-            List list = builder.forum_god_list;
+            List<ForumGodDetailInfo> list = builder.forum_god_list;
             if (list == null) {
                 this.forum_god_list = DEFAULT_FORUM_GOD_LIST;
             } else {
@@ -193,7 +193,7 @@ public final class UserGodInfo extends Message {
             } else {
                 this.address = str;
             }
-            List list2 = builder.thread_list;
+            List<ThreadInfo> list2 = builder.thread_list;
             if (list2 == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {

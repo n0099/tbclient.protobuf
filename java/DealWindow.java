@@ -24,16 +24,16 @@ public final class DealWindow extends Message {
     public final Long total;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DealWindow> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List list;
+        public List<DisplayWindowInfo> list;
         public Long total;
 
         public Builder() {
@@ -123,7 +123,7 @@ public final class DealWindow extends Message {
             }
         }
         if (z) {
-            List list = builder.list;
+            List<DisplayWindowInfo> list = builder.list;
             if (list == null) {
                 this.list = DEFAULT_LIST;
             } else {

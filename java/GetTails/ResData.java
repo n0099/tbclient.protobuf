@@ -30,18 +30,18 @@ public final class ResData extends Message {
     public final ThemeTailInUser tail_style;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ResData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List colorList;
+        public List<ColorInfo> colorList;
         public String default_color;
-        public List tailList;
+        public List<TailInfo> tailList;
         public ThemeTailInUser tail_style;
 
         public Builder() {
@@ -133,13 +133,13 @@ public final class ResData extends Message {
             }
         }
         if (z) {
-            List list = builder.tailList;
+            List<TailInfo> list = builder.tailList;
             if (list == null) {
                 this.tailList = DEFAULT_TAILLIST;
             } else {
                 this.tailList = Message.immutableCopyOf(list);
             }
-            List list2 = builder.colorList;
+            List<ColorInfo> list2 = builder.colorList;
             if (list2 == null) {
                 this.colorList = DEFAULT_COLORLIST;
             } else {

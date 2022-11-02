@@ -33,17 +33,17 @@ public final class DataRes extends Message {
     public final ManagerElection vote_limit;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Basic basic;
-        public List election_list;
+        public List<ElectionList> election_list;
         public Integer has_more;
         public Myrecord my_record;
         public ManagerElection vote_limit;
@@ -140,7 +140,7 @@ public final class DataRes extends Message {
         if (z) {
             this.basic = builder.basic;
             this.my_record = builder.my_record;
-            List list = builder.election_list;
+            List<ElectionList> list = builder.election_list;
             if (list == null) {
                 this.election_list = DEFAULT_ELECTION_LIST;
             } else {

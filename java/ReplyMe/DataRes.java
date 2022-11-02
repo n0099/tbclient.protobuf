@@ -24,17 +24,17 @@ public final class DataRes extends Message {
     public final List<ReplyList> reply_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Page page;
-        public List reply_list;
+        public List<ReplyList> reply_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -123,7 +123,7 @@ public final class DataRes extends Message {
         }
         if (z) {
             this.page = builder.page;
-            List list = builder.reply_list;
+            List<ReplyList> list = builder.reply_list;
             if (list == null) {
                 this.reply_list = DEFAULT_REPLY_LIST;
                 return;

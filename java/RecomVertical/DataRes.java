@@ -30,19 +30,19 @@ public final class DataRes extends Message {
     public final List<ThreadPersonalized> thread_personalized;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ClassInfo class_info;
         public Integer need_rechoose;
-        public List thread_list;
-        public List thread_personalized;
+        public List<ThreadInfo> thread_list;
+        public List<ThreadPersonalized> thread_personalized;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -134,13 +134,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.thread_list;
+            List<ThreadInfo> list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {
                 this.thread_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.thread_personalized;
+            List<ThreadPersonalized> list2 = builder.thread_personalized;
             if (list2 == null) {
                 this.thread_personalized = DEFAULT_THREAD_PERSONALIZED;
             } else {

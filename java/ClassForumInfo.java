@@ -30,19 +30,19 @@ public final class ClassForumInfo extends Message {
     public final List<RecommendForumInfo> forum_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ClassForumInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String class_icon;
         public Integer class_id;
         public String class_name;
-        public List forum_info;
+        public List<RecommendForumInfo> forum_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -133,7 +133,7 @@ public final class ClassForumInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.forum_info;
+            List<RecommendForumInfo> list = builder.forum_info;
             if (list == null) {
                 this.forum_info = DEFAULT_FORUM_INFO;
             } else {

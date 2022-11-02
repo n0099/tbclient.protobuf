@@ -60,19 +60,19 @@ public final class DataRes extends Message {
     public final VipUser user;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public AutoPayInfo autopay_info;
         public VipBannerList banner_list;
-        public List basic_list;
-        public List card_order;
+        public List<VipBasicList> basic_list;
+        public List<String> card_order;
         public VipSpecialList cooperate_list;
         public VipDailyList daily_list;
         public String grade_intro_link;
@@ -223,7 +223,7 @@ public final class DataRes extends Message {
             } else {
                 this.today_unget_score = num2;
             }
-            List list = builder.card_order;
+            List<String> list = builder.card_order;
             if (list == null) {
                 this.card_order = DEFAULT_CARD_ORDER;
             } else {
@@ -236,7 +236,7 @@ public final class DataRes extends Message {
                 this.update_time = num3;
             }
             this.cooperate_list = builder.cooperate_list;
-            List list2 = builder.basic_list;
+            List<VipBasicList> list2 = builder.basic_list;
             if (list2 == null) {
                 this.basic_list = DEFAULT_BASIC_LIST;
             } else {

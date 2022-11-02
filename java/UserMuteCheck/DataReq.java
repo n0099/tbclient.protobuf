@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1379common;
+    public final CommonReq f1382common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer mute_type;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -30,18 +30,18 @@ public final class DataReq extends Message {
     public final Long user_id_t;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1380common;
+        public CommonReq f1383common;
         public Integer mute_type;
         public Long user_id_f;
         public Long user_id_t;
@@ -81,7 +81,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1380common = dataReq.f1379common;
+            this.f1383common = dataReq.f1382common;
             this.user_id_f = dataReq.user_id_f;
             this.user_id_t = dataReq.user_id_t;
             this.mute_type = dataReq.mute_type;
@@ -136,7 +136,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1379common = builder.f1380common;
+            this.f1382common = builder.f1383common;
             Long l = builder.user_id_f;
             if (l == null) {
                 this.user_id_f = DEFAULT_USER_ID_F;
@@ -158,7 +158,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1379common = builder.f1380common;
+        this.f1382common = builder.f1383common;
         this.user_id_f = builder.user_id_f;
         this.user_id_t = builder.user_id_t;
         this.mute_type = builder.mute_type;

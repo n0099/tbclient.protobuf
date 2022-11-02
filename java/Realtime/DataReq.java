@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1323common;
+    public final CommonReq f1326common;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer location;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
@@ -54,19 +54,19 @@ public final class DataReq extends Message {
     public final String weight;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String abtest_tag;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1324common;
+        public CommonReq f1327common;
         public Integer location;
         public String ori_ugc_nid;
         public String ori_ugc_tid;
@@ -113,7 +113,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1324common = dataReq.f1323common;
+            this.f1327common = dataReq.f1326common;
             this.tid = dataReq.tid;
             this.weight = dataReq.weight;
             this.source = dataReq.source;
@@ -176,7 +176,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1323common = builder.f1324common;
+            this.f1326common = builder.f1327common;
             Long l = builder.tid;
             if (l == null) {
                 this.tid = DEFAULT_TID;
@@ -246,7 +246,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1323common = builder.f1324common;
+        this.f1326common = builder.f1327common;
         this.tid = builder.tid;
         this.weight = builder.weight;
         this.source = builder.source;

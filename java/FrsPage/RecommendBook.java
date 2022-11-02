@@ -36,17 +36,17 @@ public final class RecommendBook extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<RecommendBook> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String book_id;
-        public List desc;
+        public List<String> desc;
         public String image;
         public String link_url;
         public String title;
@@ -167,7 +167,7 @@ public final class RecommendBook extends Message {
             } else {
                 this.image = str3;
             }
-            List list = builder.desc;
+            List<String> list = builder.desc;
             if (list == null) {
                 this.desc = DEFAULT_DESC;
             } else {

@@ -17,7 +17,6 @@ import tbclient.Anti;
 import tbclient.BannerImage;
 import tbclient.BubbleInfo;
 import tbclient.DealWindow;
-import tbclient.DuxiaomanEntry;
 import tbclient.DynamicInfo;
 import tbclient.Feedback;
 import tbclient.ForumDynamic;
@@ -25,6 +24,7 @@ import tbclient.GoodsWin;
 import tbclient.Highlist;
 import tbclient.HotUserRankEntry;
 import tbclient.ModuleInfo;
+import tbclient.NamoaixudEntry;
 import tbclient.PostInfoList;
 import tbclient.SmartApp;
 import tbclient.TbBookrack;
@@ -45,8 +45,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_BLACK_WHITE;
     public static final List<ThreadInfo> DEFAULT_NEWEST_DYNAMIC_LIST;
     public static final List<PostInfoList> DEFAULT_POST_LIST;
-    public static final List<SmartApp> DEFAULT_RECOM_SWAN_LIST;
-    public static final Integer DEFAULT_SHOW_ANSWER;
+    public static final List<SmartApp> DEFAULT_RECOM_NAWS_LIST;
     public static final String DEFAULT_UK = "";
     public static final List<UserMap> DEFAULT_URL_MAP;
     public static final Integer DEFAULT_WORK_TAB_ID;
@@ -67,10 +66,6 @@ public final class DataRes extends Message {
     public final List<UcCardInfo> common_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<ForumDynamic> concerned_forum_list;
-    @ProtoField(tag = 24)
-    public final Duxiaoman duxiaoman;
-    @ProtoField(tag = 37)
-    public final DuxiaomanEntry duxiaoman_entry;
     @ProtoField(label = Message.Label.REPEATED, tag = 12)
     public final List<DynamicInfo> dynamic_list;
     @ProtoField(tag = 10)
@@ -85,6 +80,10 @@ public final class DataRes extends Message {
     public final Integer is_black_white;
     @ProtoField(tag = 15)
     public final ModuleInfo module_info;
+    @ProtoField(tag = 24)
+    public final Namoaixud namoaixud;
+    @ProtoField(tag = 37)
+    public final NamoaixudEntry namoaixud_entry;
     @ProtoField(tag = 27)
     public final HotUserRankEntry new_god_rankinfo;
     @ProtoField(label = Message.Label.REPEATED, tag = 25)
@@ -94,9 +93,7 @@ public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<PostInfoList> post_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
-    public final List<SmartApp> recom_swan_list;
-    @ProtoField(tag = 21, type = Message.Datatype.INT32)
-    public final Integer show_answer;
+    public final List<SmartApp> recom_naws_list;
     @ProtoField(tag = 3)
     public final TAInfo tainfo;
     @ProtoField(tag = 9)
@@ -123,43 +120,42 @@ public final class DataRes extends Message {
     public final Integer work_tab_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public AlaLiveInfo ala_live_info;
-        public List ala_live_record;
+        public List<AlaLiveInfo> ala_live_record;
         public Anti anti_stat;
-        public List banner;
+        public List<BannerImage> banner;
         public MemberBlockInfo block_info;
         public BubbleInfo bubble_info;
-        public List common_card;
-        public List concerned_forum_list;
-        public Duxiaoman duxiaoman;
-        public DuxiaomanEntry duxiaoman_entry;
-        public List dynamic_list;
+        public List<UcCardInfo> common_card;
+        public List<ForumDynamic> concerned_forum_list;
+        public List<DynamicInfo> dynamic_list;
         public Feedback feedback;
         public FinanceTab finance_tab;
         public GoodsWin goods_win;
         public Highlist highs;
         public Integer is_black_white;
         public ModuleInfo module_info;
+        public Namoaixud namoaixud;
+        public NamoaixudEntry namoaixud_entry;
         public HotUserRankEntry new_god_rankinfo;
-        public List newest_dynamic_list;
+        public List<ThreadInfo> newest_dynamic_list;
         public NicknameInfo nickname_info;
-        public List post_list;
-        public List recom_swan_list;
-        public Integer show_answer;
+        public List<PostInfoList> post_list;
+        public List<SmartApp> recom_naws_list;
         public TAInfo tainfo;
         public TbBookrack tbbookrack;
         public UcCard uc_card;
         public String uk;
-        public List url_map;
+        public List<UserMap> url_map;
         public User user;
         public UserAgreeInfo user_agree_info;
         public UserGodInfo user_god_info;
@@ -222,10 +218,9 @@ public final class DataRes extends Message {
             this.nickname_info = dataRes.nickname_info;
             this.ala_live_record = Message.copyOf(dataRes.ala_live_record);
             this.url_map = Message.copyOf(dataRes.url_map);
-            this.show_answer = dataRes.show_answer;
             this.banner = Message.copyOf(dataRes.banner);
-            this.recom_swan_list = Message.copyOf(dataRes.recom_swan_list);
-            this.duxiaoman = dataRes.duxiaoman;
+            this.recom_naws_list = Message.copyOf(dataRes.recom_naws_list);
+            this.namoaixud = dataRes.namoaixud;
             this.newest_dynamic_list = Message.copyOf(dataRes.newest_dynamic_list);
             this.goods_win = dataRes.goods_win;
             this.new_god_rankinfo = dataRes.new_god_rankinfo;
@@ -234,7 +229,7 @@ public final class DataRes extends Message {
             this.work_tab_id = dataRes.work_tab_id;
             this.finance_tab = dataRes.finance_tab;
             this.block_info = dataRes.block_info;
-            this.duxiaoman_entry = dataRes.duxiaoman_entry;
+            this.namoaixud_entry = dataRes.namoaixud_entry;
             this.bubble_info = dataRes.bubble_info;
             this.vip_banner = dataRes.vip_banner;
             this.common_card = Message.copyOf(dataRes.common_card);
@@ -270,9 +265,8 @@ public final class DataRes extends Message {
         DEFAULT_CONCERNED_FORUM_LIST = Collections.emptyList();
         DEFAULT_ALA_LIVE_RECORD = Collections.emptyList();
         DEFAULT_URL_MAP = Collections.emptyList();
-        DEFAULT_SHOW_ANSWER = 0;
         DEFAULT_BANNER = Collections.emptyList();
-        DEFAULT_RECOM_SWAN_LIST = Collections.emptyList();
+        DEFAULT_RECOM_NAWS_LIST = Collections.emptyList();
         DEFAULT_NEWEST_DYNAMIC_LIST = Collections.emptyList();
         DEFAULT_IS_BLACK_WHITE = 0;
         DEFAULT_WORK_TAB_ID = 0;
@@ -301,7 +295,7 @@ public final class DataRes extends Message {
             this.user = builder.user;
             this.anti_stat = builder.anti_stat;
             this.tainfo = builder.tainfo;
-            List list = builder.post_list;
+            List<PostInfoList> list = builder.post_list;
             if (list == null) {
                 this.post_list = DEFAULT_POST_LIST;
             } else {
@@ -314,13 +308,13 @@ public final class DataRes extends Message {
             this.tbbookrack = builder.tbbookrack;
             this.feedback = builder.feedback;
             this.video_channel_info = builder.video_channel_info;
-            List list2 = builder.dynamic_list;
+            List<DynamicInfo> list2 = builder.dynamic_list;
             if (list2 == null) {
                 this.dynamic_list = DEFAULT_DYNAMIC_LIST;
             } else {
                 this.dynamic_list = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.concerned_forum_list;
+            List<ForumDynamic> list3 = builder.concerned_forum_list;
             if (list3 == null) {
                 this.concerned_forum_list = DEFAULT_CONCERNED_FORUM_LIST;
             } else {
@@ -330,38 +324,32 @@ public final class DataRes extends Message {
             this.module_info = builder.module_info;
             this.ala_live_info = builder.ala_live_info;
             this.nickname_info = builder.nickname_info;
-            List list4 = builder.ala_live_record;
+            List<AlaLiveInfo> list4 = builder.ala_live_record;
             if (list4 == null) {
                 this.ala_live_record = DEFAULT_ALA_LIVE_RECORD;
             } else {
                 this.ala_live_record = Message.immutableCopyOf(list4);
             }
-            List list5 = builder.url_map;
+            List<UserMap> list5 = builder.url_map;
             if (list5 == null) {
                 this.url_map = DEFAULT_URL_MAP;
             } else {
                 this.url_map = Message.immutableCopyOf(list5);
             }
-            Integer num = builder.show_answer;
-            if (num == null) {
-                this.show_answer = DEFAULT_SHOW_ANSWER;
-            } else {
-                this.show_answer = num;
-            }
-            List list6 = builder.banner;
+            List<BannerImage> list6 = builder.banner;
             if (list6 == null) {
                 this.banner = DEFAULT_BANNER;
             } else {
                 this.banner = Message.immutableCopyOf(list6);
             }
-            List list7 = builder.recom_swan_list;
+            List<SmartApp> list7 = builder.recom_naws_list;
             if (list7 == null) {
-                this.recom_swan_list = DEFAULT_RECOM_SWAN_LIST;
+                this.recom_naws_list = DEFAULT_RECOM_NAWS_LIST;
             } else {
-                this.recom_swan_list = Message.immutableCopyOf(list7);
+                this.recom_naws_list = Message.immutableCopyOf(list7);
             }
-            this.duxiaoman = builder.duxiaoman;
-            List list8 = builder.newest_dynamic_list;
+            this.namoaixud = builder.namoaixud;
+            List<ThreadInfo> list8 = builder.newest_dynamic_list;
             if (list8 == null) {
                 this.newest_dynamic_list = DEFAULT_NEWEST_DYNAMIC_LIST;
             } else {
@@ -375,24 +363,24 @@ public final class DataRes extends Message {
             } else {
                 this.uk = str;
             }
-            Integer num2 = builder.is_black_white;
-            if (num2 == null) {
+            Integer num = builder.is_black_white;
+            if (num == null) {
                 this.is_black_white = DEFAULT_IS_BLACK_WHITE;
             } else {
-                this.is_black_white = num2;
+                this.is_black_white = num;
             }
-            Integer num3 = builder.work_tab_id;
-            if (num3 == null) {
+            Integer num2 = builder.work_tab_id;
+            if (num2 == null) {
                 this.work_tab_id = DEFAULT_WORK_TAB_ID;
             } else {
-                this.work_tab_id = num3;
+                this.work_tab_id = num2;
             }
             this.finance_tab = builder.finance_tab;
             this.block_info = builder.block_info;
-            this.duxiaoman_entry = builder.duxiaoman_entry;
+            this.namoaixud_entry = builder.namoaixud_entry;
             this.bubble_info = builder.bubble_info;
             this.vip_banner = builder.vip_banner;
-            List list9 = builder.common_card;
+            List<UcCardInfo> list9 = builder.common_card;
             if (list9 == null) {
                 this.common_card = DEFAULT_COMMON_CARD;
                 return;
@@ -420,10 +408,9 @@ public final class DataRes extends Message {
         this.nickname_info = builder.nickname_info;
         this.ala_live_record = Message.immutableCopyOf(builder.ala_live_record);
         this.url_map = Message.immutableCopyOf(builder.url_map);
-        this.show_answer = builder.show_answer;
         this.banner = Message.immutableCopyOf(builder.banner);
-        this.recom_swan_list = Message.immutableCopyOf(builder.recom_swan_list);
-        this.duxiaoman = builder.duxiaoman;
+        this.recom_naws_list = Message.immutableCopyOf(builder.recom_naws_list);
+        this.namoaixud = builder.namoaixud;
         this.newest_dynamic_list = Message.immutableCopyOf(builder.newest_dynamic_list);
         this.goods_win = builder.goods_win;
         this.new_god_rankinfo = builder.new_god_rankinfo;
@@ -432,7 +419,7 @@ public final class DataRes extends Message {
         this.work_tab_id = builder.work_tab_id;
         this.finance_tab = builder.finance_tab;
         this.block_info = builder.block_info;
-        this.duxiaoman_entry = builder.duxiaoman_entry;
+        this.namoaixud_entry = builder.namoaixud_entry;
         this.bubble_info = builder.bubble_info;
         this.vip_banner = builder.vip_banner;
         this.common_card = Message.immutableCopyOf(builder.common_card);

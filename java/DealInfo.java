@@ -60,20 +60,20 @@ public final class DealInfo extends Message {
     public final Long unit_price;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DealInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List auth_info;
+        public List<DealAuthInfo> auth_info;
         public String des;
         public Integer expire_time;
         public Boolean has_recommend;
-        public List media;
+        public List<DealMedia> media;
         public Long product_id;
         public Long recommendations;
         public Long sales;
@@ -258,13 +258,13 @@ public final class DealInfo extends Message {
             } else {
                 this.status = num2;
             }
-            List list = builder.media;
+            List<DealMedia> list = builder.media;
             if (list == null) {
                 this.media = DEFAULT_MEDIA;
             } else {
                 this.media = Message.immutableCopyOf(list);
             }
-            List list2 = builder.auth_info;
+            List<DealAuthInfo> list2 = builder.auth_info;
             if (list2 == null) {
                 this.auth_info = DEFAULT_AUTH_INFO;
             } else {

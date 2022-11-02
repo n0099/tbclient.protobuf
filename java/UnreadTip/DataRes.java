@@ -33,17 +33,17 @@ public final class DataRes extends Message {
     public final Integer user_count;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long hide_unix;
-        public List portrait_list;
+        public List<String> portrait_list;
         public String show_tip;
         public Integer thread_count;
         public Integer user_count;
@@ -146,7 +146,7 @@ public final class DataRes extends Message {
             } else {
                 this.user_count = num;
             }
-            List list = builder.portrait_list;
+            List<String> list = builder.portrait_list;
             if (list == null) {
                 this.portrait_list = DEFAULT_PORTRAIT_LIST;
             } else {

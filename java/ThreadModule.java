@@ -30,19 +30,19 @@ public final class ThreadModule extends Message {
     public final List<ThreadInfo> thread_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ThreadModule> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long module_id;
         public String module_name;
         public Long show_num;
-        public List thread_info;
+        public List<ThreadInfo> thread_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -146,7 +146,7 @@ public final class ThreadModule extends Message {
             } else {
                 this.module_name = str;
             }
-            List list = builder.thread_info;
+            List<ThreadInfo> list = builder.thread_info;
             if (list == null) {
                 this.thread_info = DEFAULT_THREAD_INFO;
             } else {

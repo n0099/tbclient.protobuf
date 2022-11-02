@@ -16,6 +16,7 @@ public final class ThemeBackgroundInUser extends Message {
     public static final String DEFAULT_DYNAMIC = "";
     public static final String DEFAULT_EXCLUSIVE_NO = "";
     public static final String DEFAULT_JUMP_URL = "";
+    public static final String DEFAULT_PACKAGE_NAME = "";
     public static final Long DEFAULT_PROPS_ID;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -24,22 +25,25 @@ public final class ThemeBackgroundInUser extends Message {
     public final String exclusive_no;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String jump_url;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String package_name;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long props_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ThemeBackgroundInUser> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String dynamic;
         public String exclusive_no;
         public String jump_url;
+        public String package_name;
         public Long props_id;
 
         public Builder() {
@@ -81,6 +85,7 @@ public final class ThemeBackgroundInUser extends Message {
             this.exclusive_no = themeBackgroundInUser.exclusive_no;
             this.jump_url = themeBackgroundInUser.jump_url;
             this.dynamic = themeBackgroundInUser.dynamic;
+            this.package_name = themeBackgroundInUser.package_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -151,9 +156,15 @@ public final class ThemeBackgroundInUser extends Message {
             String str3 = builder.dynamic;
             if (str3 == null) {
                 this.dynamic = "";
-                return;
             } else {
                 this.dynamic = str3;
+            }
+            String str4 = builder.package_name;
+            if (str4 == null) {
+                this.package_name = "";
+                return;
+            } else {
+                this.package_name = str4;
                 return;
             }
         }
@@ -161,6 +172,7 @@ public final class ThemeBackgroundInUser extends Message {
         this.exclusive_no = builder.exclusive_no;
         this.jump_url = builder.jump_url;
         this.dynamic = builder.dynamic;
+        this.package_name = builder.package_name;
     }
 
     public /* synthetic */ ThemeBackgroundInUser(Builder builder, boolean z, a aVar) {

@@ -25,17 +25,17 @@ public final class ThemeBubbleInMain extends Message {
     public final List<ThemeBgProp> props;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ThemeBubbleInMain> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String bubble_category;
-        public List props;
+        public List<ThemeBgProp> props;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -129,7 +129,7 @@ public final class ThemeBubbleInMain extends Message {
             } else {
                 this.bubble_category = str;
             }
-            List list = builder.props;
+            List<ThemeBgProp> list = builder.props;
             if (list == null) {
                 this.props = DEFAULT_PROPS;
                 return;

@@ -30,17 +30,17 @@ public final class FeatureCardTopic extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<FeatureCardTopic> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer floor;
-        public List sub_nodes;
+        public List<FeatureCardTopicSubNode> sub_nodes;
         public String title;
         public Integer type;
 
@@ -152,7 +152,7 @@ public final class FeatureCardTopic extends Message {
             } else {
                 this.title = str;
             }
-            List list = builder.sub_nodes;
+            List<FeatureCardTopicSubNode> list = builder.sub_nodes;
             if (list == null) {
                 this.sub_nodes = DEFAULT_SUB_NODES;
                 return;

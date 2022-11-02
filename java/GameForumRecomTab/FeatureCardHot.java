@@ -31,17 +31,17 @@ public final class FeatureCardHot extends Message {
     public final String type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<FeatureCardHot> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer floor;
-        public List sub_nodes;
+        public List<FeatureCardHotSubNode> sub_nodes;
         public String title;
         public String type;
 
@@ -134,7 +134,7 @@ public final class FeatureCardHot extends Message {
             }
         }
         if (z) {
-            List list = builder.sub_nodes;
+            List<FeatureCardHotSubNode> list = builder.sub_nodes;
             if (list == null) {
                 this.sub_nodes = DEFAULT_SUB_NODES;
             } else {

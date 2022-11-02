@@ -25,17 +25,17 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> recom_thread_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer rec_type;
-        public List recom_thread_info;
+        public List<ThreadInfo> recom_thread_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -124,7 +124,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.recom_thread_info;
+            List<ThreadInfo> list = builder.recom_thread_info;
             if (list == null) {
                 this.recom_thread_info = DEFAULT_RECOM_THREAD_INFO;
             } else {

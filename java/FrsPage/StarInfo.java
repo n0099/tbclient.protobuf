@@ -58,17 +58,17 @@ public final class StarInfo extends Message {
     public final Video video;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<StarInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Fans fans;
-        public List focus;
+        public List<Focus> focus;
         public Integer gender;
         public Good good;
         public Integer has_frs_star;
@@ -214,7 +214,7 @@ public final class StarInfo extends Message {
             }
             this.info = builder.info;
             this.fans = builder.fans;
-            List list = builder.focus;
+            List<Focus> list = builder.focus;
             if (list == null) {
                 this.focus = DEFAULT_FOCUS;
             } else {

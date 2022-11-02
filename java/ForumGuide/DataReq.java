@@ -22,24 +22,24 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1141common;
+    public final CommonReq f1144common;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer sort_type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1142common;
+        public CommonReq f1145common;
         public Integer sort_type;
 
         public Builder() {
@@ -77,7 +77,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1142common = dataReq.f1141common;
+            this.f1145common = dataReq.f1144common;
             this.sort_type = dataReq.sort_type;
             this.call_from = dataReq.call_from;
         }
@@ -130,7 +130,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1141common = builder.f1142common;
+            this.f1144common = builder.f1145common;
             Integer num = builder.sort_type;
             if (num == null) {
                 this.sort_type = DEFAULT_SORT_TYPE;
@@ -146,7 +146,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1141common = builder.f1142common;
+        this.f1144common = builder.f1145common;
         this.sort_type = builder.sort_type;
         this.call_from = builder.call_from;
     }

@@ -28,7 +28,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1181common;
+    public final CommonReq f1184common;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -41,19 +41,19 @@ public final class DataReq extends Message {
     public final Long staff_id64;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List bcast_ids;
+        public List<Long> bcast_ids;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1182common;
+        public CommonReq f1185common;
         public Long forum_id;
         public Integer need_cnt;
         public Integer query_type;
@@ -95,7 +95,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1182common = dataReq.f1181common;
+            this.f1185common = dataReq.f1184common;
             this.query_type = dataReq.query_type;
             this.staff_id = dataReq.staff_id;
             this.need_cnt = dataReq.need_cnt;
@@ -156,7 +156,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1181common = builder.f1182common;
+            this.f1184common = builder.f1185common;
             Integer num = builder.query_type;
             if (num == null) {
                 this.query_type = DEFAULT_QUERY_TYPE;
@@ -181,7 +181,7 @@ public final class DataReq extends Message {
             } else {
                 this.forum_id = l;
             }
-            List list = builder.bcast_ids;
+            List<Long> list = builder.bcast_ids;
             if (list == null) {
                 this.bcast_ids = DEFAULT_BCAST_IDS;
             } else {
@@ -196,7 +196,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1181common = builder.f1182common;
+        this.f1184common = builder.f1185common;
         this.query_type = builder.query_type;
         this.staff_id = builder.staff_id;
         this.need_cnt = builder.need_cnt;

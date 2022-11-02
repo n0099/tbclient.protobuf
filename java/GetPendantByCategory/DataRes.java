@@ -27,17 +27,17 @@ public final class DataRes extends Message {
     public final ThemeRecommand recommend;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer has_more;
-        public List pendant;
+        public List<ThemePendantInMain> pendant;
         public ThemeRecommand recommend;
 
         public Builder() {
@@ -129,7 +129,7 @@ public final class DataRes extends Message {
         }
         if (z) {
             this.recommend = builder.recommend;
-            List list = builder.pendant;
+            List<ThemePendantInMain> list = builder.pendant;
             if (list == null) {
                 this.pendant = DEFAULT_PENDANT;
             } else {

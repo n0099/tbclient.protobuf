@@ -42,22 +42,22 @@ public final class StarRank extends Message {
     public final String user_task_notice;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<StarRank> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List contri_record_list;
+        public List<StarContriRecord> contri_record_list;
         public String rank_name;
         public Integer rank_ranking;
         public String url;
         public Integer user_contri_score;
         public String user_current_score_notice;
-        public List user_task_info;
+        public List<StarTaskInfo> user_task_info;
         public String user_task_notice;
 
         public Builder() {
@@ -167,7 +167,7 @@ public final class StarRank extends Message {
             } else {
                 this.rank_ranking = num;
             }
-            List list = builder.contri_record_list;
+            List<StarContriRecord> list = builder.contri_record_list;
             if (list == null) {
                 this.contri_record_list = DEFAULT_CONTRI_RECORD_LIST;
             } else {
@@ -185,7 +185,7 @@ public final class StarRank extends Message {
             } else {
                 this.user_task_notice = str2;
             }
-            List list2 = builder.user_task_info;
+            List<StarTaskInfo> list2 = builder.user_task_info;
             if (list2 == null) {
                 this.user_task_info = DEFAULT_USER_TASK_INFO;
             } else {

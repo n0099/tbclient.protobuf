@@ -24,17 +24,17 @@ public final class AgeSexModule extends Message {
     public final List<TagStruct> sex_tag;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<AgeSexModule> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List age_tag;
-        public List sex_tag;
+        public List<TagStruct> age_tag;
+        public List<TagStruct> sex_tag;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -123,13 +123,13 @@ public final class AgeSexModule extends Message {
             }
         }
         if (z) {
-            List list = builder.sex_tag;
+            List<TagStruct> list = builder.sex_tag;
             if (list == null) {
                 this.sex_tag = DEFAULT_SEX_TAG;
             } else {
                 this.sex_tag = Message.immutableCopyOf(list);
             }
-            List list2 = builder.age_tag;
+            List<TagStruct> list2 = builder.age_tag;
             if (list2 == null) {
                 this.age_tag = DEFAULT_AGE_TAG;
                 return;

@@ -29,18 +29,18 @@ public final class DataRes extends Message {
     public final List<HistoryForumInfo> this_week_forums;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List history_forum;
-        public List nav_tab_info;
-        public List this_week_forums;
+        public List<HistoryForumInfo> history_forum;
+        public List<FrsTabInfo> nav_tab_info;
+        public List<HistoryForumInfo> this_week_forums;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -131,19 +131,19 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.history_forum;
+            List<HistoryForumInfo> list = builder.history_forum;
             if (list == null) {
                 this.history_forum = DEFAULT_HISTORY_FORUM;
             } else {
                 this.history_forum = Message.immutableCopyOf(list);
             }
-            List list2 = builder.nav_tab_info;
+            List<FrsTabInfo> list2 = builder.nav_tab_info;
             if (list2 == null) {
                 this.nav_tab_info = DEFAULT_NAV_TAB_INFO;
             } else {
                 this.nav_tab_info = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.this_week_forums;
+            List<HistoryForumInfo> list3 = builder.this_week_forums;
             if (list3 == null) {
                 this.this_week_forums = DEFAULT_THIS_WEEK_FORUMS;
                 return;

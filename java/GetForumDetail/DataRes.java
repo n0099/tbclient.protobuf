@@ -43,8 +43,6 @@ public final class DataRes extends Message {
     public final BazhuUniversity bazhu_university;
     @ProtoField(tag = 5)
     public final ManagerApplyInfo bz_apply_info;
-    @ProtoField(tag = 3)
-    public final BzApplySwitch bz_apply_switch;
     @ProtoField(tag = 8)
     public final ManagerElectionTab election_tab;
     @ProtoField(tag = 10)
@@ -73,22 +71,21 @@ public final class DataRes extends Message {
     public final List<SimpleThreadInfo> thread_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ApplyStatus apply_status;
-        public List bawu_actions;
+        public List<BawuAction> bawu_actions;
         public BawuThrones bawu_thrones;
         public BazhuGrade bazhu_grade;
         public BazhuUniversity bazhu_university;
         public ManagerApplyInfo bz_apply_info;
-        public BzApplySwitch bz_apply_switch;
         public ManagerElectionTab election_tab;
         public ForumDataCenter forum_data;
         public RecommendForumInfo forum_info;
@@ -101,7 +98,7 @@ public final class DataRes extends Message {
         public Integer is_forum_data_show;
         public PriManagerApplyInfo pribz_apply_info;
         public ServiceArea small_app;
-        public List thread_list;
+        public List<SimpleThreadInfo> thread_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -140,7 +137,6 @@ public final class DataRes extends Message {
             }
             this.forum_info = dataRes.forum_info;
             this.thread_list = Message.copyOf(dataRes.thread_list);
-            this.bz_apply_switch = dataRes.bz_apply_switch;
             this.is_bawu_show = dataRes.is_bawu_show;
             this.bz_apply_info = dataRes.bz_apply_info;
             this.is_complaint_show = dataRes.is_complaint_show;
@@ -213,13 +209,12 @@ public final class DataRes extends Message {
         }
         if (z) {
             this.forum_info = builder.forum_info;
-            List list = builder.thread_list;
+            List<SimpleThreadInfo> list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {
                 this.thread_list = Message.immutableCopyOf(list);
             }
-            this.bz_apply_switch = builder.bz_apply_switch;
             Integer num = builder.is_bawu_show;
             if (num == null) {
                 this.is_bawu_show = DEFAULT_IS_BAWU_SHOW;
@@ -242,7 +237,7 @@ public final class DataRes extends Message {
                 this.is_forum_data_show = num3;
             }
             this.forum_data = builder.forum_data;
-            List list2 = builder.bawu_actions;
+            List<BawuAction> list2 = builder.bawu_actions;
             if (list2 == null) {
                 this.bawu_actions = DEFAULT_BAWU_ACTIONS;
             } else {
@@ -271,7 +266,6 @@ public final class DataRes extends Message {
         }
         this.forum_info = builder.forum_info;
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
-        this.bz_apply_switch = builder.bz_apply_switch;
         this.is_bawu_show = builder.is_bawu_show;
         this.bz_apply_info = builder.bz_apply_info;
         this.is_complaint_show = builder.is_complaint_show;

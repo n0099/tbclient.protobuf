@@ -26,7 +26,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1115common;
+    public final CommonReq f1118common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String forumName;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -45,18 +45,18 @@ public final class ReqData extends Message {
     public final Long tid;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ReqData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1116common;
+        public CommonReq f1119common;
         public String forumName;
         public String ori_ugc_nid;
         public String ori_ugc_tid;
@@ -104,7 +104,7 @@ public final class ReqData extends Message {
             this.pid = reqData.pid;
             this.postType = reqData.postType;
             this.forumName = reqData.forumName;
-            this.f1116common = reqData.f1115common;
+            this.f1119common = reqData.f1118common;
             this.tid = reqData.tid;
             this.ori_ugc_type = reqData.ori_ugc_type;
             this.ori_ugc_nid = reqData.ori_ugc_nid;
@@ -180,7 +180,7 @@ public final class ReqData extends Message {
             } else {
                 this.forumName = str;
             }
-            this.f1115common = builder.f1116common;
+            this.f1118common = builder.f1119common;
             Long l2 = builder.tid;
             if (l2 == null) {
                 this.tid = DEFAULT_TID;
@@ -217,7 +217,7 @@ public final class ReqData extends Message {
         this.pid = builder.pid;
         this.postType = builder.postType;
         this.forumName = builder.forumName;
-        this.f1115common = builder.f1116common;
+        this.f1118common = builder.f1119common;
         this.tid = builder.tid;
         this.ori_ugc_type = builder.ori_ugc_type;
         this.ori_ugc_nid = builder.ori_ugc_nid;

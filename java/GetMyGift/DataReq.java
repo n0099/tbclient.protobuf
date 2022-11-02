@@ -24,7 +24,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1215common;
+    public final CommonReq f1218common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -33,19 +33,19 @@ public final class DataReq extends Message {
     public final Long uid;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer account_type;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1216common;
+        public CommonReq f1219common;
         public Integer pn;
         public String st_type;
         public Long uid;
@@ -86,7 +86,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.uid = dataReq.uid;
-            this.f1216common = dataReq.f1215common;
+            this.f1219common = dataReq.f1218common;
             this.pn = dataReq.pn;
             this.st_type = dataReq.st_type;
             this.account_type = dataReq.account_type;
@@ -147,7 +147,7 @@ public final class DataReq extends Message {
             } else {
                 this.uid = l;
             }
-            this.f1215common = builder.f1216common;
+            this.f1218common = builder.f1219common;
             Integer num = builder.pn;
             if (num == null) {
                 this.pn = DEFAULT_PN;
@@ -170,7 +170,7 @@ public final class DataReq extends Message {
             }
         }
         this.uid = builder.uid;
-        this.f1215common = builder.f1216common;
+        this.f1218common = builder.f1219common;
         this.pn = builder.pn;
         this.st_type = builder.st_type;
         this.account_type = builder.account_type;

@@ -48,13 +48,13 @@ public final class ManagerElection extends Message {
     public final Integer vote_num;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ManagerElection> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer begin_vote_time;
@@ -63,9 +63,9 @@ public final class ManagerElection extends Message {
         public Integer remainder_time;
         public Integer status;
         public String tail_text;
-        public List vote_condition;
-        public List vote_condition_pic;
-        public List vote_condition_title;
+        public List<String> vote_condition;
+        public List<String> vote_condition_pic;
+        public List<String> vote_condition_title;
         public Integer vote_num;
 
         public Builder() {
@@ -188,7 +188,7 @@ public final class ManagerElection extends Message {
             } else {
                 this.begin_vote_time = num3;
             }
-            List list = builder.vote_condition;
+            List<String> list = builder.vote_condition;
             if (list == null) {
                 this.vote_condition = DEFAULT_VOTE_CONDITION;
             } else {
@@ -218,13 +218,13 @@ public final class ManagerElection extends Message {
             } else {
                 this.status = num6;
             }
-            List list2 = builder.vote_condition_title;
+            List<String> list2 = builder.vote_condition_title;
             if (list2 == null) {
                 this.vote_condition_title = DEFAULT_VOTE_CONDITION_TITLE;
             } else {
                 this.vote_condition_title = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.vote_condition_pic;
+            List<String> list3 = builder.vote_condition_pic;
             if (list3 == null) {
                 this.vote_condition_pic = DEFAULT_VOTE_CONDITION_PIC;
                 return;

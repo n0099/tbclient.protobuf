@@ -25,16 +25,16 @@ public final class DataRes extends Message {
     public final Integer has_more;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List agree_list;
+        public List<AgreeList> agree_list;
         public Integer has_more;
 
         public Builder() {
@@ -130,7 +130,7 @@ public final class DataRes extends Message {
             } else {
                 this.has_more = num;
             }
-            List list = builder.agree_list;
+            List<AgreeList> list = builder.agree_list;
             if (list == null) {
                 this.agree_list = DEFAULT_AGREE_LIST;
                 return;

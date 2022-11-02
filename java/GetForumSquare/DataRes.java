@@ -34,20 +34,20 @@ public final class DataRes extends Message {
     public final List<String> second_class_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String class_name;
-        public List forum_info;
+        public List<RecommendForumInfo> forum_info;
         public Page page;
-        public List page_structure;
-        public List second_class_list;
+        public List<String> page_structure;
+        public List<String> second_class_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -140,13 +140,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.page_structure;
+            List<String> list = builder.page_structure;
             if (list == null) {
                 this.page_structure = DEFAULT_PAGE_STRUCTURE;
             } else {
                 this.page_structure = Message.immutableCopyOf(list);
             }
-            List list2 = builder.forum_info;
+            List<RecommendForumInfo> list2 = builder.forum_info;
             if (list2 == null) {
                 this.forum_info = DEFAULT_FORUM_INFO;
             } else {
@@ -159,7 +159,7 @@ public final class DataRes extends Message {
             } else {
                 this.class_name = str;
             }
-            List list3 = builder.second_class_list;
+            List<String> list3 = builder.second_class_list;
             if (list3 == null) {
                 this.second_class_list = DEFAULT_SECOND_CLASS_LIST;
                 return;

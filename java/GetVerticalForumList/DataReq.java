@@ -27,25 +27,25 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1267common;
+    public final CommonReq f1270common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer pn;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer begin_id;
-        public List classid_list;
+        public List<Integer> classid_list;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1268common;
+        public CommonReq f1271common;
         public Integer pn;
 
         public Builder() {
@@ -83,7 +83,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1268common = dataReq.f1267common;
+            this.f1271common = dataReq.f1270common;
             this.classid_list = Message.copyOf(dataReq.classid_list);
             this.begin_id = dataReq.begin_id;
             this.pn = dataReq.pn;
@@ -138,8 +138,8 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1267common = builder.f1268common;
-            List list = builder.classid_list;
+            this.f1270common = builder.f1271common;
+            List<Integer> list = builder.classid_list;
             if (list == null) {
                 this.classid_list = DEFAULT_CLASSID_LIST;
             } else {
@@ -160,7 +160,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1267common = builder.f1268common;
+        this.f1270common = builder.f1271common;
         this.classid_list = Message.immutableCopyOf(builder.classid_list);
         this.begin_id = builder.begin_id;
         this.pn = builder.pn;

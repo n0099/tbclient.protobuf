@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1133common;
+    public final CommonReq f1136common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long fid;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -30,18 +30,18 @@ public final class DataReq extends Message {
     public final Integer rn;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1134common;
+        public CommonReq f1137common;
         public Long fid;
         public Integer pn;
         public Integer rn;
@@ -81,7 +81,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1134common = dataReq.f1133common;
+            this.f1137common = dataReq.f1136common;
             this.fid = dataReq.fid;
             this.rn = dataReq.rn;
             this.pn = dataReq.pn;
@@ -136,7 +136,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1133common = builder.f1134common;
+            this.f1136common = builder.f1137common;
             Long l = builder.fid;
             if (l == null) {
                 this.fid = DEFAULT_FID;
@@ -158,7 +158,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1133common = builder.f1134common;
+        this.f1136common = builder.f1137common;
         this.fid = builder.fid;
         this.rn = builder.rn;
         this.pn = builder.pn;

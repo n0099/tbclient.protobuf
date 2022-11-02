@@ -24,17 +24,17 @@ public final class DataRes extends Message {
     public final List<Tag> tags;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List category;
-        public List tags;
+        public List<Category> category;
+        public List<Tag> tags;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -123,13 +123,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.category;
+            List<Category> list = builder.category;
             if (list == null) {
                 this.category = DEFAULT_CATEGORY;
             } else {
                 this.category = Message.immutableCopyOf(list);
             }
-            List list2 = builder.tags;
+            List<Tag> list2 = builder.tags;
             if (list2 == null) {
                 this.tags = DEFAULT_TAGS;
                 return;

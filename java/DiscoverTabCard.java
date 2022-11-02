@@ -30,16 +30,16 @@ public final class DiscoverTabCard extends Message {
     public final String name;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DiscoverTabCard> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List forum_list;
+        public List<RecommendForumInfo> forum_list;
         public Boolean is_show_order_number;
         public String jump_name;
         public String name;
@@ -139,7 +139,7 @@ public final class DiscoverTabCard extends Message {
             } else {
                 this.name = str;
             }
-            List list = builder.forum_list;
+            List<RecommendForumInfo> list = builder.forum_list;
             if (list == null) {
                 this.forum_list = DEFAULT_FORUM_LIST;
             } else {

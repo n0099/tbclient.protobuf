@@ -24,16 +24,16 @@ public final class Toast extends Message {
     public final Integer icon_type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Toast> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List content;
+        public List<ToastContent> content;
         public Integer icon_type;
 
         public Builder() {
@@ -129,7 +129,7 @@ public final class Toast extends Message {
             } else {
                 this.icon_type = num;
             }
-            List list = builder.content;
+            List<ToastContent> list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
                 return;

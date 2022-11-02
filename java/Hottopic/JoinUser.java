@@ -24,16 +24,16 @@ public final class JoinUser extends Message {
     public final Long join_user_num;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<JoinUser> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List join_user;
+        public List<UserInfo> join_user;
         public Long join_user_num;
 
         public Builder() {
@@ -123,7 +123,7 @@ public final class JoinUser extends Message {
             }
         }
         if (z) {
-            List list = builder.join_user;
+            List<UserInfo> list = builder.join_user;
             if (list == null) {
                 this.join_user = DEFAULT_JOIN_USER;
             } else {

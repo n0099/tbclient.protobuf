@@ -22,24 +22,24 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1393common;
+    public final CommonReq f1396common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long fid;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1394common;
+        public CommonReq f1397common;
         public Long fid;
 
         public Builder() {
@@ -77,7 +77,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1394common = dataReq.f1393common;
+            this.f1397common = dataReq.f1396common;
             this.call_from = dataReq.call_from;
             this.fid = dataReq.fid;
         }
@@ -130,7 +130,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1393common = builder.f1394common;
+            this.f1396common = builder.f1397common;
             Long l = builder.call_from;
             if (l == null) {
                 this.call_from = DEFAULT_CALL_FROM;
@@ -146,7 +146,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1393common = builder.f1394common;
+        this.f1396common = builder.f1397common;
         this.call_from = builder.call_from;
         this.fid = builder.fid;
     }

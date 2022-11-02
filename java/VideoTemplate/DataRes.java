@@ -37,20 +37,20 @@ public final class DataRes extends Message {
     public final String video_template_url;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_url;
         public String back_url;
         public Integer topic_id;
         public String topic_name;
-        public List video_template_content;
+        public List<VideoTemplateContent> video_template_content;
         public String video_template_url;
 
         public Builder() {
@@ -144,7 +144,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.video_template_content;
+            List<VideoTemplateContent> list = builder.video_template_content;
             if (list == null) {
                 this.video_template_content = DEFAULT_VIDEO_TEMPLATE_CONTENT;
             } else {

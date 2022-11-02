@@ -51,19 +51,19 @@ public final class SubPostList extends Message {
     public final String title;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<SubPostList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Agree agree;
         public User author;
         public Long author_id;
-        public List content;
+        public List<PbContent> content;
         public Integer floor;
         public Long id;
         public Integer is_author_view;
@@ -182,7 +182,7 @@ public final class SubPostList extends Message {
             } else {
                 this.id = l;
             }
-            List list = builder.content;
+            List<PbContent> list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {

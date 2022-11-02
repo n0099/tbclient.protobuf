@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1285common;
+    public final CommonReq f1288common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -30,18 +30,18 @@ public final class DataReq extends Message {
     public final Integer tab_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1286common;
+        public CommonReq f1289common;
         public Integer pn;
         public Integer rn;
         public Integer tab_id;
@@ -81,7 +81,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1286common = dataReq.f1285common;
+            this.f1289common = dataReq.f1288common;
             this.tab_id = dataReq.tab_id;
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
@@ -136,7 +136,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1285common = builder.f1286common;
+            this.f1288common = builder.f1289common;
             Integer num = builder.tab_id;
             if (num == null) {
                 this.tab_id = DEFAULT_TAB_ID;
@@ -158,7 +158,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1285common = builder.f1286common;
+        this.f1288common = builder.f1289common;
         this.tab_id = builder.tab_id;
         this.pn = builder.pn;
         this.rn = builder.rn;

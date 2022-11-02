@@ -63,16 +63,16 @@ public final class Props extends Message {
     public final String used_status;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Props> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List _word;
+        public List<String> _word;
         public String end_time;
         public String expired_notify;
         public String expiring_notify;
@@ -80,7 +80,7 @@ public final class Props extends Message {
         public String notice;
         public Integer num;
         public String open_status;
-        public List pattern;
+        public List<String> pattern;
         public String props_category;
         public Integer props_id;
         public String props_type;
@@ -270,13 +270,13 @@ public final class Props extends Message {
             } else {
                 this.title = str9;
             }
-            List list = builder._word;
+            List<String> list = builder._word;
             if (list == null) {
                 this._word = DEFAULT__WORD;
             } else {
                 this._word = Message.immutableCopyOf(list);
             }
-            List list2 = builder.pattern;
+            List<String> list2 = builder.pattern;
             if (list2 == null) {
                 this.pattern = DEFAULT_PATTERN;
                 return;

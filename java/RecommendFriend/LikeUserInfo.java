@@ -29,18 +29,18 @@ public final class LikeUserInfo extends Message {
     public final UserInfo user_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<LikeUserInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List forum_info;
+        public List<ForumInfo> forum_info;
         public String message;
-        public List post_info;
+        public List<PostInfo> post_info;
         public UserInfo user_info;
 
         public Builder() {
@@ -133,13 +133,13 @@ public final class LikeUserInfo extends Message {
         }
         if (z) {
             this.user_info = builder.user_info;
-            List list = builder.forum_info;
+            List<ForumInfo> list = builder.forum_info;
             if (list == null) {
                 this.forum_info = DEFAULT_FORUM_INFO;
             } else {
                 this.forum_info = Message.immutableCopyOf(list);
             }
-            List list2 = builder.post_info;
+            List<PostInfo> list2 = builder.post_info;
             if (list2 == null) {
                 this.post_info = DEFAULT_POST_INFO;
             } else {

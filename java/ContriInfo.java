@@ -27,18 +27,18 @@ public final class ContriInfo extends Message {
     public final List<ToastConfig> toast_config;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ContriInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String after_msg;
         public String color_msg;
-        public List toast_config;
+        public List<ToastConfig> toast_config;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -139,7 +139,7 @@ public final class ContriInfo extends Message {
             } else {
                 this.after_msg = str2;
             }
-            List list = builder.toast_config;
+            List<ToastConfig> list = builder.toast_config;
             if (list == null) {
                 this.toast_config = DEFAULT_TOAST_CONFIG;
                 return;

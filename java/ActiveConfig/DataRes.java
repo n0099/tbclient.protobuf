@@ -20,7 +20,6 @@ public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ACTIVE_URL = "";
     public static final List<FloatStrategy> DEFAULT_FLOAT_LIST;
-    public static final Integer DEFAULT_IS_BACK_USER;
     public static final Integer DEFAULT_IS_NEW_USER;
     public static final List<MissionInfo> DEFAULT_MISSION_LIST;
     public static final String DEFAULT_NEWUSER_POP_CLICKURL = "";
@@ -33,8 +32,6 @@ public final class DataRes extends Message {
     public final String active_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<FloatStrategy> float_list;
-    @ProtoField(tag = 10, type = Message.Datatype.INT32)
-    public final Integer is_back_user;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer is_new_user;
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
@@ -47,21 +44,20 @@ public final class DataRes extends Message {
     public final String newuser_pop_top;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ActiveCenter active_center;
         public String active_url;
-        public List float_list;
-        public Integer is_back_user;
+        public List<FloatStrategy> float_list;
         public Integer is_new_user;
-        public List mission_list;
+        public List<MissionInfo> mission_list;
         public String newuser_pop_clickurl;
         public String newuser_pop_money;
         public String newuser_pop_top;
@@ -109,7 +105,6 @@ public final class DataRes extends Message {
             this.newuser_pop_money = dataRes.newuser_pop_money;
             this.newuser_pop_top = dataRes.newuser_pop_top;
             this.active_center = dataRes.active_center;
-            this.is_back_user = dataRes.is_back_user;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -140,7 +135,6 @@ public final class DataRes extends Message {
         DEFAULT_IS_NEW_USER = 0;
         DEFAULT_MISSION_LIST = Collections.emptyList();
         DEFAULT_FLOAT_LIST = Collections.emptyList();
-        DEFAULT_IS_BACK_USER = 0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -174,13 +168,13 @@ public final class DataRes extends Message {
             } else {
                 this.active_url = str;
             }
-            List list = builder.mission_list;
+            List<MissionInfo> list = builder.mission_list;
             if (list == null) {
                 this.mission_list = DEFAULT_MISSION_LIST;
             } else {
                 this.mission_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.float_list;
+            List<FloatStrategy> list2 = builder.float_list;
             if (list2 == null) {
                 this.float_list = DEFAULT_FLOAT_LIST;
             } else {
@@ -205,14 +199,7 @@ public final class DataRes extends Message {
                 this.newuser_pop_top = str4;
             }
             this.active_center = builder.active_center;
-            Integer num2 = builder.is_back_user;
-            if (num2 == null) {
-                this.is_back_user = DEFAULT_IS_BACK_USER;
-                return;
-            } else {
-                this.is_back_user = num2;
-                return;
-            }
+            return;
         }
         this.is_new_user = builder.is_new_user;
         this.active_url = builder.active_url;
@@ -222,7 +209,6 @@ public final class DataRes extends Message {
         this.newuser_pop_money = builder.newuser_pop_money;
         this.newuser_pop_top = builder.newuser_pop_top;
         this.active_center = builder.active_center;
-        this.is_back_user = builder.is_back_user;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {

@@ -24,17 +24,17 @@ public final class DiscoverHotForum extends Message {
     public final List<DiscoverTabCard> tab_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DiscoverHotForum> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer floor;
-        public List tab_list;
+        public List<DiscoverTabCard> tab_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -123,7 +123,7 @@ public final class DiscoverHotForum extends Message {
             }
         }
         if (z) {
-            List list = builder.tab_list;
+            List<DiscoverTabCard> list = builder.tab_list;
             if (list == null) {
                 this.tab_list = DEFAULT_TAB_LIST;
             } else {

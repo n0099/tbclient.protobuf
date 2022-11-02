@@ -47,16 +47,16 @@ public final class HotPost extends Message {
     public final String user_name;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<HotPost> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List content;
+        public List<PbContent> content;
         public Integer create_time;
         public Integer floor;
         public String portrait;
@@ -198,7 +198,7 @@ public final class HotPost extends Message {
             } else {
                 this.post_num = num;
             }
-            List list = builder.content;
+            List<PbContent> list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {

@@ -30,17 +30,17 @@ public final class WorldCupGame extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<WorldCupGame> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String status;
-        public List team;
+        public List<WorldCupGameTeam> team;
         public String title;
         public String url;
 
@@ -150,7 +150,7 @@ public final class WorldCupGame extends Message {
             } else {
                 this.url = str3;
             }
-            List list = builder.team;
+            List<WorldCupGameTeam> list = builder.team;
             if (list == null) {
                 this.team = DEFAULT_TEAM;
                 return;

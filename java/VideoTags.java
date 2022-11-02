@@ -27,18 +27,18 @@ public final class VideoTags extends Message {
     public final List<String> tags;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<VideoTags> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String first;
         public String second;
-        public List tags;
+        public List<String> tags;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -139,7 +139,7 @@ public final class VideoTags extends Message {
             } else {
                 this.second = str2;
             }
-            List list = builder.tags;
+            List<String> list = builder.tags;
             if (list == null) {
                 this.tags = DEFAULT_TAGS;
                 return;

@@ -33,7 +33,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 9)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1305common;
+    public final CommonReq f1308common;
     @ProtoField(tag = 11, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -66,18 +66,18 @@ public final class DataReq extends Message {
     public final String top_ugc_pid;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1306common;
+        public CommonReq f1309common;
         public Long forum_id;
         public Integer is_comm_reverse;
         public Long kz;
@@ -137,7 +137,7 @@ public final class DataReq extends Message {
             this.scr_h = dataReq.scr_h;
             this.scr_dip = dataReq.scr_dip;
             this.st_type = dataReq.st_type;
-            this.f1306common = dataReq.f1305common;
+            this.f1309common = dataReq.f1308common;
             this.is_comm_reverse = dataReq.is_comm_reverse;
             this.forum_id = dataReq.forum_id;
             this.ori_ugc_nid = dataReq.ori_ugc_nid;
@@ -251,7 +251,7 @@ public final class DataReq extends Message {
             } else {
                 this.st_type = str;
             }
-            this.f1305common = builder.f1306common;
+            this.f1308common = builder.f1309common;
             Integer num4 = builder.is_comm_reverse;
             if (num4 == null) {
                 this.is_comm_reverse = DEFAULT_IS_COMM_REVERSE;
@@ -305,7 +305,7 @@ public final class DataReq extends Message {
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;
         this.st_type = builder.st_type;
-        this.f1305common = builder.f1306common;
+        this.f1308common = builder.f1309common;
         this.is_comm_reverse = builder.is_comm_reverse;
         this.forum_id = builder.forum_id;
         this.ori_ugc_nid = builder.ori_ugc_nid;

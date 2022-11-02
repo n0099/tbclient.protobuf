@@ -24,17 +24,17 @@ public final class HotTWThreadInfo extends Message {
     public final List<User> user_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<HotTWThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer fans_count;
-        public List user_list;
+        public List<User> user_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -123,7 +123,7 @@ public final class HotTWThreadInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.user_list;
+            List<User> list = builder.user_list;
             if (list == null) {
                 this.user_list = DEFAULT_USER_LIST;
             } else {

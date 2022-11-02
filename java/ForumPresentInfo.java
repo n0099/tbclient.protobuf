@@ -24,17 +24,17 @@ public final class ForumPresentInfo extends Message {
     public final List<UserRankPresentInfo> user_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ForumPresentInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String content;
-        public List user_list;
+        public List<UserRankPresentInfo> user_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -122,7 +122,7 @@ public final class ForumPresentInfo extends Message {
             }
         }
         if (z) {
-            List list = builder.user_list;
+            List<UserRankPresentInfo> list = builder.user_list;
             if (list == null) {
                 this.user_list = DEFAULT_USER_LIST;
             } else {

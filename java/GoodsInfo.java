@@ -103,13 +103,13 @@ public final class GoodsInfo extends Message {
     public final Integer width;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<GoodsInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String ad_source;
@@ -134,7 +134,7 @@ public final class GoodsInfo extends Message {
         public String tag_name_wh;
         public String thread_content;
         public String thread_pic;
-        public List thread_pic_list;
+        public List<ThreadPicList> thread_pic_list;
         public String thread_title;
         public String thread_type;
         public String user_name;
@@ -304,7 +304,7 @@ public final class GoodsInfo extends Message {
             } else {
                 this.goods_style = num2;
             }
-            List list = builder.thread_pic_list;
+            List<ThreadPicList> list = builder.thread_pic_list;
             if (list == null) {
                 this.thread_pic_list = DEFAULT_THREAD_PIC_LIST;
             } else {

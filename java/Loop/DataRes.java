@@ -34,21 +34,21 @@ public final class DataRes extends Message {
     public final List<AlaLiveInfo> live_pic_second_floor;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public IconRes icon;
         public LevelRes level;
         public LiveRes live;
-        public List live_follow_second_floor;
-        public List live_index_second_floor;
-        public List live_pic_second_floor;
+        public List<AlaLiveInfo> live_follow_second_floor;
+        public List<AlaLiveInfo> live_index_second_floor;
+        public List<AlaLiveInfo> live_pic_second_floor;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -145,19 +145,19 @@ public final class DataRes extends Message {
             this.live = builder.live;
             this.level = builder.level;
             this.icon = builder.icon;
-            List list = builder.live_follow_second_floor;
+            List<AlaLiveInfo> list = builder.live_follow_second_floor;
             if (list == null) {
                 this.live_follow_second_floor = DEFAULT_LIVE_FOLLOW_SECOND_FLOOR;
             } else {
                 this.live_follow_second_floor = Message.immutableCopyOf(list);
             }
-            List list2 = builder.live_index_second_floor;
+            List<AlaLiveInfo> list2 = builder.live_index_second_floor;
             if (list2 == null) {
                 this.live_index_second_floor = DEFAULT_LIVE_INDEX_SECOND_FLOOR;
             } else {
                 this.live_index_second_floor = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.live_pic_second_floor;
+            List<AlaLiveInfo> list3 = builder.live_pic_second_floor;
             if (list3 == null) {
                 this.live_pic_second_floor = DEFAULT_LIVE_PIC_SECOND_FLOOR;
                 return;

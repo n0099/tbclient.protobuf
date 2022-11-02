@@ -68,13 +68,13 @@ public final class HistoryForumInfo extends Message {
     public final String visit_time;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<HistoryForumInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
@@ -90,7 +90,7 @@ public final class HistoryForumInfo extends Message {
         public Integer level_id;
         public Boolean need_trans;
         public PostPrefix post_prefix;
-        public List tab_info;
+        public List<FrsTabInfo> tab_info;
         public RecomTagInfo tag_info;
         public ThemeColorInfo theme_color;
         public Integer unread_num;
@@ -269,7 +269,7 @@ public final class HistoryForumInfo extends Message {
             } else {
                 this.level_id = num5;
             }
-            List list = builder.tab_info;
+            List<FrsTabInfo> list = builder.tab_info;
             if (list == null) {
                 this.tab_info = DEFAULT_TAB_INFO;
             } else {

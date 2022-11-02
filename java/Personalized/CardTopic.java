@@ -27,18 +27,18 @@ public final class CardTopic extends Message {
     public final List<TopicInfo> topic_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<CardTopic> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String card_title;
         public Integer position;
-        public List topic_list;
+        public List<TopicInfo> topic_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -134,7 +134,7 @@ public final class CardTopic extends Message {
             } else {
                 this.card_title = str;
             }
-            List list = builder.topic_list;
+            List<TopicInfo> list = builder.topic_list;
             if (list == null) {
                 this.topic_list = DEFAULT_TOPIC_LIST;
             } else {

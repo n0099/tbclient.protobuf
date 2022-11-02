@@ -45,23 +45,23 @@ public final class DataRes extends Message {
     public final List<User> user_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List ad_mix_list;
+        public List<AdMixFloor> ad_mix_list;
         public String ad_sample_map_key;
         public Integer ad_show_select;
         public String asp_shown_info;
         public BannerList banner_list;
         public String partial_visible_toast;
-        public List thread_list;
-        public List user_list;
+        public List<ThreadInfo> thread_list;
+        public List<User> user_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -158,13 +158,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.thread_list;
+            List<ThreadInfo> list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {
                 this.thread_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.user_list;
+            List<User> list2 = builder.user_list;
             if (list2 == null) {
                 this.user_list = DEFAULT_USER_LIST;
             } else {
@@ -183,7 +183,7 @@ public final class DataRes extends Message {
             } else {
                 this.partial_visible_toast = str2;
             }
-            List list3 = builder.ad_mix_list;
+            List<AdMixFloor> list3 = builder.ad_mix_list;
             if (list3 == null) {
                 this.ad_mix_list = DEFAULT_AD_MIX_LIST;
             } else {

@@ -24,17 +24,17 @@ public final class ForumDataGroup extends Message {
     public final List<ForumDataValue> values;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ForumDataGroup> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Double total;
-        public List values;
+        public List<ForumDataValue> values;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -129,7 +129,7 @@ public final class ForumDataGroup extends Message {
             } else {
                 this.total = d;
             }
-            List list = builder.values;
+            List<ForumDataValue> list = builder.values;
             if (list == null) {
                 this.values = DEFAULT_VALUES;
                 return;

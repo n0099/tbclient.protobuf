@@ -51,16 +51,16 @@ public final class IconInfo extends Message {
     public final String tag_name;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<IconInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List discount;
+        public List<Discount> discount;
         public Integer dubi;
         public Integer duration;
         public Integer hide;
@@ -214,7 +214,7 @@ public final class IconInfo extends Message {
             } else {
                 this.hide = num4;
             }
-            List list = builder.discount;
+            List<Discount> list = builder.discount;
             if (list == null) {
                 this.discount = DEFAULT_DISCOUNT;
             } else {

@@ -25,17 +25,17 @@ public final class BannerFollowLive extends Message {
     public final List<AlaLiveInfo> ala_live_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<BannerFollowLive> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer _switch;
-        public List ala_live_list;
+        public List<AlaLiveInfo> ala_live_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -124,7 +124,7 @@ public final class BannerFollowLive extends Message {
             }
         }
         if (z) {
-            List list = builder.ala_live_list;
+            List<AlaLiveInfo> list = builder.ala_live_list;
             if (list == null) {
                 this.ala_live_list = DEFAULT_ALA_LIVE_LIST;
             } else {

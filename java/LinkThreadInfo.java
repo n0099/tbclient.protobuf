@@ -27,16 +27,16 @@ public final class LinkThreadInfo extends Message {
     public final String link_url_code;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<LinkThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List link_content;
+        public List<LinkThreadContent> link_content;
         public String link_url;
         public String link_url_code;
 
@@ -139,7 +139,7 @@ public final class LinkThreadInfo extends Message {
             } else {
                 this.link_url_code = str2;
             }
-            List list = builder.link_content;
+            List<LinkThreadContent> list = builder.link_content;
             if (list == null) {
                 this.link_content = DEFAULT_LINK_CONTENT;
                 return;

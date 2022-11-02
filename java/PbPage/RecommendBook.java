@@ -48,18 +48,18 @@ public final class RecommendBook extends Message {
     public final String suggest_url;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<RecommendBook> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String book_cover;
         public String book_id;
-        public List book_tips;
+        public List<String> book_tips;
         public String book_title;
         public Integer book_type;
         public String botton_text;
@@ -205,7 +205,7 @@ public final class RecommendBook extends Message {
             } else {
                 this.book_title = str6;
             }
-            List list = builder.book_tips;
+            List<String> list = builder.book_tips;
             if (list == null) {
                 this.book_tips = DEFAULT_BOOK_TIPS;
             } else {

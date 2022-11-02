@@ -17,9 +17,12 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_FRIEND_UID;
     public static final String DEFAULT_FRIEND_UID_PORTRAIT = "";
     public static final Integer DEFAULT_HAS_PLIST;
+    public static final String DEFAULT_HISTORY_FORUM_IDS = "";
+    public static final String DEFAULT_HISTORY_FORUM_NAMES = "";
     public static final Integer DEFAULT_IS_FROM_USERCENTER;
     public static final Integer DEFAULT_IS_GUEST;
     public static final Integer DEFAULT_NEED_POST_COUNT;
+    public static final Integer DEFAULT_NEED_USERGROWTH_TASK;
     public static final Integer DEFAULT_PAGE;
     public static final Integer DEFAULT_PN;
     public static final Integer DEFAULT_Q_TYPE;
@@ -33,19 +36,25 @@ public final class DataReq extends Message {
     @ProtoField(tag = 9)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1315common;
+    public final CommonReq f1318common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long friend_uid;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String friend_uid_portrait;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer has_plist;
+    @ProtoField(tag = 17, type = Message.Datatype.STRING)
+    public final String history_forum_ids;
+    @ProtoField(tag = 18, type = Message.Datatype.STRING)
+    public final String history_forum_names;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer is_from_usercenter;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer is_guest;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer need_post_count;
+    @ProtoField(tag = 19, type = Message.Datatype.INT32)
+    public final Integer need_usergrowth_task;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer page;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
@@ -66,24 +75,27 @@ public final class DataReq extends Message {
     public final Long uid;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1316common;
+        public CommonReq f1319common;
         public Long friend_uid;
         public String friend_uid_portrait;
         public Integer has_plist;
+        public String history_forum_ids;
+        public String history_forum_names;
         public Integer is_from_usercenter;
         public Integer is_guest;
         public Integer need_post_count;
+        public Integer need_usergrowth_task;
         public Integer page;
         public Integer pn;
         public Integer q_type;
@@ -137,7 +149,7 @@ public final class DataReq extends Message {
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
             this.has_plist = dataReq.has_plist;
-            this.f1316common = dataReq.f1315common;
+            this.f1319common = dataReq.f1318common;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.q_type = dataReq.q_type;
@@ -145,6 +157,9 @@ public final class DataReq extends Message {
             this.is_from_usercenter = dataReq.is_from_usercenter;
             this.page = dataReq.page;
             this.friend_uid_portrait = dataReq.friend_uid_portrait;
+            this.history_forum_ids = dataReq.history_forum_ids;
+            this.history_forum_names = dataReq.history_forum_names;
+            this.need_usergrowth_task = dataReq.need_usergrowth_task;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -185,6 +200,7 @@ public final class DataReq extends Message {
         DEFAULT_SCR_DIP = Double.valueOf(0.0d);
         DEFAULT_IS_FROM_USERCENTER = 0;
         DEFAULT_PAGE = 0;
+        DEFAULT_NEED_USERGROWTH_TASK = 0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -254,7 +270,7 @@ public final class DataReq extends Message {
             } else {
                 this.has_plist = num5;
             }
-            this.f1315common = builder.f1316common;
+            this.f1318common = builder.f1319common;
             Integer num6 = builder.scr_w;
             if (num6 == null) {
                 this.scr_w = DEFAULT_SCR_W;
@@ -294,9 +310,27 @@ public final class DataReq extends Message {
             String str2 = builder.friend_uid_portrait;
             if (str2 == null) {
                 this.friend_uid_portrait = "";
-                return;
             } else {
                 this.friend_uid_portrait = str2;
+            }
+            String str3 = builder.history_forum_ids;
+            if (str3 == null) {
+                this.history_forum_ids = "";
+            } else {
+                this.history_forum_ids = str3;
+            }
+            String str4 = builder.history_forum_names;
+            if (str4 == null) {
+                this.history_forum_names = "";
+            } else {
+                this.history_forum_names = str4;
+            }
+            Integer num11 = builder.need_usergrowth_task;
+            if (num11 == null) {
+                this.need_usergrowth_task = DEFAULT_NEED_USERGROWTH_TASK;
+                return;
+            } else {
+                this.need_usergrowth_task = num11;
                 return;
             }
         }
@@ -308,7 +342,7 @@ public final class DataReq extends Message {
         this.pn = builder.pn;
         this.rn = builder.rn;
         this.has_plist = builder.has_plist;
-        this.f1315common = builder.f1316common;
+        this.f1318common = builder.f1319common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
@@ -316,6 +350,9 @@ public final class DataReq extends Message {
         this.is_from_usercenter = builder.is_from_usercenter;
         this.page = builder.page;
         this.friend_uid_portrait = builder.friend_uid_portrait;
+        this.history_forum_ids = builder.history_forum_ids;
+        this.history_forum_names = builder.history_forum_names;
+        this.need_usergrowth_task = builder.need_usergrowth_task;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {

@@ -30,19 +30,19 @@ public final class DataRes extends Message {
     public final List<ExcellentThreadInfo> thread_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer has_more;
         public Integer pn;
-        public List tag_list;
-        public List thread_list;
+        public List<ExcellentTagInfo> tag_list;
+        public List<ExcellentThreadInfo> thread_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -135,13 +135,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.tag_list;
+            List<ExcellentTagInfo> list = builder.tag_list;
             if (list == null) {
                 this.tag_list = DEFAULT_TAG_LIST;
             } else {
                 this.tag_list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.thread_list;
+            List<ExcellentThreadInfo> list2 = builder.thread_list;
             if (list2 == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {

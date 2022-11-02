@@ -27,17 +27,17 @@ public final class ActPost extends Message {
     public final String list_head;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ActPost> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List act_hot;
-        public List link_info;
+        public List<ActHot> act_hot;
+        public List<LinkInfo> link_info;
         public String list_head;
 
         public Builder() {
@@ -128,7 +128,7 @@ public final class ActPost extends Message {
             }
         }
         if (z) {
-            List list = builder.act_hot;
+            List<ActHot> list = builder.act_hot;
             if (list == null) {
                 this.act_hot = DEFAULT_ACT_HOT;
             } else {
@@ -140,7 +140,7 @@ public final class ActPost extends Message {
             } else {
                 this.list_head = str;
             }
-            List list2 = builder.link_info;
+            List<LinkInfo> list2 = builder.link_info;
             if (list2 == null) {
                 this.link_info = DEFAULT_LINK_INFO;
                 return;

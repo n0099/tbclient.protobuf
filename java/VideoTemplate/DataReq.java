@@ -19,23 +19,23 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1391common;
+    public final CommonReq f1394common;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer source;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1392common;
+        public CommonReq f1395common;
         public Integer source;
 
         public Builder() {
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1392common = dataReq.f1391common;
+            this.f1395common = dataReq.f1394common;
             this.source = dataReq.source;
         }
 
@@ -124,7 +124,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1391common = builder.f1392common;
+            this.f1394common = builder.f1395common;
             Integer num = builder.source;
             if (num == null) {
                 this.source = DEFAULT_SOURCE;
@@ -134,7 +134,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1391common = builder.f1392common;
+        this.f1394common = builder.f1395common;
         this.source = builder.source;
     }
 

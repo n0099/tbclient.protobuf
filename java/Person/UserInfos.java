@@ -45,17 +45,17 @@ public final class UserInfos extends Message {
     public final String userdetail;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<UserInfos> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Double distance;
-        public List iconinfo;
+        public List<Icon> iconinfo;
         public Integer lastest_time;
         public LbsInfo location;
         public String portrait;
@@ -196,7 +196,7 @@ public final class UserInfos extends Message {
             } else {
                 this.lastest_time = num;
             }
-            List list = builder.iconinfo;
+            List<Icon> list = builder.iconinfo;
             if (list == null) {
                 this.iconinfo = DEFAULT_ICONINFO;
             } else {

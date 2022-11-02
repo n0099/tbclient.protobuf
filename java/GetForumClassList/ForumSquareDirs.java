@@ -42,16 +42,16 @@ public final class ForumSquareDirs extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ForumSquareDirs> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List forum_list;
+        public List<ChildDir> forum_list;
         public Long id;
         public String link;
         public String pic;
@@ -192,7 +192,7 @@ public final class ForumSquareDirs extends Message {
             } else {
                 this.pic = str3;
             }
-            List list = builder.forum_list;
+            List<ChildDir> list = builder.forum_list;
             if (list == null) {
                 this.forum_list = DEFAULT_FORUM_LIST;
             } else {

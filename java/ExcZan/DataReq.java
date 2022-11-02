@@ -24,7 +24,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1137common;
+    public final CommonReq f1140common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long excid;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
@@ -33,19 +33,19 @@ public final class DataReq extends Message {
     public final Long thread_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer action;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1138common;
+        public CommonReq f1141common;
         public Long excid;
         public Long post_id;
         public Long thread_id;
@@ -85,7 +85,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1138common = dataReq.f1137common;
+            this.f1141common = dataReq.f1140common;
             this.excid = dataReq.excid;
             this.thread_id = dataReq.thread_id;
             this.post_id = dataReq.post_id;
@@ -142,7 +142,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1137common = builder.f1138common;
+            this.f1140common = builder.f1141common;
             Long l = builder.excid;
             if (l == null) {
                 this.excid = DEFAULT_EXCID;
@@ -170,7 +170,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1137common = builder.f1138common;
+        this.f1140common = builder.f1141common;
         this.excid = builder.excid;
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;

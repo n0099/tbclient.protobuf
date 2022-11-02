@@ -42,13 +42,13 @@ public final class Menu extends Message {
     public final List<SubMenu> sub_menu;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Menu> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer action_type;
@@ -58,7 +58,7 @@ public final class Menu extends Message {
         public Integer id;
         public Integer level;
         public String name;
-        public List sub_menu;
+        public List<SubMenu> sub_menu;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -199,7 +199,7 @@ public final class Menu extends Message {
             } else {
                 this.content = str2;
             }
-            List list = builder.sub_menu;
+            List<SubMenu> list = builder.sub_menu;
             if (list == null) {
                 this.sub_menu = DEFAULT_SUB_MENU;
                 return;

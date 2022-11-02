@@ -30,19 +30,19 @@ public final class PbHotPost extends Message {
     public final List<Post> post_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<PbHotPost> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List hot_post_list;
+        public List<HotPost> hot_post_list;
         public Integer need_hot_post;
         public Integer need_post_zan;
-        public List post_list;
+        public List<Post> post_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -135,7 +135,7 @@ public final class PbHotPost extends Message {
             }
         }
         if (z) {
-            List list = builder.post_list;
+            List<Post> list = builder.post_list;
             if (list == null) {
                 this.post_list = DEFAULT_POST_LIST;
             } else {
@@ -153,7 +153,7 @@ public final class PbHotPost extends Message {
             } else {
                 this.need_post_zan = num2;
             }
-            List list2 = builder.hot_post_list;
+            List<HotPost> list2 = builder.hot_post_list;
             if (list2 == null) {
                 this.hot_post_list = DEFAULT_HOT_POST_LIST;
                 return;

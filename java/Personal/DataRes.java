@@ -44,22 +44,22 @@ public final class DataRes extends Message {
     public final DealWindow window;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List concerned_forum_list;
-        public List dynamic_list;
+        public List<ForumDynamic> concerned_forum_list;
+        public List<DynamicInfo> dynamic_list;
         public Integer has_more;
         public Integer pn;
         public User user;
         public UserGodInfo user_god_info;
-        public List video_page;
+        public List<ThreadInfo> video_page;
         public DealWindow window;
 
         public Builder() {
@@ -159,19 +159,19 @@ public final class DataRes extends Message {
         }
         if (z) {
             this.user = builder.user;
-            List list = builder.video_page;
+            List<ThreadInfo> list = builder.video_page;
             if (list == null) {
                 this.video_page = DEFAULT_VIDEO_PAGE;
             } else {
                 this.video_page = Message.immutableCopyOf(list);
             }
-            List list2 = builder.dynamic_list;
+            List<DynamicInfo> list2 = builder.dynamic_list;
             if (list2 == null) {
                 this.dynamic_list = DEFAULT_DYNAMIC_LIST;
             } else {
                 this.dynamic_list = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.concerned_forum_list;
+            List<ForumDynamic> list3 = builder.concerned_forum_list;
             if (list3 == null) {
                 this.concerned_forum_list = DEFAULT_CONCERNED_FORUM_LIST;
             } else {

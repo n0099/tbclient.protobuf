@@ -31,25 +31,22 @@ public final class PostInfoContent extends Message {
     public final Long post_id;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long post_type;
-    @ProtoField(tag = 6)
-    public final WorksInfo works_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<PostInfoContent> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long create_time;
         public Integer is_author_view;
-        public List post_content;
+        public List<Abstract> post_content;
         public Long post_id;
         public Long post_type;
-        public WorksInfo works_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -91,7 +88,6 @@ public final class PostInfoContent extends Message {
             this.post_type = postInfoContent.post_type;
             this.post_id = postInfoContent.post_id;
             this.is_author_view = postInfoContent.is_author_view;
-            this.works_info = postInfoContent.works_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -145,7 +141,7 @@ public final class PostInfoContent extends Message {
             }
         }
         if (z) {
-            List list = builder.post_content;
+            List<Abstract> list = builder.post_content;
             if (list == null) {
                 this.post_content = DEFAULT_POST_CONTENT;
             } else {
@@ -172,18 +168,17 @@ public final class PostInfoContent extends Message {
             Integer num = builder.is_author_view;
             if (num == null) {
                 this.is_author_view = DEFAULT_IS_AUTHOR_VIEW;
+                return;
             } else {
                 this.is_author_view = num;
+                return;
             }
-            this.works_info = builder.works_info;
-            return;
         }
         this.post_content = Message.immutableCopyOf(builder.post_content);
         this.create_time = builder.create_time;
         this.post_type = builder.post_type;
         this.post_id = builder.post_id;
         this.is_author_view = builder.is_author_view;
-        this.works_info = builder.works_info;
     }
 
     public /* synthetic */ PostInfoContent(Builder builder, boolean z, a aVar) {

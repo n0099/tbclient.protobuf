@@ -30,16 +30,16 @@ public final class AddPostList extends Message {
     public final Integer total_num;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<AddPostList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List add_post_list;
+        public List<SubPostList> add_post_list;
         public Long pid;
         public Integer total_count;
         public Integer total_num;
@@ -153,7 +153,7 @@ public final class AddPostList extends Message {
             } else {
                 this.total_count = num2;
             }
-            List list = builder.add_post_list;
+            List<SubPostList> list = builder.add_post_list;
             if (list == null) {
                 this.add_post_list = DEFAULT_ADD_POST_LIST;
                 return;

@@ -29,19 +29,19 @@ public final class LiveRes extends Message {
     public final List<LiveNormalConfig> normal_config_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<LiveRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String is_end;
-        public List live_list;
+        public List<YyLiveInfoSimple> live_list;
         public NormalConfig normal_config;
-        public List normal_config_list;
+        public List<LiveNormalConfig> normal_config_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -133,7 +133,7 @@ public final class LiveRes extends Message {
         }
         if (z) {
             this.normal_config = builder.normal_config;
-            List list = builder.live_list;
+            List<YyLiveInfoSimple> list = builder.live_list;
             if (list == null) {
                 this.live_list = DEFAULT_LIVE_LIST;
             } else {
@@ -145,7 +145,7 @@ public final class LiveRes extends Message {
             } else {
                 this.is_end = str;
             }
-            List list2 = builder.normal_config_list;
+            List<LiveNormalConfig> list2 = builder.normal_config_list;
             if (list2 == null) {
                 this.normal_config_list = DEFAULT_NORMAL_CONFIG_LIST;
                 return;

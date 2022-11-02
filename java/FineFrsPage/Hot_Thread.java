@@ -63,13 +63,13 @@ public final class Hot_Thread extends Message {
     public final Integer zan_num;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Hot_Thread> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
@@ -81,7 +81,7 @@ public final class Hot_Thread extends Message {
         public Integer is_livepost;
         public Integer is_membertop;
         public Integer is_top;
-        public List pics;
+        public List<Pic> pics;
         public Integer reply_num;
         public Long thread_id;
         public String title;
@@ -252,7 +252,7 @@ public final class Hot_Thread extends Message {
             } else {
                 this.type = num3;
             }
-            List list = builder.pics;
+            List<Pic> list = builder.pics;
             if (list == null) {
                 this.pics = DEFAULT_PICS;
             } else {

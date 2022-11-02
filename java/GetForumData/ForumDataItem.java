@@ -24,16 +24,16 @@ public final class ForumDataItem extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ForumDataItem> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List group;
+        public List<ForumDataGroup> group;
         public Integer type;
 
         public Builder() {
@@ -129,7 +129,7 @@ public final class ForumDataItem extends Message {
             } else {
                 this.type = num;
             }
-            List list = builder.group;
+            List<ForumDataGroup> list = builder.group;
             if (list == null) {
                 this.group = DEFAULT_GROUP;
                 return;

@@ -54,20 +54,20 @@ public final class FineThreadList extends Message {
     public final Long zan_num;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<FineThreadList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
         public Long fromfid;
         public String fromfname;
         public Long ftid;
-        public List pics;
+        public List<String> pics;
         public Integer publish_time;
         public Long reply_num;
         public Integer thread_type;
@@ -246,7 +246,7 @@ public final class FineThreadList extends Message {
             } else {
                 this.thread_type = num3;
             }
-            List list = builder.pics;
+            List<String> list = builder.pics;
             if (list == null) {
                 this.pics = DEFAULT_PICS;
                 return;

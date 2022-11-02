@@ -42,13 +42,13 @@ public final class AdInfo extends Message {
     public final Integer show_rule;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<AdInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String ad_desc;
@@ -56,7 +56,7 @@ public final class AdInfo extends Message {
         public String ad_pic;
         public Integer ad_type;
         public String ad_url;
-        public List media;
+        public List<Media> media;
         public String portrait;
         public Integer show_rule;
 
@@ -196,7 +196,7 @@ public final class AdInfo extends Message {
             } else {
                 this.portrait = str5;
             }
-            List list = builder.media;
+            List<Media> list = builder.media;
             if (list == null) {
                 this.media = DEFAULT_MEDIA;
                 return;

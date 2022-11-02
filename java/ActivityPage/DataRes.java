@@ -40,23 +40,23 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> thread_list;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List banner_image;
-        public List grid;
+        public List<BannerImage> banner_image;
+        public List<BannerImage> grid;
         public HotTopic hot_topic;
         public Page page_info;
         public RecommendForumList recommend_forum;
         public RecommendUserList recommend_user;
         public SpecialColumnList special_column;
-        public List thread_list;
+        public List<ThreadInfo> thread_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -152,19 +152,19 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.banner_image;
+            List<BannerImage> list = builder.banner_image;
             if (list == null) {
                 this.banner_image = DEFAULT_BANNER_IMAGE;
             } else {
                 this.banner_image = Message.immutableCopyOf(list);
             }
-            List list2 = builder.grid;
+            List<BannerImage> list2 = builder.grid;
             if (list2 == null) {
                 this.grid = DEFAULT_GRID;
             } else {
                 this.grid = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.thread_list;
+            List<ThreadInfo> list3 = builder.thread_list;
             if (list3 == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
             } else {

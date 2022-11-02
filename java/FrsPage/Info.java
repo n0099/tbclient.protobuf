@@ -27,17 +27,17 @@ public final class Info extends Message {
     public final Integer user_num;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Info> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer post_num;
-        public List recm_forum_list;
+        public List<RecmForumInfo> recm_forum_list;
         public Integer user_num;
 
         public Builder() {
@@ -141,7 +141,7 @@ public final class Info extends Message {
             } else {
                 this.post_num = num2;
             }
-            List list = builder.recm_forum_list;
+            List<RecmForumInfo> list = builder.recm_forum_list;
             if (list == null) {
                 this.recm_forum_list = DEFAULT_RECM_FORUM_LIST;
                 return;

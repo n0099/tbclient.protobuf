@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1287common;
+    public final CommonReq f1290common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer item_id;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -36,18 +36,18 @@ public final class DataReq extends Message {
     public final Integer scr_w;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1288common;
+        public CommonReq f1291common;
         public Integer item_id;
         public Integer q_type;
         public Integer scr_dip;
@@ -89,7 +89,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1288common = dataReq.f1287common;
+            this.f1291common = dataReq.f1290common;
             this.item_id = dataReq.item_id;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
@@ -148,7 +148,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1287common = builder.f1288common;
+            this.f1290common = builder.f1291common;
             Integer num = builder.item_id;
             if (num == null) {
                 this.item_id = DEFAULT_ITEM_ID;
@@ -182,7 +182,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1287common = builder.f1288common;
+        this.f1290common = builder.f1291common;
         this.item_id = builder.item_id;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;

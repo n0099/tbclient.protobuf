@@ -20,6 +20,7 @@ public final class UserTaskInfo extends Message {
     public static final String DEFAULT_NAME = "";
     public static final Integer DEFAULT_STATUS;
     public static final Integer DEFAULT_TARGET_NUM;
+    public static final String DEFAULT_TARGET_SCHEME = "";
     public static final String DEFAULT_TASK_ICON_URL = "";
     public static final Integer DEFAULT_TASK_TYPE;
     public static final Integer DEFAULT_WEIGHT;
@@ -38,6 +39,8 @@ public final class UserTaskInfo extends Message {
     public final Integer status;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer target_num;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String target_scheme;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String task_icon_url;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -46,13 +49,13 @@ public final class UserTaskInfo extends Message {
     public final Integer weight;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<UserTaskInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String act_type;
@@ -62,6 +65,7 @@ public final class UserTaskInfo extends Message {
         public String name;
         public Integer status;
         public Integer target_num;
+        public String target_scheme;
         public String task_icon_url;
         public Integer task_type;
         public Integer weight;
@@ -111,6 +115,7 @@ public final class UserTaskInfo extends Message {
             this.task_type = userTaskInfo.task_type;
             this.weight = userTaskInfo.weight;
             this.act_type = userTaskInfo.act_type;
+            this.target_scheme = userTaskInfo.target_scheme;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -222,9 +227,15 @@ public final class UserTaskInfo extends Message {
             String str4 = builder.act_type;
             if (str4 == null) {
                 this.act_type = "";
-                return;
             } else {
                 this.act_type = str4;
+            }
+            String str5 = builder.target_scheme;
+            if (str5 == null) {
+                this.target_scheme = "";
+                return;
+            } else {
+                this.target_scheme = str5;
                 return;
             }
         }
@@ -238,6 +249,7 @@ public final class UserTaskInfo extends Message {
         this.task_type = builder.task_type;
         this.weight = builder.weight;
         this.act_type = builder.act_type;
+        this.target_scheme = builder.target_scheme;
     }
 
     public /* synthetic */ UserTaskInfo(Builder builder, boolean z, a aVar) {

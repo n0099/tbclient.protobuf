@@ -28,16 +28,16 @@ public final class Story extends Message {
     public final Integer story_user_type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Story> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List story_list;
+        public List<ThreadInfo> story_list;
         public User story_user;
         public Integer story_user_type;
 
@@ -129,7 +129,7 @@ public final class Story extends Message {
             }
         }
         if (z) {
-            List list = builder.story_list;
+            List<ThreadInfo> list = builder.story_list;
             if (list == null) {
                 this.story_list = DEFAULT_STORY_LIST;
             } else {

@@ -33,19 +33,19 @@ public final class ItemTable extends Message {
     public final Integer total_point_num;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ItemTable> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer comment_star;
         public Integer is_commented;
-        public List item_plot;
-        public List item_point;
+        public List<ItemPlot> item_plot;
+        public List<ItemPoint> item_point;
         public Integer total_point_num;
 
         public Builder() {
@@ -159,13 +159,13 @@ public final class ItemTable extends Message {
             } else {
                 this.total_point_num = num3;
             }
-            List list = builder.item_point;
+            List<ItemPoint> list = builder.item_point;
             if (list == null) {
                 this.item_point = DEFAULT_ITEM_POINT;
             } else {
                 this.item_point = Message.immutableCopyOf(list);
             }
-            List list2 = builder.item_plot;
+            List<ItemPlot> list2 = builder.item_plot;
             if (list2 == null) {
                 this.item_plot = DEFAULT_ITEM_PLOT;
                 return;

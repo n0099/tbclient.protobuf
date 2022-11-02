@@ -37,17 +37,17 @@ public final class InterviewInfo extends Message {
     public final Integer type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<InterviewInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public User author;
-        public List content;
+        public List<PbContent> content;
         public Long create_time;
         public Long main_pid;
         public Long post_id;
@@ -153,7 +153,7 @@ public final class InterviewInfo extends Message {
             } else {
                 this.post_id = l;
             }
-            List list = builder.content;
+            List<PbContent> list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {

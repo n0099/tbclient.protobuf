@@ -27,18 +27,18 @@ public final class GradeDesc extends Message {
     public final List<GradeRight> rights;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<GradeDesc> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String grade;
         public Integer point;
-        public List rights;
+        public List<GradeRight> rights;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -140,7 +140,7 @@ public final class GradeDesc extends Message {
             } else {
                 this.point = num;
             }
-            List list = builder.rights;
+            List<GradeRight> list = builder.rights;
             if (list == null) {
                 this.rights = DEFAULT_RIGHTS;
                 return;

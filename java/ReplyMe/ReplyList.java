@@ -104,13 +104,13 @@ public final class ReplyList extends Message {
     public final Zan zan;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ReplyList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Baijiahao baijiahao;
@@ -123,7 +123,7 @@ public final class ReplyList extends Message {
         public Integer is_share_thread;
         public Integer is_story;
         public String item_type;
-        public List new_floor_info;
+        public List<NewFloorInfo> new_floor_info;
         public OriginThreadInfo origin_thread_info;
         public String post_from;
         public Long post_id;
@@ -403,7 +403,7 @@ public final class ReplyList extends Message {
                 this.is_bjh = num10;
             }
             this.baijiahao = builder.baijiahao;
-            List list = builder.new_floor_info;
+            List<NewFloorInfo> list = builder.new_floor_info;
             if (list == null) {
                 this.new_floor_info = DEFAULT_NEW_FLOOR_INFO;
             } else {

@@ -39,17 +39,17 @@ public final class FloatInfo extends Message {
     public final Long start_time;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<FloatInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Long activity_id;
-        public List dynamic_url;
+        public List<String> dynamic_url;
         public Long end_time;
         public String float_url;
         public String jump_url;
@@ -169,7 +169,7 @@ public final class FloatInfo extends Message {
             } else {
                 this.end_time = l2;
             }
-            List list = builder.dynamic_url;
+            List<String> list = builder.dynamic_url;
             if (list == null) {
                 this.dynamic_url = DEFAULT_DYNAMIC_URL;
             } else {

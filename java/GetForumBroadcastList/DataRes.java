@@ -25,16 +25,16 @@ public final class DataRes extends Message {
     public final Page page;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List bcast_infos;
+        public List<BroadcastInfo> bcast_infos;
         public Page page;
 
         public Builder() {
@@ -123,7 +123,7 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.bcast_infos;
+            List<BroadcastInfo> list = builder.bcast_infos;
             if (list == null) {
                 this.bcast_infos = DEFAULT_BCAST_INFOS;
             } else {

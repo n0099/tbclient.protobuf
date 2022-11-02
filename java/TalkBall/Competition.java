@@ -30,17 +30,17 @@ public final class Competition extends Message {
     public final String type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Competition> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String btn_title;
-        public List country;
+        public List<Country> country;
         public Long time;
         public String type;
 
@@ -133,7 +133,7 @@ public final class Competition extends Message {
             }
         }
         if (z) {
-            List list = builder.country;
+            List<Country> list = builder.country;
             if (list == null) {
                 this.country = DEFAULT_COUNTRY;
             } else {

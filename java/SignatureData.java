@@ -30,16 +30,16 @@ public final class SignatureData extends Message {
     public final Integer signature_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<SignatureData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List content;
+        public List<SignatureContent> content;
         public String fontColor;
         public String fontKeyName;
         public Integer signature_id;
@@ -151,7 +151,7 @@ public final class SignatureData extends Message {
             } else {
                 this.fontColor = str2;
             }
-            List list = builder.content;
+            List<SignatureContent> list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
                 return;

@@ -36,16 +36,16 @@ public final class WorldcupSkin extends Message {
     public final String worldcup_top_night;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<WorldcupSkin> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List tab_skin;
+        public List<TabSkin> tab_skin;
         public String worldcup_bottom;
         public String worldcup_bottom_night;
         public Integer worldcup_icon_height;
@@ -173,7 +173,7 @@ public final class WorldcupSkin extends Message {
             } else {
                 this.worldcup_top_night = str4;
             }
-            List list = builder.tab_skin;
+            List<TabSkin> list = builder.tab_skin;
             if (list == null) {
                 this.tab_skin = DEFAULT_TAB_SKIN;
                 return;

@@ -33,20 +33,20 @@ public final class VipDailyList extends Message {
     public final List<VipThemeItem> item;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<VipDailyList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String card_id;
         public String class_name;
         public String class_url;
         public String class_url_name;
-        public List item;
+        public List<VipThemeItem> item;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -155,7 +155,7 @@ public final class VipDailyList extends Message {
             } else {
                 this.class_url = str3;
             }
-            List list = builder.item;
+            List<VipThemeItem> list = builder.item;
             if (list == null) {
                 this.item = DEFAULT_ITEM;
             } else {

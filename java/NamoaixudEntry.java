@@ -9,7 +9,7 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
-public final class DuxiaomanEntry extends Message {
+public final class NamoaixudEntry extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ACTIVITY_DESC = "";
     public static final String DEFAULT_ACTIVITY_LINK_ADDR = "";
@@ -53,13 +53,13 @@ public final class DuxiaomanEntry extends Message {
     public final String tip;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<NamoaixudEntry> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String activity_desc;
@@ -91,13 +91,13 @@ public final class DuxiaomanEntry extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(DuxiaomanEntry duxiaomanEntry) {
-            super(duxiaomanEntry);
+        public Builder(NamoaixudEntry namoaixudEntry) {
+            super(namoaixudEntry);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {duxiaomanEntry};
+                Object[] objArr = {namoaixudEntry};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -108,38 +108,38 @@ public final class DuxiaomanEntry extends Message {
                     return;
                 }
             }
-            if (duxiaomanEntry == null) {
+            if (namoaixudEntry == null) {
                 return;
             }
-            this.tip = duxiaomanEntry.tip;
-            this.amount = duxiaomanEntry.amount;
-            this.amount_msg = duxiaomanEntry.amount_msg;
-            this.encourage_icon = duxiaomanEntry.encourage_icon;
-            this.encourage_desc = duxiaomanEntry.encourage_desc;
-            this.goto_button_name = duxiaomanEntry.goto_button_name;
-            this.goto_button_url = duxiaomanEntry.goto_button_url;
-            this.activity_timestamp = duxiaomanEntry.activity_timestamp;
-            this.activity_desc = duxiaomanEntry.activity_desc;
-            this.activity_link_type = duxiaomanEntry.activity_link_type;
-            this.activity_link_addr = duxiaomanEntry.activity_link_addr;
-            this.layout_type = duxiaomanEntry.layout_type;
-            this.encourage_icon_dark = duxiaomanEntry.encourage_icon_dark;
+            this.tip = namoaixudEntry.tip;
+            this.amount = namoaixudEntry.amount;
+            this.amount_msg = namoaixudEntry.amount_msg;
+            this.encourage_icon = namoaixudEntry.encourage_icon;
+            this.encourage_desc = namoaixudEntry.encourage_desc;
+            this.goto_button_name = namoaixudEntry.goto_button_name;
+            this.goto_button_url = namoaixudEntry.goto_button_url;
+            this.activity_timestamp = namoaixudEntry.activity_timestamp;
+            this.activity_desc = namoaixudEntry.activity_desc;
+            this.activity_link_type = namoaixudEntry.activity_link_type;
+            this.activity_link_addr = namoaixudEntry.activity_link_addr;
+            this.layout_type = namoaixudEntry.layout_type;
+            this.encourage_icon_dark = namoaixudEntry.encourage_icon_dark;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public DuxiaomanEntry build(boolean z) {
+        public NamoaixudEntry build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
             if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DuxiaomanEntry(this, z, null);
+                return new NamoaixudEntry(this, z, null);
             }
-            return (DuxiaomanEntry) invokeZ.objValue;
+            return (NamoaixudEntry) invokeZ.objValue;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DuxiaomanEntry(Builder builder, boolean z) {
+    public NamoaixudEntry(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -253,7 +253,7 @@ public final class DuxiaomanEntry extends Message {
         this.encourage_icon_dark = builder.encourage_icon_dark;
     }
 
-    public /* synthetic */ DuxiaomanEntry(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ NamoaixudEntry(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 }

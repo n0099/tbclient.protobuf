@@ -19,23 +19,23 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1113common;
+    public final CommonReq f1116common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long user_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1114common;
+        public CommonReq f1117common;
         public Long user_id;
 
         public Builder() {
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.user_id = dataReq.user_id;
-            this.f1114common = dataReq.f1113common;
+            this.f1117common = dataReq.f1116common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -130,11 +130,11 @@ public final class DataReq extends Message {
             } else {
                 this.user_id = l;
             }
-            this.f1113common = builder.f1114common;
+            this.f1116common = builder.f1117common;
             return;
         }
         this.user_id = builder.user_id;
-        this.f1113common = builder.f1114common;
+        this.f1116common = builder.f1117common;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {

@@ -24,17 +24,17 @@ public final class Category extends Message {
     public final List<String> second_class;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Category> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String first_class;
-        public List second_class;
+        public List<String> second_class;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -128,7 +128,7 @@ public final class Category extends Message {
             } else {
                 this.first_class = str;
             }
-            List list = builder.second_class;
+            List<String> list = builder.second_class;
             if (list == null) {
                 this.second_class = DEFAULT_SECOND_CLASS;
                 return;

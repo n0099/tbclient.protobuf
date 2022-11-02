@@ -87,17 +87,17 @@ public final class Custom extends Message {
     public final Integer validity;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Custom> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String create_time;
-        public List discount;
+        public List<Discount> discount;
         public Integer dubi;
         public Integer dubi_ios;
         public Integer duration;
@@ -286,7 +286,7 @@ public final class Custom extends Message {
             } else {
                 this.hide = num7;
             }
-            List list = builder.discount;
+            List<Discount> list = builder.discount;
             if (list == null) {
                 this.discount = DEFAULT_DISCOUNT;
             } else {

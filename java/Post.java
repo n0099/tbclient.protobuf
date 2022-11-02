@@ -44,6 +44,7 @@ public final class Post extends Message {
     public static final String DEFAULT_LEGO_CARD = "";
     public static final Integer DEFAULT_NEED_LOG;
     public static final String DEFAULT_QUOTE_ID = "";
+    public static final String DEFAULT_RUMOR_SOURCE_IMG = "";
     public static final Integer DEFAULT_SHOW_SQUARED;
     public static final Integer DEFAULT_STORECOUNT;
     public static final Integer DEFAULT_SUB_POST_NUMBER;
@@ -149,6 +150,8 @@ public final class Post extends Message {
     public final PbPresent present;
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String quote_id;
+    @ProtoField(tag = 65, type = Message.Datatype.STRING)
+    public final String rumor_source_img;
     @ProtoField(tag = 47, type = Message.Datatype.INT32)
     public final Integer show_squared;
     @ProtoField(tag = 21)
@@ -181,13 +184,13 @@ public final class Post extends Message {
     public final Zan zan;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Post> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public ActPost act_post;
@@ -195,17 +198,17 @@ public final class Post extends Message {
         public Integer add_post_number;
         public Advertisement advertisement;
         public Agree agree;
-        public List arr_video;
+        public List<String> arr_video;
         public User author;
         public Long author_id;
         public String bimg_url;
         public ThemeBubble bubble_info;
-        public List card_link_info;
-        public List content;
+        public List<CardLinkInfo> card_link_info;
+        public List<PbContent> content;
         public CustomFigure custom_figure;
         public CustomState custom_state;
         public String dynamic_url;
-        public List ext_tails;
+        public List<TailInfo> ext_tails;
         public Integer floor;
         public String fold_comment_apply_url;
         public Integer fold_comment_status;
@@ -227,7 +230,7 @@ public final class Post extends Message {
         public Integer is_vote;
         public Integer is_wonderful_post;
         public Item item;
-        public List item_star;
+        public List<HeadItem> item_star;
         public Lbs lbs_info;
         public String lego_card;
         public Integer need_log;
@@ -238,6 +241,7 @@ public final class Post extends Message {
         public PbPostZan post_zan;
         public PbPresent present;
         public String quote_id;
+        public String rumor_source_img;
         public Integer show_squared;
         public SignatureData signature;
         public SkinInfo skin_info;
@@ -352,6 +356,7 @@ public final class Post extends Message {
             this.full_length_novel = post.full_length_novel;
             this.dynamic_url = post.dynamic_url;
             this.bubble_info = post.bubble_info;
+            this.rumor_source_img = post.rumor_source_img;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -451,13 +456,13 @@ public final class Post extends Message {
             } else {
                 this.time = num2;
             }
-            List list = builder.content;
+            List<PbContent> list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
             } else {
                 this.content = Message.immutableCopyOf(list);
             }
-            List list2 = builder.arr_video;
+            List<String> list2 = builder.arr_video;
             if (list2 == null) {
                 this.arr_video = DEFAULT_ARR_VIDEO;
             } else {
@@ -553,7 +558,7 @@ public final class Post extends Message {
             } else {
                 this.is_hot_post = num10;
             }
-            List list3 = builder.ext_tails;
+            List<TailInfo> list3 = builder.ext_tails;
             if (list3 == null) {
                 this.ext_tails = DEFAULT_EXT_TAILS;
             } else {
@@ -637,7 +642,7 @@ public final class Post extends Message {
             } else {
                 this.is_wonderful_post = num18;
             }
-            List list4 = builder.item_star;
+            List<HeadItem> list4 = builder.item_star;
             if (list4 == null) {
                 this.item_star = DEFAULT_ITEM_STAR;
             } else {
@@ -659,7 +664,7 @@ public final class Post extends Message {
                 this.fold_comment_apply_url = str9;
             }
             this.novel_info = builder.novel_info;
-            List list5 = builder.card_link_info;
+            List<CardLinkInfo> list5 = builder.card_link_info;
             if (list5 == null) {
                 this.card_link_info = DEFAULT_CARD_LINK_INFO;
             } else {
@@ -675,7 +680,14 @@ public final class Post extends Message {
                 this.dynamic_url = str10;
             }
             this.bubble_info = builder.bubble_info;
-            return;
+            String str11 = builder.rumor_source_img;
+            if (str11 == null) {
+                this.rumor_source_img = "";
+                return;
+            } else {
+                this.rumor_source_img = str11;
+                return;
+            }
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -740,6 +752,7 @@ public final class Post extends Message {
         this.full_length_novel = builder.full_length_novel;
         this.dynamic_url = builder.dynamic_url;
         this.bubble_info = builder.bubble_info;
+        this.rumor_source_img = builder.rumor_source_img;
     }
 
     public /* synthetic */ Post(Builder builder, boolean z, a aVar) {

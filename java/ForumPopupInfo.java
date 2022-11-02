@@ -33,18 +33,18 @@ public final class ForumPopupInfo extends Message {
     public final Integer thread_count_static;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ForumPopupInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer forum_id;
         public String forum_name;
-        public List forum_names;
+        public List<String> forum_names;
         public Integer mem_count_static;
         public Integer thread_count_static;
 
@@ -158,7 +158,7 @@ public final class ForumPopupInfo extends Message {
             } else {
                 this.thread_count_static = num3;
             }
-            List list = builder.forum_names;
+            List<String> list = builder.forum_names;
             if (list == null) {
                 this.forum_names = DEFAULT_FORUM_NAMES;
             } else {

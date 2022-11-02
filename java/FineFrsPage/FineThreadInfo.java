@@ -60,13 +60,13 @@ public final class FineThreadInfo extends Message {
     public final Long zansum;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<FineThreadInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
@@ -78,7 +78,7 @@ public final class FineThreadInfo extends Message {
         public String tag;
         public Integer thread_type;
         public Long threadsnum;
-        public List thumbnail;
+        public List<String> thumbnail;
         public String title;
         public ZhiBoInfoTW twzhibo_info;
         public Integer type;
@@ -214,7 +214,7 @@ public final class FineThreadInfo extends Message {
             } else {
                 this._abstract = str2;
             }
-            List list = builder.thumbnail;
+            List<String> list = builder.thumbnail;
             if (list == null) {
                 this.thumbnail = DEFAULT_THUMBNAIL;
             } else {

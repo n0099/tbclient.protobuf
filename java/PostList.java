@@ -40,23 +40,23 @@ public final class PostList extends Message {
     public final List<Voice> voice_info;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<PostList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List _abstract;
+        public List<Abstract> _abstract;
         public Agree agree;
         public User author;
         public Long author_id;
         public Long id;
-        public List media;
-        public List media_num;
-        public List voice_info;
+        public List<Media> media;
+        public List<MediaNum> media_num;
+        public List<Voice> voice_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -162,25 +162,25 @@ public final class PostList extends Message {
                 this.id = l;
             }
             this.author = builder.author;
-            List list = builder._abstract;
+            List<Abstract> list = builder._abstract;
             if (list == null) {
                 this._abstract = DEFAULT_ABSTRACT;
             } else {
                 this._abstract = Message.immutableCopyOf(list);
             }
-            List list2 = builder.media;
+            List<Media> list2 = builder.media;
             if (list2 == null) {
                 this.media = DEFAULT_MEDIA;
             } else {
                 this.media = Message.immutableCopyOf(list2);
             }
-            List list3 = builder.media_num;
+            List<MediaNum> list3 = builder.media_num;
             if (list3 == null) {
                 this.media_num = DEFAULT_MEDIA_NUM;
             } else {
                 this.media_num = Message.immutableCopyOf(list3);
             }
-            List list4 = builder.voice_info;
+            List<Voice> list4 = builder.voice_info;
             if (list4 == null) {
                 this.voice_info = DEFAULT_VOICE_INFO;
             } else {

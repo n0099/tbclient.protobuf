@@ -33,17 +33,17 @@ public final class Adkiller extends Message {
     public final Integer show_hint;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<Adkiller> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer ad_left_num;
-        public List ad_list;
+        public List<AdkillerAd> ad_list;
         public String hint_url;
         public Integer show_ad;
         public Integer show_hint;
@@ -164,7 +164,7 @@ public final class Adkiller extends Message {
             } else {
                 this.ad_left_num = num3;
             }
-            List list = builder.ad_list;
+            List<AdkillerAd> list = builder.ad_list;
             if (list == null) {
                 this.ad_list = DEFAULT_AD_LIST;
                 return;

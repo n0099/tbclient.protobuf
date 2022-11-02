@@ -20,25 +20,25 @@ public final class ReqData extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1303common;
+    public final CommonReq f1306common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String st_type;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ReqData> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1304common;
+        public CommonReq f1307common;
         public Long friend_id;
         public String st_type;
 
@@ -79,7 +79,7 @@ public final class ReqData extends Message {
             }
             this.friend_id = reqData.friend_id;
             this.st_type = reqData.st_type;
-            this.f1304common = reqData.f1303common;
+            this.f1307common = reqData.f1306common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -141,12 +141,12 @@ public final class ReqData extends Message {
             } else {
                 this.st_type = str;
             }
-            this.f1303common = builder.f1304common;
+            this.f1306common = builder.f1307common;
             return;
         }
         this.friend_id = builder.friend_id;
         this.st_type = builder.st_type;
-        this.f1303common = builder.f1304common;
+        this.f1306common = builder.f1307common;
     }
 
     public /* synthetic */ ReqData(Builder builder, boolean z, a aVar) {

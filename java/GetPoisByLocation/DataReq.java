@@ -18,25 +18,25 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1225common;
+    public final CommonReq f1228common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String lat;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String lng;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1226common;
+        public CommonReq f1229common;
         public String lat;
         public String lng;
 
@@ -77,7 +77,7 @@ public final class DataReq extends Message {
             }
             this.lat = dataReq.lat;
             this.lng = dataReq.lng;
-            this.f1226common = dataReq.f1225common;
+            this.f1229common = dataReq.f1228common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -123,12 +123,12 @@ public final class DataReq extends Message {
             } else {
                 this.lng = str2;
             }
-            this.f1225common = builder.f1226common;
+            this.f1228common = builder.f1229common;
             return;
         }
         this.lat = builder.lat;
         this.lng = builder.lng;
-        this.f1225common = builder.f1226common;
+        this.f1228common = builder.f1229common;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {

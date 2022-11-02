@@ -153,13 +153,13 @@ public final class BookInfo extends Message {
     public final Integer words;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<BookInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String ad_code;
@@ -201,7 +201,7 @@ public final class BookInfo extends Message {
         public Integer read_count;
         public Integer sub_class_id;
         public String sub_class_name;
-        public List tags;
+        public List<BookTag> tags;
         public String title;
         public Integer total_chapter;
         public Integer total_page;
@@ -427,7 +427,7 @@ public final class BookInfo extends Message {
             } else {
                 this.author_intro = str8;
             }
-            List list = builder.tags;
+            List<BookTag> list = builder.tags;
             if (list == null) {
                 this.tags = DEFAULT_TAGS;
             } else {

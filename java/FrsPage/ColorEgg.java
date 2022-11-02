@@ -24,16 +24,16 @@ public final class ColorEgg extends Message {
     public final Integer style_flag;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<ColorEgg> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List holiday_words;
+        public List<String> holiday_words;
         public Integer style_flag;
 
         public Builder() {
@@ -123,7 +123,7 @@ public final class ColorEgg extends Message {
             }
         }
         if (z) {
-            List list = builder.holiday_words;
+            List<String> list = builder.holiday_words;
             if (list == null) {
                 this.holiday_words = DEFAULT_HOLIDAY_WORDS;
             } else {

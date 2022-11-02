@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1237common;
+    public final CommonReq f1240common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long cursor;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -30,18 +30,18 @@ public final class DataReq extends Message {
     public final Long uid;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1238common;
+        public CommonReq f1241common;
         public Long cursor;
         public Integer page_size;
         public Long uid;
@@ -81,7 +81,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1238common = dataReq.f1237common;
+            this.f1241common = dataReq.f1240common;
             this.uid = dataReq.uid;
             this.cursor = dataReq.cursor;
             this.page_size = dataReq.page_size;
@@ -136,7 +136,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1237common = builder.f1238common;
+            this.f1240common = builder.f1241common;
             Long l = builder.uid;
             if (l == null) {
                 this.uid = DEFAULT_UID;
@@ -158,7 +158,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1237common = builder.f1238common;
+        this.f1240common = builder.f1241common;
         this.uid = builder.uid;
         this.cursor = builder.cursor;
         this.page_size = builder.page_size;

@@ -41,22 +41,22 @@ public final class DataRes extends Message {
     public final Integer scene_id;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String addfree_url;
         public UrlTitle currency_txt;
         public Integer currency_type;
         public Integer free_chance;
-        public List gift_list;
-        public List list;
-        public List num_info;
+        public List<PresentGiftList1> gift_list;
+        public List<PresentCategoryList> list;
+        public List<PresentNumInfo> num_info;
         public Integer scene_id;
 
         public Builder() {
@@ -156,13 +156,13 @@ public final class DataRes extends Message {
             }
         }
         if (z) {
-            List list = builder.list;
+            List<PresentCategoryList> list = builder.list;
             if (list == null) {
                 this.list = DEFAULT_LIST;
             } else {
                 this.list = Message.immutableCopyOf(list);
             }
-            List list2 = builder.num_info;
+            List<PresentNumInfo> list2 = builder.num_info;
             if (list2 == null) {
                 this.num_info = DEFAULT_NUM_INFO;
             } else {
@@ -174,7 +174,7 @@ public final class DataRes extends Message {
             } else {
                 this.addfree_url = str;
             }
-            List list3 = builder.gift_list;
+            List<PresentGiftList1> list3 = builder.gift_list;
             if (list3 == null) {
                 this.gift_list = DEFAULT_GIFT_LIST;
             } else {

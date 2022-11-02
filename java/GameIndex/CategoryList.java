@@ -28,16 +28,16 @@ public final class CategoryList extends Message {
     public final String category_name;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<CategoryList> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public List category_game_list;
+        public List<GameInfo> category_game_list;
         public Integer category_id;
         public String category_name;
 
@@ -135,7 +135,7 @@ public final class CategoryList extends Message {
             } else {
                 this.category_name = str;
             }
-            List list = builder.category_game_list;
+            List<GameInfo> list = builder.category_game_list;
             if (list == null) {
                 this.category_game_list = DEFAULT_CATEGORY_GAME_LIST;
             } else {

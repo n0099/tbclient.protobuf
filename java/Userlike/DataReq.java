@@ -25,7 +25,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1387common;
+    public final CommonReq f1390common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer follow_type;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
@@ -36,19 +36,19 @@ public final class DataReq extends Message {
     public final String page_tag;
 
     /* loaded from: classes9.dex */
-    public /* synthetic */ class a {
+    public static /* synthetic */ class a {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
     }
 
     /* loaded from: classes9.dex */
-    public final class Builder extends Message.Builder {
+    public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1388common;
+        public CommonReq f1391common;
         public Integer follow_type;
         public Long last_req_unix;
         public Integer load_type;
@@ -89,7 +89,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1388common = dataReq.f1387common;
+            this.f1391common = dataReq.f1390common;
             this.page_tag = dataReq.page_tag;
             this.last_req_unix = dataReq.last_req_unix;
             this.follow_type = dataReq.follow_type;
@@ -146,7 +146,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1387common = builder.f1388common;
+            this.f1390common = builder.f1391common;
             String str = builder.page_tag;
             if (str == null) {
                 this.page_tag = "";
@@ -180,7 +180,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1387common = builder.f1388common;
+        this.f1390common = builder.f1391common;
         this.page_tag = builder.page_tag;
         this.last_req_unix = builder.last_req_unix;
         this.follow_type = builder.follow_type;
