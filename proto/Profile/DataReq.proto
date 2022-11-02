@@ -18,4 +18,7 @@ message DataReq {
     int32 is_from_usercenter = 14;
     int32 page = 15;
     string friend_uid_portrait = 16;
+    string history_forum_ids = 17;
+    string history_forum_names = 18;
+    int32 need_usergrowth_task = 19;
 }

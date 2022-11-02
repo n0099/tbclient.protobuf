@@ -93,4 +93,5 @@ message Post {
     FullLengthNovel full_length_novel = 62;
     string dynamic_url = 63;
     ThemeBubble bubble_info = 64;
+    string rumor_source_img = 65;
 }

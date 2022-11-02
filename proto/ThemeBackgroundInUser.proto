@@ -5,4 +5,5 @@ message ThemeBackgroundInUser {
     string exclusive_no = 2;
     string jump_url = 3;
     string dynamic = 4;
+    string package_name = 5;
 }

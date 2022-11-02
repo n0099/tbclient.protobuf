@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-message ForumInfo {
-    uint64 forum_id = 1;
-    string forum_name = 2;
-    uint32 concern_num = 3;
-    uint32 post_num = 4;
-    string avatar = 5;
-}

@@ -70,8 +70,8 @@ message DataReq {
     string share_abstract = 68;
     string share_image = 69;
     string share_h5_url = 70;
-    string share_swan_app_key = 71;
-    string share_swan_path = 72;
+    string share_naws_app_key = 71;
+    string share_naws_path = 72;
     string real_lat = 73;
     string real_lng = 74;
     string name_show = 75;
@@ -85,4 +85,5 @@ message DataReq {
     int32 is_question = 83;
     string question_tag_id = 84;
     int32 is_create_tag = 85;
+    int32 is_xiuxiu_thread = 86;
 }

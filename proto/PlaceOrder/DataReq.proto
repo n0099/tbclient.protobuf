@@ -12,7 +12,5 @@ message DataReq {
     uint64 post_id = 8;
     int64 account_id = 9;
     int32 account_type = 10;
-    uint32 is_combo = 11;
-    string attach = 12;
     uint32 currency = 13;
 }

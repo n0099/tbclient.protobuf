@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "AlaLiveInfo.proto";
-import "GetUserLives/DataMonth.proto";
-
-message MonthLiveList {
-    DataMonth month_data = 1;
-    repeated AlaLiveInfo month_live_list = 2;
-}

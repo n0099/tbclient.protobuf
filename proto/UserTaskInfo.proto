@@ -11,4 +11,5 @@ message UserTaskInfo {
     int32 task_type = 8;
     int32 weight = 9;
     string act_type = 10;
+    string target_scheme = 11;
 }

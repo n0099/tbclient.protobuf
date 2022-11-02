@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message ButtonInfo {
-    string botton_text = 1;
-    string botton_link = 2;
-    string botton_color = 3;
-}

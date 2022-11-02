@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message GiftZip {
-    string zip_md5 = 1;
-    string zip_url = 2;
-    string zip_name = 3;
-    int32 is_landscape = 4;
-}

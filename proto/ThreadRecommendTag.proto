@@ -6,4 +6,5 @@ message ThreadRecommendTag {
     string text = 1;
     ThemeColorInfo text_color = 2;
     ThemeColorInfo background_color = 3;
+    ThemeColorInfo boundary_color = 4;
 }

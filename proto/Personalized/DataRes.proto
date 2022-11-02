@@ -10,6 +10,7 @@ import "Personalized/CardForum.proto";
 import "Personalized/CardGod.proto";
 import "Personalized/CardTopic.proto";
 import "Personalized/FloatInfo.proto";
+import "Personalized/HeaderCard.proto";
 import "Personalized/LiveAnswer.proto";
 import "Personalized/RecomPostTopic.proto";
 import "Personalized/Resource.proto";
@@ -45,4 +46,6 @@ message DataRes {
     ActiveCenter active_center = 22;
     DiscoverHotForum hot_recomforum = 23;
     FavoritePanel favorite_panel = 24;
+    int32 show_adsense = 25;
+    HeaderCard header_card = 26;
 }

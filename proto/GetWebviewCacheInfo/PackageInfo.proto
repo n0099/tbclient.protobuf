@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message PackageInfo {
-    string version = 1;
-    string download_url = 2;
-    string md5 = 3;
-}

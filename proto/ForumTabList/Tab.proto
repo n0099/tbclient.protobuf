@@ -4,5 +4,4 @@ message Tab {
     int64 tab_id = 1;
     string tab_name = 2;
     string seq = 3;
-    uint32 tab_type = 4;
 }

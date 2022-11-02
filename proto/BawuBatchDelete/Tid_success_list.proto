@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message Tid_success_list {
-    int64 tid = 1;
-}

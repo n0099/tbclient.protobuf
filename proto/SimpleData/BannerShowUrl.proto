@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message BannerShowUrl {
-    string url = 1;
-}

@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message LikeForum {
-    int64 forum_id = 1;
-    string forum_name = 2;
-    string avatar = 3;
-    int32 hot_num = 4;
-}

@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-message ActivityInfos {
-    string url = 1;
-    string pic = 2;
-    string word = 3;
-    string title = 4;
-    int32 position = 5;
-}

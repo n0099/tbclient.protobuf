@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message FollowRelation {
-    uint64 user_id = 1;
-    string user_name = 2;
-    string portrait = 3;
-    bool has_follow = 4;
-}
