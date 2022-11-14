@@ -14,14 +14,17 @@ import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class Toast extends Message {
-    public static /* synthetic */ Interceptable $ic;
+    public static /* synthetic */ Interceptable $ic = null;
     public static final List<ToastContent> DEFAULT_CONTENT;
     public static final Integer DEFAULT_ICON_TYPE;
+    public static final String DEFAULT_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ToastContent> content;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer icon_type;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String url;
 
     /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
@@ -35,6 +38,7 @@ public final class Toast extends Message {
         public transient /* synthetic */ FieldHolder $fh;
         public List<ToastContent> content;
         public Integer icon_type;
+        public String url;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -73,6 +77,7 @@ public final class Toast extends Message {
             }
             this.icon_type = toast.icon_type;
             this.content = Message.copyOf(toast.content);
+            this.url = toast.url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -132,14 +137,21 @@ public final class Toast extends Message {
             List<ToastContent> list = builder.content;
             if (list == null) {
                 this.content = DEFAULT_CONTENT;
-                return;
             } else {
                 this.content = Message.immutableCopyOf(list);
+            }
+            String str = builder.url;
+            if (str == null) {
+                this.url = "";
+                return;
+            } else {
+                this.url = str;
                 return;
             }
         }
         this.icon_type = builder.icon_type;
         this.content = Message.immutableCopyOf(builder.content);
+        this.url = builder.url;
     }
 
     public /* synthetic */ Toast(Builder builder, boolean z, a aVar) {
