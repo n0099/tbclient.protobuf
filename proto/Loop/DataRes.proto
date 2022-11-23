@@ -1,6 +1,8 @@
 syntax = "proto3";
 
 import "AlaLiveInfo.proto";
+import "Loop/ChatroomFrsRes.proto";
+import "Loop/ChatroomMessageTabData.proto";
 import "Loop/IconRes.proto";
 import "Loop/LevelRes.proto";
 import "Loop/LiveRes.proto";
@@ -12,4 +14,7 @@ message DataRes {
     repeated AlaLiveInfo live_follow_second_floor = 4;
     repeated AlaLiveInfo live_index_second_floor = 5;
     repeated AlaLiveInfo live_pic_second_floor = 6;
+    ChatroomFrsRes chatroom_frs = 7;
+    string uniq_id = 8;
+    ChatroomMessageTabData chatroom_message_tab = 9;
 }

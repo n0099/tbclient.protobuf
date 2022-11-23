@@ -4,4 +4,8 @@ import "CommonReq.proto";
 
 message DataReq {
     string data_type = 2;
+    string chatroom_new_msg = 3;
+    int64 fid = 4;
+    int64 chatroom_id = 5;
+    string uniq_id = 6;
 }

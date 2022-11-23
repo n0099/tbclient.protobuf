@@ -6,6 +6,7 @@ import "AlaLiveInfo.proto";
 import "AnchorInfo.proto";
 import "BaijiahaoInfo.proto";
 import "DealInfo.proto";
+import "EditInfo.proto";
 import "HeadItem.proto";
 import "Item.proto";
 import "LbsInfo.proto";
@@ -91,4 +92,6 @@ message PostInfoList {
     int32 top_types = 62;
     UserPostPerm user_post_perm = 63;
     VoiceRoom voice_room = 64;
+    EditInfo edit_info = 65;
+    string target_scheme = 66;
 }

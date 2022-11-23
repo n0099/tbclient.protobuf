@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message ZanUser {
+    string user_name = 1;
+    string portrait = 2;
+}

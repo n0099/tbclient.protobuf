@@ -6,5 +6,6 @@ message DataRes {
     TopicListModule user_his_topic = 1;
     TopicListModule bang_topic = 2;
     TopicListModule sug_topic = 3;
+    int32 topic_invalid = 4;
     TopicListModule video_topic = 5;
 }

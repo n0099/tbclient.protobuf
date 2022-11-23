@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "SimpleData/AdCommon.proto";
+import "SimpleData/BannerShowUrl.proto";
+import "SimpleData/Operate.proto";
+import "SimpleData/Video.proto";
+
+message BannerContent {
+    AdCommon ad_common = 1;
+    repeated BannerShowUrl show_urls = 2;
+    repeated BannerShowUrl click_urls = 3;
+    repeated Operate operate = 4;
+    Video video = 5;
+    string extra_json = 6;
+    int32 empty_goods = 7;
+    string extra_param = 8;
+}

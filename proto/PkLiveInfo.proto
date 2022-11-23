@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "LiveInfo.proto";
+import "LiveUserInfo.proto";
+
+message PkLiveInfo {
+    LiveUserInfo user_info = 1;
+    LiveInfo live_info = 3;
+    uint32 continue_status = 4;
+    uint32 continue_number = 5;
+    uint32 side = 6;
+}

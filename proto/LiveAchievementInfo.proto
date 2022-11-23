@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message LiveAchievementInfo {
+    uint64 achievement_id = 1;
+    string icon = 2;
+    string icon_text = 3;
+}

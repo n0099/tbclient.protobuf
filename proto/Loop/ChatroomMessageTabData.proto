@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message ChatroomMessageTabData {
+    bool have_new_msg = 1;
+}

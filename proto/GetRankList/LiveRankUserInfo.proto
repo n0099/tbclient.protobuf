@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message LiveRankUserInfo {
+    uint64 id = 1;
+    uint64 user_id = 2;
+    uint32 type = 3;
+    string date = 4;
+    uint32 time_type = 5;
+    uint64 point = 6;
+    uint64 rank = 7;
+    string user_name = 8;
+    string user_nickname = 9;
+    string avatar = 10;
+    uint64 live_id = 11;
+    uint32 is_live = 12;
+    uint32 is_follow = 13;
+}

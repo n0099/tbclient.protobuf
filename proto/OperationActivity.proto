@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message OperationActivity {
+    string title = 1;
+    string image = 2;
+    string url = 3;
+}

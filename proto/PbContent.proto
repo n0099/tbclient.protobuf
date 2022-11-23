@@ -50,4 +50,5 @@ message PbContent {
     TiebaPlusInfo tiebaplus_info = 40;
     Item item = 41;
     int64 pic_id = 42;
+    int32 link_type = 43;
 }

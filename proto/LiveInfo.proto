@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+import "LiveMedia.proto";
+import "LiveSessionInfo.proto";
+
+message LiveInfo {
+    uint64 live_id = 1;
+    uint64 user_id = 2;
+    string user_name = 3;
+    uint64 group_id = 4;
+    string session_id = 5;
+    string description = 6;
+    string cover = 7;
+    uint32 join_count = 8;
+    uint32 zan_count = 9;
+    uint32 live_duration = 10;
+    uint32 charm_count = 11;
+    uint32 start_time = 12;
+    uint32 end_time = 13;
+    uint64 channel_id = 14;
+    string channel_name = 15;
+    uint32 live_status = 16;
+    uint32 close_type = 17;
+    string close_reason = 18;
+    LiveSessionInfo session_info = 19;
+    uint64 session_exception = 20;
+    uint32 session_update_time = 21;
+    uint32 backstage_update_time = 22;
+    uint32 audience_count = 23;
+    uint32 backstage_type = 24;
+    uint32 session_status = 25;
+    string share_url = 26;
+    uint64 last_msg_id = 27;
+    LiveMedia media = 28;
+    string location = 29;
+    uint64 forum_id = 30;
+    string forum_name = 31;
+    string third_app_id = 32;
+    string third_app_name = 33;
+    uint32 live_type = 34;
+    uint32 screen_direction = 35;
+    uint32 on_private = 36;
+    string user_nickname = 37;
+    LiveSessionInfo session_info_backup = 38;
+    uint32 session_default = 39;
+    uint32 session_force = 40;
+    uint32 flower_count = 41;
+    string on_audio_private = 42;
+    uint64 pk_id = 43;
+    int32 im_pull_mode = 44;
+}
