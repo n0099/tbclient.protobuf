@@ -24,6 +24,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_REDDOT_DELETED_THREAD;
     public static final Long DEFAULT_TIME;
     public static final Integer DEFAULT_VIEW_CARD_NUM;
+    public static final List<String> DEFAULT_WEEK_FORUM_LIST;
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long ctime;
@@ -41,6 +42,8 @@ public final class DataRes extends Message {
     public final Long time;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer view_card_num;
+    @ProtoField(label = Message.Label.REPEATED, tag = 9, type = Message.Datatype.STRING)
+    public final List<String> week_forum_list;
 
     /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
@@ -60,6 +63,7 @@ public final class DataRes extends Message {
         public Integer reddot_deleted_thread;
         public Long time;
         public Integer view_card_num;
+        public List<String> week_forum_list;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -104,6 +108,7 @@ public final class DataRes extends Message {
             this.mask_type = dataRes.mask_type;
             this.view_card_num = dataRes.view_card_num;
             this.reddot_deleted_thread = dataRes.reddot_deleted_thread;
+            this.week_forum_list = Message.copyOf(dataRes.week_forum_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -139,6 +144,7 @@ public final class DataRes extends Message {
         DEFAULT_MASK_TYPE = 0;
         DEFAULT_VIEW_CARD_NUM = 0;
         DEFAULT_REDDOT_DELETED_THREAD = 0;
+        DEFAULT_WEEK_FORUM_LIST = Collections.emptyList();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -205,9 +211,15 @@ public final class DataRes extends Message {
             Integer num4 = builder.reddot_deleted_thread;
             if (num4 == null) {
                 this.reddot_deleted_thread = DEFAULT_REDDOT_DELETED_THREAD;
-                return;
             } else {
                 this.reddot_deleted_thread = num4;
+            }
+            List<String> list2 = builder.week_forum_list;
+            if (list2 == null) {
+                this.week_forum_list = DEFAULT_WEEK_FORUM_LIST;
+                return;
+            } else {
+                this.week_forum_list = Message.immutableCopyOf(list2);
                 return;
             }
         }
@@ -219,6 +231,7 @@ public final class DataRes extends Message {
         this.mask_type = builder.mask_type;
         this.view_card_num = builder.view_card_num;
         this.reddot_deleted_thread = builder.reddot_deleted_thread;
+        this.week_forum_list = Message.immutableCopyOf(builder.week_forum_list);
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {

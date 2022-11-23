@@ -46,6 +46,7 @@ public final class DataRes extends Message {
     public static final List<ThreadInfo> DEFAULT_NEWEST_DYNAMIC_LIST;
     public static final List<PostInfoList> DEFAULT_POST_LIST;
     public static final List<SmartApp> DEFAULT_RECOM_NAWS_LIST;
+    public static final Integer DEFAULT_SHOW_ANSWER;
     public static final String DEFAULT_UK = "";
     public static final List<UserMap> DEFAULT_URL_MAP;
     public static final Integer DEFAULT_WORK_TAB_ID;
@@ -94,6 +95,8 @@ public final class DataRes extends Message {
     public final List<PostInfoList> post_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<SmartApp> recom_naws_list;
+    @ProtoField(tag = 21, type = Message.Datatype.INT32)
+    public final Integer show_answer;
     @ProtoField(tag = 3)
     public final TAInfo tainfo;
     @ProtoField(tag = 9)
@@ -151,6 +154,7 @@ public final class DataRes extends Message {
         public NicknameInfo nickname_info;
         public List<PostInfoList> post_list;
         public List<SmartApp> recom_naws_list;
+        public Integer show_answer;
         public TAInfo tainfo;
         public TbBookrack tbbookrack;
         public UcCard uc_card;
@@ -218,6 +222,7 @@ public final class DataRes extends Message {
             this.nickname_info = dataRes.nickname_info;
             this.ala_live_record = Message.copyOf(dataRes.ala_live_record);
             this.url_map = Message.copyOf(dataRes.url_map);
+            this.show_answer = dataRes.show_answer;
             this.banner = Message.copyOf(dataRes.banner);
             this.recom_naws_list = Message.copyOf(dataRes.recom_naws_list);
             this.namoaixud = dataRes.namoaixud;
@@ -265,6 +270,7 @@ public final class DataRes extends Message {
         DEFAULT_CONCERNED_FORUM_LIST = Collections.emptyList();
         DEFAULT_ALA_LIVE_RECORD = Collections.emptyList();
         DEFAULT_URL_MAP = Collections.emptyList();
+        DEFAULT_SHOW_ANSWER = 0;
         DEFAULT_BANNER = Collections.emptyList();
         DEFAULT_RECOM_NAWS_LIST = Collections.emptyList();
         DEFAULT_NEWEST_DYNAMIC_LIST = Collections.emptyList();
@@ -336,6 +342,12 @@ public final class DataRes extends Message {
             } else {
                 this.url_map = Message.immutableCopyOf(list5);
             }
+            Integer num = builder.show_answer;
+            if (num == null) {
+                this.show_answer = DEFAULT_SHOW_ANSWER;
+            } else {
+                this.show_answer = num;
+            }
             List<BannerImage> list6 = builder.banner;
             if (list6 == null) {
                 this.banner = DEFAULT_BANNER;
@@ -363,17 +375,17 @@ public final class DataRes extends Message {
             } else {
                 this.uk = str;
             }
-            Integer num = builder.is_black_white;
-            if (num == null) {
+            Integer num2 = builder.is_black_white;
+            if (num2 == null) {
                 this.is_black_white = DEFAULT_IS_BLACK_WHITE;
             } else {
-                this.is_black_white = num;
+                this.is_black_white = num2;
             }
-            Integer num2 = builder.work_tab_id;
-            if (num2 == null) {
+            Integer num3 = builder.work_tab_id;
+            if (num3 == null) {
                 this.work_tab_id = DEFAULT_WORK_TAB_ID;
             } else {
-                this.work_tab_id = num2;
+                this.work_tab_id = num3;
             }
             this.finance_tab = builder.finance_tab;
             this.block_info = builder.block_info;
@@ -408,6 +420,7 @@ public final class DataRes extends Message {
         this.nickname_info = builder.nickname_info;
         this.ala_live_record = Message.immutableCopyOf(builder.ala_live_record);
         this.url_map = Message.immutableCopyOf(builder.url_map);
+        this.show_answer = builder.show_answer;
         this.banner = Message.immutableCopyOf(builder.banner);
         this.recom_naws_list = Message.immutableCopyOf(builder.recom_naws_list);
         this.namoaixud = builder.namoaixud;

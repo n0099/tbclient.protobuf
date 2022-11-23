@@ -1,6 +1,8 @@
 package tbclient.Loop;
 
 import com.baidu.android.imsdk.internal.Constants;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
+import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
 import com.baidu.titan.sdk.runtime.FieldHolder;
 import com.baidu.titan.sdk.runtime.InitContext;
 import com.baidu.titan.sdk.runtime.InterceptResult;
@@ -12,14 +14,26 @@ import tbclient.CommonReq;
 /* loaded from: classes9.dex */
 public final class DataReq extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final Long DEFAULT_CHATROOM_ID;
+    public static final String DEFAULT_CHATROOM_NEW_MSG = "";
     public static final String DEFAULT_DATA_TYPE = "";
+    public static final Long DEFAULT_FID;
+    public static final String DEFAULT_UNIQ_ID = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 5, type = Message.Datatype.INT64)
+    public final Long chatroom_id;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String chatroom_new_msg;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
     public final CommonReq f1296common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String data_type;
+    @ProtoField(tag = 4, type = Message.Datatype.INT64)
+    public final Long fid;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String uniq_id;
 
     /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
@@ -31,10 +45,14 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public Long chatroom_id;
+        public String chatroom_new_msg;
 
         /* renamed from: common  reason: collision with root package name */
         public CommonReq f1297common;
         public String data_type;
+        public Long fid;
+        public String uniq_id;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -73,6 +91,10 @@ public final class DataReq extends Message {
             }
             this.f1297common = dataReq.f1296common;
             this.data_type = dataReq.data_type;
+            this.chatroom_new_msg = dataReq.chatroom_new_msg;
+            this.fid = dataReq.fid;
+            this.chatroom_id = dataReq.chatroom_id;
+            this.uniq_id = dataReq.uniq_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -87,6 +109,23 @@ public final class DataReq extends Message {
         }
     }
 
+    static {
+        InterceptResult invokeClinit;
+        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
+        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-280542040, "Ltbclient/Loop/DataReq;")) != null) {
+            Interceptable interceptable = invokeClinit.interceptor;
+            if (interceptable != null) {
+                $ic = interceptable;
+            }
+            if ((invokeClinit.flags & 1) != 0) {
+                classClinitInterceptable.invokePostClinit(-280542040, "Ltbclient/Loop/DataReq;");
+                return;
+            }
+        }
+        DEFAULT_FID = 0L;
+        DEFAULT_CHATROOM_ID = 0L;
+    }
+
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataReq(Builder builder, boolean z) {
         super(builder);
@@ -95,13 +134,13 @@ public final class DataReq extends Message {
             InitContext newInitContext = TitanRuntime.newInitContext();
             newInitContext.initArgs = r2;
             Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65536, newInitContext);
+            interceptable.invokeUnInit(65537, newInitContext);
             int i = newInitContext.flag;
             if ((i & 1) != 0) {
                 int i2 = i & 2;
                 super((Message.Builder) newInitContext.callArgs[0]);
                 newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65536, newInitContext);
+                interceptable.invokeInitBody(65537, newInitContext);
                 return;
             }
         }
@@ -110,14 +149,42 @@ public final class DataReq extends Message {
             String str = builder.data_type;
             if (str == null) {
                 this.data_type = "";
-                return;
             } else {
                 this.data_type = str;
+            }
+            String str2 = builder.chatroom_new_msg;
+            if (str2 == null) {
+                this.chatroom_new_msg = "";
+            } else {
+                this.chatroom_new_msg = str2;
+            }
+            Long l = builder.fid;
+            if (l == null) {
+                this.fid = DEFAULT_FID;
+            } else {
+                this.fid = l;
+            }
+            Long l2 = builder.chatroom_id;
+            if (l2 == null) {
+                this.chatroom_id = DEFAULT_CHATROOM_ID;
+            } else {
+                this.chatroom_id = l2;
+            }
+            String str3 = builder.uniq_id;
+            if (str3 == null) {
+                this.uniq_id = "";
+                return;
+            } else {
+                this.uniq_id = str3;
                 return;
             }
         }
         this.f1296common = builder.f1297common;
         this.data_type = builder.data_type;
+        this.chatroom_new_msg = builder.chatroom_new_msg;
+        this.fid = builder.fid;
+        this.chatroom_id = builder.chatroom_id;
+        this.uniq_id = builder.uniq_id;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {

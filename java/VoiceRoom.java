@@ -15,7 +15,11 @@ import java.util.List;
 /* loaded from: classes9.dex */
 public final class VoiceRoom extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final Integer DEFAULT_IS_SUBCRIBED;
     public static final Long DEFAULT_JOINED_NUM;
+    public static final Long DEFAULT_LEFT_RESERVED_TIME;
+    public static final Long DEFAULT_RESERVED_NUM;
+    public static final Long DEFAULT_RESERVED_TIME;
     public static final Long DEFAULT_ROOM_ID;
     public static final String DEFAULT_ROOM_NAME = "";
     public static final Integer DEFAULT_STATUS;
@@ -24,8 +28,16 @@ public final class VoiceRoom extends Message {
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 4)
     public final User author;
+    @ProtoField(tag = 13, type = Message.Datatype.UINT32)
+    public final Integer is_subcribed;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long joined_num;
+    @ProtoField(tag = 12, type = Message.Datatype.INT64)
+    public final Long left_reserved_time;
+    @ProtoField(tag = 10, type = Message.Datatype.INT64)
+    public final Long reserved_num;
+    @ProtoField(tag = 11, type = Message.Datatype.INT64)
+    public final Long reserved_time;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long room_id;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
@@ -48,7 +60,11 @@ public final class VoiceRoom extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public User author;
+        public Integer is_subcribed;
         public Long joined_num;
+        public Long left_reserved_time;
+        public Long reserved_num;
+        public Long reserved_time;
         public Long room_id;
         public String room_name;
         public Integer status;
@@ -97,6 +113,10 @@ public final class VoiceRoom extends Message {
             this.talker_num = voiceRoom.talker_num;
             this.status = voiceRoom.status;
             this.room_name = voiceRoom.room_name;
+            this.reserved_num = voiceRoom.reserved_num;
+            this.reserved_time = voiceRoom.reserved_time;
+            this.left_reserved_time = voiceRoom.left_reserved_time;
+            this.is_subcribed = voiceRoom.is_subcribed;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -129,6 +149,10 @@ public final class VoiceRoom extends Message {
         DEFAULT_JOINED_NUM = 0L;
         DEFAULT_TALKER_NUM = 0L;
         DEFAULT_STATUS = 0;
+        DEFAULT_RESERVED_NUM = 0L;
+        DEFAULT_RESERVED_TIME = 0L;
+        DEFAULT_LEFT_RESERVED_TIME = 0L;
+        DEFAULT_IS_SUBCRIBED = 0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -184,9 +208,33 @@ public final class VoiceRoom extends Message {
             String str = builder.room_name;
             if (str == null) {
                 this.room_name = "";
-                return;
             } else {
                 this.room_name = str;
+            }
+            Long l4 = builder.reserved_num;
+            if (l4 == null) {
+                this.reserved_num = DEFAULT_RESERVED_NUM;
+            } else {
+                this.reserved_num = l4;
+            }
+            Long l5 = builder.reserved_time;
+            if (l5 == null) {
+                this.reserved_time = DEFAULT_RESERVED_TIME;
+            } else {
+                this.reserved_time = l5;
+            }
+            Long l6 = builder.left_reserved_time;
+            if (l6 == null) {
+                this.left_reserved_time = DEFAULT_LEFT_RESERVED_TIME;
+            } else {
+                this.left_reserved_time = l6;
+            }
+            Integer num2 = builder.is_subcribed;
+            if (num2 == null) {
+                this.is_subcribed = DEFAULT_IS_SUBCRIBED;
+                return;
+            } else {
+                this.is_subcribed = num2;
                 return;
             }
         }
@@ -197,6 +245,10 @@ public final class VoiceRoom extends Message {
         this.talker_num = builder.talker_num;
         this.status = builder.status;
         this.room_name = builder.room_name;
+        this.reserved_num = builder.reserved_num;
+        this.reserved_time = builder.reserved_time;
+        this.left_reserved_time = builder.left_reserved_time;
+        this.is_subcribed = builder.is_subcribed;
     }
 
     public /* synthetic */ VoiceRoom(Builder builder, boolean z, a aVar) {

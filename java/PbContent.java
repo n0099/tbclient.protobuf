@@ -33,6 +33,7 @@ public final class PbContent extends Message {
     public static final String DEFAULT_ITEM_FORUM_NAME = "";
     public static final Long DEFAULT_ITEM_ID;
     public static final String DEFAULT_LINK = "";
+    public static final Integer DEFAULT_LINK_TYPE;
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
     public static final Integer DEFAULT_ORIGIN_SIZE;
     public static final String DEFAULT_ORIGIN_SRC = "";
@@ -98,6 +99,8 @@ public final class PbContent extends Message {
     public final Long item_id;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String link;
+    @ProtoField(tag = 43, type = Message.Datatype.INT32)
+    public final Integer link_type;
     @ProtoField(tag = 31, type = Message.Datatype.STRING)
     public final String media_subtitle;
     @ProtoField(tag = 33)
@@ -169,6 +172,7 @@ public final class PbContent extends Message {
         public String item_forum_name;
         public Long item_id;
         public String link;
+        public Integer link_type;
         public String media_subtitle;
         public MemeInfo meme_info;
         public NativeApp native_app;
@@ -265,6 +269,7 @@ public final class PbContent extends Message {
             this.tiebaplus_info = pbContent.tiebaplus_info;
             this.item = pbContent.item;
             this.pic_id = pbContent.pic_id;
+            this.link_type = pbContent.link_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -308,6 +313,7 @@ public final class PbContent extends Message {
         DEFAULT_SHOW_ORIGINAL_BTN = 0;
         DEFAULT_ITEM_ID = 0L;
         DEFAULT_PIC_ID = 0L;
+        DEFAULT_LINK_TYPE = 0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -548,9 +554,15 @@ public final class PbContent extends Message {
             Long l3 = builder.pic_id;
             if (l3 == null) {
                 this.pic_id = DEFAULT_PIC_ID;
-                return;
             } else {
                 this.pic_id = l3;
+            }
+            Integer num14 = builder.link_type;
+            if (num14 == null) {
+                this.link_type = DEFAULT_LINK_TYPE;
+                return;
+            } else {
+                this.link_type = num14;
                 return;
             }
         }
@@ -596,6 +608,7 @@ public final class PbContent extends Message {
         this.tiebaplus_info = builder.tiebaplus_info;
         this.item = builder.item;
         this.pic_id = builder.pic_id;
+        this.link_type = builder.link_type;
     }
 
     public /* synthetic */ PbContent(Builder builder, boolean z, a aVar) {

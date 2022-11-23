@@ -13,6 +13,8 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class PbLinkInfo extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_CONTENT1 = "";
+    public static final String DEFAULT_CONTENT2 = "";
     public static final String DEFAULT_EXT_TXT = "";
     public static final String DEFAULT_LINK_FROM = "";
     public static final String DEFAULT_PIC_URL = "";
@@ -21,6 +23,10 @@ public final class PbLinkInfo extends Message {
     public static final String DEFAULT_TO_URL = "";
     public static final Integer DEFAULT_URL_TYPE;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String content1;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String content2;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String ext_txt;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -46,6 +52,8 @@ public final class PbLinkInfo extends Message {
     public static final class Builder extends Message.Builder<PbLinkInfo> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public String content1;
+        public String content2;
         public String ext_txt;
         public String link_from;
         public String pic_url;
@@ -96,6 +104,8 @@ public final class PbLinkInfo extends Message {
             this.ext_txt = pbLinkInfo.ext_txt;
             this.sort = pbLinkInfo.sort;
             this.url_type = pbLinkInfo.url_type;
+            this.content1 = pbLinkInfo.content1;
+            this.content2 = pbLinkInfo.content2;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -185,9 +195,21 @@ public final class PbLinkInfo extends Message {
             Integer num2 = builder.url_type;
             if (num2 == null) {
                 this.url_type = DEFAULT_URL_TYPE;
-                return;
             } else {
                 this.url_type = num2;
+            }
+            String str6 = builder.content1;
+            if (str6 == null) {
+                this.content1 = "";
+            } else {
+                this.content1 = str6;
+            }
+            String str7 = builder.content2;
+            if (str7 == null) {
+                this.content2 = "";
+                return;
+            } else {
+                this.content2 = str7;
                 return;
             }
         }
@@ -198,6 +220,8 @@ public final class PbLinkInfo extends Message {
         this.ext_txt = builder.ext_txt;
         this.sort = builder.sort;
         this.url_type = builder.url_type;
+        this.content1 = builder.content1;
+        this.content2 = builder.content2;
     }
 
     public /* synthetic */ PbLinkInfo(Builder builder, boolean z, a aVar) {

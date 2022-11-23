@@ -18,6 +18,7 @@ import tbclient.DiscoverHotForum;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
     public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_ABTEST_TAG = "";
     public static final List<App> DEFAULT_APP_LIST;
     public static final Integer DEFAULT_HAS_MORE;
     public static final String DEFAULT_LAST_TIPS = "";
@@ -29,6 +30,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_USER_TIPS = "";
     public static final Integer DEFAULT_USER_TIPS_TYPE;
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String abtest_tag;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<App> app_list;
     @ProtoField(tag = 13)
@@ -70,6 +73,7 @@ public final class DataRes extends Message {
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public String abtest_tag;
         public List<App> app_list;
         public BannerFollowLive banner_follow_live;
         public BannerUserStory banner_user_story;
@@ -134,6 +138,7 @@ public final class DataRes extends Message {
             this.top_tips = dataRes.top_tips;
             this.banner_follow_live = dataRes.banner_follow_live;
             this.hot_recomforum = dataRes.hot_recomforum;
+            this.abtest_tag = dataRes.abtest_tag;
             this.app_list = Message.copyOf(dataRes.app_list);
             this.user_follow_live = dataRes.user_follow_live;
         }
@@ -248,6 +253,12 @@ public final class DataRes extends Message {
             }
             this.banner_follow_live = builder.banner_follow_live;
             this.hot_recomforum = builder.hot_recomforum;
+            String str5 = builder.abtest_tag;
+            if (str5 == null) {
+                this.abtest_tag = "";
+            } else {
+                this.abtest_tag = str5;
+            }
             List<App> list3 = builder.app_list;
             if (list3 == null) {
                 this.app_list = DEFAULT_APP_LIST;
@@ -270,6 +281,7 @@ public final class DataRes extends Message {
         this.top_tips = builder.top_tips;
         this.banner_follow_live = builder.banner_follow_live;
         this.hot_recomforum = builder.hot_recomforum;
+        this.abtest_tag = builder.abtest_tag;
         this.app_list = Message.immutableCopyOf(builder.app_list);
         this.user_follow_live = builder.user_follow_live;
     }

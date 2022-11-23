@@ -53,6 +53,7 @@ public final class PostInfoList extends Message {
     public static final List<PbContent> DEFAULT_RICH_ABSTRACT;
     public static final List<PbContent> DEFAULT_RICH_TITLE;
     public static final Integer DEFAULT_SHARE_NUM;
+    public static final String DEFAULT_TARGET_SCHEME = "";
     public static final Long DEFAULT_THREAD_ID;
     public static final Long DEFAULT_THREAD_TYPE;
     public static final String DEFAULT_TITLE = "";
@@ -89,6 +90,8 @@ public final class PostInfoList extends Message {
     public final Integer create_time;
     @ProtoField(tag = 31)
     public final DealInfo deal_info;
+    @ProtoField(tag = 65)
+    public final EditInfo edit_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 49)
     public final List<PbContent> first_post_content;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -161,6 +164,8 @@ public final class PostInfoList extends Message {
     public final List<PbContent> rich_title;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer share_num;
+    @ProtoField(tag = 66, type = Message.Datatype.STRING)
+    public final String target_scheme;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long thread_id;
     @ProtoField(tag = 26, type = Message.Datatype.UINT64)
@@ -216,6 +221,7 @@ public final class PostInfoList extends Message {
         public String content_thread;
         public Integer create_time;
         public DealInfo deal_info;
+        public EditInfo edit_info;
         public List<PbContent> first_post_content;
         public Long forum_id;
         public String forum_name;
@@ -252,6 +258,7 @@ public final class PostInfoList extends Message {
         public List<PbContent> rich_abstract;
         public List<PbContent> rich_title;
         public Integer share_num;
+        public String target_scheme;
         public Long thread_id;
         public Long thread_type;
         public String title;
@@ -368,6 +375,8 @@ public final class PostInfoList extends Message {
             this.top_types = postInfoList.top_types;
             this.user_post_perm = postInfoList.user_post_perm;
             this.voice_room = postInfoList.voice_room;
+            this.edit_info = postInfoList.edit_info;
+            this.target_scheme = postInfoList.target_scheme;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -762,7 +771,15 @@ public final class PostInfoList extends Message {
             }
             this.user_post_perm = builder.user_post_perm;
             this.voice_room = builder.voice_room;
-            return;
+            this.edit_info = builder.edit_info;
+            String str13 = builder.target_scheme;
+            if (str13 == null) {
+                this.target_scheme = "";
+                return;
+            } else {
+                this.target_scheme = str13;
+                return;
+            }
         }
         this.forum_id = builder.forum_id;
         this.thread_id = builder.thread_id;
@@ -828,6 +845,8 @@ public final class PostInfoList extends Message {
         this.top_types = builder.top_types;
         this.user_post_perm = builder.user_post_perm;
         this.voice_room = builder.voice_room;
+        this.edit_info = builder.edit_info;
+        this.target_scheme = builder.target_scheme;
     }
 
     public /* synthetic */ PostInfoList(Builder builder, boolean z, a aVar) {

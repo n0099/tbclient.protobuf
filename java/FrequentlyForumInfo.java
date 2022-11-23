@@ -20,6 +20,7 @@ public final class FrequentlyForumInfo extends Message {
     public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
     public static final Integer DEFAULT_FORUM_STATE;
+    public static final Integer DEFAULT_IS_BRAND_FORUM;
     public static final Integer DEFAULT_IS_SIGN;
     public static final Long DEFAULT_LAST_ACCESS_TIME;
     public static final Integer DEFAULT_LEVEL_ID;
@@ -36,6 +37,8 @@ public final class FrequentlyForumInfo extends Message {
     public final String forum_name;
     @ProtoField(tag = 14, type = Message.Datatype.UINT32)
     public final Integer forum_state;
+    @ProtoField(tag = 17, type = Message.Datatype.UINT32)
+    public final Integer is_brand_forum;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer is_sign;
     @ProtoField(tag = 9, type = Message.Datatype.UINT64)
@@ -62,6 +65,7 @@ public final class FrequentlyForumInfo extends Message {
         public Long forum_id;
         public String forum_name;
         public Integer forum_state;
+        public Integer is_brand_forum;
         public Integer is_sign;
         public Long last_access_time;
         public Integer level_id;
@@ -113,6 +117,7 @@ public final class FrequentlyForumInfo extends Message {
             this.forum_state = frequentlyForumInfo.forum_state;
             this.access_flag = frequentlyForumInfo.access_flag;
             this.is_sign = frequentlyForumInfo.is_sign;
+            this.is_brand_forum = frequentlyForumInfo.is_brand_forum;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -147,6 +152,7 @@ public final class FrequentlyForumInfo extends Message {
         DEFAULT_FORUM_STATE = 0;
         DEFAULT_ACCESS_FLAG = 0;
         DEFAULT_IS_SIGN = 0;
+        DEFAULT_IS_BRAND_FORUM = 0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -225,9 +231,15 @@ public final class FrequentlyForumInfo extends Message {
             Integer num4 = builder.is_sign;
             if (num4 == null) {
                 this.is_sign = DEFAULT_IS_SIGN;
-                return;
             } else {
                 this.is_sign = num4;
+            }
+            Integer num5 = builder.is_brand_forum;
+            if (num5 == null) {
+                this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
+                return;
+            } else {
+                this.is_brand_forum = num5;
                 return;
             }
         }
@@ -241,6 +253,7 @@ public final class FrequentlyForumInfo extends Message {
         this.forum_state = builder.forum_state;
         this.access_flag = builder.access_flag;
         this.is_sign = builder.is_sign;
+        this.is_brand_forum = builder.is_brand_forum;
     }
 
     public /* synthetic */ FrequentlyForumInfo(Builder builder, boolean z, a aVar) {

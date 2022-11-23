@@ -15,11 +15,16 @@ import java.util.List;
 import tbclient.AlaLiveInfo;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
-    public static /* synthetic */ Interceptable $ic;
+    public static /* synthetic */ Interceptable $ic = null;
     public static final List<AlaLiveInfo> DEFAULT_LIVE_FOLLOW_SECOND_FLOOR;
     public static final List<AlaLiveInfo> DEFAULT_LIVE_INDEX_SECOND_FLOOR;
     public static final List<AlaLiveInfo> DEFAULT_LIVE_PIC_SECOND_FLOOR;
+    public static final String DEFAULT_UNIQ_ID = "";
     public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 7)
+    public final ChatroomFrsRes chatroom_frs;
+    @ProtoField(tag = 9)
+    public final ChatroomMessageTabData chatroom_message_tab;
     @ProtoField(tag = 3)
     public final IconRes icon;
     @ProtoField(tag = 2)
@@ -32,6 +37,8 @@ public final class DataRes extends Message {
     public final List<AlaLiveInfo> live_index_second_floor;
     @ProtoField(label = Message.Label.REPEATED, tag = 6)
     public final List<AlaLiveInfo> live_pic_second_floor;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String uniq_id;
 
     /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
@@ -43,12 +50,15 @@ public final class DataRes extends Message {
     public static final class Builder extends Message.Builder<DataRes> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
+        public ChatroomFrsRes chatroom_frs;
+        public ChatroomMessageTabData chatroom_message_tab;
         public IconRes icon;
         public LevelRes level;
         public LiveRes live;
         public List<AlaLiveInfo> live_follow_second_floor;
         public List<AlaLiveInfo> live_index_second_floor;
         public List<AlaLiveInfo> live_pic_second_floor;
+        public String uniq_id;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -91,6 +101,9 @@ public final class DataRes extends Message {
             this.live_follow_second_floor = Message.copyOf(dataRes.live_follow_second_floor);
             this.live_index_second_floor = Message.copyOf(dataRes.live_index_second_floor);
             this.live_pic_second_floor = Message.copyOf(dataRes.live_pic_second_floor);
+            this.chatroom_frs = dataRes.chatroom_frs;
+            this.uniq_id = dataRes.uniq_id;
+            this.chatroom_message_tab = dataRes.chatroom_message_tab;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -160,11 +173,18 @@ public final class DataRes extends Message {
             List<AlaLiveInfo> list3 = builder.live_pic_second_floor;
             if (list3 == null) {
                 this.live_pic_second_floor = DEFAULT_LIVE_PIC_SECOND_FLOOR;
-                return;
             } else {
                 this.live_pic_second_floor = Message.immutableCopyOf(list3);
-                return;
             }
+            this.chatroom_frs = builder.chatroom_frs;
+            String str = builder.uniq_id;
+            if (str == null) {
+                this.uniq_id = "";
+            } else {
+                this.uniq_id = str;
+            }
+            this.chatroom_message_tab = builder.chatroom_message_tab;
+            return;
         }
         this.live = builder.live;
         this.level = builder.level;
@@ -172,6 +192,9 @@ public final class DataRes extends Message {
         this.live_follow_second_floor = Message.immutableCopyOf(builder.live_follow_second_floor);
         this.live_index_second_floor = Message.immutableCopyOf(builder.live_index_second_floor);
         this.live_pic_second_floor = Message.immutableCopyOf(builder.live_pic_second_floor);
+        this.chatroom_frs = builder.chatroom_frs;
+        this.uniq_id = builder.uniq_id;
+        this.chatroom_message_tab = builder.chatroom_message_tab;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {

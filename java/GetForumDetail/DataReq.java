@@ -13,8 +13,9 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes9.dex */
 public final class DataReq extends Message {
-    public static /* synthetic */ Interceptable $ic;
+    public static /* synthetic */ Interceptable $ic = null;
     public static final Long DEFAULT_FORUM_ID;
+    public static final String DEFAULT_URL = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2)
 
@@ -22,6 +23,8 @@ public final class DataReq extends Message {
     public final CommonReq f1186common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long forum_id;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String url;
 
     /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
@@ -37,6 +40,7 @@ public final class DataReq extends Message {
         /* renamed from: common  reason: collision with root package name */
         public CommonReq f1187common;
         public Long forum_id;
+        public String url;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -75,6 +79,7 @@ public final class DataReq extends Message {
             }
             this.forum_id = dataReq.forum_id;
             this.f1187common = dataReq.f1186common;
+            this.url = dataReq.url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -131,10 +136,18 @@ public final class DataReq extends Message {
                 this.forum_id = l;
             }
             this.f1186common = builder.f1187common;
-            return;
+            String str = builder.url;
+            if (str == null) {
+                this.url = "";
+                return;
+            } else {
+                this.url = str;
+                return;
+            }
         }
         this.forum_id = builder.forum_id;
         this.f1186common = builder.f1187common;
+        this.url = builder.url;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
