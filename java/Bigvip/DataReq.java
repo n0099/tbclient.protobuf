@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1116common;
+    public final CommonReq f1141common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long user_id;
 
@@ -35,7 +35,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1117common;
+        public CommonReq f1142common;
         public Long user_id;
 
         public Builder() {
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.user_id = dataReq.user_id;
-            this.f1117common = dataReq.f1116common;
+            this.f1142common = dataReq.f1141common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -130,11 +130,11 @@ public final class DataReq extends Message {
             } else {
                 this.user_id = l;
             }
-            this.f1116common = builder.f1117common;
+            this.f1141common = builder.f1142common;
             return;
         }
         this.user_id = builder.user_id;
-        this.f1116common = builder.f1117common;
+        this.f1141common = builder.f1142common;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {

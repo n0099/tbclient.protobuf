@@ -14,7 +14,6 @@ import com.squareup.wire.ProtoField;
 public final class PresentGiftList1 extends Message {
     public static /* synthetic */ Interceptable $ic = null;
     public static final Integer DEFAULT_ACTIVITY_TYPE;
-    public static final Integer DEFAULT_ANIMATION_TYPE;
     public static final Integer DEFAULT_BEGIN_TIME;
     public static final Integer DEFAULT_CURRENCY;
     public static final Integer DEFAULT_CURRENCY_UNIT;
@@ -26,7 +25,6 @@ public final class PresentGiftList1 extends Message {
     public static final String DEFAULT_GIFT_NAME = "";
     public static final Integer DEFAULT_IOS_DISCOUNT;
     public static final Integer DEFAULT_IOS_PRICE;
-    public static final Integer DEFAULT_IS_COMBO;
     public static final String DEFAULT_MARK_URL = "";
     public static final Integer DEFAULT_PITCH_ON;
     public static final Integer DEFAULT_PRICE;
@@ -35,12 +33,8 @@ public final class PresentGiftList1 extends Message {
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer activity_type;
-    @ProtoField(tag = 19, type = Message.Datatype.UINT32)
-    public final Integer animation_type;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer begin_time;
-    @ProtoField(tag = 17)
-    public final Category category_id;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer currency;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
@@ -61,8 +55,6 @@ public final class PresentGiftList1 extends Message {
     public final Integer ios_discount;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer ios_price;
-    @ProtoField(tag = 18, type = Message.Datatype.UINT32)
-    public final Integer is_combo;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String mark_url;
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
@@ -85,9 +77,7 @@ public final class PresentGiftList1 extends Message {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
         public Integer activity_type;
-        public Integer animation_type;
         public Integer begin_time;
-        public Category category_id;
         public Integer currency;
         public Integer currency_unit;
         public Integer discount;
@@ -98,7 +88,6 @@ public final class PresentGiftList1 extends Message {
         public String gift_name;
         public Integer ios_discount;
         public Integer ios_price;
-        public Integer is_combo;
         public String mark_url;
         public Integer pitch_on;
         public Integer price;
@@ -156,9 +145,6 @@ public final class PresentGiftList1 extends Message {
             this.gift_count = presentGiftList1.gift_count;
             this.pitch_on = presentGiftList1.pitch_on;
             this.currency_unit = presentGiftList1.currency_unit;
-            this.category_id = presentGiftList1.category_id;
-            this.is_combo = presentGiftList1.is_combo;
-            this.animation_type = presentGiftList1.animation_type;
             this.currency = presentGiftList1.currency;
         }
 
@@ -199,8 +185,6 @@ public final class PresentGiftList1 extends Message {
         DEFAULT_GIFT_COUNT = 0;
         DEFAULT_PITCH_ON = 0;
         DEFAULT_CURRENCY_UNIT = 0;
-        DEFAULT_IS_COMBO = 0;
-        DEFAULT_ANIMATION_TYPE = 0;
         DEFAULT_CURRENCY = 0;
     }
 
@@ -319,25 +303,12 @@ public final class PresentGiftList1 extends Message {
             } else {
                 this.currency_unit = num12;
             }
-            this.category_id = builder.category_id;
-            Integer num13 = builder.is_combo;
+            Integer num13 = builder.currency;
             if (num13 == null) {
-                this.is_combo = DEFAULT_IS_COMBO;
-            } else {
-                this.is_combo = num13;
-            }
-            Integer num14 = builder.animation_type;
-            if (num14 == null) {
-                this.animation_type = DEFAULT_ANIMATION_TYPE;
-            } else {
-                this.animation_type = num14;
-            }
-            Integer num15 = builder.currency;
-            if (num15 == null) {
                 this.currency = DEFAULT_CURRENCY;
                 return;
             } else {
-                this.currency = num15;
+                this.currency = num13;
                 return;
             }
         }
@@ -357,9 +328,6 @@ public final class PresentGiftList1 extends Message {
         this.gift_count = builder.gift_count;
         this.pitch_on = builder.pitch_on;
         this.currency_unit = builder.currency_unit;
-        this.category_id = builder.category_id;
-        this.is_combo = builder.is_combo;
-        this.animation_type = builder.animation_type;
         this.currency = builder.currency;
     }
 

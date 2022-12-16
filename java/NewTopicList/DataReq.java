@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1302common;
+    public final CommonReq f1329common;
 
     /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
@@ -34,7 +34,7 @@ public final class DataReq extends Message {
         public String call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1303common;
+        public CommonReq f1330common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1303common = dataReq.f1302common;
+            this.f1330common = dataReq.f1329common;
             this.call_from = dataReq.call_from;
         }
 
@@ -106,7 +106,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1302common = builder.f1303common;
+            this.f1329common = builder.f1330common;
             String str = builder.call_from;
             if (str == null) {
                 this.call_from = "";
@@ -116,7 +116,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1302common = builder.f1303common;
+        this.f1329common = builder.f1330common;
         this.call_from = builder.call_from;
     }
 

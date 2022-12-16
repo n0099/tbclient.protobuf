@@ -1,4 +1,4 @@
-package tbclient.GetVipInfo;
+package tbclient.DelAllUserData;
 
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.titan.sdk.runtime.FieldHolder;
@@ -9,15 +9,11 @@ import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
-public final class VipSpreadItem extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final String DEFAULT_IMG_URL = "";
-    public static final String DEFAULT_LINK = "";
+public final class DelAllUserDataReqIdl extends Message {
+    public static /* synthetic */ Interceptable $ic;
     public transient /* synthetic */ FieldHolder $fh;
-    @ProtoField(tag = 1, type = Message.Datatype.STRING)
-    public final String img_url;
-    @ProtoField(tag = 2, type = Message.Datatype.STRING)
-    public final String link;
+    @ProtoField(tag = 1)
+    public final DataReq data;
 
     /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
@@ -26,11 +22,10 @@ public final class VipSpreadItem extends Message {
     }
 
     /* loaded from: classes9.dex */
-    public static final class Builder extends Message.Builder<VipSpreadItem> {
+    public static final class Builder extends Message.Builder<DelAllUserDataReqIdl> {
         public static /* synthetic */ Interceptable $ic;
         public transient /* synthetic */ FieldHolder $fh;
-        public String img_url;
-        public String link;
+        public DataReq data;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -47,13 +42,13 @@ public final class VipSpreadItem extends Message {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Builder(VipSpreadItem vipSpreadItem) {
-            super(vipSpreadItem);
+        public Builder(DelAllUserDataReqIdl delAllUserDataReqIdl) {
+            super(delAllUserDataReqIdl);
             Interceptable interceptable = $ic;
             if (interceptable != null) {
                 InitContext newInitContext = TitanRuntime.newInitContext();
                 newInitContext.initArgs = r2;
-                Object[] objArr = {vipSpreadItem};
+                Object[] objArr = {delAllUserDataReqIdl};
                 interceptable.invokeUnInit(65537, newInitContext);
                 int i = newInitContext.flag;
                 if ((i & 1) != 0) {
@@ -64,27 +59,26 @@ public final class VipSpreadItem extends Message {
                     return;
                 }
             }
-            if (vipSpreadItem == null) {
+            if (delAllUserDataReqIdl == null) {
                 return;
             }
-            this.img_url = vipSpreadItem.img_url;
-            this.link = vipSpreadItem.link;
+            this.data = delAllUserDataReqIdl.data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
-        public VipSpreadItem build(boolean z) {
+        public DelAllUserDataReqIdl build(boolean z) {
             InterceptResult invokeZ;
             Interceptable interceptable = $ic;
             if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new VipSpreadItem(this, z, null);
+                return new DelAllUserDataReqIdl(this, z, null);
             }
-            return (VipSpreadItem) invokeZ.objValue;
+            return (DelAllUserDataReqIdl) invokeZ.objValue;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public VipSpreadItem(Builder builder, boolean z) {
+    public DelAllUserDataReqIdl(Builder builder, boolean z) {
         super(builder);
         Interceptable interceptable = $ic;
         if (interceptable != null) {
@@ -102,26 +96,13 @@ public final class VipSpreadItem extends Message {
             }
         }
         if (z) {
-            String str = builder.img_url;
-            if (str == null) {
-                this.img_url = "";
-            } else {
-                this.img_url = str;
-            }
-            String str2 = builder.link;
-            if (str2 == null) {
-                this.link = "";
-                return;
-            } else {
-                this.link = str2;
-                return;
-            }
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
         }
-        this.img_url = builder.img_url;
-        this.link = builder.link;
     }
 
-    public /* synthetic */ VipSpreadItem(Builder builder, boolean z, a aVar) {
+    public /* synthetic */ DelAllUserDataReqIdl(Builder builder, boolean z, a aVar) {
         this(builder, z);
     }
 }

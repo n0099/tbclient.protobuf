@@ -13,7 +13,6 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.FansRankUserInfo;
-import tbclient.NobilityTdou;
 import tbclient.PresentMyList;
 import tbclient.PresetMyGiftPage;
 /* loaded from: classes9.dex */
@@ -39,8 +38,6 @@ public final class DataRes extends Message {
     public final Integer money;
     @ProtoField(tag = 3)
     public final presentMoneyTxt money_txt;
-    @ProtoField(tag = 10)
-    public final NobilityTdou nobility_tdou;
     @ProtoField(tag = 5)
     public final PresetMyGiftPage page;
     @ProtoField(label = Message.Label.REPEATED, tag = 9)
@@ -66,7 +63,6 @@ public final class DataRes extends Message {
         public List<PresentMyList> gift_list;
         public Integer money;
         public presentMoneyTxt money_txt;
-        public NobilityTdou nobility_tdou;
         public PresetMyGiftPage page;
         public List<FansRankUserInfo> rank_list;
         public Integer scene_id;
@@ -116,7 +112,6 @@ public final class DataRes extends Message {
             this.blue_diamond = dataRes.blue_diamond;
             this.blue_diamond_txt = dataRes.blue_diamond_txt;
             this.rank_list = Message.copyOf(dataRes.rank_list);
-            this.nobility_tdou = dataRes.nobility_tdou;
             this.currency = dataRes.currency;
         }
 
@@ -212,7 +207,6 @@ public final class DataRes extends Message {
             } else {
                 this.rank_list = Message.immutableCopyOf(list2);
             }
-            this.nobility_tdou = builder.nobility_tdou;
             Integer num5 = builder.currency;
             if (num5 == null) {
                 this.currency = DEFAULT_CURRENCY;
@@ -231,7 +225,6 @@ public final class DataRes extends Message {
         this.blue_diamond = builder.blue_diamond;
         this.blue_diamond_txt = builder.blue_diamond_txt;
         this.rank_list = Message.immutableCopyOf(builder.rank_list);
-        this.nobility_tdou = builder.nobility_tdou;
         this.currency = builder.currency;
     }
 

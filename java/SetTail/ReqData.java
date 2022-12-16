@@ -20,7 +20,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1358common;
+    public final CommonReq f1385common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer tailId;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -38,7 +38,7 @@ public final class ReqData extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1359common;
+        public CommonReq f1386common;
         public Integer tailId;
         public Integer type;
 
@@ -79,7 +79,7 @@ public final class ReqData extends Message {
             }
             this.type = reqData.type;
             this.tailId = reqData.tailId;
-            this.f1359common = reqData.f1358common;
+            this.f1386common = reqData.f1385common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -142,12 +142,12 @@ public final class ReqData extends Message {
             } else {
                 this.tailId = num2;
             }
-            this.f1358common = builder.f1359common;
+            this.f1385common = builder.f1386common;
             return;
         }
         this.type = builder.type;
         this.tailId = builder.tailId;
-        this.f1358common = builder.f1359common;
+        this.f1385common = builder.f1386common;
     }
 
     public /* synthetic */ ReqData(Builder builder, boolean z, a aVar) {

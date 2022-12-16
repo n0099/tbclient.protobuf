@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1274common;
+    public final CommonReq f1301common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String webview_version;
 
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1275common;
+        public CommonReq f1302common;
         public String webview_version;
 
         public Builder() {
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1275common = dataReq.f1274common;
+            this.f1302common = dataReq.f1301common;
             this.webview_version = dataReq.webview_version;
         }
 
@@ -106,7 +106,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1274common = builder.f1275common;
+            this.f1301common = builder.f1302common;
             String str = builder.webview_version;
             if (str == null) {
                 this.webview_version = "";
@@ -116,7 +116,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1274common = builder.f1275common;
+        this.f1301common = builder.f1302common;
         this.webview_version = builder.webview_version;
     }
 

@@ -34,8 +34,6 @@ public final class PostInfoContent extends Message {
     public final Long post_type;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String target_scheme;
-    @ProtoField(tag = 6)
-    public final WorksInfo works_info;
 
     /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
@@ -53,7 +51,6 @@ public final class PostInfoContent extends Message {
         public Long post_id;
         public Long post_type;
         public String target_scheme;
-        public WorksInfo works_info;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -95,7 +92,6 @@ public final class PostInfoContent extends Message {
             this.post_type = postInfoContent.post_type;
             this.post_id = postInfoContent.post_id;
             this.is_author_view = postInfoContent.is_author_view;
-            this.works_info = postInfoContent.works_info;
             this.target_scheme = postInfoContent.target_scheme;
         }
 
@@ -180,7 +176,6 @@ public final class PostInfoContent extends Message {
             } else {
                 this.is_author_view = num;
             }
-            this.works_info = builder.works_info;
             String str = builder.target_scheme;
             if (str == null) {
                 this.target_scheme = "";
@@ -195,7 +190,6 @@ public final class PostInfoContent extends Message {
         this.post_type = builder.post_type;
         this.post_id = builder.post_id;
         this.is_author_view = builder.is_author_view;
-        this.works_info = builder.works_info;
         this.target_scheme = builder.target_scheme;
     }
 

@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1262common;
+    public final CommonReq f1289common;
 
     /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
         public Long black_uid;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1263common;
+        public CommonReq f1290common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -73,7 +73,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1263common = dataReq.f1262common;
+            this.f1290common = dataReq.f1289common;
             this.black_uid = dataReq.black_uid;
         }
 
@@ -124,7 +124,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1262common = builder.f1263common;
+            this.f1289common = builder.f1290common;
             Long l = builder.black_uid;
             if (l == null) {
                 this.black_uid = DEFAULT_BLACK_UID;
@@ -134,7 +134,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1262common = builder.f1263common;
+        this.f1289common = builder.f1290common;
         this.black_uid = builder.black_uid;
     }
 

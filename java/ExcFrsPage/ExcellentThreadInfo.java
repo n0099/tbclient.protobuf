@@ -22,7 +22,6 @@ public final class ExcellentThreadInfo extends Message {
     public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
     public static final Integer DEFAULT_FRS_TYPE;
-    public static final String DEFAULT_LEGO_CARD = "";
     public static final Integer DEFAULT_PB_TYPE;
     public static final Long DEFAULT_POST_NUM;
     public static final Integer DEFAULT_PUBLISH_TIME;
@@ -48,8 +47,6 @@ public final class ExcellentThreadInfo extends Message {
     public final String forum_name;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer frs_type;
-    @ProtoField(tag = 20, type = Message.Datatype.STRING)
-    public final String lego_card;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer pb_type;
     @ProtoField(tag = 11, type = Message.Datatype.UINT64)
@@ -93,7 +90,6 @@ public final class ExcellentThreadInfo extends Message {
         public Long forum_id;
         public String forum_name;
         public Integer frs_type;
-        public String lego_card;
         public Integer pb_type;
         public Long post_num;
         public Integer publish_time;
@@ -162,7 +158,6 @@ public final class ExcellentThreadInfo extends Message {
             this.source = excellentThreadInfo.source;
             this.rank = excellentThreadInfo.rank;
             this.publish_time = excellentThreadInfo.publish_time;
-            this.lego_card = excellentThreadInfo.lego_card;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -330,15 +325,9 @@ public final class ExcellentThreadInfo extends Message {
             Integer num5 = builder.publish_time;
             if (num5 == null) {
                 this.publish_time = DEFAULT_PUBLISH_TIME;
-            } else {
-                this.publish_time = num5;
-            }
-            String str6 = builder.lego_card;
-            if (str6 == null) {
-                this.lego_card = "";
                 return;
             } else {
-                this.lego_card = str6;
+                this.publish_time = num5;
                 return;
             }
         }
@@ -361,7 +350,6 @@ public final class ExcellentThreadInfo extends Message {
         this.source = builder.source;
         this.rank = builder.rank;
         this.publish_time = builder.publish_time;
-        this.lego_card = builder.lego_card;
     }
 
     public /* synthetic */ ExcellentThreadInfo(Builder builder, boolean z, a aVar) {

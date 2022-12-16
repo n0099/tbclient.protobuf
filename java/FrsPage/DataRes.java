@@ -76,6 +76,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_GAME_DEFAULT_TAB_ID;
     public static final Integer DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO;
     public static final Integer DEFAULT_IS_GET_HORSE_RACE_LAMP;
+    public static final Integer DEFAULT_IS_MEMBER_BROADCAST_FORUM;
     public static final Integer DEFAULT_IS_NEW_URL;
     public static final List<LiveFuseForumData> DEFAULT_LIVE_FUSE_FORUM;
     public static final Long DEFAULT_LOGID;
@@ -218,6 +219,8 @@ public final class DataRes extends Message {
     public final Integer is_auto_play_forumheadvideo;
     @ProtoField(tag = 104, type = Message.Datatype.INT32)
     public final Integer is_get_horse_race_lamp;
+    @ProtoField(tag = 119, type = Message.Datatype.INT32)
+    public final Integer is_member_broadcast_forum;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_new_url;
     @ProtoField(tag = 103)
@@ -391,6 +394,7 @@ public final class DataRes extends Message {
         public Info info;
         public Integer is_auto_play_forumheadvideo;
         public Integer is_get_horse_race_lamp;
+        public Integer is_member_broadcast_forum;
         public Integer is_new_url;
         public ItemInfo item_info;
         public AlaLiveNotify live_frs_notify;
@@ -589,6 +593,7 @@ public final class DataRes extends Message {
             this.live_fuse_forum = Message.copyOf(dataRes.live_fuse_forum);
             this.bawu_unread_notice_num = dataRes.bawu_unread_notice_num;
             this.recreation_rank_info = dataRes.recreation_rank_info;
+            this.is_member_broadcast_forum = dataRes.is_member_broadcast_forum;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -663,6 +668,7 @@ public final class DataRes extends Message {
         DEFAULT_AD_MIX_LIST = Collections.emptyList();
         DEFAULT_LIVE_FUSE_FORUM = Collections.emptyList();
         DEFAULT_BAWU_UNREAD_NOTICE_NUM = 0;
+        DEFAULT_IS_MEMBER_BROADCAST_FORUM = 0;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1054,7 +1060,14 @@ public final class DataRes extends Message {
                 this.bawu_unread_notice_num = num22;
             }
             this.recreation_rank_info = builder.recreation_rank_info;
-            return;
+            Integer num23 = builder.is_member_broadcast_forum;
+            if (num23 == null) {
+                this.is_member_broadcast_forum = DEFAULT_IS_MEMBER_BROADCAST_FORUM;
+                return;
+            } else {
+                this.is_member_broadcast_forum = num23;
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -1166,6 +1179,7 @@ public final class DataRes extends Message {
         this.live_fuse_forum = Message.immutableCopyOf(builder.live_fuse_forum);
         this.bawu_unread_notice_num = builder.bawu_unread_notice_num;
         this.recreation_rank_info = builder.recreation_rank_info;
+        this.is_member_broadcast_forum = builder.is_member_broadcast_forum;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {

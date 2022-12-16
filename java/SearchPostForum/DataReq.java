@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1342common;
+    public final CommonReq f1369common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String word;
 
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1343common;
+        public CommonReq f1370common;
         public String word;
 
         public Builder() {
@@ -71,7 +71,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1343common = dataReq.f1342common;
+            this.f1370common = dataReq.f1369common;
             this.word = dataReq.word;
         }
 
@@ -106,7 +106,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1342common = builder.f1343common;
+            this.f1369common = builder.f1370common;
             String str = builder.word;
             if (str == null) {
                 this.word = "";
@@ -116,7 +116,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1342common = builder.f1343common;
+        this.f1369common = builder.f1370common;
         this.word = builder.word;
     }
 

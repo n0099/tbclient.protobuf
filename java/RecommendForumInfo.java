@@ -24,7 +24,6 @@ public final class RecommendForumInfo extends Message {
     public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
     public static final Integer DEFAULT_FORUM_TYPE;
-    public static final Integer DEFAULT_HOT_NUM;
     public static final String DEFAULT_HOT_TEXT = "";
     public static final Long DEFAULT_HOT_THREAD_ID;
     public static final Integer DEFAULT_IS_BRAND_FORUM;
@@ -57,8 +56,6 @@ public final class RecommendForumInfo extends Message {
     public final String forum_name;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer forum_type;
-    @ProtoField(tag = 21, type = Message.Datatype.INT32)
-    public final Integer hot_num;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String hot_text;
     @ProtoField(tag = 22, type = Message.Datatype.UINT64)
@@ -105,7 +102,6 @@ public final class RecommendForumInfo extends Message {
         public Long forum_id;
         public String forum_name;
         public Integer forum_type;
-        public Integer hot_num;
         public String hot_text;
         public Long hot_thread_id;
         public Integer is_brand_forum;
@@ -175,7 +171,6 @@ public final class RecommendForumInfo extends Message {
             this.lv1_name = recommendForumInfo.lv1_name;
             this.lv2_name = recommendForumInfo.lv2_name;
             this.avatar_origin = recommendForumInfo.avatar_origin;
-            this.hot_num = recommendForumInfo.hot_num;
             this.hot_thread_id = recommendForumInfo.hot_thread_id;
             this.is_recommend_forum = recommendForumInfo.is_recommend_forum;
         }
@@ -213,7 +208,6 @@ public final class RecommendForumInfo extends Message {
         DEFAULT_FORUM_TYPE = 0;
         DEFAULT_IS_BRAND_FORUM = 0;
         DEFAULT_IS_PRIVATE_FORUM = 0;
-        DEFAULT_HOT_NUM = 0;
         DEFAULT_HOT_THREAD_ID = 0L;
         DEFAULT_IS_RECOMMEND_FORUM = 0;
     }
@@ -357,24 +351,18 @@ public final class RecommendForumInfo extends Message {
             } else {
                 this.avatar_origin = str12;
             }
-            Integer num7 = builder.hot_num;
-            if (num7 == null) {
-                this.hot_num = DEFAULT_HOT_NUM;
-            } else {
-                this.hot_num = num7;
-            }
             Long l2 = builder.hot_thread_id;
             if (l2 == null) {
                 this.hot_thread_id = DEFAULT_HOT_THREAD_ID;
             } else {
                 this.hot_thread_id = l2;
             }
-            Integer num8 = builder.is_recommend_forum;
-            if (num8 == null) {
+            Integer num7 = builder.is_recommend_forum;
+            if (num7 == null) {
                 this.is_recommend_forum = DEFAULT_IS_RECOMMEND_FORUM;
                 return;
             } else {
-                this.is_recommend_forum = num8;
+                this.is_recommend_forum = num7;
                 return;
             }
         }
@@ -398,7 +386,6 @@ public final class RecommendForumInfo extends Message {
         this.lv1_name = builder.lv1_name;
         this.lv2_name = builder.lv2_name;
         this.avatar_origin = builder.avatar_origin;
-        this.hot_num = builder.hot_num;
         this.hot_thread_id = builder.hot_thread_id;
         this.is_recommend_forum = builder.is_recommend_forum;
     }

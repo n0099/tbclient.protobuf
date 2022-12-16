@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1348common;
+    public final CommonReq f1375common;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer props_id;
 
@@ -35,7 +35,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1349common;
+        public CommonReq f1376common;
         public Integer props_id;
 
         public Builder() {
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.props_id = dataReq.props_id;
-            this.f1349common = dataReq.f1348common;
+            this.f1376common = dataReq.f1375common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -130,11 +130,11 @@ public final class DataReq extends Message {
             } else {
                 this.props_id = num;
             }
-            this.f1348common = builder.f1349common;
+            this.f1375common = builder.f1376common;
             return;
         }
         this.props_id = builder.props_id;
-        this.f1348common = builder.f1349common;
+        this.f1375common = builder.f1376common;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {

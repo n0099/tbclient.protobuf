@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1148common;
+    public final CommonReq f1175common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer like_forum;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1149common;
+        public CommonReq f1176common;
         public Integer like_forum;
         public Integer recommend;
         public Integer sort_type;
@@ -92,7 +92,7 @@ public final class DataReq extends Message {
             this.like_forum = dataReq.like_forum;
             this.topic = dataReq.topic;
             this.recommend = dataReq.recommend;
-            this.f1149common = dataReq.f1148common;
+            this.f1176common = dataReq.f1175common;
             this.visit_history = dataReq.visit_history;
             this.sort_type = dataReq.sort_type;
         }
@@ -165,7 +165,7 @@ public final class DataReq extends Message {
             } else {
                 this.recommend = num3;
             }
-            this.f1148common = builder.f1149common;
+            this.f1175common = builder.f1176common;
             String str = builder.visit_history;
             if (str == null) {
                 this.visit_history = "";
@@ -184,7 +184,7 @@ public final class DataReq extends Message {
         this.like_forum = builder.like_forum;
         this.topic = builder.topic;
         this.recommend = builder.recommend;
-        this.f1148common = builder.f1149common;
+        this.f1175common = builder.f1176common;
         this.visit_history = builder.visit_history;
         this.sort_type = builder.sort_type;
     }

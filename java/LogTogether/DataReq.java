@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1294common;
+    public final CommonReq f1321common;
 
     /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
         public List<AdReq> Ad;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1295common;
+        public CommonReq f1322common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -76,7 +76,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.Ad = Message.copyOf(dataReq.Ad);
-            this.f1295common = dataReq.f1294common;
+            this.f1322common = dataReq.f1321common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -132,11 +132,11 @@ public final class DataReq extends Message {
             } else {
                 this.Ad = Message.immutableCopyOf(list);
             }
-            this.f1294common = builder.f1295common;
+            this.f1321common = builder.f1322common;
             return;
         }
         this.Ad = Message.immutableCopyOf(builder.Ad);
-        this.f1294common = builder.f1295common;
+        this.f1321common = builder.f1322common;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {

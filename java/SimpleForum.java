@@ -29,6 +29,7 @@ public final class SimpleForum extends Message {
     public static final Integer DEFAULT_MEMBER_NUM;
     public static final String DEFAULT_NAME = "";
     public static final Integer DEFAULT_POST_NUM;
+    public static final String DEFAULT_RECOMMEND_TIP = "";
     public static final String DEFAULT_SECOND_CLASS = "";
     public static final List<FrsTabInfo> DEFAULT_TAB_INFO;
     public transient /* synthetic */ FieldHolder $fh;
@@ -64,6 +65,8 @@ public final class SimpleForum extends Message {
     public final String name;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer post_num;
+    @ProtoField(tag = 20, type = Message.Datatype.STRING)
+    public final String recommend_tip;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String second_class;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
@@ -97,6 +100,7 @@ public final class SimpleForum extends Message {
         public MultiForumPerm multi_forum_perm;
         public String name;
         public Integer post_num;
+        public String recommend_tip;
         public String second_class;
         public List<FrsTabInfo> tab_info;
         public ThemeColorInfo theme_color;
@@ -155,6 +159,7 @@ public final class SimpleForum extends Message {
             this.deleted_reason_info = simpleForum.deleted_reason_info;
             this.is_frs_mask = simpleForum.is_frs_mask;
             this.theme_color = simpleForum.theme_color;
+            this.recommend_tip = simpleForum.recommend_tip;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -312,7 +317,14 @@ public final class SimpleForum extends Message {
                 this.is_frs_mask = num8;
             }
             this.theme_color = builder.theme_color;
-            return;
+            String str7 = builder.recommend_tip;
+            if (str7 == null) {
+                this.recommend_tip = "";
+                return;
+            } else {
+                this.recommend_tip = str7;
+                return;
+            }
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -333,6 +345,7 @@ public final class SimpleForum extends Message {
         this.deleted_reason_info = builder.deleted_reason_info;
         this.is_frs_mask = builder.is_frs_mask;
         this.theme_color = builder.theme_color;
+        this.recommend_tip = builder.recommend_tip;
     }
 
     public /* synthetic */ SimpleForum(Builder builder, boolean z, a aVar) {

@@ -18,6 +18,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_CHATROOM_NEW_MSG = "";
     public static final String DEFAULT_DATA_TYPE = "";
     public static final Long DEFAULT_FID;
+    public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_UNIQ_ID = "";
     public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
@@ -27,11 +28,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1296common;
+    public final CommonReq f1323common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String data_type;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
     public final Long fid;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String forum_name;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String uniq_id;
 
@@ -49,9 +52,10 @@ public final class DataReq extends Message {
         public String chatroom_new_msg;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1297common;
+        public CommonReq f1324common;
         public String data_type;
         public Long fid;
+        public String forum_name;
         public String uniq_id;
 
         public Builder() {
@@ -89,12 +93,13 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1297common = dataReq.f1296common;
+            this.f1324common = dataReq.f1323common;
             this.data_type = dataReq.data_type;
             this.chatroom_new_msg = dataReq.chatroom_new_msg;
             this.fid = dataReq.fid;
             this.chatroom_id = dataReq.chatroom_id;
             this.uniq_id = dataReq.uniq_id;
+            this.forum_name = dataReq.forum_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -145,7 +150,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1296common = builder.f1297common;
+            this.f1323common = builder.f1324common;
             String str = builder.data_type;
             if (str == null) {
                 this.data_type = "";
@@ -173,18 +178,25 @@ public final class DataReq extends Message {
             String str3 = builder.uniq_id;
             if (str3 == null) {
                 this.uniq_id = "";
-                return;
             } else {
                 this.uniq_id = str3;
+            }
+            String str4 = builder.forum_name;
+            if (str4 == null) {
+                this.forum_name = "";
+                return;
+            } else {
+                this.forum_name = str4;
                 return;
             }
         }
-        this.f1296common = builder.f1297common;
+        this.f1323common = builder.f1324common;
         this.data_type = builder.data_type;
         this.chatroom_new_msg = builder.chatroom_new_msg;
         this.fid = builder.fid;
         this.chatroom_id = builder.chatroom_id;
         this.uniq_id = builder.uniq_id;
+        this.forum_name = builder.forum_name;
     }
 
     public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {

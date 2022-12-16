@@ -24,7 +24,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1312common;
+    public final CommonReq f1339common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
@@ -50,7 +50,7 @@ public final class DataReq extends Message {
         public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1313common;
+        public CommonReq f1340common;
         public Integer pn;
         public Integer q_type;
         public Double scr_dip;
@@ -93,7 +93,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1313common = dataReq.f1312common;
+            this.f1340common = dataReq.f1339common;
             this.uid = dataReq.uid;
             this.pn = dataReq.pn;
             this.scr_w = dataReq.scr_w;
@@ -154,7 +154,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1312common = builder.f1313common;
+            this.f1339common = builder.f1340common;
             Long l = builder.uid;
             if (l == null) {
                 this.uid = DEFAULT_UID;
@@ -194,7 +194,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1312common = builder.f1313common;
+        this.f1339common = builder.f1340common;
         this.uid = builder.uid;
         this.pn = builder.pn;
         this.scr_w = builder.scr_w;

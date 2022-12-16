@@ -19,7 +19,6 @@ public final class BookInfo extends Message {
     public static final String DEFAULT_COVER_IMG = "";
     public static final String DEFAULT_FIRST_CHAPTER_ID = "";
     public static final Long DEFAULT_FORUM_ID;
-    public static final String DEFAULT_FORUM_NAME = "";
     public static final Integer DEFAULT_IS_FINISH;
     public static final Integer DEFAULT_TOTAL_CHAPTER;
     public transient /* synthetic */ FieldHolder $fh;
@@ -35,8 +34,6 @@ public final class BookInfo extends Message {
     public final String first_chapter_id;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long forum_id;
-    @ProtoField(tag = 9, type = Message.Datatype.STRING)
-    public final String forum_name;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer is_finish;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -58,7 +55,6 @@ public final class BookInfo extends Message {
         public String cover_img;
         public String first_chapter_id;
         public Long forum_id;
-        public String forum_name;
         public Integer is_finish;
         public Integer total_chapter;
 
@@ -105,7 +101,6 @@ public final class BookInfo extends Message {
             this.first_chapter_id = bookInfo.first_chapter_id;
             this.is_finish = bookInfo.is_finish;
             this.author_name = bookInfo.author_name;
-            this.forum_name = bookInfo.forum_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -203,15 +198,9 @@ public final class BookInfo extends Message {
             String str4 = builder.author_name;
             if (str4 == null) {
                 this.author_name = "";
-            } else {
-                this.author_name = str4;
-            }
-            String str5 = builder.forum_name;
-            if (str5 == null) {
-                this.forum_name = "";
                 return;
             } else {
-                this.forum_name = str5;
+                this.author_name = str4;
                 return;
             }
         }
@@ -223,7 +212,6 @@ public final class BookInfo extends Message {
         this.first_chapter_id = builder.first_chapter_id;
         this.is_finish = builder.is_finish;
         this.author_name = builder.author_name;
-        this.forum_name = builder.forum_name;
     }
 
     public /* synthetic */ BookInfo(Builder builder, boolean z, a aVar) {

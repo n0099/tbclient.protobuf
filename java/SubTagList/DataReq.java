@@ -23,7 +23,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1366common;
+    public final CommonReq f1393common;
 
     /* loaded from: classes9.dex */
     public static /* synthetic */ class a {
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
         public List<Integer> arr_tag_id;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1367common;
+        public CommonReq f1394common;
 
         public Builder() {
             Interceptable interceptable = $ic;
@@ -75,7 +75,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1367common = dataReq.f1366common;
+            this.f1394common = dataReq.f1393common;
             this.arr_tag_id = Message.copyOf(dataReq.arr_tag_id);
         }
 
@@ -126,7 +126,7 @@ public final class DataReq extends Message {
             }
         }
         if (z) {
-            this.f1366common = builder.f1367common;
+            this.f1393common = builder.f1394common;
             List<Integer> list = builder.arr_tag_id;
             if (list == null) {
                 this.arr_tag_id = DEFAULT_ARR_TAG_ID;
@@ -136,7 +136,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1366common = builder.f1367common;
+        this.f1393common = builder.f1394common;
         this.arr_tag_id = Message.immutableCopyOf(builder.arr_tag_id);
     }
 

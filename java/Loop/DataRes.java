@@ -37,6 +37,8 @@ public final class DataRes extends Message {
     public final List<AlaLiveInfo> live_index_second_floor;
     @ProtoField(label = Message.Label.REPEATED, tag = 6)
     public final List<AlaLiveInfo> live_pic_second_floor;
+    @ProtoField(tag = 10)
+    public final MemberBroadcastInfo member_broadcast;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String uniq_id;
 
@@ -58,6 +60,7 @@ public final class DataRes extends Message {
         public List<AlaLiveInfo> live_follow_second_floor;
         public List<AlaLiveInfo> live_index_second_floor;
         public List<AlaLiveInfo> live_pic_second_floor;
+        public MemberBroadcastInfo member_broadcast;
         public String uniq_id;
 
         public Builder() {
@@ -104,6 +107,7 @@ public final class DataRes extends Message {
             this.chatroom_frs = dataRes.chatroom_frs;
             this.uniq_id = dataRes.uniq_id;
             this.chatroom_message_tab = dataRes.chatroom_message_tab;
+            this.member_broadcast = dataRes.member_broadcast;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -184,6 +188,7 @@ public final class DataRes extends Message {
                 this.uniq_id = str;
             }
             this.chatroom_message_tab = builder.chatroom_message_tab;
+            this.member_broadcast = builder.member_broadcast;
             return;
         }
         this.live = builder.live;
@@ -195,6 +200,7 @@ public final class DataRes extends Message {
         this.chatroom_frs = builder.chatroom_frs;
         this.uniq_id = builder.uniq_id;
         this.chatroom_message_tab = builder.chatroom_message_tab;
+        this.member_broadcast = builder.member_broadcast;
     }
 
     public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
