@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "LiveVideoInfo.proto";
-
-message LiveMedia {
-    LiveVideoInfo video = 1;
-}

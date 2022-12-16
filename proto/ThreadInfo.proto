@@ -57,7 +57,6 @@ import "VideoActive.proto";
 import "VideoChannelInfo.proto";
 import "VideoInfo.proto";
 import "Voice.proto";
-import "VoiceRoom.proto";
 import "YulePostActivity.proto";
 import "Zan.proto";
 import "ZhiBoInfoTW.proto";
@@ -224,8 +223,6 @@ message ThreadInfo {
     string is_tiebaplus_ad = 193;
     string tiebaplus_order_id = 194;
     string tiebaplus_extra_param = 196;
-    int32 is_frs_mask = 198;
-    VoiceRoom voice_room = 199;
     int32 tab_show_mode = 200;
     TiebaPlusAd tiebaplus_ad = 201;
     RecommendTip recommend_tip = 202;
@@ -233,7 +230,6 @@ message ThreadInfo {
     int32 is_pictxt = 204;
     string exposure_monitor_url = 205;
     string click_monitor_url = 206;
-    int32 readonly = 207;
     ThreadRecommendTag thread_recommend_tag = 210;
     CustomFigure custom_figure = 211;
     CustomState custom_state = 212;

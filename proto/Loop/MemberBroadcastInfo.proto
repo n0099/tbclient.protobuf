@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "PbContent.proto";
+
+message MemberBroadcastInfo {
+    string left_icon_src = 1;
+    int32 left_icon_width = 2;
+    int32 left_icon_height = 3;
+    string background_src = 4;
+    repeated PbContent middle_content = 5;
+    string right_btn_text = 6;
+    string right_btn_url = 7;
+    string text_color = 8;
+    int32 broadcast_type = 9;
+    int32 daily_min_step = 10;
+    int32 daily_max_num = 11;
+    int32 om_min_step = 12;
+    int32 om_max_num = 13;
+    int32 scene_condition = 14;
+    uint32 show_time = 15;
+    string btn_text_color = 16;
+    string btn_background_color = 17;
+}

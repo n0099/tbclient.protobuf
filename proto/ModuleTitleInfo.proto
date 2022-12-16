@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "ThemeColorInfo.proto";
-
-message ModuleTitleInfo {
-    string title = 1;
-    string icon = 2;
-    ThemeColorInfo theme_color = 3;
-}

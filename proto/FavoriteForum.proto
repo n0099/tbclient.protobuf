@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message FavoriteForum {
-    string fname = 1;
-    string fid = 2;
-}

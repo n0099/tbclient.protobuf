@@ -22,5 +22,4 @@ message ExcellentThreadInfo {
     uint32 source = 17;
     uint64 rank = 18;
     int32 publish_time = 19;
-    string lego_card = 20;
 }

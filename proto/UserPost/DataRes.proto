@@ -11,5 +11,4 @@ message DataRes {
     int32 mask_type = 6;
     int32 view_card_num = 7;
     int32 reddot_deleted_thread = 8;
-    repeated string week_forum_list = 9;
 }

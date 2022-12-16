@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message UserScore {
-    uint64 user_id = 1;
-    uint64 score = 2;
-}

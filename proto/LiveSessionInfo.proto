@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message LiveSessionInfo {
-    string session_id = 1;
-    string rtmp_url = 2;
-    string hls_url = 3;
-}

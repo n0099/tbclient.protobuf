@@ -3,6 +3,5 @@ syntax = "proto3";
 import "CommonReq.proto";
 
 message DataReq {
-    string scene_from = 1;
-    uint64 benefit_userid = 3;
+    int32 op_type = 2;
 }

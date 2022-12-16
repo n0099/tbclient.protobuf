@@ -6,6 +6,7 @@ import "Loop/ChatroomMessageTabData.proto";
 import "Loop/IconRes.proto";
 import "Loop/LevelRes.proto";
 import "Loop/LiveRes.proto";
+import "Loop/MemberBroadcastInfo.proto";
 
 message DataRes {
     LiveRes live = 1;
@@ -17,4 +18,5 @@ message DataRes {
     ChatroomFrsRes chatroom_frs = 7;
     string uniq_id = 8;
     ChatroomMessageTabData chatroom_message_tab = 9;
+    MemberBroadcastInfo member_broadcast = 10;
 }

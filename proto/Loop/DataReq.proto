@@ -8,4 +8,5 @@ message DataReq {
     int64 fid = 4;
     int64 chatroom_id = 5;
     string uniq_id = 6;
+    string forum_name = 7;
 }
