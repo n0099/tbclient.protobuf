@@ -22,10 +22,12 @@ import "FrsPage/Bottle.proto";
 import "FrsPage/BrandForumInfo.proto";
 import "FrsPage/BusinessPromot.proto";
 import "FrsPage/CarrierEnter.proto";
+import "FrsPage/ChatroomConfig.proto";
 import "FrsPage/ClientPlatform.proto";
 import "FrsPage/ColorEgg.proto";
 import "FrsPage/ForumActiveInfo.proto";
 import "FrsPage/ForumBookInfo.proto";
+import "FrsPage/ForumGroup.proto";
 import "FrsPage/ForumHeadIcon.proto";
 import "FrsPage/ForumHeadlineImgInfo.proto";
 import "FrsPage/GconAccount.proto";
@@ -181,4 +183,6 @@ message DataRes {
     int32 bawu_unread_notice_num = 117;
     RecreationRankInfo recreation_rank_info = 118;
     int32 is_member_broadcast_forum = 119;
+    ForumGroup forum_group = 120;
+    ChatroomConfig chatroom_config = 121;
 }

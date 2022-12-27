@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "FrsTabInfo.proto";
+import "Item.proto";
+import "ModuleTitleInfo.proto";
+
+message ItemRankInfo {
+    FrsTabInfo tab_info = 1;
+    repeated Item item_list = 2;
+    ModuleTitleInfo title_info = 3;
+    int32 has_more = 4;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "FrsPage/FeedGroupInfo.proto";
+
+message GroupFeedCard {
+    string card_title = 1;
+    uint32 index = 2;
+    repeated FeedGroupInfo group_list = 3;
+}

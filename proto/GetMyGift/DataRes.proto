@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "FansRankUserInfo.proto";
 import "GetMyGift/presentMoneyTxt.proto";
+import "NobilityTdou.proto";
 import "PresentMyList.proto";
 import "PresetMyGiftPage.proto";
 
@@ -15,5 +16,6 @@ message DataRes {
     uint32 blue_diamond = 7;
     presentMoneyTxt blue_diamond_txt = 8;
     repeated FansRankUserInfo rank_list = 9;
+    NobilityTdou nobility_tdou = 10;
     uint32 currency = 11;
 }

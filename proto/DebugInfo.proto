@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message DebugInfo {
+    string module = 1;
+    string action = 2;
+    string error_code = 3;
+    string error_message = 4;
+    string ext1 = 5;
+    string ext2 = 6;
+    string ext3 = 7;
+    string ext4 = 8;
+    int64 id = 9;
+    string title = 10;
+    string abstrct = 11;
+}

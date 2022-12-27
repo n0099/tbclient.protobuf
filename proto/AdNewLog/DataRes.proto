@@ -1,5 +1,7 @@
 syntax = "proto3";
 
 message DataRes {
-    
+    string extra1 = 1;
+    string extra2 = 2;
+    string extra3 = 3;
 }

@@ -17,5 +17,6 @@ message PresentGiftListByCategoryId1 {
     uint32 pitch_on = 14;
     uint32 gift_count = 15;
     uint32 currency_unit = 16;
+    uint32 is_combo = 17;
     uint32 currency = 18;
 }

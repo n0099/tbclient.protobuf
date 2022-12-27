@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "FrsPage/GroupFeedCard.proto";
+import "FrsPage/TopbarEntrance.proto";
+
+message ForumGroup {
+    TopbarEntrance topbar_entrance = 1;
+    GroupFeedCard feed_card = 2;
+}

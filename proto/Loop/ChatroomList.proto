@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "Loop/ChatRoomAtInfo.proto";
 import "Loop/ChatroomInfoBasic.proto";
 import "Loop/ChatroomMEMsgInfo.proto";
 
@@ -8,4 +9,5 @@ message ChatroomList {
     ChatroomInfoBasic room_info = 2;
     ChatroomMEMsgInfo msg_info = 3;
     string jump_url = 4;
+    ChatRoomAtInfo at_info = 5;
 }

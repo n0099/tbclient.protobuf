@@ -13,4 +13,5 @@ message FrequentlyForumInfo {
     uint32 forum_state = 14;
     uint32 access_flag = 15;
     uint32 is_sign = 16;
+    uint32 is_brand_forum = 17;
 }

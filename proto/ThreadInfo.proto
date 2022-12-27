@@ -46,6 +46,7 @@ import "StarRankIcon.proto";
 import "TailInfo.proto";
 import "TaskInfo.proto";
 import "TbreadDispatch.proto";
+import "ThreadAblum.proto";
 import "ThreadRecommendInfo.proto";
 import "ThreadRecommendTag.proto";
 import "TiebaPlusAd.proto";
@@ -230,9 +231,11 @@ message ThreadInfo {
     int32 is_pictxt = 204;
     string exposure_monitor_url = 205;
     string click_monitor_url = 206;
+    int32 readonly = 207;
     ThreadRecommendTag thread_recommend_tag = 210;
     CustomFigure custom_figure = 211;
     CustomState custom_state = 212;
     int32 is_highlight = 213;
     int32 is_xiuxiu_thread = 214;
+    ThreadAblum ablum_info = 215;
 }

@@ -13,4 +13,5 @@ message DataRes {
     string newuser_pop_money = 7;
     string newuser_pop_top = 8;
     ActiveCenter active_center = 9;
+    int32 is_back_user = 10;
 }
