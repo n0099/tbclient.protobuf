@@ -1,26 +1,21 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class FeatureCardCompetitionSubNode extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_COMPETITION_IMAGE = "";
+    public static final String DEFAULT_COMPETITION_LOGO = "";
     public static final String DEFAULT_TEAM1_IMAGE = "";
     public static final String DEFAULT_TEAM1_NAME = "";
     public static final String DEFAULT_TEAM2_IMAGE = "";
     public static final String DEFAULT_TEAM2_NAME = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_URL = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String competition_image;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String competition_logo;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String team1_image;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -35,16 +30,9 @@ public final class FeatureCardCompetitionSubNode extends Message {
     public final String url;
 
     /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<FeatureCardCompetitionSubNode> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String competition_image;
+        public String competition_logo;
         public String team1_image;
         public String team1_name;
         public String team2_image;
@@ -53,37 +41,10 @@ public final class FeatureCardCompetitionSubNode extends Message {
         public String url;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(FeatureCardCompetitionSubNode featureCardCompetitionSubNode) {
             super(featureCardCompetitionSubNode);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {featureCardCompetitionSubNode};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (featureCardCompetitionSubNode == null) {
                 return;
             }
@@ -94,38 +55,18 @@ public final class FeatureCardCompetitionSubNode extends Message {
             this.team1_image = featureCardCompetitionSubNode.team1_image;
             this.team2_name = featureCardCompetitionSubNode.team2_name;
             this.team2_image = featureCardCompetitionSubNode.team2_image;
+            this.competition_logo = featureCardCompetitionSubNode.competition_logo;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FeatureCardCompetitionSubNode build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new FeatureCardCompetitionSubNode(this, z, null);
-            }
-            return (FeatureCardCompetitionSubNode) invokeZ.objValue;
+            return new FeatureCardCompetitionSubNode(this, z);
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FeatureCardCompetitionSubNode(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65536, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65536, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.title;
             if (str == null) {
@@ -166,9 +107,15 @@ public final class FeatureCardCompetitionSubNode extends Message {
             String str7 = builder.team2_image;
             if (str7 == null) {
                 this.team2_image = "";
-                return;
             } else {
                 this.team2_image = str7;
+            }
+            String str8 = builder.competition_logo;
+            if (str8 == null) {
+                this.competition_logo = "";
+                return;
+            } else {
+                this.competition_logo = str8;
                 return;
             }
         }
@@ -179,9 +126,6 @@ public final class FeatureCardCompetitionSubNode extends Message {
         this.team1_image = builder.team1_image;
         this.team2_name = builder.team2_name;
         this.team2_image = builder.team2_image;
-    }
-
-    public /* synthetic */ FeatureCardCompetitionSubNode(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        this.competition_logo = builder.competition_logo;
     }
 }

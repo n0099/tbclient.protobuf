@@ -1,21 +1,11 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class NewUser extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final List<Props> DEFAULT_APPRAISE;
     public static final String DEFAULT_BG_ID = "";
     public static final String DEFAULT_BILLBOARD = "";
     public static final String DEFAULT_CARD = "";
@@ -23,29 +13,11 @@ public final class NewUser extends Message {
     public static final String DEFAULT_FREE_FLAG = "";
     public static final String DEFAULT_IS_COREUSER = "";
     public static final String DEFAULT_IS_DOUDIZHU = "";
-    public static final Integer DEFAULT_IS_GROUP_OWNER;
-    public static final Integer DEFAULT_IS_HARDWORKING;
     public static final String DEFAULT_IS_INTERESTMAN = "";
-    public static final Integer DEFAULT_IS_MEMBER;
-    public static final Integer DEFAULT_IS_PASSER;
-    public static final Integer DEFAULT_IS_QUN_SPRING;
-    public static final Integer DEFAULT_IS_SHENGYOU;
-    public static final Integer DEFAULT_IS_TENYEAR;
-    public static final Integer DEFAULT_MEIZHI_LEVEL;
-    public static final List<NoticeMask> DEFAULT_NOTICE_MASK;
     public static final String DEFAULT_PAPER = "";
     public static final String DEFAULT_PORTRAIT_TIME = "";
-    public static final List<Rpgoldicon> DEFAULT_RPGOLDICON;
-    public static final Integer DEFAULT_SUPERBOY;
-    public static final List<TbmallMonthIcon> DEFAULT_TBMALL_MONTH_ICON;
     public static final String DEFAULT_TBSCORE_REPEATE_FINISH_TIME = "";
-    public static final Long DEFAULT_USER_ID;
     public static final String DEFAULT_USER_NAME = "";
-    public static final Integer DEFAULT_USER_SEX;
-    public static final Integer DEFAULT_USER_STATUS;
-    public static final Integer DEFAULT_USER_TYPE;
-    public static final Integer DEFAULT_USE_SIG;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 22)
     public final List<Props> appraise;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
@@ -118,17 +90,27 @@ public final class NewUser extends Message {
     public final Integer user_type;
     @ProtoField(tag = 10)
     public final WapRn wap_rn;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_USER_ID = 0L;
+    public static final Integer DEFAULT_USER_SEX = 0;
+    public static final Integer DEFAULT_USER_STATUS = 0;
+    public static final Integer DEFAULT_MEIZHI_LEVEL = 0;
+    public static final Integer DEFAULT_SUPERBOY = 0;
+    public static final Integer DEFAULT_IS_TENYEAR = 0;
+    public static final Integer DEFAULT_IS_GROUP_OWNER = 0;
+    public static final Integer DEFAULT_USER_TYPE = 0;
+    public static final Integer DEFAULT_USE_SIG = 0;
+    public static final Integer DEFAULT_IS_SHENGYOU = 0;
+    public static final Integer DEFAULT_IS_HARDWORKING = 0;
+    public static final List<Props> DEFAULT_APPRAISE = Collections.emptyList();
+    public static final Integer DEFAULT_IS_MEMBER = 0;
+    public static final Integer DEFAULT_IS_PASSER = 0;
+    public static final Integer DEFAULT_IS_QUN_SPRING = 0;
+    public static final List<NoticeMask> DEFAULT_NOTICE_MASK = Collections.emptyList();
+    public static final List<Rpgoldicon> DEFAULT_RPGOLDICON = Collections.emptyList();
+    public static final List<TbmallMonthIcon> DEFAULT_TBMALL_MONTH_ICON = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<NewUser> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public List<Props> appraise;
         public String bg_id;
         public String billboard;
@@ -167,37 +149,10 @@ public final class NewUser extends Message {
         public WapRn wap_rn;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(NewUser newUser) {
             super(newUser);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {newUser};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (newUser == null) {
                 return;
             }
@@ -242,66 +197,12 @@ public final class NewUser extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NewUser build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new NewUser(this, z, null);
-            }
-            return (NewUser) invokeZ.objValue;
+            return new NewUser(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1642039034, "Ltbclient/NewUser;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1642039034, "Ltbclient/NewUser;");
-                return;
-            }
-        }
-        DEFAULT_USER_ID = 0L;
-        DEFAULT_USER_SEX = 0;
-        DEFAULT_USER_STATUS = 0;
-        DEFAULT_MEIZHI_LEVEL = 0;
-        DEFAULT_SUPERBOY = 0;
-        DEFAULT_IS_TENYEAR = 0;
-        DEFAULT_IS_GROUP_OWNER = 0;
-        DEFAULT_USER_TYPE = 0;
-        DEFAULT_USE_SIG = 0;
-        DEFAULT_IS_SHENGYOU = 0;
-        DEFAULT_IS_HARDWORKING = 0;
-        DEFAULT_APPRAISE = Collections.emptyList();
-        DEFAULT_IS_MEMBER = 0;
-        DEFAULT_IS_PASSER = 0;
-        DEFAULT_IS_QUN_SPRING = 0;
-        DEFAULT_NOTICE_MASK = Collections.emptyList();
-        DEFAULT_RPGOLDICON = Collections.emptyList();
-        DEFAULT_TBMALL_MONTH_ICON = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public NewUser(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.user_id;
             if (l == null) {
@@ -528,9 +429,5 @@ public final class NewUser extends Message {
         this.is_interestman = builder.is_interestman;
         this.global = builder.global;
         this.free_flag = builder.free_flag;
-    }
-
-    public /* synthetic */ NewUser(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

@@ -1,13 +1,5 @@
 package tbclient.FineFrsPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -15,21 +7,10 @@ import java.util.List;
 import tbclient.ZhiBoInfoTW;
 /* loaded from: classes9.dex */
 public final class FineThreadInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ABSTRACT = "";
-    public static final Integer DEFAULT_FORDER;
-    public static final Long DEFAULT_FORUMID;
     public static final String DEFAULT_FROMFNAME = "";
-    public static final Long DEFAULT_FTID;
-    public static final Integer DEFAULT_PUBLISH_TIME;
     public static final String DEFAULT_TAG = "";
-    public static final Long DEFAULT_THREADSNUM;
-    public static final Integer DEFAULT_THREAD_TYPE;
-    public static final List<String> DEFAULT_THUMBNAIL;
     public static final String DEFAULT_TITLE = "";
-    public static final Integer DEFAULT_TYPE;
-    public static final Long DEFAULT_ZANSUM;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String _abstract;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
@@ -58,17 +39,18 @@ public final class FineThreadInfo extends Message {
     public final Integer type;
     @ProtoField(tag = 8, type = Message.Datatype.INT64)
     public final Long zansum;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_FTID = 0L;
+    public static final Integer DEFAULT_TYPE = 0;
+    public static final List<String> DEFAULT_THUMBNAIL = Collections.emptyList();
+    public static final Integer DEFAULT_PUBLISH_TIME = 0;
+    public static final Long DEFAULT_ZANSUM = 0L;
+    public static final Long DEFAULT_THREADSNUM = 0L;
+    public static final Long DEFAULT_FORUMID = 0L;
+    public static final Integer DEFAULT_THREAD_TYPE = 0;
+    public static final Integer DEFAULT_FORDER = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<FineThreadInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
         public Integer forder;
         public Long forumid;
@@ -85,37 +67,10 @@ public final class FineThreadInfo extends Message {
         public Long zansum;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(FineThreadInfo fineThreadInfo) {
             super(fineThreadInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {fineThreadInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (fineThreadInfo == null) {
                 return;
             }
@@ -138,57 +93,12 @@ public final class FineThreadInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FineThreadInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new FineThreadInfo(this, z, null);
-            }
-            return (FineThreadInfo) invokeZ.objValue;
+            return new FineThreadInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1511499476, "Ltbclient/FineFrsPage/FineThreadInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1511499476, "Ltbclient/FineFrsPage/FineThreadInfo;");
-                return;
-            }
-        }
-        DEFAULT_FTID = 0L;
-        DEFAULT_TYPE = 0;
-        DEFAULT_THUMBNAIL = Collections.emptyList();
-        DEFAULT_PUBLISH_TIME = 0;
-        DEFAULT_ZANSUM = 0L;
-        DEFAULT_THREADSNUM = 0L;
-        DEFAULT_FORUMID = 0L;
-        DEFAULT_THREAD_TYPE = 0;
-        DEFAULT_FORDER = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FineThreadInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.ftid;
             if (l == null) {
@@ -286,9 +196,5 @@ public final class FineThreadInfo extends Message {
         this.twzhibo_info = builder.twzhibo_info;
         this.thread_type = builder.thread_type;
         this.forder = builder.forder;
-    }
-
-    public /* synthetic */ FineThreadInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

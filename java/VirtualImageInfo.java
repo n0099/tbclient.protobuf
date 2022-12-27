@@ -1,34 +1,14 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class VirtualImageInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Integer DEFAULT_ALLOW_CUSTOMIZE;
     public static final String DEFAULT_DYNAMIC_VIRTUAL_IMAGE_URL = "";
-    public static final Integer DEFAULT_IMAGE_AGREE_COUNT;
-    public static final Integer DEFAULT_ISSET_VIRTUAL_IMAGE;
-    public static final Integer DEFAULT_IS_ALLOW_AGREE;
-    public static final Integer DEFAULT_IS_BACKGROUND_FIRSTLY;
-    public static final Integer DEFAULT_IS_DISPLAY;
-    public static final Integer DEFAULT_RECENT_INCR_AGREE;
-    public static final Integer DEFAULT_SNAPSHOOT_ID;
-    public static final List<StateInfo> DEFAULT_STATE_LIST;
     public static final String DEFAULT_VIRTUAL_BACKGROUND = "";
-    public static final Integer DEFAULT_VIRTUAL_BACKGROUND_TYPE;
     public static final String DEFAULT_VIRTUAL_IMAGE_URL = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer allow_customize;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
@@ -57,17 +37,19 @@ public final class VirtualImageInfo extends Message {
     public final Integer virtual_background_type;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String virtual_image_url;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_ISSET_VIRTUAL_IMAGE = 0;
+    public static final Integer DEFAULT_IMAGE_AGREE_COUNT = 0;
+    public static final Integer DEFAULT_IS_ALLOW_AGREE = 0;
+    public static final Integer DEFAULT_VIRTUAL_BACKGROUND_TYPE = 0;
+    public static final Integer DEFAULT_RECENT_INCR_AGREE = 0;
+    public static final Integer DEFAULT_SNAPSHOOT_ID = 0;
+    public static final List<StateInfo> DEFAULT_STATE_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_ALLOW_CUSTOMIZE = 0;
+    public static final Integer DEFAULT_IS_DISPLAY = 0;
+    public static final Integer DEFAULT_IS_BACKGROUND_FIRSTLY = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<VirtualImageInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Integer allow_customize;
         public String dynamic_virtual_image_url;
         public Integer image_agree_count;
@@ -84,37 +66,10 @@ public final class VirtualImageInfo extends Message {
         public String virtual_image_url;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(VirtualImageInfo virtualImageInfo) {
             super(virtualImageInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {virtualImageInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (virtualImageInfo == null) {
                 return;
             }
@@ -137,58 +92,12 @@ public final class VirtualImageInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public VirtualImageInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new VirtualImageInfo(this, z, null);
-            }
-            return (VirtualImageInfo) invokeZ.objValue;
+            return new VirtualImageInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(27834995, "Ltbclient/VirtualImageInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(27834995, "Ltbclient/VirtualImageInfo;");
-                return;
-            }
-        }
-        DEFAULT_ISSET_VIRTUAL_IMAGE = 0;
-        DEFAULT_IMAGE_AGREE_COUNT = 0;
-        DEFAULT_IS_ALLOW_AGREE = 0;
-        DEFAULT_VIRTUAL_BACKGROUND_TYPE = 0;
-        DEFAULT_RECENT_INCR_AGREE = 0;
-        DEFAULT_SNAPSHOOT_ID = 0;
-        DEFAULT_STATE_LIST = Collections.emptyList();
-        DEFAULT_ALLOW_CUSTOMIZE = 0;
-        DEFAULT_IS_DISPLAY = 0;
-        DEFAULT_IS_BACKGROUND_FIRSTLY = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public VirtualImageInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.isset_virtual_image;
             if (num == null) {
@@ -286,9 +195,5 @@ public final class VirtualImageInfo extends Message {
         this.is_display = builder.is_display;
         this.is_background_firstly = builder.is_background_firstly;
         this.dynamic_virtual_image_url = builder.dynamic_virtual_image_url;
-    }
-
-    public /* synthetic */ VirtualImageInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

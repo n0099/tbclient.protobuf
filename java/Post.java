@@ -1,59 +1,22 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class Post extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Integer DEFAULT_ADD_POST_NUMBER;
-    public static final List<String> DEFAULT_ARR_VIDEO;
-    public static final Long DEFAULT_AUTHOR_ID;
     public static final String DEFAULT_BIMG_URL = "";
-    public static final List<CardLinkInfo> DEFAULT_CARD_LINK_INFO;
-    public static final List<PbContent> DEFAULT_CONTENT;
     public static final String DEFAULT_DYNAMIC_URL = "";
-    public static final List<TailInfo> DEFAULT_EXT_TAILS;
-    public static final Integer DEFAULT_FLOOR;
     public static final String DEFAULT_FOLD_COMMENT_APPLY_URL = "";
-    public static final Integer DEFAULT_FOLD_COMMENT_STATUS;
     public static final String DEFAULT_FOLD_TIP = "";
-    public static final Long DEFAULT_ID;
-    public static final Integer DEFAULT_IMG_NUM_ABTEST;
     public static final String DEFAULT_IOS_BIMG_FORMAT = "";
-    public static final Integer DEFAULT_IS_BJH;
-    public static final Integer DEFAULT_IS_BUB;
-    public static final Integer DEFAULT_IS_FOLD;
-    public static final Integer DEFAULT_IS_HOT_POST;
-    public static final Integer DEFAULT_IS_NTITLE;
-    public static final Integer DEFAULT_IS_POST_VISIBLE;
-    public static final Integer DEFAULT_IS_TOP_AGREE_POST;
-    public static final Integer DEFAULT_IS_VOICE;
-    public static final Integer DEFAULT_IS_VOTE;
-    public static final Integer DEFAULT_IS_WONDERFUL_POST;
-    public static final List<HeadItem> DEFAULT_ITEM_STAR;
     public static final String DEFAULT_LEGO_CARD = "";
-    public static final Integer DEFAULT_NEED_LOG;
     public static final String DEFAULT_QUOTE_ID = "";
     public static final String DEFAULT_RUMOR_SOURCE_IMG = "";
-    public static final Integer DEFAULT_SHOW_SQUARED;
-    public static final Integer DEFAULT_STORECOUNT;
-    public static final Integer DEFAULT_SUB_POST_NUMBER;
-    public static final Long DEFAULT_TID;
-    public static final Integer DEFAULT_TIME;
     public static final String DEFAULT_TIME_EX = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_VOTE_CRYPT = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 27)
     public final ActPost act_post;
     @ProtoField(tag = 16)
@@ -182,17 +145,36 @@ public final class Post extends Message {
     public final String vote_crypt;
     @ProtoField(tag = 24)
     public final Zan zan;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_ID = 0L;
+    public static final Integer DEFAULT_FLOOR = 0;
+    public static final Integer DEFAULT_TIME = 0;
+    public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
+    public static final List<String> DEFAULT_ARR_VIDEO = Collections.emptyList();
+    public static final Integer DEFAULT_IS_VOTE = 0;
+    public static final Integer DEFAULT_IS_VOICE = 0;
+    public static final Integer DEFAULT_IS_NTITLE = 0;
+    public static final Integer DEFAULT_IS_BUB = 0;
+    public static final Integer DEFAULT_SUB_POST_NUMBER = 0;
+    public static final Long DEFAULT_AUTHOR_ID = 0L;
+    public static final Integer DEFAULT_ADD_POST_NUMBER = 0;
+    public static final Integer DEFAULT_STORECOUNT = 0;
+    public static final Integer DEFAULT_IS_HOT_POST = 0;
+    public static final List<TailInfo> DEFAULT_EXT_TAILS = Collections.emptyList();
+    public static final Integer DEFAULT_IS_POST_VISIBLE = 0;
+    public static final Integer DEFAULT_NEED_LOG = 0;
+    public static final Integer DEFAULT_IMG_NUM_ABTEST = 0;
+    public static final Integer DEFAULT_IS_FOLD = 0;
+    public static final Integer DEFAULT_IS_TOP_AGREE_POST = 0;
+    public static final Long DEFAULT_TID = 0L;
+    public static final Integer DEFAULT_SHOW_SQUARED = 0;
+    public static final Integer DEFAULT_IS_BJH = 0;
+    public static final Integer DEFAULT_IS_WONDERFUL_POST = 0;
+    public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
+    public static final Integer DEFAULT_FOLD_COMMENT_STATUS = 0;
+    public static final List<CardLinkInfo> DEFAULT_CARD_LINK_INFO = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Post> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public ActPost act_post;
         public AddPostList add_post_list;
         public Integer add_post_number;
@@ -259,37 +241,10 @@ public final class Post extends Message {
         public Zan zan;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(Post post) {
             super(post);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {post};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (post == null) {
                 return;
             }
@@ -362,75 +317,12 @@ public final class Post extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Post build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new Post(this, z, null);
-            }
-            return (Post) invokeZ.objValue;
+            return new Post(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1090755343, "Ltbclient/Post;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1090755343, "Ltbclient/Post;");
-                return;
-            }
-        }
-        DEFAULT_ID = 0L;
-        DEFAULT_FLOOR = 0;
-        DEFAULT_TIME = 0;
-        DEFAULT_CONTENT = Collections.emptyList();
-        DEFAULT_ARR_VIDEO = Collections.emptyList();
-        DEFAULT_IS_VOTE = 0;
-        DEFAULT_IS_VOICE = 0;
-        DEFAULT_IS_NTITLE = 0;
-        DEFAULT_IS_BUB = 0;
-        DEFAULT_SUB_POST_NUMBER = 0;
-        DEFAULT_AUTHOR_ID = 0L;
-        DEFAULT_ADD_POST_NUMBER = 0;
-        DEFAULT_STORECOUNT = 0;
-        DEFAULT_IS_HOT_POST = 0;
-        DEFAULT_EXT_TAILS = Collections.emptyList();
-        DEFAULT_IS_POST_VISIBLE = 0;
-        DEFAULT_NEED_LOG = 0;
-        DEFAULT_IMG_NUM_ABTEST = 0;
-        DEFAULT_IS_FOLD = 0;
-        DEFAULT_IS_TOP_AGREE_POST = 0;
-        DEFAULT_TID = 0L;
-        DEFAULT_SHOW_SQUARED = 0;
-        DEFAULT_IS_BJH = 0;
-        DEFAULT_IS_WONDERFUL_POST = 0;
-        DEFAULT_ITEM_STAR = Collections.emptyList();
-        DEFAULT_FOLD_COMMENT_STATUS = 0;
-        DEFAULT_CARD_LINK_INFO = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Post(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.id;
             if (l == null) {
@@ -753,9 +645,5 @@ public final class Post extends Message {
         this.dynamic_url = builder.dynamic_url;
         this.bubble_info = builder.bubble_info;
         this.rumor_source_img = builder.rumor_source_img;
-    }
-
-    public /* synthetic */ Post(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

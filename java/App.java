@@ -1,32 +1,20 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class App extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ABTEST = "";
     public static final String DEFAULT_AD_ID = "";
     public static final String DEFAULT_APK_NAME = "";
     public static final String DEFAULT_APK_URL = "";
     public static final String DEFAULT_APP_DESC = "";
     public static final String DEFAULT_APP_NAME = "";
-    public static final Integer DEFAULT_APP_TIME;
-    public static final Integer DEFAULT_CPID;
     public static final String DEFAULT_DEEP_URL = "";
     public static final String DEFAULT_EXT_INFO = "";
     public static final String DEFAULT_FIRST_NAME = "";
-    public static final List<GoodsInfo> DEFAULT_GOODS_INFO;
     public static final String DEFAULT_ICON_LINK = "";
     public static final String DEFAULT_ICON_URL = "";
     public static final String DEFAULT_ID = "";
@@ -34,20 +22,15 @@ public final class App extends Message {
     public static final String DEFAULT_IOS_URL = "";
     public static final String DEFAULT_LOC_CODE = "";
     public static final String DEFAULT_NAME = "";
-    public static final Integer DEFAULT_PLAN_ID;
-    public static final Integer DEFAULT_POS;
     public static final String DEFAULT_POS_NAME = "";
     public static final String DEFAULT_PRICE = "";
     public static final String DEFAULT_P_NAME = "";
     public static final String DEFAULT_P_URL = "";
     public static final String DEFAULT_SECOND_NAME = "";
-    public static final Integer DEFAULT_TYPE;
     public static final String DEFAULT_URL = "";
-    public static final Integer DEFAULT_URL_TYPE;
     public static final String DEFAULT_USER_ID = "";
     public static final String DEFAULT_VERIFY = "";
     public static final String DEFAULT_WEB_URL = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String abtest;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -112,17 +95,16 @@ public final class App extends Message {
     public final String verify;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String web_url;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_TYPE = 0;
+    public static final Integer DEFAULT_POS = 0;
+    public static final Integer DEFAULT_APP_TIME = 0;
+    public static final Integer DEFAULT_URL_TYPE = 0;
+    public static final Integer DEFAULT_CPID = 0;
+    public static final Integer DEFAULT_PLAN_ID = 0;
+    public static final List<GoodsInfo> DEFAULT_GOODS_INFO = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<App> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String abtest;
         public String ad_id;
         public String apk_name;
@@ -157,37 +139,10 @@ public final class App extends Message {
         public String web_url;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(App app) {
             super(app);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {app};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (app == null) {
                 return;
             }
@@ -228,55 +183,12 @@ public final class App extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public App build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new App(this, z, null);
-            }
-            return (App) invokeZ.objValue;
+            return new App(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(102915620, "Ltbclient/App;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(102915620, "Ltbclient/App;");
-                return;
-            }
-        }
-        DEFAULT_TYPE = 0;
-        DEFAULT_POS = 0;
-        DEFAULT_APP_TIME = 0;
-        DEFAULT_URL_TYPE = 0;
-        DEFAULT_CPID = 0;
-        DEFAULT_PLAN_ID = 0;
-        DEFAULT_GOODS_INFO = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public App(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.type;
             if (num == null) {
@@ -505,9 +417,5 @@ public final class App extends Message {
         this.goods_info = Message.immutableCopyOf(builder.goods_info);
         this.loc_code = builder.loc_code;
         this.deep_url = builder.deep_url;
-    }
-
-    public /* synthetic */ App(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

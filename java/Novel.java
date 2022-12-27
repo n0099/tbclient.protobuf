@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class Novel extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ANDROID_DETAIL_PARAMS = "";
     public static final String DEFAULT_ANDROID_LAST_CHARPTER_PARAMS = "";
     public static final String DEFAULT_ANDROID_LAST_READ_PARAMS = "";
@@ -28,7 +21,6 @@ public final class Novel extends Message {
     public static final String DEFAULT_LAST_CHAPTER_PAGE_ID = "";
     public static final String DEFAULT_LAST_CHAPTER_TITLE = "";
     public static final String DEFAULT_LAST_CHAPTER_UPDATE_TIME = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String android_detail_params;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
@@ -65,15 +57,7 @@ public final class Novel extends Message {
     public final String last_chapter_update_time;
 
     /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Novel> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String android_detail_params;
         public String android_last_charpter_params;
         public String android_last_read_params;
@@ -93,37 +77,10 @@ public final class Novel extends Message {
         public String last_chapter_update_time;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(Novel novel) {
             super(novel);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {novel};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (novel == null) {
                 return;
             }
@@ -149,33 +106,12 @@ public final class Novel extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Novel build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new Novel(this, z, null);
-            }
-            return (Novel) invokeZ.objValue;
+            return new Novel(this, z);
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Novel(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65536, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65536, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.book_id;
             if (str == null) {
@@ -299,9 +235,5 @@ public final class Novel extends Message {
         this.android_last_charpter_params = builder.android_last_charpter_params;
         this.android_last_read_params = builder.android_last_read_params;
         this.ios_last_read_params = builder.ios_last_read_params;
-    }
-
-    public /* synthetic */ Novel(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

@@ -1,23 +1,11 @@
 package tbclient.Personalized;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class LiveAnswer extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Integer DEFAULT_BANNER_HIGH;
     public static final String DEFAULT_BANNER_URL = "";
-    public static final Integer DEFAULT_BANNER_WIDTH;
     public static final String DEFAULT_JUMP_URL = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer banner_high;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -26,54 +14,21 @@ public final class LiveAnswer extends Message {
     public final Integer banner_width;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String jump_url;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_BANNER_WIDTH = 0;
+    public static final Integer DEFAULT_BANNER_HIGH = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<LiveAnswer> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Integer banner_high;
         public String banner_url;
         public Integer banner_width;
         public String jump_url;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(LiveAnswer liveAnswer) {
             super(liveAnswer);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {liveAnswer};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (liveAnswer == null) {
                 return;
             }
@@ -86,50 +41,12 @@ public final class LiveAnswer extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public LiveAnswer build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new LiveAnswer(this, z, null);
-            }
-            return (LiveAnswer) invokeZ.objValue;
+            return new LiveAnswer(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(929094844, "Ltbclient/Personalized/LiveAnswer;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(929094844, "Ltbclient/Personalized/LiveAnswer;");
-                return;
-            }
-        }
-        DEFAULT_BANNER_WIDTH = 0;
-        DEFAULT_BANNER_HIGH = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public LiveAnswer(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.banner_url;
             if (str == null) {
@@ -162,9 +79,5 @@ public final class LiveAnswer extends Message {
         this.banner_width = builder.banner_width;
         this.banner_high = builder.banner_high;
         this.jump_url = builder.jump_url;
-    }
-
-    public /* synthetic */ LiveAnswer(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

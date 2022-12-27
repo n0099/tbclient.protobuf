@@ -1,13 +1,5 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.google.android.exoplayer2.text.cea.Cea708Decoder;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
@@ -15,103 +7,33 @@ import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class User extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Integer DEFAULT_AGREE_NUM;
     public static final String DEFAULT_APPEAL_THREAD_POPOVER = "";
     public static final String DEFAULT_BAWU_TYPE = "";
     public static final String DEFAULT_BDUSS = "";
     public static final String DEFAULT_BG_PIC = "";
-    public static final Integer DEFAULT_BIMG_END_TIME;
     public static final String DEFAULT_BIMG_URL = "";
-    public static final Integer DEFAULT_BOOKMARK_COUNT;
-    public static final Integer DEFAULT_BOOKMARK_NEW_COUNT;
-    public static final Integer DEFAULT_CAN_MODIFY_AVATAR;
-    public static final Integer DEFAULT_CONCERN_NUM;
-    public static final Integer DEFAULT_DISPLAY_AUTH_TYPE;
     public static final String DEFAULT_DISPLAY_INTRO = "";
     public static final String DEFAULT_DYNAMIC_URL = "";
-    public static final Integer DEFAULT_EACH_OTHER_FRIEND;
     public static final String DEFAULT_EDITING_NICKNAME = "";
     public static final String DEFAULT_FANS_NICKNAME = "";
-    public static final Integer DEFAULT_FANS_NUM;
-    public static final Integer DEFAULT_FAVORITE_NUM;
     public static final String DEFAULT_FOLLOW_FROM = "";
-    public static final List<ForumToolPerm> DEFAULT_FORUM_TOOL_AUTH;
-    public static final Long DEFAULT_FRIEND_NUM;
-    public static final Integer DEFAULT_GENDER;
-    public static final List<GiftInfo> DEFAULT_GIFT_LIST;
-    public static final Integer DEFAULT_GIFT_NUM;
-    public static final List<MyGroupInfo> DEFAULT_GROUPLIST;
-    public static final Integer DEFAULT_HAS_BOTTLE_ENTER;
-    public static final Integer DEFAULT_HAS_CONCERNED;
-    public static final Integer DEFAULT_HEAVY_USER;
-    public static final List<Icon> DEFAULT_ICONINFO;
-    public static final Long DEFAULT_ID;
-    public static final Integer DEFAULT_INFLUENCE;
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_IOS_BIMG_FORMAT = "";
     public static final String DEFAULT_IP = "";
     public static final String DEFAULT_IP_ADDRESS = "";
-    public static final Integer DEFAULT_IS_BAWU;
-    public static final Integer DEFAULT_IS_COREUSER;
-    public static final Integer DEFAULT_IS_DEFAULT_AVATAR;
-    public static final Integer DEFAULT_IS_FANS;
-    public static final Integer DEFAULT_IS_FRIEND;
-    public static final Integer DEFAULT_IS_GUANFANG;
-    public static final Integer DEFAULT_IS_HUINIBUKE;
-    public static final Integer DEFAULT_IS_INTERESTMAN;
-    public static final Integer DEFAULT_IS_INVITED;
-    public static final Integer DEFAULT_IS_LIKE;
-    public static final Integer DEFAULT_IS_LOGIN;
-    public static final Integer DEFAULT_IS_MANAGER;
-    public static final Integer DEFAULT_IS_MASK;
-    public static final Integer DEFAULT_IS_MEM;
-    public static final Integer DEFAULT_IS_NICKNAME_EDITING;
-    public static final Integer DEFAULT_IS_SELECT_TAIL;
-    public static final Integer DEFAULT_IS_SHOW_REDPACKET;
-    public static final Integer DEFAULT_IS_VERIFY;
-    public static final Integer DEFAULT_IS_VIDEOBIGGIE;
-    public static final Integer DEFAULT_LEFT_CALL_NUM;
-    public static final Integer DEFAULT_LEVEL_ID;
     public static final String DEFAULT_LEVEL_INFLUENCE = "";
     public static final String DEFAULT_LEVEL_NAME = "";
-    public static final List<LikeForumInfo> DEFAULT_LIKEFORUM;
-    public static final List<BazhuSign> DEFAULT_MANAGER_FORUM;
-    public static final Integer DEFAULT_MEIZHI_LEVEL;
     public static final String DEFAULT_MODIFY_AVATAR_DESC = "";
-    public static final List<SimpleUser> DEFAULT_MUTE_USER;
-    public static final Integer DEFAULT_MY_LIKE_NUM;
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_NAME_SHOW = "";
-    public static final List<String> DEFAULT_NEW_ICON_URL;
-    public static final List<TshowInfo> DEFAULT_NEW_TSHOW_ICON;
-    public static final Integer DEFAULT_NICKNAME_UPDATE_TIME;
-    public static final Integer DEFAULT_NO_POST_HIGH;
-    public static final Integer DEFAULT_NO_UN;
     public static final String DEFAULT_PASSWD = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_PORTRAITH = "";
-    public static final Integer DEFAULT_POST_NUM;
-    public static final Integer DEFAULT_PRIV_THREAD;
-    public static final List<TwAnchorProfitItem> DEFAULT_PROFIT_LIST;
     public static final String DEFAULT_RANK = "";
     public static final String DEFAULT_SEAL_PREFIX = "";
-    public static final Integer DEFAULT_SEX;
-    public static final Integer DEFAULT_SHOW_PB_PRIVATE_FLAG;
     public static final String DEFAULT_TB_AGE = "";
-    public static final Integer DEFAULT_THREAD_NUM;
     public static final String DEFAULT_TIEBA_UID = "";
-    public static final Integer DEFAULT_TOTAL_AGREE_NUM;
-    public static final Integer DEFAULT_TOTAL_VISITOR_NUM;
-    public static final List<TshowInfo> DEFAULT_TSHOW_ICON;
-    public static final Integer DEFAULT_TYPE;
     public static final String DEFAULT_UK = "";
-    public static final Integer DEFAULT_USERHIDE;
-    public static final List<UserPics> DEFAULT_USER_PICS;
-    public static final Integer DEFAULT_USER_TYPE;
-    public static final Integer DEFAULT_VISITOR_NUM;
-    public static final Integer DEFAULT_WORK_NUM;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String BDUSS;
     @ProtoField(tag = 71)
@@ -382,17 +304,77 @@ public final class User extends Message {
     public final CreationData workcreation_data;
     @ProtoField(tag = Cea708Decoder.COMMAND_SPA)
     public final WorldCupInfo world_cup_info;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_IS_LOGIN = 0;
+    public static final Long DEFAULT_ID = 0L;
+    public static final Integer DEFAULT_NO_UN = 0;
+    public static final Integer DEFAULT_TYPE = 0;
+    public static final Integer DEFAULT_USERHIDE = 0;
+    public static final Integer DEFAULT_IS_MANAGER = 0;
+    public static final Integer DEFAULT_MEIZHI_LEVEL = 0;
+    public static final Integer DEFAULT_IS_VERIFY = 0;
+    public static final Integer DEFAULT_IS_INTERESTMAN = 0;
+    public static final List<Icon> DEFAULT_ICONINFO = Collections.emptyList();
+    public static final List<TshowInfo> DEFAULT_TSHOW_ICON = Collections.emptyList();
+    public static final Integer DEFAULT_USER_TYPE = 0;
+    public static final Integer DEFAULT_IS_COREUSER = 0;
+    public static final Integer DEFAULT_IS_HUINIBUKE = 0;
+    public static final Integer DEFAULT_LEVEL_ID = 0;
+    public static final Integer DEFAULT_IS_LIKE = 0;
+    public static final Integer DEFAULT_IS_BAWU = 0;
+    public static final Integer DEFAULT_FANS_NUM = 0;
+    public static final Integer DEFAULT_CONCERN_NUM = 0;
+    public static final Integer DEFAULT_SEX = 0;
+    public static final Integer DEFAULT_MY_LIKE_NUM = 0;
+    public static final Integer DEFAULT_HAS_CONCERNED = 0;
+    public static final Integer DEFAULT_POST_NUM = 0;
+    public static final Integer DEFAULT_IS_MEM = 0;
+    public static final Integer DEFAULT_BIMG_END_TIME = 0;
+    public static final Integer DEFAULT_GENDER = 0;
+    public static final Integer DEFAULT_IS_MASK = 0;
+    public static final List<UserPics> DEFAULT_USER_PICS = Collections.emptyList();
+    public static final Integer DEFAULT_IS_FRIEND = 0;
+    public static final List<LikeForumInfo> DEFAULT_LIKEFORUM = Collections.emptyList();
+    public static final List<MyGroupInfo> DEFAULT_GROUPLIST = Collections.emptyList();
+    public static final Integer DEFAULT_GIFT_NUM = 0;
+    public static final List<GiftInfo> DEFAULT_GIFT_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_IS_SELECT_TAIL = 0;
+    public static final Integer DEFAULT_IS_GUANFANG = 0;
+    public static final Integer DEFAULT_BOOKMARK_COUNT = 0;
+    public static final Integer DEFAULT_BOOKMARK_NEW_COUNT = 0;
+    public static final List<SimpleUser> DEFAULT_MUTE_USER = Collections.emptyList();
+    public static final Long DEFAULT_FRIEND_NUM = 0L;
+    public static final Integer DEFAULT_HEAVY_USER = 0;
+    public static final List<TshowInfo> DEFAULT_NEW_TSHOW_ICON = Collections.emptyList();
+    public static final List<TwAnchorProfitItem> DEFAULT_PROFIT_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_NO_POST_HIGH = 0;
+    public static final Integer DEFAULT_VISITOR_NUM = 0;
+    public static final Integer DEFAULT_TOTAL_VISITOR_NUM = 0;
+    public static final Integer DEFAULT_HAS_BOTTLE_ENTER = 0;
+    public static final Integer DEFAULT_EACH_OTHER_FRIEND = 0;
+    public static final Integer DEFAULT_NICKNAME_UPDATE_TIME = 0;
+    public static final Integer DEFAULT_THREAD_NUM = 0;
+    public static final Integer DEFAULT_AGREE_NUM = 0;
+    public static final Integer DEFAULT_LEFT_CALL_NUM = 0;
+    public static final Integer DEFAULT_IS_INVITED = 0;
+    public static final Integer DEFAULT_IS_FANS = 0;
+    public static final Integer DEFAULT_PRIV_THREAD = 0;
+    public static final Integer DEFAULT_IS_VIDEOBIGGIE = 0;
+    public static final Integer DEFAULT_IS_SHOW_REDPACKET = 0;
+    public static final Integer DEFAULT_CAN_MODIFY_AVATAR = 0;
+    public static final Integer DEFAULT_INFLUENCE = 0;
+    public static final Integer DEFAULT_IS_DEFAULT_AVATAR = 0;
+    public static final Integer DEFAULT_FAVORITE_NUM = 0;
+    public static final List<ForumToolPerm> DEFAULT_FORUM_TOOL_AUTH = Collections.emptyList();
+    public static final Integer DEFAULT_WORK_NUM = 0;
+    public static final Integer DEFAULT_SHOW_PB_PRIVATE_FLAG = 0;
+    public static final Integer DEFAULT_TOTAL_AGREE_NUM = 0;
+    public static final List<BazhuSign> DEFAULT_MANAGER_FORUM = Collections.emptyList();
+    public static final Integer DEFAULT_DISPLAY_AUTH_TYPE = 0;
+    public static final Integer DEFAULT_IS_NICKNAME_EDITING = 0;
+    public static final List<String> DEFAULT_NEW_ICON_URL = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<User> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String BDUSS;
         public ActivitySponsor activity_sponsor;
         public Integer agree_num;
@@ -530,37 +512,10 @@ public final class User extends Message {
         public WorldCupInfo world_cup_info;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(User user) {
             super(user);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {user};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (user == null) {
                 return;
             }
@@ -704,116 +659,12 @@ public final class User extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public User build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new User(this, z, null);
-            }
-            return (User) invokeZ.objValue;
+            return new User(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1086032090, "Ltbclient/User;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1086032090, "Ltbclient/User;");
-                return;
-            }
-        }
-        DEFAULT_IS_LOGIN = 0;
-        DEFAULT_ID = 0L;
-        DEFAULT_NO_UN = 0;
-        DEFAULT_TYPE = 0;
-        DEFAULT_USERHIDE = 0;
-        DEFAULT_IS_MANAGER = 0;
-        DEFAULT_MEIZHI_LEVEL = 0;
-        DEFAULT_IS_VERIFY = 0;
-        DEFAULT_IS_INTERESTMAN = 0;
-        DEFAULT_ICONINFO = Collections.emptyList();
-        DEFAULT_TSHOW_ICON = Collections.emptyList();
-        DEFAULT_USER_TYPE = 0;
-        DEFAULT_IS_COREUSER = 0;
-        DEFAULT_IS_HUINIBUKE = 0;
-        DEFAULT_LEVEL_ID = 0;
-        DEFAULT_IS_LIKE = 0;
-        DEFAULT_IS_BAWU = 0;
-        DEFAULT_FANS_NUM = 0;
-        DEFAULT_CONCERN_NUM = 0;
-        DEFAULT_SEX = 0;
-        DEFAULT_MY_LIKE_NUM = 0;
-        DEFAULT_HAS_CONCERNED = 0;
-        DEFAULT_POST_NUM = 0;
-        DEFAULT_IS_MEM = 0;
-        DEFAULT_BIMG_END_TIME = 0;
-        DEFAULT_GENDER = 0;
-        DEFAULT_IS_MASK = 0;
-        DEFAULT_USER_PICS = Collections.emptyList();
-        DEFAULT_IS_FRIEND = 0;
-        DEFAULT_LIKEFORUM = Collections.emptyList();
-        DEFAULT_GROUPLIST = Collections.emptyList();
-        DEFAULT_GIFT_NUM = 0;
-        DEFAULT_GIFT_LIST = Collections.emptyList();
-        DEFAULT_IS_SELECT_TAIL = 0;
-        DEFAULT_IS_GUANFANG = 0;
-        DEFAULT_BOOKMARK_COUNT = 0;
-        DEFAULT_BOOKMARK_NEW_COUNT = 0;
-        DEFAULT_MUTE_USER = Collections.emptyList();
-        DEFAULT_FRIEND_NUM = 0L;
-        DEFAULT_HEAVY_USER = 0;
-        DEFAULT_NEW_TSHOW_ICON = Collections.emptyList();
-        DEFAULT_PROFIT_LIST = Collections.emptyList();
-        DEFAULT_NO_POST_HIGH = 0;
-        DEFAULT_VISITOR_NUM = 0;
-        DEFAULT_TOTAL_VISITOR_NUM = 0;
-        DEFAULT_HAS_BOTTLE_ENTER = 0;
-        DEFAULT_EACH_OTHER_FRIEND = 0;
-        DEFAULT_NICKNAME_UPDATE_TIME = 0;
-        DEFAULT_THREAD_NUM = 0;
-        DEFAULT_AGREE_NUM = 0;
-        DEFAULT_LEFT_CALL_NUM = 0;
-        DEFAULT_IS_INVITED = 0;
-        DEFAULT_IS_FANS = 0;
-        DEFAULT_PRIV_THREAD = 0;
-        DEFAULT_IS_VIDEOBIGGIE = 0;
-        DEFAULT_IS_SHOW_REDPACKET = 0;
-        DEFAULT_CAN_MODIFY_AVATAR = 0;
-        DEFAULT_INFLUENCE = 0;
-        DEFAULT_IS_DEFAULT_AVATAR = 0;
-        DEFAULT_FAVORITE_NUM = 0;
-        DEFAULT_FORUM_TOOL_AUTH = Collections.emptyList();
-        DEFAULT_WORK_NUM = 0;
-        DEFAULT_SHOW_PB_PRIVATE_FLAG = 0;
-        DEFAULT_TOTAL_AGREE_NUM = 0;
-        DEFAULT_MANAGER_FORUM = Collections.emptyList();
-        DEFAULT_DISPLAY_AUTH_TYPE = 0;
-        DEFAULT_IS_NICKNAME_EDITING = 0;
-        DEFAULT_NEW_ICON_URL = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public User(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.is_login;
             if (num == null) {
@@ -1562,9 +1413,5 @@ public final class User extends Message {
         this.theme_background = builder.theme_background;
         this.theme_my_tab = builder.theme_my_tab;
         this.world_cup_info = builder.world_cup_info;
-    }
-
-    public /* synthetic */ User(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

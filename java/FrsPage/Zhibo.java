@@ -1,26 +1,9 @@
 package tbclient.FrsPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class Zhibo extends Message {
-    public static /* synthetic */ Interceptable $ic;
-    public static final Long DEFAULT_FORUM;
-    public static final Integer DEFAULT_HAS_LPOST;
-    public static final Integer DEFAULT_INT1;
-    public static final Integer DEFAULT_LPOST_TYPE;
-    public static final Integer DEFAULT_STATUS;
-    public static final Long DEFAULT_TID;
-    public static final Integer DEFAULT_TYPE;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long forum;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -35,17 +18,16 @@ public final class Zhibo extends Message {
     public final Long tid;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer type;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_FORUM = 0L;
+    public static final Long DEFAULT_TID = 0L;
+    public static final Integer DEFAULT_STATUS = 0;
+    public static final Integer DEFAULT_TYPE = 0;
+    public static final Integer DEFAULT_INT1 = 0;
+    public static final Integer DEFAULT_HAS_LPOST = 0;
+    public static final Integer DEFAULT_LPOST_TYPE = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Zhibo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Long forum;
         public Integer has_lpost;
         public Integer int1;
@@ -55,37 +37,10 @@ public final class Zhibo extends Message {
         public Integer type;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(Zhibo zhibo) {
             super(zhibo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {zhibo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (zhibo == null) {
                 return;
             }
@@ -101,55 +56,12 @@ public final class Zhibo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Zhibo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new Zhibo(this, z, null);
-            }
-            return (Zhibo) invokeZ.objValue;
+            return new Zhibo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1251450902, "Ltbclient/FrsPage/Zhibo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1251450902, "Ltbclient/FrsPage/Zhibo;");
-                return;
-            }
-        }
-        DEFAULT_FORUM = 0L;
-        DEFAULT_TID = 0L;
-        DEFAULT_STATUS = 0;
-        DEFAULT_TYPE = 0;
-        DEFAULT_INT1 = 0;
-        DEFAULT_HAS_LPOST = 0;
-        DEFAULT_LPOST_TYPE = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Zhibo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.forum;
             if (l == null) {
@@ -203,9 +115,5 @@ public final class Zhibo extends Message {
         this.int1 = builder.int1;
         this.has_lpost = builder.has_lpost;
         this.lpost_type = builder.lpost_type;
-    }
-
-    public /* synthetic */ Zhibo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

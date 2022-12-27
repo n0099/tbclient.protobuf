@@ -1,27 +1,15 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class PbGoodsInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_GOODS_FROM = "";
-    public static final Long DEFAULT_GOODS_ID;
     public static final String DEFAULT_GOODS_IMAGE = "";
     public static final String DEFAULT_GOODS_PRICE = "";
     public static final String DEFAULT_GOODS_TITLE = "";
     public static final String DEFAULT_GOODS_URL = "";
     public static final String DEFAULT_GOODS_URL_H5 = "";
-    public static final Integer DEFAULT_SORT;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String goods_from;
     @ProtoField(tag = 8, type = Message.Datatype.INT64)
@@ -38,17 +26,11 @@ public final class PbGoodsInfo extends Message {
     public final String goods_url_h5;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer sort;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_SORT = 0;
+    public static final Long DEFAULT_GOODS_ID = 0L;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<PbGoodsInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String goods_from;
         public Long goods_id;
         public String goods_image;
@@ -59,37 +41,10 @@ public final class PbGoodsInfo extends Message {
         public Integer sort;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(PbGoodsInfo pbGoodsInfo) {
             super(pbGoodsInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {pbGoodsInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (pbGoodsInfo == null) {
                 return;
             }
@@ -106,50 +61,12 @@ public final class PbGoodsInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PbGoodsInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new PbGoodsInfo(this, z, null);
-            }
-            return (PbGoodsInfo) invokeZ.objValue;
+            return new PbGoodsInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-2003469037, "Ltbclient/PbGoodsInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-2003469037, "Ltbclient/PbGoodsInfo;");
-                return;
-            }
-        }
-        DEFAULT_SORT = 0;
-        DEFAULT_GOODS_ID = 0L;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PbGoodsInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.goods_title;
             if (str == null) {
@@ -210,9 +127,5 @@ public final class PbGoodsInfo extends Message {
         this.goods_from = builder.goods_from;
         this.goods_url_h5 = builder.goods_url_h5;
         this.goods_id = builder.goods_id;
-    }
-
-    public /* synthetic */ PbGoodsInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

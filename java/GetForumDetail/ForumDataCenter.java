@@ -1,31 +1,14 @@
 package tbclient.GetForumDetail;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class ForumDataCenter extends Message {
-    public static /* synthetic */ Interceptable $ic;
     public static final Integer DEFAULT_HOMEPAGE_THREAD_CNT;
     public static final Integer DEFAULT_HOMEPAGE_THREAD_CNT_DIFF;
-    public static final Integer DEFAULT_NEW_FOLLOW_CNT;
-    public static final Integer DEFAULT_NEW_FOLLOW_CNT_DIFF;
-    public static final Integer DEFAULT_NEW_PV_CNT;
-    public static final Integer DEFAULT_NEW_PV_CNT_DIFF;
-    public static final Integer DEFAULT_NEW_THREAD_CNT;
-    public static final Integer DEFAULT_NEW_THREAD_CNT_DIFF;
-    public static final Integer DEFAULT_USER_DURATION_AVG;
     public static final Double DEFAULT_USER_DURATION_AVG_DIFF;
     public static final Double DEFAULT_USER_SIGN_RATE;
     public static final Double DEFAULT_USER_SIGN_RATE_DIFF;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer homepage_thread_cnt;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
@@ -50,17 +33,16 @@ public final class ForumDataCenter extends Message {
     public final Double user_sign_rate;
     @ProtoField(tag = 10, type = Message.Datatype.DOUBLE)
     public final Double user_sign_rate_diff;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_NEW_PV_CNT = 0;
+    public static final Integer DEFAULT_NEW_PV_CNT_DIFF = 0;
+    public static final Integer DEFAULT_NEW_THREAD_CNT = 0;
+    public static final Integer DEFAULT_NEW_THREAD_CNT_DIFF = 0;
+    public static final Integer DEFAULT_NEW_FOLLOW_CNT = 0;
+    public static final Integer DEFAULT_NEW_FOLLOW_CNT_DIFF = 0;
+    public static final Integer DEFAULT_USER_DURATION_AVG = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ForumDataCenter> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Integer homepage_thread_cnt;
         public Integer homepage_thread_cnt_diff;
         public Integer new_follow_cnt;
@@ -75,37 +57,10 @@ public final class ForumDataCenter extends Message {
         public Double user_sign_rate_diff;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ForumDataCenter forumDataCenter) {
             super(forumDataCenter);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {forumDataCenter};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (forumDataCenter == null) {
                 return;
             }
@@ -126,35 +81,11 @@ public final class ForumDataCenter extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumDataCenter build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new ForumDataCenter(this, z, null);
-            }
-            return (ForumDataCenter) invokeZ.objValue;
+            return new ForumDataCenter(this, z);
         }
     }
 
     static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1209376860, "Ltbclient/GetForumDetail/ForumDataCenter;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1209376860, "Ltbclient/GetForumDetail/ForumDataCenter;");
-                return;
-            }
-        }
-        DEFAULT_NEW_PV_CNT = 0;
-        DEFAULT_NEW_PV_CNT_DIFF = 0;
-        DEFAULT_NEW_THREAD_CNT = 0;
-        DEFAULT_NEW_THREAD_CNT_DIFF = 0;
-        DEFAULT_NEW_FOLLOW_CNT = 0;
-        DEFAULT_NEW_FOLLOW_CNT_DIFF = 0;
-        DEFAULT_USER_DURATION_AVG = 0;
         Double valueOf = Double.valueOf(0.0d);
         DEFAULT_USER_DURATION_AVG_DIFF = valueOf;
         DEFAULT_USER_SIGN_RATE = valueOf;
@@ -163,24 +94,8 @@ public final class ForumDataCenter extends Message {
         DEFAULT_HOMEPAGE_THREAD_CNT_DIFF = 0;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ForumDataCenter(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.new_pv_cnt;
             if (num == null) {
@@ -269,9 +184,5 @@ public final class ForumDataCenter extends Message {
         this.user_sign_rate_diff = builder.user_sign_rate_diff;
         this.homepage_thread_cnt = builder.homepage_thread_cnt;
         this.homepage_thread_cnt_diff = builder.homepage_thread_cnt_diff;
-    }
-
-    public /* synthetic */ ForumDataCenter(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

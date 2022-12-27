@@ -1,25 +1,13 @@
 package tbclient.FrsPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class RecomUserInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final List<CommonForum> DEFAULT_COMMON_FORUM;
     public static final String DEFAULT_MESSAGE = "";
-    public static final List<PostInfo> DEFAULT_POST_INFO;
     public static final String DEFAULT_POS_NAME = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<CommonForum> common_forum;
     @ProtoField(tag = 6)
@@ -32,17 +20,11 @@ public final class RecomUserInfo extends Message {
     public final List<PostInfo> post_info;
     @ProtoField(tag = 1)
     public final UserInfo user_info;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final List<CommonForum> DEFAULT_COMMON_FORUM = Collections.emptyList();
+    public static final List<PostInfo> DEFAULT_POST_INFO = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<RecomUserInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public List<CommonForum> common_forum;
         public CommonDistance distanceinfo;
         public String message;
@@ -51,37 +33,10 @@ public final class RecomUserInfo extends Message {
         public UserInfo user_info;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(RecomUserInfo recomUserInfo) {
             super(recomUserInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {recomUserInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (recomUserInfo == null) {
                 return;
             }
@@ -96,50 +51,12 @@ public final class RecomUserInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RecomUserInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new RecomUserInfo(this, z, null);
-            }
-            return (RecomUserInfo) invokeZ.objValue;
+            return new RecomUserInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1139974615, "Ltbclient/FrsPage/RecomUserInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1139974615, "Ltbclient/FrsPage/RecomUserInfo;");
-                return;
-            }
-        }
-        DEFAULT_COMMON_FORUM = Collections.emptyList();
-        DEFAULT_POST_INFO = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public RecomUserInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             this.user_info = builder.user_info;
             List<CommonForum> list = builder.common_forum;
@@ -175,9 +92,5 @@ public final class RecomUserInfo extends Message {
         this.pos_name = builder.pos_name;
         this.message = builder.message;
         this.distanceinfo = builder.distanceinfo;
-    }
-
-    public /* synthetic */ RecomUserInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

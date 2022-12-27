@@ -1,20 +1,11 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class GoodsInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AD_SOURCE = "";
     public static final String DEFAULT_BRAND_ICON = "";
     public static final String DEFAULT_BRAND_ICON_WH = "";
@@ -22,27 +13,18 @@ public final class GoodsInfo extends Message {
     public static final String DEFAULT_BUTTON_URL = "";
     public static final String DEFAULT_CARD_DESC = "";
     public static final String DEFAULT_CARD_TAG = "";
-    public static final Integer DEFAULT_GOODS_STYLE;
-    public static final Integer DEFAULT_HEIGHT;
-    public static final Integer DEFAULT_ID;
-    public static final Integer DEFAULT_LABEL_MEASURE;
     public static final String DEFAULT_LABEL_TEXT = "";
-    public static final Integer DEFAULT_LABEL_VISIBLE;
     public static final String DEFAULT_LEGO_CARD = "";
     public static final String DEFAULT_POP_WINDOW_TEXT = "";
-    public static final Integer DEFAULT_RANK_LEVEL;
     public static final String DEFAULT_TAG_NAME = "";
     public static final String DEFAULT_TAG_NAME_URL = "";
     public static final String DEFAULT_TAG_NAME_WH = "";
     public static final String DEFAULT_THREAD_CONTENT = "";
     public static final String DEFAULT_THREAD_PIC = "";
-    public static final List<ThreadPicList> DEFAULT_THREAD_PIC_LIST;
     public static final String DEFAULT_THREAD_TITLE = "";
     public static final String DEFAULT_THREAD_TYPE = "";
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_USER_PORTRAIT = "";
-    public static final Integer DEFAULT_WIDTH;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
     public final String ad_source;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
@@ -101,17 +83,17 @@ public final class GoodsInfo extends Message {
     public final VideoInfo video_info;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer width;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_ID = 0;
+    public static final Integer DEFAULT_GOODS_STYLE = 0;
+    public static final List<ThreadPicList> DEFAULT_THREAD_PIC_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_LABEL_VISIBLE = 0;
+    public static final Integer DEFAULT_RANK_LEVEL = 0;
+    public static final Integer DEFAULT_WIDTH = 0;
+    public static final Integer DEFAULT_HEIGHT = 0;
+    public static final Integer DEFAULT_LABEL_MEASURE = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<GoodsInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String ad_source;
         public String brand_icon;
         public String brand_icon_wh;
@@ -143,37 +125,10 @@ public final class GoodsInfo extends Message {
         public Integer width;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(GoodsInfo goodsInfo) {
             super(goodsInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {goodsInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (goodsInfo == null) {
                 return;
             }
@@ -211,56 +166,12 @@ public final class GoodsInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public GoodsInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new GoodsInfo(this, z, null);
-            }
-            return (GoodsInfo) invokeZ.objValue;
+            return new GoodsInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1571572737, "Ltbclient/GoodsInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1571572737, "Ltbclient/GoodsInfo;");
-                return;
-            }
-        }
-        DEFAULT_ID = 0;
-        DEFAULT_GOODS_STYLE = 0;
-        DEFAULT_THREAD_PIC_LIST = Collections.emptyList();
-        DEFAULT_LABEL_VISIBLE = 0;
-        DEFAULT_RANK_LEVEL = 0;
-        DEFAULT_WIDTH = 0;
-        DEFAULT_HEIGHT = 0;
-        DEFAULT_LABEL_MEASURE = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public GoodsInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.id;
             if (num == null) {
@@ -457,9 +368,5 @@ public final class GoodsInfo extends Message {
         this.brand_icon = builder.brand_icon;
         this.brand_icon_wh = builder.brand_icon_wh;
         this.close_info = builder.close_info;
-    }
-
-    public /* synthetic */ GoodsInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

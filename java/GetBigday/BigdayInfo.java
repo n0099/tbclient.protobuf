@@ -1,26 +1,11 @@
 package tbclient.GetBigday;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class BigdayInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Long DEFAULT_END_TIME;
-    public static final Long DEFAULT_ID;
-    public static final Integer DEFAULT_IMG_COLOUR;
     public static final String DEFAULT_IMG_URL = "";
     public static final String DEFAULT_JUMP_URL = "";
-    public static final Integer DEFAULT_POSITION;
-    public static final Long DEFAULT_START_TIME;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long end_time;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
@@ -35,17 +20,14 @@ public final class BigdayInfo extends Message {
     public final Integer position;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long start_time;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_START_TIME = 0L;
+    public static final Long DEFAULT_END_TIME = 0L;
+    public static final Integer DEFAULT_POSITION = 0;
+    public static final Long DEFAULT_ID = 0L;
+    public static final Integer DEFAULT_IMG_COLOUR = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<BigdayInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Long end_time;
         public Long id;
         public Integer img_colour;
@@ -55,37 +37,10 @@ public final class BigdayInfo extends Message {
         public Long start_time;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(BigdayInfo bigdayInfo) {
             super(bigdayInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {bigdayInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (bigdayInfo == null) {
                 return;
             }
@@ -101,53 +56,12 @@ public final class BigdayInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BigdayInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new BigdayInfo(this, z, null);
-            }
-            return (BigdayInfo) invokeZ.objValue;
+            return new BigdayInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1075502154, "Ltbclient/GetBigday/BigdayInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1075502154, "Ltbclient/GetBigday/BigdayInfo;");
-                return;
-            }
-        }
-        DEFAULT_START_TIME = 0L;
-        DEFAULT_END_TIME = 0L;
-        DEFAULT_POSITION = 0;
-        DEFAULT_ID = 0L;
-        DEFAULT_IMG_COLOUR = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BigdayInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.start_time;
             if (l == null) {
@@ -201,9 +115,5 @@ public final class BigdayInfo extends Message {
         this.id = builder.id;
         this.jump_url = builder.jump_url;
         this.img_colour = builder.img_colour;
-    }
-
-    public /* synthetic */ BigdayInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

@@ -1,19 +1,9 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class CommonReq extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Long DEFAULT_ACTIVE_TIMESTAMP;
     public static final String DEFAULT_AFDI = "";
     public static final String DEFAULT_ANDROID_ID = "";
     public static final String DEFAULT_APID = "";
@@ -23,7 +13,6 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_BRAND_TYPE = "";
     public static final String DEFAULT_C3_AID = "";
     public static final String DEFAULT_CAM = "";
-    public static final Integer DEFAULT_CMODE;
     public static final String DEFAULT_CUID = "";
     public static final String DEFAULT_CUID_GALAXY2 = "";
     public static final String DEFAULT_CUID_GID = "";
@@ -32,16 +21,13 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_DI_DIORDNA = "";
     public static final String DEFAULT_EVENT_DAY = "";
     public static final String DEFAULT_EXTRA = "";
-    public static final Long DEFAULT_FIRST_INSTALL_TIME;
     public static final String DEFAULT_FRAMEWORK_VER = "";
     public static final String DEFAULT_FROM = "";
     public static final String DEFAULT_IDFA = "";
     public static final String DEFAULT_IDFV = "";
     public static final String DEFAULT_IEMI = "";
     public static final String DEFAULT_IEMIWEN = "";
-    public static final Integer DEFAULT_IS_TEENAGER;
     public static final String DEFAULT_KA = "";
-    public static final Long DEFAULT_LAST_UPDATE_TIME;
     public static final String DEFAULT_LEGO_LIB_VERSION = "";
     public static final String DEFAULT_MAC = "";
     public static final String DEFAULT_MODEL = "";
@@ -52,37 +38,25 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_M_SIZE_D = "";
     public static final String DEFAULT_M_SIZE_U = "";
     public static final String DEFAULT_NAWS_GAME_VER = "";
-    public static final Integer DEFAULT_NET_TYPE;
     public static final String DEFAULT_OAID = "";
-    public static final Integer DEFAULT_PERSONALIZED_REC_SWITCH;
-    public static final Integer DEFAULT_PURE_MODE;
     public static final String DEFAULT_PVERSION = "";
-    public static final Integer DEFAULT_Q_TYPE;
     public static final String DEFAULT_SAMPLE_ID = "";
-    public static final Double DEFAULT_SCR_DIP;
-    public static final Integer DEFAULT_SCR_H;
-    public static final Integer DEFAULT_SCR_W;
     public static final String DEFAULT_SDK_VER = "";
     public static final String DEFAULT_SHOUBAI_CUID = "";
     public static final String DEFAULT_SIGN = "";
     public static final String DEFAULT_SMALLFLOW = "";
     public static final String DEFAULT_START_SCHEME = "";
-    public static final Integer DEFAULT_START_TYPE;
     public static final String DEFAULT_STOKEN = "";
     public static final String DEFAULT_SUBAPP_TYPE = "";
     public static final String DEFAULT_TBS = "";
     public static final String DEFAULT_USER_AGENT = "";
     public static final String DEFAULT_VFDI = "";
-    public static final Integer DEFAULT_XCX_MODE;
     public static final String DEFAULT_Z_ID = "";
     public static final String DEFAULT__CLIENT_ID = "";
-    public static final Integer DEFAULT__CLIENT_TYPE;
     public static final String DEFAULT__CLIENT_VERSION = "";
     public static final String DEFAULT__OS_VERSION = "";
     public static final String DEFAULT__PHONE_IMEI = "";
     public static final String DEFAULT__PHONE_NEWIMEI = "";
-    public static final Long DEFAULT__TIMESTAMP;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String BDUSS;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -221,17 +195,25 @@ public final class CommonReq extends Message {
     public final Integer xcx_mode;
     @ProtoField(tag = 31, type = Message.Datatype.STRING)
     public final String z_id;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT__CLIENT_TYPE = 0;
+    public static final Long DEFAULT__TIMESTAMP = 0L;
+    public static final Integer DEFAULT_NET_TYPE = 0;
+    public static final Integer DEFAULT_SCR_W = 0;
+    public static final Integer DEFAULT_SCR_H = 0;
+    public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
+    public static final Integer DEFAULT_Q_TYPE = 0;
+    public static final Integer DEFAULT_IS_TEENAGER = 0;
+    public static final Long DEFAULT_ACTIVE_TIMESTAMP = 0L;
+    public static final Long DEFAULT_FIRST_INSTALL_TIME = 0L;
+    public static final Long DEFAULT_LAST_UPDATE_TIME = 0L;
+    public static final Integer DEFAULT_CMODE = 0;
+    public static final Integer DEFAULT_START_TYPE = 0;
+    public static final Integer DEFAULT_PERSONALIZED_REC_SWITCH = 0;
+    public static final Integer DEFAULT_PURE_MODE = 0;
+    public static final Integer DEFAULT_XCX_MODE = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<CommonReq> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String BDUSS;
         public String _client_id;
         public Integer _client_type;
@@ -303,37 +285,10 @@ public final class CommonReq extends Message {
         public String z_id;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(CommonReq commonReq) {
             super(commonReq);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {commonReq};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (commonReq == null) {
                 return;
             }
@@ -411,64 +366,12 @@ public final class CommonReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public CommonReq build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new CommonReq(this, z, null);
-            }
-            return (CommonReq) invokeZ.objValue;
+            return new CommonReq(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1811576750, "Ltbclient/CommonReq;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1811576750, "Ltbclient/CommonReq;");
-                return;
-            }
-        }
-        DEFAULT__CLIENT_TYPE = 0;
-        DEFAULT__TIMESTAMP = 0L;
-        DEFAULT_NET_TYPE = 0;
-        DEFAULT_SCR_W = 0;
-        DEFAULT_SCR_H = 0;
-        DEFAULT_SCR_DIP = Double.valueOf(0.0d);
-        DEFAULT_Q_TYPE = 0;
-        DEFAULT_IS_TEENAGER = 0;
-        DEFAULT_ACTIVE_TIMESTAMP = 0L;
-        DEFAULT_FIRST_INSTALL_TIME = 0L;
-        DEFAULT_LAST_UPDATE_TIME = 0L;
-        DEFAULT_CMODE = 0;
-        DEFAULT_START_TYPE = 0;
-        DEFAULT_PERSONALIZED_REC_SWITCH = 0;
-        DEFAULT_PURE_MODE = 0;
-        DEFAULT_XCX_MODE = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CommonReq(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder._client_type;
             if (num == null) {
@@ -956,9 +859,5 @@ public final class CommonReq extends Message {
         this.device_score = builder.device_score;
         this.pure_mode = builder.pure_mode;
         this.xcx_mode = builder.xcx_mode;
-    }
-
-    public /* synthetic */ CommonReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

@@ -1,13 +1,5 @@
 package tbclient.Personalized;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -17,41 +9,18 @@ import tbclient.AppTransmitData;
 import tbclient.CommonReq;
 /* loaded from: classes9.dex */
 public final class DataReq extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_AGE_TAG = "";
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_FIRST_DIR = "";
-    public static final Long DEFAULT_FROM_TID;
-    public static final List<String> DEFAULT_INTEREST_TAG;
     public static final String DEFAULT_INVOKE_SOURCE = "";
-    public static final Integer DEFAULT_ISSDK;
     public static final String DEFAULT_LASTIDS = "";
-    public static final Integer DEFAULT_LOAD_TYPE;
-    public static final Integer DEFAULT_NEED_AGE_MODULE;
-    public static final Integer DEFAULT_NEED_FORUMLIST;
-    public static final Integer DEFAULT_NEED_TAGS;
-    public static final Integer DEFAULT_NEW_INSTALL;
-    public static final Integer DEFAULT_NEW_NET_TYPE;
-    public static final Integer DEFAULT_PAGE_THREAD_COUNT;
     public static final String DEFAULT_PLATFORM = "";
-    public static final Integer DEFAULT_PN;
-    public static final Integer DEFAULT_PRE_AD_THREAD_COUNT;
-    public static final Long DEFAULT_PUSH_TID;
     public static final String DEFAULT_QUERY_EQID = "";
-    public static final Integer DEFAULT_Q_TYPE;
-    public static final Integer DEFAULT_REQUEST_TIMES;
-    public static final Double DEFAULT_SCR_DIP;
-    public static final Integer DEFAULT_SCR_H;
-    public static final Integer DEFAULT_SCR_W;
     public static final String DEFAULT_SECOND_DIR = "";
     public static final String DEFAULT_SEX_TAG = "";
     public static final String DEFAULT_SHOUBAI_CUID = "";
-    public static final Integer DEFAULT_SUG_COUNT;
-    public static final Integer DEFAULT_TAG_CHANGED;
-    public static final Integer DEFAULT_TAG_CODE;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 30, type = Message.Datatype.STRING)
     public final String ad_context_list;
     @ProtoField(tag = 37, type = Message.Datatype.STRING)
@@ -126,17 +95,30 @@ public final class DataReq extends Message {
     public final Integer tag_changed;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer tag_code;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_TAG_CODE = 0;
+    public static final Integer DEFAULT_NEED_TAGS = 0;
+    public static final Integer DEFAULT_LOAD_TYPE = 0;
+    public static final Integer DEFAULT_PAGE_THREAD_COUNT = 0;
+    public static final Integer DEFAULT_PN = 0;
+    public static final Integer DEFAULT_SUG_COUNT = 0;
+    public static final Integer DEFAULT_SCR_W = 0;
+    public static final Integer DEFAULT_SCR_H = 0;
+    public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
+    public static final Integer DEFAULT_Q_TYPE = 0;
+    public static final Integer DEFAULT_ISSDK = 0;
+    public static final Integer DEFAULT_NEED_AGE_MODULE = 0;
+    public static final List<String> DEFAULT_INTEREST_TAG = Collections.emptyList();
+    public static final Integer DEFAULT_TAG_CHANGED = 0;
+    public static final Integer DEFAULT_NEED_FORUMLIST = 0;
+    public static final Integer DEFAULT_NEW_NET_TYPE = 0;
+    public static final Long DEFAULT_FROM_TID = 0L;
+    public static final Integer DEFAULT_PRE_AD_THREAD_COUNT = 0;
+    public static final Integer DEFAULT_NEW_INSTALL = 0;
+    public static final Integer DEFAULT_REQUEST_TIMES = 0;
+    public static final Long DEFAULT_PUSH_TID = 0L;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String ad_context_list;
         public String ad_ext_params;
         public String age_tag;
@@ -177,37 +159,10 @@ public final class DataReq extends Message {
         public Integer tag_code;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataReq dataReq) {
             super(dataReq);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataReq};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataReq == null) {
                 return;
             }
@@ -252,69 +207,12 @@ public final class DataReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataReq build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataReq(this, z, null);
-            }
-            return (DataReq) invokeZ.objValue;
+            return new DataReq(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-397390084, "Ltbclient/Personalized/DataReq;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-397390084, "Ltbclient/Personalized/DataReq;");
-                return;
-            }
-        }
-        DEFAULT_TAG_CODE = 0;
-        DEFAULT_NEED_TAGS = 0;
-        DEFAULT_LOAD_TYPE = 0;
-        DEFAULT_PAGE_THREAD_COUNT = 0;
-        DEFAULT_PN = 0;
-        DEFAULT_SUG_COUNT = 0;
-        DEFAULT_SCR_W = 0;
-        DEFAULT_SCR_H = 0;
-        DEFAULT_SCR_DIP = Double.valueOf(0.0d);
-        DEFAULT_Q_TYPE = 0;
-        DEFAULT_ISSDK = 0;
-        DEFAULT_NEED_AGE_MODULE = 0;
-        DEFAULT_INTEREST_TAG = Collections.emptyList();
-        DEFAULT_TAG_CHANGED = 0;
-        DEFAULT_NEED_FORUMLIST = 0;
-        DEFAULT_NEW_NET_TYPE = 0;
-        DEFAULT_FROM_TID = 0L;
-        DEFAULT_PRE_AD_THREAD_COUNT = 0;
-        DEFAULT_NEW_INSTALL = 0;
-        DEFAULT_REQUEST_TIMES = 0;
-        DEFAULT_PUSH_TID = 0L;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataReq(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             this.f1341common = builder.f1342common;
             Integer num = builder.tag_code;
@@ -556,9 +454,5 @@ public final class DataReq extends Message {
         this.ad_ext_params = builder.ad_ext_params;
         this.app_transmit_data = builder.app_transmit_data;
         this.push_tid = builder.push_tid;
-    }
-
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

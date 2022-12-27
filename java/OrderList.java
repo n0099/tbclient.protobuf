@@ -1,34 +1,17 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class OrderList extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ACTIVITY_DESC = "";
     public static final String DEFAULT_ACTIVITY_URL = "";
     public static final String DEFAULT_BUTTON_NAME = "";
-    public static final Long DEFAULT_CREATE_TIME;
-    public static final Long DEFAULT_FINISH_TIME;
-    public static final Long DEFAULT_MONEY;
     public static final Double DEFAULT_ORDER_AMOUNT;
     public static final String DEFAULT_ORDER_ID = "";
     public static final Double DEFAULT_ORDER_YY_AMOUNT;
     public static final String DEFAULT_PREG_FIELD = "";
-    public static final Integer DEFAULT_PRICE_TYPE;
-    public static final Integer DEFAULT_SCENE_ID;
-    public static final Long DEFAULT_SCORES;
-    public static final Integer DEFAULT_STATUS;
     public static final String DEFAULT_TITLE = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String activity_desc;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
@@ -59,17 +42,16 @@ public final class OrderList extends Message {
     public final Integer status;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String title;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_STATUS = 0;
+    public static final Long DEFAULT_CREATE_TIME = 0L;
+    public static final Long DEFAULT_FINISH_TIME = 0L;
+    public static final Integer DEFAULT_SCENE_ID = 0;
+    public static final Long DEFAULT_MONEY = 0L;
+    public static final Long DEFAULT_SCORES = 0L;
+    public static final Integer DEFAULT_PRICE_TYPE = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<OrderList> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String activity_desc;
         public String activity_url;
         public String button_name;
@@ -87,37 +69,10 @@ public final class OrderList extends Message {
         public String title;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(OrderList orderList) {
             super(orderList);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {orderList};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (orderList == null) {
                 return;
             }
@@ -141,58 +96,18 @@ public final class OrderList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public OrderList build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new OrderList(this, z, null);
-            }
-            return (OrderList) invokeZ.objValue;
+            return new OrderList(this, z);
         }
     }
 
     static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(2037500185, "Ltbclient/OrderList;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(2037500185, "Ltbclient/OrderList;");
-                return;
-            }
-        }
-        DEFAULT_STATUS = 0;
-        DEFAULT_CREATE_TIME = 0L;
-        DEFAULT_FINISH_TIME = 0L;
-        DEFAULT_SCENE_ID = 0;
-        DEFAULT_MONEY = 0L;
-        DEFAULT_SCORES = 0L;
-        DEFAULT_PRICE_TYPE = 0;
         Double valueOf = Double.valueOf(0.0d);
         DEFAULT_ORDER_YY_AMOUNT = valueOf;
         DEFAULT_ORDER_AMOUNT = valueOf;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public OrderList(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.order_id;
             if (str == null) {
@@ -302,9 +217,5 @@ public final class OrderList extends Message {
         this.price_type = builder.price_type;
         this.order_yy_amount = builder.order_yy_amount;
         this.order_amount = builder.order_amount;
-    }
-
-    public /* synthetic */ OrderList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

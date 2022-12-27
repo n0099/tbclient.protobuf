@@ -1,37 +1,13 @@
 package tbclient.PlaceOrder;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Integer DEFAULT_CURRENCY;
-    public static final Integer DEFAULT_GIFT_COUNT;
-    public static final Integer DEFAULT_GOODS_DURATION;
     public static final String DEFAULT_GOODS_NAME = "";
-    public static final Integer DEFAULT_GOODS_NUM;
     public static final String DEFAULT_GOODS_PIC = "";
-    public static final Integer DEFAULT_GOODS_PRICE;
     public static final String DEFAULT_GOODS_UNIT = "";
-    public static final Integer DEFAULT_GOODS_USER_LEVEL;
-    public static final Long DEFAULT_OPEN_ID;
     public static final String DEFAULT_ORDER_ID = "";
-    public static final Integer DEFAULT_PAY_TYPE;
-    public static final Integer DEFAULT_SCENE_ID;
-    public static final Integer DEFAULT_TB_TIMESTAMP;
-    public static final Integer DEFAULT_TDOU_NUM;
-    public static final Integer DEFAULT_TERMINAL;
-    public static final Integer DEFAULT_TIMESTAMP;
-    public static final Long DEFAULT_USER_ID;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 18, type = Message.Datatype.UINT32)
     public final Integer currency;
     @ProtoField(tag = 17, type = Message.Datatype.UINT32)
@@ -68,17 +44,23 @@ public final class DataRes extends Message {
     public final Integer timestamp;
     @ProtoField(tag = 7, type = Message.Datatype.UINT64)
     public final Long user_id;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_TDOU_NUM = 0;
+    public static final Integer DEFAULT_GOODS_PRICE = 0;
+    public static final Integer DEFAULT_GOODS_NUM = 0;
+    public static final Integer DEFAULT_PAY_TYPE = 0;
+    public static final Long DEFAULT_USER_ID = 0L;
+    public static final Integer DEFAULT_TB_TIMESTAMP = 0;
+    public static final Integer DEFAULT_TIMESTAMP = 0;
+    public static final Integer DEFAULT_SCENE_ID = 0;
+    public static final Integer DEFAULT_GOODS_USER_LEVEL = 0;
+    public static final Integer DEFAULT_GOODS_DURATION = 0;
+    public static final Integer DEFAULT_TERMINAL = 0;
+    public static final Long DEFAULT_OPEN_ID = 0L;
+    public static final Integer DEFAULT_GIFT_COUNT = 0;
+    public static final Integer DEFAULT_CURRENCY = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Integer currency;
         public Integer gift_count;
         public Integer goods_duration;
@@ -99,37 +81,10 @@ public final class DataRes extends Message {
         public Long user_id;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataRes dataRes) {
             super(dataRes);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataRes};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataRes == null) {
                 return;
             }
@@ -156,62 +111,12 @@ public final class DataRes extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataRes(this, z, null);
-            }
-            return (DataRes) invokeZ.objValue;
+            return new DataRes(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(98506723, "Ltbclient/PlaceOrder/DataRes;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(98506723, "Ltbclient/PlaceOrder/DataRes;");
-                return;
-            }
-        }
-        DEFAULT_TDOU_NUM = 0;
-        DEFAULT_GOODS_PRICE = 0;
-        DEFAULT_GOODS_NUM = 0;
-        DEFAULT_PAY_TYPE = 0;
-        DEFAULT_USER_ID = 0L;
-        DEFAULT_TB_TIMESTAMP = 0;
-        DEFAULT_TIMESTAMP = 0;
-        DEFAULT_SCENE_ID = 0;
-        DEFAULT_GOODS_USER_LEVEL = 0;
-        DEFAULT_GOODS_DURATION = 0;
-        DEFAULT_TERMINAL = 0;
-        DEFAULT_OPEN_ID = 0L;
-        DEFAULT_GIFT_COUNT = 0;
-        DEFAULT_CURRENCY = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.order_id;
             if (str == null) {
@@ -342,9 +247,5 @@ public final class DataRes extends Message {
         this.open_id = builder.open_id;
         this.gift_count = builder.gift_count;
         this.currency = builder.currency;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

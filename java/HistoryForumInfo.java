@@ -1,35 +1,15 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class HistoryForumInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FIRST_CATEGORY = "";
-    public static final Integer DEFAULT_FOLLOW_NUM;
-    public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
-    public static final Boolean DEFAULT_HAS_POSTPRE;
-    public static final Integer DEFAULT_HOT_NUM;
-    public static final Integer DEFAULT_IS_FORUM_BUSINESS_ACCOUNT;
-    public static final Integer DEFAULT_IS_LIVEFORUM;
-    public static final Integer DEFAULT_LEVEL_ID;
-    public static final Boolean DEFAULT_NEED_TRANS;
-    public static final List<FrsTabInfo> DEFAULT_TAB_INFO;
-    public static final Integer DEFAULT_UNREAD_NUM;
     public static final String DEFAULT_VISIT_TIME = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String avatar;
     @ProtoField(tag = 14)
@@ -66,17 +46,19 @@ public final class HistoryForumInfo extends Message {
     public final Integer unread_num;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String visit_time;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_IS_LIVEFORUM = 0;
+    public static final Integer DEFAULT_UNREAD_NUM = 0;
+    public static final Integer DEFAULT_FOLLOW_NUM = 0;
+    public static final Boolean DEFAULT_NEED_TRANS = Boolean.FALSE;
+    public static final Integer DEFAULT_HOT_NUM = 0;
+    public static final Integer DEFAULT_LEVEL_ID = 0;
+    public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
+    public static final Boolean DEFAULT_HAS_POSTPRE = Boolean.FALSE;
+    public static final Integer DEFAULT_IS_FORUM_BUSINESS_ACCOUNT = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<HistoryForumInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String avatar;
         public BlockPopInfo block_pop_info;
         public String first_category;
@@ -97,37 +79,10 @@ public final class HistoryForumInfo extends Message {
         public String visit_time;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(HistoryForumInfo historyForumInfo) {
             super(historyForumInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {historyForumInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (historyForumInfo == null) {
                 return;
             }
@@ -154,58 +109,12 @@ public final class HistoryForumInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public HistoryForumInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new HistoryForumInfo(this, z, null);
-            }
-            return (HistoryForumInfo) invokeZ.objValue;
+            return new HistoryForumInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1854967626, "Ltbclient/HistoryForumInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1854967626, "Ltbclient/HistoryForumInfo;");
-                return;
-            }
-        }
-        DEFAULT_FORUM_ID = 0L;
-        DEFAULT_IS_LIVEFORUM = 0;
-        DEFAULT_UNREAD_NUM = 0;
-        DEFAULT_FOLLOW_NUM = 0;
-        DEFAULT_NEED_TRANS = Boolean.FALSE;
-        DEFAULT_HOT_NUM = 0;
-        DEFAULT_LEVEL_ID = 0;
-        DEFAULT_TAB_INFO = Collections.emptyList();
-        DEFAULT_HAS_POSTPRE = Boolean.FALSE;
-        DEFAULT_IS_FORUM_BUSINESS_ACCOUNT = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public HistoryForumInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.forum_id;
             if (l == null) {
@@ -316,9 +225,5 @@ public final class HistoryForumInfo extends Message {
         this.is_forum_business_account = builder.is_forum_business_account;
         this.tag_info = builder.tag_info;
         this.first_category = builder.first_category;
-    }
-
-    public /* synthetic */ HistoryForumInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

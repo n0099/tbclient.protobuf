@@ -1,30 +1,17 @@
 package tbclient.GetOrder;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 import tbclient.Wares;
 /* loaded from: classes9.dex */
 public final class DataReq extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_CLICK_ZONE = "";
-    public static final Integer DEFAULT_IS_AUTOPAY;
-    public static final Integer DEFAULT_IS_LEFT;
     public static final String DEFAULT_MOBILE = "";
     public static final String DEFAULT_ORDER_URL = "";
     public static final String DEFAULT_PAYMENT_POS_KEY = "";
-    public static final Integer DEFAULT_PAY_TYPE;
     public static final String DEFAULT_REFER_PAGE = "";
     public static final String DEFAULT_WALLET_SDK_UA = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String click_zone;
     @ProtoField(tag = 1)
@@ -35,6 +22,8 @@ public final class DataReq extends Message {
     public final Integer is_autopay;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer is_left;
+    @ProtoField(tag = 11, type = Message.Datatype.UINT64)
+    public final Long live_id;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String mobile;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -49,24 +38,20 @@ public final class DataReq extends Message {
     public final String wallet_sdk_ua;
     @ProtoField(tag = 6)
     public final Wares wares;
-
-    /* renamed from: tbclient.GetOrder.DataReq$1  reason: invalid class name */
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class AnonymousClass1 {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_PAY_TYPE = 0;
+    public static final Integer DEFAULT_IS_LEFT = 0;
+    public static final Integer DEFAULT_IS_AUTOPAY = 0;
+    public static final Long DEFAULT_LIVE_ID = 0L;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String click_zone;
 
         /* renamed from: common  reason: collision with root package name */
         public CommonReq f1252common;
         public Integer is_autopay;
         public Integer is_left;
+        public Long live_id;
         public String mobile;
         public String order_url;
         public Integer pay_type;
@@ -76,37 +61,10 @@ public final class DataReq extends Message {
         public Wares wares;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataReq dataReq) {
             super(dataReq);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataReq};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataReq == null) {
                 return;
             }
@@ -120,57 +78,19 @@ public final class DataReq extends Message {
             this.payment_pos_key = dataReq.payment_pos_key;
             this.refer_page = dataReq.refer_page;
             this.click_zone = dataReq.click_zone;
+            this.live_id = dataReq.live_id;
             this.wallet_sdk_ua = dataReq.wallet_sdk_ua;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataReq build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataReq(this, z, null);
-            }
-            return (DataReq) invokeZ.objValue;
+            return new DataReq(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1502074164, "Ltbclient/GetOrder/DataReq;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1502074164, "Ltbclient/GetOrder/DataReq;");
-                return;
-            }
-        }
-        DEFAULT_PAY_TYPE = 0;
-        DEFAULT_IS_LEFT = 0;
-        DEFAULT_IS_AUTOPAY = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataReq(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             this.f1251common = builder.f1252common;
             Integer num = builder.pay_type;
@@ -222,6 +142,12 @@ public final class DataReq extends Message {
             } else {
                 this.click_zone = str5;
             }
+            Long l = builder.live_id;
+            if (l == null) {
+                this.live_id = DEFAULT_LIVE_ID;
+            } else {
+                this.live_id = l;
+            }
             String str6 = builder.wallet_sdk_ua;
             if (str6 == null) {
                 this.wallet_sdk_ua = "";
@@ -241,10 +167,7 @@ public final class DataReq extends Message {
         this.payment_pos_key = builder.payment_pos_key;
         this.refer_page = builder.refer_page;
         this.click_zone = builder.click_zone;
+        this.live_id = builder.live_id;
         this.wallet_sdk_ua = builder.wallet_sdk_ua;
-    }
-
-    public /* synthetic */ DataReq(Builder builder, boolean z, AnonymousClass1 anonymousClass1) {
-        this(builder, z);
     }
 }

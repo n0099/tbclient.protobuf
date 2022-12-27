@@ -1,38 +1,22 @@
 package tbclient.LogTogether;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class AdReq extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_DA_CPID = "";
     public static final String DEFAULT_DA_EXT_INFO = "";
-    public static final Integer DEFAULT_DA_FID;
     public static final String DEFAULT_DA_GOOD_ID = "";
-    public static final Boolean DEFAULT_DA_ISCACHE;
     public static final String DEFAULT_DA_LOCATE = "";
     public static final String DEFAULT_DA_OBJ_ID = "";
     public static final String DEFAULT_DA_PAGE = "";
     public static final String DEFAULT_DA_PLAN_ID = "";
-    public static final Integer DEFAULT_DA_PN;
     public static final String DEFAULT_DA_PRICE = "";
     public static final String DEFAULT_DA_TASK = "";
-    public static final Long DEFAULT_DA_THREADID;
-    public static final Integer DEFAULT_DA_TID;
     public static final String DEFAULT_DA_TYPE = "";
     public static final String DEFAULT_DA_USER_ID = "";
-    public static final Long DEFAULT_DA_UTIME;
     public static final String DEFAULT_DA_VERIFY = "";
     public static final String DEFAULT_EXT = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
     public final String da_cpid;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -71,17 +55,15 @@ public final class AdReq extends Message {
     public final String da_verify;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String ext;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_DA_FID = 0;
+    public static final Integer DEFAULT_DA_TID = 0;
+    public static final Long DEFAULT_DA_THREADID = 0L;
+    public static final Long DEFAULT_DA_UTIME = 0L;
+    public static final Integer DEFAULT_DA_PN = 0;
+    public static final Boolean DEFAULT_DA_ISCACHE = Boolean.FALSE;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<AdReq> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String da_cpid;
         public String da_ext_info;
         public Integer da_fid;
@@ -103,37 +85,10 @@ public final class AdReq extends Message {
         public String ext;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(AdReq adReq) {
             super(adReq);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {adReq};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (adReq == null) {
                 return;
             }
@@ -161,54 +116,12 @@ public final class AdReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public AdReq build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new AdReq(this, z, null);
-            }
-            return (AdReq) invokeZ.objValue;
+            return new AdReq(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1626676795, "Ltbclient/LogTogether/AdReq;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1626676795, "Ltbclient/LogTogether/AdReq;");
-                return;
-            }
-        }
-        DEFAULT_DA_FID = 0;
-        DEFAULT_DA_TID = 0;
-        DEFAULT_DA_THREADID = 0L;
-        DEFAULT_DA_UTIME = 0L;
-        DEFAULT_DA_PN = 0;
-        DEFAULT_DA_ISCACHE = Boolean.FALSE;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public AdReq(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.da_page;
             if (str == null) {
@@ -346,9 +259,5 @@ public final class AdReq extends Message {
         this.da_utime = builder.da_utime;
         this.da_pn = builder.da_pn;
         this.da_iscache = builder.da_iscache;
-    }
-
-    public /* synthetic */ AdReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

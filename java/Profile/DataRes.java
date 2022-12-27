@@ -1,13 +1,5 @@
 package tbclient.Profile;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -36,20 +28,7 @@ import tbclient.UserManChannelInfo;
 import tbclient.UserMap;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final List<AlaLiveInfo> DEFAULT_ALA_LIVE_RECORD;
-    public static final List<BannerImage> DEFAULT_BANNER;
-    public static final List<UcCardInfo> DEFAULT_COMMON_CARD;
-    public static final List<ForumDynamic> DEFAULT_CONCERNED_FORUM_LIST;
-    public static final List<DynamicInfo> DEFAULT_DYNAMIC_LIST;
-    public static final Integer DEFAULT_IS_BLACK_WHITE;
-    public static final List<ThreadInfo> DEFAULT_NEWEST_DYNAMIC_LIST;
-    public static final List<PostInfoList> DEFAULT_POST_LIST;
-    public static final List<SmartApp> DEFAULT_RECOM_NAWS_LIST;
     public static final String DEFAULT_UK = "";
-    public static final List<UserMap> DEFAULT_URL_MAP;
-    public static final Integer DEFAULT_WORK_TAB_ID;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 16)
     public final AlaLiveInfo ala_live_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 19)
@@ -94,6 +73,8 @@ public final class DataRes extends Message {
     public final List<PostInfoList> post_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<SmartApp> recom_naws_list;
+    @ProtoField(tag = 21, type = Message.Datatype.INT32)
+    public final Integer show_answer;
     @ProtoField(tag = 3)
     public final TAInfo tainfo;
     @ProtoField(tag = 9)
@@ -118,17 +99,21 @@ public final class DataRes extends Message {
     public final DealWindow window;
     @ProtoField(tag = 34, type = Message.Datatype.UINT32)
     public final Integer work_tab_id;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final List<PostInfoList> DEFAULT_POST_LIST = Collections.emptyList();
+    public static final List<DynamicInfo> DEFAULT_DYNAMIC_LIST = Collections.emptyList();
+    public static final List<ForumDynamic> DEFAULT_CONCERNED_FORUM_LIST = Collections.emptyList();
+    public static final List<AlaLiveInfo> DEFAULT_ALA_LIVE_RECORD = Collections.emptyList();
+    public static final List<UserMap> DEFAULT_URL_MAP = Collections.emptyList();
+    public static final Integer DEFAULT_SHOW_ANSWER = 0;
+    public static final List<BannerImage> DEFAULT_BANNER = Collections.emptyList();
+    public static final List<SmartApp> DEFAULT_RECOM_NAWS_LIST = Collections.emptyList();
+    public static final List<ThreadInfo> DEFAULT_NEWEST_DYNAMIC_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_IS_BLACK_WHITE = 0;
+    public static final Integer DEFAULT_WORK_TAB_ID = 0;
+    public static final List<UcCardInfo> DEFAULT_COMMON_CARD = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public AlaLiveInfo ala_live_info;
         public List<AlaLiveInfo> ala_live_record;
         public Anti anti_stat;
@@ -151,6 +136,7 @@ public final class DataRes extends Message {
         public NicknameInfo nickname_info;
         public List<PostInfoList> post_list;
         public List<SmartApp> recom_naws_list;
+        public Integer show_answer;
         public TAInfo tainfo;
         public TbBookrack tbbookrack;
         public UcCard uc_card;
@@ -165,37 +151,10 @@ public final class DataRes extends Message {
         public Integer work_tab_id;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataRes dataRes) {
             super(dataRes);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataRes};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataRes == null) {
                 return;
             }
@@ -218,6 +177,7 @@ public final class DataRes extends Message {
             this.nickname_info = dataRes.nickname_info;
             this.ala_live_record = Message.copyOf(dataRes.ala_live_record);
             this.url_map = Message.copyOf(dataRes.url_map);
+            this.show_answer = dataRes.show_answer;
             this.banner = Message.copyOf(dataRes.banner);
             this.recom_naws_list = Message.copyOf(dataRes.recom_naws_list);
             this.namoaixud = dataRes.namoaixud;
@@ -238,59 +198,12 @@ public final class DataRes extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataRes(this, z, null);
-            }
-            return (DataRes) invokeZ.objValue;
+            return new DataRes(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1548228331, "Ltbclient/Profile/DataRes;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1548228331, "Ltbclient/Profile/DataRes;");
-                return;
-            }
-        }
-        DEFAULT_POST_LIST = Collections.emptyList();
-        DEFAULT_DYNAMIC_LIST = Collections.emptyList();
-        DEFAULT_CONCERNED_FORUM_LIST = Collections.emptyList();
-        DEFAULT_ALA_LIVE_RECORD = Collections.emptyList();
-        DEFAULT_URL_MAP = Collections.emptyList();
-        DEFAULT_BANNER = Collections.emptyList();
-        DEFAULT_RECOM_NAWS_LIST = Collections.emptyList();
-        DEFAULT_NEWEST_DYNAMIC_LIST = Collections.emptyList();
-        DEFAULT_IS_BLACK_WHITE = 0;
-        DEFAULT_WORK_TAB_ID = 0;
-        DEFAULT_COMMON_CARD = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             this.user = builder.user;
             this.anti_stat = builder.anti_stat;
@@ -336,6 +249,12 @@ public final class DataRes extends Message {
             } else {
                 this.url_map = Message.immutableCopyOf(list5);
             }
+            Integer num = builder.show_answer;
+            if (num == null) {
+                this.show_answer = DEFAULT_SHOW_ANSWER;
+            } else {
+                this.show_answer = num;
+            }
             List<BannerImage> list6 = builder.banner;
             if (list6 == null) {
                 this.banner = DEFAULT_BANNER;
@@ -363,17 +282,17 @@ public final class DataRes extends Message {
             } else {
                 this.uk = str;
             }
-            Integer num = builder.is_black_white;
-            if (num == null) {
+            Integer num2 = builder.is_black_white;
+            if (num2 == null) {
                 this.is_black_white = DEFAULT_IS_BLACK_WHITE;
             } else {
-                this.is_black_white = num;
+                this.is_black_white = num2;
             }
-            Integer num2 = builder.work_tab_id;
-            if (num2 == null) {
+            Integer num3 = builder.work_tab_id;
+            if (num3 == null) {
                 this.work_tab_id = DEFAULT_WORK_TAB_ID;
             } else {
-                this.work_tab_id = num2;
+                this.work_tab_id = num3;
             }
             this.finance_tab = builder.finance_tab;
             this.block_info = builder.block_info;
@@ -408,6 +327,7 @@ public final class DataRes extends Message {
         this.nickname_info = builder.nickname_info;
         this.ala_live_record = Message.immutableCopyOf(builder.ala_live_record);
         this.url_map = Message.immutableCopyOf(builder.url_map);
+        this.show_answer = builder.show_answer;
         this.banner = Message.immutableCopyOf(builder.banner);
         this.recom_naws_list = Message.immutableCopyOf(builder.recom_naws_list);
         this.namoaixud = builder.namoaixud;
@@ -423,9 +343,5 @@ public final class DataRes extends Message {
         this.bubble_info = builder.bubble_info;
         this.vip_banner = builder.vip_banner;
         this.common_card = Message.immutableCopyOf(builder.common_card);
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

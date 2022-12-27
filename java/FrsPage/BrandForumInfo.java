@@ -1,13 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -15,12 +7,10 @@ import java.util.List;
 import tbclient.OriForumInfo;
 /* loaded from: classes9.dex */
 public final class BrandForumInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BRAND_DESC = "";
     public static final String DEFAULT_JUMP_DESC = "";
     public static final String DEFAULT_JUMP_URL = "";
-    public static final List<OriForumInfo> DEFAULT_RELATION_FORUM;
-    public transient /* synthetic */ FieldHolder $fh;
+    public static final List<OriForumInfo> DEFAULT_RELATION_FORUM = Collections.emptyList();
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String brand_desc;
     @ProtoField(tag = 2)
@@ -33,15 +23,7 @@ public final class BrandForumInfo extends Message {
     public final List<OriForumInfo> relation_forum;
 
     /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<BrandForumInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String brand_desc;
         public HeadImgs head_imgs;
         public String jump_desc;
@@ -49,37 +31,10 @@ public final class BrandForumInfo extends Message {
         public List<OriForumInfo> relation_forum;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(BrandForumInfo brandForumInfo) {
             super(brandForumInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {brandForumInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (brandForumInfo == null) {
                 return;
             }
@@ -93,49 +48,12 @@ public final class BrandForumInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BrandForumInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new BrandForumInfo(this, z, null);
-            }
-            return (BrandForumInfo) invokeZ.objValue;
+            return new BrandForumInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1935109008, "Ltbclient/FrsPage/BrandForumInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1935109008, "Ltbclient/FrsPage/BrandForumInfo;");
-                return;
-            }
-        }
-        DEFAULT_RELATION_FORUM = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BrandForumInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             List<OriForumInfo> list = builder.relation_forum;
             if (list == null) {
@@ -170,9 +88,5 @@ public final class BrandForumInfo extends Message {
         this.brand_desc = builder.brand_desc;
         this.jump_url = builder.jump_url;
         this.jump_desc = builder.jump_desc;
-    }
-
-    public /* synthetic */ BrandForumInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

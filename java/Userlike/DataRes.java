@@ -1,13 +1,5 @@
 package tbclient.Userlike;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -17,18 +9,13 @@ import tbclient.BannerUserStory;
 import tbclient.DiscoverHotForum;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final List<App> DEFAULT_APP_LIST;
-    public static final Integer DEFAULT_HAS_MORE;
+    public static final String DEFAULT_ABTEST_TAG = "";
     public static final String DEFAULT_LAST_TIPS = "";
     public static final String DEFAULT_PAGE_TAG = "";
-    public static final Long DEFAULT_REQ_UNIX;
-    public static final List<ConcernData> DEFAULT_THREAD_INFO;
     public static final String DEFAULT_TOP_TIPS = "";
-    public static final List<UserList> DEFAULT_USER_LIST;
     public static final String DEFAULT_USER_TIPS = "";
-    public static final Integer DEFAULT_USER_TIPS_TYPE;
-    public transient /* synthetic */ FieldHolder $fh;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String abtest_tag;
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
     public final List<App> app_list;
     @ProtoField(tag = 13)
@@ -59,17 +46,16 @@ public final class DataRes extends Message {
     public final String user_tips;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer user_tips_type;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final List<ConcernData> DEFAULT_THREAD_INFO = Collections.emptyList();
+    public static final List<UserList> DEFAULT_USER_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_HAS_MORE = 0;
+    public static final Long DEFAULT_REQ_UNIX = 0L;
+    public static final Integer DEFAULT_USER_TIPS_TYPE = 0;
+    public static final List<App> DEFAULT_APP_LIST = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
+        public String abtest_tag;
         public List<App> app_list;
         public BannerFollowLive banner_follow_live;
         public BannerUserStory banner_user_story;
@@ -87,37 +73,10 @@ public final class DataRes extends Message {
         public Integer user_tips_type;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataRes dataRes) {
             super(dataRes);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataRes};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataRes == null) {
                 return;
             }
@@ -134,6 +93,7 @@ public final class DataRes extends Message {
             this.top_tips = dataRes.top_tips;
             this.banner_follow_live = dataRes.banner_follow_live;
             this.hot_recomforum = dataRes.hot_recomforum;
+            this.abtest_tag = dataRes.abtest_tag;
             this.app_list = Message.copyOf(dataRes.app_list);
             this.user_follow_live = dataRes.user_follow_live;
         }
@@ -141,54 +101,12 @@ public final class DataRes extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataRes(this, z, null);
-            }
-            return (DataRes) invokeZ.objValue;
+            return new DataRes(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1531639912, "Ltbclient/Userlike/DataRes;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1531639912, "Ltbclient/Userlike/DataRes;");
-                return;
-            }
-        }
-        DEFAULT_THREAD_INFO = Collections.emptyList();
-        DEFAULT_USER_LIST = Collections.emptyList();
-        DEFAULT_HAS_MORE = 0;
-        DEFAULT_REQ_UNIX = 0L;
-        DEFAULT_USER_TIPS_TYPE = 0;
-        DEFAULT_APP_LIST = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             List<ConcernData> list = builder.thread_info;
             if (list == null) {
@@ -248,6 +166,12 @@ public final class DataRes extends Message {
             }
             this.banner_follow_live = builder.banner_follow_live;
             this.hot_recomforum = builder.hot_recomforum;
+            String str5 = builder.abtest_tag;
+            if (str5 == null) {
+                this.abtest_tag = "";
+            } else {
+                this.abtest_tag = str5;
+            }
             List<App> list3 = builder.app_list;
             if (list3 == null) {
                 this.app_list = DEFAULT_APP_LIST;
@@ -270,11 +194,8 @@ public final class DataRes extends Message {
         this.top_tips = builder.top_tips;
         this.banner_follow_live = builder.banner_follow_live;
         this.hot_recomforum = builder.hot_recomforum;
+        this.abtest_tag = builder.abtest_tag;
         this.app_list = Message.immutableCopyOf(builder.app_list);
         this.user_follow_live = builder.user_follow_live;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

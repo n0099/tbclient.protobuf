@@ -1,31 +1,14 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class FrequentlyForumInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Integer DEFAULT_ACCESS_FLAG;
     public static final String DEFAULT_AVATAR = "";
-    public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
-    public static final Integer DEFAULT_FORUM_STATE;
-    public static final Integer DEFAULT_IS_SIGN;
-    public static final Long DEFAULT_LAST_ACCESS_TIME;
-    public static final Integer DEFAULT_LEVEL_ID;
     public static final String DEFAULT_NEW_THREAD_NUM = "";
-    public static final List<User> DEFAULT_USER_LIST;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 15, type = Message.Datatype.UINT32)
     public final Integer access_flag;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -36,6 +19,8 @@ public final class FrequentlyForumInfo extends Message {
     public final String forum_name;
     @ProtoField(tag = 14, type = Message.Datatype.UINT32)
     public final Integer forum_state;
+    @ProtoField(tag = 17, type = Message.Datatype.UINT32)
+    public final Integer is_brand_forum;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer is_sign;
     @ProtoField(tag = 9, type = Message.Datatype.UINT64)
@@ -46,22 +31,23 @@ public final class FrequentlyForumInfo extends Message {
     public final String new_thread_num;
     @ProtoField(label = Message.Label.REPEATED, tag = 7)
     public final List<User> user_list;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
+    public static final Long DEFAULT_LAST_ACCESS_TIME = 0L;
+    public static final Integer DEFAULT_LEVEL_ID = 0;
+    public static final Integer DEFAULT_FORUM_STATE = 0;
+    public static final Integer DEFAULT_ACCESS_FLAG = 0;
+    public static final Integer DEFAULT_IS_SIGN = 0;
+    public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<FrequentlyForumInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Integer access_flag;
         public String avatar;
         public Long forum_id;
         public String forum_name;
         public Integer forum_state;
+        public Integer is_brand_forum;
         public Integer is_sign;
         public Long last_access_time;
         public Integer level_id;
@@ -69,37 +55,10 @@ public final class FrequentlyForumInfo extends Message {
         public List<User> user_list;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(FrequentlyForumInfo frequentlyForumInfo) {
             super(frequentlyForumInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {frequentlyForumInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (frequentlyForumInfo == null) {
                 return;
             }
@@ -113,60 +72,18 @@ public final class FrequentlyForumInfo extends Message {
             this.forum_state = frequentlyForumInfo.forum_state;
             this.access_flag = frequentlyForumInfo.access_flag;
             this.is_sign = frequentlyForumInfo.is_sign;
+            this.is_brand_forum = frequentlyForumInfo.is_brand_forum;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FrequentlyForumInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new FrequentlyForumInfo(this, z, null);
-            }
-            return (FrequentlyForumInfo) invokeZ.objValue;
+            return new FrequentlyForumInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(2063690705, "Ltbclient/FrequentlyForumInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(2063690705, "Ltbclient/FrequentlyForumInfo;");
-                return;
-            }
-        }
-        DEFAULT_FORUM_ID = 0L;
-        DEFAULT_USER_LIST = Collections.emptyList();
-        DEFAULT_LAST_ACCESS_TIME = 0L;
-        DEFAULT_LEVEL_ID = 0;
-        DEFAULT_FORUM_STATE = 0;
-        DEFAULT_ACCESS_FLAG = 0;
-        DEFAULT_IS_SIGN = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FrequentlyForumInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.forum_id;
             if (l == null) {
@@ -225,9 +142,15 @@ public final class FrequentlyForumInfo extends Message {
             Integer num4 = builder.is_sign;
             if (num4 == null) {
                 this.is_sign = DEFAULT_IS_SIGN;
-                return;
             } else {
                 this.is_sign = num4;
+            }
+            Integer num5 = builder.is_brand_forum;
+            if (num5 == null) {
+                this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
+                return;
+            } else {
+                this.is_brand_forum = num5;
                 return;
             }
         }
@@ -241,9 +164,6 @@ public final class FrequentlyForumInfo extends Message {
         this.forum_state = builder.forum_state;
         this.access_flag = builder.access_flag;
         this.is_sign = builder.is_sign;
-    }
-
-    public /* synthetic */ FrequentlyForumInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        this.is_brand_forum = builder.is_brand_forum;
     }
 }

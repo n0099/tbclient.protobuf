@@ -1,35 +1,13 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class ChannelVideoInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Integer DEFAULT_CREATE_TIME;
-    public static final Integer DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
-    public static final Integer DEFAULT_IS_TOP;
-    public static final Integer DEFAULT_PLAY_COUNT;
-    public static final Long DEFAULT_THREAD_ID;
-    public static final Integer DEFAULT_THUMBNAIL_HEIGHT;
     public static final String DEFAULT_THUMBNAIL_URL = "";
-    public static final Integer DEFAULT_THUMBNAIL_WIDTH;
     public static final String DEFAULT_TITLE = "";
-    public static final Integer DEFAULT_VIDEO_DURATION;
-    public static final Integer DEFAULT_VIDEO_HEIGHT;
-    public static final Integer DEFAULT_VIDEO_LENGTH;
-    public static final Long DEFAULT_VIDEO_TYPE;
     public static final String DEFAULT_VIDEO_URL = "";
-    public static final Integer DEFAULT_VIDEO_WIDTH;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer create_time;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
@@ -62,17 +40,21 @@ public final class ChannelVideoInfo extends Message {
     public final String video_url;
     @ProtoField(tag = 8, type = Message.Datatype.UINT32)
     public final Integer video_width;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_THREAD_ID = 0L;
+    public static final Integer DEFAULT_FORUM_ID = 0;
+    public static final Integer DEFAULT_PLAY_COUNT = 0;
+    public static final Integer DEFAULT_VIDEO_DURATION = 0;
+    public static final Integer DEFAULT_VIDEO_WIDTH = 0;
+    public static final Integer DEFAULT_VIDEO_HEIGHT = 0;
+    public static final Integer DEFAULT_VIDEO_LENGTH = 0;
+    public static final Long DEFAULT_VIDEO_TYPE = 0L;
+    public static final Integer DEFAULT_THUMBNAIL_WIDTH = 0;
+    public static final Integer DEFAULT_THUMBNAIL_HEIGHT = 0;
+    public static final Integer DEFAULT_IS_TOP = 0;
+    public static final Integer DEFAULT_CREATE_TIME = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ChannelVideoInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Integer create_time;
         public Integer forum_id;
         public String forum_name;
@@ -91,37 +73,10 @@ public final class ChannelVideoInfo extends Message {
         public Integer video_width;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ChannelVideoInfo channelVideoInfo) {
             super(channelVideoInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {channelVideoInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (channelVideoInfo == null) {
                 return;
             }
@@ -146,60 +101,12 @@ public final class ChannelVideoInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ChannelVideoInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new ChannelVideoInfo(this, z, null);
-            }
-            return (ChannelVideoInfo) invokeZ.objValue;
+            return new ChannelVideoInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1870170955, "Ltbclient/ChannelVideoInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1870170955, "Ltbclient/ChannelVideoInfo;");
-                return;
-            }
-        }
-        DEFAULT_THREAD_ID = 0L;
-        DEFAULT_FORUM_ID = 0;
-        DEFAULT_PLAY_COUNT = 0;
-        DEFAULT_VIDEO_DURATION = 0;
-        DEFAULT_VIDEO_WIDTH = 0;
-        DEFAULT_VIDEO_HEIGHT = 0;
-        DEFAULT_VIDEO_LENGTH = 0;
-        DEFAULT_VIDEO_TYPE = 0L;
-        DEFAULT_THUMBNAIL_WIDTH = 0;
-        DEFAULT_THUMBNAIL_HEIGHT = 0;
-        DEFAULT_IS_TOP = 0;
-        DEFAULT_CREATE_TIME = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ChannelVideoInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.thread_id;
             if (l == null) {
@@ -316,9 +223,5 @@ public final class ChannelVideoInfo extends Message {
         this.thumbnail_height = builder.thumbnail_height;
         this.is_top = builder.is_top;
         this.create_time = builder.create_time;
-    }
-
-    public /* synthetic */ ChannelVideoInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

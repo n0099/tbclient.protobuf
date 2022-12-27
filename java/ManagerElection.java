@@ -1,31 +1,12 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class ManagerElection extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Integer DEFAULT_BEGIN_VOTE_TIME;
-    public static final Integer DEFAULT_CAN_VOTE;
-    public static final Integer DEFAULT_IS_SHOW_DISTRIBUTE;
-    public static final Integer DEFAULT_REMAINDER_TIME;
-    public static final Integer DEFAULT_STATUS;
     public static final String DEFAULT_TAIL_TEXT = "";
-    public static final List<String> DEFAULT_VOTE_CONDITION;
-    public static final List<String> DEFAULT_VOTE_CONDITION_PIC;
-    public static final List<String> DEFAULT_VOTE_CONDITION_TITLE;
-    public static final Integer DEFAULT_VOTE_NUM;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer begin_vote_time;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -46,17 +27,18 @@ public final class ManagerElection extends Message {
     public final List<String> vote_condition_title;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer vote_num;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_CAN_VOTE = 0;
+    public static final Integer DEFAULT_VOTE_NUM = 0;
+    public static final Integer DEFAULT_BEGIN_VOTE_TIME = 0;
+    public static final List<String> DEFAULT_VOTE_CONDITION = Collections.emptyList();
+    public static final Integer DEFAULT_IS_SHOW_DISTRIBUTE = 0;
+    public static final Integer DEFAULT_REMAINDER_TIME = 0;
+    public static final Integer DEFAULT_STATUS = 0;
+    public static final List<String> DEFAULT_VOTE_CONDITION_TITLE = Collections.emptyList();
+    public static final List<String> DEFAULT_VOTE_CONDITION_PIC = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ManagerElection> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Integer begin_vote_time;
         public Integer can_vote;
         public Integer is_show_distribute;
@@ -69,37 +51,10 @@ public final class ManagerElection extends Message {
         public Integer vote_num;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ManagerElection managerElection) {
             super(managerElection);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {managerElection};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (managerElection == null) {
                 return;
             }
@@ -118,57 +73,12 @@ public final class ManagerElection extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ManagerElection build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new ManagerElection(this, z, null);
-            }
-            return (ManagerElection) invokeZ.objValue;
+            return new ManagerElection(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1943492351, "Ltbclient/ManagerElection;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1943492351, "Ltbclient/ManagerElection;");
-                return;
-            }
-        }
-        DEFAULT_CAN_VOTE = 0;
-        DEFAULT_VOTE_NUM = 0;
-        DEFAULT_BEGIN_VOTE_TIME = 0;
-        DEFAULT_VOTE_CONDITION = Collections.emptyList();
-        DEFAULT_IS_SHOW_DISTRIBUTE = 0;
-        DEFAULT_REMAINDER_TIME = 0;
-        DEFAULT_STATUS = 0;
-        DEFAULT_VOTE_CONDITION_TITLE = Collections.emptyList();
-        DEFAULT_VOTE_CONDITION_PIC = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ManagerElection(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.can_vote;
             if (num == null) {
@@ -243,9 +153,5 @@ public final class ManagerElection extends Message {
         this.status = builder.status;
         this.vote_condition_title = Message.immutableCopyOf(builder.vote_condition_title);
         this.vote_condition_pic = Message.immutableCopyOf(builder.vote_condition_pic);
-    }
-
-    public /* synthetic */ ManagerElection(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

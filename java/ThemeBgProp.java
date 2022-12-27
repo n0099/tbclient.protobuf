@@ -1,31 +1,17 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class ThemeBgProp extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ACTIVITY_URL = "";
     public static final String DEFAULT_DESCRIPTION = "";
     public static final String DEFAULT_DYNAMIC_URL = "";
     public static final String DEFAULT_DYNAMIC_URL_SMALL = "";
     public static final String DEFAULT_EXAMPLE_URL = "";
-    public static final Integer DEFAULT_FREE_USER_LEVEL;
-    public static final Integer DEFAULT_IN_USE;
-    public static final Integer DEFAULT_IS_FINISHED;
     public static final String DEFAULT_PERMISSION = "";
-    public static final Integer DEFAULT_PROPS_ID;
     public static final String DEFAULT_PROPS_STATE_IMG = "";
     public static final String DEFAULT_TITLE = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String activity_url;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -50,17 +36,13 @@ public final class ThemeBgProp extends Message {
     public final String props_state_img;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_PROPS_ID = 0;
+    public static final Integer DEFAULT_IN_USE = 0;
+    public static final Integer DEFAULT_FREE_USER_LEVEL = 0;
+    public static final Integer DEFAULT_IS_FINISHED = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ThemeBgProp> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String activity_url;
         public String description;
         public String dynamic_url;
@@ -75,37 +57,10 @@ public final class ThemeBgProp extends Message {
         public String title;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ThemeBgProp themeBgProp) {
             super(themeBgProp);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {themeBgProp};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (themeBgProp == null) {
                 return;
             }
@@ -126,52 +81,12 @@ public final class ThemeBgProp extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThemeBgProp build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new ThemeBgProp(this, z, null);
-            }
-            return (ThemeBgProp) invokeZ.objValue;
+            return new ThemeBgProp(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1934981076, "Ltbclient/ThemeBgProp;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1934981076, "Ltbclient/ThemeBgProp;");
-                return;
-            }
-        }
-        DEFAULT_PROPS_ID = 0;
-        DEFAULT_IN_USE = 0;
-        DEFAULT_FREE_USER_LEVEL = 0;
-        DEFAULT_IS_FINISHED = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ThemeBgProp(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.props_id;
             if (num == null) {
@@ -260,9 +175,5 @@ public final class ThemeBgProp extends Message {
         this.is_finished = builder.is_finished;
         this.dynamic_url = builder.dynamic_url;
         this.dynamic_url_small = builder.dynamic_url_small;
-    }
-
-    public /* synthetic */ ThemeBgProp(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

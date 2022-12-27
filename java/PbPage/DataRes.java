@@ -1,13 +1,5 @@
 package tbclient.PbPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -16,6 +8,8 @@ import tbclient.AlaLiveInfo;
 import tbclient.Anti;
 import tbclient.BannerList;
 import tbclient.BusinessAccountInfo;
+import tbclient.EditConfig;
+import tbclient.EditInfo;
 import tbclient.FineBannerPb;
 import tbclient.ForumRuleStatus;
 import tbclient.GraffitiRankListInfo;
@@ -39,45 +33,12 @@ import tbclient.TwZhiBoAnti;
 import tbclient.User;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
-    public static final List<ThreadInfo> DEFAULT_BJH_RECOMMEND;
-    public static final Integer DEFAULT_EXP_GUIDE_TODAY;
-    public static final Integer DEFAULT_EXP_NEWS_TODAY;
-    public static final List<ThreadInfo> DEFAULT_FEED_THREAD_LIST;
-    public static final List<FineBannerPb> DEFAULT_FINE_BANNER;
-    public static final Long DEFAULT_FOLD_COMMENT_NUM;
     public static final String DEFAULT_FOLD_TIP = "";
-    public static final List<SimpleForum> DEFAULT_FROM_FORUM_LIST;
-    public static final Integer DEFAULT_HAS_FLOOR;
-    public static final Integer DEFAULT_HAS_FOLD_COMMENT;
-    public static final Integer DEFAULT_IS_BLACK_WHITE;
-    public static final Integer DEFAULT_IS_FOLLOW_CURRENT_CHANNEL;
-    public static final Integer DEFAULT_IS_NEW_URL;
-    public static final Integer DEFAULT_IS_OFFICIAL_FORUM;
-    public static final Integer DEFAULT_IS_PURCHASE;
-    public static final Integer DEFAULT_JUMPTOTAB1;
     public static final String DEFAULT_JUMPTOTAB2 = "";
     public static final String DEFAULT_MULTI_FORUM_TEXT = "";
-    public static final List<SimpleUser> DEFAULT_NEW_AGREE_USER;
     public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
     public static final String DEFAULT_PB_NOTICE = "";
-    public static final Integer DEFAULT_PB_NOTICE_TYPE;
-    public static final List<PbSortType> DEFAULT_PB_SORT_INFO;
-    public static final List<PsRankListItem> DEFAULT_PLAY_RANK_LIST;
-    public static final List<PostBanner> DEFAULT_POST_BANNER;
-    public static final List<Post> DEFAULT_POST_LIST;
-    public static final List<RecommendThread> DEFAULT_RECOMMEND_THREADS;
-    public static final List<ThreadInfo> DEFAULT_RECOM_THREAD_INFO;
-    public static final List<SimpleForum> DEFAULT_REPOST_RECOMMEND_FORUM_LIST;
-    public static final Integer DEFAULT_SERVER_TIME;
-    public static final Integer DEFAULT_SHOW_ADSENSE;
-    public static final Integer DEFAULT_SORT_TYPE;
-    public static final Integer DEFAULT_SWITCH_READ_OPEN;
-    public static final Long DEFAULT_THREAD_FREQ_NUM;
-    public static final List<RecomTopicList> DEFAULT_THREAD_TOPIC;
-    public static final List<User> DEFAULT_USER_LIST;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 5)
     public final AddPost add_post;
     @ProtoField(tag = 26)
@@ -98,6 +59,10 @@ public final class DataRes extends Message {
     public final BusinessPromotInfo business_promot_info;
     @ProtoField(tag = 39)
     public final SimpleForum display_forum;
+    @ProtoField(tag = 71)
+    public final EditConfig edit_config;
+    @ProtoField(tag = 72)
+    public final EditInfo edit_info;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer exp_guide_today;
     @ProtoField(tag = 45, type = Message.Datatype.INT32)
@@ -220,17 +185,40 @@ public final class DataRes extends Message {
     public final User user;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<User> user_list;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final List<Post> DEFAULT_POST_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_HAS_FLOOR = 0;
+    public static final Integer DEFAULT_IS_NEW_URL = 0;
+    public static final List<PostBanner> DEFAULT_POST_BANNER = Collections.emptyList();
+    public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_SERVER_TIME = 0;
+    public static final List<RecommendThread> DEFAULT_RECOMMEND_THREADS = Collections.emptyList();
+    public static final List<FineBannerPb> DEFAULT_FINE_BANNER = Collections.emptyList();
+    public static final List<PsRankListItem> DEFAULT_PLAY_RANK_LIST = Collections.emptyList();
+    public static final List<ThreadInfo> DEFAULT_FEED_THREAD_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_IS_FOLLOW_CURRENT_CHANNEL = 0;
+    public static final Integer DEFAULT_SWITCH_READ_OPEN = 0;
+    public static final List<SimpleForum> DEFAULT_REPOST_RECOMMEND_FORUM_LIST = Collections.emptyList();
+    public static final List<SimpleForum> DEFAULT_FROM_FORUM_LIST = Collections.emptyList();
+    public static final Long DEFAULT_THREAD_FREQ_NUM = 0L;
+    public static final List<SimpleUser> DEFAULT_NEW_AGREE_USER = Collections.emptyList();
+    public static final Integer DEFAULT_EXP_NEWS_TODAY = 0;
+    public static final Integer DEFAULT_EXP_GUIDE_TODAY = 0;
+    public static final List<RecomTopicList> DEFAULT_THREAD_TOPIC = Collections.emptyList();
+    public static final List<PbSortType> DEFAULT_PB_SORT_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_SORT_TYPE = 0;
+    public static final List<ThreadInfo> DEFAULT_BJH_RECOMMEND = Collections.emptyList();
+    public static final Integer DEFAULT_JUMPTOTAB1 = 0;
+    public static final List<ThreadInfo> DEFAULT_RECOM_THREAD_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_SHOW_ADSENSE = 0;
+    public static final Integer DEFAULT_IS_BLACK_WHITE = 0;
+    public static final Integer DEFAULT_IS_OFFICIAL_FORUM = 0;
+    public static final Integer DEFAULT_IS_PURCHASE = 0;
+    public static final Integer DEFAULT_PB_NOTICE_TYPE = 0;
+    public static final Integer DEFAULT_HAS_FOLD_COMMENT = 0;
+    public static final Long DEFAULT_FOLD_COMMENT_NUM = 0L;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public AddPost add_post;
         public AlaLiveInfo ala_info;
         public Anti anti;
@@ -241,6 +229,8 @@ public final class DataRes extends Message {
         public BusinessAccountInfo business_account_info;
         public BusinessPromotInfo business_promot_info;
         public SimpleForum display_forum;
+        public EditConfig edit_config;
+        public EditInfo edit_info;
         public Integer exp_guide_today;
         public Integer exp_news_today;
         public FeedExtInfo feed_info;
@@ -304,37 +294,10 @@ public final class DataRes extends Message {
         public List<User> user_list;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataRes dataRes) {
             super(dataRes);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataRes};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataRes == null) {
                 return;
             }
@@ -407,6 +370,8 @@ public final class DataRes extends Message {
             this.pb_notice = dataRes.pb_notice;
             this.has_fold_comment = dataRes.has_fold_comment;
             this.fold_comment_num = dataRes.fold_comment_num;
+            this.edit_config = dataRes.edit_config;
+            this.edit_info = dataRes.edit_info;
             this.top_answer = dataRes.top_answer;
             this.jump_link_info = dataRes.jump_link_info;
         }
@@ -414,79 +379,12 @@ public final class DataRes extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataRes(this, z, null);
-            }
-            return (DataRes) invokeZ.objValue;
+            return new DataRes(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1374404855, "Ltbclient/PbPage/DataRes;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1374404855, "Ltbclient/PbPage/DataRes;");
-                return;
-            }
-        }
-        DEFAULT_POST_LIST = Collections.emptyList();
-        DEFAULT_HAS_FLOOR = 0;
-        DEFAULT_IS_NEW_URL = 0;
-        DEFAULT_POST_BANNER = Collections.emptyList();
-        DEFAULT_USER_LIST = Collections.emptyList();
-        DEFAULT_SERVER_TIME = 0;
-        DEFAULT_RECOMMEND_THREADS = Collections.emptyList();
-        DEFAULT_FINE_BANNER = Collections.emptyList();
-        DEFAULT_PLAY_RANK_LIST = Collections.emptyList();
-        DEFAULT_FEED_THREAD_LIST = Collections.emptyList();
-        DEFAULT_IS_FOLLOW_CURRENT_CHANNEL = 0;
-        DEFAULT_SWITCH_READ_OPEN = 0;
-        DEFAULT_REPOST_RECOMMEND_FORUM_LIST = Collections.emptyList();
-        DEFAULT_FROM_FORUM_LIST = Collections.emptyList();
-        DEFAULT_THREAD_FREQ_NUM = 0L;
-        DEFAULT_NEW_AGREE_USER = Collections.emptyList();
-        DEFAULT_EXP_NEWS_TODAY = 0;
-        DEFAULT_EXP_GUIDE_TODAY = 0;
-        DEFAULT_THREAD_TOPIC = Collections.emptyList();
-        DEFAULT_PB_SORT_INFO = Collections.emptyList();
-        DEFAULT_SORT_TYPE = 0;
-        DEFAULT_BJH_RECOMMEND = Collections.emptyList();
-        DEFAULT_JUMPTOTAB1 = 0;
-        DEFAULT_RECOM_THREAD_INFO = Collections.emptyList();
-        DEFAULT_SHOW_ADSENSE = 0;
-        DEFAULT_IS_BLACK_WHITE = 0;
-        DEFAULT_IS_OFFICIAL_FORUM = 0;
-        DEFAULT_IS_PURCHASE = 0;
-        DEFAULT_PB_NOTICE_TYPE = 0;
-        DEFAULT_HAS_FOLD_COMMENT = 0;
-        DEFAULT_FOLD_COMMENT_NUM = 0L;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             this.user = builder.user;
             this.forum = builder.forum;
@@ -742,6 +640,8 @@ public final class DataRes extends Message {
             } else {
                 this.fold_comment_num = l2;
             }
+            this.edit_config = builder.edit_config;
+            this.edit_info = builder.edit_info;
             this.top_answer = builder.top_answer;
             this.jump_link_info = builder.jump_link_info;
             return;
@@ -815,11 +715,9 @@ public final class DataRes extends Message {
         this.pb_notice = builder.pb_notice;
         this.has_fold_comment = builder.has_fold_comment;
         this.fold_comment_num = builder.fold_comment_num;
+        this.edit_config = builder.edit_config;
+        this.edit_info = builder.edit_info;
         this.top_answer = builder.top_answer;
         this.jump_link_info = builder.jump_link_info;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

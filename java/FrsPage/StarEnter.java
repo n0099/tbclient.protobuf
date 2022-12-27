@@ -1,29 +1,14 @@
 package tbclient.FrsPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class StarEnter extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Integer DEFAULT_BAZHU_MARK;
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_OBJ_ID = "";
-    public static final Integer DEFAULT_RANK_NUM;
     public static final String DEFAULT_TEXT = "";
-    public static final Integer DEFAULT_TIME;
     public static final String DEFAULT_TITLE = "";
-    public static final Integer DEFAULT_TYPE;
     public static final String DEFAULT_URL = "";
-    public static final Integer DEFAULT_WEIGHT;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer bazhu_mark;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -44,17 +29,14 @@ public final class StarEnter extends Message {
     public final String url;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer weight;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_WEIGHT = 0;
+    public static final Integer DEFAULT_TYPE = 0;
+    public static final Integer DEFAULT_TIME = 0;
+    public static final Integer DEFAULT_RANK_NUM = 0;
+    public static final Integer DEFAULT_BAZHU_MARK = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<StarEnter> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Integer bazhu_mark;
         public String icon;
         public String obj_id;
@@ -67,37 +49,10 @@ public final class StarEnter extends Message {
         public Integer weight;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(StarEnter starEnter) {
             super(starEnter);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {starEnter};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (starEnter == null) {
                 return;
             }
@@ -116,53 +71,12 @@ public final class StarEnter extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public StarEnter build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new StarEnter(this, z, null);
-            }
-            return (StarEnter) invokeZ.objValue;
+            return new StarEnter(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(115636024, "Ltbclient/FrsPage/StarEnter;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(115636024, "Ltbclient/FrsPage/StarEnter;");
-                return;
-            }
-        }
-        DEFAULT_WEIGHT = 0;
-        DEFAULT_TYPE = 0;
-        DEFAULT_TIME = 0;
-        DEFAULT_RANK_NUM = 0;
-        DEFAULT_BAZHU_MARK = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public StarEnter(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.icon;
             if (str == null) {
@@ -237,9 +151,5 @@ public final class StarEnter extends Message {
         this.text = builder.text;
         this.rank_num = builder.rank_num;
         this.bazhu_mark = builder.bazhu_mark;
-    }
-
-    public /* synthetic */ StarEnter(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

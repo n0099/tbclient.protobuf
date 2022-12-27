@@ -1,26 +1,11 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class FloatStrategy extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BROWSETIMEPAGE = "";
-    public static final Integer DEFAULT_DURATION;
-    public static final Integer DEFAULT_SHOW_NUM;
-    public static final Long DEFAULT_SHOW_TIME_BEGIN;
-    public static final Long DEFAULT_SHOW_TIME_END;
     public static final String DEFAULT_TOAST = "";
-    public static final Integer DEFAULT_UN_DO_MISSION;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String browsetimepage;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -35,17 +20,14 @@ public final class FloatStrategy extends Message {
     public final String toast;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer un_do_mission;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_UN_DO_MISSION = 0;
+    public static final Integer DEFAULT_DURATION = 0;
+    public static final Long DEFAULT_SHOW_TIME_BEGIN = 0L;
+    public static final Long DEFAULT_SHOW_TIME_END = 0L;
+    public static final Integer DEFAULT_SHOW_NUM = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<FloatStrategy> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String browsetimepage;
         public Integer duration;
         public Integer show_num;
@@ -55,37 +37,10 @@ public final class FloatStrategy extends Message {
         public Integer un_do_mission;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(FloatStrategy floatStrategy) {
             super(floatStrategy);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {floatStrategy};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (floatStrategy == null) {
                 return;
             }
@@ -101,53 +56,12 @@ public final class FloatStrategy extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FloatStrategy build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new FloatStrategy(this, z, null);
-            }
-            return (FloatStrategy) invokeZ.objValue;
+            return new FloatStrategy(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-15341674, "Ltbclient/FloatStrategy;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-15341674, "Ltbclient/FloatStrategy;");
-                return;
-            }
-        }
-        DEFAULT_UN_DO_MISSION = 0;
-        DEFAULT_DURATION = 0;
-        DEFAULT_SHOW_TIME_BEGIN = 0L;
-        DEFAULT_SHOW_TIME_END = 0L;
-        DEFAULT_SHOW_NUM = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FloatStrategy(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.un_do_mission;
             if (num == null) {
@@ -201,9 +115,5 @@ public final class FloatStrategy extends Message {
         this.show_time_end = builder.show_time_end;
         this.show_num = builder.show_num;
         this.toast = builder.toast;
-    }
-
-    public /* synthetic */ FloatStrategy(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

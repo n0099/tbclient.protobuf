@@ -1,35 +1,15 @@
 package tbclient.PbFloor;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes9.dex */
 public final class DataReq extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Long DEFAULT_FORUM_ID;
-    public static final Integer DEFAULT_IS_COMM_REVERSE;
-    public static final Long DEFAULT_KZ;
     public static final String DEFAULT_ORI_UGC_NID = "";
     public static final String DEFAULT_ORI_UGC_TID = "";
-    public static final Integer DEFAULT_ORI_UGC_TYPE;
     public static final String DEFAULT_ORI_UGC_VID = "";
-    public static final Long DEFAULT_PID;
-    public static final Integer DEFAULT_PN;
-    public static final Double DEFAULT_SCR_DIP;
-    public static final Integer DEFAULT_SCR_H;
-    public static final Integer DEFAULT_SCR_W;
-    public static final Long DEFAULT_SPID;
     public static final String DEFAULT_ST_TYPE = "";
     public static final String DEFAULT_TOP_UGC_PID = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 9)
 
     /* renamed from: common  reason: collision with root package name */
@@ -64,17 +44,19 @@ public final class DataReq extends Message {
     public final String st_type;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String top_ugc_pid;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_KZ = 0L;
+    public static final Long DEFAULT_PID = 0L;
+    public static final Long DEFAULT_SPID = 0L;
+    public static final Integer DEFAULT_PN = 0;
+    public static final Integer DEFAULT_SCR_W = 0;
+    public static final Integer DEFAULT_SCR_H = 0;
+    public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
+    public static final Integer DEFAULT_IS_COMM_REVERSE = 0;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_ORI_UGC_TYPE = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
 
         /* renamed from: common  reason: collision with root package name */
         public CommonReq f1336common;
@@ -95,37 +77,10 @@ public final class DataReq extends Message {
         public String top_ugc_pid;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataReq dataReq) {
             super(dataReq);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataReq};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataReq == null) {
                 return;
             }
@@ -150,58 +105,12 @@ public final class DataReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataReq build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataReq(this, z, null);
-            }
-            return (DataReq) invokeZ.objValue;
+            return new DataReq(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-987703194, "Ltbclient/PbFloor/DataReq;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-987703194, "Ltbclient/PbFloor/DataReq;");
-                return;
-            }
-        }
-        DEFAULT_KZ = 0L;
-        DEFAULT_PID = 0L;
-        DEFAULT_SPID = 0L;
-        DEFAULT_PN = 0;
-        DEFAULT_SCR_W = 0;
-        DEFAULT_SCR_H = 0;
-        DEFAULT_SCR_DIP = Double.valueOf(0.0d);
-        DEFAULT_IS_COMM_REVERSE = 0;
-        DEFAULT_FORUM_ID = 0L;
-        DEFAULT_ORI_UGC_TYPE = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataReq(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.kz;
             if (l == null) {
@@ -313,9 +222,5 @@ public final class DataReq extends Message {
         this.ori_ugc_type = builder.ori_ugc_type;
         this.ori_ugc_vid = builder.ori_ugc_vid;
         this.top_ugc_pid = builder.top_ugc_pid;
-    }
-
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

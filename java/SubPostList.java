@@ -1,30 +1,12 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class SubPostList extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Long DEFAULT_AUTHOR_ID;
-    public static final List<PbContent> DEFAULT_CONTENT;
-    public static final Integer DEFAULT_FLOOR;
-    public static final Long DEFAULT_ID;
-    public static final Integer DEFAULT_IS_AUTHOR_VIEW;
-    public static final Integer DEFAULT_IS_FAKE_TOP;
-    public static final Integer DEFAULT_IS_GIFTPOST;
-    public static final Integer DEFAULT_TIME;
     public static final String DEFAULT_TITLE = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 9)
     public final Agree agree;
     @ProtoField(tag = 7)
@@ -49,17 +31,17 @@ public final class SubPostList extends Message {
     public final Integer time;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String title;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_ID = 0L;
+    public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
+    public static final Integer DEFAULT_TIME = 0;
+    public static final Long DEFAULT_AUTHOR_ID = 0L;
+    public static final Integer DEFAULT_FLOOR = 0;
+    public static final Integer DEFAULT_IS_GIFTPOST = 0;
+    public static final Integer DEFAULT_IS_FAKE_TOP = 0;
+    public static final Integer DEFAULT_IS_AUTHOR_VIEW = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<SubPostList> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Agree agree;
         public User author;
         public Long author_id;
@@ -74,37 +56,10 @@ public final class SubPostList extends Message {
         public String title;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(SubPostList subPostList) {
             super(subPostList);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {subPostList};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (subPostList == null) {
                 return;
             }
@@ -125,56 +80,12 @@ public final class SubPostList extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SubPostList build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new SubPostList(this, z, null);
-            }
-            return (SubPostList) invokeZ.objValue;
+            return new SubPostList(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1754025433, "Ltbclient/SubPostList;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1754025433, "Ltbclient/SubPostList;");
-                return;
-            }
-        }
-        DEFAULT_ID = 0L;
-        DEFAULT_CONTENT = Collections.emptyList();
-        DEFAULT_TIME = 0;
-        DEFAULT_AUTHOR_ID = 0L;
-        DEFAULT_FLOOR = 0;
-        DEFAULT_IS_GIFTPOST = 0;
-        DEFAULT_IS_FAKE_TOP = 0;
-        DEFAULT_IS_AUTHOR_VIEW = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SubPostList(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.id;
             if (l == null) {
@@ -248,9 +159,5 @@ public final class SubPostList extends Message {
         this.location = builder.location;
         this.is_fake_top = builder.is_fake_top;
         this.is_author_view = builder.is_author_view;
-    }
-
-    public /* synthetic */ SubPostList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

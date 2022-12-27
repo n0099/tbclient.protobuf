@@ -1,27 +1,14 @@
 package tbclient.FrsPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class StarInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final List<Focus> DEFAULT_FOCUS;
-    public static final Integer DEFAULT_GENDER;
-    public static final Integer DEFAULT_HAS_FRS_STAR;
     public static final String DEFAULT_HEAD = "";
     public static final String DEFAULT_STAR_FORUM_HEADIMG = "";
     public static final String DEFAULT_TOP = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 6)
     public final Fans fans;
     @ProtoField(label = Message.Label.REPEATED, tag = 7)
@@ -56,17 +43,12 @@ public final class StarInfo extends Message {
     public final Ticket trade;
     @ProtoField(tag = 9)
     public final Video video;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_HAS_FRS_STAR = 0;
+    public static final Integer DEFAULT_GENDER = 0;
+    public static final List<Focus> DEFAULT_FOCUS = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<StarInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Fans fans;
         public List<Focus> focus;
         public Integer gender;
@@ -86,37 +68,10 @@ public final class StarInfo extends Message {
         public Video video;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(StarInfo starInfo) {
             super(starInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {starInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (starInfo == null) {
                 return;
             }
@@ -142,51 +97,12 @@ public final class StarInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public StarInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new StarInfo(this, z, null);
-            }
-            return (StarInfo) invokeZ.objValue;
+            return new StarInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1516609576, "Ltbclient/FrsPage/StarInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1516609576, "Ltbclient/FrsPage/StarInfo;");
-                return;
-            }
-        }
-        DEFAULT_HAS_FRS_STAR = 0;
-        DEFAULT_GENDER = 0;
-        DEFAULT_FOCUS = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public StarInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.has_frs_star;
             if (num == null) {
@@ -255,9 +171,5 @@ public final class StarInfo extends Message {
         this.head_size = builder.head_size;
         this.trade = builder.trade;
         this.star_forum_headimg = builder.star_forum_headimg;
-    }
-
-    public /* synthetic */ StarInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

@@ -1,27 +1,11 @@
 package tbclient.ForumMenu;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class SubMenu extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Integer DEFAULT_ACTION_TYPE;
     public static final String DEFAULT_CONTENT = "";
-    public static final Integer DEFAULT_FORUM_ID;
-    public static final Integer DEFAULT_ID;
-    public static final Integer DEFAULT_LEVEL;
     public static final String DEFAULT_NAME = "";
-    public static final Integer DEFAULT_PARENT_ID;
-    public static final Integer DEFAULT_UPDATE_TIME;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer action_type;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -38,17 +22,15 @@ public final class SubMenu extends Message {
     public final Integer parent_id;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer update_time;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_ID = 0;
+    public static final Integer DEFAULT_FORUM_ID = 0;
+    public static final Integer DEFAULT_LEVEL = 0;
+    public static final Integer DEFAULT_PARENT_ID = 0;
+    public static final Integer DEFAULT_ACTION_TYPE = 0;
+    public static final Integer DEFAULT_UPDATE_TIME = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<SubMenu> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Integer action_type;
         public String content;
         public Integer forum_id;
@@ -59,37 +41,10 @@ public final class SubMenu extends Message {
         public Integer update_time;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(SubMenu subMenu) {
             super(subMenu);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {subMenu};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (subMenu == null) {
                 return;
             }
@@ -106,54 +61,12 @@ public final class SubMenu extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SubMenu build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new SubMenu(this, z, null);
-            }
-            return (SubMenu) invokeZ.objValue;
+            return new SubMenu(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-859812363, "Ltbclient/ForumMenu/SubMenu;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-859812363, "Ltbclient/ForumMenu/SubMenu;");
-                return;
-            }
-        }
-        DEFAULT_ID = 0;
-        DEFAULT_FORUM_ID = 0;
-        DEFAULT_LEVEL = 0;
-        DEFAULT_PARENT_ID = 0;
-        DEFAULT_ACTION_TYPE = 0;
-        DEFAULT_UPDATE_TIME = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SubMenu(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.id;
             if (num == null) {
@@ -214,9 +127,5 @@ public final class SubMenu extends Message {
         this.action_type = builder.action_type;
         this.update_time = builder.update_time;
         this.content = builder.content;
-    }
-
-    public /* synthetic */ SubMenu(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

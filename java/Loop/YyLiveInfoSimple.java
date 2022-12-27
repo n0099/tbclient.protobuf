@@ -1,38 +1,18 @@
 package tbclient.Loop;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.YyExt;
 /* loaded from: classes9.dex */
 public final class YyLiveInfoSimple extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Integer DEFAULT_AUTHOR_TYPE;
     public static final String DEFAULT_BTN_TEXT = "";
-    public static final Integer DEFAULT_DAY_MAX_NUM;
     public static final String DEFAULT_DESC = "";
-    public static final Integer DEFAULT_DESC_GLOBAL_MAX_NUM;
-    public static final Integer DEFAULT_DISAPPEAR_SECOND;
-    public static final Integer DEFAULT_DISAPPEAR_TYPE;
     public static final String DEFAULT_FEED_ID = "";
     public static final String DEFAULT_ICON_SCHEME = "";
     public static final String DEFAULT_ICON_URL = "";
-    public static final Integer DEFAULT_MIN_STEP_SECOND;
     public static final String DEFAULT_PORTRAIT = "";
-    public static final Integer DEFAULT_REMIND_TYPE;
-    public static final Long DEFAULT_ROOM_ID;
-    public static final Integer DEFAULT_SHOW_PAGE;
-    public static final Integer DEFAULT_SINGLE_OPEN_MAX_NUM;
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_USER_NAME = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 19, type = Message.Datatype.INT32)
     public final Integer author_type;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
@@ -71,17 +51,19 @@ public final class YyLiveInfoSimple extends Message {
     public final String user_name;
     @ProtoField(tag = 13)
     public final YyExt yy_ext;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_DISAPPEAR_TYPE = 0;
+    public static final Integer DEFAULT_DISAPPEAR_SECOND = 0;
+    public static final Integer DEFAULT_DESC_GLOBAL_MAX_NUM = 0;
+    public static final Integer DEFAULT_SINGLE_OPEN_MAX_NUM = 0;
+    public static final Integer DEFAULT_DAY_MAX_NUM = 0;
+    public static final Integer DEFAULT_MIN_STEP_SECOND = 0;
+    public static final Long DEFAULT_ROOM_ID = 0L;
+    public static final Integer DEFAULT_REMIND_TYPE = 0;
+    public static final Integer DEFAULT_SHOW_PAGE = 0;
+    public static final Integer DEFAULT_AUTHOR_TYPE = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<YyLiveInfoSimple> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Integer author_type;
         public String btn_text;
         public Integer day_max_num;
@@ -103,37 +85,10 @@ public final class YyLiveInfoSimple extends Message {
         public YyExt yy_ext;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(YyLiveInfoSimple yyLiveInfoSimple) {
             super(yyLiveInfoSimple);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {yyLiveInfoSimple};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (yyLiveInfoSimple == null) {
                 return;
             }
@@ -161,58 +116,12 @@ public final class YyLiveInfoSimple extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public YyLiveInfoSimple build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new YyLiveInfoSimple(this, z, null);
-            }
-            return (YyLiveInfoSimple) invokeZ.objValue;
+            return new YyLiveInfoSimple(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-631701746, "Ltbclient/Loop/YyLiveInfoSimple;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-631701746, "Ltbclient/Loop/YyLiveInfoSimple;");
-                return;
-            }
-        }
-        DEFAULT_DISAPPEAR_TYPE = 0;
-        DEFAULT_DISAPPEAR_SECOND = 0;
-        DEFAULT_DESC_GLOBAL_MAX_NUM = 0;
-        DEFAULT_SINGLE_OPEN_MAX_NUM = 0;
-        DEFAULT_DAY_MAX_NUM = 0;
-        DEFAULT_MIN_STEP_SECOND = 0;
-        DEFAULT_ROOM_ID = 0L;
-        DEFAULT_REMIND_TYPE = 0;
-        DEFAULT_SHOW_PAGE = 0;
-        DEFAULT_AUTHOR_TYPE = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public YyLiveInfoSimple(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.icon_url;
             if (str == null) {
@@ -345,9 +254,5 @@ public final class YyLiveInfoSimple extends Message {
         this.remind_type = builder.remind_type;
         this.show_page = builder.show_page;
         this.author_type = builder.author_type;
-    }
-
-    public /* synthetic */ YyLiveInfoSimple(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

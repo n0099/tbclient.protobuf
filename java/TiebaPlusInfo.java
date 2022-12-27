@@ -1,18 +1,9 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class TiebaPlusInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_APP_COMPANY = "";
     public static final String DEFAULT_APP_ICON = "";
     public static final String DEFAULT_APP_ID = "";
@@ -26,16 +17,10 @@ public final class TiebaPlusInfo extends Message {
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_H5_JUMP_NUMBER = "";
     public static final String DEFAULT_H5_JUMP_PARAM = "";
-    public static final Integer DEFAULT_H5_JUMP_TYPE;
-    public static final Integer DEFAULT_IS_APPOINT;
     public static final String DEFAULT_ITEM_ID = "";
-    public static final Integer DEFAULT_JUMP_SETTING;
-    public static final Integer DEFAULT_JUMP_TYPE;
     public static final String DEFAULT_JUMP_URL = "";
-    public static final Integer DEFAULT_TARGET_TYPE;
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_WX_THUMBNAIL = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String app_company;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -82,17 +67,14 @@ public final class TiebaPlusInfo extends Message {
     public final String title;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String wx_thumbnail;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_TARGET_TYPE = 0;
+    public static final Integer DEFAULT_H5_JUMP_TYPE = 0;
+    public static final Integer DEFAULT_JUMP_TYPE = 0;
+    public static final Integer DEFAULT_IS_APPOINT = 0;
+    public static final Integer DEFAULT_JUMP_SETTING = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<TiebaPlusInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String app_company;
         public String app_icon;
         public String app_id;
@@ -118,37 +100,10 @@ public final class TiebaPlusInfo extends Message {
         public String wx_thumbnail;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(TiebaPlusInfo tiebaPlusInfo) {
             super(tiebaPlusInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {tiebaPlusInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (tiebaPlusInfo == null) {
                 return;
             }
@@ -180,53 +135,12 @@ public final class TiebaPlusInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public TiebaPlusInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new TiebaPlusInfo(this, z, null);
-            }
-            return (TiebaPlusInfo) invokeZ.objValue;
+            return new TiebaPlusInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1936198446, "Ltbclient/TiebaPlusInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1936198446, "Ltbclient/TiebaPlusInfo;");
-                return;
-            }
-        }
-        DEFAULT_TARGET_TYPE = 0;
-        DEFAULT_H5_JUMP_TYPE = 0;
-        DEFAULT_JUMP_TYPE = 0;
-        DEFAULT_IS_APPOINT = 0;
-        DEFAULT_JUMP_SETTING = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public TiebaPlusInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.title;
             if (str == null) {
@@ -387,9 +301,5 @@ public final class TiebaPlusInfo extends Message {
         this.jump_setting = builder.jump_setting;
         this.wx_thumbnail = builder.wx_thumbnail;
         this.button_desc = builder.button_desc;
-    }
-
-    public /* synthetic */ TiebaPlusInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

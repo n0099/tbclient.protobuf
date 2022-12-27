@@ -1,35 +1,14 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class DealInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final List<DealAuthInfo> DEFAULT_AUTH_INFO;
     public static final String DEFAULT_DES = "";
-    public static final Integer DEFAULT_EXPIRE_TIME;
-    public static final Boolean DEFAULT_HAS_RECOMMEND;
-    public static final List<DealMedia> DEFAULT_MEDIA;
-    public static final Long DEFAULT_PRODUCT_ID;
-    public static final Long DEFAULT_RECOMMENDATIONS;
-    public static final Long DEFAULT_SALES;
     public static final String DEFAULT_SELLER_ADDRESS = "";
-    public static final Long DEFAULT_SHIP_FEE;
-    public static final Integer DEFAULT_STATUS;
-    public static final Long DEFAULT_STOCK;
     public static final String DEFAULT_TITLE = "";
-    public static final Long DEFAULT_UNIT_PRICE;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<DealAuthInfo> auth_info;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -58,17 +37,20 @@ public final class DealInfo extends Message {
     public final String title;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
     public final Long unit_price;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_STOCK = 0L;
+    public static final Long DEFAULT_SALES = 0L;
+    public static final Integer DEFAULT_EXPIRE_TIME = 0;
+    public static final Long DEFAULT_UNIT_PRICE = 0L;
+    public static final Long DEFAULT_PRODUCT_ID = 0L;
+    public static final Long DEFAULT_RECOMMENDATIONS = 0L;
+    public static final Boolean DEFAULT_HAS_RECOMMEND = Boolean.FALSE;
+    public static final Integer DEFAULT_STATUS = 0;
+    public static final List<DealMedia> DEFAULT_MEDIA = Collections.emptyList();
+    public static final List<DealAuthInfo> DEFAULT_AUTH_INFO = Collections.emptyList();
+    public static final Long DEFAULT_SHIP_FEE = 0L;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DealInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public List<DealAuthInfo> auth_info;
         public String des;
         public Integer expire_time;
@@ -85,37 +67,10 @@ public final class DealInfo extends Message {
         public Long unit_price;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DealInfo dealInfo) {
             super(dealInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dealInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dealInfo == null) {
                 return;
             }
@@ -138,59 +93,12 @@ public final class DealInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DealInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DealInfo(this, z, null);
-            }
-            return (DealInfo) invokeZ.objValue;
+            return new DealInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1466993001, "Ltbclient/DealInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1466993001, "Ltbclient/DealInfo;");
-                return;
-            }
-        }
-        DEFAULT_STOCK = 0L;
-        DEFAULT_SALES = 0L;
-        DEFAULT_EXPIRE_TIME = 0;
-        DEFAULT_UNIT_PRICE = 0L;
-        DEFAULT_PRODUCT_ID = 0L;
-        DEFAULT_RECOMMENDATIONS = 0L;
-        DEFAULT_HAS_RECOMMEND = Boolean.FALSE;
-        DEFAULT_STATUS = 0;
-        DEFAULT_MEDIA = Collections.emptyList();
-        DEFAULT_AUTH_INFO = Collections.emptyList();
-        DEFAULT_SHIP_FEE = 0L;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DealInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.title;
             if (str == null) {
@@ -293,9 +201,5 @@ public final class DealInfo extends Message {
         this.media = Message.immutableCopyOf(builder.media);
         this.auth_info = Message.immutableCopyOf(builder.auth_info);
         this.ship_fee = builder.ship_fee;
-    }
-
-    public /* synthetic */ DealInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

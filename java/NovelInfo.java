@@ -1,21 +1,11 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class NovelInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AUTHOR = "";
     public static final String DEFAULT_BUY_URL = "";
-    public static final Long DEFAULT_CHAPTERS;
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_DISCOUNT_PRICE = "";
     public static final String DEFAULT_H5_URL = "";
@@ -24,9 +14,6 @@ public final class NovelInfo extends Message {
     public static final String DEFAULT_MEMBER_IMG = "";
     public static final String DEFAULT_MEMBER_TEXT = "";
     public static final String DEFAULT_NAME = "";
-    public static final Long DEFAULT_NOVEL_ID;
-    public static final Long DEFAULT_PERCENT;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String author;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
@@ -53,17 +40,12 @@ public final class NovelInfo extends Message {
     public final Long novel_id;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
     public final Long percent;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_NOVEL_ID = 0L;
+    public static final Long DEFAULT_PERCENT = 0L;
+    public static final Long DEFAULT_CHAPTERS = 0L;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<NovelInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String author;
         public String buy_url;
         public Long chapters;
@@ -79,37 +61,10 @@ public final class NovelInfo extends Message {
         public Long percent;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(NovelInfo novelInfo) {
             super(novelInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {novelInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (novelInfo == null) {
                 return;
             }
@@ -131,51 +86,12 @@ public final class NovelInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NovelInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new NovelInfo(this, z, null);
-            }
-            return (NovelInfo) invokeZ.objValue;
+            return new NovelInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(197848283, "Ltbclient/NovelInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(197848283, "Ltbclient/NovelInfo;");
-                return;
-            }
-        }
-        DEFAULT_NOVEL_ID = 0L;
-        DEFAULT_PERCENT = 0L;
-        DEFAULT_CHAPTERS = 0L;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public NovelInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.novel_id;
             if (l == null) {
@@ -271,9 +187,5 @@ public final class NovelInfo extends Message {
         this.member_text = builder.member_text;
         this.member_img = builder.member_img;
         this.buy_url = builder.buy_url;
-    }
-
-    public /* synthetic */ NovelInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

@@ -1,24 +1,11 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class PsInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Long DEFAULT_GAME_ID;
     public static final String DEFAULT_GAME_INTRO = "";
     public static final String DEFAULT_GAME_PIC_URL = "";
-    public static final Long DEFAULT_GAME_TYPE;
-    public static final Long DEFAULT_SCORE;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long game_id;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -29,17 +16,12 @@ public final class PsInfo extends Message {
     public final Long game_type;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long score;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_GAME_ID = 0L;
+    public static final Long DEFAULT_SCORE = 0L;
+    public static final Long DEFAULT_GAME_TYPE = 0L;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<PsInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Long game_id;
         public String game_intro;
         public String game_pic_url;
@@ -47,37 +29,10 @@ public final class PsInfo extends Message {
         public Long score;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(PsInfo psInfo) {
             super(psInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {psInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (psInfo == null) {
                 return;
             }
@@ -91,51 +46,12 @@ public final class PsInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PsInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new PsInfo(this, z, null);
-            }
-            return (PsInfo) invokeZ.objValue;
+            return new PsInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-168269600, "Ltbclient/PsInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-168269600, "Ltbclient/PsInfo;");
-                return;
-            }
-        }
-        DEFAULT_GAME_ID = 0L;
-        DEFAULT_SCORE = 0L;
-        DEFAULT_GAME_TYPE = 0L;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PsInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.game_id;
             if (l == null) {
@@ -175,9 +91,5 @@ public final class PsInfo extends Message {
         this.game_type = builder.game_type;
         this.game_pic_url = builder.game_pic_url;
         this.game_intro = builder.game_intro;
-    }
-
-    public /* synthetic */ PsInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

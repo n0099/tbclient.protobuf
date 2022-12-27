@@ -1,13 +1,5 @@
 package tbclient.GetMyPost;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.BaijiahaoInfo;
@@ -16,23 +8,11 @@ import tbclient.GodInfo;
 import tbclient.NewGodInfo;
 /* loaded from: classes9.dex */
 public final class User_Info extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BAWU_TYPE = "";
     public static final String DEFAULT_FANS_NICKNAME = "";
-    public static final Integer DEFAULT_FANS_NUM;
-    public static final Integer DEFAULT_GENDER;
-    public static final Long DEFAULT_ID;
-    public static final Integer DEFAULT_IS_BAWU;
-    public static final Integer DEFAULT_IS_LOGIN;
-    public static final Integer DEFAULT_IS_MANAGER;
-    public static final Integer DEFAULT_IS_MEM;
-    public static final Integer DEFAULT_IS_SELECT_TAIL;
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_NAME_SHOW = "";
     public static final String DEFAULT_PORTRAIT = "";
-    public static final Integer DEFAULT_TYPE;
-    public static final Integer DEFAULT_USERHIDE;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 18)
     public final BaijiahaoInfo baijiahao_info;
     @ProtoField(tag = 12)
@@ -73,17 +53,19 @@ public final class User_Info extends Message {
     public final Integer type;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer userhide;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_IS_LOGIN = 0;
+    public static final Long DEFAULT_ID = 0L;
+    public static final Integer DEFAULT_GENDER = 0;
+    public static final Integer DEFAULT_TYPE = 0;
+    public static final Integer DEFAULT_IS_MANAGER = 0;
+    public static final Integer DEFAULT_IS_MEM = 0;
+    public static final Integer DEFAULT_IS_SELECT_TAIL = 0;
+    public static final Integer DEFAULT_USERHIDE = 0;
+    public static final Integer DEFAULT_FANS_NUM = 0;
+    public static final Integer DEFAULT_IS_BAWU = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<User_Info> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public BaijiahaoInfo baijiahao_info;
         public Balv balv;
         public String bawu_type;
@@ -106,37 +88,10 @@ public final class User_Info extends Message {
         public Integer userhide;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(User_Info user_Info) {
             super(user_Info);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {user_Info};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (user_Info == null) {
                 return;
             }
@@ -165,58 +120,12 @@ public final class User_Info extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public User_Info build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new User_Info(this, z, null);
-            }
-            return (User_Info) invokeZ.objValue;
+            return new User_Info(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(269672592, "Ltbclient/GetMyPost/User_Info;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(269672592, "Ltbclient/GetMyPost/User_Info;");
-                return;
-            }
-        }
-        DEFAULT_IS_LOGIN = 0;
-        DEFAULT_ID = 0L;
-        DEFAULT_GENDER = 0;
-        DEFAULT_TYPE = 0;
-        DEFAULT_IS_MANAGER = 0;
-        DEFAULT_IS_MEM = 0;
-        DEFAULT_IS_SELECT_TAIL = 0;
-        DEFAULT_USERHIDE = 0;
-        DEFAULT_FANS_NUM = 0;
-        DEFAULT_IS_BAWU = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public User_Info(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.is_login;
             if (num == null) {
@@ -335,9 +244,5 @@ public final class User_Info extends Message {
         this.baijiahao_info = builder.baijiahao_info;
         this.new_god_data = builder.new_god_data;
         this.business_account_info = builder.business_account_info;
-    }
-
-    public /* synthetic */ User_Info(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

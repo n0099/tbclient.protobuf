@@ -1,33 +1,18 @@
 package tbclient.GetOrder;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class NotifyPopup extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_APPENDIX_LINK = "";
-    public static final Integer DEFAULT_APPENDIX_OPTIONAL;
     public static final String DEFAULT_APPENDIX_TEXT = "";
-    public static final Integer DEFAULT_APP_SIZE;
     public static final String DEFAULT_APP_VERSION = "";
     public static final String DEFAULT_CHANGELOGS = "";
     public static final String DEFAULT_HINT = "";
     public static final String DEFAULT_N_BTN_LINK = "";
     public static final String DEFAULT_N_BTN_TEXT = "";
-    public static final Integer DEFAULT_POPUP_ID;
-    public static final Integer DEFAULT_POPUP_TIMES;
-    public static final Integer DEFAULT_POPUP_TYPE;
     public static final String DEFAULT_Y_BTN_LINK = "";
     public static final String DEFAULT_Y_BTN_TEXT = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer app_size;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -56,18 +41,14 @@ public final class NotifyPopup extends Message {
     public final String y_btn_link;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String y_btn_text;
-
-    /* renamed from: tbclient.GetOrder.NotifyPopup$1  reason: invalid class name */
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class AnonymousClass1 {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_POPUP_ID = 0;
+    public static final Integer DEFAULT_POPUP_TIMES = 0;
+    public static final Integer DEFAULT_POPUP_TYPE = 0;
+    public static final Integer DEFAULT_APP_SIZE = 0;
+    public static final Integer DEFAULT_APPENDIX_OPTIONAL = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<NotifyPopup> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Integer app_size;
         public String app_version;
         public String appendix_link;
@@ -84,37 +65,10 @@ public final class NotifyPopup extends Message {
         public String y_btn_text;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(NotifyPopup notifyPopup) {
             super(notifyPopup);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {notifyPopup};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (notifyPopup == null) {
                 return;
             }
@@ -137,53 +91,12 @@ public final class NotifyPopup extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NotifyPopup build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new NotifyPopup(this, z, null);
-            }
-            return (NotifyPopup) invokeZ.objValue;
+            return new NotifyPopup(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(408779333, "Ltbclient/GetOrder/NotifyPopup;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(408779333, "Ltbclient/GetOrder/NotifyPopup;");
-                return;
-            }
-        }
-        DEFAULT_POPUP_ID = 0;
-        DEFAULT_POPUP_TIMES = 0;
-        DEFAULT_POPUP_TYPE = 0;
-        DEFAULT_APP_SIZE = 0;
-        DEFAULT_APPENDIX_OPTIONAL = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public NotifyPopup(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.popup_id;
             if (num == null) {
@@ -286,9 +199,5 @@ public final class NotifyPopup extends Message {
         this.y_btn_link = builder.y_btn_link;
         this.n_btn_text = builder.n_btn_text;
         this.n_btn_link = builder.n_btn_link;
-    }
-
-    public /* synthetic */ NotifyPopup(Builder builder, boolean z, AnonymousClass1 anonymousClass1) {
-        this(builder, z);
     }
 }

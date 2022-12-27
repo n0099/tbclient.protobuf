@@ -1,13 +1,5 @@
 package tbclient.GeneralTabList;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -22,18 +14,7 @@ import tbclient.ThreadInfo;
 import tbclient.User;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final List<AdMixFloor> DEFAULT_AD_MIX_LIST;
     public static final String DEFAULT_AD_SAMPLE_MAP_KEY = "";
-    public static final Integer DEFAULT_AD_SHOW_SELECT;
-    public static final List<App> DEFAULT_APP_LIST;
-    public static final List<ThreadInfo> DEFAULT_GENERAL_LIST;
-    public static final Integer DEFAULT_HAS_MORE;
-    public static final Integer DEFAULT_NEW_THREAD_NUM;
-    public static final List<SortOption> DEFAULT_SORT_OPTION;
-    public static final Integer DEFAULT_SORT_TYPE;
-    public static final List<User> DEFAULT_USER_LIST;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 12)
     public final List<AdMixFloor> ad_mix_list;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
@@ -60,17 +41,18 @@ public final class DataRes extends Message {
     public final SportScheduleInfo sport_schedule_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<User> user_list;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final List<ThreadInfo> DEFAULT_GENERAL_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_HAS_MORE = 0;
+    public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_NEW_THREAD_NUM = 0;
+    public static final Integer DEFAULT_SORT_TYPE = 0;
+    public static final List<SortOption> DEFAULT_SORT_OPTION = Collections.emptyList();
+    public static final List<App> DEFAULT_APP_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_AD_SHOW_SELECT = 0;
+    public static final List<AdMixFloor> DEFAULT_AD_MIX_LIST = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public List<AdMixFloor> ad_mix_list;
         public String ad_sample_map_key;
         public Integer ad_show_select;
@@ -86,37 +68,10 @@ public final class DataRes extends Message {
         public List<User> user_list;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataRes dataRes) {
             super(dataRes);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataRes};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataRes == null) {
                 return;
             }
@@ -138,57 +93,12 @@ public final class DataRes extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataRes(this, z, null);
-            }
-            return (DataRes) invokeZ.objValue;
+            return new DataRes(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1617356831, "Ltbclient/GeneralTabList/DataRes;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1617356831, "Ltbclient/GeneralTabList/DataRes;");
-                return;
-            }
-        }
-        DEFAULT_GENERAL_LIST = Collections.emptyList();
-        DEFAULT_HAS_MORE = 0;
-        DEFAULT_USER_LIST = Collections.emptyList();
-        DEFAULT_NEW_THREAD_NUM = 0;
-        DEFAULT_SORT_TYPE = 0;
-        DEFAULT_SORT_OPTION = Collections.emptyList();
-        DEFAULT_APP_LIST = Collections.emptyList();
-        DEFAULT_AD_SHOW_SELECT = 0;
-        DEFAULT_AD_MIX_LIST = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             List<ThreadInfo> list = builder.general_list;
             if (list == null) {
@@ -269,9 +179,5 @@ public final class DataRes extends Message {
         this.ad_show_select = builder.ad_show_select;
         this.ad_mix_list = Message.immutableCopyOf(builder.ad_mix_list);
         this.ad_sample_map_key = builder.ad_sample_map_key;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

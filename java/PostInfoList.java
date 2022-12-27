@@ -1,71 +1,24 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class PostInfoList extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ABSTRACT = "";
-    public static final List<Abstract> DEFAULT_ABSTRACT_THREAD;
-    public static final Integer DEFAULT_AGREE_NUM;
     public static final String DEFAULT_ARTICLE_COVER = "";
-    public static final List<PostInfoContent> DEFAULT_CONTENT;
     public static final String DEFAULT_CONTENT_THREAD = "";
-    public static final Integer DEFAULT_CREATE_TIME;
-    public static final List<PbContent> DEFAULT_FIRST_POST_CONTENT;
-    public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
-    public static final Integer DEFAULT_FREQ_NUM;
-    public static final Integer DEFAULT_GOOD_TYPES;
-    public static final Integer DEFAULT_HIDE_POST;
     public static final String DEFAULT_IP = "";
-    public static final Integer DEFAULT_IS_AUTHOR_VIEW;
-    public static final Boolean DEFAULT_IS_DEAL;
-    public static final Integer DEFAULT_IS_MANAGER;
-    public static final Integer DEFAULT_IS_NTITLE;
-    public static final Integer DEFAULT_IS_ORIGIN_MANAGER;
-    public static final Integer DEFAULT_IS_POST_DELETED;
-    public static final Integer DEFAULT_IS_REMAIN;
-    public static final Integer DEFAULT_IS_SHARE_THREAD;
-    public static final Integer DEFAULT_IS_THREAD;
-    public static final Integer DEFAULT_IS_VIEW_YEAR;
-    public static final List<HeadItem> DEFAULT_ITEM_STAR;
-    public static final List<Media> DEFAULT_MEDIA;
-    public static final List<MultipleForum> DEFAULT_MULTIPLE_FORUM_LIST;
     public static final String DEFAULT_NAME_SHOW = "";
-    public static final List<PbGoodsInfo> DEFAULT_PB_GOODS_INFO;
-    public static final List<PbLinkInfo> DEFAULT_PB_LINK_INFO;
-    public static final Long DEFAULT_POST_ID;
     public static final String DEFAULT_POST_TYPE = "";
-    public static final List<PrivSets> DEFAULT_PRIV_SETS;
     public static final String DEFAULT_PTYPE = "";
-    public static final Integer DEFAULT_REPLY_NUM;
-    public static final List<PbContent> DEFAULT_RICH_ABSTRACT;
-    public static final List<PbContent> DEFAULT_RICH_TITLE;
-    public static final Integer DEFAULT_SHARE_NUM;
     public static final String DEFAULT_TARGET_SCHEME = "";
-    public static final Long DEFAULT_THREAD_ID;
-    public static final Long DEFAULT_THREAD_TYPE;
     public static final String DEFAULT_TITLE = "";
-    public static final Integer DEFAULT_TOP_TYPES;
-    public static final Long DEFAULT_USER_ID;
     public static final String DEFAULT_USER_NAME = "";
     public static final String DEFAULT_USER_PORTRAIT = "";
-    public static final Integer DEFAULT_VIEW_NUM;
-    public static final List<Voice> DEFAULT_VOICE_INFO;
-    public static final Long DEFAULT_V_FORUM_ID;
     public static final String DEFAULT_WONDERFUL_POST_INFO = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String _abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
@@ -90,6 +43,8 @@ public final class PostInfoList extends Message {
     public final Integer create_time;
     @ProtoField(tag = 31)
     public final DealInfo deal_info;
+    @ProtoField(tag = 65)
+    public final EditInfo edit_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 49)
     public final List<PbContent> first_post_content;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -196,17 +151,46 @@ public final class PostInfoList extends Message {
     public final String wonderful_post_info;
     @ProtoField(tag = 58)
     public final WorksInfo works_info;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Long DEFAULT_THREAD_ID = 0L;
+    public static final Long DEFAULT_POST_ID = 0L;
+    public static final Integer DEFAULT_IS_THREAD = 0;
+    public static final Integer DEFAULT_CREATE_TIME = 0;
+    public static final List<PostInfoContent> DEFAULT_CONTENT = Collections.emptyList();
+    public static final Integer DEFAULT_IS_POST_DELETED = 0;
+    public static final List<Abstract> DEFAULT_ABSTRACT_THREAD = Collections.emptyList();
+    public static final List<Media> DEFAULT_MEDIA = Collections.emptyList();
+    public static final Integer DEFAULT_REPLY_NUM = 0;
+    public static final Long DEFAULT_USER_ID = 0L;
+    public static final List<Voice> DEFAULT_VOICE_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_HIDE_POST = 0;
+    public static final Long DEFAULT_THREAD_TYPE = 0L;
+    public static final Boolean DEFAULT_IS_DEAL = Boolean.FALSE;
+    public static final List<MultipleForum> DEFAULT_MULTIPLE_FORUM_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_FREQ_NUM = 0;
+    public static final Long DEFAULT_V_FORUM_ID = 0L;
+    public static final Integer DEFAULT_AGREE_NUM = 0;
+    public static final Integer DEFAULT_VIEW_NUM = 0;
+    public static final Integer DEFAULT_SHARE_NUM = 0;
+    public static final Integer DEFAULT_IS_REMAIN = 0;
+    public static final Integer DEFAULT_IS_VIEW_YEAR = 0;
+    public static final Integer DEFAULT_IS_SHARE_THREAD = 0;
+    public static final List<PbContent> DEFAULT_RICH_TITLE = Collections.emptyList();
+    public static final List<PbContent> DEFAULT_RICH_ABSTRACT = Collections.emptyList();
+    public static final Integer DEFAULT_IS_NTITLE = 0;
+    public static final List<PbContent> DEFAULT_FIRST_POST_CONTENT = Collections.emptyList();
+    public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
+    public static final List<PbLinkInfo> DEFAULT_PB_LINK_INFO = Collections.emptyList();
+    public static final List<PbGoodsInfo> DEFAULT_PB_GOODS_INFO = Collections.emptyList();
+    public static final List<PrivSets> DEFAULT_PRIV_SETS = Collections.emptyList();
+    public static final Integer DEFAULT_IS_AUTHOR_VIEW = 0;
+    public static final Integer DEFAULT_IS_MANAGER = 0;
+    public static final Integer DEFAULT_IS_ORIGIN_MANAGER = 0;
+    public static final Integer DEFAULT_GOOD_TYPES = 0;
+    public static final Integer DEFAULT_TOP_TYPES = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<PostInfoList> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
         public List<Abstract> abstract_thread;
         public Agree agree;
@@ -219,6 +203,7 @@ public final class PostInfoList extends Message {
         public String content_thread;
         public Integer create_time;
         public DealInfo deal_info;
+        public EditInfo edit_info;
         public List<PbContent> first_post_content;
         public Long forum_id;
         public String forum_name;
@@ -274,37 +259,10 @@ public final class PostInfoList extends Message {
         public WorksInfo works_info;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(PostInfoList postInfoList) {
             super(postInfoList);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {postInfoList};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (postInfoList == null) {
                 return;
             }
@@ -372,91 +330,19 @@ public final class PostInfoList extends Message {
             this.top_types = postInfoList.top_types;
             this.user_post_perm = postInfoList.user_post_perm;
             this.voice_room = postInfoList.voice_room;
+            this.edit_info = postInfoList.edit_info;
             this.target_scheme = postInfoList.target_scheme;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PostInfoList build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new PostInfoList(this, z, null);
-            }
-            return (PostInfoList) invokeZ.objValue;
+            return new PostInfoList(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-422954523, "Ltbclient/PostInfoList;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-422954523, "Ltbclient/PostInfoList;");
-                return;
-            }
-        }
-        DEFAULT_FORUM_ID = 0L;
-        DEFAULT_THREAD_ID = 0L;
-        DEFAULT_POST_ID = 0L;
-        DEFAULT_IS_THREAD = 0;
-        DEFAULT_CREATE_TIME = 0;
-        DEFAULT_CONTENT = Collections.emptyList();
-        DEFAULT_IS_POST_DELETED = 0;
-        DEFAULT_ABSTRACT_THREAD = Collections.emptyList();
-        DEFAULT_MEDIA = Collections.emptyList();
-        DEFAULT_REPLY_NUM = 0;
-        DEFAULT_USER_ID = 0L;
-        DEFAULT_VOICE_INFO = Collections.emptyList();
-        DEFAULT_HIDE_POST = 0;
-        DEFAULT_THREAD_TYPE = 0L;
-        DEFAULT_IS_DEAL = Boolean.FALSE;
-        DEFAULT_MULTIPLE_FORUM_LIST = Collections.emptyList();
-        DEFAULT_FREQ_NUM = 0;
-        DEFAULT_V_FORUM_ID = 0L;
-        DEFAULT_AGREE_NUM = 0;
-        DEFAULT_VIEW_NUM = 0;
-        DEFAULT_SHARE_NUM = 0;
-        DEFAULT_IS_REMAIN = 0;
-        DEFAULT_IS_VIEW_YEAR = 0;
-        DEFAULT_IS_SHARE_THREAD = 0;
-        DEFAULT_RICH_TITLE = Collections.emptyList();
-        DEFAULT_RICH_ABSTRACT = Collections.emptyList();
-        DEFAULT_IS_NTITLE = 0;
-        DEFAULT_FIRST_POST_CONTENT = Collections.emptyList();
-        DEFAULT_ITEM_STAR = Collections.emptyList();
-        DEFAULT_PB_LINK_INFO = Collections.emptyList();
-        DEFAULT_PB_GOODS_INFO = Collections.emptyList();
-        DEFAULT_PRIV_SETS = Collections.emptyList();
-        DEFAULT_IS_AUTHOR_VIEW = 0;
-        DEFAULT_IS_MANAGER = 0;
-        DEFAULT_IS_ORIGIN_MANAGER = 0;
-        DEFAULT_GOOD_TYPES = 0;
-        DEFAULT_TOP_TYPES = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PostInfoList(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.forum_id;
             if (l == null) {
@@ -767,6 +653,7 @@ public final class PostInfoList extends Message {
             }
             this.user_post_perm = builder.user_post_perm;
             this.voice_room = builder.voice_room;
+            this.edit_info = builder.edit_info;
             String str13 = builder.target_scheme;
             if (str13 == null) {
                 this.target_scheme = "";
@@ -840,10 +727,7 @@ public final class PostInfoList extends Message {
         this.top_types = builder.top_types;
         this.user_post_perm = builder.user_post_perm;
         this.voice_room = builder.voice_room;
+        this.edit_info = builder.edit_info;
         this.target_scheme = builder.target_scheme;
-    }
-
-    public /* synthetic */ PostInfoList(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

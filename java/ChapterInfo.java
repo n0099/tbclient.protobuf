@@ -1,34 +1,12 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class ChapterInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Long DEFAULT_CHAPTER_ID;
-    public static final Integer DEFAULT_CHAPTER_NO;
-    public static final Integer DEFAULT_IS_BUY;
-    public static final Integer DEFAULT_LEVEL;
-    public static final Integer DEFAULT_ORIGNAL_PRICE;
-    public static final Integer DEFAULT_PAGES;
-    public static final Integer DEFAULT_PAGE_ID;
-    public static final List<Integer> DEFAULT_PARAGRAPHS;
-    public static final Integer DEFAULT_PARAGRAPH_ID;
-    public static final Integer DEFAULT_PRICE;
-    public static final Long DEFAULT_THREAD_ID;
     public static final String DEFAULT_TITLE = "";
-    public static final Integer DEFAULT_WORDS;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long chapter_id;
     @ProtoField(tag = 12, type = Message.Datatype.UINT32)
@@ -55,17 +33,21 @@ public final class ChapterInfo extends Message {
     public final String title;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer words;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_CHAPTER_ID = 0L;
+    public static final Integer DEFAULT_LEVEL = 0;
+    public static final Integer DEFAULT_WORDS = 0;
+    public static final Integer DEFAULT_PAGE_ID = 0;
+    public static final Integer DEFAULT_PARAGRAPH_ID = 0;
+    public static final Integer DEFAULT_PAGES = 0;
+    public static final List<Integer> DEFAULT_PARAGRAPHS = Collections.emptyList();
+    public static final Integer DEFAULT_PRICE = 0;
+    public static final Integer DEFAULT_IS_BUY = 0;
+    public static final Integer DEFAULT_ORIGNAL_PRICE = 0;
+    public static final Integer DEFAULT_CHAPTER_NO = 0;
+    public static final Long DEFAULT_THREAD_ID = 0L;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ChapterInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Long chapter_id;
         public Integer chapter_no;
         public Integer is_buy;
@@ -81,37 +63,10 @@ public final class ChapterInfo extends Message {
         public Integer words;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ChapterInfo chapterInfo) {
             super(chapterInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {chapterInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (chapterInfo == null) {
                 return;
             }
@@ -133,60 +88,12 @@ public final class ChapterInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ChapterInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new ChapterInfo(this, z, null);
-            }
-            return (ChapterInfo) invokeZ.objValue;
+            return new ChapterInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1077769962, "Ltbclient/ChapterInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1077769962, "Ltbclient/ChapterInfo;");
-                return;
-            }
-        }
-        DEFAULT_CHAPTER_ID = 0L;
-        DEFAULT_LEVEL = 0;
-        DEFAULT_WORDS = 0;
-        DEFAULT_PAGE_ID = 0;
-        DEFAULT_PARAGRAPH_ID = 0;
-        DEFAULT_PAGES = 0;
-        DEFAULT_PARAGRAPHS = Collections.emptyList();
-        DEFAULT_PRICE = 0;
-        DEFAULT_IS_BUY = 0;
-        DEFAULT_ORIGNAL_PRICE = 0;
-        DEFAULT_CHAPTER_NO = 0;
-        DEFAULT_THREAD_ID = 0L;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ChapterInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.chapter_id;
             if (l == null) {
@@ -282,9 +189,5 @@ public final class ChapterInfo extends Message {
         this.orignal_price = builder.orignal_price;
         this.chapter_no = builder.chapter_no;
         this.thread_id = builder.thread_id;
-    }
-
-    public /* synthetic */ ChapterInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

@@ -1,39 +1,22 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class ItemInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_APK_NAME = "";
     public static final String DEFAULT_BRIEF = "";
     public static final String DEFAULT_BUTTON_LINK = "";
-    public static final Integer DEFAULT_BUTTON_LINK_TYPE;
     public static final String DEFAULT_BUTTON_NAME = "";
     public static final String DEFAULT_CATEGORY1 = "";
     public static final String DEFAULT_CATEGORY2 = "";
     public static final String DEFAULT_FORUM_NAME = "";
-    public static final Double DEFAULT_ICON_SIZE;
     public static final String DEFAULT_ICON_URL = "";
-    public static final Integer DEFAULT_ID;
-    public static final Integer DEFAULT_IS_SCHOOL;
     public static final String DEFAULT_ITEM_APPID = "";
-    public static final List<ItemOptions> DEFAULT_ITEM_OPTIONS;
     public static final String DEFAULT_NAME = "";
-    public static final List<String> DEFAULT_TAGS;
-    public static final List<TagInfo> DEFAULT_TAG_INFO;
     public static final String DEFAULT_TEMPLATE_NAME = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 24)
     public final ApkDetail apk_detail;
     @ProtoField(tag = 23, type = Message.Datatype.STRING)
@@ -60,6 +43,8 @@ public final class ItemInfo extends Message {
     public final String icon_url;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer id;
+    @ProtoField(tag = 25)
+    public final ApkDetail ios_detail;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer is_school;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
@@ -82,17 +67,16 @@ public final class ItemInfo extends Message {
     public final String template_name;
     @ProtoField(tag = 10)
     public final ItemThemeColor theme_color;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_ID = 0;
+    public static final List<String> DEFAULT_TAGS = Collections.emptyList();
+    public static final Double DEFAULT_ICON_SIZE = Double.valueOf(0.0d);
+    public static final List<ItemOptions> DEFAULT_ITEM_OPTIONS = Collections.emptyList();
+    public static final Integer DEFAULT_IS_SCHOOL = 0;
+    public static final List<TagInfo> DEFAULT_TAG_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_BUTTON_LINK_TYPE = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ItemInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public ApkDetail apk_detail;
         public String apk_name;
         public String brief;
@@ -106,6 +90,7 @@ public final class ItemInfo extends Message {
         public Double icon_size;
         public String icon_url;
         public Integer id;
+        public ApkDetail ios_detail;
         public Integer is_school;
         public String item_appid;
         public List<ItemOptions> item_options;
@@ -119,37 +104,10 @@ public final class ItemInfo extends Message {
         public ItemThemeColor theme_color;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ItemInfo itemInfo) {
             super(itemInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {itemInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (itemInfo == null) {
                 return;
             }
@@ -177,60 +135,18 @@ public final class ItemInfo extends Message {
             this.button_link_type = itemInfo.button_link_type;
             this.apk_name = itemInfo.apk_name;
             this.apk_detail = itemInfo.apk_detail;
+            this.ios_detail = itemInfo.ios_detail;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ItemInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new ItemInfo(this, z, null);
-            }
-            return (ItemInfo) invokeZ.objValue;
+            return new ItemInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(2036664400, "Ltbclient/ItemInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(2036664400, "Ltbclient/ItemInfo;");
-                return;
-            }
-        }
-        DEFAULT_ID = 0;
-        DEFAULT_TAGS = Collections.emptyList();
-        DEFAULT_ICON_SIZE = Double.valueOf(0.0d);
-        DEFAULT_ITEM_OPTIONS = Collections.emptyList();
-        DEFAULT_IS_SCHOOL = 0;
-        DEFAULT_TAG_INFO = Collections.emptyList();
-        DEFAULT_BUTTON_LINK_TYPE = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ItemInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.id;
             if (num == null) {
@@ -346,6 +262,7 @@ public final class ItemInfo extends Message {
                 this.apk_name = str11;
             }
             this.apk_detail = builder.apk_detail;
+            this.ios_detail = builder.ios_detail;
             return;
         }
         this.id = builder.id;
@@ -372,9 +289,6 @@ public final class ItemInfo extends Message {
         this.button_link_type = builder.button_link_type;
         this.apk_name = builder.apk_name;
         this.apk_detail = builder.apk_detail;
-    }
-
-    public /* synthetic */ ItemInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        this.ios_detail = builder.ios_detail;
     }
 }

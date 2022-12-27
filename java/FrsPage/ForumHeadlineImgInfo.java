@@ -1,26 +1,13 @@
 package tbclient.FrsPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class ForumHeadlineImgInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_HEADLINE_URL = "";
     public static final String DEFAULT_IMG_URL = "";
-    public static final Long DEFAULT_IMG_USER_ID;
     public static final String DEFAULT_IMG_USER_NAME = "";
-    public static final Long DEFAULT_THREAD_ID;
-    public static final Long DEFAULT_THREAD_USER_ID;
     public static final String DEFAULT_THREAD_USER_NAME = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String headline_url;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -35,17 +22,12 @@ public final class ForumHeadlineImgInfo extends Message {
     public final Long thread_user_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String thread_user_name;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_THREAD_ID = 0L;
+    public static final Long DEFAULT_THREAD_USER_ID = 0L;
+    public static final Long DEFAULT_IMG_USER_ID = 0L;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ForumHeadlineImgInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String headline_url;
         public String img_url;
         public Long img_user_id;
@@ -55,37 +37,10 @@ public final class ForumHeadlineImgInfo extends Message {
         public String thread_user_name;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ForumHeadlineImgInfo forumHeadlineImgInfo) {
             super(forumHeadlineImgInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {forumHeadlineImgInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (forumHeadlineImgInfo == null) {
                 return;
             }
@@ -101,51 +56,12 @@ public final class ForumHeadlineImgInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumHeadlineImgInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new ForumHeadlineImgInfo(this, z, null);
-            }
-            return (ForumHeadlineImgInfo) invokeZ.objValue;
+            return new ForumHeadlineImgInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1268013380, "Ltbclient/FrsPage/ForumHeadlineImgInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1268013380, "Ltbclient/FrsPage/ForumHeadlineImgInfo;");
-                return;
-            }
-        }
-        DEFAULT_THREAD_ID = 0L;
-        DEFAULT_THREAD_USER_ID = 0L;
-        DEFAULT_IMG_USER_ID = 0L;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ForumHeadlineImgInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.thread_id;
             if (l == null) {
@@ -199,9 +115,5 @@ public final class ForumHeadlineImgInfo extends Message {
         this.thread_user_id = builder.thread_user_id;
         this.img_user_id = builder.img_user_id;
         this.headline_url = builder.headline_url;
-    }
-
-    public /* synthetic */ ForumHeadlineImgInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

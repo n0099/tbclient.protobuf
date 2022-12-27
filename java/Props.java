@@ -1,36 +1,20 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class Props extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_END_TIME = "";
     public static final String DEFAULT_EXPIRED_NOTIFY = "";
     public static final String DEFAULT_EXPIRING_NOTIFY = "";
-    public static final Integer DEFAULT_LEFT_NUM;
     public static final String DEFAULT_NOTICE = "";
-    public static final Integer DEFAULT_NUM;
     public static final String DEFAULT_OPEN_STATUS = "";
-    public static final List<String> DEFAULT_PATTERN;
     public static final String DEFAULT_PROPS_CATEGORY = "";
-    public static final Integer DEFAULT_PROPS_ID;
     public static final String DEFAULT_PROPS_TYPE = "";
     public static final String DEFAULT_TITLE = "";
-    public static final Integer DEFAULT_UPDATE_TIME;
     public static final String DEFAULT_USED_STATUS = "";
-    public static final List<String> DEFAULT__WORD;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 14, type = Message.Datatype.STRING)
     public final List<String> _word;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -61,17 +45,15 @@ public final class Props extends Message {
     public final Integer update_time;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String used_status;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_PROPS_ID = 0;
+    public static final Integer DEFAULT_LEFT_NUM = 0;
+    public static final Integer DEFAULT_NUM = 0;
+    public static final Integer DEFAULT_UPDATE_TIME = 0;
+    public static final List<String> DEFAULT__WORD = Collections.emptyList();
+    public static final List<String> DEFAULT_PATTERN = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Props> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public List<String> _word;
         public String end_time;
         public String expired_notify;
@@ -89,37 +71,10 @@ public final class Props extends Message {
         public String used_status;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(Props props) {
             super(props);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {props};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (props == null) {
                 return;
             }
@@ -143,54 +98,12 @@ public final class Props extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Props build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new Props(this, z, null);
-            }
-            return (Props) invokeZ.objValue;
+            return new Props(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(548972085, "Ltbclient/Props;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(548972085, "Ltbclient/Props;");
-                return;
-            }
-        }
-        DEFAULT_PROPS_ID = 0;
-        DEFAULT_LEFT_NUM = 0;
-        DEFAULT_NUM = 0;
-        DEFAULT_UPDATE_TIME = 0;
-        DEFAULT__WORD = Collections.emptyList();
-        DEFAULT_PATTERN = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Props(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.props_id;
             if (num == null) {
@@ -300,9 +213,5 @@ public final class Props extends Message {
         this.title = builder.title;
         this._word = Message.immutableCopyOf(builder._word);
         this.pattern = Message.immutableCopyOf(builder.pattern);
-    }
-
-    public /* synthetic */ Props(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

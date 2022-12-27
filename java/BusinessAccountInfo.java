@@ -1,23 +1,13 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class BusinessAccountInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BUSINESS_NAME = "";
     public static final String DEFAULT_IDENTIFI_EXPLAIN = "";
-    public static final Integer DEFAULT_IS_BUSINESS_ACCOUNT;
-    public static final Integer DEFAULT_IS_FORUM_BUSINESS_ACCOUNT;
-    public transient /* synthetic */ FieldHolder $fh;
+    public static final Integer DEFAULT_IS_BUSINESS_ACCOUNT = 0;
+    public static final Integer DEFAULT_IS_FORUM_BUSINESS_ACCOUNT = 0;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String business_name;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -28,52 +18,17 @@ public final class BusinessAccountInfo extends Message {
     public final Integer is_forum_business_account;
 
     /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<BusinessAccountInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String business_name;
         public String identifi_explain;
         public Integer is_business_account;
         public Integer is_forum_business_account;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(BusinessAccountInfo businessAccountInfo) {
             super(businessAccountInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {businessAccountInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (businessAccountInfo == null) {
                 return;
             }
@@ -86,50 +41,12 @@ public final class BusinessAccountInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BusinessAccountInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new BusinessAccountInfo(this, z, null);
-            }
-            return (BusinessAccountInfo) invokeZ.objValue;
+            return new BusinessAccountInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(924253930, "Ltbclient/BusinessAccountInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(924253930, "Ltbclient/BusinessAccountInfo;");
-                return;
-            }
-        }
-        DEFAULT_IS_BUSINESS_ACCOUNT = 0;
-        DEFAULT_IS_FORUM_BUSINESS_ACCOUNT = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BusinessAccountInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.is_business_account;
             if (num == null) {
@@ -162,9 +79,5 @@ public final class BusinessAccountInfo extends Message {
         this.is_forum_business_account = builder.is_forum_business_account;
         this.business_name = builder.business_name;
         this.identifi_explain = builder.identifi_explain;
-    }
-
-    public /* synthetic */ BusinessAccountInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

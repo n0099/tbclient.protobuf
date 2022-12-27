@@ -1,13 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -15,16 +7,10 @@ import java.util.List;
 import tbclient.PbContent;
 /* loaded from: classes9.dex */
 public final class NebulaHotThread extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final Integer DEFAULT_COMMENT_NUMBER;
-    public static final List<PbContent> DEFAULT_CONTENT;
     public static final String DEFAULT_GROUP_NAME = "";
-    public static final Integer DEFAULT_RANK;
     public static final String DEFAULT_THREAD_ID = "";
     public static final String DEFAULT_THREAD_THUMBNAIL = "";
-    public static final Integer DEFAULT_THREAD_THUMBNAIL_TYPE;
     public static final String DEFAULT_URL = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer comment_number;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
@@ -41,17 +27,13 @@ public final class NebulaHotThread extends Message {
     public final Integer thread_thumbnail_type;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String url;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_COMMENT_NUMBER = 0;
+    public static final Integer DEFAULT_RANK = 0;
+    public static final Integer DEFAULT_THREAD_THUMBNAIL_TYPE = 0;
+    public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<NebulaHotThread> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Integer comment_number;
         public List<PbContent> content;
         public String group_name;
@@ -62,37 +44,10 @@ public final class NebulaHotThread extends Message {
         public String url;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(NebulaHotThread nebulaHotThread) {
             super(nebulaHotThread);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {nebulaHotThread};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (nebulaHotThread == null) {
                 return;
             }
@@ -109,52 +64,12 @@ public final class NebulaHotThread extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public NebulaHotThread build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new NebulaHotThread(this, z, null);
-            }
-            return (NebulaHotThread) invokeZ.objValue;
+            return new NebulaHotThread(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(36338342, "Ltbclient/FrsPage/NebulaHotThread;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(36338342, "Ltbclient/FrsPage/NebulaHotThread;");
-                return;
-            }
-        }
-        DEFAULT_COMMENT_NUMBER = 0;
-        DEFAULT_RANK = 0;
-        DEFAULT_THREAD_THUMBNAIL_TYPE = 0;
-        DEFAULT_CONTENT = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public NebulaHotThread(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.thread_id;
             if (str == null) {
@@ -215,9 +130,5 @@ public final class NebulaHotThread extends Message {
         this.thread_thumbnail_type = builder.thread_thumbnail_type;
         this.thread_thumbnail = builder.thread_thumbnail;
         this.content = Message.immutableCopyOf(builder.content);
-    }
-
-    public /* synthetic */ NebulaHotThread(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

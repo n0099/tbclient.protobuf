@@ -1,29 +1,16 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class SmartApp extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_H5_URL = "";
     public static final String DEFAULT_ID = "";
-    public static final Integer DEFAULT_IS_GAME;
-    public static final Integer DEFAULT_IS_RECOM;
     public static final String DEFAULT_LINK = "";
     public static final String DEFAULT_NAME = "";
-    public static final Long DEFAULT_NAWS_APP_ID;
     public static final String DEFAULT_PIC = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String _abstract;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -44,17 +31,12 @@ public final class SmartApp extends Message {
     public final Long naws_app_id;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String pic;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_NAWS_APP_ID = 0L;
+    public static final Integer DEFAULT_IS_RECOM = 0;
+    public static final Integer DEFAULT_IS_GAME = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<SmartApp> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String _abstract;
         public String avatar;
         public String h5_url;
@@ -67,37 +49,10 @@ public final class SmartApp extends Message {
         public String pic;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(SmartApp smartApp) {
             super(smartApp);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {smartApp};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (smartApp == null) {
                 return;
             }
@@ -116,51 +71,12 @@ public final class SmartApp extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public SmartApp build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new SmartApp(this, z, null);
-            }
-            return (SmartApp) invokeZ.objValue;
+            return new SmartApp(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1541270023, "Ltbclient/SmartApp;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1541270023, "Ltbclient/SmartApp;");
-                return;
-            }
-        }
-        DEFAULT_NAWS_APP_ID = 0L;
-        DEFAULT_IS_RECOM = 0;
-        DEFAULT_IS_GAME = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SmartApp(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.avatar;
             if (str == null) {
@@ -235,9 +151,5 @@ public final class SmartApp extends Message {
         this.naws_app_id = builder.naws_app_id;
         this.is_recom = builder.is_recom;
         this.is_game = builder.is_game;
-    }
-
-    public /* synthetic */ SmartApp(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

@@ -1,28 +1,14 @@
 package tbclient.ElectionInfo;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class Basic extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BEGIN_APPLY_TIME = "";
     public static final String DEFAULT_BEGIN_AUDIT_TIME = "";
     public static final String DEFAULT_BEGIN_PUBLIC_TIME = "";
     public static final String DEFAULT_BEGIN_VOTE_TIME = "";
-    public static final Integer DEFAULT_CANDIDATE_NUM;
-    public static final Boolean DEFAULT_IS_VOTED;
     public static final String DEFAULT_REMIND_TIME = "";
-    public static final Integer DEFAULT_STATUS;
-    public static final Integer DEFAULT_TOTAL_VOTE_NUM;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String begin_apply_time;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -43,17 +29,13 @@ public final class Basic extends Message {
     public final Integer status;
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer total_vote_num;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_STATUS = 0;
+    public static final Integer DEFAULT_CANDIDATE_NUM = 0;
+    public static final Integer DEFAULT_TOTAL_VOTE_NUM = 0;
+    public static final Boolean DEFAULT_IS_VOTED = Boolean.FALSE;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Basic> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String begin_apply_time;
         public String begin_audit_time;
         public String begin_public_time;
@@ -66,37 +48,10 @@ public final class Basic extends Message {
         public Integer total_vote_num;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(Basic basic) {
             super(basic);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {basic};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (basic == null) {
                 return;
             }
@@ -115,52 +70,12 @@ public final class Basic extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Basic build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new Basic(this, z, null);
-            }
-            return (Basic) invokeZ.objValue;
+            return new Basic(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1323323541, "Ltbclient/ElectionInfo/Basic;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1323323541, "Ltbclient/ElectionInfo/Basic;");
-                return;
-            }
-        }
-        DEFAULT_STATUS = 0;
-        DEFAULT_CANDIDATE_NUM = 0;
-        DEFAULT_TOTAL_VOTE_NUM = 0;
-        DEFAULT_IS_VOTED = Boolean.FALSE;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Basic(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.begin_apply_time;
             if (str == null) {
@@ -230,9 +145,5 @@ public final class Basic extends Message {
         this.is_voted = builder.is_voted;
         this.notice = builder.notice;
         this.begin_audit_time = builder.begin_audit_time;
-    }
-
-    public /* synthetic */ Basic(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

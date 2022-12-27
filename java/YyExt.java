@@ -1,28 +1,18 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class YyExt extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_FEED_ID = "";
     public static final String DEFAULT_ICON_URL = "";
-    public static final Integer DEFAULT_IS_YY_GAME;
+    public static final Integer DEFAULT_IS_YY_GAME = 0;
     public static final String DEFAULT_RANK_SHOW = "";
     public static final String DEFAULT_SID = "";
     public static final String DEFAULT_SSID = "";
     public static final String DEFAULT_STREAM_INFO = "";
     public static final String DEFAULT_TEMPLATE_ID = "";
     public static final String DEFAULT_YY_UID = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String feed_id;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
@@ -43,15 +33,7 @@ public final class YyExt extends Message {
     public final String yy_uid;
 
     /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<YyExt> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String feed_id;
         public String icon_url;
         public Integer is_yy_game;
@@ -63,37 +45,10 @@ public final class YyExt extends Message {
         public String yy_uid;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(YyExt yyExt) {
             super(yyExt);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {yyExt};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (yyExt == null) {
                 return;
             }
@@ -111,49 +66,12 @@ public final class YyExt extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public YyExt build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new YyExt(this, z, null);
-            }
-            return (YyExt) invokeZ.objValue;
+            return new YyExt(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(811855588, "Ltbclient/YyExt;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(811855588, "Ltbclient/YyExt;");
-                return;
-            }
-        }
-        DEFAULT_IS_YY_GAME = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public YyExt(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.sid;
             if (str == null) {
@@ -221,9 +139,5 @@ public final class YyExt extends Message {
         this.rank_show = builder.rank_show;
         this.icon_url = builder.icon_url;
         this.feed_id = builder.feed_id;
-    }
-
-    public /* synthetic */ YyExt(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

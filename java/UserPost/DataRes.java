@@ -1,13 +1,5 @@
 package tbclient.UserPost;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -15,16 +7,6 @@ import java.util.List;
 import tbclient.PostInfoList;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
-    public static /* synthetic */ Interceptable $ic;
-    public static final Long DEFAULT_CTIME;
-    public static final Integer DEFAULT_HIDE_POST;
-    public static final Long DEFAULT_LOGID;
-    public static final Integer DEFAULT_MASK_TYPE;
-    public static final List<PostInfoList> DEFAULT_POST_LIST;
-    public static final Integer DEFAULT_REDDOT_DELETED_THREAD;
-    public static final Long DEFAULT_TIME;
-    public static final Integer DEFAULT_VIEW_CARD_NUM;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long ctime;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
@@ -41,17 +23,20 @@ public final class DataRes extends Message {
     public final Long time;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer view_card_num;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    @ProtoField(label = Message.Label.REPEATED, tag = 9, type = Message.Datatype.STRING)
+    public final List<String> week_forum_list;
+    public static final List<PostInfoList> DEFAULT_POST_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_HIDE_POST = 0;
+    public static final Long DEFAULT_TIME = 0L;
+    public static final Long DEFAULT_CTIME = 0L;
+    public static final Long DEFAULT_LOGID = 0L;
+    public static final Integer DEFAULT_MASK_TYPE = 0;
+    public static final Integer DEFAULT_VIEW_CARD_NUM = 0;
+    public static final Integer DEFAULT_REDDOT_DELETED_THREAD = 0;
+    public static final List<String> DEFAULT_WEEK_FORUM_LIST = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public Long ctime;
         public Integer hide_post;
         public Long logid;
@@ -60,39 +45,13 @@ public final class DataRes extends Message {
         public Integer reddot_deleted_thread;
         public Long time;
         public Integer view_card_num;
+        public List<String> week_forum_list;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataRes dataRes) {
             super(dataRes);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataRes};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataRes == null) {
                 return;
             }
@@ -104,61 +63,18 @@ public final class DataRes extends Message {
             this.mask_type = dataRes.mask_type;
             this.view_card_num = dataRes.view_card_num;
             this.reddot_deleted_thread = dataRes.reddot_deleted_thread;
+            this.week_forum_list = Message.copyOf(dataRes.week_forum_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataRes(this, z, null);
-            }
-            return (DataRes) invokeZ.objValue;
+            return new DataRes(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1788041567, "Ltbclient/UserPost/DataRes;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1788041567, "Ltbclient/UserPost/DataRes;");
-                return;
-            }
-        }
-        DEFAULT_POST_LIST = Collections.emptyList();
-        DEFAULT_HIDE_POST = 0;
-        DEFAULT_TIME = 0L;
-        DEFAULT_CTIME = 0L;
-        DEFAULT_LOGID = 0L;
-        DEFAULT_MASK_TYPE = 0;
-        DEFAULT_VIEW_CARD_NUM = 0;
-        DEFAULT_REDDOT_DELETED_THREAD = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             List<PostInfoList> list = builder.post_list;
             if (list == null) {
@@ -205,9 +121,15 @@ public final class DataRes extends Message {
             Integer num4 = builder.reddot_deleted_thread;
             if (num4 == null) {
                 this.reddot_deleted_thread = DEFAULT_REDDOT_DELETED_THREAD;
-                return;
             } else {
                 this.reddot_deleted_thread = num4;
+            }
+            List<String> list2 = builder.week_forum_list;
+            if (list2 == null) {
+                this.week_forum_list = DEFAULT_WEEK_FORUM_LIST;
+                return;
+            } else {
+                this.week_forum_list = Message.immutableCopyOf(list2);
                 return;
             }
         }
@@ -219,9 +141,6 @@ public final class DataRes extends Message {
         this.mask_type = builder.mask_type;
         this.view_card_num = builder.view_card_num;
         this.reddot_deleted_thread = builder.reddot_deleted_thread;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        this.week_forum_list = Message.immutableCopyOf(builder.week_forum_list);
     }
 }

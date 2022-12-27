@@ -1,37 +1,38 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class ThreadRecommendInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
+    public static final String DEFAULT_BUSINESS_ID = "";
     public static final String DEFAULT_FORUM_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
+    public static final String DEFAULT_JUMP_ICON = "";
     public static final String DEFAULT_JUMP_LINK = "";
+    public static final String DEFAULT_JUMP_TEXT = "";
     public static final String DEFAULT_RECOMMEND_ICON = "";
     public static final String DEFAULT_RECOMMEND_REASON = "";
     public static final String DEFAULT_RECOMMEND_TAIL = "";
     public static final String DEFAULT_RECOMMEND_TYPE = "";
-    public static final Integer DEFAULT_SHOW_NUM;
     public static final String DEFAULT_SHOW_TYPE = "";
-    public static final Long DEFAULT_TOPIC_ID;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 13)
     public final ThemeColorInfo background_color;
+    @ProtoField(tag = 16, type = Message.Datatype.STRING)
+    public final String business_id;
+    @ProtoField(tag = 15, type = Message.Datatype.INT32)
+    public final Integer business_type;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String forum_avatar;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String forum_name;
+    @ProtoField(tag = 17, type = Message.Datatype.STRING)
+    public final String jump_icon;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String jump_link;
+    @ProtoField(tag = 18, type = Message.Datatype.STRING)
+    public final String jump_text;
+    @ProtoField(tag = 19)
+    public final ThemeColorInfo jump_text_color;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String recommend_icon;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -52,21 +53,21 @@ public final class ThreadRecommendInfo extends Message {
     public final ThemeColorInfo strip_color;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long topic_id;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_SHOW_NUM = 0;
+    public static final Long DEFAULT_TOPIC_ID = 0L;
+    public static final Integer DEFAULT_BUSINESS_TYPE = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ThreadRecommendInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public ThemeColorInfo background_color;
+        public String business_id;
+        public Integer business_type;
         public String forum_avatar;
         public String forum_name;
+        public String jump_icon;
         public String jump_link;
+        public String jump_text;
+        public ThemeColorInfo jump_text_color;
         public String recommend_icon;
         public String recommend_reason;
         public ThemeColorInfo recommend_reason_color;
@@ -79,37 +80,10 @@ public final class ThreadRecommendInfo extends Message {
         public Long topic_id;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ThreadRecommendInfo threadRecommendInfo) {
             super(threadRecommendInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {threadRecommendInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (threadRecommendInfo == null) {
                 return;
             }
@@ -127,55 +101,22 @@ public final class ThreadRecommendInfo extends Message {
             this.strip_color = threadRecommendInfo.strip_color;
             this.background_color = threadRecommendInfo.background_color;
             this.jump_link = threadRecommendInfo.jump_link;
+            this.business_type = threadRecommendInfo.business_type;
+            this.business_id = threadRecommendInfo.business_id;
+            this.jump_icon = threadRecommendInfo.jump_icon;
+            this.jump_text = threadRecommendInfo.jump_text;
+            this.jump_text_color = threadRecommendInfo.jump_text_color;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ThreadRecommendInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new ThreadRecommendInfo(this, z, null);
-            }
-            return (ThreadRecommendInfo) invokeZ.objValue;
+            return new ThreadRecommendInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-640137595, "Ltbclient/ThreadRecommendInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-640137595, "Ltbclient/ThreadRecommendInfo;");
-                return;
-            }
-        }
-        DEFAULT_SHOW_NUM = 0;
-        DEFAULT_TOPIC_ID = 0L;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ThreadRecommendInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.forum_avatar;
             if (str == null) {
@@ -238,11 +179,35 @@ public final class ThreadRecommendInfo extends Message {
             String str8 = builder.jump_link;
             if (str8 == null) {
                 this.jump_link = "";
-                return;
             } else {
                 this.jump_link = str8;
-                return;
             }
+            Integer num2 = builder.business_type;
+            if (num2 == null) {
+                this.business_type = DEFAULT_BUSINESS_TYPE;
+            } else {
+                this.business_type = num2;
+            }
+            String str9 = builder.business_id;
+            if (str9 == null) {
+                this.business_id = "";
+            } else {
+                this.business_id = str9;
+            }
+            String str10 = builder.jump_icon;
+            if (str10 == null) {
+                this.jump_icon = "";
+            } else {
+                this.jump_icon = str10;
+            }
+            String str11 = builder.jump_text;
+            if (str11 == null) {
+                this.jump_text = "";
+            } else {
+                this.jump_text = str11;
+            }
+            this.jump_text_color = builder.jump_text_color;
+            return;
         }
         this.forum_avatar = builder.forum_avatar;
         this.forum_name = builder.forum_name;
@@ -258,9 +223,10 @@ public final class ThreadRecommendInfo extends Message {
         this.strip_color = builder.strip_color;
         this.background_color = builder.background_color;
         this.jump_link = builder.jump_link;
-    }
-
-    public /* synthetic */ ThreadRecommendInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        this.business_type = builder.business_type;
+        this.business_id = builder.business_id;
+        this.jump_icon = builder.jump_icon;
+        this.jump_text = builder.jump_text;
+        this.jump_text_color = builder.jump_text_color;
     }
 }

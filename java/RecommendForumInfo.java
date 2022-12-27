@@ -1,43 +1,23 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class RecommendForumInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ABTEST_TAG = "";
     public static final String DEFAULT_AUTHEN = "";
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_AVATAR_ORIGIN = "";
-    public static final List<PbContent> DEFAULT_CONTENT;
     public static final String DEFAULT_EXTRA = "";
-    public static final Long DEFAULT_FORUM_ID;
     public static final String DEFAULT_FORUM_NAME = "";
-    public static final Integer DEFAULT_FORUM_TYPE;
     public static final String DEFAULT_HOT_TEXT = "";
-    public static final Long DEFAULT_HOT_THREAD_ID;
-    public static final Integer DEFAULT_IS_BRAND_FORUM;
-    public static final Integer DEFAULT_IS_LIKE;
-    public static final Integer DEFAULT_IS_PRIVATE_FORUM;
-    public static final Integer DEFAULT_IS_RECOMMEND_FORUM;
     public static final String DEFAULT_LV1_NAME = "";
     public static final String DEFAULT_LV2_NAME = "";
-    public static final Integer DEFAULT_MEMBER_COUNT;
     public static final String DEFAULT_RECOM_REASON = "";
     public static final String DEFAULT_SLOGAN = "";
     public static final String DEFAULT_SOURCE = "";
-    public static final Integer DEFAULT_THREAD_COUNT;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String abtest_tag;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -56,6 +36,8 @@ public final class RecommendForumInfo extends Message {
     public final String forum_name;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer forum_type;
+    @ProtoField(tag = 21, type = Message.Datatype.INT32)
+    public final Integer hot_num;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String hot_text;
     @ProtoField(tag = 22, type = Message.Datatype.UINT64)
@@ -82,17 +64,20 @@ public final class RecommendForumInfo extends Message {
     public final String source;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer thread_count;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_IS_LIKE = 0;
+    public static final Integer DEFAULT_MEMBER_COUNT = 0;
+    public static final Integer DEFAULT_THREAD_COUNT = 0;
+    public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
+    public static final Integer DEFAULT_FORUM_TYPE = 0;
+    public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
+    public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
+    public static final Integer DEFAULT_HOT_NUM = 0;
+    public static final Long DEFAULT_HOT_THREAD_ID = 0L;
+    public static final Integer DEFAULT_IS_RECOMMEND_FORUM = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<RecommendForumInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String abtest_tag;
         public String authen;
         public String avatar;
@@ -102,6 +87,7 @@ public final class RecommendForumInfo extends Message {
         public Long forum_id;
         public String forum_name;
         public Integer forum_type;
+        public Integer hot_num;
         public String hot_text;
         public Long hot_thread_id;
         public Integer is_brand_forum;
@@ -117,37 +103,10 @@ public final class RecommendForumInfo extends Message {
         public Integer thread_count;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(RecommendForumInfo recommendForumInfo) {
             super(recommendForumInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {recommendForumInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (recommendForumInfo == null) {
                 return;
             }
@@ -171,6 +130,7 @@ public final class RecommendForumInfo extends Message {
             this.lv1_name = recommendForumInfo.lv1_name;
             this.lv2_name = recommendForumInfo.lv2_name;
             this.avatar_origin = recommendForumInfo.avatar_origin;
+            this.hot_num = recommendForumInfo.hot_num;
             this.hot_thread_id = recommendForumInfo.hot_thread_id;
             this.is_recommend_forum = recommendForumInfo.is_recommend_forum;
         }
@@ -178,58 +138,12 @@ public final class RecommendForumInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public RecommendForumInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new RecommendForumInfo(this, z, null);
-            }
-            return (RecommendForumInfo) invokeZ.objValue;
+            return new RecommendForumInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(727043422, "Ltbclient/RecommendForumInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(727043422, "Ltbclient/RecommendForumInfo;");
-                return;
-            }
-        }
-        DEFAULT_FORUM_ID = 0L;
-        DEFAULT_IS_LIKE = 0;
-        DEFAULT_MEMBER_COUNT = 0;
-        DEFAULT_THREAD_COUNT = 0;
-        DEFAULT_CONTENT = Collections.emptyList();
-        DEFAULT_FORUM_TYPE = 0;
-        DEFAULT_IS_BRAND_FORUM = 0;
-        DEFAULT_IS_PRIVATE_FORUM = 0;
-        DEFAULT_HOT_THREAD_ID = 0L;
-        DEFAULT_IS_RECOMMEND_FORUM = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public RecommendForumInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.avatar;
             if (str == null) {
@@ -351,18 +265,24 @@ public final class RecommendForumInfo extends Message {
             } else {
                 this.avatar_origin = str12;
             }
+            Integer num7 = builder.hot_num;
+            if (num7 == null) {
+                this.hot_num = DEFAULT_HOT_NUM;
+            } else {
+                this.hot_num = num7;
+            }
             Long l2 = builder.hot_thread_id;
             if (l2 == null) {
                 this.hot_thread_id = DEFAULT_HOT_THREAD_ID;
             } else {
                 this.hot_thread_id = l2;
             }
-            Integer num7 = builder.is_recommend_forum;
-            if (num7 == null) {
+            Integer num8 = builder.is_recommend_forum;
+            if (num8 == null) {
                 this.is_recommend_forum = DEFAULT_IS_RECOMMEND_FORUM;
                 return;
             } else {
-                this.is_recommend_forum = num7;
+                this.is_recommend_forum = num8;
                 return;
             }
         }
@@ -386,11 +306,8 @@ public final class RecommendForumInfo extends Message {
         this.lv1_name = builder.lv1_name;
         this.lv2_name = builder.lv2_name;
         this.avatar_origin = builder.avatar_origin;
+        this.hot_num = builder.hot_num;
         this.hot_thread_id = builder.hot_thread_id;
         this.is_recommend_forum = builder.is_recommend_forum;
-    }
-
-    public /* synthetic */ RecommendForumInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

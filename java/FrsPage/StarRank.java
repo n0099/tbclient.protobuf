@@ -1,29 +1,15 @@
 package tbclient.FrsPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class StarRank extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final List<StarContriRecord> DEFAULT_CONTRI_RECORD_LIST;
     public static final String DEFAULT_RANK_NAME = "";
-    public static final Integer DEFAULT_RANK_RANKING;
     public static final String DEFAULT_URL = "";
-    public static final Integer DEFAULT_USER_CONTRI_SCORE;
     public static final String DEFAULT_USER_CURRENT_SCORE_NOTICE = "";
-    public static final List<StarTaskInfo> DEFAULT_USER_TASK_INFO;
     public static final String DEFAULT_USER_TASK_NOTICE = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<StarContriRecord> contri_record_list;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -40,17 +26,13 @@ public final class StarRank extends Message {
     public final List<StarTaskInfo> user_task_info;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String user_task_notice;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_RANK_RANKING = 0;
+    public static final List<StarContriRecord> DEFAULT_CONTRI_RECORD_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_USER_CONTRI_SCORE = 0;
+    public static final List<StarTaskInfo> DEFAULT_USER_TASK_INFO = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<StarRank> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public List<StarContriRecord> contri_record_list;
         public String rank_name;
         public Integer rank_ranking;
@@ -61,37 +43,10 @@ public final class StarRank extends Message {
         public String user_task_notice;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(StarRank starRank) {
             super(starRank);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {starRank};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (starRank == null) {
                 return;
             }
@@ -108,52 +63,12 @@ public final class StarRank extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public StarRank build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new StarRank(this, z, null);
-            }
-            return (StarRank) invokeZ.objValue;
+            return new StarRank(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1508677606, "Ltbclient/FrsPage/StarRank;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1508677606, "Ltbclient/FrsPage/StarRank;");
-                return;
-            }
-        }
-        DEFAULT_RANK_RANKING = 0;
-        DEFAULT_CONTRI_RECORD_LIST = Collections.emptyList();
-        DEFAULT_USER_CONTRI_SCORE = 0;
-        DEFAULT_USER_TASK_INFO = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public StarRank(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.rank_name;
             if (str == null) {
@@ -214,9 +129,5 @@ public final class StarRank extends Message {
         this.user_task_info = Message.immutableCopyOf(builder.user_task_info);
         this.user_current_score_notice = builder.user_current_score_notice;
         this.url = builder.url;
-    }
-
-    public /* synthetic */ StarRank(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

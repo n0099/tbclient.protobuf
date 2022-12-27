@@ -1,13 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -48,61 +40,11 @@ import tbclient.WindowToast;
 import tbclient.ZhiBoInfoTW;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final List<AdMixFloor> DEFAULT_AD_MIX_LIST;
     public static final String DEFAULT_AD_SAMPLE_MAP_KEY = "";
-    public static final Integer DEFAULT_AD_SHOW_SELECT;
-    public static final Integer DEFAULT_ALA_INSERT_FLOOR;
-    public static final List<ThreadInfo> DEFAULT_ALA_INSERT_THREAD;
-    public static final Integer DEFAULT_ALA_LIVE_COUNT;
-    public static final List<ThreadInfo> DEFAULT_ALA_STAGE_LIST;
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
-    public static final List<BannerThreadInfo> DEFAULT_BANNER_THREAD_LIST;
     public static final String DEFAULT_BAWU_ENTER_URL = "";
-    public static final Integer DEFAULT_BAWU_UNREAD_NOTICE_NUM;
-    public static final List<BottomMenu> DEFAULT_BOTTOM_MENU;
-    public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_INFO;
-    public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_NEW;
-    public static final List<Integer> DEFAULT_CARD_SHIPIN_POS;
-    public static final List<CategoryInfo> DEFAULT_CATEGORY_LIST;
-    public static final List<ColorEgg> DEFAULT_COLOR_EGG;
-    public static final Integer DEFAULT_CTIME;
-    public static final Integer DEFAULT_FORTUNE_BAG;
     public static final String DEFAULT_FORTUNE_DESC = "";
-    public static final List<AnchorInfo> DEFAULT_FORUM_LIVEGROUP_LIST;
-    public static final List<FrsTabInfo> DEFAULT_FRS_GAME_TAB_INFO;
-    public static final Integer DEFAULT_FRS_TAB_DEFAULT;
-    public static final List<FrsTabInfo> DEFAULT_FRS_TAB_INFO;
-    public static final Integer DEFAULT_GAME_DEFAULT_TAB_ID;
-    public static final Integer DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO;
-    public static final Integer DEFAULT_IS_GET_HORSE_RACE_LAMP;
-    public static final Integer DEFAULT_IS_MEMBER_BROADCAST_FORUM;
-    public static final Integer DEFAULT_IS_NEW_URL;
-    public static final List<LiveFuseForumData> DEFAULT_LIVE_FUSE_FORUM;
-    public static final Long DEFAULT_LOGID;
-    public static final Integer DEFAULT_NEED_LOG;
     public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
-    public static final Integer DEFAULT_SCHOOL_RECOM_POS;
-    public static final Integer DEFAULT_SERVER_TIME;
-    public static final List<ServiceArea> DEFAULT_SERVICE_AREA;
-    public static final Integer DEFAULT_SHOW_ADSENSE;
-    public static final List<String> DEFAULT_SMART_APP_AVATAR;
-    public static final Integer DEFAULT_SMART_FRS_TYPE;
-    public static final Integer DEFAULT_SORT_TYPE;
-    public static final List<StarEnter> DEFAULT_STAR_ENTER;
-    public static final List<Long> DEFAULT_THREAD_ID_LIST;
-    public static final List<ThreadIdListInfo> DEFAULT_THREAD_ID_LIST_INFO;
-    public static final List<ThreadInfo> DEFAULT_THREAD_LIST;
-    public static final Integer DEFAULT_TIME;
-    public static final Integer DEFAULT_TRENDS_REDPOINT;
-    public static final List<ZhiBoInfoTW> DEFAULT_TWZHIBO_INFO;
-    public static final Integer DEFAULT_TWZHIBO_POS;
-    public static final List<User> DEFAULT_USER_LIST;
-    public static final Integer DEFAULT_VIDEO_AUTO_PLAY;
-    public static final Integer DEFAULT_VOICE_ROOM_CONFIG;
-    public static final List<ThreadInfo> DEFAULT_VOICE_ROOM_LIST;
-    public static final List<WindowToast> DEFAULT_WINDOW_TOAST;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 87)
     public final ActivityConfig activity_config;
     @ProtoField(tag = 23)
@@ -163,6 +105,8 @@ public final class DataRes extends Message {
     public final CarrierEnter carrier_enter;
     @ProtoField(label = Message.Label.REPEATED, tag = 28)
     public final List<CategoryInfo> category_list;
+    @ProtoField(tag = 121)
+    public final ChatroomConfig chatroom_config;
     @ProtoField(tag = 33)
     public final ClientPlatform client_platform;
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
@@ -181,6 +125,8 @@ public final class DataRes extends Message {
     public final ForumInfo forum;
     @ProtoField(tag = 78)
     public final ForumArIno forum_ar_info;
+    @ProtoField(tag = 120)
+    public final ForumGroup forum_group;
     @ProtoField(tag = 72)
     public final ForumHeadIcon forum_head_icon;
     @ProtoField(tag = 52)
@@ -325,17 +271,57 @@ public final class DataRes extends Message {
     public final List<WindowToast> window_toast;
     @ProtoField(tag = 89)
     public final WorldcupSkin worldcup_skin;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
+    public static final List<Long> DEFAULT_THREAD_ID_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_IS_NEW_URL = 0;
+    public static final Integer DEFAULT_FORTUNE_BAG = 0;
+    public static final Integer DEFAULT_TIME = 0;
+    public static final Integer DEFAULT_CTIME = 0;
+    public static final Long DEFAULT_LOGID = 0L;
+    public static final Integer DEFAULT_SERVER_TIME = 0;
+    public static final List<AnchorInfo> DEFAULT_FORUM_LIVEGROUP_LIST = Collections.emptyList();
+    public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
+    public static final List<StarEnter> DEFAULT_STAR_ENTER = Collections.emptyList();
+    public static final List<ColorEgg> DEFAULT_COLOR_EGG = Collections.emptyList();
+    public static final List<FrsTabInfo> DEFAULT_FRS_TAB_INFO = Collections.emptyList();
+    public static final List<ZhiBoInfoTW> DEFAULT_TWZHIBO_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_TWZHIBO_POS = 0;
+    public static final List<CategoryInfo> DEFAULT_CATEGORY_LIST = Collections.emptyList();
+    public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_FRS_TAB_DEFAULT = 0;
+    public static final Integer DEFAULT_SORT_TYPE = 0;
+    public static final Integer DEFAULT_SCHOOL_RECOM_POS = 0;
+    public static final List<BannerThreadInfo> DEFAULT_BANNER_THREAD_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_SMART_FRS_TYPE = 0;
+    public static final Integer DEFAULT_NEED_LOG = 0;
+    public static final Integer DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO = 0;
+    public static final List<Integer> DEFAULT_CARD_SHIPIN_POS = Collections.emptyList();
+    public static final List<ThreadInfo> DEFAULT_CARD_SHIPIN_NEW = Collections.emptyList();
+    public static final Integer DEFAULT_ALA_LIVE_COUNT = 0;
+    public static final List<ThreadIdListInfo> DEFAULT_THREAD_ID_LIST_INFO = Collections.emptyList();
+    public static final List<FrsTabInfo> DEFAULT_FRS_GAME_TAB_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_GAME_DEFAULT_TAB_ID = 0;
+    public static final List<ThreadInfo> DEFAULT_ALA_INSERT_THREAD = Collections.emptyList();
+    public static final Integer DEFAULT_ALA_INSERT_FLOOR = 0;
+    public static final List<ThreadInfo> DEFAULT_ALA_STAGE_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_TRENDS_REDPOINT = 0;
+    public static final List<WindowToast> DEFAULT_WINDOW_TOAST = Collections.emptyList();
+    public static final List<BottomMenu> DEFAULT_BOTTOM_MENU = Collections.emptyList();
+    public static final Integer DEFAULT_VIDEO_AUTO_PLAY = 0;
+    public static final List<String> DEFAULT_SMART_APP_AVATAR = Collections.emptyList();
+    public static final List<ServiceArea> DEFAULT_SERVICE_AREA = Collections.emptyList();
+    public static final Integer DEFAULT_IS_GET_HORSE_RACE_LAMP = 0;
+    public static final Integer DEFAULT_SHOW_ADSENSE = 0;
+    public static final List<ThreadInfo> DEFAULT_VOICE_ROOM_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_VOICE_ROOM_CONFIG = 0;
+    public static final Integer DEFAULT_AD_SHOW_SELECT = 0;
+    public static final List<AdMixFloor> DEFAULT_AD_MIX_LIST = Collections.emptyList();
+    public static final List<LiveFuseForumData> DEFAULT_LIVE_FUSE_FORUM = Collections.emptyList();
+    public static final Integer DEFAULT_BAWU_UNREAD_NOTICE_NUM = 0;
+    public static final Integer DEFAULT_IS_MEMBER_BROADCAST_FORUM = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public ActivityConfig activity_config;
         public ActivityHead activityhead;
         public List<AdMixFloor> ad_mix_list;
@@ -366,6 +352,7 @@ public final class DataRes extends Message {
         public List<Integer> card_shipin_pos;
         public CarrierEnter carrier_enter;
         public List<CategoryInfo> category_list;
+        public ChatroomConfig chatroom_config;
         public ClientPlatform client_platform;
         public List<ColorEgg> color_egg;
         public Integer ctime;
@@ -375,6 +362,7 @@ public final class DataRes extends Message {
         public String fortune_desc;
         public ForumInfo forum;
         public ForumArIno forum_ar_info;
+        public ForumGroup forum_group;
         public ForumHeadIcon forum_head_icon;
         public ForumHeadlineImgInfo forum_headline_img_info;
         public List<AnchorInfo> forum_livegroup_list;
@@ -449,37 +437,10 @@ public final class DataRes extends Message {
         public WorldcupSkin worldcup_skin;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataRes dataRes) {
             super(dataRes);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataRes};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataRes == null) {
                 return;
             }
@@ -594,101 +555,19 @@ public final class DataRes extends Message {
             this.bawu_unread_notice_num = dataRes.bawu_unread_notice_num;
             this.recreation_rank_info = dataRes.recreation_rank_info;
             this.is_member_broadcast_forum = dataRes.is_member_broadcast_forum;
+            this.forum_group = dataRes.forum_group;
+            this.chatroom_config = dataRes.chatroom_config;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataRes(this, z, null);
-            }
-            return (DataRes) invokeZ.objValue;
+            return new DataRes(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1238029048, "Ltbclient/FrsPage/DataRes;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1238029048, "Ltbclient/FrsPage/DataRes;");
-                return;
-            }
-        }
-        DEFAULT_THREAD_LIST = Collections.emptyList();
-        DEFAULT_THREAD_ID_LIST = Collections.emptyList();
-        DEFAULT_IS_NEW_URL = 0;
-        DEFAULT_FORTUNE_BAG = 0;
-        DEFAULT_TIME = 0;
-        DEFAULT_CTIME = 0;
-        DEFAULT_LOGID = 0L;
-        DEFAULT_SERVER_TIME = 0;
-        DEFAULT_FORUM_LIVEGROUP_LIST = Collections.emptyList();
-        DEFAULT_USER_LIST = Collections.emptyList();
-        DEFAULT_STAR_ENTER = Collections.emptyList();
-        DEFAULT_COLOR_EGG = Collections.emptyList();
-        DEFAULT_FRS_TAB_INFO = Collections.emptyList();
-        DEFAULT_TWZHIBO_INFO = Collections.emptyList();
-        DEFAULT_TWZHIBO_POS = 0;
-        DEFAULT_CATEGORY_LIST = Collections.emptyList();
-        DEFAULT_CARD_SHIPIN_INFO = Collections.emptyList();
-        DEFAULT_FRS_TAB_DEFAULT = 0;
-        DEFAULT_SORT_TYPE = 0;
-        DEFAULT_SCHOOL_RECOM_POS = 0;
-        DEFAULT_BANNER_THREAD_LIST = Collections.emptyList();
-        DEFAULT_SMART_FRS_TYPE = 0;
-        DEFAULT_NEED_LOG = 0;
-        DEFAULT_IS_AUTO_PLAY_FORUMHEADVIDEO = 0;
-        DEFAULT_CARD_SHIPIN_POS = Collections.emptyList();
-        DEFAULT_CARD_SHIPIN_NEW = Collections.emptyList();
-        DEFAULT_ALA_LIVE_COUNT = 0;
-        DEFAULT_THREAD_ID_LIST_INFO = Collections.emptyList();
-        DEFAULT_FRS_GAME_TAB_INFO = Collections.emptyList();
-        DEFAULT_GAME_DEFAULT_TAB_ID = 0;
-        DEFAULT_ALA_INSERT_THREAD = Collections.emptyList();
-        DEFAULT_ALA_INSERT_FLOOR = 0;
-        DEFAULT_ALA_STAGE_LIST = Collections.emptyList();
-        DEFAULT_TRENDS_REDPOINT = 0;
-        DEFAULT_WINDOW_TOAST = Collections.emptyList();
-        DEFAULT_BOTTOM_MENU = Collections.emptyList();
-        DEFAULT_VIDEO_AUTO_PLAY = 0;
-        DEFAULT_SMART_APP_AVATAR = Collections.emptyList();
-        DEFAULT_SERVICE_AREA = Collections.emptyList();
-        DEFAULT_IS_GET_HORSE_RACE_LAMP = 0;
-        DEFAULT_SHOW_ADSENSE = 0;
-        DEFAULT_VOICE_ROOM_LIST = Collections.emptyList();
-        DEFAULT_VOICE_ROOM_CONFIG = 0;
-        DEFAULT_AD_SHOW_SELECT = 0;
-        DEFAULT_AD_MIX_LIST = Collections.emptyList();
-        DEFAULT_LIVE_FUSE_FORUM = Collections.emptyList();
-        DEFAULT_BAWU_UNREAD_NOTICE_NUM = 0;
-        DEFAULT_IS_MEMBER_BROADCAST_FORUM = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             this.user = builder.user;
             this.forum = builder.forum;
@@ -1063,11 +942,12 @@ public final class DataRes extends Message {
             Integer num23 = builder.is_member_broadcast_forum;
             if (num23 == null) {
                 this.is_member_broadcast_forum = DEFAULT_IS_MEMBER_BROADCAST_FORUM;
-                return;
             } else {
                 this.is_member_broadcast_forum = num23;
-                return;
             }
+            this.forum_group = builder.forum_group;
+            this.chatroom_config = builder.chatroom_config;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -1180,9 +1060,7 @@ public final class DataRes extends Message {
         this.bawu_unread_notice_num = builder.bawu_unread_notice_num;
         this.recreation_rank_info = builder.recreation_rank_info;
         this.is_member_broadcast_forum = builder.is_member_broadcast_forum;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        this.forum_group = builder.forum_group;
+        this.chatroom_config = builder.chatroom_config;
     }
 }

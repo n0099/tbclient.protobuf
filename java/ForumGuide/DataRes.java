@@ -1,13 +1,5 @@
 package tbclient.ForumGuide;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -16,15 +8,7 @@ import tbclient.ForumCreateInfo;
 import tbclient.ThreadInfo;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final List<HotSearch> DEFAULT_HOT_SEARCH;
-    public static final Integer DEFAULT_IS_LOGIN;
-    public static final List<LikeForum> DEFAULT_LIKE_FORUM;
-    public static final Integer DEFAULT_MSIGN_LEVEL;
     public static final String DEFAULT_MSIGN_TEXT = "";
-    public static final Integer DEFAULT_MSIGN_VALID;
-    public static final List<ThreadInfo> DEFAULT_VOICE_ROOM_LIST;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3)
     public final ForumCreateInfo forum_create_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -41,17 +25,15 @@ public final class DataRes extends Message {
     public final Integer msign_valid;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<ThreadInfo> voice_room_list;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final List<HotSearch> DEFAULT_HOT_SEARCH = Collections.emptyList();
+    public static final List<LikeForum> DEFAULT_LIKE_FORUM = Collections.emptyList();
+    public static final Integer DEFAULT_IS_LOGIN = 0;
+    public static final Integer DEFAULT_MSIGN_VALID = 0;
+    public static final Integer DEFAULT_MSIGN_LEVEL = 0;
+    public static final List<ThreadInfo> DEFAULT_VOICE_ROOM_LIST = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public ForumCreateInfo forum_create_info;
         public List<HotSearch> hot_search;
         public Integer is_login;
@@ -62,37 +44,10 @@ public final class DataRes extends Message {
         public List<ThreadInfo> voice_room_list;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataRes dataRes) {
             super(dataRes);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataRes};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataRes == null) {
                 return;
             }
@@ -109,54 +64,12 @@ public final class DataRes extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataRes(this, z, null);
-            }
-            return (DataRes) invokeZ.objValue;
+            return new DataRes(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(935667343, "Ltbclient/ForumGuide/DataRes;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(935667343, "Ltbclient/ForumGuide/DataRes;");
-                return;
-            }
-        }
-        DEFAULT_HOT_SEARCH = Collections.emptyList();
-        DEFAULT_LIKE_FORUM = Collections.emptyList();
-        DEFAULT_IS_LOGIN = 0;
-        DEFAULT_MSIGN_VALID = 0;
-        DEFAULT_MSIGN_LEVEL = 0;
-        DEFAULT_VOICE_ROOM_LIST = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             List<HotSearch> list = builder.hot_search;
             if (list == null) {
@@ -212,9 +125,5 @@ public final class DataRes extends Message {
         this.msign_text = builder.msign_text;
         this.msign_level = builder.msign_level;
         this.voice_room_list = Message.immutableCopyOf(builder.voice_room_list);
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

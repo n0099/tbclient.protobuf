@@ -1,31 +1,21 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class PostAntiInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BLOCK_CANCEL = "";
     public static final String DEFAULT_BLOCK_CONFIRM = "";
     public static final String DEFAULT_BLOCK_CONTENT = "";
-    public static final List<String> DEFAULT_CONFILTER_HITWORDS;
+    public static final List<String> DEFAULT_CONFILTER_HITWORDS = Collections.emptyList();
     public static final String DEFAULT_NEED_VCODE = "";
     public static final String DEFAULT_PASS_TOKEN = "";
     public static final String DEFAULT_VCODE_MD5 = "";
     public static final String DEFAULT_VCODE_PIC_URL = "";
     public static final String DEFAULT_VCODE_PREV_TYPE = "";
     public static final String DEFAULT_VCODE_TYPE = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 1)
     public final AccessState access_state;
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
@@ -52,15 +42,7 @@ public final class PostAntiInfo extends Message {
     public final String vcode_type;
 
     /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
-
-    /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<PostAntiInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public AccessState access_state;
         public String block_cancel;
         public String block_confirm;
@@ -75,37 +57,10 @@ public final class PostAntiInfo extends Message {
         public String vcode_type;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(PostAntiInfo postAntiInfo) {
             super(postAntiInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {postAntiInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (postAntiInfo == null) {
                 return;
             }
@@ -126,49 +81,12 @@ public final class PostAntiInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public PostAntiInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new PostAntiInfo(this, z, null);
-            }
-            return (PostAntiInfo) invokeZ.objValue;
+            return new PostAntiInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(517519777, "Ltbclient/PostAntiInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(517519777, "Ltbclient/PostAntiInfo;");
-                return;
-            }
-        }
-        DEFAULT_CONFILTER_HITWORDS = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public PostAntiInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             this.access_state = builder.access_state;
             List<String> list = builder.confilter_hitwords;
@@ -246,9 +164,5 @@ public final class PostAntiInfo extends Message {
         this.block_confirm = builder.block_confirm;
         this.vcode_pic_url = builder.vcode_pic_url;
         this.vcode_extra = builder.vcode_extra;
-    }
-
-    public /* synthetic */ PostAntiInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

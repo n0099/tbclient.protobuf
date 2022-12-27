@@ -1,13 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -18,55 +10,18 @@ import tbclient.GameInfo;
 import tbclient.ThemeColorInfo;
 /* loaded from: classes9.dex */
 public final class ForumInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ACCELERATE_COTENT = "";
-    public static final Integer DEFAULT_ALBUM_OPEN_PHOTO_FRS;
     public static final String DEFAULT_AVATAR = "";
-    public static final List<Badges> DEFAULT_BADGES;
-    public static final Integer DEFAULT_CAN_USE_ACCELERATE;
-    public static final Integer DEFAULT_CUR_SCORE;
-    public static final Integer DEFAULT_FAVO_TYPE;
     public static final String DEFAULT_FIRST_CLASS = "";
     public static final String DEFAULT_FORUM_GAME_LABEL = "";
     public static final String DEFAULT_FORUM_SHARE_LINK = "";
-    public static final List<Calendar> DEFAULT_FORUM_SIGN_CALENDAR;
     public static final String DEFAULT_F_SHARE_IMG = "";
-    public static final List<GameInfo> DEFAULT_GAME_CARD;
     public static final String DEFAULT_GAME_NAME = "";
     public static final String DEFAULT_GAME_URL = "";
-    public static final List<Classify> DEFAULT_GOOD_CLASSIFY;
-    public static final Integer DEFAULT_HAS_FRS_STAR;
-    public static final Integer DEFAULT_HAS_GAME;
-    public static final Integer DEFAULT_HAS_PAPER;
-    public static final Integer DEFAULT_HAS_POSTPRE;
-    public static final Long DEFAULT_ID;
-    public static final Integer DEFAULT_IS_BRAND_FORUM;
-    public static final Integer DEFAULT_IS_EXISTS;
-    public static final Integer DEFAULT_IS_FORBIDDEN;
-    public static final Integer DEFAULT_IS_FRS_MASK;
-    public static final Integer DEFAULT_IS_LIKE;
-    public static final Integer DEFAULT_IS_LIVE_GAME;
-    public static final Integer DEFAULT_IS_LIVE_GAME_FORUM;
-    public static final Integer DEFAULT_IS_LOCAL_EFFECT;
-    public static final Integer DEFAULT_IS_NEW_GAME_FORUM;
-    public static final Integer DEFAULT_IS_PRIVATE_FORUM;
     public static final String DEFAULT_IS_READONLY = "";
-    public static final Integer DEFAULT_IS_SEARCH_PEOPLE;
-    public static final Integer DEFAULT_IS_SHOW_ALL_TOP_THREAD;
-    public static final Integer DEFAULT_IS_SHOW_BAWUTASK;
-    public static final Integer DEFAULT_IS_SHOW_FORUMRULE;
-    public static final Integer DEFAULT_IS_STAGE_FORUM;
-    public static final Integer DEFAULT_IS_SUPPORT_LOCAL;
     public static final String DEFAULT_IS_TOP_IMG = "";
-    public static final Integer DEFAULT_LEVELUP_SCORE;
-    public static final Integer DEFAULT_LEVEL_ID;
     public static final String DEFAULT_LEVEL_NAME = "";
-    public static final List<Manager> DEFAULT_MANAGERS;
-    public static final Integer DEFAULT_MEIZHI_TAG;
-    public static final Integer DEFAULT_MEMBER_NUM;
     public static final String DEFAULT_NAME = "";
-    public static final Integer DEFAULT_POST_NUM;
-    public static final List<RecommendForum> DEFAULT_RECOMMEND_FORUM;
     public static final String DEFAULT_RISK_TIP_NOTICE = "";
     public static final String DEFAULT_RISK_TIP_POP = "";
     public static final String DEFAULT_RISK_TIP_POP_TITLE = "";
@@ -74,14 +29,10 @@ public final class ForumInfo extends Message {
     public static final String DEFAULT_SLOGAN = "";
     public static final String DEFAULT_SPECIAL_FORUM_TYPE = "";
     public static final String DEFAULT_SUPERBOY = "";
-    public static final Integer DEFAULT_THREAD_NUM;
     public static final String DEFAULT_TIDS = "";
-    public static final List<TipInfo> DEFAULT_TIP_LIST;
     public static final String DEFAULT_TOPIC_SPECIAL_ICON = "";
     public static final String DEFAULT_TOPIC_SPECIAL_ICON_RIGHT = "";
-    public static final Integer DEFAULT_USER_LEVEL;
     public static final String DEFAULT_WARNING_MSG = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String accelerate_cotent;
     @ProtoField(tag = 62)
@@ -250,17 +201,48 @@ public final class ForumInfo extends Message {
     public final Yule yule;
     @ProtoField(tag = 16)
     public final Zhibo zhibo;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_ID = 0L;
+    public static final Integer DEFAULT_IS_EXISTS = 0;
+    public static final Integer DEFAULT_IS_LIKE = 0;
+    public static final Integer DEFAULT_USER_LEVEL = 0;
+    public static final Integer DEFAULT_MEMBER_NUM = 0;
+    public static final Integer DEFAULT_THREAD_NUM = 0;
+    public static final Integer DEFAULT_POST_NUM = 0;
+    public static final Integer DEFAULT_HAS_FRS_STAR = 0;
+    public static final Integer DEFAULT_CUR_SCORE = 0;
+    public static final Integer DEFAULT_LEVELUP_SCORE = 0;
+    public static final List<Manager> DEFAULT_MANAGERS = Collections.emptyList();
+    public static final List<Calendar> DEFAULT_FORUM_SIGN_CALENDAR = Collections.emptyList();
+    public static final Integer DEFAULT_IS_SEARCH_PEOPLE = 0;
+    public static final List<Classify> DEFAULT_GOOD_CLASSIFY = Collections.emptyList();
+    public static final Integer DEFAULT_ALBUM_OPEN_PHOTO_FRS = 0;
+    public static final Integer DEFAULT_HAS_POSTPRE = 0;
+    public static final Integer DEFAULT_HAS_PAPER = 0;
+    public static final Integer DEFAULT_IS_STAGE_FORUM = 0;
+    public static final Integer DEFAULT_MEIZHI_TAG = 0;
+    public static final List<Badges> DEFAULT_BADGES = Collections.emptyList();
+    public static final Integer DEFAULT_LEVEL_ID = 0;
+    public static final Integer DEFAULT_IS_FORBIDDEN = 0;
+    public static final Integer DEFAULT_FAVO_TYPE = 0;
+    public static final Integer DEFAULT_IS_SUPPORT_LOCAL = 0;
+    public static final Integer DEFAULT_IS_LOCAL_EFFECT = 0;
+    public static final List<RecommendForum> DEFAULT_RECOMMEND_FORUM = Collections.emptyList();
+    public static final Integer DEFAULT_HAS_GAME = 0;
+    public static final Integer DEFAULT_CAN_USE_ACCELERATE = 0;
+    public static final List<GameInfo> DEFAULT_GAME_CARD = Collections.emptyList();
+    public static final Integer DEFAULT_IS_LIVE_GAME_FORUM = 0;
+    public static final Integer DEFAULT_IS_LIVE_GAME = 0;
+    public static final Integer DEFAULT_IS_NEW_GAME_FORUM = 0;
+    public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
+    public static final Integer DEFAULT_IS_SHOW_ALL_TOP_THREAD = 0;
+    public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
+    public static final Integer DEFAULT_IS_SHOW_BAWUTASK = 0;
+    public static final List<TipInfo> DEFAULT_TIP_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_IS_SHOW_FORUMRULE = 0;
+    public static final Integer DEFAULT_IS_FRS_MASK = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String accelerate_cotent;
         public AcrossForumIcon across_forum_hide;
         public AcrossForumIcon across_forum_show;
@@ -347,37 +329,10 @@ public final class ForumInfo extends Message {
         public Zhibo zhibo;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(ForumInfo forumInfo) {
             super(forumInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {forumInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (forumInfo == null) {
                 return;
             }
@@ -470,87 +425,12 @@ public final class ForumInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public ForumInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new ForumInfo(this, z, null);
-            }
-            return (ForumInfo) invokeZ.objValue;
+            return new ForumInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-2135951729, "Ltbclient/FrsPage/ForumInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-2135951729, "Ltbclient/FrsPage/ForumInfo;");
-                return;
-            }
-        }
-        DEFAULT_ID = 0L;
-        DEFAULT_IS_EXISTS = 0;
-        DEFAULT_IS_LIKE = 0;
-        DEFAULT_USER_LEVEL = 0;
-        DEFAULT_MEMBER_NUM = 0;
-        DEFAULT_THREAD_NUM = 0;
-        DEFAULT_POST_NUM = 0;
-        DEFAULT_HAS_FRS_STAR = 0;
-        DEFAULT_CUR_SCORE = 0;
-        DEFAULT_LEVELUP_SCORE = 0;
-        DEFAULT_MANAGERS = Collections.emptyList();
-        DEFAULT_FORUM_SIGN_CALENDAR = Collections.emptyList();
-        DEFAULT_IS_SEARCH_PEOPLE = 0;
-        DEFAULT_GOOD_CLASSIFY = Collections.emptyList();
-        DEFAULT_ALBUM_OPEN_PHOTO_FRS = 0;
-        DEFAULT_HAS_POSTPRE = 0;
-        DEFAULT_HAS_PAPER = 0;
-        DEFAULT_IS_STAGE_FORUM = 0;
-        DEFAULT_MEIZHI_TAG = 0;
-        DEFAULT_BADGES = Collections.emptyList();
-        DEFAULT_LEVEL_ID = 0;
-        DEFAULT_IS_FORBIDDEN = 0;
-        DEFAULT_FAVO_TYPE = 0;
-        DEFAULT_IS_SUPPORT_LOCAL = 0;
-        DEFAULT_IS_LOCAL_EFFECT = 0;
-        DEFAULT_RECOMMEND_FORUM = Collections.emptyList();
-        DEFAULT_HAS_GAME = 0;
-        DEFAULT_CAN_USE_ACCELERATE = 0;
-        DEFAULT_GAME_CARD = Collections.emptyList();
-        DEFAULT_IS_LIVE_GAME_FORUM = 0;
-        DEFAULT_IS_LIVE_GAME = 0;
-        DEFAULT_IS_NEW_GAME_FORUM = 0;
-        DEFAULT_IS_BRAND_FORUM = 0;
-        DEFAULT_IS_SHOW_ALL_TOP_THREAD = 0;
-        DEFAULT_IS_PRIVATE_FORUM = 0;
-        DEFAULT_IS_SHOW_BAWUTASK = 0;
-        DEFAULT_TIP_LIST = Collections.emptyList();
-        DEFAULT_IS_SHOW_FORUMRULE = 0;
-        DEFAULT_IS_FRS_MASK = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ForumInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.id;
             if (l == null) {
@@ -1033,9 +913,5 @@ public final class ForumInfo extends Message {
         this.is_show_forumrule = builder.is_show_forumrule;
         this.deleted_reason_info = builder.deleted_reason_info;
         this.is_frs_mask = builder.is_frs_mask;
-    }
-
-    public /* synthetic */ ForumInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

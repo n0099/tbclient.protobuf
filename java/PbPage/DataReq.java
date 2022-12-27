@@ -1,13 +1,5 @@
 package tbclient.PbPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
@@ -15,81 +7,38 @@ import tbclient.AppTransmitData;
 import tbclient.CommonReq;
 /* loaded from: classes9.dex */
 public final class DataReq extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_AD_EXT_PARAMS = "";
-    public static final Integer DEFAULT_ARROUND;
-    public static final Integer DEFAULT_BACK;
-    public static final Integer DEFAULT_BANNER;
-    public static final Long DEFAULT_BROADCAST_ID;
     public static final String DEFAULT_CALL_URL = "";
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_FEED_NID = "";
-    public static final Long DEFAULT_FID;
-    public static final Integer DEFAULT_FLOOR_RN;
-    public static final Integer DEFAULT_FLOOR_SORT_TYPE;
-    public static final Long DEFAULT_FORUM_ID;
-    public static final Integer DEFAULT_FROM_PUSH;
-    public static final Integer DEFAULT_FROM_SMART_FRS;
-    public static final Integer DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE;
-    public static final Integer DEFAULT_ISSDK;
-    public static final Integer DEFAULT_IS_COMM_REVERSE;
-    public static final Integer DEFAULT_IS_EDIT_COMMENT_REQ;
-    public static final Integer DEFAULT_IS_FOLD_COMMENT_REQ;
-    public static final Integer DEFAULT_IS_JUMPFLOOR;
     public static final String DEFAULT_JFROM = "";
-    public static final Long DEFAULT_JID;
-    public static final Integer DEFAULT_JUMPFLOOR_NUM;
-    public static final Long DEFAULT_KZ;
-    public static final Integer DEFAULT_LAST;
     public static final String DEFAULT_LASTIDS = "";
-    public static final Long DEFAULT_LAST_PID;
-    public static final Integer DEFAULT_LZ;
-    public static final Integer DEFAULT_MARK;
-    public static final Integer DEFAULT_MESSAGE_ID;
     public static final String DEFAULT_MSG_CLICK = "";
-    public static final Integer DEFAULT_NEED_LOG;
-    public static final Integer DEFAULT_NEED_REPOST_RECOMMEND_FORUM;
     public static final String DEFAULT_OBJ_LOCATE = "";
     public static final String DEFAULT_OBJ_PARAM1 = "";
     public static final String DEFAULT_OBJ_SOURCE = "";
     public static final String DEFAULT_ORI_UGC_NID = "";
     public static final String DEFAULT_ORI_UGC_TID = "";
-    public static final Integer DEFAULT_ORI_UGC_TYPE;
     public static final String DEFAULT_ORI_UGC_VID = "";
-    public static final Integer DEFAULT_PB_RN;
-    public static final Long DEFAULT_PID;
+    public static final String DEFAULT_PB_TEST_INFO = "";
     public static final String DEFAULT_PLATFORM = "";
-    public static final Integer DEFAULT_PN;
     public static final String DEFAULT_QUERY_WORD = "";
-    public static final Integer DEFAULT_Q_TYPE;
-    public static final Integer DEFAULT_R;
-    public static final Integer DEFAULT_REQUEST_TIMES;
-    public static final Integer DEFAULT_RN;
-    public static final Double DEFAULT_SCR_DIP;
-    public static final Integer DEFAULT_SCR_H;
-    public static final Integer DEFAULT_SCR_W;
     public static final String DEFAULT_SHOUBAI_CUID = "";
-    public static final Integer DEFAULT_SOURCE_TYPE;
     public static final String DEFAULT_ST_FROM = "";
     public static final String DEFAULT_ST_LINK = "";
-    public static final Integer DEFAULT_ST_STAT;
-    public static final Long DEFAULT_ST_TASK;
     public static final String DEFAULT_ST_TYPE = "";
-    public static final Integer DEFAULT_S_MODEL;
-    public static final Integer DEFAULT_THREAD_TYPE;
     public static final String DEFAULT_UP_SCHEMA = "";
-    public static final Integer DEFAULT_WEIPOST;
-    public static final Integer DEFAULT_WITH_FLOOR;
     public static final String DEFAULT_YUELAOU_LOCATE = "";
     public static final String DEFAULT_YUELAOU_PARAMS = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 68, type = Message.Datatype.STRING)
     public final String ad_context_list;
     @ProtoField(tag = 72, type = Message.Datatype.STRING)
     public final String ad_ext_params;
     @ProtoField(tag = 58)
     public final AdParam ad_param;
+    @ProtoField(tag = 67, type = Message.Datatype.INT32)
+    public final Integer after_ad_thread_count;
     @ProtoField(tag = 53)
     public final AppPosInfo app_pos;
     @ProtoField(tag = 77)
@@ -178,6 +127,8 @@ public final class DataReq extends Message {
     public final String ori_ugc_vid;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer pb_rn;
+    @ProtoField(tag = 70, type = Message.Datatype.STRING)
+    public final String pb_test_info;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
     public final Long pid;
     @ProtoField(tag = 43, type = Message.Datatype.STRING)
@@ -228,20 +179,58 @@ public final class DataReq extends Message {
     public final String yuelaou_locate;
     @ProtoField(tag = 48, type = Message.Datatype.STRING)
     public final String yuelaou_params;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_PB_RN = 0;
+    public static final Integer DEFAULT_MARK = 0;
+    public static final Integer DEFAULT_BACK = 0;
+    public static final Long DEFAULT_KZ = 0L;
+    public static final Integer DEFAULT_LZ = 0;
+    public static final Integer DEFAULT_R = 0;
+    public static final Long DEFAULT_PID = 0L;
+    public static final Integer DEFAULT_WITH_FLOOR = 0;
+    public static final Integer DEFAULT_FLOOR_RN = 0;
+    public static final Integer DEFAULT_WEIPOST = 0;
+    public static final Integer DEFAULT_MESSAGE_ID = 0;
+    public static final Integer DEFAULT_S_MODEL = 0;
+    public static final Integer DEFAULT_RN = 0;
+    public static final Integer DEFAULT_SCR_W = 0;
+    public static final Integer DEFAULT_SCR_H = 0;
+    public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
+    public static final Integer DEFAULT_Q_TYPE = 0;
+    public static final Integer DEFAULT_PN = 0;
+    public static final Integer DEFAULT_THREAD_TYPE = 0;
+    public static final Integer DEFAULT_BANNER = 0;
+    public static final Integer DEFAULT_ARROUND = 0;
+    public static final Integer DEFAULT_LAST = 0;
+    public static final Integer DEFAULT_ST_STAT = 0;
+    public static final Long DEFAULT_ST_TASK = 0L;
+    public static final Integer DEFAULT_ISSDK = 0;
+    public static final Integer DEFAULT_IS_COMM_REVERSE = 0;
+    public static final Integer DEFAULT_IS_JUMPFLOOR = 0;
+    public static final Integer DEFAULT_JUMPFLOOR_NUM = 0;
+    public static final Long DEFAULT_JID = 0L;
+    public static final Long DEFAULT_FID = 0L;
+    public static final Integer DEFAULT_FROM_SMART_FRS = 0;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_NEED_REPOST_RECOMMEND_FORUM = 0;
+    public static final Integer DEFAULT_NEED_LOG = 0;
+    public static final Integer DEFAULT_ORI_UGC_TYPE = 0;
+    public static final Integer DEFAULT_AFTER_AD_THREAD_COUNT = 0;
+    public static final Integer DEFAULT_FROM_PUSH = 0;
+    public static final Long DEFAULT_BROADCAST_ID = 0L;
+    public static final Integer DEFAULT_FLOOR_SORT_TYPE = 0;
+    public static final Integer DEFAULT_SOURCE_TYPE = 0;
+    public static final Integer DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE = 0;
+    public static final Integer DEFAULT_IS_FOLD_COMMENT_REQ = 0;
+    public static final Integer DEFAULT_IS_EDIT_COMMENT_REQ = 0;
+    public static final Integer DEFAULT_REQUEST_TIMES = 0;
+    public static final Long DEFAULT_LAST_PID = 0L;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String ad_context_list;
         public String ad_ext_params;
         public AdParam ad_param;
+        public Integer after_ad_thread_count;
         public AppPosInfo app_pos;
         public AppTransmitData app_transmit_data;
         public Integer arround;
@@ -287,6 +276,7 @@ public final class DataReq extends Message {
         public Integer ori_ugc_type;
         public String ori_ugc_vid;
         public Integer pb_rn;
+        public String pb_test_info;
         public Long pid;
         public String platform;
         public Integer pn;
@@ -314,37 +304,10 @@ public final class DataReq extends Message {
         public String yuelaou_params;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataReq dataReq) {
             super(dataReq);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataReq};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataReq == null) {
                 return;
             }
@@ -406,8 +369,10 @@ public final class DataReq extends Message {
             this.ori_ugc_tid = dataReq.ori_ugc_tid;
             this.ori_ugc_type = dataReq.ori_ugc_type;
             this.ori_ugc_vid = dataReq.ori_ugc_vid;
+            this.after_ad_thread_count = dataReq.after_ad_thread_count;
             this.ad_context_list = dataReq.ad_context_list;
             this.up_schema = dataReq.up_schema;
+            this.pb_test_info = dataReq.pb_test_info;
             this.from_push = dataReq.from_push;
             this.ad_ext_params = dataReq.ad_ext_params;
             this.broadcast_id = dataReq.broadcast_id;
@@ -424,92 +389,12 @@ public final class DataReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataReq build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataReq(this, z, null);
-            }
-            return (DataReq) invokeZ.objValue;
+            return new DataReq(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1374404917, "Ltbclient/PbPage/DataReq;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1374404917, "Ltbclient/PbPage/DataReq;");
-                return;
-            }
-        }
-        DEFAULT_PB_RN = 0;
-        DEFAULT_MARK = 0;
-        DEFAULT_BACK = 0;
-        DEFAULT_KZ = 0L;
-        DEFAULT_LZ = 0;
-        DEFAULT_R = 0;
-        DEFAULT_PID = 0L;
-        DEFAULT_WITH_FLOOR = 0;
-        DEFAULT_FLOOR_RN = 0;
-        DEFAULT_WEIPOST = 0;
-        DEFAULT_MESSAGE_ID = 0;
-        DEFAULT_S_MODEL = 0;
-        DEFAULT_RN = 0;
-        DEFAULT_SCR_W = 0;
-        DEFAULT_SCR_H = 0;
-        DEFAULT_SCR_DIP = Double.valueOf(0.0d);
-        DEFAULT_Q_TYPE = 0;
-        DEFAULT_PN = 0;
-        DEFAULT_THREAD_TYPE = 0;
-        DEFAULT_BANNER = 0;
-        DEFAULT_ARROUND = 0;
-        DEFAULT_LAST = 0;
-        DEFAULT_ST_STAT = 0;
-        DEFAULT_ST_TASK = 0L;
-        DEFAULT_ISSDK = 0;
-        DEFAULT_IS_COMM_REVERSE = 0;
-        DEFAULT_IS_JUMPFLOOR = 0;
-        DEFAULT_JUMPFLOOR_NUM = 0;
-        DEFAULT_JID = 0L;
-        DEFAULT_FID = 0L;
-        DEFAULT_FROM_SMART_FRS = 0;
-        DEFAULT_FORUM_ID = 0L;
-        DEFAULT_NEED_REPOST_RECOMMEND_FORUM = 0;
-        DEFAULT_NEED_LOG = 0;
-        DEFAULT_ORI_UGC_TYPE = 0;
-        DEFAULT_FROM_PUSH = 0;
-        DEFAULT_BROADCAST_ID = 0L;
-        DEFAULT_FLOOR_SORT_TYPE = 0;
-        DEFAULT_SOURCE_TYPE = 0;
-        DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE = 0;
-        DEFAULT_IS_FOLD_COMMENT_REQ = 0;
-        DEFAULT_IS_EDIT_COMMENT_REQ = 0;
-        DEFAULT_REQUEST_TIMES = 0;
-        DEFAULT_LAST_PID = 0L;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataReq(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.pb_rn;
             if (num == null) {
@@ -844,6 +729,12 @@ public final class DataReq extends Message {
             } else {
                 this.ori_ugc_vid = str20;
             }
+            Integer num29 = builder.after_ad_thread_count;
+            if (num29 == null) {
+                this.after_ad_thread_count = DEFAULT_AFTER_AD_THREAD_COUNT;
+            } else {
+                this.after_ad_thread_count = num29;
+            }
             String str21 = builder.ad_context_list;
             if (str21 == null) {
                 this.ad_context_list = "";
@@ -856,17 +747,23 @@ public final class DataReq extends Message {
             } else {
                 this.up_schema = str22;
             }
-            Integer num29 = builder.from_push;
-            if (num29 == null) {
+            String str23 = builder.pb_test_info;
+            if (str23 == null) {
+                this.pb_test_info = "";
+            } else {
+                this.pb_test_info = str23;
+            }
+            Integer num30 = builder.from_push;
+            if (num30 == null) {
                 this.from_push = DEFAULT_FROM_PUSH;
             } else {
-                this.from_push = num29;
+                this.from_push = num30;
             }
-            String str23 = builder.ad_ext_params;
-            if (str23 == null) {
+            String str24 = builder.ad_ext_params;
+            if (str24 == null) {
                 this.ad_ext_params = "";
             } else {
-                this.ad_ext_params = str23;
+                this.ad_ext_params = str24;
             }
             Long l7 = builder.broadcast_id;
             if (l7 == null) {
@@ -874,42 +771,42 @@ public final class DataReq extends Message {
             } else {
                 this.broadcast_id = l7;
             }
-            Integer num30 = builder.floor_sort_type;
-            if (num30 == null) {
+            Integer num31 = builder.floor_sort_type;
+            if (num31 == null) {
                 this.floor_sort_type = DEFAULT_FLOOR_SORT_TYPE;
             } else {
-                this.floor_sort_type = num30;
+                this.floor_sort_type = num31;
             }
-            Integer num31 = builder.source_type;
-            if (num31 == null) {
+            Integer num32 = builder.source_type;
+            if (num32 == null) {
                 this.source_type = DEFAULT_SOURCE_TYPE;
             } else {
-                this.source_type = num31;
+                this.source_type = num32;
             }
-            Integer num32 = builder.immersion_video_comment_source;
-            if (num32 == null) {
+            Integer num33 = builder.immersion_video_comment_source;
+            if (num33 == null) {
                 this.immersion_video_comment_source = DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE;
             } else {
-                this.immersion_video_comment_source = num32;
+                this.immersion_video_comment_source = num33;
             }
             this.app_transmit_data = builder.app_transmit_data;
-            Integer num33 = builder.is_fold_comment_req;
-            if (num33 == null) {
+            Integer num34 = builder.is_fold_comment_req;
+            if (num34 == null) {
                 this.is_fold_comment_req = DEFAULT_IS_FOLD_COMMENT_REQ;
             } else {
-                this.is_fold_comment_req = num33;
+                this.is_fold_comment_req = num34;
             }
-            Integer num34 = builder.is_edit_comment_req;
-            if (num34 == null) {
+            Integer num35 = builder.is_edit_comment_req;
+            if (num35 == null) {
                 this.is_edit_comment_req = DEFAULT_IS_EDIT_COMMENT_REQ;
             } else {
-                this.is_edit_comment_req = num34;
+                this.is_edit_comment_req = num35;
             }
-            Integer num35 = builder.request_times;
-            if (num35 == null) {
+            Integer num36 = builder.request_times;
+            if (num36 == null) {
                 this.request_times = DEFAULT_REQUEST_TIMES;
             } else {
-                this.request_times = num35;
+                this.request_times = num36;
             }
             Long l8 = builder.last_pid;
             if (l8 == null) {
@@ -978,8 +875,10 @@ public final class DataReq extends Message {
         this.ori_ugc_tid = builder.ori_ugc_tid;
         this.ori_ugc_type = builder.ori_ugc_type;
         this.ori_ugc_vid = builder.ori_ugc_vid;
+        this.after_ad_thread_count = builder.after_ad_thread_count;
         this.ad_context_list = builder.ad_context_list;
         this.up_schema = builder.up_schema;
+        this.pb_test_info = builder.pb_test_info;
         this.from_push = builder.from_push;
         this.ad_ext_params = builder.ad_ext_params;
         this.broadcast_id = builder.broadcast_id;
@@ -991,9 +890,5 @@ public final class DataReq extends Message {
         this.is_edit_comment_req = builder.is_edit_comment_req;
         this.request_times = builder.request_times;
         this.last_pid = builder.last_pid;
-    }
-
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

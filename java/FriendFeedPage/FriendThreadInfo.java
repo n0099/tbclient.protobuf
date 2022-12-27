@@ -1,13 +1,5 @@
 package tbclient.FriendFeedPage;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -22,29 +14,9 @@ import tbclient.Voice;
 import tbclient.Zan;
 /* loaded from: classes9.dex */
 public final class FriendThreadInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final List<Abstract> DEFAULT_ABSTRACT;
-    public static final Long DEFAULT_AUTHOR_ID;
-    public static final Long DEFAULT_FID;
-    public static final Long DEFAULT_FIRST_POST_ID;
     public static final String DEFAULT_FNAME = "";
-    public static final Long DEFAULT_ID;
-    public static final Integer DEFAULT_IS_GOOD;
-    public static final Integer DEFAULT_IS_LIVEPOST;
-    public static final Integer DEFAULT_IS_MEMBERTOP;
-    public static final Integer DEFAULT_IS_NTITLE;
-    public static final Integer DEFAULT_IS_TOP;
-    public static final Integer DEFAULT_IS_VOICE_THREAD;
-    public static final Integer DEFAULT_LAST_TIME_INT;
-    public static final List<Media> DEFAULT_MEDIA;
-    public static final List<MediaNum> DEFAULT_MEDIA_NUM;
-    public static final Integer DEFAULT_REPLY_NUM;
-    public static final Long DEFAULT_THREAD_TYPE;
-    public static final Long DEFAULT_TID;
     public static final String DEFAULT_TIMELINE = "";
     public static final String DEFAULT_TITLE = "";
-    public static final List<Voice> DEFAULT_VOICE_INFO;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 14)
     public final List<Abstract> _abstract;
     @ProtoField(tag = 23)
@@ -95,17 +67,27 @@ public final class FriendThreadInfo extends Message {
     public final List<Voice> voice_info;
     @ProtoField(tag = 19)
     public final Zan zan;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_ID = 0L;
+    public static final Long DEFAULT_TID = 0L;
+    public static final Integer DEFAULT_REPLY_NUM = 0;
+    public static final Integer DEFAULT_LAST_TIME_INT = 0;
+    public static final Integer DEFAULT_IS_TOP = 0;
+    public static final Integer DEFAULT_IS_MEMBERTOP = 0;
+    public static final Integer DEFAULT_IS_GOOD = 0;
+    public static final Integer DEFAULT_IS_LIVEPOST = 0;
+    public static final Long DEFAULT_AUTHOR_ID = 0L;
+    public static final Integer DEFAULT_IS_NTITLE = 0;
+    public static final List<Abstract> DEFAULT_ABSTRACT = Collections.emptyList();
+    public static final List<Media> DEFAULT_MEDIA = Collections.emptyList();
+    public static final List<MediaNum> DEFAULT_MEDIA_NUM = Collections.emptyList();
+    public static final List<Voice> DEFAULT_VOICE_INFO = Collections.emptyList();
+    public static final Long DEFAULT_FIRST_POST_ID = 0L;
+    public static final Long DEFAULT_FID = 0L;
+    public static final Integer DEFAULT_IS_VOICE_THREAD = 0;
+    public static final Long DEFAULT_THREAD_TYPE = 0L;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<FriendThreadInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public List<Abstract> _abstract;
         public AnchorInfo anchor_info;
         public Anti anti;
@@ -133,37 +115,10 @@ public final class FriendThreadInfo extends Message {
         public Zan zan;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(FriendThreadInfo friendThreadInfo) {
             super(friendThreadInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {friendThreadInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (friendThreadInfo == null) {
                 return;
             }
@@ -197,66 +152,12 @@ public final class FriendThreadInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public FriendThreadInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new FriendThreadInfo(this, z, null);
-            }
-            return (FriendThreadInfo) invokeZ.objValue;
+            return new FriendThreadInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(270462379, "Ltbclient/FriendFeedPage/FriendThreadInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(270462379, "Ltbclient/FriendFeedPage/FriendThreadInfo;");
-                return;
-            }
-        }
-        DEFAULT_ID = 0L;
-        DEFAULT_TID = 0L;
-        DEFAULT_REPLY_NUM = 0;
-        DEFAULT_LAST_TIME_INT = 0;
-        DEFAULT_IS_TOP = 0;
-        DEFAULT_IS_MEMBERTOP = 0;
-        DEFAULT_IS_GOOD = 0;
-        DEFAULT_IS_LIVEPOST = 0;
-        DEFAULT_AUTHOR_ID = 0L;
-        DEFAULT_IS_NTITLE = 0;
-        DEFAULT_ABSTRACT = Collections.emptyList();
-        DEFAULT_MEDIA = Collections.emptyList();
-        DEFAULT_MEDIA_NUM = Collections.emptyList();
-        DEFAULT_VOICE_INFO = Collections.emptyList();
-        DEFAULT_FIRST_POST_ID = 0L;
-        DEFAULT_FID = 0L;
-        DEFAULT_IS_VOICE_THREAD = 0;
-        DEFAULT_THREAD_TYPE = 0L;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FriendThreadInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.id;
             if (l == null) {
@@ -416,9 +317,5 @@ public final class FriendThreadInfo extends Message {
         this.anchor_info = builder.anchor_info;
         this.is_voice_thread = builder.is_voice_thread;
         this.thread_type = builder.thread_type;
-    }
-
-    public /* synthetic */ FriendThreadInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

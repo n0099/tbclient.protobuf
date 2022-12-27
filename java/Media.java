@@ -1,42 +1,22 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class Media extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BIG_PIC = "";
     public static final String DEFAULT_BSIZE = "";
-    public static final Integer DEFAULT_DURING_TIME;
     public static final String DEFAULT_DYNAMIC_PIC = "";
-    public static final Integer DEFAULT_E_TYPE;
-    public static final Integer DEFAULT_HEIGHT;
     public static final Double DEFAULT_HTH_MID_LOC;
-    public static final Integer DEFAULT_IS_BLOCKED_PIC;
-    public static final Integer DEFAULT_IS_LONG_PIC;
     public static final String DEFAULT_ORIGIN_PIC = "";
-    public static final Integer DEFAULT_ORIGIN_SIZE;
-    public static final Long DEFAULT_POST_ID;
-    public static final Integer DEFAULT_SHOW_ORIGINAL_BTN;
     public static final String DEFAULT_SMALL_PIC = "";
     public static final String DEFAULT_SRC_PIC = "";
     public static final String DEFAULT_TEXT = "";
-    public static final Integer DEFAULT_TYPE;
     public static final String DEFAULT_VHSRC = "";
     public static final String DEFAULT_VPIC = "";
     public static final String DEFAULT_VSRC = "";
     public static final String DEFAULT_WATER_PIC = "";
-    public static final Integer DEFAULT_WIDTH;
     public static final Double DEFAULT_WTH_MID_LOC;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String big_pic;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -83,17 +63,19 @@ public final class Media extends Message {
     public final Integer width;
     @ProtoField(tag = 22, type = Message.Datatype.DOUBLE)
     public final Double wth_mid_loc;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_TYPE = 0;
+    public static final Integer DEFAULT_WIDTH = 0;
+    public static final Integer DEFAULT_HEIGHT = 0;
+    public static final Integer DEFAULT_DURING_TIME = 0;
+    public static final Integer DEFAULT_E_TYPE = 0;
+    public static final Integer DEFAULT_ORIGIN_SIZE = 0;
+    public static final Long DEFAULT_POST_ID = 0L;
+    public static final Integer DEFAULT_IS_LONG_PIC = 0;
+    public static final Integer DEFAULT_SHOW_ORIGINAL_BTN = 0;
+    public static final Integer DEFAULT_IS_BLOCKED_PIC = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Media> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String big_pic;
         public String bsize;
         public Integer during_time;
@@ -119,37 +101,10 @@ public final class Media extends Message {
         public Double wth_mid_loc;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(Media media) {
             super(media);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {media};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (media == null) {
                 return;
             }
@@ -181,61 +136,18 @@ public final class Media extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public Media build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new Media(this, z, null);
-            }
-            return (Media) invokeZ.objValue;
+            return new Media(this, z);
         }
     }
 
     static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(450743873, "Ltbclient/Media;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(450743873, "Ltbclient/Media;");
-                return;
-            }
-        }
-        DEFAULT_TYPE = 0;
-        DEFAULT_WIDTH = 0;
-        DEFAULT_HEIGHT = 0;
-        DEFAULT_DURING_TIME = 0;
-        DEFAULT_E_TYPE = 0;
-        DEFAULT_ORIGIN_SIZE = 0;
-        DEFAULT_POST_ID = 0L;
-        DEFAULT_IS_LONG_PIC = 0;
-        DEFAULT_SHOW_ORIGINAL_BTN = 0;
-        DEFAULT_IS_BLOCKED_PIC = 0;
         Double valueOf = Double.valueOf(0.0d);
         DEFAULT_WTH_MID_LOC = valueOf;
         DEFAULT_HTH_MID_LOC = valueOf;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public Media(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Integer num = builder.type;
             if (num == null) {
@@ -401,9 +313,5 @@ public final class Media extends Message {
         this.is_blocked_pic = builder.is_blocked_pic;
         this.wth_mid_loc = builder.wth_mid_loc;
         this.hth_mid_loc = builder.hth_mid_loc;
-    }
-
-    public /* synthetic */ Media(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

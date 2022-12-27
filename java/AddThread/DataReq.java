@@ -1,19 +1,10 @@
 package tbclient.AddThread;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes9.dex */
 public final class DataReq extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_ANONYMOUS = "";
     public static final String DEFAULT_AUTHSID = "";
     public static final String DEFAULT_CALL_FROM = "";
@@ -28,7 +19,6 @@ public final class DataReq extends Message {
     public static final String DEFAULT_FROM_TID = "";
     public static final String DEFAULT_IS_ARTICLE = "";
     public static final String DEFAULT_IS_BOTTLE = "";
-    public static final Integer DEFAULT_IS_CREATE_TAG;
     public static final String DEFAULT_IS_FEEDBACK = "";
     public static final String DEFAULT_IS_FORUM_BUSINESS_ACCOUNT = "";
     public static final String DEFAULT_IS_GENERAL_TAB = "";
@@ -37,11 +27,9 @@ public final class DataReq extends Message {
     public static final String DEFAULT_IS_LOCATION = "";
     public static final String DEFAULT_IS_NTITLE = "";
     public static final String DEFAULT_IS_PICTXT = "";
-    public static final Integer DEFAULT_IS_QUESTION;
     public static final String DEFAULT_IS_REPOST_TO_DYNAMIC = "";
     public static final String DEFAULT_IS_SHARE = "";
     public static final String DEFAULT_IS_WORKS = "";
-    public static final Integer DEFAULT_IS_XIUXIU_THREAD;
     public static final String DEFAULT_ITEM_ID = "";
     public static final String DEFAULT_KW = "";
     public static final String DEFAULT_LAT = "";
@@ -72,7 +60,6 @@ public final class DataReq extends Message {
     public static final String DEFAULT_SHARE_IMAGE = "";
     public static final String DEFAULT_SHARE_NAWS_APP_KEY = "";
     public static final String DEFAULT_SHARE_NAWS_PATH = "";
-    public static final Integer DEFAULT_SHOW_CUSTOM_FIGURE;
     public static final String DEFAULT_SIG = "";
     public static final String DEFAULT_SN = "";
     public static final String DEFAULT_ST_TYPE = "";
@@ -97,7 +84,6 @@ public final class DataReq extends Message {
     public static final String DEFAULT_VIDEO_OTHER = "";
     public static final String DEFAULT_VOICE_MD5 = "";
     public static final String DEFAULT_WORKS_TAG = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String anonymous;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -268,17 +254,13 @@ public final class DataReq extends Message {
     public final String voice_md5;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String works_tag;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_SHOW_CUSTOM_FIGURE = 0;
+    public static final Integer DEFAULT_IS_QUESTION = 0;
+    public static final Integer DEFAULT_IS_CREATE_TAG = 0;
+    public static final Integer DEFAULT_IS_XIUXIU_THREAD = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String anonymous;
         public String authsid;
         public String call_from;
@@ -367,37 +349,10 @@ public final class DataReq extends Message {
         public String works_tag;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataReq dataReq) {
             super(dataReq);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataReq};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataReq == null) {
                 return;
             }
@@ -490,52 +445,12 @@ public final class DataReq extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataReq build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataReq(this, z, null);
-            }
-            return (DataReq) invokeZ.objValue;
+            return new DataReq(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1039206347, "Ltbclient/AddThread/DataReq;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1039206347, "Ltbclient/AddThread/DataReq;");
-                return;
-            }
-        }
-        DEFAULT_SHOW_CUSTOM_FIGURE = 0;
-        DEFAULT_IS_QUESTION = 0;
-        DEFAULT_IS_CREATE_TAG = 0;
-        DEFAULT_IS_XIUXIU_THREAD = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataReq(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             this.f1135common = builder.f1136common;
             String str = builder.authsid;
@@ -1123,9 +1038,5 @@ public final class DataReq extends Message {
         this.question_tag_id = builder.question_tag_id;
         this.is_create_tag = builder.is_create_tag;
         this.is_xiuxiu_thread = builder.is_xiuxiu_thread;
-    }
-
-    public /* synthetic */ DataReq(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

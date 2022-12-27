@@ -1,41 +1,20 @@
 package tbclient;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class VideoInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_FIRST_FRAME_THUMBNAIL = "";
     public static final Double DEFAULT_HTH_MID_LOC;
-    public static final Integer DEFAULT_IS_VERTICAL;
     public static final String DEFAULT_MCN_LEAD_PAGE = "";
     public static final String DEFAULT_MEDIA_SUBTITLE = "";
-    public static final Integer DEFAULT_PLAY_COUNT;
     public static final String DEFAULT_SMALL_THUMBNAIL_URL = "";
-    public static final Integer DEFAULT_THUMBNAIL_HEIGHT;
     public static final String DEFAULT_THUMBNAIL_URL = "";
-    public static final Integer DEFAULT_THUMBNAIL_WIDTH;
-    public static final List<VideoDesc> DEFAULT_VIDEO_DESC;
-    public static final Integer DEFAULT_VIDEO_DURATION;
-    public static final Integer DEFAULT_VIDEO_HEIGHT;
-    public static final Integer DEFAULT_VIDEO_LENGTH;
     public static final String DEFAULT_VIDEO_MD5 = "";
-    public static final Integer DEFAULT_VIDEO_SELECT_FLAG;
-    public static final Integer DEFAULT_VIDEO_TYPE;
     public static final String DEFAULT_VIDEO_URL = "";
-    public static final Integer DEFAULT_VIDEO_WIDTH;
     public static final Double DEFAULT_WTH_MID_LOC;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String first_frame_thumbnail;
     @ProtoField(tag = 20, type = Message.Datatype.DOUBLE)
@@ -80,17 +59,20 @@ public final class VideoInfo extends Message {
     public final Integer video_width;
     @ProtoField(tag = 19, type = Message.Datatype.DOUBLE)
     public final Double wth_mid_loc;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_VIDEO_DURATION = 0;
+    public static final Integer DEFAULT_VIDEO_WIDTH = 0;
+    public static final Integer DEFAULT_VIDEO_HEIGHT = 0;
+    public static final Integer DEFAULT_THUMBNAIL_WIDTH = 0;
+    public static final Integer DEFAULT_THUMBNAIL_HEIGHT = 0;
+    public static final Integer DEFAULT_VIDEO_LENGTH = 0;
+    public static final Integer DEFAULT_PLAY_COUNT = 0;
+    public static final List<VideoDesc> DEFAULT_VIDEO_DESC = Collections.emptyList();
+    public static final Integer DEFAULT_VIDEO_SELECT_FLAG = 0;
+    public static final Integer DEFAULT_VIDEO_TYPE = 0;
+    public static final Integer DEFAULT_IS_VERTICAL = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<VideoInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String first_frame_thumbnail;
         public Double hth_mid_loc;
         public Integer is_vertical;
@@ -115,37 +97,10 @@ public final class VideoInfo extends Message {
         public Double wth_mid_loc;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(VideoInfo videoInfo) {
             super(videoInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {videoInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (videoInfo == null) {
                 return;
             }
@@ -176,62 +131,18 @@ public final class VideoInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public VideoInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new VideoInfo(this, z, null);
-            }
-            return (VideoInfo) invokeZ.objValue;
+            return new VideoInfo(this, z);
         }
     }
 
     static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-339395076, "Ltbclient/VideoInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-339395076, "Ltbclient/VideoInfo;");
-                return;
-            }
-        }
-        DEFAULT_VIDEO_DURATION = 0;
-        DEFAULT_VIDEO_WIDTH = 0;
-        DEFAULT_VIDEO_HEIGHT = 0;
-        DEFAULT_THUMBNAIL_WIDTH = 0;
-        DEFAULT_THUMBNAIL_HEIGHT = 0;
-        DEFAULT_VIDEO_LENGTH = 0;
-        DEFAULT_PLAY_COUNT = 0;
-        DEFAULT_VIDEO_DESC = Collections.emptyList();
-        DEFAULT_VIDEO_SELECT_FLAG = 0;
-        DEFAULT_VIDEO_TYPE = 0;
-        DEFAULT_IS_VERTICAL = 0;
         Double valueOf = Double.valueOf(0.0d);
         DEFAULT_WTH_MID_LOC = valueOf;
         DEFAULT_HTH_MID_LOC = valueOf;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public VideoInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.video_md5;
             if (str == null) {
@@ -380,9 +291,5 @@ public final class VideoInfo extends Message {
         this.hth_mid_loc = builder.hth_mid_loc;
         this.small_thumbnail_url = builder.small_thumbnail_url;
         this.first_frame_thumbnail = builder.first_frame_thumbnail;
-    }
-
-    public /* synthetic */ VideoInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

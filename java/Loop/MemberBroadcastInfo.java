@@ -1,13 +1,5 @@
 package tbclient.Loop;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -15,25 +7,13 @@ import java.util.List;
 import tbclient.PbContent;
 /* loaded from: classes9.dex */
 public final class MemberBroadcastInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_BACKGROUND_SRC = "";
-    public static final Integer DEFAULT_BROADCAST_TYPE;
     public static final String DEFAULT_BTN_BACKGROUND_COLOR = "";
     public static final String DEFAULT_BTN_TEXT_COLOR = "";
-    public static final Integer DEFAULT_DAILY_MAX_NUM;
-    public static final Integer DEFAULT_DAILY_MIN_STEP;
-    public static final Integer DEFAULT_LEFT_ICON_HEIGHT;
     public static final String DEFAULT_LEFT_ICON_SRC = "";
-    public static final Integer DEFAULT_LEFT_ICON_WIDTH;
-    public static final List<PbContent> DEFAULT_MIDDLE_CONTENT;
-    public static final Integer DEFAULT_OM_MAX_NUM;
-    public static final Integer DEFAULT_OM_MIN_STEP;
     public static final String DEFAULT_RIGHT_BTN_TEXT = "";
     public static final String DEFAULT_RIGHT_BTN_URL = "";
-    public static final Integer DEFAULT_SCENE_CONDITION;
-    public static final Integer DEFAULT_SHOW_TIME;
     public static final String DEFAULT_TEXT_COLOR = "";
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String background_src;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
@@ -68,17 +48,19 @@ public final class MemberBroadcastInfo extends Message {
     public final Integer show_time;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String text_color;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Integer DEFAULT_LEFT_ICON_WIDTH = 0;
+    public static final Integer DEFAULT_LEFT_ICON_HEIGHT = 0;
+    public static final List<PbContent> DEFAULT_MIDDLE_CONTENT = Collections.emptyList();
+    public static final Integer DEFAULT_BROADCAST_TYPE = 0;
+    public static final Integer DEFAULT_DAILY_MIN_STEP = 0;
+    public static final Integer DEFAULT_DAILY_MAX_NUM = 0;
+    public static final Integer DEFAULT_OM_MIN_STEP = 0;
+    public static final Integer DEFAULT_OM_MAX_NUM = 0;
+    public static final Integer DEFAULT_SCENE_CONDITION = 0;
+    public static final Integer DEFAULT_SHOW_TIME = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<MemberBroadcastInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String background_src;
         public Integer broadcast_type;
         public String btn_background_color;
@@ -98,37 +80,10 @@ public final class MemberBroadcastInfo extends Message {
         public String text_color;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(MemberBroadcastInfo memberBroadcastInfo) {
             super(memberBroadcastInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {memberBroadcastInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (memberBroadcastInfo == null) {
                 return;
             }
@@ -154,58 +109,12 @@ public final class MemberBroadcastInfo extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public MemberBroadcastInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new MemberBroadcastInfo(this, z, null);
-            }
-            return (MemberBroadcastInfo) invokeZ.objValue;
+            return new MemberBroadcastInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(1588140871, "Ltbclient/Loop/MemberBroadcastInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(1588140871, "Ltbclient/Loop/MemberBroadcastInfo;");
-                return;
-            }
-        }
-        DEFAULT_LEFT_ICON_WIDTH = 0;
-        DEFAULT_LEFT_ICON_HEIGHT = 0;
-        DEFAULT_MIDDLE_CONTENT = Collections.emptyList();
-        DEFAULT_BROADCAST_TYPE = 0;
-        DEFAULT_DAILY_MIN_STEP = 0;
-        DEFAULT_DAILY_MAX_NUM = 0;
-        DEFAULT_OM_MIN_STEP = 0;
-        DEFAULT_OM_MAX_NUM = 0;
-        DEFAULT_SCENE_CONDITION = 0;
-        DEFAULT_SHOW_TIME = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public MemberBroadcastInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             String str = builder.left_icon_src;
             if (str == null) {
@@ -329,9 +238,5 @@ public final class MemberBroadcastInfo extends Message {
         this.show_time = builder.show_time;
         this.btn_text_color = builder.btn_text_color;
         this.btn_background_color = builder.btn_background_color;
-    }
-
-    public /* synthetic */ MemberBroadcastInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }

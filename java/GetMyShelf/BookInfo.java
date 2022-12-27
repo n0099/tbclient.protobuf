@@ -1,27 +1,14 @@
 package tbclient.GetMyShelf;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class BookInfo extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
     public static final String DEFAULT_AUTHOR_NAME = "";
-    public static final Long DEFAULT_CARTOON_ID;
     public static final String DEFAULT_CARTOON_NAME = "";
     public static final String DEFAULT_COVER_IMG = "";
     public static final String DEFAULT_FIRST_CHAPTER_ID = "";
-    public static final Long DEFAULT_FORUM_ID;
-    public static final Integer DEFAULT_IS_FINISH;
-    public static final Integer DEFAULT_TOTAL_CHAPTER;
-    public transient /* synthetic */ FieldHolder $fh;
+    public static final String DEFAULT_FORUM_NAME = "";
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String author_name;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -34,62 +21,34 @@ public final class BookInfo extends Message {
     public final String first_chapter_id;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long forum_id;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String forum_name;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer is_finish;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer total_chapter;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Long DEFAULT_CARTOON_ID = 0L;
+    public static final Integer DEFAULT_TOTAL_CHAPTER = 0;
+    public static final Integer DEFAULT_IS_FINISH = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<BookInfo> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public String author_name;
         public Long cartoon_id;
         public String cartoon_name;
         public String cover_img;
         public String first_chapter_id;
         public Long forum_id;
+        public String forum_name;
         public Integer is_finish;
         public Integer total_chapter;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(BookInfo bookInfo) {
             super(bookInfo);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {bookInfo};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (bookInfo == null) {
                 return;
             }
@@ -101,57 +60,18 @@ public final class BookInfo extends Message {
             this.first_chapter_id = bookInfo.first_chapter_id;
             this.is_finish = bookInfo.is_finish;
             this.author_name = bookInfo.author_name;
+            this.forum_name = bookInfo.forum_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public BookInfo build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new BookInfo(this, z, null);
-            }
-            return (BookInfo) invokeZ.objValue;
+            return new BookInfo(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-2053985785, "Ltbclient/GetMyShelf/BookInfo;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-2053985785, "Ltbclient/GetMyShelf/BookInfo;");
-                return;
-            }
-        }
-        DEFAULT_FORUM_ID = 0L;
-        DEFAULT_CARTOON_ID = 0L;
-        DEFAULT_TOTAL_CHAPTER = 0;
-        DEFAULT_IS_FINISH = 0;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BookInfo(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             Long l = builder.forum_id;
             if (l == null) {
@@ -198,9 +118,15 @@ public final class BookInfo extends Message {
             String str4 = builder.author_name;
             if (str4 == null) {
                 this.author_name = "";
-                return;
             } else {
                 this.author_name = str4;
+            }
+            String str5 = builder.forum_name;
+            if (str5 == null) {
+                this.forum_name = "";
+                return;
+            } else {
+                this.forum_name = str5;
                 return;
             }
         }
@@ -212,9 +138,6 @@ public final class BookInfo extends Message {
         this.first_chapter_id = builder.first_chapter_id;
         this.is_finish = builder.is_finish;
         this.author_name = builder.author_name;
-    }
-
-    public /* synthetic */ BookInfo(Builder builder, boolean z, a aVar) {
-        this(builder, z);
+        this.forum_name = builder.forum_name;
     }
 }

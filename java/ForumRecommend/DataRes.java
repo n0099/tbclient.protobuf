@@ -1,13 +1,5 @@
 package tbclient.ForumRecommend;
 
-import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InitContext;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
-import com.baidu.titan.sdk.runtime.TitanRuntime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -20,24 +12,7 @@ import tbclient.PrivatePopInfo;
 import tbclient.RecommendForumInfo;
 /* loaded from: classes9.dex */
 public final class DataRes extends Message {
-    public static /* synthetic */ Interceptable $ic = null;
-    public static final List<Banner> DEFAULT_BANNER;
-    public static final List<FrequentlyForumInfo> DEFAULT_FREQUENTLY_FORUM_INFO;
-    public static final Integer DEFAULT_IS_LOGIN;
-    public static final Integer DEFAULT_IS_MEM;
-    public static final List<LikeForum> DEFAULT_LIKE_FORUM;
-    public static final Integer DEFAULT_MSIGN_LEVEL;
     public static final String DEFAULT_MSIGN_TEXT = "";
-    public static final Integer DEFAULT_MSIGN_VALID;
-    public static final List<FrsTabInfo> DEFAULT_NAV_TAB_INFO;
-    public static final List<Banner> DEFAULT_NEW_BANNER_INFO;
-    public static final List<NewRecommend> DEFAULT_NEW_RECOMMEND;
-    public static final List<RecommendForumInfo> DEFAULT_RECOMMEND_FORUM_INFO;
-    public static final Integer DEFAULT_REDIRECT;
-    public static final Integer DEFAULT_SORT_TYPE;
-    public static final List<RecommendForumInfo> DEFAULT_TAG_RECOMMEND_FORUM;
-    public static final Integer DEFAULT_TIME;
-    public transient /* synthetic */ FieldHolder $fh;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<Banner> banner;
     @ProtoField(tag = 19)
@@ -78,17 +53,24 @@ public final class DataRes extends Message {
     public final List<RecommendForumInfo> tag_recommend_forum;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer time;
-
-    /* loaded from: classes9.dex */
-    public static /* synthetic */ class a {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
-    }
+    public static final List<LikeForum> DEFAULT_LIKE_FORUM = Collections.emptyList();
+    public static final List<Banner> DEFAULT_BANNER = Collections.emptyList();
+    public static final List<NewRecommend> DEFAULT_NEW_RECOMMEND = Collections.emptyList();
+    public static final Integer DEFAULT_IS_LOGIN = 0;
+    public static final Integer DEFAULT_MSIGN_VALID = 0;
+    public static final Integer DEFAULT_MSIGN_LEVEL = 0;
+    public static final Integer DEFAULT_TIME = 0;
+    public static final Integer DEFAULT_IS_MEM = 0;
+    public static final List<RecommendForumInfo> DEFAULT_RECOMMEND_FORUM_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_REDIRECT = 0;
+    public static final List<Banner> DEFAULT_NEW_BANNER_INFO = Collections.emptyList();
+    public static final List<FrequentlyForumInfo> DEFAULT_FREQUENTLY_FORUM_INFO = Collections.emptyList();
+    public static final List<RecommendForumInfo> DEFAULT_TAG_RECOMMEND_FORUM = Collections.emptyList();
+    public static final Integer DEFAULT_SORT_TYPE = 0;
+    public static final List<FrsTabInfo> DEFAULT_NAV_TAB_INFO = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
-        public static /* synthetic */ Interceptable $ic;
-        public transient /* synthetic */ FieldHolder $fh;
         public List<Banner> banner;
         public ForumCreateInfo forum_create_info;
         public ForumPopupInfo forum_popup_info;
@@ -111,37 +93,10 @@ public final class DataRes extends Message {
         public Integer time;
 
         public Builder() {
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                interceptable.invokeUnInit(65536, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65536, newInitContext);
-                }
-            }
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Builder(DataRes dataRes) {
             super(dataRes);
-            Interceptable interceptable = $ic;
-            if (interceptable != null) {
-                InitContext newInitContext = TitanRuntime.newInitContext();
-                newInitContext.initArgs = r2;
-                Object[] objArr = {dataRes};
-                interceptable.invokeUnInit(65537, newInitContext);
-                int i = newInitContext.flag;
-                if ((i & 1) != 0) {
-                    int i2 = i & 2;
-                    super((Message) newInitContext.callArgs[0]);
-                    newInitContext.thisArg = this;
-                    interceptable.invokeInitBody(65537, newInitContext);
-                    return;
-                }
-            }
             if (dataRes == null) {
                 return;
             }
@@ -170,63 +125,12 @@ public final class DataRes extends Message {
         /* JADX DEBUG: Method merged with bridge method */
         @Override // com.squareup.wire.Message.Builder
         public DataRes build(boolean z) {
-            InterceptResult invokeZ;
-            Interceptable interceptable = $ic;
-            if (interceptable == null || (invokeZ = interceptable.invokeZ(Constants.METHOD_GET_CONTACTER_INFO_FOR_SESSION, this, z)) == null) {
-                return new DataRes(this, z, null);
-            }
-            return (DataRes) invokeZ.objValue;
+            return new DataRes(this, z);
         }
     }
 
-    static {
-        InterceptResult invokeClinit;
-        ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-        if (classClinitInterceptable != null && (invokeClinit = classClinitInterceptable.invokeClinit(-1886599857, "Ltbclient/ForumRecommend/DataRes;")) != null) {
-            Interceptable interceptable = invokeClinit.interceptor;
-            if (interceptable != null) {
-                $ic = interceptable;
-            }
-            if ((invokeClinit.flags & 1) != 0) {
-                classClinitInterceptable.invokePostClinit(-1886599857, "Ltbclient/ForumRecommend/DataRes;");
-                return;
-            }
-        }
-        DEFAULT_LIKE_FORUM = Collections.emptyList();
-        DEFAULT_BANNER = Collections.emptyList();
-        DEFAULT_NEW_RECOMMEND = Collections.emptyList();
-        DEFAULT_IS_LOGIN = 0;
-        DEFAULT_MSIGN_VALID = 0;
-        DEFAULT_MSIGN_LEVEL = 0;
-        DEFAULT_TIME = 0;
-        DEFAULT_IS_MEM = 0;
-        DEFAULT_RECOMMEND_FORUM_INFO = Collections.emptyList();
-        DEFAULT_REDIRECT = 0;
-        DEFAULT_NEW_BANNER_INFO = Collections.emptyList();
-        DEFAULT_FREQUENTLY_FORUM_INFO = Collections.emptyList();
-        DEFAULT_TAG_RECOMMEND_FORUM = Collections.emptyList();
-        DEFAULT_SORT_TYPE = 0;
-        DEFAULT_NAV_TAB_INFO = Collections.emptyList();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DataRes(Builder builder, boolean z) {
         super(builder);
-        Interceptable interceptable = $ic;
-        if (interceptable != null) {
-            InitContext newInitContext = TitanRuntime.newInitContext();
-            newInitContext.initArgs = r2;
-            Object[] objArr = {builder, Boolean.valueOf(z)};
-            interceptable.invokeUnInit(65537, newInitContext);
-            int i = newInitContext.flag;
-            if ((i & 1) != 0) {
-                int i2 = i & 2;
-                super((Message.Builder) newInitContext.callArgs[0]);
-                newInitContext.thisArg = this;
-                interceptable.invokeInitBody(65537, newInitContext);
-                return;
-            }
-        }
         if (z) {
             List<LikeForum> list = builder.like_forum;
             if (list == null) {
@@ -350,9 +254,5 @@ public final class DataRes extends Message {
         this.private_forum_popinfo = builder.private_forum_popinfo;
         this.nav_tab_info = Message.immutableCopyOf(builder.nav_tab_info);
         this.forum_popup_info = builder.forum_popup_info;
-    }
-
-    public /* synthetic */ DataRes(Builder builder, boolean z, a aVar) {
-        this(builder, z);
     }
 }
