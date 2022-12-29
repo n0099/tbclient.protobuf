@@ -28,7 +28,6 @@ message Thread {
     repeated Abstract _abstract = 21;
     int64 fid = 27;
     string live_post_type = 29;
-    int64 first_post_id = 40;
     common.Zan zan = 41;
     int32 create_time = 45;
     int32 is_membertop = 54;
