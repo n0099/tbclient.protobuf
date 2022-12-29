@@ -18,10 +18,11 @@ class Thread
         \GPBMetadata\Post\Common\Zan::initOnce();
         \GPBMetadata\Post\Common\Lbs::initOnce();
         \GPBMetadata\Post\Common\Agree::initOnce();
+        \GPBMetadata\Post\Common\PBAbstract::initOnce();
         $pool->internalAddGeneratedFile(
             '
-
-Post/Thread.prototbClient.postPost/Common/Zan.protoPost/Common/Lbs.protoPost/Common/Agree.proto"©
+Â
+Post/Thread.prototbClient.postPost/Common/Zan.protoPost/Common/Lbs.protoPost/Common/Agree.protoPost/Common/Abstract.proto"²
 Thread
 tid (
 title (	
@@ -34,7 +35,7 @@ class Thread
  (
 author (2.tbClient.User$
 last_replyer (2.tbClient.User1
-	_abstract (2.tbClient.post.Thread.Abstract
+	_abstract (2.tbClient.post.common.Abstract
 fid (
 live_post_type (	
 first_post_id( (&
@@ -45,16 +46,7 @@ class Thread
 location> (2.tbClient.post.common.Lbs
 	agree_num| (*
 agree~ (2.tbClient.post.common.Agree
-	share_num‡ (u
-Abstract
-type (
-text (	
-link (	
-src (	
-
-un (	
-during_time (	
-	voice_md5 (	bproto3'
+	share_num‡ (bproto3'
         , true);
 
         static::$is_initialized = true;

@@ -54,7 +54,7 @@ class Thread extends \Google\Protobuf\Internal\Message
      */
     protected $last_replyer = null;
     /**
-     * Generated from protobuf field <code>repeated .tbClient.post.Thread.Abstract _abstract = 21;</code>
+     * Generated from protobuf field <code>repeated .tbClient.post.common.Abstract _abstract = 21;</code>
      */
     private $_abstract;
     /**
@@ -118,7 +118,7 @@ class Thread extends \Google\Protobuf\Internal\Message
      *     @type int $is_good
      *     @type \TbClient\User $author
      *     @type \TbClient\User $last_replyer
-     *     @type array<\TbClient\Post\Thread\PBAbstract>|\Google\Protobuf\Internal\RepeatedField $_abstract
+     *     @type array<\TbClient\Post\Common\PBAbstract>|\Google\Protobuf\Internal\RepeatedField $_abstract
      *     @type int|string $fid
      *     @type string $live_post_type
      *     @type int|string $first_post_id
@@ -378,7 +378,7 @@ class Thread extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .tbClient.post.Thread.Abstract _abstract = 21;</code>
+     * Generated from protobuf field <code>repeated .tbClient.post.common.Abstract _abstract = 21;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getAbstract()
@@ -387,13 +387,13 @@ class Thread extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .tbClient.post.Thread.Abstract _abstract = 21;</code>
-     * @param array<\TbClient\Post\Thread\PBAbstract>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .tbClient.post.common.Abstract _abstract = 21;</code>
+     * @param array<\TbClient\Post\Common\PBAbstract>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAbstract($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \TbClient\Post\Thread\PBAbstract::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \TbClient\Post\Common\PBAbstract::class);
         $this->_abstract = $arr;
 
         return $this;
