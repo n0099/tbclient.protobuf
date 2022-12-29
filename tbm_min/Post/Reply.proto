@@ -5,7 +5,6 @@ import "Post/Common/Content.proto";
 import "Post/Common/Lbs.proto";
 import "Post/Common/Agree.proto";
 import "Post/Common/Zan.proto";
-import "Post/ReplyDeps/SignatureData.proto";
 
 message Reply {
     uint64 pid = 1;
@@ -16,7 +15,17 @@ message Reply {
     common.Lbs lbs_info = 7;
     uint32 sub_post_number = 13;
     int64 author_id = 19;
-    replyDeps.SignatureData signature = 21;
+    message SignatureData {
+        int32 signature_id = 1;
+        string fontKeyName = 2;
+        string fontColor = 3;
+        message SignatureContent {
+            int32 type = 1;
+            string text = 2;
+        };
+        repeated SignatureContent content = 4;
+    }
+    SignatureData signature = 21;
     User author = 23;
     common.Zan zan = 24;
     common.Agree agree = 37;

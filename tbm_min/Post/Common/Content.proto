@@ -1,8 +1,6 @@
 syntax = "proto3";
 package tbClient.post.common;
 import "Item/Item.proto";
-import "Post/Common/TiebaPlusInfo.proto";
-import "Post/Common/TogetherHi.proto";
 
 message Content {
     uint32 type = 1;
@@ -44,6 +42,17 @@ message Content {
         int64 gid = 2;
     };
     GraffitiInfo graffiti_info = 29;
+    message TogetherHi {
+        string album_name = 1;
+        uint64 album_id = 2;
+        uint32 start_time = 3;
+        uint32 end_time = 4;
+        string location = 5;
+        uint32 num_signup = 6;
+        repeated string potraits = 7;
+        uint32 num_join = 8;
+        repeated string pic_urls = 9;
+    }
     TogetherHi high_together = 30;
     string media_subtitle = 31;
     int32 url_type = 32;
@@ -63,6 +72,38 @@ message Content {
     string topic_special_icon = 37;
     uint64 item_id = 38;
     string item_forum_name = 39;
+    message TiebaPlusInfo {
+        string title = 1;
+        string desc = 2;
+        string jump_url = 3;
+        string download_url = 4;
+        string app_id = 5;
+        string app_icon = 6;
+        string app_package = 7;
+        string app_version = 8;
+        string app_privacy = 9;
+        string app_power = 10;
+        string app_company = 11;
+        int32 target_type = 12;
+        int32 h5_jump_type = 13;
+        string h5_jump_number = 14;
+        string h5_jump_param = 15;
+        int32 jump_type = 16;
+        string item_id = 17;
+        int32 is_appoint = 18;
+        message PluginUser {
+            int64 user_id = 1;
+            string user_name_show = 2;
+            int32 user_type = 3;
+            string user_photo = 4;
+            int32 is_download_card_whiteuser = 5;
+        };
+        PluginUser plugin_user = 19;
+        string forum_name = 20;
+        int32 jump_setting = 21;
+        string wx_thumbnail = 22;
+        string button_desc = 23;
+    }
     TiebaPlusInfo tiebaplus_info = 40;
     tbClient.item.Item item = 41;
     int64 pic_id = 42;

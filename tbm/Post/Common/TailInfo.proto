@@ -1,5 +1,5 @@
 syntax = "proto3";
-package tbClient.post.replyDeps;
+package tbClient.post.common;
 
 message TailInfo {
     int32 tail_type = 1;

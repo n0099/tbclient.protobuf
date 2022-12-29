@@ -9,7 +9,7 @@ import "Post/Common/Zan.proto";
 import "Post/Common/Lbs.proto";
 import "Post/Common/Agree.proto";
 import "Post/Common/PollInfo.proto";
-import "Post/ReplyDeps/TailInfo.proto";
+import "Post/Common/TailInfo.proto";
 
 message Thread {
     int64 tid = 2;
@@ -60,7 +60,28 @@ message Thread {
     common.Lbs location = 62;
     int32 post_num = 69;
     string category_name = 73;
-    common.PollInfo poll_info = 74;
+    message PollInfo {
+        int32 type = 1;
+        int32 is_multi = 2;
+        int64 total_num = 3;
+        int32 options_count = 4;
+        int32 is_polled = 5;
+        string polled_value = 6;
+        string tips = 7;
+        int32 end_time = 8;
+        message PollOption {
+            int32 id = 1;
+            int64 num = 2;
+            string text = 3;
+            string image = 4;
+        };
+        repeated PollOption options = 9;
+        int32 status = 10;
+        int64 total_poll = 11;
+        string title = 12;
+        uint32 last_time = 13;
+    }
+    PollInfo poll_info = 74;
     int32 is_novel = 76;
     int32 is_novel_thank = 77;
     int32 is_novel_reward = 78;
@@ -68,7 +89,7 @@ message Thread {
     uint32 operator_flag = 82;
     uint32 pic_num = 84;
     int32 is_godthread_recommend = 85;
-    repeated replyDeps.TailInfo ext_tails = 90;
+    repeated common.TailInfo ext_tails = 90;
     int32 is_multiforum_thread = 123;
     int32 agree_num = 124;
     Reply top_agree_post = 125;
