@@ -130,7 +130,7 @@ class Content extends \Google\Protobuf\Internal\Message
      */
     protected $graffiti_info = null;
     /**
-     * Generated from protobuf field <code>.tbClient.post.common.TogetherHi high_together = 30;</code>
+     * Generated from protobuf field <code>.tbClient.post.common.Content.TogetherHi high_together = 30;</code>
      */
     protected $high_together = null;
     /**
@@ -170,7 +170,7 @@ class Content extends \Google\Protobuf\Internal\Message
      */
     protected $item_forum_name = '';
     /**
-     * Generated from protobuf field <code>.tbClient.post.common.TiebaPlusInfo tiebaplus_info = 40;</code>
+     * Generated from protobuf field <code>.tbClient.post.common.Content.TiebaPlusInfo tiebaplus_info = 40;</code>
      */
     protected $tiebaplus_info = null;
     /**
@@ -217,7 +217,7 @@ class Content extends \Google\Protobuf\Internal\Message
      *     @type int $origin_size
      *     @type int $count
      *     @type \TbClient\Post\Common\Content\GraffitiInfo $graffiti_info
-     *     @type \TbClient\Post\Common\TogetherHi $high_together
+     *     @type \TbClient\Post\Common\Content\TogetherHi $high_together
      *     @type string $media_subtitle
      *     @type int $url_type
      *     @type \TbClient\Post\Common\Content\MemeInfo $meme_info
@@ -227,7 +227,7 @@ class Content extends \Google\Protobuf\Internal\Message
      *     @type string $topic_special_icon
      *     @type int|string $item_id
      *     @type string $item_forum_name
-     *     @type \TbClient\Post\Common\TiebaPlusInfo $tiebaplus_info
+     *     @type \TbClient\Post\Common\Content\TiebaPlusInfo $tiebaplus_info
      *     @type \TbClient\Item\Item $item
      *     @type int|string $pic_id
      * }
@@ -896,8 +896,8 @@ class Content extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.tbClient.post.common.TogetherHi high_together = 30;</code>
-     * @return \TbClient\Post\Common\TogetherHi|null
+     * Generated from protobuf field <code>.tbClient.post.common.Content.TogetherHi high_together = 30;</code>
+     * @return \TbClient\Post\Common\Content\TogetherHi|null
      */
     public function getHighTogether()
     {
@@ -915,13 +915,13 @@ class Content extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.tbClient.post.common.TogetherHi high_together = 30;</code>
-     * @param \TbClient\Post\Common\TogetherHi $var
+     * Generated from protobuf field <code>.tbClient.post.common.Content.TogetherHi high_together = 30;</code>
+     * @param \TbClient\Post\Common\Content\TogetherHi $var
      * @return $this
      */
     public function setHighTogether($var)
     {
-        GPBUtil::checkMessage($var, \TbClient\Post\Common\TogetherHi::class);
+        GPBUtil::checkMessage($var, \TbClient\Post\Common\Content\TogetherHi::class);
         $this->high_together = $var;
 
         return $this;
@@ -1136,8 +1136,8 @@ class Content extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.tbClient.post.common.TiebaPlusInfo tiebaplus_info = 40;</code>
-     * @return \TbClient\Post\Common\TiebaPlusInfo|null
+     * Generated from protobuf field <code>.tbClient.post.common.Content.TiebaPlusInfo tiebaplus_info = 40;</code>
+     * @return \TbClient\Post\Common\Content\TiebaPlusInfo|null
      */
     public function getTiebaplusInfo()
     {
@@ -1155,13 +1155,13 @@ class Content extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.tbClient.post.common.TiebaPlusInfo tiebaplus_info = 40;</code>
-     * @param \TbClient\Post\Common\TiebaPlusInfo $var
+     * Generated from protobuf field <code>.tbClient.post.common.Content.TiebaPlusInfo tiebaplus_info = 40;</code>
+     * @param \TbClient\Post\Common\Content\TiebaPlusInfo $var
      * @return $this
      */
     public function setTiebaplusInfo($var)
     {
-        GPBUtil::checkMessage($var, \TbClient\Post\Common\TiebaPlusInfo::class);
+        GPBUtil::checkMessage($var, \TbClient\Post\Common\Content\TiebaPlusInfo::class);
         $this->tiebaplus_info = $var;
 
         return $this;

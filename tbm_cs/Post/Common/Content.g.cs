@@ -25,43 +25,63 @@ namespace TbClient.Post.Common {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlQb3N0L0NvbW1vbi9Db250ZW50LnByb3RvEhR0YkNsaWVudC5wb3N0LmNv",
-            "bW1vbhoPSXRlbS9JdGVtLnByb3RvGh9Qb3N0L0NvbW1vbi9UaWViYVBsdXNJ",
-            "bmZvLnByb3RvGhxQb3N0L0NvbW1vbi9Ub2dldGhlckhpLnByb3RvIvsJCgdD",
-            "b250ZW50EgwKBHR5cGUYASABKA0SDAoEdGV4dBgCIAEoCRIMCgRsaW5rGAMg",
-            "ASgJEgsKA3NyYxgEIAEoCRINCgVic2l6ZRgFIAEoCRIPCgdiaWdfc3JjGAYg",
-            "ASgJEhAKCGJpZ19zaXplGAcgASgJEg8KB2Nkbl9zcmMYCCABKAkSEwoLYmln",
-            "X2Nkbl9zcmMYCSABKAkSDwoHaW1ndHlwZRgKIAEoCRIJCgFjGAsgASgJEhEK",
-            "CXZvaWNlX21kNRgMIAEoCRITCgtkdXJpbmdfdGltZRgNIAEoDRIOCgZpc19z",
-            "dWIYDiABKA0SCwoDdWlkGA8gASgDEg8KB2R5bmFtaWMYECABKAkSDwoHX3N0",
-            "YXRpYxgRIAEoCRINCgV3aWR0aBgSIAEoDRIOCgZoZWlnaHQYEyABKA0SEwoL",
-            "cGFja2V0X25hbWUYFCABKAkSEQoJcGhvbmV0eXBlGBUgASgJEhUKDWlzX25h",
-            "dGl2ZV9hcHAYFiABKA0SOwoKbmF0aXZlX2FwcBgXIAEoCzInLnRiQ2xpZW50",
-            "LnBvc3QuY29tbW9uLkNvbnRlbnQuTmF0aXZlQXBwEg4KBmVfdHlwZRgYIAEo",
-            "DRISCgpvcmlnaW5fc3JjGBkgASgJEhAKCGJ0bl90eXBlGBogASgNEhMKC29y",
-            "aWdpbl9zaXplGBsgASgNEg0KBWNvdW50GBwgASgFEkEKDWdyYWZmaXRpX2lu",
-            "Zm8YHSABKAsyKi50YkNsaWVudC5wb3N0LmNvbW1vbi5Db250ZW50LkdyYWZm",
-            "aXRpSW5mbxI3Cg1oaWdoX3RvZ2V0aGVyGB4gASgLMiAudGJDbGllbnQucG9z",
-            "dC5jb21tb24uVG9nZXRoZXJIaRIWCg5tZWRpYV9zdWJ0aXRsZRgfIAEoCRIQ",
-            "Cgh1cmxfdHlwZRggIAEoBRI5CgltZW1lX2luZm8YISABKAsyJi50YkNsaWVu",
-            "dC5wb3N0LmNvbW1vbi5Db250ZW50Lk1lbWVJbmZvEhMKC2lzX2xvbmdfcGlj",
-            "GCIgASgNEhkKEXNob3dfb3JpZ2luYWxfYnRuGCMgASgNEhYKDmNkbl9zcmNf",
-            "YWN0aXZlGCQgASgJEhoKEnRvcGljX3NwZWNpYWxfaWNvbhglIAEoCRIPCgdp",
-            "dGVtX2lkGCYgASgEEhcKD2l0ZW1fZm9ydW1fbmFtZRgnIAEoCRI7Cg50aWVi",
-            "YXBsdXNfaW5mbxgoIAEoCzIjLnRiQ2xpZW50LnBvc3QuY29tbW9uLlRpZWJh",
-            "UGx1c0luZm8SIQoEaXRlbRgpIAEoCzITLnRiQ2xpZW50Lml0ZW0uSXRlbRIO",
-            "CgZwaWNfaWQYKiABKAMaWwoJTmF0aXZlQXBwEhAKCGp1bXBfYW5kGAEgASgJ",
-            "EhAKCGp1bXBfaW9zGAIgASgJEhQKDGRvd25sb2FkX2FuZBgDIAEoCRIUCgxk",
-            "b3dubG9hZF9pb3MYBCABKAkaKAoMR3JhZmZpdGlJbmZvEgsKA3VybBgBIAEo",
-            "CRILCgNnaWQYAiABKAMaggEKCE1lbWVJbmZvEg4KBnBja19pZBgBIAEoDRIO",
-            "CgZwaWNfaWQYAiABKAQSDwoHcGljX3VybBgDIAEoCRIRCgl0aHVtYm5haWwY",
-            "BCABKAkSDQoFd2lkdGgYBSABKA0SDgoGaGVpZ2h0GAYgASgNEhMKC2RldGFp",
-            "bF9saW5rGAcgASgJYgZwcm90bzM="));
+            "bW1vbhoPSXRlbS9JdGVtLnByb3RvItkQCgdDb250ZW50EgwKBHR5cGUYASAB",
+            "KA0SDAoEdGV4dBgCIAEoCRIMCgRsaW5rGAMgASgJEgsKA3NyYxgEIAEoCRIN",
+            "CgVic2l6ZRgFIAEoCRIPCgdiaWdfc3JjGAYgASgJEhAKCGJpZ19zaXplGAcg",
+            "ASgJEg8KB2Nkbl9zcmMYCCABKAkSEwoLYmlnX2Nkbl9zcmMYCSABKAkSDwoH",
+            "aW1ndHlwZRgKIAEoCRIJCgFjGAsgASgJEhEKCXZvaWNlX21kNRgMIAEoCRIT",
+            "CgtkdXJpbmdfdGltZRgNIAEoDRIOCgZpc19zdWIYDiABKA0SCwoDdWlkGA8g",
+            "ASgDEg8KB2R5bmFtaWMYECABKAkSDwoHX3N0YXRpYxgRIAEoCRINCgV3aWR0",
+            "aBgSIAEoDRIOCgZoZWlnaHQYEyABKA0SEwoLcGFja2V0X25hbWUYFCABKAkS",
+            "EQoJcGhvbmV0eXBlGBUgASgJEhUKDWlzX25hdGl2ZV9hcHAYFiABKA0SOwoK",
+            "bmF0aXZlX2FwcBgXIAEoCzInLnRiQ2xpZW50LnBvc3QuY29tbW9uLkNvbnRl",
+            "bnQuTmF0aXZlQXBwEg4KBmVfdHlwZRgYIAEoDRISCgpvcmlnaW5fc3JjGBkg",
+            "ASgJEhAKCGJ0bl90eXBlGBogASgNEhMKC29yaWdpbl9zaXplGBsgASgNEg0K",
+            "BWNvdW50GBwgASgFEkEKDWdyYWZmaXRpX2luZm8YHSABKAsyKi50YkNsaWVu",
+            "dC5wb3N0LmNvbW1vbi5Db250ZW50LkdyYWZmaXRpSW5mbxI/Cg1oaWdoX3Rv",
+            "Z2V0aGVyGB4gASgLMigudGJDbGllbnQucG9zdC5jb21tb24uQ29udGVudC5U",
+            "b2dldGhlckhpEhYKDm1lZGlhX3N1YnRpdGxlGB8gASgJEhAKCHVybF90eXBl",
+            "GCAgASgFEjkKCW1lbWVfaW5mbxghIAEoCzImLnRiQ2xpZW50LnBvc3QuY29t",
+            "bW9uLkNvbnRlbnQuTWVtZUluZm8SEwoLaXNfbG9uZ19waWMYIiABKA0SGQoR",
+            "c2hvd19vcmlnaW5hbF9idG4YIyABKA0SFgoOY2RuX3NyY19hY3RpdmUYJCAB",
+            "KAkSGgoSdG9waWNfc3BlY2lhbF9pY29uGCUgASgJEg8KB2l0ZW1faWQYJiAB",
+            "KAQSFwoPaXRlbV9mb3J1bV9uYW1lGCcgASgJEkMKDnRpZWJhcGx1c19pbmZv",
+            "GCggASgLMisudGJDbGllbnQucG9zdC5jb21tb24uQ29udGVudC5UaWViYVBs",
+            "dXNJbmZvEiEKBGl0ZW0YKSABKAsyEy50YkNsaWVudC5pdGVtLkl0ZW0SDgoG",
+            "cGljX2lkGCogASgDGlsKCU5hdGl2ZUFwcBIQCghqdW1wX2FuZBgBIAEoCRIQ",
+            "CghqdW1wX2lvcxgCIAEoCRIUCgxkb3dubG9hZF9hbmQYAyABKAkSFAoMZG93",
+            "bmxvYWRfaW9zGAQgASgJGigKDEdyYWZmaXRpSW5mbxILCgN1cmwYASABKAkS",
+            "CwoDZ2lkGAIgASgDGrQBCgpUb2dldGhlckhpEhIKCmFsYnVtX25hbWUYASAB",
+            "KAkSEAoIYWxidW1faWQYAiABKAQSEgoKc3RhcnRfdGltZRgDIAEoDRIQCghl",
+            "bmRfdGltZRgEIAEoDRIQCghsb2NhdGlvbhgFIAEoCRISCgpudW1fc2lnbnVw",
+            "GAYgASgNEhAKCHBvdHJhaXRzGAcgAygJEhAKCG51bV9qb2luGAggASgNEhAK",
+            "CHBpY191cmxzGAkgAygJGoIBCghNZW1lSW5mbxIOCgZwY2tfaWQYASABKA0S",
+            "DgoGcGljX2lkGAIgASgEEg8KB3BpY191cmwYAyABKAkSEQoJdGh1bWJuYWls",
+            "GAQgASgJEg0KBXdpZHRoGAUgASgNEg4KBmhlaWdodBgGIAEoDRITCgtkZXRh",
+            "aWxfbGluaxgHIAEoCRqUBQoNVGllYmFQbHVzSW5mbxINCgV0aXRsZRgBIAEo",
+            "CRIMCgRkZXNjGAIgASgJEhAKCGp1bXBfdXJsGAMgASgJEhQKDGRvd25sb2Fk",
+            "X3VybBgEIAEoCRIOCgZhcHBfaWQYBSABKAkSEAoIYXBwX2ljb24YBiABKAkS",
+            "EwoLYXBwX3BhY2thZ2UYByABKAkSEwoLYXBwX3ZlcnNpb24YCCABKAkSEwoL",
+            "YXBwX3ByaXZhY3kYCSABKAkSEQoJYXBwX3Bvd2VyGAogASgJEhMKC2FwcF9j",
+            "b21wYW55GAsgASgJEhMKC3RhcmdldF90eXBlGAwgASgFEhQKDGg1X2p1bXBf",
+            "dHlwZRgNIAEoBRIWCg5oNV9qdW1wX251bWJlchgOIAEoCRIVCg1oNV9qdW1w",
+            "X3BhcmFtGA8gASgJEhEKCWp1bXBfdHlwZRgQIAEoBRIPCgdpdGVtX2lkGBEg",
+            "ASgJEhIKCmlzX2FwcG9pbnQYEiABKAUSSwoLcGx1Z2luX3VzZXIYEyABKAsy",
+            "Ni50YkNsaWVudC5wb3N0LmNvbW1vbi5Db250ZW50LlRpZWJhUGx1c0luZm8u",
+            "UGx1Z2luVXNlchISCgpmb3J1bV9uYW1lGBQgASgJEhQKDGp1bXBfc2V0dGlu",
+            "ZxgVIAEoBRIUCgx3eF90aHVtYm5haWwYFiABKAkSEwoLYnV0dG9uX2Rlc2MY",
+            "FyABKAkagAEKClBsdWdpblVzZXISDwoHdXNlcl9pZBgBIAEoAxIWCg51c2Vy",
+            "X25hbWVfc2hvdxgCIAEoCRIRCgl1c2VyX3R5cGUYAyABKAUSEgoKdXNlcl9w",
+            "aG90bxgEIAEoCRIiChppc19kb3dubG9hZF9jYXJkX3doaXRldXNlchgFIAEo",
+            "BWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TbClient.Item.ItemReflection.Descriptor, global::TbClient.Post.Common.TiebaPlusInfoReflection.Descriptor, global::TbClient.Post.Common.TogetherHiReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::TbClient.Item.ItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content), global::TbClient.Post.Common.Content.Parser, new[]{ "Type", "Text", "Link", "Src", "Bsize", "BigSrc", "BigSize", "CdnSrc", "BigCdnSrc", "Imgtype", "C", "VoiceMd5", "DuringTime", "IsSub", "Uid", "Dynamic", "Static", "Width", "Height", "PacketName", "Phonetype", "IsNativeApp", "NativeApp", "EType", "OriginSrc", "BtnType", "OriginSize", "Count", "GraffitiInfo", "HighTogether", "MediaSubtitle", "UrlType", "MemeInfo", "IsLongPic", "ShowOriginalBtn", "CdnSrcActive", "TopicSpecialIcon", "ItemId", "ItemForumName", "TiebaplusInfo", "Item", "PicId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content.Types.NativeApp), global::TbClient.Post.Common.Content.Types.NativeApp.Parser, new[]{ "JumpAnd", "JumpIos", "DownloadAnd", "DownloadIos" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content.Types.GraffitiInfo), global::TbClient.Post.Common.Content.Types.GraffitiInfo.Parser, new[]{ "Url", "Gid" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content.Types.MemeInfo), global::TbClient.Post.Common.Content.Types.MemeInfo.Parser, new[]{ "PckId", "PicId", "PicUrl", "Thumbnail", "Width", "Height", "DetailLink" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content.Types.TogetherHi), global::TbClient.Post.Common.Content.Types.TogetherHi.Parser, new[]{ "AlbumName", "AlbumId", "StartTime", "EndTime", "Location", "NumSignup", "Potraits", "NumJoin", "PicUrls" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content.Types.MemeInfo), global::TbClient.Post.Common.Content.Types.MemeInfo.Parser, new[]{ "PckId", "PicId", "PicUrl", "Thumbnail", "Width", "Height", "DetailLink" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content.Types.TiebaPlusInfo), global::TbClient.Post.Common.Content.Types.TiebaPlusInfo.Parser, new[]{ "Title", "Desc", "JumpUrl", "DownloadUrl", "AppId", "AppIcon", "AppPackage", "AppVersion", "AppPrivacy", "AppPower", "AppCompany", "TargetType", "H5JumpType", "H5JumpNumber", "H5JumpParam", "JumpType", "ItemId", "IsAppoint", "PluginUser", "ForumName", "JumpSetting", "WxThumbnail", "ButtonDesc" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content.Types.TiebaPlusInfo.Types.PluginUser), global::TbClient.Post.Common.Content.Types.TiebaPlusInfo.Types.PluginUser.Parser, new[]{ "UserId", "UserNameShow", "UserType", "UserPhoto", "IsDownloadCardWhiteuser" }, null, null, null, null)})})
           }));
     }
     #endregion
@@ -503,10 +523,10 @@ namespace TbClient.Post.Common {
 
     /// <summary>Field number for the "high_together" field.</summary>
     public const int HighTogetherFieldNumber = 30;
-    private global::TbClient.Post.Common.TogetherHi highTogether_;
+    private global::TbClient.Post.Common.Content.Types.TogetherHi highTogether_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TbClient.Post.Common.TogetherHi HighTogether {
+    public global::TbClient.Post.Common.Content.Types.TogetherHi HighTogether {
       get { return highTogether_; }
       set {
         highTogether_ = value;
@@ -623,10 +643,10 @@ namespace TbClient.Post.Common {
 
     /// <summary>Field number for the "tiebaplus_info" field.</summary>
     public const int TiebaplusInfoFieldNumber = 40;
-    private global::TbClient.Post.Common.TiebaPlusInfo tiebaplusInfo_;
+    private global::TbClient.Post.Common.Content.Types.TiebaPlusInfo tiebaplusInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TbClient.Post.Common.TiebaPlusInfo TiebaplusInfo {
+    public global::TbClient.Post.Common.Content.Types.TiebaPlusInfo TiebaplusInfo {
       get { return tiebaplusInfo_; }
       set {
         tiebaplusInfo_ = value;
@@ -1370,7 +1390,7 @@ namespace TbClient.Post.Common {
       }
       if (other.highTogether_ != null) {
         if (highTogether_ == null) {
-          HighTogether = new global::TbClient.Post.Common.TogetherHi();
+          HighTogether = new global::TbClient.Post.Common.Content.Types.TogetherHi();
         }
         HighTogether.MergeFrom(other.HighTogether);
       }
@@ -1406,7 +1426,7 @@ namespace TbClient.Post.Common {
       }
       if (other.tiebaplusInfo_ != null) {
         if (tiebaplusInfo_ == null) {
-          TiebaplusInfo = new global::TbClient.Post.Common.TiebaPlusInfo();
+          TiebaplusInfo = new global::TbClient.Post.Common.Content.Types.TiebaPlusInfo();
         }
         TiebaplusInfo.MergeFrom(other.TiebaplusInfo);
       }
@@ -1558,7 +1578,7 @@ namespace TbClient.Post.Common {
           }
           case 242: {
             if (highTogether_ == null) {
-              HighTogether = new global::TbClient.Post.Common.TogetherHi();
+              HighTogether = new global::TbClient.Post.Common.Content.Types.TogetherHi();
             }
             input.ReadMessage(HighTogether);
             break;
@@ -1604,7 +1624,7 @@ namespace TbClient.Post.Common {
           }
           case 322: {
             if (tiebaplusInfo_ == null) {
-              TiebaplusInfo = new global::TbClient.Post.Common.TiebaPlusInfo();
+              TiebaplusInfo = new global::TbClient.Post.Common.Content.Types.TiebaPlusInfo();
             }
             input.ReadMessage(TiebaplusInfo);
             break;
@@ -1759,7 +1779,7 @@ namespace TbClient.Post.Common {
           }
           case 242: {
             if (highTogether_ == null) {
-              HighTogether = new global::TbClient.Post.Common.TogetherHi();
+              HighTogether = new global::TbClient.Post.Common.Content.Types.TogetherHi();
             }
             input.ReadMessage(HighTogether);
             break;
@@ -1805,7 +1825,7 @@ namespace TbClient.Post.Common {
           }
           case 322: {
             if (tiebaplusInfo_ == null) {
-              TiebaplusInfo = new global::TbClient.Post.Common.TiebaPlusInfo();
+              TiebaplusInfo = new global::TbClient.Post.Common.Content.Types.TiebaPlusInfo();
             }
             input.ReadMessage(TiebaplusInfo);
             break;
@@ -2357,6 +2377,469 @@ namespace TbClient.Post.Common {
 
       }
 
+      public sealed partial class TogetherHi : pb::IMessage<TogetherHi>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<TogetherHi> _parser = new pb::MessageParser<TogetherHi>(() => new TogetherHi());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<TogetherHi> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::TbClient.Post.Common.Content.Descriptor.NestedTypes[2]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public TogetherHi() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public TogetherHi(TogetherHi other) : this() {
+          albumName_ = other.albumName_;
+          albumId_ = other.albumId_;
+          startTime_ = other.startTime_;
+          endTime_ = other.endTime_;
+          location_ = other.location_;
+          numSignup_ = other.numSignup_;
+          potraits_ = other.potraits_.Clone();
+          numJoin_ = other.numJoin_;
+          picUrls_ = other.picUrls_.Clone();
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public TogetherHi Clone() {
+          return new TogetherHi(this);
+        }
+
+        /// <summary>Field number for the "album_name" field.</summary>
+        public const int AlbumNameFieldNumber = 1;
+        private string albumName_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string AlbumName {
+          get { return albumName_; }
+          set {
+            albumName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "album_id" field.</summary>
+        public const int AlbumIdFieldNumber = 2;
+        private ulong albumId_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public ulong AlbumId {
+          get { return albumId_; }
+          set {
+            albumId_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "start_time" field.</summary>
+        public const int StartTimeFieldNumber = 3;
+        private uint startTime_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public uint StartTime {
+          get { return startTime_; }
+          set {
+            startTime_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "end_time" field.</summary>
+        public const int EndTimeFieldNumber = 4;
+        private uint endTime_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public uint EndTime {
+          get { return endTime_; }
+          set {
+            endTime_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "location" field.</summary>
+        public const int LocationFieldNumber = 5;
+        private string location_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string Location {
+          get { return location_; }
+          set {
+            location_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "num_signup" field.</summary>
+        public const int NumSignupFieldNumber = 6;
+        private uint numSignup_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public uint NumSignup {
+          get { return numSignup_; }
+          set {
+            numSignup_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "potraits" field.</summary>
+        public const int PotraitsFieldNumber = 7;
+        private static readonly pb::FieldCodec<string> _repeated_potraits_codec
+            = pb::FieldCodec.ForString(58);
+        private readonly pbc::RepeatedField<string> potraits_ = new pbc::RepeatedField<string>();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<string> Potraits {
+          get { return potraits_; }
+        }
+
+        /// <summary>Field number for the "num_join" field.</summary>
+        public const int NumJoinFieldNumber = 8;
+        private uint numJoin_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public uint NumJoin {
+          get { return numJoin_; }
+          set {
+            numJoin_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "pic_urls" field.</summary>
+        public const int PicUrlsFieldNumber = 9;
+        private static readonly pb::FieldCodec<string> _repeated_picUrls_codec
+            = pb::FieldCodec.ForString(74);
+        private readonly pbc::RepeatedField<string> picUrls_ = new pbc::RepeatedField<string>();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<string> PicUrls {
+          get { return picUrls_; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as TogetherHi);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(TogetherHi other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (AlbumName != other.AlbumName) return false;
+          if (AlbumId != other.AlbumId) return false;
+          if (StartTime != other.StartTime) return false;
+          if (EndTime != other.EndTime) return false;
+          if (Location != other.Location) return false;
+          if (NumSignup != other.NumSignup) return false;
+          if(!potraits_.Equals(other.potraits_)) return false;
+          if (NumJoin != other.NumJoin) return false;
+          if(!picUrls_.Equals(other.picUrls_)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (AlbumName.Length != 0) hash ^= AlbumName.GetHashCode();
+          if (AlbumId != 0UL) hash ^= AlbumId.GetHashCode();
+          if (StartTime != 0) hash ^= StartTime.GetHashCode();
+          if (EndTime != 0) hash ^= EndTime.GetHashCode();
+          if (Location.Length != 0) hash ^= Location.GetHashCode();
+          if (NumSignup != 0) hash ^= NumSignup.GetHashCode();
+          hash ^= potraits_.GetHashCode();
+          if (NumJoin != 0) hash ^= NumJoin.GetHashCode();
+          hash ^= picUrls_.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (AlbumName.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(AlbumName);
+          }
+          if (AlbumId != 0UL) {
+            output.WriteRawTag(16);
+            output.WriteUInt64(AlbumId);
+          }
+          if (StartTime != 0) {
+            output.WriteRawTag(24);
+            output.WriteUInt32(StartTime);
+          }
+          if (EndTime != 0) {
+            output.WriteRawTag(32);
+            output.WriteUInt32(EndTime);
+          }
+          if (Location.Length != 0) {
+            output.WriteRawTag(42);
+            output.WriteString(Location);
+          }
+          if (NumSignup != 0) {
+            output.WriteRawTag(48);
+            output.WriteUInt32(NumSignup);
+          }
+          potraits_.WriteTo(output, _repeated_potraits_codec);
+          if (NumJoin != 0) {
+            output.WriteRawTag(64);
+            output.WriteUInt32(NumJoin);
+          }
+          picUrls_.WriteTo(output, _repeated_picUrls_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (AlbumName.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(AlbumName);
+          }
+          if (AlbumId != 0UL) {
+            output.WriteRawTag(16);
+            output.WriteUInt64(AlbumId);
+          }
+          if (StartTime != 0) {
+            output.WriteRawTag(24);
+            output.WriteUInt32(StartTime);
+          }
+          if (EndTime != 0) {
+            output.WriteRawTag(32);
+            output.WriteUInt32(EndTime);
+          }
+          if (Location.Length != 0) {
+            output.WriteRawTag(42);
+            output.WriteString(Location);
+          }
+          if (NumSignup != 0) {
+            output.WriteRawTag(48);
+            output.WriteUInt32(NumSignup);
+          }
+          potraits_.WriteTo(ref output, _repeated_potraits_codec);
+          if (NumJoin != 0) {
+            output.WriteRawTag(64);
+            output.WriteUInt32(NumJoin);
+          }
+          picUrls_.WriteTo(ref output, _repeated_picUrls_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (AlbumName.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(AlbumName);
+          }
+          if (AlbumId != 0UL) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AlbumId);
+          }
+          if (StartTime != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StartTime);
+          }
+          if (EndTime != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+          }
+          if (Location.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Location);
+          }
+          if (NumSignup != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NumSignup);
+          }
+          size += potraits_.CalculateSize(_repeated_potraits_codec);
+          if (NumJoin != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NumJoin);
+          }
+          size += picUrls_.CalculateSize(_repeated_picUrls_codec);
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(TogetherHi other) {
+          if (other == null) {
+            return;
+          }
+          if (other.AlbumName.Length != 0) {
+            AlbumName = other.AlbumName;
+          }
+          if (other.AlbumId != 0UL) {
+            AlbumId = other.AlbumId;
+          }
+          if (other.StartTime != 0) {
+            StartTime = other.StartTime;
+          }
+          if (other.EndTime != 0) {
+            EndTime = other.EndTime;
+          }
+          if (other.Location.Length != 0) {
+            Location = other.Location;
+          }
+          if (other.NumSignup != 0) {
+            NumSignup = other.NumSignup;
+          }
+          potraits_.Add(other.potraits_);
+          if (other.NumJoin != 0) {
+            NumJoin = other.NumJoin;
+          }
+          picUrls_.Add(other.picUrls_);
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                AlbumName = input.ReadString();
+                break;
+              }
+              case 16: {
+                AlbumId = input.ReadUInt64();
+                break;
+              }
+              case 24: {
+                StartTime = input.ReadUInt32();
+                break;
+              }
+              case 32: {
+                EndTime = input.ReadUInt32();
+                break;
+              }
+              case 42: {
+                Location = input.ReadString();
+                break;
+              }
+              case 48: {
+                NumSignup = input.ReadUInt32();
+                break;
+              }
+              case 58: {
+                potraits_.AddEntriesFrom(input, _repeated_potraits_codec);
+                break;
+              }
+              case 64: {
+                NumJoin = input.ReadUInt32();
+                break;
+              }
+              case 74: {
+                picUrls_.AddEntriesFrom(input, _repeated_picUrls_codec);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                AlbumName = input.ReadString();
+                break;
+              }
+              case 16: {
+                AlbumId = input.ReadUInt64();
+                break;
+              }
+              case 24: {
+                StartTime = input.ReadUInt32();
+                break;
+              }
+              case 32: {
+                EndTime = input.ReadUInt32();
+                break;
+              }
+              case 42: {
+                Location = input.ReadString();
+                break;
+              }
+              case 48: {
+                NumSignup = input.ReadUInt32();
+                break;
+              }
+              case 58: {
+                potraits_.AddEntriesFrom(ref input, _repeated_potraits_codec);
+                break;
+              }
+              case 64: {
+                NumJoin = input.ReadUInt32();
+                break;
+              }
+              case 74: {
+                picUrls_.AddEntriesFrom(ref input, _repeated_picUrls_codec);
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
       public sealed partial class MemeInfo : pb::IMessage<MemeInfo>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
@@ -2371,7 +2854,7 @@ namespace TbClient.Post.Common {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::TbClient.Post.Common.Content.Descriptor.NestedTypes[2]; }
+          get { return global::TbClient.Post.Common.Content.Descriptor.NestedTypes[3]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2765,6 +3248,1363 @@ namespace TbClient.Post.Common {
           }
         }
         #endif
+
+      }
+
+      public sealed partial class TiebaPlusInfo : pb::IMessage<TiebaPlusInfo>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<TiebaPlusInfo> _parser = new pb::MessageParser<TiebaPlusInfo>(() => new TiebaPlusInfo());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<TiebaPlusInfo> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::TbClient.Post.Common.Content.Descriptor.NestedTypes[4]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public TiebaPlusInfo() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public TiebaPlusInfo(TiebaPlusInfo other) : this() {
+          title_ = other.title_;
+          desc_ = other.desc_;
+          jumpUrl_ = other.jumpUrl_;
+          downloadUrl_ = other.downloadUrl_;
+          appId_ = other.appId_;
+          appIcon_ = other.appIcon_;
+          appPackage_ = other.appPackage_;
+          appVersion_ = other.appVersion_;
+          appPrivacy_ = other.appPrivacy_;
+          appPower_ = other.appPower_;
+          appCompany_ = other.appCompany_;
+          targetType_ = other.targetType_;
+          h5JumpType_ = other.h5JumpType_;
+          h5JumpNumber_ = other.h5JumpNumber_;
+          h5JumpParam_ = other.h5JumpParam_;
+          jumpType_ = other.jumpType_;
+          itemId_ = other.itemId_;
+          isAppoint_ = other.isAppoint_;
+          pluginUser_ = other.pluginUser_ != null ? other.pluginUser_.Clone() : null;
+          forumName_ = other.forumName_;
+          jumpSetting_ = other.jumpSetting_;
+          wxThumbnail_ = other.wxThumbnail_;
+          buttonDesc_ = other.buttonDesc_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public TiebaPlusInfo Clone() {
+          return new TiebaPlusInfo(this);
+        }
+
+        /// <summary>Field number for the "title" field.</summary>
+        public const int TitleFieldNumber = 1;
+        private string title_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string Title {
+          get { return title_; }
+          set {
+            title_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "desc" field.</summary>
+        public const int DescFieldNumber = 2;
+        private string desc_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string Desc {
+          get { return desc_; }
+          set {
+            desc_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "jump_url" field.</summary>
+        public const int JumpUrlFieldNumber = 3;
+        private string jumpUrl_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string JumpUrl {
+          get { return jumpUrl_; }
+          set {
+            jumpUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "download_url" field.</summary>
+        public const int DownloadUrlFieldNumber = 4;
+        private string downloadUrl_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string DownloadUrl {
+          get { return downloadUrl_; }
+          set {
+            downloadUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "app_id" field.</summary>
+        public const int AppIdFieldNumber = 5;
+        private string appId_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string AppId {
+          get { return appId_; }
+          set {
+            appId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "app_icon" field.</summary>
+        public const int AppIconFieldNumber = 6;
+        private string appIcon_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string AppIcon {
+          get { return appIcon_; }
+          set {
+            appIcon_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "app_package" field.</summary>
+        public const int AppPackageFieldNumber = 7;
+        private string appPackage_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string AppPackage {
+          get { return appPackage_; }
+          set {
+            appPackage_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "app_version" field.</summary>
+        public const int AppVersionFieldNumber = 8;
+        private string appVersion_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string AppVersion {
+          get { return appVersion_; }
+          set {
+            appVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "app_privacy" field.</summary>
+        public const int AppPrivacyFieldNumber = 9;
+        private string appPrivacy_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string AppPrivacy {
+          get { return appPrivacy_; }
+          set {
+            appPrivacy_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "app_power" field.</summary>
+        public const int AppPowerFieldNumber = 10;
+        private string appPower_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string AppPower {
+          get { return appPower_; }
+          set {
+            appPower_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "app_company" field.</summary>
+        public const int AppCompanyFieldNumber = 11;
+        private string appCompany_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string AppCompany {
+          get { return appCompany_; }
+          set {
+            appCompany_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "target_type" field.</summary>
+        public const int TargetTypeFieldNumber = 12;
+        private int targetType_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int TargetType {
+          get { return targetType_; }
+          set {
+            targetType_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "h5_jump_type" field.</summary>
+        public const int H5JumpTypeFieldNumber = 13;
+        private int h5JumpType_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int H5JumpType {
+          get { return h5JumpType_; }
+          set {
+            h5JumpType_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "h5_jump_number" field.</summary>
+        public const int H5JumpNumberFieldNumber = 14;
+        private string h5JumpNumber_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string H5JumpNumber {
+          get { return h5JumpNumber_; }
+          set {
+            h5JumpNumber_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "h5_jump_param" field.</summary>
+        public const int H5JumpParamFieldNumber = 15;
+        private string h5JumpParam_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string H5JumpParam {
+          get { return h5JumpParam_; }
+          set {
+            h5JumpParam_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "jump_type" field.</summary>
+        public const int JumpTypeFieldNumber = 16;
+        private int jumpType_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int JumpType {
+          get { return jumpType_; }
+          set {
+            jumpType_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "item_id" field.</summary>
+        public const int ItemIdFieldNumber = 17;
+        private string itemId_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string ItemId {
+          get { return itemId_; }
+          set {
+            itemId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "is_appoint" field.</summary>
+        public const int IsAppointFieldNumber = 18;
+        private int isAppoint_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int IsAppoint {
+          get { return isAppoint_; }
+          set {
+            isAppoint_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "plugin_user" field.</summary>
+        public const int PluginUserFieldNumber = 19;
+        private global::TbClient.Post.Common.Content.Types.TiebaPlusInfo.Types.PluginUser pluginUser_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::TbClient.Post.Common.Content.Types.TiebaPlusInfo.Types.PluginUser PluginUser {
+          get { return pluginUser_; }
+          set {
+            pluginUser_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "forum_name" field.</summary>
+        public const int ForumNameFieldNumber = 20;
+        private string forumName_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string ForumName {
+          get { return forumName_; }
+          set {
+            forumName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "jump_setting" field.</summary>
+        public const int JumpSettingFieldNumber = 21;
+        private int jumpSetting_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int JumpSetting {
+          get { return jumpSetting_; }
+          set {
+            jumpSetting_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "wx_thumbnail" field.</summary>
+        public const int WxThumbnailFieldNumber = 22;
+        private string wxThumbnail_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string WxThumbnail {
+          get { return wxThumbnail_; }
+          set {
+            wxThumbnail_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "button_desc" field.</summary>
+        public const int ButtonDescFieldNumber = 23;
+        private string buttonDesc_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string ButtonDesc {
+          get { return buttonDesc_; }
+          set {
+            buttonDesc_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as TiebaPlusInfo);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(TiebaPlusInfo other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Title != other.Title) return false;
+          if (Desc != other.Desc) return false;
+          if (JumpUrl != other.JumpUrl) return false;
+          if (DownloadUrl != other.DownloadUrl) return false;
+          if (AppId != other.AppId) return false;
+          if (AppIcon != other.AppIcon) return false;
+          if (AppPackage != other.AppPackage) return false;
+          if (AppVersion != other.AppVersion) return false;
+          if (AppPrivacy != other.AppPrivacy) return false;
+          if (AppPower != other.AppPower) return false;
+          if (AppCompany != other.AppCompany) return false;
+          if (TargetType != other.TargetType) return false;
+          if (H5JumpType != other.H5JumpType) return false;
+          if (H5JumpNumber != other.H5JumpNumber) return false;
+          if (H5JumpParam != other.H5JumpParam) return false;
+          if (JumpType != other.JumpType) return false;
+          if (ItemId != other.ItemId) return false;
+          if (IsAppoint != other.IsAppoint) return false;
+          if (!object.Equals(PluginUser, other.PluginUser)) return false;
+          if (ForumName != other.ForumName) return false;
+          if (JumpSetting != other.JumpSetting) return false;
+          if (WxThumbnail != other.WxThumbnail) return false;
+          if (ButtonDesc != other.ButtonDesc) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Title.Length != 0) hash ^= Title.GetHashCode();
+          if (Desc.Length != 0) hash ^= Desc.GetHashCode();
+          if (JumpUrl.Length != 0) hash ^= JumpUrl.GetHashCode();
+          if (DownloadUrl.Length != 0) hash ^= DownloadUrl.GetHashCode();
+          if (AppId.Length != 0) hash ^= AppId.GetHashCode();
+          if (AppIcon.Length != 0) hash ^= AppIcon.GetHashCode();
+          if (AppPackage.Length != 0) hash ^= AppPackage.GetHashCode();
+          if (AppVersion.Length != 0) hash ^= AppVersion.GetHashCode();
+          if (AppPrivacy.Length != 0) hash ^= AppPrivacy.GetHashCode();
+          if (AppPower.Length != 0) hash ^= AppPower.GetHashCode();
+          if (AppCompany.Length != 0) hash ^= AppCompany.GetHashCode();
+          if (TargetType != 0) hash ^= TargetType.GetHashCode();
+          if (H5JumpType != 0) hash ^= H5JumpType.GetHashCode();
+          if (H5JumpNumber.Length != 0) hash ^= H5JumpNumber.GetHashCode();
+          if (H5JumpParam.Length != 0) hash ^= H5JumpParam.GetHashCode();
+          if (JumpType != 0) hash ^= JumpType.GetHashCode();
+          if (ItemId.Length != 0) hash ^= ItemId.GetHashCode();
+          if (IsAppoint != 0) hash ^= IsAppoint.GetHashCode();
+          if (pluginUser_ != null) hash ^= PluginUser.GetHashCode();
+          if (ForumName.Length != 0) hash ^= ForumName.GetHashCode();
+          if (JumpSetting != 0) hash ^= JumpSetting.GetHashCode();
+          if (WxThumbnail.Length != 0) hash ^= WxThumbnail.GetHashCode();
+          if (ButtonDesc.Length != 0) hash ^= ButtonDesc.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (Title.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Title);
+          }
+          if (Desc.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(Desc);
+          }
+          if (JumpUrl.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(JumpUrl);
+          }
+          if (DownloadUrl.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(DownloadUrl);
+          }
+          if (AppId.Length != 0) {
+            output.WriteRawTag(42);
+            output.WriteString(AppId);
+          }
+          if (AppIcon.Length != 0) {
+            output.WriteRawTag(50);
+            output.WriteString(AppIcon);
+          }
+          if (AppPackage.Length != 0) {
+            output.WriteRawTag(58);
+            output.WriteString(AppPackage);
+          }
+          if (AppVersion.Length != 0) {
+            output.WriteRawTag(66);
+            output.WriteString(AppVersion);
+          }
+          if (AppPrivacy.Length != 0) {
+            output.WriteRawTag(74);
+            output.WriteString(AppPrivacy);
+          }
+          if (AppPower.Length != 0) {
+            output.WriteRawTag(82);
+            output.WriteString(AppPower);
+          }
+          if (AppCompany.Length != 0) {
+            output.WriteRawTag(90);
+            output.WriteString(AppCompany);
+          }
+          if (TargetType != 0) {
+            output.WriteRawTag(96);
+            output.WriteInt32(TargetType);
+          }
+          if (H5JumpType != 0) {
+            output.WriteRawTag(104);
+            output.WriteInt32(H5JumpType);
+          }
+          if (H5JumpNumber.Length != 0) {
+            output.WriteRawTag(114);
+            output.WriteString(H5JumpNumber);
+          }
+          if (H5JumpParam.Length != 0) {
+            output.WriteRawTag(122);
+            output.WriteString(H5JumpParam);
+          }
+          if (JumpType != 0) {
+            output.WriteRawTag(128, 1);
+            output.WriteInt32(JumpType);
+          }
+          if (ItemId.Length != 0) {
+            output.WriteRawTag(138, 1);
+            output.WriteString(ItemId);
+          }
+          if (IsAppoint != 0) {
+            output.WriteRawTag(144, 1);
+            output.WriteInt32(IsAppoint);
+          }
+          if (pluginUser_ != null) {
+            output.WriteRawTag(154, 1);
+            output.WriteMessage(PluginUser);
+          }
+          if (ForumName.Length != 0) {
+            output.WriteRawTag(162, 1);
+            output.WriteString(ForumName);
+          }
+          if (JumpSetting != 0) {
+            output.WriteRawTag(168, 1);
+            output.WriteInt32(JumpSetting);
+          }
+          if (WxThumbnail.Length != 0) {
+            output.WriteRawTag(178, 1);
+            output.WriteString(WxThumbnail);
+          }
+          if (ButtonDesc.Length != 0) {
+            output.WriteRawTag(186, 1);
+            output.WriteString(ButtonDesc);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Title.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Title);
+          }
+          if (Desc.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(Desc);
+          }
+          if (JumpUrl.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(JumpUrl);
+          }
+          if (DownloadUrl.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(DownloadUrl);
+          }
+          if (AppId.Length != 0) {
+            output.WriteRawTag(42);
+            output.WriteString(AppId);
+          }
+          if (AppIcon.Length != 0) {
+            output.WriteRawTag(50);
+            output.WriteString(AppIcon);
+          }
+          if (AppPackage.Length != 0) {
+            output.WriteRawTag(58);
+            output.WriteString(AppPackage);
+          }
+          if (AppVersion.Length != 0) {
+            output.WriteRawTag(66);
+            output.WriteString(AppVersion);
+          }
+          if (AppPrivacy.Length != 0) {
+            output.WriteRawTag(74);
+            output.WriteString(AppPrivacy);
+          }
+          if (AppPower.Length != 0) {
+            output.WriteRawTag(82);
+            output.WriteString(AppPower);
+          }
+          if (AppCompany.Length != 0) {
+            output.WriteRawTag(90);
+            output.WriteString(AppCompany);
+          }
+          if (TargetType != 0) {
+            output.WriteRawTag(96);
+            output.WriteInt32(TargetType);
+          }
+          if (H5JumpType != 0) {
+            output.WriteRawTag(104);
+            output.WriteInt32(H5JumpType);
+          }
+          if (H5JumpNumber.Length != 0) {
+            output.WriteRawTag(114);
+            output.WriteString(H5JumpNumber);
+          }
+          if (H5JumpParam.Length != 0) {
+            output.WriteRawTag(122);
+            output.WriteString(H5JumpParam);
+          }
+          if (JumpType != 0) {
+            output.WriteRawTag(128, 1);
+            output.WriteInt32(JumpType);
+          }
+          if (ItemId.Length != 0) {
+            output.WriteRawTag(138, 1);
+            output.WriteString(ItemId);
+          }
+          if (IsAppoint != 0) {
+            output.WriteRawTag(144, 1);
+            output.WriteInt32(IsAppoint);
+          }
+          if (pluginUser_ != null) {
+            output.WriteRawTag(154, 1);
+            output.WriteMessage(PluginUser);
+          }
+          if (ForumName.Length != 0) {
+            output.WriteRawTag(162, 1);
+            output.WriteString(ForumName);
+          }
+          if (JumpSetting != 0) {
+            output.WriteRawTag(168, 1);
+            output.WriteInt32(JumpSetting);
+          }
+          if (WxThumbnail.Length != 0) {
+            output.WriteRawTag(178, 1);
+            output.WriteString(WxThumbnail);
+          }
+          if (ButtonDesc.Length != 0) {
+            output.WriteRawTag(186, 1);
+            output.WriteString(ButtonDesc);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (Title.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Title);
+          }
+          if (Desc.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Desc);
+          }
+          if (JumpUrl.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(JumpUrl);
+          }
+          if (DownloadUrl.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(DownloadUrl);
+          }
+          if (AppId.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(AppId);
+          }
+          if (AppIcon.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(AppIcon);
+          }
+          if (AppPackage.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(AppPackage);
+          }
+          if (AppVersion.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(AppVersion);
+          }
+          if (AppPrivacy.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(AppPrivacy);
+          }
+          if (AppPower.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(AppPower);
+          }
+          if (AppCompany.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(AppCompany);
+          }
+          if (TargetType != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeInt32Size(TargetType);
+          }
+          if (H5JumpType != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeInt32Size(H5JumpType);
+          }
+          if (H5JumpNumber.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(H5JumpNumber);
+          }
+          if (H5JumpParam.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(H5JumpParam);
+          }
+          if (JumpType != 0) {
+            size += 2 + pb::CodedOutputStream.ComputeInt32Size(JumpType);
+          }
+          if (ItemId.Length != 0) {
+            size += 2 + pb::CodedOutputStream.ComputeStringSize(ItemId);
+          }
+          if (IsAppoint != 0) {
+            size += 2 + pb::CodedOutputStream.ComputeInt32Size(IsAppoint);
+          }
+          if (pluginUser_ != null) {
+            size += 2 + pb::CodedOutputStream.ComputeMessageSize(PluginUser);
+          }
+          if (ForumName.Length != 0) {
+            size += 2 + pb::CodedOutputStream.ComputeStringSize(ForumName);
+          }
+          if (JumpSetting != 0) {
+            size += 2 + pb::CodedOutputStream.ComputeInt32Size(JumpSetting);
+          }
+          if (WxThumbnail.Length != 0) {
+            size += 2 + pb::CodedOutputStream.ComputeStringSize(WxThumbnail);
+          }
+          if (ButtonDesc.Length != 0) {
+            size += 2 + pb::CodedOutputStream.ComputeStringSize(ButtonDesc);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(TiebaPlusInfo other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Title.Length != 0) {
+            Title = other.Title;
+          }
+          if (other.Desc.Length != 0) {
+            Desc = other.Desc;
+          }
+          if (other.JumpUrl.Length != 0) {
+            JumpUrl = other.JumpUrl;
+          }
+          if (other.DownloadUrl.Length != 0) {
+            DownloadUrl = other.DownloadUrl;
+          }
+          if (other.AppId.Length != 0) {
+            AppId = other.AppId;
+          }
+          if (other.AppIcon.Length != 0) {
+            AppIcon = other.AppIcon;
+          }
+          if (other.AppPackage.Length != 0) {
+            AppPackage = other.AppPackage;
+          }
+          if (other.AppVersion.Length != 0) {
+            AppVersion = other.AppVersion;
+          }
+          if (other.AppPrivacy.Length != 0) {
+            AppPrivacy = other.AppPrivacy;
+          }
+          if (other.AppPower.Length != 0) {
+            AppPower = other.AppPower;
+          }
+          if (other.AppCompany.Length != 0) {
+            AppCompany = other.AppCompany;
+          }
+          if (other.TargetType != 0) {
+            TargetType = other.TargetType;
+          }
+          if (other.H5JumpType != 0) {
+            H5JumpType = other.H5JumpType;
+          }
+          if (other.H5JumpNumber.Length != 0) {
+            H5JumpNumber = other.H5JumpNumber;
+          }
+          if (other.H5JumpParam.Length != 0) {
+            H5JumpParam = other.H5JumpParam;
+          }
+          if (other.JumpType != 0) {
+            JumpType = other.JumpType;
+          }
+          if (other.ItemId.Length != 0) {
+            ItemId = other.ItemId;
+          }
+          if (other.IsAppoint != 0) {
+            IsAppoint = other.IsAppoint;
+          }
+          if (other.pluginUser_ != null) {
+            if (pluginUser_ == null) {
+              PluginUser = new global::TbClient.Post.Common.Content.Types.TiebaPlusInfo.Types.PluginUser();
+            }
+            PluginUser.MergeFrom(other.PluginUser);
+          }
+          if (other.ForumName.Length != 0) {
+            ForumName = other.ForumName;
+          }
+          if (other.JumpSetting != 0) {
+            JumpSetting = other.JumpSetting;
+          }
+          if (other.WxThumbnail.Length != 0) {
+            WxThumbnail = other.WxThumbnail;
+          }
+          if (other.ButtonDesc.Length != 0) {
+            ButtonDesc = other.ButtonDesc;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                Title = input.ReadString();
+                break;
+              }
+              case 18: {
+                Desc = input.ReadString();
+                break;
+              }
+              case 26: {
+                JumpUrl = input.ReadString();
+                break;
+              }
+              case 34: {
+                DownloadUrl = input.ReadString();
+                break;
+              }
+              case 42: {
+                AppId = input.ReadString();
+                break;
+              }
+              case 50: {
+                AppIcon = input.ReadString();
+                break;
+              }
+              case 58: {
+                AppPackage = input.ReadString();
+                break;
+              }
+              case 66: {
+                AppVersion = input.ReadString();
+                break;
+              }
+              case 74: {
+                AppPrivacy = input.ReadString();
+                break;
+              }
+              case 82: {
+                AppPower = input.ReadString();
+                break;
+              }
+              case 90: {
+                AppCompany = input.ReadString();
+                break;
+              }
+              case 96: {
+                TargetType = input.ReadInt32();
+                break;
+              }
+              case 104: {
+                H5JumpType = input.ReadInt32();
+                break;
+              }
+              case 114: {
+                H5JumpNumber = input.ReadString();
+                break;
+              }
+              case 122: {
+                H5JumpParam = input.ReadString();
+                break;
+              }
+              case 128: {
+                JumpType = input.ReadInt32();
+                break;
+              }
+              case 138: {
+                ItemId = input.ReadString();
+                break;
+              }
+              case 144: {
+                IsAppoint = input.ReadInt32();
+                break;
+              }
+              case 154: {
+                if (pluginUser_ == null) {
+                  PluginUser = new global::TbClient.Post.Common.Content.Types.TiebaPlusInfo.Types.PluginUser();
+                }
+                input.ReadMessage(PluginUser);
+                break;
+              }
+              case 162: {
+                ForumName = input.ReadString();
+                break;
+              }
+              case 168: {
+                JumpSetting = input.ReadInt32();
+                break;
+              }
+              case 178: {
+                WxThumbnail = input.ReadString();
+                break;
+              }
+              case 186: {
+                ButtonDesc = input.ReadString();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                Title = input.ReadString();
+                break;
+              }
+              case 18: {
+                Desc = input.ReadString();
+                break;
+              }
+              case 26: {
+                JumpUrl = input.ReadString();
+                break;
+              }
+              case 34: {
+                DownloadUrl = input.ReadString();
+                break;
+              }
+              case 42: {
+                AppId = input.ReadString();
+                break;
+              }
+              case 50: {
+                AppIcon = input.ReadString();
+                break;
+              }
+              case 58: {
+                AppPackage = input.ReadString();
+                break;
+              }
+              case 66: {
+                AppVersion = input.ReadString();
+                break;
+              }
+              case 74: {
+                AppPrivacy = input.ReadString();
+                break;
+              }
+              case 82: {
+                AppPower = input.ReadString();
+                break;
+              }
+              case 90: {
+                AppCompany = input.ReadString();
+                break;
+              }
+              case 96: {
+                TargetType = input.ReadInt32();
+                break;
+              }
+              case 104: {
+                H5JumpType = input.ReadInt32();
+                break;
+              }
+              case 114: {
+                H5JumpNumber = input.ReadString();
+                break;
+              }
+              case 122: {
+                H5JumpParam = input.ReadString();
+                break;
+              }
+              case 128: {
+                JumpType = input.ReadInt32();
+                break;
+              }
+              case 138: {
+                ItemId = input.ReadString();
+                break;
+              }
+              case 144: {
+                IsAppoint = input.ReadInt32();
+                break;
+              }
+              case 154: {
+                if (pluginUser_ == null) {
+                  PluginUser = new global::TbClient.Post.Common.Content.Types.TiebaPlusInfo.Types.PluginUser();
+                }
+                input.ReadMessage(PluginUser);
+                break;
+              }
+              case 162: {
+                ForumName = input.ReadString();
+                break;
+              }
+              case 168: {
+                JumpSetting = input.ReadInt32();
+                break;
+              }
+              case 178: {
+                WxThumbnail = input.ReadString();
+                break;
+              }
+              case 186: {
+                ButtonDesc = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+        #region Nested types
+        /// <summary>Container for nested types declared in the TiebaPlusInfo message type.</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static partial class Types {
+          public sealed partial class PluginUser : pb::IMessage<PluginUser>
+          #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+              , pb::IBufferMessage
+          #endif
+          {
+            private static readonly pb::MessageParser<PluginUser> _parser = new pb::MessageParser<PluginUser>(() => new PluginUser());
+            private pb::UnknownFieldSet _unknownFields;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public static pb::MessageParser<PluginUser> Parser { get { return _parser; } }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public static pbr::MessageDescriptor Descriptor {
+              get { return global::TbClient.Post.Common.Content.Types.TiebaPlusInfo.Descriptor.NestedTypes[0]; }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            pbr::MessageDescriptor pb::IMessage.Descriptor {
+              get { return Descriptor; }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public PluginUser() {
+              OnConstruction();
+            }
+
+            partial void OnConstruction();
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public PluginUser(PluginUser other) : this() {
+              userId_ = other.userId_;
+              userNameShow_ = other.userNameShow_;
+              userType_ = other.userType_;
+              userPhoto_ = other.userPhoto_;
+              isDownloadCardWhiteuser_ = other.isDownloadCardWhiteuser_;
+              _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public PluginUser Clone() {
+              return new PluginUser(this);
+            }
+
+            /// <summary>Field number for the "user_id" field.</summary>
+            public const int UserIdFieldNumber = 1;
+            private long userId_;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public long UserId {
+              get { return userId_; }
+              set {
+                userId_ = value;
+              }
+            }
+
+            /// <summary>Field number for the "user_name_show" field.</summary>
+            public const int UserNameShowFieldNumber = 2;
+            private string userNameShow_ = "";
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public string UserNameShow {
+              get { return userNameShow_; }
+              set {
+                userNameShow_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+              }
+            }
+
+            /// <summary>Field number for the "user_type" field.</summary>
+            public const int UserTypeFieldNumber = 3;
+            private int userType_;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public int UserType {
+              get { return userType_; }
+              set {
+                userType_ = value;
+              }
+            }
+
+            /// <summary>Field number for the "user_photo" field.</summary>
+            public const int UserPhotoFieldNumber = 4;
+            private string userPhoto_ = "";
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public string UserPhoto {
+              get { return userPhoto_; }
+              set {
+                userPhoto_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+              }
+            }
+
+            /// <summary>Field number for the "is_download_card_whiteuser" field.</summary>
+            public const int IsDownloadCardWhiteuserFieldNumber = 5;
+            private int isDownloadCardWhiteuser_;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public int IsDownloadCardWhiteuser {
+              get { return isDownloadCardWhiteuser_; }
+              set {
+                isDownloadCardWhiteuser_ = value;
+              }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public override bool Equals(object other) {
+              return Equals(other as PluginUser);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public bool Equals(PluginUser other) {
+              if (ReferenceEquals(other, null)) {
+                return false;
+              }
+              if (ReferenceEquals(other, this)) {
+                return true;
+              }
+              if (UserId != other.UserId) return false;
+              if (UserNameShow != other.UserNameShow) return false;
+              if (UserType != other.UserType) return false;
+              if (UserPhoto != other.UserPhoto) return false;
+              if (IsDownloadCardWhiteuser != other.IsDownloadCardWhiteuser) return false;
+              return Equals(_unknownFields, other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public override int GetHashCode() {
+              int hash = 1;
+              if (UserId != 0L) hash ^= UserId.GetHashCode();
+              if (UserNameShow.Length != 0) hash ^= UserNameShow.GetHashCode();
+              if (UserType != 0) hash ^= UserType.GetHashCode();
+              if (UserPhoto.Length != 0) hash ^= UserPhoto.GetHashCode();
+              if (IsDownloadCardWhiteuser != 0) hash ^= IsDownloadCardWhiteuser.GetHashCode();
+              if (_unknownFields != null) {
+                hash ^= _unknownFields.GetHashCode();
+              }
+              return hash;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public override string ToString() {
+              return pb::JsonFormatter.ToDiagnosticString(this);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void WriteTo(pb::CodedOutputStream output) {
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+              output.WriteRawMessage(this);
+            #else
+              if (UserId != 0L) {
+                output.WriteRawTag(8);
+                output.WriteInt64(UserId);
+              }
+              if (UserNameShow.Length != 0) {
+                output.WriteRawTag(18);
+                output.WriteString(UserNameShow);
+              }
+              if (UserType != 0) {
+                output.WriteRawTag(24);
+                output.WriteInt32(UserType);
+              }
+              if (UserPhoto.Length != 0) {
+                output.WriteRawTag(34);
+                output.WriteString(UserPhoto);
+              }
+              if (IsDownloadCardWhiteuser != 0) {
+                output.WriteRawTag(40);
+                output.WriteInt32(IsDownloadCardWhiteuser);
+              }
+              if (_unknownFields != null) {
+                _unknownFields.WriteTo(output);
+              }
+            #endif
+            }
+
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+              if (UserId != 0L) {
+                output.WriteRawTag(8);
+                output.WriteInt64(UserId);
+              }
+              if (UserNameShow.Length != 0) {
+                output.WriteRawTag(18);
+                output.WriteString(UserNameShow);
+              }
+              if (UserType != 0) {
+                output.WriteRawTag(24);
+                output.WriteInt32(UserType);
+              }
+              if (UserPhoto.Length != 0) {
+                output.WriteRawTag(34);
+                output.WriteString(UserPhoto);
+              }
+              if (IsDownloadCardWhiteuser != 0) {
+                output.WriteRawTag(40);
+                output.WriteInt32(IsDownloadCardWhiteuser);
+              }
+              if (_unknownFields != null) {
+                _unknownFields.WriteTo(ref output);
+              }
+            }
+            #endif
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public int CalculateSize() {
+              int size = 0;
+              if (UserId != 0L) {
+                size += 1 + pb::CodedOutputStream.ComputeInt64Size(UserId);
+              }
+              if (UserNameShow.Length != 0) {
+                size += 1 + pb::CodedOutputStream.ComputeStringSize(UserNameShow);
+              }
+              if (UserType != 0) {
+                size += 1 + pb::CodedOutputStream.ComputeInt32Size(UserType);
+              }
+              if (UserPhoto.Length != 0) {
+                size += 1 + pb::CodedOutputStream.ComputeStringSize(UserPhoto);
+              }
+              if (IsDownloadCardWhiteuser != 0) {
+                size += 1 + pb::CodedOutputStream.ComputeInt32Size(IsDownloadCardWhiteuser);
+              }
+              if (_unknownFields != null) {
+                size += _unknownFields.CalculateSize();
+              }
+              return size;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void MergeFrom(PluginUser other) {
+              if (other == null) {
+                return;
+              }
+              if (other.UserId != 0L) {
+                UserId = other.UserId;
+              }
+              if (other.UserNameShow.Length != 0) {
+                UserNameShow = other.UserNameShow;
+              }
+              if (other.UserType != 0) {
+                UserType = other.UserType;
+              }
+              if (other.UserPhoto.Length != 0) {
+                UserPhoto = other.UserPhoto;
+              }
+              if (other.IsDownloadCardWhiteuser != 0) {
+                IsDownloadCardWhiteuser = other.IsDownloadCardWhiteuser;
+              }
+              _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void MergeFrom(pb::CodedInputStream input) {
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+              input.ReadRawMessage(this);
+            #else
+              uint tag;
+              while ((tag = input.ReadTag()) != 0) {
+                switch(tag) {
+                  default:
+                    _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                    break;
+                  case 8: {
+                    UserId = input.ReadInt64();
+                    break;
+                  }
+                  case 18: {
+                    UserNameShow = input.ReadString();
+                    break;
+                  }
+                  case 24: {
+                    UserType = input.ReadInt32();
+                    break;
+                  }
+                  case 34: {
+                    UserPhoto = input.ReadString();
+                    break;
+                  }
+                  case 40: {
+                    IsDownloadCardWhiteuser = input.ReadInt32();
+                    break;
+                  }
+                }
+              }
+            #endif
+            }
+
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+              uint tag;
+              while ((tag = input.ReadTag()) != 0) {
+                switch(tag) {
+                  default:
+                    _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                    break;
+                  case 8: {
+                    UserId = input.ReadInt64();
+                    break;
+                  }
+                  case 18: {
+                    UserNameShow = input.ReadString();
+                    break;
+                  }
+                  case 24: {
+                    UserType = input.ReadInt32();
+                    break;
+                  }
+                  case 34: {
+                    UserPhoto = input.ReadString();
+                    break;
+                  }
+                  case 40: {
+                    IsDownloadCardWhiteuser = input.ReadInt32();
+                    break;
+                  }
+                }
+              }
+            }
+            #endif
+
+          }
+
+        }
+        #endregion
 
       }
 

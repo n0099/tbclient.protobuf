@@ -27,20 +27,24 @@ namespace TbClient.Post {
             "ChBQb3N0L1JlcGx5LnByb3RvEg10YkNsaWVudC5wb3N0GgpVc2VyLnByb3Rv",
             "GhlQb3N0L0NvbW1vbi9Db250ZW50LnByb3RvGhVQb3N0L0NvbW1vbi9MYnMu",
             "cHJvdG8aF1Bvc3QvQ29tbW9uL0FncmVlLnByb3RvGhVQb3N0L0NvbW1vbi9a",
-            "YW4ucHJvdG8aIlBvc3QvUmVwbHlEZXBzL1NpZ25hdHVyZURhdGEucHJvdG8i",
-            "iQMKBVJlcGx5EgsKA3BpZBgBIAEoBBINCgV0aXRsZRgCIAEoCRINCgVmbG9v",
-            "chgDIAEoDRIMCgR0aW1lGAQgASgNEi4KB2NvbnRlbnQYBSADKAsyHS50YkNs",
-            "aWVudC5wb3N0LmNvbW1vbi5Db250ZW50EisKCGxic19pbmZvGAcgASgLMhku",
-            "dGJDbGllbnQucG9zdC5jb21tb24uTGJzEhcKD3N1Yl9wb3N0X251bWJlchgN",
-            "IAEoDRIRCglhdXRob3JfaWQYEyABKAMSOQoJc2lnbmF0dXJlGBUgASgLMiYu",
-            "dGJDbGllbnQucG9zdC5yZXBseURlcHMuU2lnbmF0dXJlRGF0YRIeCgZhdXRo",
-            "b3IYFyABKAsyDi50YkNsaWVudC5Vc2VyEiYKA3phbhgYIAEoCzIZLnRiQ2xp",
-            "ZW50LnBvc3QuY29tbW9uLlphbhIqCgVhZ3JlZRglIAEoCzIbLnRiQ2xpZW50",
-            "LnBvc3QuY29tbW9uLkFncmVlEg8KB2lzX2ZvbGQYKyABKAViBnByb3RvMw=="));
+            "YW4ucHJvdG8iywQKBVJlcGx5EgsKA3BpZBgBIAEoBBINCgV0aXRsZRgCIAEo",
+            "CRINCgVmbG9vchgDIAEoDRIMCgR0aW1lGAQgASgNEi4KB2NvbnRlbnQYBSAD",
+            "KAsyHS50YkNsaWVudC5wb3N0LmNvbW1vbi5Db250ZW50EisKCGxic19pbmZv",
+            "GAcgASgLMhkudGJDbGllbnQucG9zdC5jb21tb24uTGJzEhcKD3N1Yl9wb3N0",
+            "X251bWJlchgNIAEoDRIRCglhdXRob3JfaWQYEyABKAMSNQoJc2lnbmF0dXJl",
+            "GBUgASgLMiIudGJDbGllbnQucG9zdC5SZXBseS5TaWduYXR1cmVEYXRhEh4K",
+            "BmF1dGhvchgXIAEoCzIOLnRiQ2xpZW50LlVzZXISJgoDemFuGBggASgLMhku",
+            "dGJDbGllbnQucG9zdC5jb21tb24uWmFuEioKBWFncmVlGCUgASgLMhsudGJD",
+            "bGllbnQucG9zdC5jb21tb24uQWdyZWUSDwoHaXNfZm9sZBgrIAEoBRrDAQoN",
+            "U2lnbmF0dXJlRGF0YRIUCgxzaWduYXR1cmVfaWQYASABKAUSEwoLZm9udEtl",
+            "eU5hbWUYAiABKAkSEQoJZm9udENvbG9yGAMgASgJEkQKB2NvbnRlbnQYBCAD",
+            "KAsyMy50YkNsaWVudC5wb3N0LlJlcGx5LlNpZ25hdHVyZURhdGEuU2lnbmF0",
+            "dXJlQ29udGVudBouChBTaWduYXR1cmVDb250ZW50EgwKBHR5cGUYASABKAUS",
+            "DAoEdGV4dBgCIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TbClient.UserReflection.Descriptor, global::TbClient.Post.Common.ContentReflection.Descriptor, global::TbClient.Post.Common.LbsReflection.Descriptor, global::TbClient.Post.Common.AgreeReflection.Descriptor, global::TbClient.Post.Common.ZanReflection.Descriptor, global::TbClient.Post.ReplyDeps.SignatureDataReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::TbClient.UserReflection.Descriptor, global::TbClient.Post.Common.ContentReflection.Descriptor, global::TbClient.Post.Common.LbsReflection.Descriptor, global::TbClient.Post.Common.AgreeReflection.Descriptor, global::TbClient.Post.Common.ZanReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Reply), global::TbClient.Post.Reply.Parser, new[]{ "Pid", "Title", "Floor", "Time", "Content", "LbsInfo", "SubPostNumber", "AuthorId", "Signature", "Author", "Zan", "Agree", "IsFold" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Reply), global::TbClient.Post.Reply.Parser, new[]{ "Pid", "Title", "Floor", "Time", "Content", "LbsInfo", "SubPostNumber", "AuthorId", "Signature", "Author", "Zan", "Agree", "IsFold" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Reply.Types.SignatureData), global::TbClient.Post.Reply.Types.SignatureData.Parser, new[]{ "SignatureId", "FontKeyName", "FontColor", "Content" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Reply.Types.SignatureData.Types.SignatureContent), global::TbClient.Post.Reply.Types.SignatureData.Types.SignatureContent.Parser, new[]{ "Type", "Text" }, null, null, null, null)})})
           }));
     }
     #endregion
@@ -200,10 +204,10 @@ namespace TbClient.Post {
 
     /// <summary>Field number for the "signature" field.</summary>
     public const int SignatureFieldNumber = 21;
-    private global::TbClient.Post.ReplyDeps.SignatureData signature_;
+    private global::TbClient.Post.Reply.Types.SignatureData signature_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TbClient.Post.ReplyDeps.SignatureData Signature {
+    public global::TbClient.Post.Reply.Types.SignatureData Signature {
       get { return signature_; }
       set {
         signature_ = value;
@@ -518,7 +522,7 @@ namespace TbClient.Post {
       }
       if (other.signature_ != null) {
         if (signature_ == null) {
-          Signature = new global::TbClient.Post.ReplyDeps.SignatureData();
+          Signature = new global::TbClient.Post.Reply.Types.SignatureData();
         }
         Signature.MergeFrom(other.Signature);
       }
@@ -595,7 +599,7 @@ namespace TbClient.Post {
           }
           case 170: {
             if (signature_ == null) {
-              Signature = new global::TbClient.Post.ReplyDeps.SignatureData();
+              Signature = new global::TbClient.Post.Reply.Types.SignatureData();
             }
             input.ReadMessage(Signature);
             break;
@@ -677,7 +681,7 @@ namespace TbClient.Post {
           }
           case 170: {
             if (signature_ == null) {
-              Signature = new global::TbClient.Post.ReplyDeps.SignatureData();
+              Signature = new global::TbClient.Post.Reply.Types.SignatureData();
             }
             input.ReadMessage(Signature);
             break;
@@ -711,6 +715,537 @@ namespace TbClient.Post {
       }
     }
     #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the Reply message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public sealed partial class SignatureData : pb::IMessage<SignatureData>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<SignatureData> _parser = new pb::MessageParser<SignatureData>(() => new SignatureData());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<SignatureData> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::TbClient.Post.Reply.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public SignatureData() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public SignatureData(SignatureData other) : this() {
+          signatureId_ = other.signatureId_;
+          fontKeyName_ = other.fontKeyName_;
+          fontColor_ = other.fontColor_;
+          content_ = other.content_.Clone();
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public SignatureData Clone() {
+          return new SignatureData(this);
+        }
+
+        /// <summary>Field number for the "signature_id" field.</summary>
+        public const int SignatureIdFieldNumber = 1;
+        private int signatureId_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int SignatureId {
+          get { return signatureId_; }
+          set {
+            signatureId_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "fontKeyName" field.</summary>
+        public const int FontKeyNameFieldNumber = 2;
+        private string fontKeyName_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string FontKeyName {
+          get { return fontKeyName_; }
+          set {
+            fontKeyName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "fontColor" field.</summary>
+        public const int FontColorFieldNumber = 3;
+        private string fontColor_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string FontColor {
+          get { return fontColor_; }
+          set {
+            fontColor_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "content" field.</summary>
+        public const int ContentFieldNumber = 4;
+        private static readonly pb::FieldCodec<global::TbClient.Post.Reply.Types.SignatureData.Types.SignatureContent> _repeated_content_codec
+            = pb::FieldCodec.ForMessage(34, global::TbClient.Post.Reply.Types.SignatureData.Types.SignatureContent.Parser);
+        private readonly pbc::RepeatedField<global::TbClient.Post.Reply.Types.SignatureData.Types.SignatureContent> content_ = new pbc::RepeatedField<global::TbClient.Post.Reply.Types.SignatureData.Types.SignatureContent>();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<global::TbClient.Post.Reply.Types.SignatureData.Types.SignatureContent> Content {
+          get { return content_; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as SignatureData);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(SignatureData other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (SignatureId != other.SignatureId) return false;
+          if (FontKeyName != other.FontKeyName) return false;
+          if (FontColor != other.FontColor) return false;
+          if(!content_.Equals(other.content_)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (SignatureId != 0) hash ^= SignatureId.GetHashCode();
+          if (FontKeyName.Length != 0) hash ^= FontKeyName.GetHashCode();
+          if (FontColor.Length != 0) hash ^= FontColor.GetHashCode();
+          hash ^= content_.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (SignatureId != 0) {
+            output.WriteRawTag(8);
+            output.WriteInt32(SignatureId);
+          }
+          if (FontKeyName.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(FontKeyName);
+          }
+          if (FontColor.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(FontColor);
+          }
+          content_.WriteTo(output, _repeated_content_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (SignatureId != 0) {
+            output.WriteRawTag(8);
+            output.WriteInt32(SignatureId);
+          }
+          if (FontKeyName.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(FontKeyName);
+          }
+          if (FontColor.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(FontColor);
+          }
+          content_.WriteTo(ref output, _repeated_content_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (SignatureId != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeInt32Size(SignatureId);
+          }
+          if (FontKeyName.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(FontKeyName);
+          }
+          if (FontColor.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(FontColor);
+          }
+          size += content_.CalculateSize(_repeated_content_codec);
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(SignatureData other) {
+          if (other == null) {
+            return;
+          }
+          if (other.SignatureId != 0) {
+            SignatureId = other.SignatureId;
+          }
+          if (other.FontKeyName.Length != 0) {
+            FontKeyName = other.FontKeyName;
+          }
+          if (other.FontColor.Length != 0) {
+            FontColor = other.FontColor;
+          }
+          content_.Add(other.content_);
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 8: {
+                SignatureId = input.ReadInt32();
+                break;
+              }
+              case 18: {
+                FontKeyName = input.ReadString();
+                break;
+              }
+              case 26: {
+                FontColor = input.ReadString();
+                break;
+              }
+              case 34: {
+                content_.AddEntriesFrom(input, _repeated_content_codec);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                SignatureId = input.ReadInt32();
+                break;
+              }
+              case 18: {
+                FontKeyName = input.ReadString();
+                break;
+              }
+              case 26: {
+                FontColor = input.ReadString();
+                break;
+              }
+              case 34: {
+                content_.AddEntriesFrom(ref input, _repeated_content_codec);
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+        #region Nested types
+        /// <summary>Container for nested types declared in the SignatureData message type.</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static partial class Types {
+          public sealed partial class SignatureContent : pb::IMessage<SignatureContent>
+          #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+              , pb::IBufferMessage
+          #endif
+          {
+            private static readonly pb::MessageParser<SignatureContent> _parser = new pb::MessageParser<SignatureContent>(() => new SignatureContent());
+            private pb::UnknownFieldSet _unknownFields;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public static pb::MessageParser<SignatureContent> Parser { get { return _parser; } }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public static pbr::MessageDescriptor Descriptor {
+              get { return global::TbClient.Post.Reply.Types.SignatureData.Descriptor.NestedTypes[0]; }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            pbr::MessageDescriptor pb::IMessage.Descriptor {
+              get { return Descriptor; }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public SignatureContent() {
+              OnConstruction();
+            }
+
+            partial void OnConstruction();
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public SignatureContent(SignatureContent other) : this() {
+              type_ = other.type_;
+              text_ = other.text_;
+              _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public SignatureContent Clone() {
+              return new SignatureContent(this);
+            }
+
+            /// <summary>Field number for the "type" field.</summary>
+            public const int TypeFieldNumber = 1;
+            private int type_;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public int Type {
+              get { return type_; }
+              set {
+                type_ = value;
+              }
+            }
+
+            /// <summary>Field number for the "text" field.</summary>
+            public const int TextFieldNumber = 2;
+            private string text_ = "";
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public string Text {
+              get { return text_; }
+              set {
+                text_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+              }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public override bool Equals(object other) {
+              return Equals(other as SignatureContent);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public bool Equals(SignatureContent other) {
+              if (ReferenceEquals(other, null)) {
+                return false;
+              }
+              if (ReferenceEquals(other, this)) {
+                return true;
+              }
+              if (Type != other.Type) return false;
+              if (Text != other.Text) return false;
+              return Equals(_unknownFields, other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public override int GetHashCode() {
+              int hash = 1;
+              if (Type != 0) hash ^= Type.GetHashCode();
+              if (Text.Length != 0) hash ^= Text.GetHashCode();
+              if (_unknownFields != null) {
+                hash ^= _unknownFields.GetHashCode();
+              }
+              return hash;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public override string ToString() {
+              return pb::JsonFormatter.ToDiagnosticString(this);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void WriteTo(pb::CodedOutputStream output) {
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+              output.WriteRawMessage(this);
+            #else
+              if (Type != 0) {
+                output.WriteRawTag(8);
+                output.WriteInt32(Type);
+              }
+              if (Text.Length != 0) {
+                output.WriteRawTag(18);
+                output.WriteString(Text);
+              }
+              if (_unknownFields != null) {
+                _unknownFields.WriteTo(output);
+              }
+            #endif
+            }
+
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+              if (Type != 0) {
+                output.WriteRawTag(8);
+                output.WriteInt32(Type);
+              }
+              if (Text.Length != 0) {
+                output.WriteRawTag(18);
+                output.WriteString(Text);
+              }
+              if (_unknownFields != null) {
+                _unknownFields.WriteTo(ref output);
+              }
+            }
+            #endif
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public int CalculateSize() {
+              int size = 0;
+              if (Type != 0) {
+                size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
+              }
+              if (Text.Length != 0) {
+                size += 1 + pb::CodedOutputStream.ComputeStringSize(Text);
+              }
+              if (_unknownFields != null) {
+                size += _unknownFields.CalculateSize();
+              }
+              return size;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void MergeFrom(SignatureContent other) {
+              if (other == null) {
+                return;
+              }
+              if (other.Type != 0) {
+                Type = other.Type;
+              }
+              if (other.Text.Length != 0) {
+                Text = other.Text;
+              }
+              _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void MergeFrom(pb::CodedInputStream input) {
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+              input.ReadRawMessage(this);
+            #else
+              uint tag;
+              while ((tag = input.ReadTag()) != 0) {
+                switch(tag) {
+                  default:
+                    _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                    break;
+                  case 8: {
+                    Type = input.ReadInt32();
+                    break;
+                  }
+                  case 18: {
+                    Text = input.ReadString();
+                    break;
+                  }
+                }
+              }
+            #endif
+            }
+
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+              uint tag;
+              while ((tag = input.ReadTag()) != 0) {
+                switch(tag) {
+                  default:
+                    _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                    break;
+                  case 8: {
+                    Type = input.ReadInt32();
+                    break;
+                  }
+                  case 18: {
+                    Text = input.ReadString();
+                    break;
+                  }
+                }
+              }
+            }
+            #endif
+
+          }
+
+        }
+        #endregion
+
+      }
+
+    }
+    #endregion
 
   }
 

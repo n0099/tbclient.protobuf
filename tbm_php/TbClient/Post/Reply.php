@@ -46,7 +46,7 @@ class Reply extends \Google\Protobuf\Internal\Message
      */
     protected $author_id = 0;
     /**
-     * Generated from protobuf field <code>.tbClient.post.replyDeps.SignatureData signature = 21;</code>
+     * Generated from protobuf field <code>.tbClient.post.Reply.SignatureData signature = 21;</code>
      */
     protected $signature = null;
     /**
@@ -80,7 +80,7 @@ class Reply extends \Google\Protobuf\Internal\Message
      *     @type \TbClient\Post\Common\Lbs $lbs_info
      *     @type int $sub_post_number
      *     @type int|string $author_id
-     *     @type \TbClient\Post\ReplyDeps\SignatureData $signature
+     *     @type \TbClient\Post\Reply\SignatureData $signature
      *     @type \TbClient\User $author
      *     @type \TbClient\Post\Common\Zan $zan
      *     @type \TbClient\Post\Common\Agree $agree
@@ -279,8 +279,8 @@ class Reply extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.tbClient.post.replyDeps.SignatureData signature = 21;</code>
-     * @return \TbClient\Post\ReplyDeps\SignatureData|null
+     * Generated from protobuf field <code>.tbClient.post.Reply.SignatureData signature = 21;</code>
+     * @return \TbClient\Post\Reply\SignatureData|null
      */
     public function getSignature()
     {
@@ -298,13 +298,13 @@ class Reply extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.tbClient.post.replyDeps.SignatureData signature = 21;</code>
-     * @param \TbClient\Post\ReplyDeps\SignatureData $var
+     * Generated from protobuf field <code>.tbClient.post.Reply.SignatureData signature = 21;</code>
+     * @param \TbClient\Post\Reply\SignatureData $var
      * @return $this
      */
     public function setSignature($var)
     {
-        GPBUtil::checkMessage($var, \TbClient\Post\ReplyDeps\SignatureData::class);
+        GPBUtil::checkMessage($var, \TbClient\Post\Reply\SignatureData::class);
         $this->signature = $var;
 
         return $this;

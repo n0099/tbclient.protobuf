@@ -15,13 +15,10 @@ class Content
           return;
         }
         \GPBMetadata\Item\Item::initOnce();
-        \GPBMetadata\Post\Common\TiebaPlusInfo::initOnce();
-        \GPBMetadata\Post\Common\TogetherHi::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ö
-
-Post/Common/Content.prototbClient.post.commonPost/Common/TiebaPlusInfo.protoPost/Common/TogetherHi.proto"û	
+•
+Post/Common/Content.prototbClient.post.common"Ù
 Content
 type (
 text (	
@@ -54,8 +51,8 @@ origin_src (	
 btn_type (
 origin_size (
 count (A
-graffiti_info (2*.tbClient.post.common.Content.GraffitiInfo7
-high_together (2 .tbClient.post.common.TogetherHi
+graffiti_info (2*.tbClient.post.common.Content.GraffitiInfo?
+high_together (2(.tbClient.post.common.Content.TogetherHi
 media_subtitle (	
 url_type  (9
 	meme_info! (2&.tbClient.post.common.Content.MemeInfo
@@ -64,8 +61,8 @@ origin_src (	
 cdn_src_active$ (	
 topic_special_icon% (	
 item_id& (
-item_forum_name\' (	;
-tiebaplus_info( (2#.tbClient.post.common.TiebaPlusInfo!
+item_forum_name\' (	C
+tiebaplus_info( (2+.tbClient.post.common.Content.TiebaPlusInfo!
 item) (2.tbClient.item.Item
 pic_id* ([
 	NativeApp
@@ -75,7 +72,21 @@ origin_src (	
 download_ios (	(
 GraffitiInfo
 url (	
-gid (‚
+gid (´
+
+TogetherHi
+
+album_name (	
+album_id (
+
+start_time (
+end_time (
+location (	
+
+num_signup (
+potraits (	
+num_join (
+pic_urls	 (	‚
 MemeInfo
 pck_id (
 pic_id (
@@ -83,7 +94,42 @@ origin_src (	
 	thumbnail (	
 width (
 height (
-detail_link (	bproto3'
+detail_link (	”
+TiebaPlusInfo
+title (	
+desc (	
+jump_url (	
+download_url (	
+app_id (	
+app_icon (	
+app_package (	
+app_version (	
+app_privacy	 (	
+	app_power
+ (	
+app_company (	
+target_type (
+h5_jump_type (
+h5_jump_number (	
+h5_jump_param (	
+	jump_type (
+item_id (	
+
+is_appoint (K
+plugin_user (26.tbClient.post.common.Content.TiebaPlusInfo.PluginUser
+
+forum_name (	
+jump_setting (
+wx_thumbnail (	
+button_desc (	€
+
+PluginUser
+user_id (
+user_name_show (	
+	user_type (
+
+user_photo (	"
+is_download_card_whiteuser (bproto3'
         , true);
 
         static::$is_initialized = true;

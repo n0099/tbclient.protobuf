@@ -26,22 +26,26 @@ namespace TbClient.Post {
           string.Concat(
             "ChFQb3N0L1RocmVhZC5wcm90bxINdGJDbGllbnQucG9zdBoKVXNlci5wcm90",
             "bxoVUG9zdC9Db21tb24vWmFuLnByb3RvGhVQb3N0L0NvbW1vbi9MYnMucHJv",
-            "dG8aF1Bvc3QvQ29tbW9uL0FncmVlLnByb3RvIvIDCgZUaHJlYWQSCwoDdGlk",
+            "dG8aF1Bvc3QvQ29tbW9uL0FncmVlLnByb3RvIpIFCgZUaHJlYWQSCwoDdGlk",
             "GAIgASgDEg0KBXRpdGxlGAMgASgJEhEKCXJlcGx5X251bRgEIAEoBRIQCgh2",
             "aWV3X251bRgFIAEoBRIVCg1sYXN0X3RpbWVfaW50GAcgASgFEhQKDHRocmVh",
             "ZF90eXBlcxgIIAEoBRIOCgZpc190b3AYCSABKAUSDwoHaXNfZ29vZBgKIAEo",
             "BRIeCgZhdXRob3IYEiABKAsyDi50YkNsaWVudC5Vc2VyEiQKDGxhc3RfcmVw",
-            "bHllchgTIAEoCzIOLnRiQ2xpZW50LlVzZXISFgoObGl2ZV9wb3N0X3R5cGUY",
-            "HSABKAkSFQoNZmlyc3RfcG9zdF9pZBgoIAEoAxImCgN6YW4YKSABKAsyGS50",
-            "YkNsaWVudC5wb3N0LmNvbW1vbi5aYW4SEwoLY3JlYXRlX3RpbWUYLSABKAUS",
-            "FAoMaXNfbWVtYmVydG9wGDYgASgFEhEKCWF1dGhvcl9pZBg4IAEoAxIrCghs",
-            "b2NhdGlvbhg+IAEoCzIZLnRiQ2xpZW50LnBvc3QuY29tbW9uLkxicxIRCglh",
-            "Z3JlZV9udW0YfCABKAUSKgoFYWdyZWUYfiABKAsyGy50YkNsaWVudC5wb3N0",
-            "LmNvbW1vbi5BZ3JlZRISCglzaGFyZV9udW0YhwEgASgDYgZwcm90bzM="));
+            "bHllchgTIAEoCzIOLnRiQ2xpZW50LlVzZXISMQoJX2Fic3RyYWN0GBUgAygL",
+            "Mh4udGJDbGllbnQucG9zdC5UaHJlYWQuQWJzdHJhY3QSCwoDZmlkGBsgASgD",
+            "EhYKDmxpdmVfcG9zdF90eXBlGB0gASgJEiYKA3phbhgpIAEoCzIZLnRiQ2xp",
+            "ZW50LnBvc3QuY29tbW9uLlphbhITCgtjcmVhdGVfdGltZRgtIAEoBRIUCgxp",
+            "c19tZW1iZXJ0b3AYNiABKAUSEQoJYXV0aG9yX2lkGDggASgDEisKCGxvY2F0",
+            "aW9uGD4gASgLMhkudGJDbGllbnQucG9zdC5jb21tb24uTGJzEhEKCWFncmVl",
+            "X251bRh8IAEoBRIqCgVhZ3JlZRh+IAEoCzIbLnRiQ2xpZW50LnBvc3QuY29t",
+            "bW9uLkFncmVlEhIKCXNoYXJlX251bRiHASABKAMadQoIQWJzdHJhY3QSDAoE",
+            "dHlwZRgBIAEoBRIMCgR0ZXh0GAIgASgJEgwKBGxpbmsYAyABKAkSCwoDc3Jj",
+            "GAQgASgJEgoKAnVuGAUgASgJEhMKC2R1cmluZ190aW1lGAYgASgJEhEKCXZv",
+            "aWNlX21kNRgHIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TbClient.UserReflection.Descriptor, global::TbClient.Post.Common.ZanReflection.Descriptor, global::TbClient.Post.Common.LbsReflection.Descriptor, global::TbClient.Post.Common.AgreeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Thread), global::TbClient.Post.Thread.Parser, new[]{ "Tid", "Title", "ReplyNum", "ViewNum", "LastTimeInt", "ThreadTypes", "IsTop", "IsGood", "Author", "LastReplyer", "LivePostType", "FirstPostId", "Zan", "CreateTime", "IsMembertop", "AuthorId", "Location", "AgreeNum", "Agree", "ShareNum" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Thread), global::TbClient.Post.Thread.Parser, new[]{ "Tid", "Title", "ReplyNum", "ViewNum", "LastTimeInt", "ThreadTypes", "IsTop", "IsGood", "Author", "LastReplyer", "Abstract", "Fid", "LivePostType", "Zan", "CreateTime", "IsMembertop", "AuthorId", "Location", "AgreeNum", "Agree", "ShareNum" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Thread.Types.Abstract), global::TbClient.Post.Thread.Types.Abstract.Parser, new[]{ "Type", "Text", "Link", "Src", "Un", "DuringTime", "VoiceMd5" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -92,8 +96,9 @@ namespace TbClient.Post {
       isGood_ = other.isGood_;
       author_ = other.author_ != null ? other.author_.Clone() : null;
       lastReplyer_ = other.lastReplyer_ != null ? other.lastReplyer_.Clone() : null;
+      Abstract_ = other.Abstract_.Clone();
+      fid_ = other.fid_;
       livePostType_ = other.livePostType_;
-      firstPostId_ = other.firstPostId_;
       zan_ = other.zan_ != null ? other.zan_.Clone() : null;
       createTime_ = other.createTime_;
       isMembertop_ = other.isMembertop_;
@@ -231,6 +236,29 @@ namespace TbClient.Post {
       }
     }
 
+    /// <summary>Field number for the "_abstract" field.</summary>
+    public const int AbstractFieldNumber = 21;
+    private static readonly pb::FieldCodec<global::TbClient.Post.Thread.Types.Abstract> _repeated_Abstract_codec
+        = pb::FieldCodec.ForMessage(170, global::TbClient.Post.Thread.Types.Abstract.Parser);
+    private readonly pbc::RepeatedField<global::TbClient.Post.Thread.Types.Abstract> Abstract_ = new pbc::RepeatedField<global::TbClient.Post.Thread.Types.Abstract>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TbClient.Post.Thread.Types.Abstract> Abstract {
+      get { return Abstract_; }
+    }
+
+    /// <summary>Field number for the "fid" field.</summary>
+    public const int FidFieldNumber = 27;
+    private long fid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long Fid {
+      get { return fid_; }
+      set {
+        fid_ = value;
+      }
+    }
+
     /// <summary>Field number for the "live_post_type" field.</summary>
     public const int LivePostTypeFieldNumber = 29;
     private string livePostType_ = "";
@@ -240,18 +268,6 @@ namespace TbClient.Post {
       get { return livePostType_; }
       set {
         livePostType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "first_post_id" field.</summary>
-    public const int FirstPostIdFieldNumber = 40;
-    private long firstPostId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public long FirstPostId {
-      get { return firstPostId_; }
-      set {
-        firstPostId_ = value;
       }
     }
 
@@ -376,8 +392,9 @@ namespace TbClient.Post {
       if (IsGood != other.IsGood) return false;
       if (!object.Equals(Author, other.Author)) return false;
       if (!object.Equals(LastReplyer, other.LastReplyer)) return false;
+      if(!Abstract_.Equals(other.Abstract_)) return false;
+      if (Fid != other.Fid) return false;
       if (LivePostType != other.LivePostType) return false;
-      if (FirstPostId != other.FirstPostId) return false;
       if (!object.Equals(Zan, other.Zan)) return false;
       if (CreateTime != other.CreateTime) return false;
       if (IsMembertop != other.IsMembertop) return false;
@@ -403,8 +420,9 @@ namespace TbClient.Post {
       if (IsGood != 0) hash ^= IsGood.GetHashCode();
       if (author_ != null) hash ^= Author.GetHashCode();
       if (lastReplyer_ != null) hash ^= LastReplyer.GetHashCode();
+      hash ^= Abstract_.GetHashCode();
+      if (Fid != 0L) hash ^= Fid.GetHashCode();
       if (LivePostType.Length != 0) hash ^= LivePostType.GetHashCode();
-      if (FirstPostId != 0L) hash ^= FirstPostId.GetHashCode();
       if (zan_ != null) hash ^= Zan.GetHashCode();
       if (CreateTime != 0) hash ^= CreateTime.GetHashCode();
       if (IsMembertop != 0) hash ^= IsMembertop.GetHashCode();
@@ -471,13 +489,14 @@ namespace TbClient.Post {
         output.WriteRawTag(154, 1);
         output.WriteMessage(LastReplyer);
       }
+      Abstract_.WriteTo(output, _repeated_Abstract_codec);
+      if (Fid != 0L) {
+        output.WriteRawTag(216, 1);
+        output.WriteInt64(Fid);
+      }
       if (LivePostType.Length != 0) {
         output.WriteRawTag(234, 1);
         output.WriteString(LivePostType);
-      }
-      if (FirstPostId != 0L) {
-        output.WriteRawTag(192, 2);
-        output.WriteInt64(FirstPostId);
       }
       if (zan_ != null) {
         output.WriteRawTag(202, 2);
@@ -561,13 +580,14 @@ namespace TbClient.Post {
         output.WriteRawTag(154, 1);
         output.WriteMessage(LastReplyer);
       }
+      Abstract_.WriteTo(ref output, _repeated_Abstract_codec);
+      if (Fid != 0L) {
+        output.WriteRawTag(216, 1);
+        output.WriteInt64(Fid);
+      }
       if (LivePostType.Length != 0) {
         output.WriteRawTag(234, 1);
         output.WriteString(LivePostType);
-      }
-      if (FirstPostId != 0L) {
-        output.WriteRawTag(192, 2);
-        output.WriteInt64(FirstPostId);
       }
       if (zan_ != null) {
         output.WriteRawTag(202, 2);
@@ -641,11 +661,12 @@ namespace TbClient.Post {
       if (lastReplyer_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(LastReplyer);
       }
+      size += Abstract_.CalculateSize(_repeated_Abstract_codec);
+      if (Fid != 0L) {
+        size += 2 + pb::CodedOutputStream.ComputeInt64Size(Fid);
+      }
       if (LivePostType.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(LivePostType);
-      }
-      if (FirstPostId != 0L) {
-        size += 2 + pb::CodedOutputStream.ComputeInt64Size(FirstPostId);
       }
       if (zan_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Zan);
@@ -719,11 +740,12 @@ namespace TbClient.Post {
         }
         LastReplyer.MergeFrom(other.LastReplyer);
       }
+      Abstract_.Add(other.Abstract_);
+      if (other.Fid != 0L) {
+        Fid = other.Fid;
+      }
       if (other.LivePostType.Length != 0) {
         LivePostType = other.LivePostType;
-      }
-      if (other.FirstPostId != 0L) {
-        FirstPostId = other.FirstPostId;
       }
       if (other.zan_ != null) {
         if (zan_ == null) {
@@ -819,12 +841,16 @@ namespace TbClient.Post {
             input.ReadMessage(LastReplyer);
             break;
           }
-          case 234: {
-            LivePostType = input.ReadString();
+          case 170: {
+            Abstract_.AddEntriesFrom(input, _repeated_Abstract_codec);
             break;
           }
-          case 320: {
-            FirstPostId = input.ReadInt64();
+          case 216: {
+            Fid = input.ReadInt64();
+            break;
+          }
+          case 234: {
+            LivePostType = input.ReadString();
             break;
           }
           case 330: {
@@ -929,12 +955,16 @@ namespace TbClient.Post {
             input.ReadMessage(LastReplyer);
             break;
           }
-          case 234: {
-            LivePostType = input.ReadString();
+          case 170: {
+            Abstract_.AddEntriesFrom(ref input, _repeated_Abstract_codec);
             break;
           }
-          case 320: {
-            FirstPostId = input.ReadInt64();
+          case 216: {
+            Fid = input.ReadInt64();
+            break;
+          }
+          case 234: {
+            LivePostType = input.ReadString();
             break;
           }
           case 330: {
@@ -982,6 +1012,425 @@ namespace TbClient.Post {
       }
     }
     #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the Thread message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public sealed partial class Abstract : pb::IMessage<Abstract>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<Abstract> _parser = new pb::MessageParser<Abstract>(() => new Abstract());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<Abstract> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::TbClient.Post.Thread.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Abstract() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Abstract(Abstract other) : this() {
+          type_ = other.type_;
+          text_ = other.text_;
+          link_ = other.link_;
+          src_ = other.src_;
+          un_ = other.un_;
+          duringTime_ = other.duringTime_;
+          voiceMd5_ = other.voiceMd5_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public Abstract Clone() {
+          return new Abstract(this);
+        }
+
+        /// <summary>Field number for the "type" field.</summary>
+        public const int TypeFieldNumber = 1;
+        private int type_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int Type {
+          get { return type_; }
+          set {
+            type_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "text" field.</summary>
+        public const int TextFieldNumber = 2;
+        private string text_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string Text {
+          get { return text_; }
+          set {
+            text_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "link" field.</summary>
+        public const int LinkFieldNumber = 3;
+        private string link_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string Link {
+          get { return link_; }
+          set {
+            link_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "src" field.</summary>
+        public const int SrcFieldNumber = 4;
+        private string src_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string Src {
+          get { return src_; }
+          set {
+            src_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "un" field.</summary>
+        public const int UnFieldNumber = 5;
+        private string un_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string Un {
+          get { return un_; }
+          set {
+            un_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "during_time" field.</summary>
+        public const int DuringTimeFieldNumber = 6;
+        private string duringTime_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string DuringTime {
+          get { return duringTime_; }
+          set {
+            duringTime_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "voice_md5" field.</summary>
+        public const int VoiceMd5FieldNumber = 7;
+        private string voiceMd5_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string VoiceMd5 {
+          get { return voiceMd5_; }
+          set {
+            voiceMd5_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as Abstract);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(Abstract other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Type != other.Type) return false;
+          if (Text != other.Text) return false;
+          if (Link != other.Link) return false;
+          if (Src != other.Src) return false;
+          if (Un != other.Un) return false;
+          if (DuringTime != other.DuringTime) return false;
+          if (VoiceMd5 != other.VoiceMd5) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Type != 0) hash ^= Type.GetHashCode();
+          if (Text.Length != 0) hash ^= Text.GetHashCode();
+          if (Link.Length != 0) hash ^= Link.GetHashCode();
+          if (Src.Length != 0) hash ^= Src.GetHashCode();
+          if (Un.Length != 0) hash ^= Un.GetHashCode();
+          if (DuringTime.Length != 0) hash ^= DuringTime.GetHashCode();
+          if (VoiceMd5.Length != 0) hash ^= VoiceMd5.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (Type != 0) {
+            output.WriteRawTag(8);
+            output.WriteInt32(Type);
+          }
+          if (Text.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(Text);
+          }
+          if (Link.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(Link);
+          }
+          if (Src.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(Src);
+          }
+          if (Un.Length != 0) {
+            output.WriteRawTag(42);
+            output.WriteString(Un);
+          }
+          if (DuringTime.Length != 0) {
+            output.WriteRawTag(50);
+            output.WriteString(DuringTime);
+          }
+          if (VoiceMd5.Length != 0) {
+            output.WriteRawTag(58);
+            output.WriteString(VoiceMd5);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Type != 0) {
+            output.WriteRawTag(8);
+            output.WriteInt32(Type);
+          }
+          if (Text.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(Text);
+          }
+          if (Link.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(Link);
+          }
+          if (Src.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(Src);
+          }
+          if (Un.Length != 0) {
+            output.WriteRawTag(42);
+            output.WriteString(Un);
+          }
+          if (DuringTime.Length != 0) {
+            output.WriteRawTag(50);
+            output.WriteString(DuringTime);
+          }
+          if (VoiceMd5.Length != 0) {
+            output.WriteRawTag(58);
+            output.WriteString(VoiceMd5);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (Type != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
+          }
+          if (Text.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Text);
+          }
+          if (Link.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Link);
+          }
+          if (Src.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Src);
+          }
+          if (Un.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Un);
+          }
+          if (DuringTime.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(DuringTime);
+          }
+          if (VoiceMd5.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(VoiceMd5);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(Abstract other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Type != 0) {
+            Type = other.Type;
+          }
+          if (other.Text.Length != 0) {
+            Text = other.Text;
+          }
+          if (other.Link.Length != 0) {
+            Link = other.Link;
+          }
+          if (other.Src.Length != 0) {
+            Src = other.Src;
+          }
+          if (other.Un.Length != 0) {
+            Un = other.Un;
+          }
+          if (other.DuringTime.Length != 0) {
+            DuringTime = other.DuringTime;
+          }
+          if (other.VoiceMd5.Length != 0) {
+            VoiceMd5 = other.VoiceMd5;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 8: {
+                Type = input.ReadInt32();
+                break;
+              }
+              case 18: {
+                Text = input.ReadString();
+                break;
+              }
+              case 26: {
+                Link = input.ReadString();
+                break;
+              }
+              case 34: {
+                Src = input.ReadString();
+                break;
+              }
+              case 42: {
+                Un = input.ReadString();
+                break;
+              }
+              case 50: {
+                DuringTime = input.ReadString();
+                break;
+              }
+              case 58: {
+                VoiceMd5 = input.ReadString();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                Type = input.ReadInt32();
+                break;
+              }
+              case 18: {
+                Text = input.ReadString();
+                break;
+              }
+              case 26: {
+                Link = input.ReadString();
+                break;
+              }
+              case 34: {
+                Src = input.ReadString();
+                break;
+              }
+              case 42: {
+                Un = input.ReadString();
+                break;
+              }
+              case 50: {
+                DuringTime = input.ReadString();
+                break;
+              }
+              case 58: {
+                VoiceMd5 = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+    }
+    #endregion
 
   }
 

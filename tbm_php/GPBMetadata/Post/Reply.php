@@ -19,11 +19,10 @@ class Reply
         \GPBMetadata\Post\Common\Lbs::initOnce();
         \GPBMetadata\Post\Common\Agree::initOnce();
         \GPBMetadata\Post\Common\Zan::initOnce();
-        \GPBMetadata\Post\ReplyDeps\SignatureData::initOnce();
         $pool->internalAddGeneratedFile(
             '
-»
-Post/Reply.prototbClient.postPost/Common/Content.protoPost/Common/Lbs.protoPost/Common/Agree.protoPost/Common/Zan.proto"Post/ReplyDeps/SignatureData.proto"‰
+Ù
+Post/Reply.prototbClient.postPost/Common/Content.protoPost/Common/Lbs.protoPost/Common/Agree.protoPost/Common/Zan.proto"Ë
 Reply
 pid (
 title (	
@@ -32,12 +31,20 @@ class Reply
 content (2.tbClient.post.common.Content+
 lbs_info (2.tbClient.post.common.Lbs
 sub_post_number (
-	author_id (9
-	signature (2&.tbClient.post.replyDeps.SignatureData
+	author_id (5
+	signature (2".tbClient.post.Reply.SignatureData
 author (2.tbClient.User&
 zan (2.tbClient.post.common.Zan*
 agree% (2.tbClient.post.common.Agree
-is_fold+ (bproto3'
+is_fold+ (Ã
+SignatureData
+signature_id (
+fontKeyName (	
+	fontColor (	D
+content (23.tbClient.post.Reply.SignatureData.SignatureContent.
+SignatureContent
+type (
+text (	bproto3'
         , true);
 
         static::$is_initialized = true;

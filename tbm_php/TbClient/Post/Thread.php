@@ -54,13 +54,17 @@ class Thread extends \Google\Protobuf\Internal\Message
      */
     protected $last_replyer = null;
     /**
+     * Generated from protobuf field <code>repeated .tbClient.post.Thread.Abstract _abstract = 21;</code>
+     */
+    private $_abstract;
+    /**
+     * Generated from protobuf field <code>int64 fid = 27;</code>
+     */
+    protected $fid = 0;
+    /**
      * Generated from protobuf field <code>string live_post_type = 29;</code>
      */
     protected $live_post_type = '';
-    /**
-     * Generated from protobuf field <code>int64 first_post_id = 40;</code>
-     */
-    protected $first_post_id = 0;
     /**
      * Generated from protobuf field <code>.tbClient.post.common.Zan zan = 41;</code>
      */
@@ -110,8 +114,9 @@ class Thread extends \Google\Protobuf\Internal\Message
      *     @type int $is_good
      *     @type \TbClient\User $author
      *     @type \TbClient\User $last_replyer
+     *     @type array<\TbClient\Post\Thread\PBAbstract>|\Google\Protobuf\Internal\RepeatedField $_abstract
+     *     @type int|string $fid
      *     @type string $live_post_type
-     *     @type int|string $first_post_id
      *     @type \TbClient\Post\Common\Zan $zan
      *     @type int $create_time
      *     @type int $is_membertop
@@ -368,6 +373,50 @@ class Thread extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>repeated .tbClient.post.Thread.Abstract _abstract = 21;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAbstract()
+    {
+        return $this->_abstract;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .tbClient.post.Thread.Abstract _abstract = 21;</code>
+     * @param array<\TbClient\Post\Thread\PBAbstract>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAbstract($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \TbClient\Post\Thread\PBAbstract::class);
+        $this->_abstract = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 fid = 27;</code>
+     * @return int|string
+     */
+    public function getFid()
+    {
+        return $this->fid;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 fid = 27;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setFid($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->fid = $var;
+
+        return $this;
+    }
+
+    /**
      * Generated from protobuf field <code>string live_post_type = 29;</code>
      * @return string
      */
@@ -385,28 +434,6 @@ class Thread extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->live_post_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 first_post_id = 40;</code>
-     * @return int|string
-     */
-    public function getFirstPostId()
-    {
-        return $this->first_post_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 first_post_id = 40;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setFirstPostId($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->first_post_id = $var;
 
         return $this;
     }
