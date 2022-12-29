@@ -17,10 +17,10 @@ for lang in "$@"; do
 
     case $lang in
         cs)
-            ./protoc --csharp_out="$DIR" --csharp_opt=base_namespace=TbClient,file_extension=.g.cs --proto_path="$PROTO_PATH" "$(find "$PROTO_PATH" -type f -name '*.proto')"
+            find "$PROTO_PATH" -type f -name '*.proto' -printf '"%p" ' | xargs ./protoc --csharp_out="$DIR" --csharp_opt=base_namespace=TbClient,file_extension=.g.cs --proto_path="$PROTO_PATH"
             ;;
         *)
-            ./protoc --"$lang"_out="$DIR" --proto_path="$PROTO_PATH" "$(find "$PROTO_PATH" -type f -name '*.proto')"
+            find "$PROTO_PATH" -type f -name '*.proto' -printf '"%p" ' | xargs ./protoc --"$lang"_out="$DIR" --proto_path="$PROTO_PATH"
             ;;
     esac
 
