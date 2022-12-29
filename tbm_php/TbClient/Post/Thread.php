@@ -66,6 +66,10 @@ class Thread extends \Google\Protobuf\Internal\Message
      */
     protected $live_post_type = '';
     /**
+     * Generated from protobuf field <code>int64 first_post_id = 40;</code>
+     */
+    protected $first_post_id = 0;
+    /**
      * Generated from protobuf field <code>.tbClient.post.common.Zan zan = 41;</code>
      */
     protected $zan = null;
@@ -117,6 +121,7 @@ class Thread extends \Google\Protobuf\Internal\Message
      *     @type array<\TbClient\Post\Thread\PBAbstract>|\Google\Protobuf\Internal\RepeatedField $_abstract
      *     @type int|string $fid
      *     @type string $live_post_type
+     *     @type int|string $first_post_id
      *     @type \TbClient\Post\Common\Zan $zan
      *     @type int $create_time
      *     @type int $is_membertop
@@ -434,6 +439,28 @@ class Thread extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->live_post_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 first_post_id = 40;</code>
+     * @return int|string
+     */
+    public function getFirstPostId()
+    {
+        return $this->first_post_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 first_post_id = 40;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setFirstPostId($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->first_post_id = $var;
 
         return $this;
     }

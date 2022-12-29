@@ -26,26 +26,26 @@ namespace TbClient.Post {
           string.Concat(
             "ChFQb3N0L1RocmVhZC5wcm90bxINdGJDbGllbnQucG9zdBoKVXNlci5wcm90",
             "bxoVUG9zdC9Db21tb24vWmFuLnByb3RvGhVQb3N0L0NvbW1vbi9MYnMucHJv",
-            "dG8aF1Bvc3QvQ29tbW9uL0FncmVlLnByb3RvIpIFCgZUaHJlYWQSCwoDdGlk",
+            "dG8aF1Bvc3QvQ29tbW9uL0FncmVlLnByb3RvIqkFCgZUaHJlYWQSCwoDdGlk",
             "GAIgASgDEg0KBXRpdGxlGAMgASgJEhEKCXJlcGx5X251bRgEIAEoBRIQCgh2",
             "aWV3X251bRgFIAEoBRIVCg1sYXN0X3RpbWVfaW50GAcgASgFEhQKDHRocmVh",
             "ZF90eXBlcxgIIAEoBRIOCgZpc190b3AYCSABKAUSDwoHaXNfZ29vZBgKIAEo",
             "BRIeCgZhdXRob3IYEiABKAsyDi50YkNsaWVudC5Vc2VyEiQKDGxhc3RfcmVw",
             "bHllchgTIAEoCzIOLnRiQ2xpZW50LlVzZXISMQoJX2Fic3RyYWN0GBUgAygL",
             "Mh4udGJDbGllbnQucG9zdC5UaHJlYWQuQWJzdHJhY3QSCwoDZmlkGBsgASgD",
-            "EhYKDmxpdmVfcG9zdF90eXBlGB0gASgJEiYKA3phbhgpIAEoCzIZLnRiQ2xp",
-            "ZW50LnBvc3QuY29tbW9uLlphbhITCgtjcmVhdGVfdGltZRgtIAEoBRIUCgxp",
-            "c19tZW1iZXJ0b3AYNiABKAUSEQoJYXV0aG9yX2lkGDggASgDEisKCGxvY2F0",
-            "aW9uGD4gASgLMhkudGJDbGllbnQucG9zdC5jb21tb24uTGJzEhEKCWFncmVl",
-            "X251bRh8IAEoBRIqCgVhZ3JlZRh+IAEoCzIbLnRiQ2xpZW50LnBvc3QuY29t",
-            "bW9uLkFncmVlEhIKCXNoYXJlX251bRiHASABKAMadQoIQWJzdHJhY3QSDAoE",
-            "dHlwZRgBIAEoBRIMCgR0ZXh0GAIgASgJEgwKBGxpbmsYAyABKAkSCwoDc3Jj",
-            "GAQgASgJEgoKAnVuGAUgASgJEhMKC2R1cmluZ190aW1lGAYgASgJEhEKCXZv",
-            "aWNlX21kNRgHIAEoCWIGcHJvdG8z"));
+            "EhYKDmxpdmVfcG9zdF90eXBlGB0gASgJEhUKDWZpcnN0X3Bvc3RfaWQYKCAB",
+            "KAMSJgoDemFuGCkgASgLMhkudGJDbGllbnQucG9zdC5jb21tb24uWmFuEhMK",
+            "C2NyZWF0ZV90aW1lGC0gASgFEhQKDGlzX21lbWJlcnRvcBg2IAEoBRIRCglh",
+            "dXRob3JfaWQYOCABKAMSKwoIbG9jYXRpb24YPiABKAsyGS50YkNsaWVudC5w",
+            "b3N0LmNvbW1vbi5MYnMSEQoJYWdyZWVfbnVtGHwgASgFEioKBWFncmVlGH4g",
+            "ASgLMhsudGJDbGllbnQucG9zdC5jb21tb24uQWdyZWUSEgoJc2hhcmVfbnVt",
+            "GIcBIAEoAxp1CghBYnN0cmFjdBIMCgR0eXBlGAEgASgFEgwKBHRleHQYAiAB",
+            "KAkSDAoEbGluaxgDIAEoCRILCgNzcmMYBCABKAkSCgoCdW4YBSABKAkSEwoL",
+            "ZHVyaW5nX3RpbWUYBiABKAkSEQoJdm9pY2VfbWQ1GAcgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TbClient.UserReflection.Descriptor, global::TbClient.Post.Common.ZanReflection.Descriptor, global::TbClient.Post.Common.LbsReflection.Descriptor, global::TbClient.Post.Common.AgreeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Thread), global::TbClient.Post.Thread.Parser, new[]{ "Tid", "Title", "ReplyNum", "ViewNum", "LastTimeInt", "ThreadTypes", "IsTop", "IsGood", "Author", "LastReplyer", "Abstract", "Fid", "LivePostType", "Zan", "CreateTime", "IsMembertop", "AuthorId", "Location", "AgreeNum", "Agree", "ShareNum" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Thread.Types.Abstract), global::TbClient.Post.Thread.Types.Abstract.Parser, new[]{ "Type", "Text", "Link", "Src", "Un", "DuringTime", "VoiceMd5" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Thread), global::TbClient.Post.Thread.Parser, new[]{ "Tid", "Title", "ReplyNum", "ViewNum", "LastTimeInt", "ThreadTypes", "IsTop", "IsGood", "Author", "LastReplyer", "Abstract", "Fid", "LivePostType", "FirstPostId", "Zan", "CreateTime", "IsMembertop", "AuthorId", "Location", "AgreeNum", "Agree", "ShareNum" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Thread.Types.Abstract), global::TbClient.Post.Thread.Types.Abstract.Parser, new[]{ "Type", "Text", "Link", "Src", "Un", "DuringTime", "VoiceMd5" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -99,6 +99,7 @@ namespace TbClient.Post {
       Abstract_ = other.Abstract_.Clone();
       fid_ = other.fid_;
       livePostType_ = other.livePostType_;
+      firstPostId_ = other.firstPostId_;
       zan_ = other.zan_ != null ? other.zan_.Clone() : null;
       createTime_ = other.createTime_;
       isMembertop_ = other.isMembertop_;
@@ -271,6 +272,18 @@ namespace TbClient.Post {
       }
     }
 
+    /// <summary>Field number for the "first_post_id" field.</summary>
+    public const int FirstPostIdFieldNumber = 40;
+    private long firstPostId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long FirstPostId {
+      get { return firstPostId_; }
+      set {
+        firstPostId_ = value;
+      }
+    }
+
     /// <summary>Field number for the "zan" field.</summary>
     public const int ZanFieldNumber = 41;
     private global::TbClient.Post.Common.Zan zan_;
@@ -395,6 +408,7 @@ namespace TbClient.Post {
       if(!Abstract_.Equals(other.Abstract_)) return false;
       if (Fid != other.Fid) return false;
       if (LivePostType != other.LivePostType) return false;
+      if (FirstPostId != other.FirstPostId) return false;
       if (!object.Equals(Zan, other.Zan)) return false;
       if (CreateTime != other.CreateTime) return false;
       if (IsMembertop != other.IsMembertop) return false;
@@ -423,6 +437,7 @@ namespace TbClient.Post {
       hash ^= Abstract_.GetHashCode();
       if (Fid != 0L) hash ^= Fid.GetHashCode();
       if (LivePostType.Length != 0) hash ^= LivePostType.GetHashCode();
+      if (FirstPostId != 0L) hash ^= FirstPostId.GetHashCode();
       if (zan_ != null) hash ^= Zan.GetHashCode();
       if (CreateTime != 0) hash ^= CreateTime.GetHashCode();
       if (IsMembertop != 0) hash ^= IsMembertop.GetHashCode();
@@ -497,6 +512,10 @@ namespace TbClient.Post {
       if (LivePostType.Length != 0) {
         output.WriteRawTag(234, 1);
         output.WriteString(LivePostType);
+      }
+      if (FirstPostId != 0L) {
+        output.WriteRawTag(192, 2);
+        output.WriteInt64(FirstPostId);
       }
       if (zan_ != null) {
         output.WriteRawTag(202, 2);
@@ -589,6 +608,10 @@ namespace TbClient.Post {
         output.WriteRawTag(234, 1);
         output.WriteString(LivePostType);
       }
+      if (FirstPostId != 0L) {
+        output.WriteRawTag(192, 2);
+        output.WriteInt64(FirstPostId);
+      }
       if (zan_ != null) {
         output.WriteRawTag(202, 2);
         output.WriteMessage(Zan);
@@ -668,6 +691,9 @@ namespace TbClient.Post {
       if (LivePostType.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(LivePostType);
       }
+      if (FirstPostId != 0L) {
+        size += 2 + pb::CodedOutputStream.ComputeInt64Size(FirstPostId);
+      }
       if (zan_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Zan);
       }
@@ -746,6 +772,9 @@ namespace TbClient.Post {
       }
       if (other.LivePostType.Length != 0) {
         LivePostType = other.LivePostType;
+      }
+      if (other.FirstPostId != 0L) {
+        FirstPostId = other.FirstPostId;
       }
       if (other.zan_ != null) {
         if (zan_ == null) {
@@ -851,6 +880,10 @@ namespace TbClient.Post {
           }
           case 234: {
             LivePostType = input.ReadString();
+            break;
+          }
+          case 320: {
+            FirstPostId = input.ReadInt64();
             break;
           }
           case 330: {
@@ -965,6 +998,10 @@ namespace TbClient.Post {
           }
           case 234: {
             LivePostType = input.ReadString();
+            break;
+          }
+          case 320: {
+            FirstPostId = input.ReadInt64();
             break;
           }
           case 330: {

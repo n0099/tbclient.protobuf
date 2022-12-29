@@ -20,8 +20,8 @@ class Thread
         \GPBMetadata\Post\Common\Agree::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ü
-Post/Thread.prototbClient.postPost/Common/Zan.protoPost/Common/Lbs.protoPost/Common/Agree.proto"í
+ù
+Post/Thread.prototbClient.postPost/Common/Zan.protoPost/Common/Lbs.protoPost/Common/Agree.proto"©
 Thread
 tid (
 title (	
@@ -36,7 +36,8 @@ class Thread
 last_replyer (2.tbClient.User1
 	_abstract (2.tbClient.post.Thread.Abstract
 fid (
-live_post_type (	&
+live_post_type (	
+first_post_id( (&
 zan) (2.tbClient.post.common.Zan
 create_time- (
 is_membertop6 (
