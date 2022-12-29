@@ -1,6 +1,0 @@
-syntax = "proto3";
-package tbClient.api.request;
-
-message Common {
-    string _client_version = 2;
-}

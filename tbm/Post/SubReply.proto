@@ -1,21 +1,13 @@
 syntax = "proto3";
 package tbClient.post;
-import "Post/Common/Agree.proto";
-import "Post/Common/Lbs.proto";
 import "Post/Common/Content.proto";
+import "Post/Common/Agree.proto";
 import "User.proto";
 
 message SubReply {
     uint64 spid = 1;
     repeated common.Content content = 2;
     uint32 time = 3;
-    int64 author_id = 4;
-    string title = 5;
-    uint32 floor = 6;
     User author = 7;
-    int32 is_giftpost = 8;
     common.Agree agree = 9;
-    common.Lbs location = 10;
-    int32 is_fake_top = 11;
-    int32 is_author_view = 12;
 }

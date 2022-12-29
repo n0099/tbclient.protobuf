@@ -1,6 +1,0 @@
-syntax = "proto3";
-package tbClient.forum;
-
-message SimpleForum {
-    int64 id = 1;
-}

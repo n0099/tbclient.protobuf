@@ -1,7 +1,0 @@
-syntax = "proto3";
-package tbClient;
-
-message Page {
-    int32 current_page = 3;
-    int32 total_page = 5;
-}
