@@ -31,6 +31,16 @@ message Thread {
     User author = 18;
     User last_replyer = 19;
     int32 comment_num = 20;
+    message Abstract {
+        int32 type = 1;
+        string text = 2;
+        string link = 3;
+        string src = 4;
+        string un = 5;
+        string during_time = 6;
+        string voice_md5 = 7;
+    }
+    repeated Abstract _abstract = 21;
     string meizhi_pic = 24;
     int64 fid = 27;
     string fname = 28;
