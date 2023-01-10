@@ -25,12 +25,12 @@ namespace TbClient.Api.Request {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChhBcGkvUmVxdWVzdC9Db21tb24ucHJvdG8SFHRiQ2xpZW50LmFwaS5yZXF1",
-            "ZXN0IiEKBkNvbW1vbhIXCg9fY2xpZW50X3ZlcnNpb24YAiABKAliBnByb3Rv",
-            "Mw=="));
+            "ZXN0IjcKBkNvbW1vbhIUCgxfY2xpZW50X3R5cGUYASABKAUSFwoPX2NsaWVu",
+            "dF92ZXJzaW9uGAIgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Request.Common), global::TbClient.Api.Request.Common.Parser, new[]{ "ClientVersion" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Request.Common), global::TbClient.Api.Request.Common.Parser, new[]{ "ClientType", "ClientVersion" }, null, null, null, null)
           }));
     }
     #endregion
@@ -71,6 +71,7 @@ namespace TbClient.Api.Request {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Common(Common other) : this() {
+      ClientType_ = other.ClientType_;
       ClientVersion_ = other.ClientVersion_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -79,6 +80,18 @@ namespace TbClient.Api.Request {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Common Clone() {
       return new Common(this);
+    }
+
+    /// <summary>Field number for the "_client_type" field.</summary>
+    public const int ClientTypeFieldNumber = 1;
+    private int ClientType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int ClientType {
+      get { return ClientType_; }
+      set {
+        ClientType_ = value;
+      }
     }
 
     /// <summary>Field number for the "_client_version" field.</summary>
@@ -108,6 +121,7 @@ namespace TbClient.Api.Request {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (ClientType != other.ClientType) return false;
       if (ClientVersion != other.ClientVersion) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -116,6 +130,7 @@ namespace TbClient.Api.Request {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (ClientType != 0) hash ^= ClientType.GetHashCode();
       if (ClientVersion.Length != 0) hash ^= ClientVersion.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -135,6 +150,10 @@ namespace TbClient.Api.Request {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (ClientType != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ClientType);
+      }
       if (ClientVersion.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(ClientVersion);
@@ -149,6 +168,10 @@ namespace TbClient.Api.Request {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ClientType != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(ClientType);
+      }
       if (ClientVersion.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(ClientVersion);
@@ -163,6 +186,9 @@ namespace TbClient.Api.Request {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (ClientType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ClientType);
+      }
       if (ClientVersion.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientVersion);
       }
@@ -177,6 +203,9 @@ namespace TbClient.Api.Request {
     public void MergeFrom(Common other) {
       if (other == null) {
         return;
+      }
+      if (other.ClientType != 0) {
+        ClientType = other.ClientType;
       }
       if (other.ClientVersion.Length != 0) {
         ClientVersion = other.ClientVersion;
@@ -196,6 +225,10 @@ namespace TbClient.Api.Request {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            ClientType = input.ReadInt32();
+            break;
+          }
           case 18: {
             ClientVersion = input.ReadString();
             break;
@@ -215,6 +248,10 @@ namespace TbClient.Api.Request {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            ClientType = input.ReadInt32();
+            break;
+          }
           case 18: {
             ClientVersion = input.ReadString();
             break;

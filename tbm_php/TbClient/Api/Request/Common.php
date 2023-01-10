@@ -14,6 +14,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Common extends \Google\Protobuf\Internal\Message
 {
     /**
+     * Generated from protobuf field <code>int32 _client_type = 1;</code>
+     */
+    protected $_client_type = 0;
+    /**
      * Generated from protobuf field <code>string _client_version = 2;</code>
      */
     protected $_client_version = '';
@@ -24,12 +28,35 @@ class Common extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int $_client_type
      *     @type string $_client_version
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Api\Request\Common::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 _client_type = 1;</code>
+     * @return int
+     */
+    public function getClientType()
+    {
+        return $this->_client_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 _client_type = 1;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setClientType($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->_client_type = $var;
+
+        return $this;
     }
 
     /**

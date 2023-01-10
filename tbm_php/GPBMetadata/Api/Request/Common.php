@@ -16,9 +16,10 @@ class Common
         }
         $pool->internalAddGeneratedFile(
             '
-[
-Api/Request/Common.prototbClient.api.request"!
-Common
+q
+Api/Request/Common.prototbClient.api.request"7
+Common
+_client_type (
 _client_version (	bproto3'
         , true);
 
