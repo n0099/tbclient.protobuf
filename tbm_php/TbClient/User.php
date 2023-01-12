@@ -38,10 +38,6 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $level_id = 0;
     /**
-     * Generated from protobuf field <code>string bawu_type = 26;</code>
-     */
-    protected $bawu_type = '';
-    /**
      * Generated from protobuf field <code>int32 gender = 42;</code>
      */
     protected $gender = 0;
@@ -66,7 +62,6 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type string $portrait
      *     @type array<\TbClient\UserDeps\Icon>|\Google\Protobuf\Internal\RepeatedField $iconinfo
      *     @type int $level_id
-     *     @type string $bawu_type
      *     @type int $gender
      *     @type string $fans_nickname
      *     @type string $ip_address
@@ -205,28 +200,6 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->level_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string bawu_type = 26;</code>
-     * @return string
-     */
-    public function getBawuType()
-    {
-        return $this->bawu_type;
-    }
-
-    /**
-     * Generated from protobuf field <code>string bawu_type = 26;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setBawuType($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->bawu_type = $var;
 
         return $this;
     }

@@ -9,7 +9,6 @@ message User {
     string portrait = 5;
     repeated userDeps.Icon iconinfo = 17;
     int32 level_id = 23;
-    string bawu_type = 26;
     int32 gender = 42;
     string fans_nickname = 57;
     string ip_address = 127;

@@ -24,16 +24,16 @@ namespace TbClient {
     static UserReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgpVc2VyLnByb3RvEgh0YkNsaWVudBoTVXNlckRlcHMvSWNvbi5wcm90byLR",
+            "CgpVc2VyLnByb3RvEgh0YkNsaWVudBoTVXNlckRlcHMvSWNvbi5wcm90byK+",
             "AQoEVXNlchILCgN1aWQYAiABKAMSDAoEbmFtZRgDIAEoCRIRCgluYW1lX3No",
             "b3cYBCABKAkSEAoIcG9ydHJhaXQYBSABKAkSKQoIaWNvbmluZm8YESADKAsy",
-            "Fy50YkNsaWVudC51c2VyRGVwcy5JY29uEhAKCGxldmVsX2lkGBcgASgFEhEK",
-            "CWJhd3VfdHlwZRgaIAEoCRIOCgZnZW5kZXIYKiABKAUSFQoNZmFuc19uaWNr",
-            "bmFtZRg5IAEoCRISCgppcF9hZGRyZXNzGH8gASgJYgZwcm90bzM="));
+            "Fy50YkNsaWVudC51c2VyRGVwcy5JY29uEhAKCGxldmVsX2lkGBcgASgFEg4K",
+            "BmdlbmRlchgqIAEoBRIVCg1mYW5zX25pY2tuYW1lGDkgASgJEhIKCmlwX2Fk",
+            "ZHJlc3MYfyABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TbClient.UserDeps.IconReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.User), global::TbClient.User.Parser, new[]{ "Uid", "Name", "NameShow", "Portrait", "Iconinfo", "LevelId", "BawuType", "Gender", "FansNickname", "IpAddress" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.User), global::TbClient.User.Parser, new[]{ "Uid", "Name", "NameShow", "Portrait", "Iconinfo", "LevelId", "Gender", "FansNickname", "IpAddress" }, null, null, null, null)
           }));
     }
     #endregion
@@ -80,7 +80,6 @@ namespace TbClient {
       portrait_ = other.portrait_;
       iconinfo_ = other.iconinfo_.Clone();
       levelId_ = other.levelId_;
-      bawuType_ = other.bawuType_;
       gender_ = other.gender_;
       fansNickname_ = other.fansNickname_;
       ipAddress_ = other.ipAddress_;
@@ -164,18 +163,6 @@ namespace TbClient {
       }
     }
 
-    /// <summary>Field number for the "bawu_type" field.</summary>
-    public const int BawuTypeFieldNumber = 26;
-    private string bawuType_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string BawuType {
-      get { return bawuType_; }
-      set {
-        bawuType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "gender" field.</summary>
     public const int GenderFieldNumber = 42;
     private int gender_;
@@ -233,7 +220,6 @@ namespace TbClient {
       if (Portrait != other.Portrait) return false;
       if(!iconinfo_.Equals(other.iconinfo_)) return false;
       if (LevelId != other.LevelId) return false;
-      if (BawuType != other.BawuType) return false;
       if (Gender != other.Gender) return false;
       if (FansNickname != other.FansNickname) return false;
       if (IpAddress != other.IpAddress) return false;
@@ -250,7 +236,6 @@ namespace TbClient {
       if (Portrait.Length != 0) hash ^= Portrait.GetHashCode();
       hash ^= iconinfo_.GetHashCode();
       if (LevelId != 0) hash ^= LevelId.GetHashCode();
-      if (BawuType.Length != 0) hash ^= BawuType.GetHashCode();
       if (Gender != 0) hash ^= Gender.GetHashCode();
       if (FansNickname.Length != 0) hash ^= FansNickname.GetHashCode();
       if (IpAddress.Length != 0) hash ^= IpAddress.GetHashCode();
@@ -292,10 +277,6 @@ namespace TbClient {
       if (LevelId != 0) {
         output.WriteRawTag(184, 1);
         output.WriteInt32(LevelId);
-      }
-      if (BawuType.Length != 0) {
-        output.WriteRawTag(210, 1);
-        output.WriteString(BawuType);
       }
       if (Gender != 0) {
         output.WriteRawTag(208, 2);
@@ -340,10 +321,6 @@ namespace TbClient {
         output.WriteRawTag(184, 1);
         output.WriteInt32(LevelId);
       }
-      if (BawuType.Length != 0) {
-        output.WriteRawTag(210, 1);
-        output.WriteString(BawuType);
-      }
       if (Gender != 0) {
         output.WriteRawTag(208, 2);
         output.WriteInt32(Gender);
@@ -382,9 +359,6 @@ namespace TbClient {
       if (LevelId != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(LevelId);
       }
-      if (BawuType.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(BawuType);
-      }
       if (Gender != 0) {
         size += 2 + pb::CodedOutputStream.ComputeInt32Size(Gender);
       }
@@ -421,9 +395,6 @@ namespace TbClient {
       iconinfo_.Add(other.iconinfo_);
       if (other.LevelId != 0) {
         LevelId = other.LevelId;
-      }
-      if (other.BawuType.Length != 0) {
-        BawuType = other.BawuType;
       }
       if (other.Gender != 0) {
         Gender = other.Gender;
@@ -471,10 +442,6 @@ namespace TbClient {
           }
           case 184: {
             LevelId = input.ReadInt32();
-            break;
-          }
-          case 210: {
-            BawuType = input.ReadString();
             break;
           }
           case 336: {
@@ -526,10 +493,6 @@ namespace TbClient {
           }
           case 184: {
             LevelId = input.ReadInt32();
-            break;
-          }
-          case 210: {
-            BawuType = input.ReadString();
             break;
           }
           case 336: {

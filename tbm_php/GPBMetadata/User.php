@@ -17,17 +17,16 @@ class User
         \GPBMetadata\UserDeps\Icon::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ò
+ß
 
-User.prototbClient"Ñ
+User.prototbClient"¾
 User
 uid (
 name (	
 	name_show (	
 portrait (	)
 iconinfo (2.tbClient.userDeps.Icon
-level_id (
-	bawu_type (	
+level_id (
 gender* (
 fans_nickname9 (	
 
