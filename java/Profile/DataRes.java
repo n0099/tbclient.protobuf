@@ -8,6 +8,7 @@ import tbclient.AlaLiveInfo;
 import tbclient.Anti;
 import tbclient.BannerImage;
 import tbclient.BubbleInfo;
+import tbclient.CustomGrid;
 import tbclient.DealWindow;
 import tbclient.DynamicInfo;
 import tbclient.Feedback;
@@ -45,6 +46,8 @@ public final class DataRes extends Message {
     public final List<UcCardInfo> common_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 13)
     public final List<ForumDynamic> concerned_forum_list;
+    @ProtoField(label = Message.Label.REPEATED, tag = 41)
+    public final List<CustomGrid> custom_grid;
     @ProtoField(label = Message.Label.REPEATED, tag = 12)
     public final List<DynamicInfo> dynamic_list;
     @ProtoField(tag = 10)
@@ -59,6 +62,8 @@ public final class DataRes extends Message {
     public final Integer is_black_white;
     @ProtoField(tag = 15)
     public final ModuleInfo module_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 42)
+    public final List<CustomGrid> more_grid;
     @ProtoField(tag = 24)
     public final Namoaixud namoaixud;
     @ProtoField(tag = 37)
@@ -73,8 +78,6 @@ public final class DataRes extends Message {
     public final List<PostInfoList> post_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 23)
     public final List<SmartApp> recom_naws_list;
-    @ProtoField(tag = 21, type = Message.Datatype.INT32)
-    public final Integer show_answer;
     @ProtoField(tag = 3)
     public final TAInfo tainfo;
     @ProtoField(tag = 9)
@@ -104,13 +107,14 @@ public final class DataRes extends Message {
     public static final List<ForumDynamic> DEFAULT_CONCERNED_FORUM_LIST = Collections.emptyList();
     public static final List<AlaLiveInfo> DEFAULT_ALA_LIVE_RECORD = Collections.emptyList();
     public static final List<UserMap> DEFAULT_URL_MAP = Collections.emptyList();
-    public static final Integer DEFAULT_SHOW_ANSWER = 0;
     public static final List<BannerImage> DEFAULT_BANNER = Collections.emptyList();
     public static final List<SmartApp> DEFAULT_RECOM_NAWS_LIST = Collections.emptyList();
     public static final List<ThreadInfo> DEFAULT_NEWEST_DYNAMIC_LIST = Collections.emptyList();
     public static final Integer DEFAULT_IS_BLACK_WHITE = 0;
     public static final Integer DEFAULT_WORK_TAB_ID = 0;
     public static final List<UcCardInfo> DEFAULT_COMMON_CARD = Collections.emptyList();
+    public static final List<CustomGrid> DEFAULT_CUSTOM_GRID = Collections.emptyList();
+    public static final List<CustomGrid> DEFAULT_MORE_GRID = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -122,6 +126,7 @@ public final class DataRes extends Message {
         public BubbleInfo bubble_info;
         public List<UcCardInfo> common_card;
         public List<ForumDynamic> concerned_forum_list;
+        public List<CustomGrid> custom_grid;
         public List<DynamicInfo> dynamic_list;
         public Feedback feedback;
         public FinanceTab finance_tab;
@@ -129,6 +134,7 @@ public final class DataRes extends Message {
         public Highlist highs;
         public Integer is_black_white;
         public ModuleInfo module_info;
+        public List<CustomGrid> more_grid;
         public Namoaixud namoaixud;
         public NamoaixudEntry namoaixud_entry;
         public HotUserRankEntry new_god_rankinfo;
@@ -136,7 +142,6 @@ public final class DataRes extends Message {
         public NicknameInfo nickname_info;
         public List<PostInfoList> post_list;
         public List<SmartApp> recom_naws_list;
-        public Integer show_answer;
         public TAInfo tainfo;
         public TbBookrack tbbookrack;
         public UcCard uc_card;
@@ -177,7 +182,6 @@ public final class DataRes extends Message {
             this.nickname_info = dataRes.nickname_info;
             this.ala_live_record = Message.copyOf(dataRes.ala_live_record);
             this.url_map = Message.copyOf(dataRes.url_map);
-            this.show_answer = dataRes.show_answer;
             this.banner = Message.copyOf(dataRes.banner);
             this.recom_naws_list = Message.copyOf(dataRes.recom_naws_list);
             this.namoaixud = dataRes.namoaixud;
@@ -193,6 +197,8 @@ public final class DataRes extends Message {
             this.bubble_info = dataRes.bubble_info;
             this.vip_banner = dataRes.vip_banner;
             this.common_card = Message.copyOf(dataRes.common_card);
+            this.custom_grid = Message.copyOf(dataRes.custom_grid);
+            this.more_grid = Message.copyOf(dataRes.more_grid);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -249,12 +255,6 @@ public final class DataRes extends Message {
             } else {
                 this.url_map = Message.immutableCopyOf(list5);
             }
-            Integer num = builder.show_answer;
-            if (num == null) {
-                this.show_answer = DEFAULT_SHOW_ANSWER;
-            } else {
-                this.show_answer = num;
-            }
             List<BannerImage> list6 = builder.banner;
             if (list6 == null) {
                 this.banner = DEFAULT_BANNER;
@@ -282,17 +282,17 @@ public final class DataRes extends Message {
             } else {
                 this.uk = str;
             }
-            Integer num2 = builder.is_black_white;
-            if (num2 == null) {
+            Integer num = builder.is_black_white;
+            if (num == null) {
                 this.is_black_white = DEFAULT_IS_BLACK_WHITE;
             } else {
-                this.is_black_white = num2;
+                this.is_black_white = num;
             }
-            Integer num3 = builder.work_tab_id;
-            if (num3 == null) {
+            Integer num2 = builder.work_tab_id;
+            if (num2 == null) {
                 this.work_tab_id = DEFAULT_WORK_TAB_ID;
             } else {
-                this.work_tab_id = num3;
+                this.work_tab_id = num2;
             }
             this.finance_tab = builder.finance_tab;
             this.block_info = builder.block_info;
@@ -302,9 +302,21 @@ public final class DataRes extends Message {
             List<UcCardInfo> list9 = builder.common_card;
             if (list9 == null) {
                 this.common_card = DEFAULT_COMMON_CARD;
-                return;
             } else {
                 this.common_card = Message.immutableCopyOf(list9);
+            }
+            List<CustomGrid> list10 = builder.custom_grid;
+            if (list10 == null) {
+                this.custom_grid = DEFAULT_CUSTOM_GRID;
+            } else {
+                this.custom_grid = Message.immutableCopyOf(list10);
+            }
+            List<CustomGrid> list11 = builder.more_grid;
+            if (list11 == null) {
+                this.more_grid = DEFAULT_MORE_GRID;
+                return;
+            } else {
+                this.more_grid = Message.immutableCopyOf(list11);
                 return;
             }
         }
@@ -327,7 +339,6 @@ public final class DataRes extends Message {
         this.nickname_info = builder.nickname_info;
         this.ala_live_record = Message.immutableCopyOf(builder.ala_live_record);
         this.url_map = Message.immutableCopyOf(builder.url_map);
-        this.show_answer = builder.show_answer;
         this.banner = Message.immutableCopyOf(builder.banner);
         this.recom_naws_list = Message.immutableCopyOf(builder.recom_naws_list);
         this.namoaixud = builder.namoaixud;
@@ -343,5 +354,7 @@ public final class DataRes extends Message {
         this.bubble_info = builder.bubble_info;
         this.vip_banner = builder.vip_banner;
         this.common_card = Message.immutableCopyOf(builder.common_card);
+        this.custom_grid = Message.immutableCopyOf(builder.custom_grid);
+        this.more_grid = Message.immutableCopyOf(builder.more_grid);
     }
 }

@@ -49,7 +49,6 @@ public final class DataReq extends Message {
     public static final String DEFAULT_REAL_LNG = "";
     public static final String DEFAULT_REPLY_UID = "";
     public static final String DEFAULT_REPOSTID = "";
-    public static final Integer DEFAULT_SHOW_CUSTOM_FIGURE = 0;
     public static final String DEFAULT_SIG = "";
     public static final String DEFAULT_SN = "";
     public static final String DEFAULT_ST_PARAM = "";
@@ -112,6 +111,8 @@ public final class DataReq extends Message {
     public final String is_location;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String is_pictxt;
+    @ProtoField(tag = 67, type = Message.Datatype.INT32)
+    public final Integer is_show_bless;
     @ProtoField(tag = 61, type = Message.Datatype.STRING)
     public final String is_story;
     @ProtoField(tag = 47, type = Message.Datatype.STRING)
@@ -204,6 +205,8 @@ public final class DataReq extends Message {
     public final String voice_md5;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
     public final String works_tag;
+    public static final Integer DEFAULT_SHOW_CUSTOM_FIGURE = 0;
+    public static final Integer DEFAULT_IS_SHOW_BLESS = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -229,6 +232,7 @@ public final class DataReq extends Message {
         public String is_giftpost;
         public String is_location;
         public String is_pictxt;
+        public Integer is_show_bless;
         public String is_story;
         public String is_twzhibo_thread;
         public String is_works;
@@ -350,6 +354,7 @@ public final class DataReq extends Message {
             this.show_custom_figure = dataReq.show_custom_figure;
             this.from_category_id = dataReq.from_category_id;
             this.to_category_id = dataReq.to_category_id;
+            this.is_show_bless = dataReq.is_show_bless;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -750,9 +755,15 @@ public final class DataReq extends Message {
             String str64 = builder.to_category_id;
             if (str64 == null) {
                 this.to_category_id = "";
-                return;
             } else {
                 this.to_category_id = str64;
+            }
+            Integer num2 = builder.is_show_bless;
+            if (num2 == null) {
+                this.is_show_bless = DEFAULT_IS_SHOW_BLESS;
+                return;
+            } else {
+                this.is_show_bless = num2;
                 return;
             }
         }
@@ -822,5 +833,6 @@ public final class DataReq extends Message {
         this.show_custom_figure = builder.show_custom_figure;
         this.from_category_id = builder.from_category_id;
         this.to_category_id = builder.to_category_id;
+        this.is_show_bless = builder.is_show_bless;
     }
 }

@@ -140,6 +140,8 @@ public final class DataReq extends Message {
     public final String is_repost_to_dynamic;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String is_share;
+    @ProtoField(tag = 87, type = Message.Datatype.INT32)
+    public final Integer is_show_bless;
     @ProtoField(tag = 76, type = Message.Datatype.STRING)
     public final String is_works;
     @ProtoField(tag = 86, type = Message.Datatype.INT32)
@@ -258,6 +260,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_IS_QUESTION = 0;
     public static final Integer DEFAULT_IS_CREATE_TAG = 0;
     public static final Integer DEFAULT_IS_XIUXIU_THREAD = 0;
+    public static final Integer DEFAULT_IS_SHOW_BLESS = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -290,6 +293,7 @@ public final class DataReq extends Message {
         public Integer is_question;
         public String is_repost_to_dynamic;
         public String is_share;
+        public Integer is_show_bless;
         public String is_works;
         public Integer is_xiuxiu_thread;
         public String item_id;
@@ -440,6 +444,7 @@ public final class DataReq extends Message {
             this.question_tag_id = dataReq.question_tag_id;
             this.is_create_tag = dataReq.is_create_tag;
             this.is_xiuxiu_thread = dataReq.is_xiuxiu_thread;
+            this.is_show_bless = dataReq.is_show_bless;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -948,9 +953,15 @@ public final class DataReq extends Message {
             Integer num4 = builder.is_xiuxiu_thread;
             if (num4 == null) {
                 this.is_xiuxiu_thread = DEFAULT_IS_XIUXIU_THREAD;
-                return;
             } else {
                 this.is_xiuxiu_thread = num4;
+            }
+            Integer num5 = builder.is_show_bless;
+            if (num5 == null) {
+                this.is_show_bless = DEFAULT_IS_SHOW_BLESS;
+                return;
+            } else {
+                this.is_show_bless = num5;
                 return;
             }
         }
@@ -1038,5 +1049,6 @@ public final class DataReq extends Message {
         this.question_tag_id = builder.question_tag_id;
         this.is_create_tag = builder.is_create_tag;
         this.is_xiuxiu_thread = builder.is_xiuxiu_thread;
+        this.is_show_bless = builder.is_show_bless;
     }
 }

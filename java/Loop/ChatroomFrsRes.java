@@ -8,6 +8,8 @@ import java.util.List;
 public final class ChatroomFrsRes extends Message {
     public static final List<Long> DEFAULT_HOT_LIST = Collections.emptyList();
     public static final List<ChatroomList> DEFAULT_ROOM_LIST = Collections.emptyList();
+    @ProtoField(tag = 3)
+    public final ChatroomGuide guide_config;
     @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.INT64)
     public final List<Long> hot_list;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -15,6 +17,7 @@ public final class ChatroomFrsRes extends Message {
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ChatroomFrsRes> {
+        public ChatroomGuide guide_config;
         public List<Long> hot_list;
         public List<ChatroomList> room_list;
 
@@ -28,6 +31,7 @@ public final class ChatroomFrsRes extends Message {
             }
             this.hot_list = Message.copyOf(chatroomFrsRes.hot_list);
             this.room_list = Message.copyOf(chatroomFrsRes.room_list);
+            this.guide_config = chatroomFrsRes.guide_config;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -49,13 +53,14 @@ public final class ChatroomFrsRes extends Message {
             List<ChatroomList> list2 = builder.room_list;
             if (list2 == null) {
                 this.room_list = DEFAULT_ROOM_LIST;
-                return;
             } else {
                 this.room_list = Message.immutableCopyOf(list2);
-                return;
             }
+            this.guide_config = builder.guide_config;
+            return;
         }
         this.hot_list = Message.immutableCopyOf(builder.hot_list);
         this.room_list = Message.immutableCopyOf(builder.room_list);
+        this.guide_config = builder.guide_config;
     }
 }

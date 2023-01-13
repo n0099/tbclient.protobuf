@@ -27,8 +27,6 @@ public final class DataRes extends Message {
     public final BazhuUniversity bazhu_university;
     @ProtoField(tag = 5)
     public final ManagerApplyInfo bz_apply_info;
-    @ProtoField(tag = 3)
-    public final BzApplySwitch bz_apply_switch;
     @ProtoField(tag = 8)
     public final ManagerElectionTab election_tab;
     @ProtoField(tag = 10)
@@ -70,7 +68,6 @@ public final class DataRes extends Message {
         public BazhuGrade bazhu_grade;
         public BazhuUniversity bazhu_university;
         public ManagerApplyInfo bz_apply_info;
-        public BzApplySwitch bz_apply_switch;
         public ManagerElectionTab election_tab;
         public ForumDataCenter forum_data;
         public RecommendForumInfo forum_info;
@@ -95,7 +92,6 @@ public final class DataRes extends Message {
             }
             this.forum_info = dataRes.forum_info;
             this.thread_list = Message.copyOf(dataRes.thread_list);
-            this.bz_apply_switch = dataRes.bz_apply_switch;
             this.is_bawu_show = dataRes.is_bawu_show;
             this.bz_apply_info = dataRes.bz_apply_info;
             this.is_complaint_show = dataRes.is_complaint_show;
@@ -132,7 +128,6 @@ public final class DataRes extends Message {
             } else {
                 this.thread_list = Message.immutableCopyOf(list);
             }
-            this.bz_apply_switch = builder.bz_apply_switch;
             Integer num = builder.is_bawu_show;
             if (num == null) {
                 this.is_bawu_show = DEFAULT_IS_BAWU_SHOW;
@@ -184,7 +179,6 @@ public final class DataRes extends Message {
         }
         this.forum_info = builder.forum_info;
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
-        this.bz_apply_switch = builder.bz_apply_switch;
         this.is_bawu_show = builder.is_bawu_show;
         this.bz_apply_info = builder.bz_apply_info;
         this.is_complaint_show = builder.is_complaint_show;

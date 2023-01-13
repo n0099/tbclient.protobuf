@@ -49,6 +49,8 @@ public final class Post extends Message {
     public final String dynamic_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 32)
     public final List<TailInfo> ext_tails;
+    @ProtoField(tag = 66)
+    public final FestivalTipData festival_tip_data;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer floor;
     @ProtoField(tag = 57, type = Message.Datatype.STRING)
@@ -191,6 +193,7 @@ public final class Post extends Message {
         public CustomState custom_state;
         public String dynamic_url;
         public List<TailInfo> ext_tails;
+        public FestivalTipData festival_tip_data;
         public Integer floor;
         public String fold_comment_apply_url;
         public Integer fold_comment_status;
@@ -312,6 +315,7 @@ public final class Post extends Message {
             this.dynamic_url = post.dynamic_url;
             this.bubble_info = post.bubble_info;
             this.rumor_source_img = post.rumor_source_img;
+            this.festival_tip_data = post.festival_tip_data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -575,11 +579,11 @@ public final class Post extends Message {
             String str11 = builder.rumor_source_img;
             if (str11 == null) {
                 this.rumor_source_img = "";
-                return;
             } else {
                 this.rumor_source_img = str11;
-                return;
             }
+            this.festival_tip_data = builder.festival_tip_data;
+            return;
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -645,5 +649,6 @@ public final class Post extends Message {
         this.dynamic_url = builder.dynamic_url;
         this.bubble_info = builder.bubble_info;
         this.rumor_source_img = builder.rumor_source_img;
+        this.festival_tip_data = builder.festival_tip_data;
     }
 }

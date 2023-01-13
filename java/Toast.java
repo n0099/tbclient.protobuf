@@ -6,7 +6,10 @@ import java.util.Collections;
 import java.util.List;
 /* loaded from: classes9.dex */
 public final class Toast extends Message {
+    public static final String DEFAULT_BACKGROUND = "";
     public static final String DEFAULT_URL = "";
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String background;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ToastContent> content;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -18,6 +21,7 @@ public final class Toast extends Message {
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Toast> {
+        public String background;
         public List<ToastContent> content;
         public Integer icon_type;
         public String url;
@@ -33,6 +37,7 @@ public final class Toast extends Message {
             this.icon_type = toast.icon_type;
             this.content = Message.copyOf(toast.content);
             this.url = toast.url;
+            this.background = toast.background;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -60,14 +65,21 @@ public final class Toast extends Message {
             String str = builder.url;
             if (str == null) {
                 this.url = "";
-                return;
             } else {
                 this.url = str;
+            }
+            String str2 = builder.background;
+            if (str2 == null) {
+                this.background = "";
+                return;
+            } else {
+                this.background = str2;
                 return;
             }
         }
         this.icon_type = builder.icon_type;
         this.content = Message.immutableCopyOf(builder.content);
         this.url = builder.url;
+        this.background = builder.background;
     }
 }

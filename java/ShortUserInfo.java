@@ -11,8 +11,6 @@ public final class ShortUserInfo extends Message {
     public final Integer gender;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String intro;
-    @ProtoField(tag = 6)
-    public final NewGodInfo new_god_data;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -26,7 +24,6 @@ public final class ShortUserInfo extends Message {
     public static final class Builder extends Message.Builder<ShortUserInfo> {
         public Integer gender;
         public String intro;
-        public NewGodInfo new_god_data;
         public String portrait;
         public Long user_id;
         public String user_name;
@@ -44,7 +41,6 @@ public final class ShortUserInfo extends Message {
             this.user_name = shortUserInfo.user_name;
             this.gender = shortUserInfo.gender;
             this.intro = shortUserInfo.intro;
-            this.new_god_data = shortUserInfo.new_god_data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -84,17 +80,16 @@ public final class ShortUserInfo extends Message {
             String str3 = builder.intro;
             if (str3 == null) {
                 this.intro = "";
+                return;
             } else {
                 this.intro = str3;
+                return;
             }
-            this.new_god_data = builder.new_god_data;
-            return;
         }
         this.user_id = builder.user_id;
         this.portrait = builder.portrait;
         this.user_name = builder.user_name;
         this.gender = builder.gender;
         this.intro = builder.intro;
-        this.new_god_data = builder.new_god_data;
     }
 }

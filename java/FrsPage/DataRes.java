@@ -105,8 +105,6 @@ public final class DataRes extends Message {
     public final CarrierEnter carrier_enter;
     @ProtoField(label = Message.Label.REPEATED, tag = 28)
     public final List<CategoryInfo> category_list;
-    @ProtoField(tag = 121)
-    public final ChatroomConfig chatroom_config;
     @ProtoField(tag = 33)
     public final ClientPlatform client_platform;
     @ProtoField(label = Message.Label.REPEATED, tag = 21)
@@ -137,6 +135,8 @@ public final class DataRes extends Message {
     public final ForumPresentInfo forum_present_info;
     @ProtoField(tag = 105)
     public final ForumRuleStatus forum_rule;
+    @ProtoField(tag = 121)
+    public final FrsBannerHeader frs_banner_header;
     @ProtoField(label = Message.Label.REPEATED, tag = 68)
     public final List<FrsTabInfo> frs_game_tab_info;
     @ProtoField(tag = 3)
@@ -352,7 +352,6 @@ public final class DataRes extends Message {
         public List<Integer> card_shipin_pos;
         public CarrierEnter carrier_enter;
         public List<CategoryInfo> category_list;
-        public ChatroomConfig chatroom_config;
         public ClientPlatform client_platform;
         public List<ColorEgg> color_egg;
         public Integer ctime;
@@ -368,6 +367,7 @@ public final class DataRes extends Message {
         public List<AnchorInfo> forum_livegroup_list;
         public ForumPresentInfo forum_present_info;
         public ForumRuleStatus forum_rule;
+        public FrsBannerHeader frs_banner_header;
         public List<FrsTabInfo> frs_game_tab_info;
         public StarInfo frs_star;
         public Integer frs_tab_default;
@@ -556,7 +556,7 @@ public final class DataRes extends Message {
             this.recreation_rank_info = dataRes.recreation_rank_info;
             this.is_member_broadcast_forum = dataRes.is_member_broadcast_forum;
             this.forum_group = dataRes.forum_group;
-            this.chatroom_config = dataRes.chatroom_config;
+            this.frs_banner_header = dataRes.frs_banner_header;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -946,7 +946,7 @@ public final class DataRes extends Message {
                 this.is_member_broadcast_forum = num23;
             }
             this.forum_group = builder.forum_group;
-            this.chatroom_config = builder.chatroom_config;
+            this.frs_banner_header = builder.frs_banner_header;
             return;
         }
         this.user = builder.user;
@@ -1061,6 +1061,6 @@ public final class DataRes extends Message {
         this.recreation_rank_info = builder.recreation_rank_info;
         this.is_member_broadcast_forum = builder.is_member_broadcast_forum;
         this.forum_group = builder.forum_group;
-        this.chatroom_config = builder.chatroom_config;
+        this.frs_banner_header = builder.frs_banner_header;
     }
 }
