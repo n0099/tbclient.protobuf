@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "GetVipInfo/VipBannerItem.proto";
 import "GetVipInfo/VipTaskItem.proto";
 
 message VipTaskList {
@@ -9,6 +8,4 @@ message VipTaskList {
     string class_url = 3;
     repeated VipTaskItem item = 4;
     string card_id = 5;
-    string sub_class_name = 6;
-    repeated VipBannerItem banner_item = 7;
 }

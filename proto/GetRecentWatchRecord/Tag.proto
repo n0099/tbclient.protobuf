@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message Tag {
-    string tag_word = 1;
-    int32 tag_type = 2;
-}

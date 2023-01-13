@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message ZanUser {
-    string portrait = 1;
-    string user_name = 2;
-    uint32 create_time = 3;
-}

@@ -86,4 +86,5 @@ message DataReq {
     string question_tag_id = 84;
     int32 is_create_tag = 85;
     int32 is_xiuxiu_thread = 86;
+    int32 is_show_bless = 87;
 }

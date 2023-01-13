@@ -3,6 +3,7 @@ syntax = "proto3";
 import "AlaLiveInfo.proto";
 import "Loop/ChatroomFrsRes.proto";
 import "Loop/ChatroomMessageTabData.proto";
+import "Loop/FestivalInfo.proto";
 import "Loop/IconRes.proto";
 import "Loop/LevelRes.proto";
 import "Loop/LiveRes.proto";
@@ -19,4 +20,5 @@ message DataRes {
     string uniq_id = 8;
     ChatroomMessageTabData chatroom_message_tab = 9;
     MemberBroadcastInfo member_broadcast = 10;
+    FestivalInfo festival_info = 11;
 }

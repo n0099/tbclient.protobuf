@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "ItemRankInfo.proto";
-
-message ItemRankModule {
-    repeated ItemRankInfo rank_list = 2;
-    string rank_code = 3;
-}

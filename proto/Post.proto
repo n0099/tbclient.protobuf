@@ -8,6 +8,7 @@ import "CardLinkInfo.proto";
 import "CustomFigure.proto";
 import "CustomState.proto";
 import "DealInfo.proto";
+import "FestivalTipData.proto";
 import "FullLengthNovel.proto";
 import "HeadItem.proto";
 import "Item.proto";
@@ -94,4 +95,5 @@ message Post {
     string dynamic_url = 63;
     ThemeBubble bubble_info = 64;
     string rumor_source_img = 65;
+    FestivalTipData festival_tip_data = 66;
 }

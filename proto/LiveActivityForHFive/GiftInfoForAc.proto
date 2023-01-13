@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message GiftInfoForAc {
-    int32 gift_id = 1;
-    string gift_icon = 2;
-    string gift_name = 3;
-}

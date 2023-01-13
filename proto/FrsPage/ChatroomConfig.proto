@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-message ChatroomConfig {
-    int32 guide_num = 1;
-    string guide_icon_day = 2;
-    string guide_icon_night = 3;
-    string guide_bkg_day = 4;
-    string guide_bkg_night = 5;
-}
