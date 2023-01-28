@@ -311,6 +311,9 @@ public final class DataRes extends Message {
   @ProtoField(tag = 34)
   public final PbTopAgreePost top_agree_post_list;
   
+  @ProtoField(tag = 73)
+  public final Post top_answer;
+  
   @ProtoField(tag = 18)
   public final TwZhiBoAnti twzhibo_anti;
   
@@ -357,7 +360,6 @@ public final class DataRes extends Message {
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Long long_;
     if (paramBoolean == true) {
       this.user = paramBuilder.user;
       this.forum = paramBuilder.forum;
@@ -470,11 +472,11 @@ public final class DataRes extends Message {
       } else {
         this.from_forum_list = Message.immutableCopyOf(list5);
       } 
-      Long long_1 = paramBuilder.thread_freq_num;
-      if (long_1 == null) {
+      Long long_2 = paramBuilder.thread_freq_num;
+      if (long_2 == null) {
         this.thread_freq_num = DEFAULT_THREAD_FREQ_NUM;
       } else {
-        this.thread_freq_num = long_1;
+        this.thread_freq_num = long_2;
       } 
       this.first_floor_post = paramBuilder.first_floor_post;
       this.display_forum = paramBuilder.display_forum;
@@ -607,82 +609,84 @@ public final class DataRes extends Message {
       } else {
         this.has_fold_comment = integer1;
       } 
-      long_ = paramBuilder.fold_comment_num;
-      if (long_ == null) {
+      Long long_1 = paramBuilder.fold_comment_num;
+      if (long_1 == null) {
         this.fold_comment_num = DEFAULT_FOLD_COMMENT_NUM;
       } else {
-        this.fold_comment_num = long_;
+        this.fold_comment_num = long_1;
       } 
+      this.top_answer = paramBuilder.top_answer;
     } else {
-      this.user = ((Builder)long_).user;
-      this.forum = ((Builder)long_).forum;
-      this.page = ((Builder)long_).page;
-      this.anti = ((Builder)long_).anti;
-      this.add_post = ((Builder)long_).add_post;
-      this.post_list = Message.immutableCopyOf(((Builder)long_).post_list);
-      this.has_floor = ((Builder)long_).has_floor;
-      this.thread = ((Builder)long_).thread;
-      this.location = ((Builder)long_).location;
-      this.is_new_url = ((Builder)long_).is_new_url;
-      this.post_banner = Message.immutableCopyOf(((Builder)long_).post_banner);
-      this.banner_list = ((Builder)long_).banner_list;
-      this.user_list = Message.immutableCopyOf(((Builder)long_).user_list);
-      this.server_time = ((Builder)long_).server_time;
-      this.news_info = ((Builder)long_).news_info;
-      this.recommend_threads = Message.immutableCopyOf(((Builder)long_).recommend_threads);
-      this.fine_banner = Message.immutableCopyOf(((Builder)long_).fine_banner);
-      this.twzhibo_anti = ((Builder)long_).twzhibo_anti;
-      this.sdk_topic_thread = ((Builder)long_).sdk_topic_thread;
-      this.hot_post_list = ((Builder)long_).hot_post_list;
-      this.graffiti_rank_list_info = ((Builder)long_).graffiti_rank_list_info;
-      this.appeal_info = ((Builder)long_).appeal_info;
-      this.god_card = ((Builder)long_).god_card;
-      this.play_rank_list = Message.immutableCopyOf(((Builder)long_).play_rank_list);
-      this.recommend_book = ((Builder)long_).recommend_book;
-      this.ala_info = ((Builder)long_).ala_info;
-      this.forum_headline_img_info = ((Builder)long_).forum_headline_img_info;
-      this.asp_shown_info = ((Builder)long_).asp_shown_info;
-      this.guess_like = ((Builder)long_).guess_like;
-      this.feed_thread_list = Message.immutableCopyOf(((Builder)long_).feed_thread_list);
-      this.is_follow_current_channel = ((Builder)long_).is_follow_current_channel;
-      this.switch_read_open = ((Builder)long_).switch_read_open;
-      this.feed_info = ((Builder)long_).feed_info;
-      this.top_agree_post_list = ((Builder)long_).top_agree_post_list;
-      this.repost_recommend_forum_list = Message.immutableCopyOf(((Builder)long_).repost_recommend_forum_list);
-      this.from_forum_list = Message.immutableCopyOf(((Builder)long_).from_forum_list);
-      this.thread_freq_num = ((Builder)long_).thread_freq_num;
-      this.first_floor_post = ((Builder)long_).first_floor_post;
-      this.display_forum = ((Builder)long_).display_forum;
-      this.new_agree_user = Message.immutableCopyOf(((Builder)long_).new_agree_user);
-      this.partial_visible_toast = ((Builder)long_).partial_visible_toast;
-      this.na_guide = ((Builder)long_).na_guide;
-      this.follow_tip = ((Builder)long_).follow_tip;
-      this.fold_tip = ((Builder)long_).fold_tip;
-      this.exp_news_today = ((Builder)long_).exp_news_today;
-      this.exp_guide_today = ((Builder)long_).exp_guide_today;
-      this.multi_forum_text = ((Builder)long_).multi_forum_text;
-      this.thread_topic = Message.immutableCopyOf(((Builder)long_).thread_topic);
-      this.pb_sort_info = Message.immutableCopyOf(((Builder)long_).pb_sort_info);
-      this.sort_type = ((Builder)long_).sort_type;
-      this.manager_election = ((Builder)long_).manager_election;
-      this.bjh_recommend = Message.immutableCopyOf(((Builder)long_).bjh_recommend);
-      this.business_promot_info = ((Builder)long_).business_promot_info;
-      this.promotion = ((Builder)long_).promotion;
-      this.recom_ala_info = ((Builder)long_).recom_ala_info;
-      this.jumptotab1 = ((Builder)long_).jumptotab1;
-      this.jumptotab2 = ((Builder)long_).jumptotab2;
-      this.business_account_info = ((Builder)long_).business_account_info;
-      this.recom_thread_info = Message.immutableCopyOf(((Builder)long_).recom_thread_info);
-      this.forum_rule = ((Builder)long_).forum_rule;
-      this.show_adsense = ((Builder)long_).show_adsense;
-      this.is_black_white = ((Builder)long_).is_black_white;
-      this.is_official_forum = ((Builder)long_).is_official_forum;
-      this.floating_icon = ((Builder)long_).floating_icon;
-      this.is_purchase = ((Builder)long_).is_purchase;
-      this.pb_notice_type = ((Builder)long_).pb_notice_type;
-      this.pb_notice = ((Builder)long_).pb_notice;
-      this.has_fold_comment = ((Builder)long_).has_fold_comment;
-      this.fold_comment_num = ((Builder)long_).fold_comment_num;
+      this.user = paramBuilder.user;
+      this.forum = paramBuilder.forum;
+      this.page = paramBuilder.page;
+      this.anti = paramBuilder.anti;
+      this.add_post = paramBuilder.add_post;
+      this.post_list = Message.immutableCopyOf(paramBuilder.post_list);
+      this.has_floor = paramBuilder.has_floor;
+      this.thread = paramBuilder.thread;
+      this.location = paramBuilder.location;
+      this.is_new_url = paramBuilder.is_new_url;
+      this.post_banner = Message.immutableCopyOf(paramBuilder.post_banner);
+      this.banner_list = paramBuilder.banner_list;
+      this.user_list = Message.immutableCopyOf(paramBuilder.user_list);
+      this.server_time = paramBuilder.server_time;
+      this.news_info = paramBuilder.news_info;
+      this.recommend_threads = Message.immutableCopyOf(paramBuilder.recommend_threads);
+      this.fine_banner = Message.immutableCopyOf(paramBuilder.fine_banner);
+      this.twzhibo_anti = paramBuilder.twzhibo_anti;
+      this.sdk_topic_thread = paramBuilder.sdk_topic_thread;
+      this.hot_post_list = paramBuilder.hot_post_list;
+      this.graffiti_rank_list_info = paramBuilder.graffiti_rank_list_info;
+      this.appeal_info = paramBuilder.appeal_info;
+      this.god_card = paramBuilder.god_card;
+      this.play_rank_list = Message.immutableCopyOf(paramBuilder.play_rank_list);
+      this.recommend_book = paramBuilder.recommend_book;
+      this.ala_info = paramBuilder.ala_info;
+      this.forum_headline_img_info = paramBuilder.forum_headline_img_info;
+      this.asp_shown_info = paramBuilder.asp_shown_info;
+      this.guess_like = paramBuilder.guess_like;
+      this.feed_thread_list = Message.immutableCopyOf(paramBuilder.feed_thread_list);
+      this.is_follow_current_channel = paramBuilder.is_follow_current_channel;
+      this.switch_read_open = paramBuilder.switch_read_open;
+      this.feed_info = paramBuilder.feed_info;
+      this.top_agree_post_list = paramBuilder.top_agree_post_list;
+      this.repost_recommend_forum_list = Message.immutableCopyOf(paramBuilder.repost_recommend_forum_list);
+      this.from_forum_list = Message.immutableCopyOf(paramBuilder.from_forum_list);
+      this.thread_freq_num = paramBuilder.thread_freq_num;
+      this.first_floor_post = paramBuilder.first_floor_post;
+      this.display_forum = paramBuilder.display_forum;
+      this.new_agree_user = Message.immutableCopyOf(paramBuilder.new_agree_user);
+      this.partial_visible_toast = paramBuilder.partial_visible_toast;
+      this.na_guide = paramBuilder.na_guide;
+      this.follow_tip = paramBuilder.follow_tip;
+      this.fold_tip = paramBuilder.fold_tip;
+      this.exp_news_today = paramBuilder.exp_news_today;
+      this.exp_guide_today = paramBuilder.exp_guide_today;
+      this.multi_forum_text = paramBuilder.multi_forum_text;
+      this.thread_topic = Message.immutableCopyOf(paramBuilder.thread_topic);
+      this.pb_sort_info = Message.immutableCopyOf(paramBuilder.pb_sort_info);
+      this.sort_type = paramBuilder.sort_type;
+      this.manager_election = paramBuilder.manager_election;
+      this.bjh_recommend = Message.immutableCopyOf(paramBuilder.bjh_recommend);
+      this.business_promot_info = paramBuilder.business_promot_info;
+      this.promotion = paramBuilder.promotion;
+      this.recom_ala_info = paramBuilder.recom_ala_info;
+      this.jumptotab1 = paramBuilder.jumptotab1;
+      this.jumptotab2 = paramBuilder.jumptotab2;
+      this.business_account_info = paramBuilder.business_account_info;
+      this.recom_thread_info = Message.immutableCopyOf(paramBuilder.recom_thread_info);
+      this.forum_rule = paramBuilder.forum_rule;
+      this.show_adsense = paramBuilder.show_adsense;
+      this.is_black_white = paramBuilder.is_black_white;
+      this.is_official_forum = paramBuilder.is_official_forum;
+      this.floating_icon = paramBuilder.floating_icon;
+      this.is_purchase = paramBuilder.is_purchase;
+      this.pb_notice_type = paramBuilder.pb_notice_type;
+      this.pb_notice = paramBuilder.pb_notice;
+      this.has_fold_comment = paramBuilder.has_fold_comment;
+      this.fold_comment_num = paramBuilder.fold_comment_num;
+      this.top_answer = paramBuilder.top_answer;
     } 
   }
   
@@ -843,6 +847,8 @@ public final class DataRes extends Message {
     
     public PbTopAgreePost top_agree_post_list;
     
+    public Post top_answer;
+    
     public TwZhiBoAnti twzhibo_anti;
     
     public User user;
@@ -924,6 +930,7 @@ public final class DataRes extends Message {
       this.pb_notice = param1DataRes.pb_notice;
       this.has_fold_comment = param1DataRes.has_fold_comment;
       this.fold_comment_num = param1DataRes.fold_comment_num;
+      this.top_answer = param1DataRes.top_answer;
     }
     
     public DataRes build(boolean param1Boolean) {

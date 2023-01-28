@@ -15,6 +15,8 @@ public final class HistoryForumInfo extends Message {
   
   public static final String DEFAULT_AVATAR = "";
   
+  public static final String DEFAULT_FIRST_CATEGORY = "";
+  
   public static final Integer DEFAULT_FOLLOW_NUM;
   
   public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
@@ -46,6 +48,9 @@ public final class HistoryForumInfo extends Message {
   
   @ProtoField(tag = 14)
   public final BlockPopInfo block_pop_info;
+  
+  @ProtoField(tag = 22, type = Message.Datatype.STRING)
+  public final String first_category;
   
   @ProtoField(tag = 7, type = Message.Datatype.INT32)
   public final Integer follow_num;
@@ -80,6 +85,9 @@ public final class HistoryForumInfo extends Message {
   @ProtoField(label = Message.Label.REPEATED, tag = 17)
   public final List<FrsTabInfo> tab_info;
   
+  @ProtoField(tag = 21)
+  public final RecomTagInfo tag_info;
+  
   @ProtoField(tag = 8)
   public final ThemeColorInfo theme_color;
   
@@ -104,7 +112,7 @@ public final class HistoryForumInfo extends Message {
   
   public HistoryForumInfo(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
+    String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
       if (long_ == null) {
@@ -124,17 +132,17 @@ public final class HistoryForumInfo extends Message {
       } else {
         this.avatar = str2;
       } 
-      Integer integer3 = paramBuilder.is_liveforum;
-      if (integer3 == null) {
+      Integer integer4 = paramBuilder.is_liveforum;
+      if (integer4 == null) {
         this.is_liveforum = DEFAULT_IS_LIVEFORUM;
       } else {
-        this.is_liveforum = integer3;
+        this.is_liveforum = integer4;
       } 
-      integer3 = paramBuilder.unread_num;
-      if (integer3 == null) {
+      integer4 = paramBuilder.unread_num;
+      if (integer4 == null) {
         this.unread_num = DEFAULT_UNREAD_NUM;
       } else {
-        this.unread_num = integer3;
+        this.unread_num = integer4;
       } 
       String str1 = paramBuilder.visit_time;
       if (str1 == null) {
@@ -142,11 +150,11 @@ public final class HistoryForumInfo extends Message {
       } else {
         this.visit_time = str1;
       } 
-      Integer integer2 = paramBuilder.follow_num;
-      if (integer2 == null) {
+      Integer integer3 = paramBuilder.follow_num;
+      if (integer3 == null) {
         this.follow_num = DEFAULT_FOLLOW_NUM;
       } else {
-        this.follow_num = integer2;
+        this.follow_num = integer3;
       } 
       this.theme_color = paramBuilder.theme_color;
       Boolean bool2 = paramBuilder.need_trans;
@@ -156,17 +164,17 @@ public final class HistoryForumInfo extends Message {
         this.need_trans = bool2;
       } 
       this.block_pop_info = paramBuilder.block_pop_info;
-      Integer integer1 = paramBuilder.hot_num;
-      if (integer1 == null) {
+      Integer integer2 = paramBuilder.hot_num;
+      if (integer2 == null) {
         this.hot_num = DEFAULT_HOT_NUM;
       } else {
-        this.hot_num = integer1;
+        this.hot_num = integer2;
       } 
-      integer1 = paramBuilder.level_id;
-      if (integer1 == null) {
+      integer2 = paramBuilder.level_id;
+      if (integer2 == null) {
         this.level_id = DEFAULT_LEVEL_ID;
       } else {
-        this.level_id = integer1;
+        this.level_id = integer2;
       } 
       List<FrsTabInfo> list = paramBuilder.tab_info;
       if (list == null) {
@@ -181,29 +189,38 @@ public final class HistoryForumInfo extends Message {
         this.has_postpre = bool1;
       } 
       this.post_prefix = paramBuilder.post_prefix;
-      integer = paramBuilder.is_forum_business_account;
-      if (integer == null) {
+      Integer integer1 = paramBuilder.is_forum_business_account;
+      if (integer1 == null) {
         this.is_forum_business_account = DEFAULT_IS_FORUM_BUSINESS_ACCOUNT;
       } else {
-        this.is_forum_business_account = integer;
+        this.is_forum_business_account = integer1;
+      } 
+      this.tag_info = paramBuilder.tag_info;
+      str = paramBuilder.first_category;
+      if (str == null) {
+        this.first_category = "";
+      } else {
+        this.first_category = str;
       } 
     } else {
-      this.forum_id = ((Builder)integer).forum_id;
-      this.forum_name = ((Builder)integer).forum_name;
-      this.avatar = ((Builder)integer).avatar;
-      this.is_liveforum = ((Builder)integer).is_liveforum;
-      this.unread_num = ((Builder)integer).unread_num;
-      this.visit_time = ((Builder)integer).visit_time;
-      this.follow_num = ((Builder)integer).follow_num;
-      this.theme_color = ((Builder)integer).theme_color;
-      this.need_trans = ((Builder)integer).need_trans;
-      this.block_pop_info = ((Builder)integer).block_pop_info;
-      this.hot_num = ((Builder)integer).hot_num;
-      this.level_id = ((Builder)integer).level_id;
-      this.tab_info = Message.immutableCopyOf(((Builder)integer).tab_info);
-      this.has_postpre = ((Builder)integer).has_postpre;
-      this.post_prefix = ((Builder)integer).post_prefix;
-      this.is_forum_business_account = ((Builder)integer).is_forum_business_account;
+      this.forum_id = ((Builder)str).forum_id;
+      this.forum_name = ((Builder)str).forum_name;
+      this.avatar = ((Builder)str).avatar;
+      this.is_liveforum = ((Builder)str).is_liveforum;
+      this.unread_num = ((Builder)str).unread_num;
+      this.visit_time = ((Builder)str).visit_time;
+      this.follow_num = ((Builder)str).follow_num;
+      this.theme_color = ((Builder)str).theme_color;
+      this.need_trans = ((Builder)str).need_trans;
+      this.block_pop_info = ((Builder)str).block_pop_info;
+      this.hot_num = ((Builder)str).hot_num;
+      this.level_id = ((Builder)str).level_id;
+      this.tab_info = Message.immutableCopyOf(((Builder)str).tab_info);
+      this.has_postpre = ((Builder)str).has_postpre;
+      this.post_prefix = ((Builder)str).post_prefix;
+      this.is_forum_business_account = ((Builder)str).is_forum_business_account;
+      this.tag_info = ((Builder)str).tag_info;
+      this.first_category = ((Builder)str).first_category;
     } 
   }
   
@@ -236,6 +253,8 @@ public final class HistoryForumInfo extends Message {
     
     public BlockPopInfo block_pop_info;
     
+    public String first_category;
+    
     public Integer follow_num;
     
     public Long forum_id;
@@ -257,6 +276,8 @@ public final class HistoryForumInfo extends Message {
     public PostPrefix post_prefix;
     
     public List<FrsTabInfo> tab_info;
+    
+    public RecomTagInfo tag_info;
     
     public ThemeColorInfo theme_color;
     
@@ -286,6 +307,8 @@ public final class HistoryForumInfo extends Message {
       this.has_postpre = param1HistoryForumInfo.has_postpre;
       this.post_prefix = param1HistoryForumInfo.post_prefix;
       this.is_forum_business_account = param1HistoryForumInfo.is_forum_business_account;
+      this.tag_info = param1HistoryForumInfo.tag_info;
+      this.first_category = param1HistoryForumInfo.first_category;
     }
     
     public HistoryForumInfo build(boolean param1Boolean) {

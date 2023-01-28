@@ -42,6 +42,8 @@ public final class DataReq extends Message {
   
   public static final Integer DEFAULT_Q_TYPE;
   
+  public static final Integer DEFAULT_REQUEST_TIMES;
+  
   public static final Double DEFAULT_SCR_DIP;
   
   public static final Integer DEFAULT_SCR_H;
@@ -112,6 +114,9 @@ public final class DataReq extends Message {
   @ProtoField(tag = 7, type = Message.Datatype.UINT32)
   public final Integer q_type;
   
+  @ProtoField(tag = 26, type = Message.Datatype.INT32)
+  public final Integer request_times;
+  
   @ProtoField(tag = 12, type = Message.Datatype.DOUBLE)
   public final Double scr_dip;
   
@@ -163,11 +168,12 @@ public final class DataReq extends Message {
     DEFAULT_SORT_TYPE = integer;
     DEFAULT_HAS_AD_BEAR = integer;
     DEFAULT_AD_BEAR_SID_PRICE = double_;
+    DEFAULT_REQUEST_TIMES = integer;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Double double_;
+    Integer integer;
     if (paramBoolean == true) {
       String str5 = paramBuilder.thread_ids;
       if (str5 == null) {
@@ -230,11 +236,11 @@ public final class DataReq extends Message {
       } else {
         this.platform = str4;
       } 
-      Double double_1 = paramBuilder.scr_dip;
-      if (double_1 == null) {
+      Double double_2 = paramBuilder.scr_dip;
+      if (double_2 == null) {
         this.scr_dip = DEFAULT_SCR_DIP;
       } else {
-        this.scr_dip = double_1;
+        this.scr_dip = double_2;
       } 
       Integer integer3 = paramBuilder.pn;
       if (integer3 == null) {
@@ -293,38 +299,45 @@ public final class DataReq extends Message {
       } else {
         this.ad_bear_sid = str1;
       } 
-      double_ = paramBuilder.ad_bear_sid_price;
-      if (double_ == null) {
+      Double double_1 = paramBuilder.ad_bear_sid_price;
+      if (double_1 == null) {
         this.ad_bear_sid_price = DEFAULT_AD_BEAR_SID_PRICE;
       } else {
-        this.ad_bear_sid_price = double_;
+        this.ad_bear_sid_price = double_1;
+      } 
+      integer = paramBuilder.request_times;
+      if (integer == null) {
+        this.request_times = DEFAULT_REQUEST_TIMES;
+      } else {
+        this.request_times = integer;
       } 
     } else {
-      this.thread_ids = ((Builder)double_).thread_ids;
-      this.forum_id = ((Builder)double_).forum_id;
-      this.need_abstract = ((Builder)double_).need_abstract;
-      this.st_type = ((Builder)double_).st_type;
-      this.scr_w = ((Builder)double_).scr_w;
-      this.scr_h = ((Builder)double_).scr_h;
-      this.q_type = ((Builder)double_).q_type;
-      this.common = ((Builder)double_).common;
-      this.user_id = ((Builder)double_).user_id;
-      this.da_idfa = ((Builder)double_).da_idfa;
-      this.platform = ((Builder)double_).platform;
-      this.scr_dip = ((Builder)double_).scr_dip;
-      this.pn = ((Builder)double_).pn;
-      this.forum_name = ((Builder)double_).forum_name;
-      this.last_click_tid = ((Builder)double_).last_click_tid;
-      this.sort_type = ((Builder)double_).sort_type;
-      this.app_pos = ((Builder)double_).app_pos;
-      this.ad_param = ((Builder)double_).ad_param;
-      this.ad_context_list = ((Builder)double_).ad_context_list;
-      this.ad_ext_params = ((Builder)double_).ad_ext_params;
-      this.app_transmit_data = ((Builder)double_).app_transmit_data;
-      this.ad_bear_context = ((Builder)double_).ad_bear_context;
-      this.has_ad_bear = ((Builder)double_).has_ad_bear;
-      this.ad_bear_sid = ((Builder)double_).ad_bear_sid;
-      this.ad_bear_sid_price = ((Builder)double_).ad_bear_sid_price;
+      this.thread_ids = ((Builder)integer).thread_ids;
+      this.forum_id = ((Builder)integer).forum_id;
+      this.need_abstract = ((Builder)integer).need_abstract;
+      this.st_type = ((Builder)integer).st_type;
+      this.scr_w = ((Builder)integer).scr_w;
+      this.scr_h = ((Builder)integer).scr_h;
+      this.q_type = ((Builder)integer).q_type;
+      this.common = ((Builder)integer).common;
+      this.user_id = ((Builder)integer).user_id;
+      this.da_idfa = ((Builder)integer).da_idfa;
+      this.platform = ((Builder)integer).platform;
+      this.scr_dip = ((Builder)integer).scr_dip;
+      this.pn = ((Builder)integer).pn;
+      this.forum_name = ((Builder)integer).forum_name;
+      this.last_click_tid = ((Builder)integer).last_click_tid;
+      this.sort_type = ((Builder)integer).sort_type;
+      this.app_pos = ((Builder)integer).app_pos;
+      this.ad_param = ((Builder)integer).ad_param;
+      this.ad_context_list = ((Builder)integer).ad_context_list;
+      this.ad_ext_params = ((Builder)integer).ad_ext_params;
+      this.app_transmit_data = ((Builder)integer).app_transmit_data;
+      this.ad_bear_context = ((Builder)integer).ad_bear_context;
+      this.has_ad_bear = ((Builder)integer).has_ad_bear;
+      this.ad_bear_sid = ((Builder)integer).ad_bear_sid;
+      this.ad_bear_sid_price = ((Builder)integer).ad_bear_sid_price;
+      this.request_times = ((Builder)integer).request_times;
     } 
   }
   
@@ -373,6 +386,8 @@ public final class DataReq extends Message {
     
     public Integer q_type;
     
+    public Integer request_times;
+    
     public Double scr_dip;
     
     public Integer scr_h;
@@ -418,6 +433,7 @@ public final class DataReq extends Message {
       this.has_ad_bear = param1DataReq.has_ad_bear;
       this.ad_bear_sid = param1DataReq.ad_bear_sid;
       this.ad_bear_sid_price = param1DataReq.ad_bear_sid_price;
+      this.request_times = param1DataReq.request_times;
     }
     
     public DataReq build(boolean param1Boolean) {

@@ -144,6 +144,9 @@ public final class Post extends Message {
   @ProtoField(tag = 38)
   public final SimpleForum from_forum;
   
+  @ProtoField(tag = 62)
+  public final FullLengthNovel full_length_novel;
+  
   @ProtoField(tag = 33)
   public final TogetherHi high_together;
   
@@ -555,6 +558,7 @@ public final class Post extends Message {
       } 
       this.custom_figure = paramBuilder.custom_figure;
       this.custom_state = paramBuilder.custom_state;
+      this.full_length_novel = paramBuilder.full_length_novel;
     } else {
       this.id = paramBuilder.id;
       this.title = paramBuilder.title;
@@ -616,6 +620,7 @@ public final class Post extends Message {
       this.card_link_info = Message.immutableCopyOf(paramBuilder.card_link_info);
       this.custom_figure = paramBuilder.custom_figure;
       this.custom_state = paramBuilder.custom_state;
+      this.full_length_novel = paramBuilder.full_length_novel;
     } 
   }
   
@@ -665,6 +670,8 @@ public final class Post extends Message {
     public String fold_tip;
     
     public SimpleForum from_forum;
+    
+    public FullLengthNovel full_length_novel;
     
     public TogetherHi high_together;
     
@@ -814,6 +821,7 @@ public final class Post extends Message {
       this.card_link_info = Message.copyOf(param1Post.card_link_info);
       this.custom_figure = param1Post.custom_figure;
       this.custom_state = param1Post.custom_state;
+      this.full_length_novel = param1Post.full_length_novel;
     }
     
     public Post build(boolean param1Boolean) {

@@ -23,6 +23,8 @@ public final class DataRes extends Message {
   
   public static final String DEFAULT_EXT_MSG = "";
   
+  public static final String DEFAULT_INVITEES_NUMBER = "";
+  
   public static final String DEFAULT_MSG = "";
   
   public static final String DEFAULT_OPGROUP = "";
@@ -63,6 +65,9 @@ public final class DataRes extends Message {
   
   @ProtoField(tag = 14)
   public final PostAntiInfo info;
+  
+  @ProtoField(tag = 19, type = Message.Datatype.STRING)
+  public final String invitees_number;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String msg;
@@ -147,11 +152,17 @@ public final class DataRes extends Message {
       this.anti_stat = paramBuilder.anti_stat;
       this.tb_hudong = paramBuilder.tb_hudong;
       this.anti = paramBuilder.anti;
-      str = paramBuilder.ext_msg;
-      if (str == null) {
+      str1 = paramBuilder.ext_msg;
+      if (str1 == null) {
         this.ext_msg = "";
       } else {
-        this.ext_msg = str;
+        this.ext_msg = str1;
+      } 
+      str = paramBuilder.invitees_number;
+      if (str == null) {
+        this.invitees_number = "";
+      } else {
+        this.invitees_number = str;
       } 
     } else {
       this.opgroup = ((Builder)str).opgroup;
@@ -172,6 +183,7 @@ public final class DataRes extends Message {
       this.tb_hudong = ((Builder)str).tb_hudong;
       this.anti = ((Builder)str).anti;
       this.ext_msg = ((Builder)str).ext_msg;
+      this.invitees_number = ((Builder)str).invitees_number;
     } 
   }
   
@@ -201,6 +213,8 @@ public final class DataRes extends Message {
     public IconStampInfo icon_stamp_info;
     
     public PostAntiInfo info;
+    
+    public String invitees_number;
     
     public String msg;
     
@@ -244,6 +258,7 @@ public final class DataRes extends Message {
       this.tb_hudong = param1DataRes.tb_hudong;
       this.anti = param1DataRes.anti;
       this.ext_msg = param1DataRes.ext_msg;
+      this.invitees_number = param1DataRes.invitees_number;
     }
     
     public DataRes build(boolean param1Boolean) {

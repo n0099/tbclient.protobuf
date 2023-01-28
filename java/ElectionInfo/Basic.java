@@ -13,6 +13,8 @@ public final class Basic extends Message {
   
   public static final String DEFAULT_BEGIN_APPLY_TIME = "";
   
+  public static final String DEFAULT_BEGIN_AUDIT_TIME = "";
+  
   public static final String DEFAULT_BEGIN_PUBLIC_TIME = "";
   
   public static final String DEFAULT_BEGIN_VOTE_TIME = "";
@@ -31,6 +33,9 @@ public final class Basic extends Message {
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String begin_apply_time;
+  
+  @ProtoField(tag = 10, type = Message.Datatype.STRING)
+  public final String begin_audit_time;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String begin_public_time;
@@ -79,6 +84,7 @@ public final class Basic extends Message {
   
   public Basic(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
+    String str;
     if (paramBoolean == true) {
       String str2 = paramBuilder.begin_apply_time;
       if (str2 == null) {
@@ -129,16 +135,23 @@ public final class Basic extends Message {
         this.is_voted = bool;
       } 
       this.notice = paramBuilder.notice;
+      str = paramBuilder.begin_audit_time;
+      if (str == null) {
+        this.begin_audit_time = "";
+      } else {
+        this.begin_audit_time = str;
+      } 
     } else {
-      this.begin_apply_time = paramBuilder.begin_apply_time;
-      this.begin_vote_time = paramBuilder.begin_vote_time;
-      this.begin_public_time = paramBuilder.begin_public_time;
-      this.status = paramBuilder.status;
-      this.remind_time = paramBuilder.remind_time;
-      this.candidate_num = paramBuilder.candidate_num;
-      this.total_vote_num = paramBuilder.total_vote_num;
-      this.is_voted = paramBuilder.is_voted;
-      this.notice = paramBuilder.notice;
+      this.begin_apply_time = ((Builder)str).begin_apply_time;
+      this.begin_vote_time = ((Builder)str).begin_vote_time;
+      this.begin_public_time = ((Builder)str).begin_public_time;
+      this.status = ((Builder)str).status;
+      this.remind_time = ((Builder)str).remind_time;
+      this.candidate_num = ((Builder)str).candidate_num;
+      this.total_vote_num = ((Builder)str).total_vote_num;
+      this.is_voted = ((Builder)str).is_voted;
+      this.notice = ((Builder)str).notice;
+      this.begin_audit_time = ((Builder)str).begin_audit_time;
     } 
   }
   
@@ -152,6 +165,8 @@ public final class Basic extends Message {
     public transient FieldHolder $fh;
     
     public String begin_apply_time;
+    
+    public String begin_audit_time;
     
     public String begin_public_time;
     
@@ -184,6 +199,7 @@ public final class Basic extends Message {
       this.total_vote_num = param1Basic.total_vote_num;
       this.is_voted = param1Basic.is_voted;
       this.notice = param1Basic.notice;
+      this.begin_audit_time = param1Basic.begin_audit_time;
     }
     
     public Basic build(boolean param1Boolean) {

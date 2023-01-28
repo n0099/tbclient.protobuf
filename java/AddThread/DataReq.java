@@ -40,6 +40,8 @@ public final class DataReq extends Message {
   
   public static final String DEFAULT_IS_BOTTLE = "";
   
+  public static final Integer DEFAULT_IS_CREATE_TAG;
+  
   public static final String DEFAULT_IS_FEEDBACK = "";
   
   public static final String DEFAULT_IS_FORUM_BUSINESS_ACCOUNT = "";
@@ -55,6 +57,8 @@ public final class DataReq extends Message {
   public static final String DEFAULT_IS_NTITLE = "";
   
   public static final String DEFAULT_IS_PICTXT = "";
+  
+  public static final Integer DEFAULT_IS_QUESTION;
   
   public static final String DEFAULT_IS_REPOST_TO_DYNAMIC = "";
   
@@ -102,6 +106,8 @@ public final class DataReq extends Message {
   
   public static final String DEFAULT_PRO_ZONE = "";
   
+  public static final String DEFAULT_QUESTION_TAG_ID = "";
+  
   public static final String DEFAULT_REAL_LAT = "";
   
   public static final String DEFAULT_REAL_LNG = "";
@@ -120,7 +126,7 @@ public final class DataReq extends Message {
   
   public static final String DEFAULT_SHARE_SWAN_PATH = "";
   
-  public static final Integer DEFAULT_SHOW_CUSTOM_FIGURE = Integer.valueOf(0);
+  public static final Integer DEFAULT_SHOW_CUSTOM_FIGURE;
   
   public static final String DEFAULT_SIG = "";
   
@@ -217,6 +223,9 @@ public final class DataReq extends Message {
   @ProtoField(tag = 51, type = Message.Datatype.STRING)
   public final String is_bottle;
   
+  @ProtoField(tag = 85, type = Message.Datatype.INT32)
+  public final Integer is_create_tag;
+  
   @ProtoField(tag = 8, type = Message.Datatype.STRING)
   public final String is_feedback;
   
@@ -240,6 +249,9 @@ public final class DataReq extends Message {
   
   @ProtoField(tag = 77, type = Message.Datatype.STRING)
   public final String is_pictxt;
+  
+  @ProtoField(tag = 83, type = Message.Datatype.INT32)
+  public final Integer is_question;
   
   @ProtoField(tag = 30, type = Message.Datatype.STRING)
   public final String is_repost_to_dynamic;
@@ -309,6 +321,9 @@ public final class DataReq extends Message {
   
   @ProtoField(tag = 36, type = Message.Datatype.STRING)
   public final String pro_zone;
+  
+  @ProtoField(tag = 84, type = Message.Datatype.STRING)
+  public final String question_tag_id;
   
   @ProtoField(tag = 73, type = Message.Datatype.STRING)
   public final String real_lat;
@@ -412,573 +427,6 @@ public final class DataReq extends Message {
   @ProtoField(tag = 25, type = Message.Datatype.STRING)
   public final String works_tag;
   
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      String str2 = paramBuilder.authsid;
-      if (str2 == null) {
-        this.authsid = "";
-      } else {
-        this.authsid = str2;
-      } 
-      str2 = paramBuilder.sig;
-      if (str2 == null) {
-        this.sig = "";
-      } else {
-        this.sig = str2;
-      } 
-      str2 = paramBuilder.tbs;
-      if (str2 == null) {
-        this.tbs = "";
-      } else {
-        this.tbs = str2;
-      } 
-      str2 = paramBuilder.video_other;
-      if (str2 == null) {
-        this.video_other = "";
-      } else {
-        this.video_other = str2;
-      } 
-      str2 = paramBuilder.anonymous;
-      if (str2 == null) {
-        this.anonymous = "";
-      } else {
-        this.anonymous = str2;
-      } 
-      str2 = paramBuilder.can_no_forum;
-      if (str2 == null) {
-        this.can_no_forum = "";
-      } else {
-        this.can_no_forum = str2;
-      } 
-      str2 = paramBuilder.is_feedback;
-      if (str2 == null) {
-        this.is_feedback = "";
-      } else {
-        this.is_feedback = str2;
-      } 
-      str2 = paramBuilder.takephoto_num;
-      if (str2 == null) {
-        this.takephoto_num = "";
-      } else {
-        this.takephoto_num = str2;
-      } 
-      str2 = paramBuilder.entrance_type;
-      if (str2 == null) {
-        this.entrance_type = "";
-      } else {
-        this.entrance_type = str2;
-      } 
-      str2 = paramBuilder.voice_md5;
-      if (str2 == null) {
-        this.voice_md5 = "";
-      } else {
-        this.voice_md5 = str2;
-      } 
-      str2 = paramBuilder.during_time;
-      if (str2 == null) {
-        this.during_time = "";
-      } else {
-        this.during_time = str2;
-      } 
-      str2 = paramBuilder.vcode;
-      if (str2 == null) {
-        this.vcode = "";
-      } else {
-        this.vcode = str2;
-      } 
-      str2 = paramBuilder.vcode_md5;
-      if (str2 == null) {
-        this.vcode_md5 = "";
-      } else {
-        this.vcode_md5 = str2;
-      } 
-      str2 = paramBuilder.vcode_type;
-      if (str2 == null) {
-        this.vcode_type = "";
-      } else {
-        this.vcode_type = str2;
-      } 
-      str2 = paramBuilder.vcode_tag;
-      if (str2 == null) {
-        this.vcode_tag = "";
-      } else {
-        this.vcode_tag = str2;
-      } 
-      str2 = paramBuilder.topic_id;
-      if (str2 == null) {
-        this.topic_id = "";
-      } else {
-        this.topic_id = str2;
-      } 
-      str2 = paramBuilder.new_vcode;
-      if (str2 == null) {
-        this.new_vcode = "";
-      } else {
-        this.new_vcode = str2;
-      } 
-      str2 = paramBuilder.content;
-      if (str2 == null) {
-        this.content = "";
-      } else {
-        this.content = str2;
-      } 
-      str2 = paramBuilder.reply_uid;
-      if (str2 == null) {
-        this.reply_uid = "";
-      } else {
-        this.reply_uid = str2;
-      } 
-      str2 = paramBuilder.meme_text;
-      if (str2 == null) {
-        this.meme_text = "";
-      } else {
-        this.meme_text = str2;
-      } 
-      str2 = paramBuilder.meme_cont_sign;
-      if (str2 == null) {
-        this.meme_cont_sign = "";
-      } else {
-        this.meme_cont_sign = str2;
-      } 
-      str2 = paramBuilder.item_id;
-      if (str2 == null) {
-        this.item_id = "";
-      } else {
-        this.item_id = str2;
-      } 
-      str2 = paramBuilder.comment_head;
-      if (str2 == null) {
-        this.comment_head = "";
-      } else {
-        this.comment_head = str2;
-      } 
-      str2 = paramBuilder.works_tag;
-      if (str2 == null) {
-        this.works_tag = "";
-      } else {
-        this.works_tag = str2;
-      } 
-      str2 = paramBuilder.fid;
-      if (str2 == null) {
-        this.fid = "";
-      } else {
-        this.fid = str2;
-      } 
-      str2 = paramBuilder.kw;
-      if (str2 == null) {
-        this.kw = "";
-      } else {
-        this.kw = str2;
-      } 
-      str2 = paramBuilder.transform_forums;
-      if (str2 == null) {
-        this.transform_forums = "";
-      } else {
-        this.transform_forums = str2;
-      } 
-      str2 = paramBuilder.is_hide;
-      if (str2 == null) {
-        this.is_hide = "";
-      } else {
-        this.is_hide = str2;
-      } 
-      str2 = paramBuilder.is_repost_to_dynamic;
-      if (str2 == null) {
-        this.is_repost_to_dynamic = "";
-      } else {
-        this.is_repost_to_dynamic = str2;
-      } 
-      str2 = paramBuilder.video_id;
-      if (str2 == null) {
-        this.video_id = "";
-      } else {
-        this.video_id = str2;
-      } 
-      str2 = paramBuilder.origin_video_cover;
-      if (str2 == null) {
-        this.origin_video_cover = "";
-      } else {
-        this.origin_video_cover = str2;
-      } 
-      str2 = paramBuilder.origin_video_title;
-      if (str2 == null) {
-        this.origin_video_title = "";
-      } else {
-        this.origin_video_title = str2;
-      } 
-      str2 = paramBuilder.is_share;
-      if (str2 == null) {
-        this.is_share = "";
-      } else {
-        this.is_share = str2;
-      } 
-      str2 = paramBuilder.from_tid;
-      if (str2 == null) {
-        this.from_tid = "";
-      } else {
-        this.from_tid = str2;
-      } 
-      str2 = paramBuilder.pro_zone;
-      if (str2 == null) {
-        this.pro_zone = "";
-      } else {
-        this.pro_zone = str2;
-      } 
-      str2 = paramBuilder.call_from;
-      if (str2 == null) {
-        this.call_from = "";
-      } else {
-        this.call_from = str2;
-      } 
-      str2 = paramBuilder.title;
-      if (str2 == null) {
-        this.title = "";
-      } else {
-        this.title = str2;
-      } 
-      str2 = paramBuilder.video_abstract;
-      if (str2 == null) {
-        this.video_abstract = "";
-      } else {
-        this.video_abstract = str2;
-      } 
-      str2 = paramBuilder.post_prefix;
-      if (str2 == null) {
-        this.post_prefix = "";
-      } else {
-        this.post_prefix = str2;
-      } 
-      str2 = paramBuilder.is_ntitle;
-      if (str2 == null) {
-        this.is_ntitle = "";
-      } else {
-        this.is_ntitle = str2;
-      } 
-      str2 = paramBuilder.st_type;
-      if (str2 == null) {
-        this.st_type = "";
-      } else {
-        this.st_type = str2;
-      } 
-      str2 = paramBuilder.lbs;
-      if (str2 == null) {
-        this.lbs = "";
-      } else {
-        this.lbs = str2;
-      } 
-      str2 = paramBuilder.is_location;
-      if (str2 == null) {
-        this.is_location = "";
-      } else {
-        this.is_location = str2;
-      } 
-      str2 = paramBuilder.lat;
-      if (str2 == null) {
-        this.lat = "";
-      } else {
-        this.lat = str2;
-      } 
-      str2 = paramBuilder.lng;
-      if (str2 == null) {
-        this.lng = "";
-      } else {
-        this.lng = str2;
-      } 
-      str2 = paramBuilder.name;
-      if (str2 == null) {
-        this.name = "";
-      } else {
-        this.name = str2;
-      } 
-      str2 = paramBuilder.sn;
-      if (str2 == null) {
-        this.sn = "";
-      } else {
-        this.sn = str2;
-      } 
-      str2 = paramBuilder.is_bottle;
-      if (str2 == null) {
-        this.is_bottle = "";
-      } else {
-        this.is_bottle = str2;
-      } 
-      str2 = paramBuilder.recommend_ext;
-      if (str2 == null) {
-        this.recommend_ext = "";
-      } else {
-        this.recommend_ext = str2;
-      } 
-      str2 = paramBuilder.link_url;
-      if (str2 == null) {
-        this.link_url = "";
-      } else {
-        this.link_url = str2;
-      } 
-      str2 = paramBuilder.link_url_code;
-      if (str2 == null) {
-        this.link_url_code = "";
-      } else {
-        this.link_url_code = str2;
-      } 
-      str2 = paramBuilder.is_link_thread;
-      if (str2 == null) {
-        this.is_link_thread = "";
-      } else {
-        this.is_link_thread = str2;
-      } 
-      str2 = paramBuilder.ori_ugc_nid;
-      if (str2 == null) {
-        this.ori_ugc_nid = "";
-      } else {
-        this.ori_ugc_nid = str2;
-      } 
-      str2 = paramBuilder.ori_ugc_vid;
-      if (str2 == null) {
-        this.ori_ugc_vid = "";
-      } else {
-        this.ori_ugc_vid = str2;
-      } 
-      str2 = paramBuilder.ori_ugc_tid;
-      if (str2 == null) {
-        this.ori_ugc_tid = "";
-      } else {
-        this.ori_ugc_tid = str2;
-      } 
-      str2 = paramBuilder.ori_ugc_type;
-      if (str2 == null) {
-        this.ori_ugc_type = "";
-      } else {
-        this.ori_ugc_type = str2;
-      } 
-      str2 = paramBuilder.tab_name;
-      if (str2 == null) {
-        this.tab_name = "";
-      } else {
-        this.tab_name = str2;
-      } 
-      str2 = paramBuilder.tab_id;
-      if (str2 == null) {
-        this.tab_id = "";
-      } else {
-        this.tab_id = str2;
-      } 
-      str2 = paramBuilder.is_general_tab;
-      if (str2 == null) {
-        this.is_general_tab = "";
-      } else {
-        this.is_general_tab = str2;
-      } 
-      str2 = paramBuilder.is_forum_business_account;
-      if (str2 == null) {
-        this.is_forum_business_account = "";
-      } else {
-        this.is_forum_business_account = str2;
-      } 
-      str2 = paramBuilder.thread_type;
-      if (str2 == null) {
-        this.thread_type = "";
-      } else {
-        this.thread_type = str2;
-      } 
-      str2 = paramBuilder.tbopen_app_key;
-      if (str2 == null) {
-        this.tbopen_app_key = "";
-      } else {
-        this.tbopen_app_key = str2;
-      } 
-      str2 = paramBuilder.tbopen_app_icon;
-      if (str2 == null) {
-        this.tbopen_app_icon = "";
-      } else {
-        this.tbopen_app_icon = str2;
-      } 
-      str2 = paramBuilder.tbopen_app_name;
-      if (str2 == null) {
-        this.tbopen_app_name = "";
-      } else {
-        this.tbopen_app_name = str2;
-      } 
-      str2 = paramBuilder.share_abstract;
-      if (str2 == null) {
-        this.share_abstract = "";
-      } else {
-        this.share_abstract = str2;
-      } 
-      str2 = paramBuilder.share_image;
-      if (str2 == null) {
-        this.share_image = "";
-      } else {
-        this.share_image = str2;
-      } 
-      str2 = paramBuilder.share_h5_url;
-      if (str2 == null) {
-        this.share_h5_url = "";
-      } else {
-        this.share_h5_url = str2;
-      } 
-      str2 = paramBuilder.share_swan_app_key;
-      if (str2 == null) {
-        this.share_swan_app_key = "";
-      } else {
-        this.share_swan_app_key = str2;
-      } 
-      str2 = paramBuilder.share_swan_path;
-      if (str2 == null) {
-        this.share_swan_path = "";
-      } else {
-        this.share_swan_path = str2;
-      } 
-      str2 = paramBuilder.real_lat;
-      if (str2 == null) {
-        this.real_lat = "";
-      } else {
-        this.real_lat = str2;
-      } 
-      str2 = paramBuilder.real_lng;
-      if (str2 == null) {
-        this.real_lng = "";
-      } else {
-        this.real_lng = str2;
-      } 
-      str2 = paramBuilder.name_show;
-      if (str2 == null) {
-        this.name_show = "";
-      } else {
-        this.name_show = str2;
-      } 
-      str2 = paramBuilder.is_works;
-      if (str2 == null) {
-        this.is_works = "";
-      } else {
-        this.is_works = str2;
-      } 
-      str2 = paramBuilder.is_pictxt;
-      if (str2 == null) {
-        this.is_pictxt = "";
-      } else {
-        this.is_pictxt = str2;
-      } 
-      str2 = paramBuilder.first_frame_pid;
-      if (str2 == null) {
-        this.first_frame_pid = "";
-      } else {
-        this.first_frame_pid = str2;
-      } 
-      str2 = paramBuilder.is_article;
-      if (str2 == null) {
-        this.is_article = "";
-      } else {
-        this.is_article = str2;
-      } 
-      Integer integer = paramBuilder.show_custom_figure;
-      if (integer == null) {
-        this.show_custom_figure = DEFAULT_SHOW_CUSTOM_FIGURE;
-      } else {
-        this.show_custom_figure = integer;
-      } 
-      String str1 = paramBuilder.from_category_id;
-      if (str1 == null) {
-        this.from_category_id = "";
-      } else {
-        this.from_category_id = str1;
-      } 
-      str = paramBuilder.to_category_id;
-      if (str == null) {
-        this.to_category_id = "";
-      } else {
-        this.to_category_id = str;
-      } 
-    } else {
-      this.common = ((Builder)str).common;
-      this.authsid = ((Builder)str).authsid;
-      this.sig = ((Builder)str).sig;
-      this.tbs = ((Builder)str).tbs;
-      this.video_other = ((Builder)str).video_other;
-      this.anonymous = ((Builder)str).anonymous;
-      this.can_no_forum = ((Builder)str).can_no_forum;
-      this.is_feedback = ((Builder)str).is_feedback;
-      this.takephoto_num = ((Builder)str).takephoto_num;
-      this.entrance_type = ((Builder)str).entrance_type;
-      this.voice_md5 = ((Builder)str).voice_md5;
-      this.during_time = ((Builder)str).during_time;
-      this.vcode = ((Builder)str).vcode;
-      this.vcode_md5 = ((Builder)str).vcode_md5;
-      this.vcode_type = ((Builder)str).vcode_type;
-      this.vcode_tag = ((Builder)str).vcode_tag;
-      this.topic_id = ((Builder)str).topic_id;
-      this.new_vcode = ((Builder)str).new_vcode;
-      this.content = ((Builder)str).content;
-      this.reply_uid = ((Builder)str).reply_uid;
-      this.meme_text = ((Builder)str).meme_text;
-      this.meme_cont_sign = ((Builder)str).meme_cont_sign;
-      this.item_id = ((Builder)str).item_id;
-      this.comment_head = ((Builder)str).comment_head;
-      this.works_tag = ((Builder)str).works_tag;
-      this.fid = ((Builder)str).fid;
-      this.kw = ((Builder)str).kw;
-      this.transform_forums = ((Builder)str).transform_forums;
-      this.is_hide = ((Builder)str).is_hide;
-      this.is_repost_to_dynamic = ((Builder)str).is_repost_to_dynamic;
-      this.video_id = ((Builder)str).video_id;
-      this.origin_video_cover = ((Builder)str).origin_video_cover;
-      this.origin_video_title = ((Builder)str).origin_video_title;
-      this.is_share = ((Builder)str).is_share;
-      this.from_tid = ((Builder)str).from_tid;
-      this.pro_zone = ((Builder)str).pro_zone;
-      this.call_from = ((Builder)str).call_from;
-      this.title = ((Builder)str).title;
-      this.video_abstract = ((Builder)str).video_abstract;
-      this.post_prefix = ((Builder)str).post_prefix;
-      this.is_ntitle = ((Builder)str).is_ntitle;
-      this.st_type = ((Builder)str).st_type;
-      this.lbs = ((Builder)str).lbs;
-      this.is_location = ((Builder)str).is_location;
-      this.lat = ((Builder)str).lat;
-      this.lng = ((Builder)str).lng;
-      this.name = ((Builder)str).name;
-      this.sn = ((Builder)str).sn;
-      this.is_bottle = ((Builder)str).is_bottle;
-      this.recommend_ext = ((Builder)str).recommend_ext;
-      this.link_url = ((Builder)str).link_url;
-      this.link_url_code = ((Builder)str).link_url_code;
-      this.is_link_thread = ((Builder)str).is_link_thread;
-      this.ori_ugc_nid = ((Builder)str).ori_ugc_nid;
-      this.ori_ugc_vid = ((Builder)str).ori_ugc_vid;
-      this.ori_ugc_tid = ((Builder)str).ori_ugc_tid;
-      this.ori_ugc_type = ((Builder)str).ori_ugc_type;
-      this.tab_name = ((Builder)str).tab_name;
-      this.tab_id = ((Builder)str).tab_id;
-      this.is_general_tab = ((Builder)str).is_general_tab;
-      this.is_forum_business_account = ((Builder)str).is_forum_business_account;
-      this.thread_type = ((Builder)str).thread_type;
-      this.tbopen_app_key = ((Builder)str).tbopen_app_key;
-      this.tbopen_app_icon = ((Builder)str).tbopen_app_icon;
-      this.tbopen_app_name = ((Builder)str).tbopen_app_name;
-      this.share_abstract = ((Builder)str).share_abstract;
-      this.share_image = ((Builder)str).share_image;
-      this.share_h5_url = ((Builder)str).share_h5_url;
-      this.share_swan_app_key = ((Builder)str).share_swan_app_key;
-      this.share_swan_path = ((Builder)str).share_swan_path;
-      this.real_lat = ((Builder)str).real_lat;
-      this.real_lng = ((Builder)str).real_lng;
-      this.name_show = ((Builder)str).name_show;
-      this.is_works = ((Builder)str).is_works;
-      this.is_pictxt = ((Builder)str).is_pictxt;
-      this.first_frame_pid = ((Builder)str).first_frame_pid;
-      this.is_article = ((Builder)str).is_article;
-      this.show_custom_figure = ((Builder)str).show_custom_figure;
-      this.from_category_id = ((Builder)str).from_category_id;
-      this.to_category_id = ((Builder)str).to_category_id;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
     if (classClinitInterceptable != null) {
@@ -993,6 +441,598 @@ public final class DataReq extends Message {
         } 
       } 
     } 
+    Integer integer = Integer.valueOf(0);
+    DEFAULT_SHOW_CUSTOM_FIGURE = integer;
+    DEFAULT_IS_QUESTION = integer;
+    DEFAULT_IS_CREATE_TAG = integer;
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean) {
+    super(paramBuilder);
+    Integer integer;
+    if (paramBoolean == true) {
+      this.common = paramBuilder.common;
+      String str3 = paramBuilder.authsid;
+      if (str3 == null) {
+        this.authsid = "";
+      } else {
+        this.authsid = str3;
+      } 
+      str3 = paramBuilder.sig;
+      if (str3 == null) {
+        this.sig = "";
+      } else {
+        this.sig = str3;
+      } 
+      str3 = paramBuilder.tbs;
+      if (str3 == null) {
+        this.tbs = "";
+      } else {
+        this.tbs = str3;
+      } 
+      str3 = paramBuilder.video_other;
+      if (str3 == null) {
+        this.video_other = "";
+      } else {
+        this.video_other = str3;
+      } 
+      str3 = paramBuilder.anonymous;
+      if (str3 == null) {
+        this.anonymous = "";
+      } else {
+        this.anonymous = str3;
+      } 
+      str3 = paramBuilder.can_no_forum;
+      if (str3 == null) {
+        this.can_no_forum = "";
+      } else {
+        this.can_no_forum = str3;
+      } 
+      str3 = paramBuilder.is_feedback;
+      if (str3 == null) {
+        this.is_feedback = "";
+      } else {
+        this.is_feedback = str3;
+      } 
+      str3 = paramBuilder.takephoto_num;
+      if (str3 == null) {
+        this.takephoto_num = "";
+      } else {
+        this.takephoto_num = str3;
+      } 
+      str3 = paramBuilder.entrance_type;
+      if (str3 == null) {
+        this.entrance_type = "";
+      } else {
+        this.entrance_type = str3;
+      } 
+      str3 = paramBuilder.voice_md5;
+      if (str3 == null) {
+        this.voice_md5 = "";
+      } else {
+        this.voice_md5 = str3;
+      } 
+      str3 = paramBuilder.during_time;
+      if (str3 == null) {
+        this.during_time = "";
+      } else {
+        this.during_time = str3;
+      } 
+      str3 = paramBuilder.vcode;
+      if (str3 == null) {
+        this.vcode = "";
+      } else {
+        this.vcode = str3;
+      } 
+      str3 = paramBuilder.vcode_md5;
+      if (str3 == null) {
+        this.vcode_md5 = "";
+      } else {
+        this.vcode_md5 = str3;
+      } 
+      str3 = paramBuilder.vcode_type;
+      if (str3 == null) {
+        this.vcode_type = "";
+      } else {
+        this.vcode_type = str3;
+      } 
+      str3 = paramBuilder.vcode_tag;
+      if (str3 == null) {
+        this.vcode_tag = "";
+      } else {
+        this.vcode_tag = str3;
+      } 
+      str3 = paramBuilder.topic_id;
+      if (str3 == null) {
+        this.topic_id = "";
+      } else {
+        this.topic_id = str3;
+      } 
+      str3 = paramBuilder.new_vcode;
+      if (str3 == null) {
+        this.new_vcode = "";
+      } else {
+        this.new_vcode = str3;
+      } 
+      str3 = paramBuilder.content;
+      if (str3 == null) {
+        this.content = "";
+      } else {
+        this.content = str3;
+      } 
+      str3 = paramBuilder.reply_uid;
+      if (str3 == null) {
+        this.reply_uid = "";
+      } else {
+        this.reply_uid = str3;
+      } 
+      str3 = paramBuilder.meme_text;
+      if (str3 == null) {
+        this.meme_text = "";
+      } else {
+        this.meme_text = str3;
+      } 
+      str3 = paramBuilder.meme_cont_sign;
+      if (str3 == null) {
+        this.meme_cont_sign = "";
+      } else {
+        this.meme_cont_sign = str3;
+      } 
+      str3 = paramBuilder.item_id;
+      if (str3 == null) {
+        this.item_id = "";
+      } else {
+        this.item_id = str3;
+      } 
+      str3 = paramBuilder.comment_head;
+      if (str3 == null) {
+        this.comment_head = "";
+      } else {
+        this.comment_head = str3;
+      } 
+      str3 = paramBuilder.works_tag;
+      if (str3 == null) {
+        this.works_tag = "";
+      } else {
+        this.works_tag = str3;
+      } 
+      str3 = paramBuilder.fid;
+      if (str3 == null) {
+        this.fid = "";
+      } else {
+        this.fid = str3;
+      } 
+      str3 = paramBuilder.kw;
+      if (str3 == null) {
+        this.kw = "";
+      } else {
+        this.kw = str3;
+      } 
+      str3 = paramBuilder.transform_forums;
+      if (str3 == null) {
+        this.transform_forums = "";
+      } else {
+        this.transform_forums = str3;
+      } 
+      str3 = paramBuilder.is_hide;
+      if (str3 == null) {
+        this.is_hide = "";
+      } else {
+        this.is_hide = str3;
+      } 
+      str3 = paramBuilder.is_repost_to_dynamic;
+      if (str3 == null) {
+        this.is_repost_to_dynamic = "";
+      } else {
+        this.is_repost_to_dynamic = str3;
+      } 
+      str3 = paramBuilder.video_id;
+      if (str3 == null) {
+        this.video_id = "";
+      } else {
+        this.video_id = str3;
+      } 
+      str3 = paramBuilder.origin_video_cover;
+      if (str3 == null) {
+        this.origin_video_cover = "";
+      } else {
+        this.origin_video_cover = str3;
+      } 
+      str3 = paramBuilder.origin_video_title;
+      if (str3 == null) {
+        this.origin_video_title = "";
+      } else {
+        this.origin_video_title = str3;
+      } 
+      str3 = paramBuilder.is_share;
+      if (str3 == null) {
+        this.is_share = "";
+      } else {
+        this.is_share = str3;
+      } 
+      str3 = paramBuilder.from_tid;
+      if (str3 == null) {
+        this.from_tid = "";
+      } else {
+        this.from_tid = str3;
+      } 
+      str3 = paramBuilder.pro_zone;
+      if (str3 == null) {
+        this.pro_zone = "";
+      } else {
+        this.pro_zone = str3;
+      } 
+      str3 = paramBuilder.call_from;
+      if (str3 == null) {
+        this.call_from = "";
+      } else {
+        this.call_from = str3;
+      } 
+      str3 = paramBuilder.title;
+      if (str3 == null) {
+        this.title = "";
+      } else {
+        this.title = str3;
+      } 
+      str3 = paramBuilder.video_abstract;
+      if (str3 == null) {
+        this.video_abstract = "";
+      } else {
+        this.video_abstract = str3;
+      } 
+      str3 = paramBuilder.post_prefix;
+      if (str3 == null) {
+        this.post_prefix = "";
+      } else {
+        this.post_prefix = str3;
+      } 
+      str3 = paramBuilder.is_ntitle;
+      if (str3 == null) {
+        this.is_ntitle = "";
+      } else {
+        this.is_ntitle = str3;
+      } 
+      str3 = paramBuilder.st_type;
+      if (str3 == null) {
+        this.st_type = "";
+      } else {
+        this.st_type = str3;
+      } 
+      str3 = paramBuilder.lbs;
+      if (str3 == null) {
+        this.lbs = "";
+      } else {
+        this.lbs = str3;
+      } 
+      str3 = paramBuilder.is_location;
+      if (str3 == null) {
+        this.is_location = "";
+      } else {
+        this.is_location = str3;
+      } 
+      str3 = paramBuilder.lat;
+      if (str3 == null) {
+        this.lat = "";
+      } else {
+        this.lat = str3;
+      } 
+      str3 = paramBuilder.lng;
+      if (str3 == null) {
+        this.lng = "";
+      } else {
+        this.lng = str3;
+      } 
+      str3 = paramBuilder.name;
+      if (str3 == null) {
+        this.name = "";
+      } else {
+        this.name = str3;
+      } 
+      str3 = paramBuilder.sn;
+      if (str3 == null) {
+        this.sn = "";
+      } else {
+        this.sn = str3;
+      } 
+      str3 = paramBuilder.is_bottle;
+      if (str3 == null) {
+        this.is_bottle = "";
+      } else {
+        this.is_bottle = str3;
+      } 
+      str3 = paramBuilder.recommend_ext;
+      if (str3 == null) {
+        this.recommend_ext = "";
+      } else {
+        this.recommend_ext = str3;
+      } 
+      str3 = paramBuilder.link_url;
+      if (str3 == null) {
+        this.link_url = "";
+      } else {
+        this.link_url = str3;
+      } 
+      str3 = paramBuilder.link_url_code;
+      if (str3 == null) {
+        this.link_url_code = "";
+      } else {
+        this.link_url_code = str3;
+      } 
+      str3 = paramBuilder.is_link_thread;
+      if (str3 == null) {
+        this.is_link_thread = "";
+      } else {
+        this.is_link_thread = str3;
+      } 
+      str3 = paramBuilder.ori_ugc_nid;
+      if (str3 == null) {
+        this.ori_ugc_nid = "";
+      } else {
+        this.ori_ugc_nid = str3;
+      } 
+      str3 = paramBuilder.ori_ugc_vid;
+      if (str3 == null) {
+        this.ori_ugc_vid = "";
+      } else {
+        this.ori_ugc_vid = str3;
+      } 
+      str3 = paramBuilder.ori_ugc_tid;
+      if (str3 == null) {
+        this.ori_ugc_tid = "";
+      } else {
+        this.ori_ugc_tid = str3;
+      } 
+      str3 = paramBuilder.ori_ugc_type;
+      if (str3 == null) {
+        this.ori_ugc_type = "";
+      } else {
+        this.ori_ugc_type = str3;
+      } 
+      str3 = paramBuilder.tab_name;
+      if (str3 == null) {
+        this.tab_name = "";
+      } else {
+        this.tab_name = str3;
+      } 
+      str3 = paramBuilder.tab_id;
+      if (str3 == null) {
+        this.tab_id = "";
+      } else {
+        this.tab_id = str3;
+      } 
+      str3 = paramBuilder.is_general_tab;
+      if (str3 == null) {
+        this.is_general_tab = "";
+      } else {
+        this.is_general_tab = str3;
+      } 
+      str3 = paramBuilder.is_forum_business_account;
+      if (str3 == null) {
+        this.is_forum_business_account = "";
+      } else {
+        this.is_forum_business_account = str3;
+      } 
+      str3 = paramBuilder.thread_type;
+      if (str3 == null) {
+        this.thread_type = "";
+      } else {
+        this.thread_type = str3;
+      } 
+      str3 = paramBuilder.tbopen_app_key;
+      if (str3 == null) {
+        this.tbopen_app_key = "";
+      } else {
+        this.tbopen_app_key = str3;
+      } 
+      str3 = paramBuilder.tbopen_app_icon;
+      if (str3 == null) {
+        this.tbopen_app_icon = "";
+      } else {
+        this.tbopen_app_icon = str3;
+      } 
+      str3 = paramBuilder.tbopen_app_name;
+      if (str3 == null) {
+        this.tbopen_app_name = "";
+      } else {
+        this.tbopen_app_name = str3;
+      } 
+      str3 = paramBuilder.share_abstract;
+      if (str3 == null) {
+        this.share_abstract = "";
+      } else {
+        this.share_abstract = str3;
+      } 
+      str3 = paramBuilder.share_image;
+      if (str3 == null) {
+        this.share_image = "";
+      } else {
+        this.share_image = str3;
+      } 
+      str3 = paramBuilder.share_h5_url;
+      if (str3 == null) {
+        this.share_h5_url = "";
+      } else {
+        this.share_h5_url = str3;
+      } 
+      str3 = paramBuilder.share_swan_app_key;
+      if (str3 == null) {
+        this.share_swan_app_key = "";
+      } else {
+        this.share_swan_app_key = str3;
+      } 
+      str3 = paramBuilder.share_swan_path;
+      if (str3 == null) {
+        this.share_swan_path = "";
+      } else {
+        this.share_swan_path = str3;
+      } 
+      str3 = paramBuilder.real_lat;
+      if (str3 == null) {
+        this.real_lat = "";
+      } else {
+        this.real_lat = str3;
+      } 
+      str3 = paramBuilder.real_lng;
+      if (str3 == null) {
+        this.real_lng = "";
+      } else {
+        this.real_lng = str3;
+      } 
+      str3 = paramBuilder.name_show;
+      if (str3 == null) {
+        this.name_show = "";
+      } else {
+        this.name_show = str3;
+      } 
+      str3 = paramBuilder.is_works;
+      if (str3 == null) {
+        this.is_works = "";
+      } else {
+        this.is_works = str3;
+      } 
+      str3 = paramBuilder.is_pictxt;
+      if (str3 == null) {
+        this.is_pictxt = "";
+      } else {
+        this.is_pictxt = str3;
+      } 
+      str3 = paramBuilder.first_frame_pid;
+      if (str3 == null) {
+        this.first_frame_pid = "";
+      } else {
+        this.first_frame_pid = str3;
+      } 
+      str3 = paramBuilder.is_article;
+      if (str3 == null) {
+        this.is_article = "";
+      } else {
+        this.is_article = str3;
+      } 
+      Integer integer2 = paramBuilder.show_custom_figure;
+      if (integer2 == null) {
+        this.show_custom_figure = DEFAULT_SHOW_CUSTOM_FIGURE;
+      } else {
+        this.show_custom_figure = integer2;
+      } 
+      String str2 = paramBuilder.from_category_id;
+      if (str2 == null) {
+        this.from_category_id = "";
+      } else {
+        this.from_category_id = str2;
+      } 
+      str2 = paramBuilder.to_category_id;
+      if (str2 == null) {
+        this.to_category_id = "";
+      } else {
+        this.to_category_id = str2;
+      } 
+      Integer integer1 = paramBuilder.is_question;
+      if (integer1 == null) {
+        this.is_question = DEFAULT_IS_QUESTION;
+      } else {
+        this.is_question = integer1;
+      } 
+      String str1 = paramBuilder.question_tag_id;
+      if (str1 == null) {
+        this.question_tag_id = "";
+      } else {
+        this.question_tag_id = str1;
+      } 
+      integer = paramBuilder.is_create_tag;
+      if (integer == null) {
+        this.is_create_tag = DEFAULT_IS_CREATE_TAG;
+      } else {
+        this.is_create_tag = integer;
+      } 
+    } else {
+      this.common = ((Builder)integer).common;
+      this.authsid = ((Builder)integer).authsid;
+      this.sig = ((Builder)integer).sig;
+      this.tbs = ((Builder)integer).tbs;
+      this.video_other = ((Builder)integer).video_other;
+      this.anonymous = ((Builder)integer).anonymous;
+      this.can_no_forum = ((Builder)integer).can_no_forum;
+      this.is_feedback = ((Builder)integer).is_feedback;
+      this.takephoto_num = ((Builder)integer).takephoto_num;
+      this.entrance_type = ((Builder)integer).entrance_type;
+      this.voice_md5 = ((Builder)integer).voice_md5;
+      this.during_time = ((Builder)integer).during_time;
+      this.vcode = ((Builder)integer).vcode;
+      this.vcode_md5 = ((Builder)integer).vcode_md5;
+      this.vcode_type = ((Builder)integer).vcode_type;
+      this.vcode_tag = ((Builder)integer).vcode_tag;
+      this.topic_id = ((Builder)integer).topic_id;
+      this.new_vcode = ((Builder)integer).new_vcode;
+      this.content = ((Builder)integer).content;
+      this.reply_uid = ((Builder)integer).reply_uid;
+      this.meme_text = ((Builder)integer).meme_text;
+      this.meme_cont_sign = ((Builder)integer).meme_cont_sign;
+      this.item_id = ((Builder)integer).item_id;
+      this.comment_head = ((Builder)integer).comment_head;
+      this.works_tag = ((Builder)integer).works_tag;
+      this.fid = ((Builder)integer).fid;
+      this.kw = ((Builder)integer).kw;
+      this.transform_forums = ((Builder)integer).transform_forums;
+      this.is_hide = ((Builder)integer).is_hide;
+      this.is_repost_to_dynamic = ((Builder)integer).is_repost_to_dynamic;
+      this.video_id = ((Builder)integer).video_id;
+      this.origin_video_cover = ((Builder)integer).origin_video_cover;
+      this.origin_video_title = ((Builder)integer).origin_video_title;
+      this.is_share = ((Builder)integer).is_share;
+      this.from_tid = ((Builder)integer).from_tid;
+      this.pro_zone = ((Builder)integer).pro_zone;
+      this.call_from = ((Builder)integer).call_from;
+      this.title = ((Builder)integer).title;
+      this.video_abstract = ((Builder)integer).video_abstract;
+      this.post_prefix = ((Builder)integer).post_prefix;
+      this.is_ntitle = ((Builder)integer).is_ntitle;
+      this.st_type = ((Builder)integer).st_type;
+      this.lbs = ((Builder)integer).lbs;
+      this.is_location = ((Builder)integer).is_location;
+      this.lat = ((Builder)integer).lat;
+      this.lng = ((Builder)integer).lng;
+      this.name = ((Builder)integer).name;
+      this.sn = ((Builder)integer).sn;
+      this.is_bottle = ((Builder)integer).is_bottle;
+      this.recommend_ext = ((Builder)integer).recommend_ext;
+      this.link_url = ((Builder)integer).link_url;
+      this.link_url_code = ((Builder)integer).link_url_code;
+      this.is_link_thread = ((Builder)integer).is_link_thread;
+      this.ori_ugc_nid = ((Builder)integer).ori_ugc_nid;
+      this.ori_ugc_vid = ((Builder)integer).ori_ugc_vid;
+      this.ori_ugc_tid = ((Builder)integer).ori_ugc_tid;
+      this.ori_ugc_type = ((Builder)integer).ori_ugc_type;
+      this.tab_name = ((Builder)integer).tab_name;
+      this.tab_id = ((Builder)integer).tab_id;
+      this.is_general_tab = ((Builder)integer).is_general_tab;
+      this.is_forum_business_account = ((Builder)integer).is_forum_business_account;
+      this.thread_type = ((Builder)integer).thread_type;
+      this.tbopen_app_key = ((Builder)integer).tbopen_app_key;
+      this.tbopen_app_icon = ((Builder)integer).tbopen_app_icon;
+      this.tbopen_app_name = ((Builder)integer).tbopen_app_name;
+      this.share_abstract = ((Builder)integer).share_abstract;
+      this.share_image = ((Builder)integer).share_image;
+      this.share_h5_url = ((Builder)integer).share_h5_url;
+      this.share_swan_app_key = ((Builder)integer).share_swan_app_key;
+      this.share_swan_path = ((Builder)integer).share_swan_path;
+      this.real_lat = ((Builder)integer).real_lat;
+      this.real_lng = ((Builder)integer).real_lng;
+      this.name_show = ((Builder)integer).name_show;
+      this.is_works = ((Builder)integer).is_works;
+      this.is_pictxt = ((Builder)integer).is_pictxt;
+      this.first_frame_pid = ((Builder)integer).first_frame_pid;
+      this.is_article = ((Builder)integer).is_article;
+      this.show_custom_figure = ((Builder)integer).show_custom_figure;
+      this.from_category_id = ((Builder)integer).from_category_id;
+      this.to_category_id = ((Builder)integer).to_category_id;
+      this.is_question = ((Builder)integer).is_question;
+      this.question_tag_id = ((Builder)integer).question_tag_id;
+      this.is_create_tag = ((Builder)integer).is_create_tag;
+    } 
+  }
+  
+  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
+    this(paramBuilder, paramBoolean);
   }
   
   public static final class Builder extends Message.Builder<DataReq> {
@@ -1030,6 +1070,8 @@ public final class DataReq extends Message {
     
     public String is_bottle;
     
+    public Integer is_create_tag;
+    
     public String is_feedback;
     
     public String is_forum_business_account;
@@ -1045,6 +1087,8 @@ public final class DataReq extends Message {
     public String is_ntitle;
     
     public String is_pictxt;
+    
+    public Integer is_question;
     
     public String is_repost_to_dynamic;
     
@@ -1091,6 +1135,8 @@ public final class DataReq extends Message {
     public String post_prefix;
     
     public String pro_zone;
+    
+    public String question_tag_id;
     
     public String real_lat;
     
@@ -1246,6 +1292,9 @@ public final class DataReq extends Message {
       this.show_custom_figure = param1DataReq.show_custom_figure;
       this.from_category_id = param1DataReq.from_category_id;
       this.to_category_id = param1DataReq.to_category_id;
+      this.is_question = param1DataReq.is_question;
+      this.question_tag_id = param1DataReq.question_tag_id;
+      this.is_create_tag = param1DataReq.is_create_tag;
     }
     
     public DataReq build(boolean param1Boolean) {

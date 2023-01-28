@@ -10,6 +10,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Banner;
+import tbclient.RecomTopicList;
 
 public final class DataRes extends Message {
   public static Interceptable $ic;
@@ -54,6 +55,9 @@ public final class DataRes extends Message {
   @ProtoField(tag = 2)
   public final MagicPost magic_post;
   
+  @ProtoField(tag = 17)
+  public final RecomTopicList next_topic;
+  
   @ProtoField(tag = 6)
   public final PkModule pk_module;
   
@@ -89,7 +93,6 @@ public final class DataRes extends Message {
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    List<Banner> list;
     if (paramBoolean == true) {
       List<RelateForum> list3 = paramBuilder.relate_forum;
       if (list3 == null) {
@@ -136,29 +139,31 @@ public final class DataRes extends Message {
         this.relate_forum_title = str;
       } 
       this.weiguan_module = paramBuilder.weiguan_module;
-      list = paramBuilder.banner;
+      List<Banner> list = paramBuilder.banner;
       if (list == null) {
         this.banner = DEFAULT_BANNER;
       } else {
         this.banner = Message.immutableCopyOf(list);
       } 
+      this.next_topic = paramBuilder.next_topic;
     } else {
-      this.relate_forum = Message.immutableCopyOf(((Builder)list).relate_forum);
-      this.magic_post = ((Builder)list).magic_post;
-      this.hot_thread = ((Builder)list).hot_thread;
-      this.topic_info = ((Builder)list).topic_info;
-      this.thread_module = ((Builder)list).thread_module;
-      this.pk_module = ((Builder)list).pk_module;
-      this.bless_module = ((Builder)list).bless_module;
-      this.candle_module = ((Builder)list).candle_module;
-      this.good_threads = ((Builder)list).good_threads;
-      this.is_new_url = ((Builder)list).is_new_url;
-      this.post_forum = Message.immutableCopyOf(((Builder)list).post_forum);
-      this.is_global_block = ((Builder)list).is_global_block;
-      this.special_topic = Message.immutableCopyOf(((Builder)list).special_topic);
-      this.relate_forum_title = ((Builder)list).relate_forum_title;
-      this.weiguan_module = ((Builder)list).weiguan_module;
-      this.banner = Message.immutableCopyOf(((Builder)list).banner);
+      this.relate_forum = Message.immutableCopyOf(paramBuilder.relate_forum);
+      this.magic_post = paramBuilder.magic_post;
+      this.hot_thread = paramBuilder.hot_thread;
+      this.topic_info = paramBuilder.topic_info;
+      this.thread_module = paramBuilder.thread_module;
+      this.pk_module = paramBuilder.pk_module;
+      this.bless_module = paramBuilder.bless_module;
+      this.candle_module = paramBuilder.candle_module;
+      this.good_threads = paramBuilder.good_threads;
+      this.is_new_url = paramBuilder.is_new_url;
+      this.post_forum = Message.immutableCopyOf(paramBuilder.post_forum);
+      this.is_global_block = paramBuilder.is_global_block;
+      this.special_topic = Message.immutableCopyOf(paramBuilder.special_topic);
+      this.relate_forum_title = paramBuilder.relate_forum_title;
+      this.weiguan_module = paramBuilder.weiguan_module;
+      this.banner = Message.immutableCopyOf(paramBuilder.banner);
+      this.next_topic = paramBuilder.next_topic;
     } 
   }
   
@@ -203,6 +208,8 @@ public final class DataRes extends Message {
     
     public MagicPost magic_post;
     
+    public RecomTopicList next_topic;
+    
     public PkModule pk_module;
     
     public List<RelateForum> post_forum;
@@ -241,6 +248,7 @@ public final class DataRes extends Message {
       this.relate_forum_title = param1DataRes.relate_forum_title;
       this.weiguan_module = param1DataRes.weiguan_module;
       this.banner = Message.copyOf(param1DataRes.banner);
+      this.next_topic = param1DataRes.next_topic;
     }
     
     public DataRes build(boolean param1Boolean) {

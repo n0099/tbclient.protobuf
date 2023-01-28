@@ -21,6 +21,8 @@ public final class Agree extends Message {
   
   public static final Integer DEFAULT_HAS_AGREE;
   
+  public static final Integer DEFAULT_LZ_AGREE;
+  
   public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -37,6 +39,9 @@ public final class Agree extends Message {
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer has_agree;
+  
+  @ProtoField(tag = 6, type = Message.Datatype.INT32)
+  public final Integer lz_agree;
   
   static {
     ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
@@ -59,11 +64,12 @@ public final class Agree extends Message {
     DEFAULT_AGREE_TYPE = integer;
     DEFAULT_DISAGREE_NUM = long_;
     DEFAULT_DIFF_AGREE_NUM = long_;
+    DEFAULT_LZ_AGREE = integer;
   }
   
   public Agree(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Long long_;
+    Integer integer;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.agree_num;
       if (long_2 == null) {
@@ -71,17 +77,17 @@ public final class Agree extends Message {
       } else {
         this.agree_num = long_2;
       } 
-      Integer integer = paramBuilder.has_agree;
-      if (integer == null) {
+      Integer integer1 = paramBuilder.has_agree;
+      if (integer1 == null) {
         this.has_agree = DEFAULT_HAS_AGREE;
       } else {
-        this.has_agree = integer;
+        this.has_agree = integer1;
       } 
-      integer = paramBuilder.agree_type;
-      if (integer == null) {
+      integer1 = paramBuilder.agree_type;
+      if (integer1 == null) {
         this.agree_type = DEFAULT_AGREE_TYPE;
       } else {
-        this.agree_type = integer;
+        this.agree_type = integer1;
       } 
       Long long_1 = paramBuilder.disagree_num;
       if (long_1 == null) {
@@ -89,18 +95,25 @@ public final class Agree extends Message {
       } else {
         this.disagree_num = long_1;
       } 
-      long_ = paramBuilder.diff_agree_num;
-      if (long_ == null) {
+      long_1 = paramBuilder.diff_agree_num;
+      if (long_1 == null) {
         this.diff_agree_num = DEFAULT_DIFF_AGREE_NUM;
       } else {
-        this.diff_agree_num = long_;
+        this.diff_agree_num = long_1;
+      } 
+      integer = paramBuilder.lz_agree;
+      if (integer == null) {
+        this.lz_agree = DEFAULT_LZ_AGREE;
+      } else {
+        this.lz_agree = integer;
       } 
     } else {
-      this.agree_num = ((Builder)long_).agree_num;
-      this.has_agree = ((Builder)long_).has_agree;
-      this.agree_type = ((Builder)long_).agree_type;
-      this.disagree_num = ((Builder)long_).disagree_num;
-      this.diff_agree_num = ((Builder)long_).diff_agree_num;
+      this.agree_num = ((Builder)integer).agree_num;
+      this.has_agree = ((Builder)integer).has_agree;
+      this.agree_type = ((Builder)integer).agree_type;
+      this.disagree_num = ((Builder)integer).disagree_num;
+      this.diff_agree_num = ((Builder)integer).diff_agree_num;
+      this.lz_agree = ((Builder)integer).lz_agree;
     } 
   }
   
@@ -123,6 +136,8 @@ public final class Agree extends Message {
     
     public Integer has_agree;
     
+    public Integer lz_agree;
+    
     public Builder() {}
     
     public Builder(Agree param1Agree) {
@@ -134,6 +149,7 @@ public final class Agree extends Message {
       this.agree_type = param1Agree.agree_type;
       this.disagree_num = param1Agree.disagree_num;
       this.diff_agree_num = param1Agree.diff_agree_num;
+      this.lz_agree = param1Agree.lz_agree;
     }
     
     public Agree build(boolean param1Boolean) {

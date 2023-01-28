@@ -108,6 +108,8 @@ public final class DataReq extends Message {
   
   public static final Integer DEFAULT_R;
   
+  public static final Integer DEFAULT_REQUEST_TIMES;
+  
   public static final Integer DEFAULT_RN;
   
   public static final Double DEFAULT_SCR_DIP;
@@ -299,6 +301,9 @@ public final class DataReq extends Message {
   @ProtoField(tag = 6, type = Message.Datatype.INT32)
   public final Integer r;
   
+  @ProtoField(tag = 80, type = Message.Datatype.INT32)
+  public final Integer request_times;
+  
   @ProtoField(tag = 13, type = Message.Datatype.INT32)
   public final Integer rn;
   
@@ -411,6 +416,7 @@ public final class DataReq extends Message {
     DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE = integer;
     DEFAULT_IS_FOLD_COMMENT_REQ = integer;
     DEFAULT_IS_EDIT_COMMENT_REQ = integer;
+    DEFAULT_REQUEST_TIMES = integer;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
@@ -805,11 +811,17 @@ public final class DataReq extends Message {
       } else {
         this.is_fold_comment_req = integer1;
       } 
-      integer = paramBuilder.is_edit_comment_req;
-      if (integer == null) {
+      integer1 = paramBuilder.is_edit_comment_req;
+      if (integer1 == null) {
         this.is_edit_comment_req = DEFAULT_IS_EDIT_COMMENT_REQ;
       } else {
-        this.is_edit_comment_req = integer;
+        this.is_edit_comment_req = integer1;
+      } 
+      integer = paramBuilder.request_times;
+      if (integer == null) {
+        this.request_times = DEFAULT_REQUEST_TIMES;
+      } else {
+        this.request_times = integer;
       } 
     } else {
       this.pb_rn = ((Builder)integer).pb_rn;
@@ -881,6 +893,7 @@ public final class DataReq extends Message {
       this.app_transmit_data = ((Builder)integer).app_transmit_data;
       this.is_fold_comment_req = ((Builder)integer).is_fold_comment_req;
       this.is_edit_comment_req = ((Builder)integer).is_edit_comment_req;
+      this.request_times = ((Builder)integer).request_times;
     } 
   }
   
@@ -995,6 +1008,8 @@ public final class DataReq extends Message {
     
     public Integer r;
     
+    public Integer request_times;
+    
     public Integer rn;
     
     public Integer s_model;
@@ -1106,6 +1121,7 @@ public final class DataReq extends Message {
       this.app_transmit_data = param1DataReq.app_transmit_data;
       this.is_fold_comment_req = param1DataReq.is_fold_comment_req;
       this.is_edit_comment_req = param1DataReq.is_edit_comment_req;
+      this.request_times = param1DataReq.request_times;
     }
     
     public DataReq build(boolean param1Boolean) {

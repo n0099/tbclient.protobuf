@@ -104,6 +104,8 @@ public final class DataReq extends Message {
   
   public static final Integer DEFAULT_Q_TYPE;
   
+  public static final Integer DEFAULT_REQUEST_TIMES;
+  
   public static final Integer DEFAULT_RESULT_NUM;
   
   public static final Integer DEFAULT_RN;
@@ -291,6 +293,9 @@ public final class DataReq extends Message {
   @ProtoField(tag = 14, type = Message.Datatype.INT32)
   public final Integer q_type;
   
+  @ProtoField(tag = 69, type = Message.Datatype.INT32)
+  public final Integer request_times;
+  
   @ProtoField(tag = 22, type = Message.Datatype.INT32)
   public final Integer result_num;
   
@@ -406,11 +411,12 @@ public final class DataReq extends Message {
     DEFAULT_DEFAULT_SORT_TYPE = integer;
     DEFAULT_HAS_AD_BEAR = integer;
     DEFAULT_AD_BEAR_SID_PRICE = double_;
+    DEFAULT_REQUEST_TIMES = integer;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Double double_;
+    Integer integer;
     if (paramBoolean == true) {
       String str15 = paramBuilder.kw;
       if (str15 == null) {
@@ -484,11 +490,11 @@ public final class DataReq extends Message {
       } else {
         this.scr_h = integer15;
       } 
-      Double double_1 = paramBuilder.scr_dip;
-      if (double_1 == null) {
+      Double double_2 = paramBuilder.scr_dip;
+      if (double_2 == null) {
         this.scr_dip = DEFAULT_SCR_DIP;
       } else {
-        this.scr_dip = double_1;
+        this.scr_dip = double_2;
       } 
       Integer integer14 = paramBuilder.q_type;
       if (integer14 == null) {
@@ -794,81 +800,88 @@ public final class DataReq extends Message {
       } else {
         this.ad_bear_sid = str1;
       } 
-      double_ = paramBuilder.ad_bear_sid_price;
-      if (double_ == null) {
+      Double double_1 = paramBuilder.ad_bear_sid_price;
+      if (double_1 == null) {
         this.ad_bear_sid_price = DEFAULT_AD_BEAR_SID_PRICE;
       } else {
-        this.ad_bear_sid_price = double_;
+        this.ad_bear_sid_price = double_1;
+      } 
+      integer = paramBuilder.request_times;
+      if (integer == null) {
+        this.request_times = DEFAULT_REQUEST_TIMES;
+      } else {
+        this.request_times = integer;
       } 
     } else {
-      this.kw = ((Builder)double_).kw;
-      this.rn = ((Builder)double_).rn;
-      this.rn_need = ((Builder)double_).rn_need;
-      this.is_good = ((Builder)double_).is_good;
-      this.cid = ((Builder)double_).cid;
-      this.withcal = ((Builder)double_).withcal;
-      this.noval = ((Builder)double_).noval;
-      this.with_group = ((Builder)double_).with_group;
-      this.need_badge = ((Builder)double_).need_badge;
-      this.frs_rn = ((Builder)double_).frs_rn;
-      this.scr_w = ((Builder)double_).scr_w;
-      this.scr_h = ((Builder)double_).scr_h;
-      this.scr_dip = ((Builder)double_).scr_dip;
-      this.q_type = ((Builder)double_).q_type;
-      this.pn = ((Builder)double_).pn;
-      this.st_type = ((Builder)double_).st_type;
-      this.ctime = ((Builder)double_).ctime;
-      this.data_size = ((Builder)double_).data_size;
-      this.net_error = ((Builder)double_).net_error;
-      this.check_login = ((Builder)double_).check_login;
-      this.forum_name = ((Builder)double_).forum_name;
-      this.result_num = ((Builder)double_).result_num;
-      this.class_id = ((Builder)double_).class_id;
-      this.ip_str = ((Builder)double_).ip_str;
-      this.ip_int = ((Builder)double_).ip_int;
-      this.module_name = ((Builder)double_).module_name;
-      this.st_param = ((Builder)double_).st_param;
-      this.smile_grade = ((Builder)double_).smile_grade;
-      this.support_noun = ((Builder)double_).support_noun;
-      this.login = ((Builder)double_).login;
-      this.user_id = ((Builder)double_).user_id;
-      this.user_name = ((Builder)double_).user_name;
-      this.no_un = ((Builder)double_).no_un;
-      this.portrait = ((Builder)double_).portrait;
-      this.mobile = ((Builder)double_).mobile;
-      this.email = ((Builder)double_).email;
-      this.debug = ((Builder)double_).debug;
-      this.cookie = ((Builder)double_).cookie;
-      this.common = ((Builder)double_).common;
-      this.lastids = ((Builder)double_).lastids;
-      this.issdk = ((Builder)double_).issdk;
-      this.da_idfa = ((Builder)double_).da_idfa;
-      this.platform = ((Builder)double_).platform;
-      this.category_id = ((Builder)double_).category_id;
-      this.yuelaou_locate = ((Builder)double_).yuelaou_locate;
-      this.yuelaou_params = ((Builder)double_).yuelaou_params;
-      this.sort_type = ((Builder)double_).sort_type;
-      this.last_click_tid = ((Builder)double_).last_click_tid;
-      this.load_type = ((Builder)double_).load_type;
-      this.app_pos = ((Builder)double_).app_pos;
-      this.ad_param = ((Builder)double_).ad_param;
-      this.obj_locate = ((Builder)double_).obj_locate;
-      this.obj_source = ((Builder)double_).obj_source;
-      this.call_url = ((Builder)double_).call_url;
-      this.is_selection = ((Builder)double_).is_selection;
-      this.call_from = ((Builder)double_).call_from;
-      this.shoubai_cuid = ((Builder)double_).shoubai_cuid;
-      this.hot_thread_id = ((Builder)double_).hot_thread_id;
-      this.is_default_navtab = ((Builder)double_).is_default_navtab;
-      this.ad_context_list = ((Builder)double_).ad_context_list;
-      this.up_schema = ((Builder)double_).up_schema;
-      this.ad_ext_params = ((Builder)double_).ad_ext_params;
-      this.default_sort_type = ((Builder)double_).default_sort_type;
-      this.app_transmit_data = ((Builder)double_).app_transmit_data;
-      this.ad_bear_context = ((Builder)double_).ad_bear_context;
-      this.has_ad_bear = ((Builder)double_).has_ad_bear;
-      this.ad_bear_sid = ((Builder)double_).ad_bear_sid;
-      this.ad_bear_sid_price = ((Builder)double_).ad_bear_sid_price;
+      this.kw = ((Builder)integer).kw;
+      this.rn = ((Builder)integer).rn;
+      this.rn_need = ((Builder)integer).rn_need;
+      this.is_good = ((Builder)integer).is_good;
+      this.cid = ((Builder)integer).cid;
+      this.withcal = ((Builder)integer).withcal;
+      this.noval = ((Builder)integer).noval;
+      this.with_group = ((Builder)integer).with_group;
+      this.need_badge = ((Builder)integer).need_badge;
+      this.frs_rn = ((Builder)integer).frs_rn;
+      this.scr_w = ((Builder)integer).scr_w;
+      this.scr_h = ((Builder)integer).scr_h;
+      this.scr_dip = ((Builder)integer).scr_dip;
+      this.q_type = ((Builder)integer).q_type;
+      this.pn = ((Builder)integer).pn;
+      this.st_type = ((Builder)integer).st_type;
+      this.ctime = ((Builder)integer).ctime;
+      this.data_size = ((Builder)integer).data_size;
+      this.net_error = ((Builder)integer).net_error;
+      this.check_login = ((Builder)integer).check_login;
+      this.forum_name = ((Builder)integer).forum_name;
+      this.result_num = ((Builder)integer).result_num;
+      this.class_id = ((Builder)integer).class_id;
+      this.ip_str = ((Builder)integer).ip_str;
+      this.ip_int = ((Builder)integer).ip_int;
+      this.module_name = ((Builder)integer).module_name;
+      this.st_param = ((Builder)integer).st_param;
+      this.smile_grade = ((Builder)integer).smile_grade;
+      this.support_noun = ((Builder)integer).support_noun;
+      this.login = ((Builder)integer).login;
+      this.user_id = ((Builder)integer).user_id;
+      this.user_name = ((Builder)integer).user_name;
+      this.no_un = ((Builder)integer).no_un;
+      this.portrait = ((Builder)integer).portrait;
+      this.mobile = ((Builder)integer).mobile;
+      this.email = ((Builder)integer).email;
+      this.debug = ((Builder)integer).debug;
+      this.cookie = ((Builder)integer).cookie;
+      this.common = ((Builder)integer).common;
+      this.lastids = ((Builder)integer).lastids;
+      this.issdk = ((Builder)integer).issdk;
+      this.da_idfa = ((Builder)integer).da_idfa;
+      this.platform = ((Builder)integer).platform;
+      this.category_id = ((Builder)integer).category_id;
+      this.yuelaou_locate = ((Builder)integer).yuelaou_locate;
+      this.yuelaou_params = ((Builder)integer).yuelaou_params;
+      this.sort_type = ((Builder)integer).sort_type;
+      this.last_click_tid = ((Builder)integer).last_click_tid;
+      this.load_type = ((Builder)integer).load_type;
+      this.app_pos = ((Builder)integer).app_pos;
+      this.ad_param = ((Builder)integer).ad_param;
+      this.obj_locate = ((Builder)integer).obj_locate;
+      this.obj_source = ((Builder)integer).obj_source;
+      this.call_url = ((Builder)integer).call_url;
+      this.is_selection = ((Builder)integer).is_selection;
+      this.call_from = ((Builder)integer).call_from;
+      this.shoubai_cuid = ((Builder)integer).shoubai_cuid;
+      this.hot_thread_id = ((Builder)integer).hot_thread_id;
+      this.is_default_navtab = ((Builder)integer).is_default_navtab;
+      this.ad_context_list = ((Builder)integer).ad_context_list;
+      this.up_schema = ((Builder)integer).up_schema;
+      this.ad_ext_params = ((Builder)integer).ad_ext_params;
+      this.default_sort_type = ((Builder)integer).default_sort_type;
+      this.app_transmit_data = ((Builder)integer).app_transmit_data;
+      this.ad_bear_context = ((Builder)integer).ad_bear_context;
+      this.has_ad_bear = ((Builder)integer).has_ad_bear;
+      this.ad_bear_sid = ((Builder)integer).ad_bear_sid;
+      this.ad_bear_sid_price = ((Builder)integer).ad_bear_sid_price;
+      this.request_times = ((Builder)integer).request_times;
     } 
   }
   
@@ -978,6 +991,8 @@ public final class DataReq extends Message {
     public String portrait;
     
     public Integer q_type;
+    
+    public Integer request_times;
     
     public Integer result_num;
     
@@ -1091,6 +1106,7 @@ public final class DataReq extends Message {
       this.has_ad_bear = param1DataReq.has_ad_bear;
       this.ad_bear_sid = param1DataReq.ad_bear_sid;
       this.ad_bear_sid_price = param1DataReq.ad_bear_sid_price;
+      this.request_times = param1DataReq.request_times;
     }
     
     public DataReq build(boolean param1Boolean) {

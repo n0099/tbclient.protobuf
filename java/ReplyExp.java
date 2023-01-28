@@ -21,6 +21,10 @@ public final class ReplyExp extends Message {
   
   public static final String DEFAULT_PRE_MSG = "";
   
+  public static final String DEFAULT_QUESTION_EXP = "";
+  
+  public static final String DEFAULT_QUESTION_MSG = "";
+  
   public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -40,6 +44,12 @@ public final class ReplyExp extends Message {
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String pre_msg;
+  
+  @ProtoField(tag = 8, type = Message.Datatype.STRING)
+  public final String question_exp;
+  
+  @ProtoField(tag = 7, type = Message.Datatype.STRING)
+  public final String question_msg;
   
   public ReplyExp(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
@@ -75,11 +85,23 @@ public final class ReplyExp extends Message {
       } else {
         this.old = str1;
       } 
-      str = paramBuilder.inc;
-      if (str == null) {
+      str1 = paramBuilder.inc;
+      if (str1 == null) {
         this.inc = "";
       } else {
-        this.inc = str;
+        this.inc = str1;
+      } 
+      str1 = paramBuilder.question_msg;
+      if (str1 == null) {
+        this.question_msg = "";
+      } else {
+        this.question_msg = str1;
+      } 
+      str = paramBuilder.question_exp;
+      if (str == null) {
+        this.question_exp = "";
+      } else {
+        this.question_exp = str;
       } 
     } else {
       this.pre_msg = ((Builder)str).pre_msg;
@@ -88,6 +110,8 @@ public final class ReplyExp extends Message {
       this.current_level = ((Builder)str).current_level;
       this.old = ((Builder)str).old;
       this.inc = ((Builder)str).inc;
+      this.question_msg = ((Builder)str).question_msg;
+      this.question_exp = ((Builder)str).question_exp;
     } 
   }
   
@@ -112,6 +136,10 @@ public final class ReplyExp extends Message {
     
     public String pre_msg;
     
+    public String question_exp;
+    
+    public String question_msg;
+    
     public Builder() {}
     
     public Builder(ReplyExp param1ReplyExp) {
@@ -124,6 +152,8 @@ public final class ReplyExp extends Message {
       this.current_level = param1ReplyExp.current_level;
       this.old = param1ReplyExp.old;
       this.inc = param1ReplyExp.inc;
+      this.question_msg = param1ReplyExp.question_msg;
+      this.question_exp = param1ReplyExp.question_exp;
     }
     
     public ReplyExp build(boolean param1Boolean) {

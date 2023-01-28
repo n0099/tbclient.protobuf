@@ -32,6 +32,8 @@ public final class DataReq extends Message {
   
   public static final Integer DEFAULT_PN;
   
+  public static final Integer DEFAULT_REQUEST_TIMES;
+  
   public static final Integer DEFAULT_RN;
   
   public static final Integer DEFAULT_SCR_DIP;
@@ -82,6 +84,9 @@ public final class DataReq extends Message {
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer pn;
+  
+  @ProtoField(tag = 20, type = Message.Datatype.INT32)
+  public final Integer request_times;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT32)
   public final Integer rn;
@@ -137,11 +142,12 @@ public final class DataReq extends Message {
     DEFAULT_TAB_TYPE = integer;
     DEFAULT_HAS_AD_BEAR = integer;
     DEFAULT_AD_BEAR_SID_PRICE = Double.valueOf(0.0D);
+    DEFAULT_REQUEST_TIMES = integer;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Double double_;
+    Integer integer;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
       Integer integer5 = paramBuilder.tab_id;
@@ -246,32 +252,39 @@ public final class DataReq extends Message {
       } else {
         this.ad_bear_sid = str1;
       } 
-      double_ = paramBuilder.ad_bear_sid_price;
+      Double double_ = paramBuilder.ad_bear_sid_price;
       if (double_ == null) {
         this.ad_bear_sid_price = DEFAULT_AD_BEAR_SID_PRICE;
       } else {
         this.ad_bear_sid_price = double_;
       } 
+      integer = paramBuilder.request_times;
+      if (integer == null) {
+        this.request_times = DEFAULT_REQUEST_TIMES;
+      } else {
+        this.request_times = integer;
+      } 
     } else {
-      this.common = ((Builder)double_).common;
-      this.tab_id = ((Builder)double_).tab_id;
-      this.forum_id = ((Builder)double_).forum_id;
-      this.pn = ((Builder)double_).pn;
-      this.rn = ((Builder)double_).rn;
-      this.scr_w = ((Builder)double_).scr_w;
-      this.scr_h = ((Builder)double_).scr_h;
-      this.scr_dip = ((Builder)double_).scr_dip;
-      this.last_thread_id = ((Builder)double_).last_thread_id;
-      this.is_default_navtab = ((Builder)double_).is_default_navtab;
-      this.tab_name = ((Builder)double_).tab_name;
-      this.is_general_tab = ((Builder)double_).is_general_tab;
-      this.sort_type = ((Builder)double_).sort_type;
-      this.tab_type = ((Builder)double_).tab_type;
-      this.ad_ext_params = ((Builder)double_).ad_ext_params;
-      this.ad_bear_context = ((Builder)double_).ad_bear_context;
-      this.has_ad_bear = ((Builder)double_).has_ad_bear;
-      this.ad_bear_sid = ((Builder)double_).ad_bear_sid;
-      this.ad_bear_sid_price = ((Builder)double_).ad_bear_sid_price;
+      this.common = ((Builder)integer).common;
+      this.tab_id = ((Builder)integer).tab_id;
+      this.forum_id = ((Builder)integer).forum_id;
+      this.pn = ((Builder)integer).pn;
+      this.rn = ((Builder)integer).rn;
+      this.scr_w = ((Builder)integer).scr_w;
+      this.scr_h = ((Builder)integer).scr_h;
+      this.scr_dip = ((Builder)integer).scr_dip;
+      this.last_thread_id = ((Builder)integer).last_thread_id;
+      this.is_default_navtab = ((Builder)integer).is_default_navtab;
+      this.tab_name = ((Builder)integer).tab_name;
+      this.is_general_tab = ((Builder)integer).is_general_tab;
+      this.sort_type = ((Builder)integer).sort_type;
+      this.tab_type = ((Builder)integer).tab_type;
+      this.ad_ext_params = ((Builder)integer).ad_ext_params;
+      this.ad_bear_context = ((Builder)integer).ad_bear_context;
+      this.has_ad_bear = ((Builder)integer).has_ad_bear;
+      this.ad_bear_sid = ((Builder)integer).ad_bear_sid;
+      this.ad_bear_sid_price = ((Builder)integer).ad_bear_sid_price;
+      this.request_times = ((Builder)integer).request_times;
     } 
   }
   
@@ -305,6 +318,8 @@ public final class DataReq extends Message {
     public Long last_thread_id;
     
     public Integer pn;
+    
+    public Integer request_times;
     
     public Integer rn;
     
@@ -347,6 +362,7 @@ public final class DataReq extends Message {
       this.has_ad_bear = param1DataReq.has_ad_bear;
       this.ad_bear_sid = param1DataReq.ad_bear_sid;
       this.ad_bear_sid_price = param1DataReq.ad_bear_sid_price;
+      this.request_times = param1DataReq.request_times;
     }
     
     public DataReq build(boolean param1Boolean) {

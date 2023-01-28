@@ -7,11 +7,14 @@ import com.baidu.titan.sdk.runtime.InterceptResult;
 import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.RecomTagInfo;
 
 public final class TagInfo extends Message {
   public static Interceptable $ic;
   
   public static final Integer DEFAULT_COLOR;
+  
+  public static final String DEFAULT_FIRST_CATEGORY = "";
   
   public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
   
@@ -36,6 +39,9 @@ public final class TagInfo extends Message {
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer color;
   
+  @ProtoField(tag = 12, type = Message.Datatype.STRING)
+  public final String first_category;
+  
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long forum_id;
   
@@ -47,6 +53,9 @@ public final class TagInfo extends Message {
   
   @ProtoField(tag = 10, type = Message.Datatype.INT32)
   public final Integer op_time;
+  
+  @ProtoField(tag = 11)
+  public final RecomTagInfo recom_tag;
   
   @ProtoField(tag = 9, type = Message.Datatype.INT32)
   public final Integer relation_weight;
@@ -77,7 +86,7 @@ public final class TagInfo extends Message {
   
   public TagInfo(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
+    String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.forum_id;
       if (long_ == null) {
@@ -91,11 +100,11 @@ public final class TagInfo extends Message {
       } else {
         this.tag_id = integer2;
       } 
-      String str = paramBuilder.tag_name;
-      if (str == null) {
+      String str1 = paramBuilder.tag_name;
+      if (str1 == null) {
         this.tag_name = "";
       } else {
-        this.tag_name = str;
+        this.tag_name = str1;
       } 
       Integer integer1 = paramBuilder.color;
       if (integer1 == null) {
@@ -133,23 +142,32 @@ public final class TagInfo extends Message {
       } else {
         this.relation_weight = integer1;
       } 
-      integer = paramBuilder.op_time;
-      if (integer == null) {
+      integer1 = paramBuilder.op_time;
+      if (integer1 == null) {
         this.op_time = DEFAULT_OP_TIME;
       } else {
-        this.op_time = integer;
+        this.op_time = integer1;
+      } 
+      this.recom_tag = paramBuilder.recom_tag;
+      str = paramBuilder.first_category;
+      if (str == null) {
+        this.first_category = "";
+      } else {
+        this.first_category = str;
       } 
     } else {
-      this.forum_id = ((Builder)integer).forum_id;
-      this.tag_id = ((Builder)integer).tag_id;
-      this.tag_name = ((Builder)integer).tag_name;
-      this.color = ((Builder)integer).color;
-      this.hot_value = ((Builder)integer).hot_value;
-      this.tag_type = ((Builder)integer).tag_type;
-      this.tag_level = ((Builder)integer).tag_level;
-      this.influence = ((Builder)integer).influence;
-      this.relation_weight = ((Builder)integer).relation_weight;
-      this.op_time = ((Builder)integer).op_time;
+      this.forum_id = ((Builder)str).forum_id;
+      this.tag_id = ((Builder)str).tag_id;
+      this.tag_name = ((Builder)str).tag_name;
+      this.color = ((Builder)str).color;
+      this.hot_value = ((Builder)str).hot_value;
+      this.tag_type = ((Builder)str).tag_type;
+      this.tag_level = ((Builder)str).tag_level;
+      this.influence = ((Builder)str).influence;
+      this.relation_weight = ((Builder)str).relation_weight;
+      this.op_time = ((Builder)str).op_time;
+      this.recom_tag = ((Builder)str).recom_tag;
+      this.first_category = ((Builder)str).first_category;
     } 
   }
   
@@ -180,6 +198,8 @@ public final class TagInfo extends Message {
     
     public Integer color;
     
+    public String first_category;
+    
     public Long forum_id;
     
     public Integer hot_value;
@@ -187,6 +207,8 @@ public final class TagInfo extends Message {
     public Integer influence;
     
     public Integer op_time;
+    
+    public RecomTagInfo recom_tag;
     
     public Integer relation_weight;
     
@@ -214,6 +236,8 @@ public final class TagInfo extends Message {
       this.influence = param1TagInfo.influence;
       this.relation_weight = param1TagInfo.relation_weight;
       this.op_time = param1TagInfo.op_time;
+      this.recom_tag = param1TagInfo.recom_tag;
+      this.first_category = param1TagInfo.first_category;
     }
     
     public TagInfo build(boolean param1Boolean) {
