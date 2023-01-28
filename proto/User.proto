@@ -32,7 +32,10 @@ import "PrivSets.proto";
 import "SimpleUser.proto";
 import "SpringVirtualUser.proto";
 import "TbVipInfo.proto";
+import "ThemeBackgroundInUser.proto";
 import "ThemeCardInUser.proto";
+import "ThemeMyTab.proto";
+import "ThemeTailInUser.proto";
 import "TshowInfo.proto";
 import "TwAnchorProfitItem.proto";
 import "TwZhiBoUser.proto";
@@ -44,6 +47,7 @@ import "VipCloseAd.proto";
 import "VipShowInfo.proto";
 import "VirtualImageInfo.proto";
 import "WorkCreatorInfo.proto";
+import "WorldCupInfo.proto";
 
 message User {
     int32 is_login = 1;
@@ -176,4 +180,9 @@ message User {
     UserGrowth user_growth = 137;
     string display_intro = 138;
     repeated string new_icon_url = 139;
+    string dynamic_url = 140;
+    ThemeTailInUser theme_tail = 141;
+    ThemeBackgroundInUser theme_background = 142;
+    ThemeMyTab theme_my_tab = 143;
+    WorldCupInfo world_cup_info = 144;
 }

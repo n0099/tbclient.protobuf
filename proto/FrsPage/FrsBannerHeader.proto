@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "ThemeColorInfo.proto";
+
+message FrsBannerHeader {
+    string icon_url = 1;
+    string content1 = 2;
+    string content2 = 3;
+    ThemeColorInfo content1_color = 4;
+    ThemeColorInfo content2_color = 5;
+    ThemeColorInfo jump_tips_color = 6;
+    ThemeColorInfo background_color = 7;
+    string jump_tips = 8;
+    string jump_link = 9;
+    string type = 10;
+}

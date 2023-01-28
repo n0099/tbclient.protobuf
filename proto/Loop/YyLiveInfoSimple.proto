@@ -21,4 +21,5 @@ message YyLiveInfoSimple {
     string feed_id = 16;
     int32 remind_type = 17;
     int32 show_page = 18;
+    int32 author_type = 19;
 }

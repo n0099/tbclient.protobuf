@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "ThemeColorInfo.proto";
+
+message FestivalInfo {
+    string main_fname = 1;
+    uint64 main_fid = 2;
+    string bless = 3;
+    string write_select_tips = 4;
+    string comment_tips = 5;
+    ThemeColorInfo tips_color = 6;
+}

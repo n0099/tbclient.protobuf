@@ -40,4 +40,5 @@ message DataReq {
     AppPosInfo app_pos = 36;
     string ad_ext_params = 37;
     AppTransmitData app_transmit_data = 38;
+    int64 push_tid = 39;
 }

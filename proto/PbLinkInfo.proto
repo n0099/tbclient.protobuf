@@ -8,4 +8,6 @@ message PbLinkInfo {
     string ext_txt = 5;
     uint32 sort = 6;
     int32 url_type = 7;
+    string content1 = 8;
+    string content2 = 9;
 }

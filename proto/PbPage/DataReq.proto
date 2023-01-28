@@ -76,4 +76,5 @@ message DataReq {
     int32 is_fold_comment_req = 78;
     int32 is_edit_comment_req = 79;
     int32 request_times = 80;
+    int64 last_pid = 81;
 }

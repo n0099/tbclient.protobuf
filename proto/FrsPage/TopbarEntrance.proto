@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message TopbarEntrance {
+    string guide_tip_first_text = 1;
+    string guide_tip_text = 2;
+    string jump_url = 3;
+}

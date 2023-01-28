@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message FeedGroupInfo {
+    string name = 1;
+    string jump_url = 2;
+}

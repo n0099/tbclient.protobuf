@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "Loop/ChatroomGuideConfig.proto";
+
+message ChatroomGuide {
+    int32 hot_num = 1;
+    ChatroomGuideConfig hot_config = 2;
+    ChatroomGuideConfig manual_config = 3;
+}

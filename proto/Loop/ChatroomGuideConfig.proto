@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message ChatroomGuideConfig {
+    string icon_day = 1;
+    string icon_night = 2;
+    string bkgrd_day = 3;
+    string bkgrd_night = 4;
+    string btnon_day = 5;
+    string btnon_night = 6;
+    string small_icon_day = 7;
+    string small_icon_night = 8;
+    string small_bkgrd_day = 9;
+    string small_bkgrd_night = 10;
+}

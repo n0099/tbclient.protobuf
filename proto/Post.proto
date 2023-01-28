@@ -8,6 +8,7 @@ import "CardLinkInfo.proto";
 import "CustomFigure.proto";
 import "CustomState.proto";
 import "DealInfo.proto";
+import "FestivalTipData.proto";
 import "FullLengthNovel.proto";
 import "HeadItem.proto";
 import "Item.proto";
@@ -23,6 +24,7 @@ import "SkinInfo.proto";
 import "SubPost.proto";
 import "TPointPost.proto";
 import "TailInfo.proto";
+import "ThemeBubble.proto";
 import "TogetherHi.proto";
 import "User.proto";
 import "VideoInfo.proto";
@@ -90,4 +92,8 @@ message Post {
     CustomFigure custom_figure = 60;
     CustomState custom_state = 61;
     FullLengthNovel full_length_novel = 62;
+    string dynamic_url = 63;
+    ThemeBubble bubble_info = 64;
+    string rumor_source_img = 65;
+    FestivalTipData festival_tip_data = 66;
 }

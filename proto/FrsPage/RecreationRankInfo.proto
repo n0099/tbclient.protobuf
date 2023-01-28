@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message RecreationRankInfo {
+    string icon = 1;
+    string rank_name = 2;
+    int32 rank_score = 3;
+    string rank_link = 4;
+    string rank_icon = 5;
+    string rank_color = 6;
+    int32 show_type = 7;
+}

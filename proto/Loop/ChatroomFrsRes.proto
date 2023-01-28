@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "Loop/ChatroomGuide.proto";
+import "Loop/ChatroomList.proto";
+
+message ChatroomFrsRes {
+    repeated int64 hot_list = 1;
+    repeated ChatroomList room_list = 2;
+    ChatroomGuide guide_config = 3;
+}

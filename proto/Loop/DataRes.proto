@@ -1,11 +1,24 @@
 syntax = "proto3";
 
+import "AlaLiveInfo.proto";
+import "Loop/ChatroomFrsRes.proto";
+import "Loop/ChatroomMessageTabData.proto";
+import "Loop/FestivalInfo.proto";
 import "Loop/IconRes.proto";
 import "Loop/LevelRes.proto";
 import "Loop/LiveRes.proto";
+import "Loop/MemberBroadcastInfo.proto";
 
 message DataRes {
     LiveRes live = 1;
     LevelRes level = 2;
     IconRes icon = 3;
+    repeated AlaLiveInfo live_follow_second_floor = 4;
+    repeated AlaLiveInfo live_index_second_floor = 5;
+    repeated AlaLiveInfo live_pic_second_floor = 6;
+    ChatroomFrsRes chatroom_frs = 7;
+    string uniq_id = 8;
+    ChatroomMessageTabData chatroom_message_tab = 9;
+    MemberBroadcastInfo member_broadcast = 10;
+    FestivalInfo festival_info = 11;
 }

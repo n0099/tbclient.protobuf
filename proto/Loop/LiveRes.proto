@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "Loop/LiveNormalConfig.proto";
 import "Loop/NormalConfig.proto";
 import "Loop/YyLiveInfoSimple.proto";
 
@@ -7,4 +8,5 @@ message LiveRes {
     NormalConfig normal_config = 1;
     repeated YyLiveInfoSimple live_list = 2;
     string is_end = 3;
+    repeated LiveNormalConfig normal_config_list = 4;
 }

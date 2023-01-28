@@ -9,4 +9,5 @@ message YyExt {
     string stream_info = 6;
     string rank_show = 7;
     string icon_url = 8;
+    string feed_id = 9;
 }

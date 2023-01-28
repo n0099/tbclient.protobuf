@@ -17,4 +17,9 @@ message ThreadRecommendInfo {
     ThemeColorInfo strip_color = 12;
     ThemeColorInfo background_color = 13;
     string jump_link = 14;
+    int32 business_type = 15;
+    string business_id = 16;
+    string jump_icon = 17;
+    string jump_text = 18;
+    ThemeColorInfo jump_text_color = 19;
 }

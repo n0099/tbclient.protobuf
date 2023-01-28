@@ -3,5 +3,5 @@ syntax = "proto3";
 import "SmartApp.proto";
 
 message DataRes {
-    repeated SmartApp swan_list = 1;
+    repeated SmartApp naws_list = 1;
 }

@@ -26,8 +26,10 @@ import "FrsPage/ClientPlatform.proto";
 import "FrsPage/ColorEgg.proto";
 import "FrsPage/ForumActiveInfo.proto";
 import "FrsPage/ForumBookInfo.proto";
+import "FrsPage/ForumGroup.proto";
 import "FrsPage/ForumHeadIcon.proto";
 import "FrsPage/ForumHeadlineImgInfo.proto";
+import "FrsPage/FrsBannerHeader.proto";
 import "FrsPage/GconAccount.proto";
 import "FrsPage/Group.proto";
 import "FrsPage/HeadSdk.proto";
@@ -40,6 +42,7 @@ import "FrsPage/PrivateForumTotalInfo.proto";
 import "FrsPage/PushThreadInfo.proto";
 import "FrsPage/RecomPostTopic.proto";
 import "FrsPage/RecommendBook.proto";
+import "FrsPage/RecreationRankInfo.proto";
 import "FrsPage/StarEnter.proto";
 import "FrsPage/StarInfo.proto";
 import "FrsPage/StarRank.proto";
@@ -178,4 +181,8 @@ message DataRes {
     PrivatePopInfo bawutask_pop = 115;
     repeated LiveFuseForumData live_fuse_forum = 116;
     int32 bawu_unread_notice_num = 117;
+    RecreationRankInfo recreation_rank_info = 118;
+    int32 is_member_broadcast_forum = 119;
+    ForumGroup forum_group = 120;
+    FrsBannerHeader frs_banner_header = 121;
 }

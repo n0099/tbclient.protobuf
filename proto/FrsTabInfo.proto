@@ -15,4 +15,9 @@ message FrsTabInfo {
     int32 is_default = 10;
     int32 need_page = 11;
     TabPic head_pics = 12;
+    string exposure_monitor_url = 13;
+    string click_monitor_url = 14;
+    string demote_url = 15;
+    int32 is_no_show_publisher = 16;
+    int32 is_no_show_in_publisher = 17;
 }
