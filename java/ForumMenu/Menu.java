@@ -1,18 +1,11 @@
 package tbclient.ForumMenu;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class Menu extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_ACTION_TYPE;
   
   public static final String DEFAULT_CONTENT = "";
@@ -28,8 +21,6 @@ public final class Menu extends Message {
   public static final String DEFAULT_NAME = "";
   
   public static final List<SubMenu> DEFAULT_SUB_MENU;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT32)
   public final Integer action_type;
@@ -56,19 +47,6 @@ public final class Menu extends Message {
   public final List<SubMenu> sub_menu;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(2115282883, "Ltbclient/ForumMenu/Menu;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(2115282883, "Ltbclient/ForumMenu/Menu;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_ID = integer;
     DEFAULT_FORUM_ID = integer;
@@ -147,10 +125,6 @@ public final class Menu extends Message {
   }
   
   public static final class Builder extends Message.Builder<Menu> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer action_type;
     
     public String content;
@@ -184,19 +158,9 @@ public final class Menu extends Message {
     }
     
     public Menu build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Menu)interceptResult.objValue; 
-      } 
       return new Menu(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,15 +1,10 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class YyExt extends Message {
-  public static Interceptable $ic;
+  public static final String DEFAULT_FEED_ID = "";
   
   public static final String DEFAULT_ICON_URL = "";
   
@@ -27,7 +22,8 @@ public final class YyExt extends Message {
   
   public static final String DEFAULT_YY_UID = "";
   
-  public transient FieldHolder $fh;
+  @ProtoField(tag = 9, type = Message.Datatype.STRING)
+  public final String feed_id;
   
   @ProtoField(tag = 8, type = Message.Datatype.STRING)
   public final String icon_url;
@@ -99,11 +95,17 @@ public final class YyExt extends Message {
       } else {
         this.rank_show = str1;
       } 
-      str = paramBuilder.icon_url;
-      if (str == null) {
+      str1 = paramBuilder.icon_url;
+      if (str1 == null) {
         this.icon_url = "";
       } else {
-        this.icon_url = str;
+        this.icon_url = str1;
+      } 
+      str = paramBuilder.feed_id;
+      if (str == null) {
+        this.feed_id = "";
+      } else {
+        this.feed_id = str;
       } 
     } else {
       this.sid = ((Builder)str).sid;
@@ -114,6 +116,7 @@ public final class YyExt extends Message {
       this.stream_info = ((Builder)str).stream_info;
       this.rank_show = ((Builder)str).rank_show;
       this.icon_url = ((Builder)str).icon_url;
+      this.feed_id = ((Builder)str).feed_id;
     } 
   }
   
@@ -121,26 +124,8 @@ public final class YyExt extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(811855588, "Ltbclient/YyExt;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(811855588, "Ltbclient/YyExt;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<YyExt> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
+    public String feed_id;
     
     public String icon_url;
     
@@ -172,22 +157,13 @@ public final class YyExt extends Message {
       this.stream_info = param1YyExt.stream_info;
       this.rank_show = param1YyExt.rank_show;
       this.icon_url = param1YyExt.icon_url;
+      this.feed_id = param1YyExt.feed_id;
     }
     
     public YyExt build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (YyExt)interceptResult.objValue; 
-      } 
       return new YyExt(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

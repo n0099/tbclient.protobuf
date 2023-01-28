@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class TbBookrack extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BOOKTOWN = "";
   
   public static final List<BookInfo> DEFAULT_BOOK_LIST;
@@ -24,8 +17,6 @@ public final class TbBookrack extends Message {
   public static final String DEFAULT_TIP = "";
   
   public static final String DEFAULT_TITLE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<BookInfo> book_list;
@@ -103,27 +94,7 @@ public final class TbBookrack extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1292287235, "Ltbclient/TbBookrack;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1292287235, "Ltbclient/TbBookrack;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<TbBookrack> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<BookInfo> book_list;
     
     public String booktown;
@@ -151,19 +122,9 @@ public final class TbBookrack extends Message {
     }
     
     public TbBookrack build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TbBookrack)interceptResult.objValue; 
-      } 
       return new TbBookrack(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

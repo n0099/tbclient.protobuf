@@ -1,16 +1,9 @@
 package tbclient.PlaceOrder;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class DataRes extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_CURRENCY;
   
   public static final Integer DEFAULT_GIFT_COUNT;
@@ -46,8 +39,6 @@ public final class DataRes extends Message {
   public static final Integer DEFAULT_TIMESTAMP;
   
   public static final Long DEFAULT_USER_ID;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 18, type = Message.Datatype.UINT32)
   public final Integer currency;
@@ -104,19 +95,6 @@ public final class DataRes extends Message {
   public final Long user_id;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(98506723, "Ltbclient/PlaceOrder/DataRes;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(98506723, "Ltbclient/PlaceOrder/DataRes;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_TDOU_NUM = integer;
     DEFAULT_GOODS_PRICE = integer;
@@ -274,10 +252,6 @@ public final class DataRes extends Message {
   }
   
   public static final class Builder extends Message.Builder<DataRes> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer currency;
     
     public Integer gift_count;
@@ -341,19 +315,9 @@ public final class DataRes extends Message {
     }
     
     public DataRes build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataRes)interceptResult.objValue; 
-      } 
       return new DataRes(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

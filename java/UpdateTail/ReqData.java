@@ -1,17 +1,10 @@
 package tbclient.UpdateTail;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class ReqData extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_FONTCOLOR = "";
   
   public static final String DEFAULT_FONTKEYNAME = "";
@@ -19,8 +12,6 @@ public final class ReqData extends Message {
   public static final String DEFAULT_TAILCONTENT = "";
   
   public static final Integer DEFAULT_TAILID = Integer.valueOf(0);
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5)
   public final CommonReq common;
@@ -78,27 +69,7 @@ public final class ReqData extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(48405343, "Ltbclient/UpdateTail/ReqData;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(48405343, "Ltbclient/UpdateTail/ReqData;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<ReqData> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public CommonReq common;
     
     public String fontColor;
@@ -123,19 +94,9 @@ public final class ReqData extends Message {
     }
     
     public ReqData build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ReqData)interceptResult.objValue; 
-      } 
       return new ReqData(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

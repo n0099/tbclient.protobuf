@@ -1,18 +1,11 @@
 package tbclient.Userlike;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.NewGodInfo;
 import tbclient.ThreadInfo;
 
 public final class UserList extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_FANS_NUM;
   
   public static final Long DEFAULT_ID;
@@ -32,8 +25,6 @@ public final class UserList extends Message {
   public static final String DEFAULT_PREFIX = "";
   
   public static final String DEFAULT_RECOM_REASON = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.UINT32)
   public final Integer fans_num;
@@ -72,19 +63,6 @@ public final class UserList extends Message {
   public final ThreadInfo thread_info;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(933679279, "Ltbclient/Userlike/UserList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(933679279, "Ltbclient/Userlike/UserList;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_FANS_NUM = integer;
     DEFAULT_POST_NUM = integer;
@@ -179,10 +157,6 @@ public final class UserList extends Message {
   }
   
   public static final class Builder extends Message.Builder<UserList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer fans_num;
     
     public Long id;
@@ -228,19 +202,9 @@ public final class UserList extends Message {
     }
     
     public UserList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (UserList)interceptResult.objValue; 
-      } 
       return new UserList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

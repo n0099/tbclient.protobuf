@@ -1,21 +1,14 @@
 package tbclient.HotThread;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Pic extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BIG_PIC = "";
   
   public static final String DEFAULT_SMALL_PIC = "";
   
   public static final String DEFAULT_WATER_PIC = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String big_pic;
@@ -60,10 +53,6 @@ public final class Pic extends Message {
   }
   
   public static final class Builder extends Message.Builder<Pic> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String big_pic;
     
     public String small_pic;
@@ -82,19 +71,9 @@ public final class Pic extends Message {
     }
     
     public Pic build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Pic)interceptResult.objValue; 
-      } 
       return new Pic(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

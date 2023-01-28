@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class PostInfoContent extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_CREATE_TIME;
   
   public static final Integer DEFAULT_IS_AUTHOR_VIEW;
@@ -23,7 +16,7 @@ public final class PostInfoContent extends Message {
   
   public static final Long DEFAULT_POST_TYPE;
   
-  public transient FieldHolder $fh;
+  public static final String DEFAULT_TARGET_SCHEME = "";
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT64)
   public final Long create_time;
@@ -40,6 +33,9 @@ public final class PostInfoContent extends Message {
   @ProtoField(tag = 3, type = Message.Datatype.UINT64)
   public final Long post_type;
   
+  @ProtoField(tag = 7, type = Message.Datatype.STRING)
+  public final String target_scheme;
+  
   static {
     Long long_ = Long.valueOf(0L);
     DEFAULT_CREATE_TIME = long_;
@@ -50,7 +46,7 @@ public final class PostInfoContent extends Message {
   
   public PostInfoContent(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
+    String str;
     if (paramBoolean == true) {
       List<Abstract> list = paramBuilder.post_content;
       if (list == null) {
@@ -76,18 +72,25 @@ public final class PostInfoContent extends Message {
       } else {
         this.post_id = long_;
       } 
-      integer = paramBuilder.is_author_view;
+      Integer integer = paramBuilder.is_author_view;
       if (integer == null) {
         this.is_author_view = DEFAULT_IS_AUTHOR_VIEW;
       } else {
         this.is_author_view = integer;
       } 
+      str = paramBuilder.target_scheme;
+      if (str == null) {
+        this.target_scheme = "";
+      } else {
+        this.target_scheme = str;
+      } 
     } else {
-      this.post_content = Message.immutableCopyOf(((Builder)integer).post_content);
-      this.create_time = ((Builder)integer).create_time;
-      this.post_type = ((Builder)integer).post_type;
-      this.post_id = ((Builder)integer).post_id;
-      this.is_author_view = ((Builder)integer).is_author_view;
+      this.post_content = Message.immutableCopyOf(((Builder)str).post_content);
+      this.create_time = ((Builder)str).create_time;
+      this.post_type = ((Builder)str).post_type;
+      this.post_id = ((Builder)str).post_id;
+      this.is_author_view = ((Builder)str).is_author_view;
+      this.target_scheme = ((Builder)str).target_scheme;
     } 
   }
   
@@ -95,27 +98,7 @@ public final class PostInfoContent extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-716269734, "Ltbclient/PostInfoContent;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-716269734, "Ltbclient/PostInfoContent;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<PostInfoContent> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long create_time;
     
     public Integer is_author_view;
@@ -125,6 +108,8 @@ public final class PostInfoContent extends Message {
     public Long post_id;
     
     public Long post_type;
+    
+    public String target_scheme;
     
     public Builder() {}
     
@@ -137,22 +122,13 @@ public final class PostInfoContent extends Message {
       this.post_type = param1PostInfoContent.post_type;
       this.post_id = param1PostInfoContent.post_id;
       this.is_author_view = param1PostInfoContent.is_author_view;
+      this.target_scheme = param1PostInfoContent.target_scheme;
     }
     
     public PostInfoContent build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PostInfoContent)interceptResult.objValue; 
-      } 
       return new PostInfoContent(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

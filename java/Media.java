@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Media extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BIG_PIC = "";
   
   public static final String DEFAULT_BSIZE = "";
@@ -56,8 +49,6 @@ public final class Media extends Message {
   public static final Integer DEFAULT_WIDTH;
   
   public static final Double DEFAULT_WTH_MID_LOC;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String big_pic;
@@ -129,19 +120,6 @@ public final class Media extends Message {
   public final Double wth_mid_loc;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(450743873, "Ltbclient/Media;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(450743873, "Ltbclient/Media;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_TYPE = integer;
     DEFAULT_WIDTH = integer;
@@ -332,10 +310,6 @@ public final class Media extends Message {
   }
   
   public static final class Builder extends Message.Builder<Media> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String big_pic;
     
     public String bsize;
@@ -414,19 +388,9 @@ public final class Media extends Message {
     }
     
     public Media build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Media)interceptResult.objValue; 
-      } 
       return new Media(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,19 +1,10 @@
 package tbclient.DoDailyTask;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class RetDataList extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_NEED_DIALOG = Integer.valueOf(0);
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1)
   public final DialogItem dialog;
@@ -47,27 +38,7 @@ public final class RetDataList extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1862343384, "Ltbclient/DoDailyTask/RetDataList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1862343384, "Ltbclient/DoDailyTask/RetDataList;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<RetDataList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public DialogItem dialog;
     
     public Integer need_dialog;
@@ -86,19 +57,9 @@ public final class RetDataList extends Message {
     }
     
     public RetDataList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (RetDataList)interceptResult.objValue; 
-      } 
       return new RetDataList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

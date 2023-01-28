@@ -1,16 +1,9 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class SignUser extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_CONT_SIGN_NUM;
   
   public static final Integer DEFAULT_COUT_TOTAL_SIGN_NUM;
@@ -32,8 +25,6 @@ public final class SignUser extends Message {
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
   
   public static final Integer DEFAULT_USER_SIGN_RANK;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.INT32)
   public final Integer c_sign_num;
@@ -171,27 +162,7 @@ public final class SignUser extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1714081744, "Ltbclient/FrsPage/SignUser;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1714081744, "Ltbclient/FrsPage/SignUser;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<SignUser> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer c_sign_num;
     
     public Integer cont_sign_num;
@@ -234,19 +205,9 @@ public final class SignUser extends Message {
     }
     
     public SignUser build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (SignUser)interceptResult.objValue; 
-      } 
       return new SignUser(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

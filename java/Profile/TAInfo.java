@@ -1,18 +1,11 @@
 package tbclient.Profile;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class TAInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final List<String> DEFAULT_FORUMINFO = Collections.emptyList();
   
   public static final List<String> DEFAULT_FRIENDINFO;
@@ -30,8 +23,6 @@ public final class TAInfo extends Message {
   public static final List<ReplyList> DEFAULT_REPLY_LIST;
   
   public static final Integer DEFAULT_USERCLIENTVERSIONISLOWER;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4)
   public final CommonDistance distanceinfo;
@@ -155,27 +146,7 @@ public final class TAInfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1695250000, "Ltbclient/Profile/TAInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1695250000, "Ltbclient/Profile/TAInfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<TAInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public CommonDistance distanceinfo;
     
     public List<String> foruminfo;
@@ -218,19 +189,9 @@ public final class TAInfo extends Message {
     }
     
     public TAInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TAInfo)interceptResult.objValue; 
-      } 
       return new TAInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

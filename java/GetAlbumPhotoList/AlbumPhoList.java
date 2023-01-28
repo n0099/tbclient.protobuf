@@ -1,14 +1,9 @@
 package tbclient.GetAlbumPhotoList;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AlbumPhoList extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ALBUM_ID = "";
   
   public static final String DEFAULT_BIG_PIC = "";
@@ -16,8 +11,6 @@ public final class AlbumPhoList extends Message {
   public static final String DEFAULT_PICTURE_ID = "";
   
   public static final String DEFAULT_SMALL_PIC = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String album_id;
@@ -72,10 +65,6 @@ public final class AlbumPhoList extends Message {
   }
   
   public static final class Builder extends Message.Builder<AlbumPhoList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String album_id;
     
     public String big_pic;
@@ -97,19 +86,9 @@ public final class AlbumPhoList extends Message {
     }
     
     public AlbumPhoList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AlbumPhoList)interceptResult.objValue; 
-      } 
       return new AlbumPhoList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

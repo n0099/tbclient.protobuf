@@ -1,23 +1,14 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class WindowToast extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_TOAST_CONTENT = "";
   
   public static final String DEFAULT_TOAST_LINK = "";
   
   public static final Integer DEFAULT_TOAST_TYPE = Integer.valueOf(0);
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String toast_content;
@@ -61,27 +52,7 @@ public final class WindowToast extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1664306414, "Ltbclient/WindowToast;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1664306414, "Ltbclient/WindowToast;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<WindowToast> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String toast_content;
     
     public String toast_link;
@@ -100,19 +71,9 @@ public final class WindowToast extends Message {
     }
     
     public WindowToast build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (WindowToast)interceptResult.objValue; 
-      } 
       return new WindowToast(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

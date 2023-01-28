@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class FavoritePanel extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_IMG_URL = "";
   
   public static final String DEFAULT_MAIN_TITLE = "";
@@ -22,8 +15,6 @@ public final class FavoritePanel extends Message {
   public static final String DEFAULT_ON_OFF = "";
   
   public static final String DEFAULT_SUB_TITLE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String img_url;
@@ -101,27 +92,7 @@ public final class FavoritePanel extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(560299741, "Ltbclient/FavoritePanel;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(560299741, "Ltbclient/FavoritePanel;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<FavoritePanel> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String img_url;
     
     public String main_title;
@@ -149,19 +120,9 @@ public final class FavoritePanel extends Message {
     }
     
     public FavoritePanel build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (FavoritePanel)interceptResult.objValue; 
-      } 
       return new FavoritePanel(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

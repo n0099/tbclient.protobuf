@@ -1,25 +1,16 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class ContriInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AFTER_MSG = "";
   
   public static final String DEFAULT_COLOR_MSG = "";
   
   public static final List<ToastConfig> DEFAULT_TOAST_CONFIG = Collections.emptyList();
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String after_msg;
@@ -63,27 +54,7 @@ public final class ContriInfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-305675590, "Ltbclient/ContriInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-305675590, "Ltbclient/ContriInfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<ContriInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String after_msg;
     
     public String color_msg;
@@ -102,19 +73,9 @@ public final class ContriInfo extends Message {
     }
     
     public ContriInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ContriInfo)interceptResult.objValue; 
-      } 
       return new ContriInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

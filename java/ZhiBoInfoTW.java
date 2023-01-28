@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class ZhiBoInfoTW extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CONTENT = "";
   
   public static final Integer DEFAULT_COPYTHREAD_REMIND;
@@ -46,8 +39,6 @@ public final class ZhiBoInfoTW extends Message {
   public static final Long DEFAULT_THREAD_ID;
   
   public static final String DEFAULT_TITLE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 11, type = Message.Datatype.STRING)
   public final String content;
@@ -116,19 +107,6 @@ public final class ZhiBoInfoTW extends Message {
   public final Zan zan;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(425984716, "Ltbclient/ZhiBoInfoTW;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(425984716, "Ltbclient/ZhiBoInfoTW;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_THREAD_ID = long_;
     Integer integer = Integer.valueOf(0);
@@ -285,10 +263,6 @@ public final class ZhiBoInfoTW extends Message {
   }
   
   public static final class Builder extends Message.Builder<ZhiBoInfoTW> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String content;
     
     public Integer copythread_remind;
@@ -364,19 +338,9 @@ public final class ZhiBoInfoTW extends Message {
     }
     
     public ZhiBoInfoTW build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ZhiBoInfoTW)interceptResult.objValue; 
-      } 
       return new ZhiBoInfoTW(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

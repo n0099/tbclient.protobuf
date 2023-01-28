@@ -1,28 +1,27 @@
 package tbclient.Profile;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_FRIEND_UID;
   
   public static final String DEFAULT_FRIEND_UID_PORTRAIT = "";
   
   public static final Integer DEFAULT_HAS_PLIST;
   
+  public static final String DEFAULT_HISTORY_FORUM_IDS = "";
+  
+  public static final String DEFAULT_HISTORY_FORUM_NAMES = "";
+  
   public static final Integer DEFAULT_IS_FROM_USERCENTER;
   
   public static final Integer DEFAULT_IS_GUEST;
   
   public static final Integer DEFAULT_NEED_POST_COUNT;
+  
+  public static final Integer DEFAULT_NEED_USERGROWTH_TASK;
   
   public static final Integer DEFAULT_PAGE;
   
@@ -42,8 +41,6 @@ public final class DataReq extends Message {
   
   public static final Long DEFAULT_UID;
   
-  public transient FieldHolder $fh;
-  
   @ProtoField(tag = 9)
   public final CommonReq common;
   
@@ -56,6 +53,12 @@ public final class DataReq extends Message {
   @ProtoField(tag = 8, type = Message.Datatype.UINT32)
   public final Integer has_plist;
   
+  @ProtoField(tag = 17, type = Message.Datatype.STRING)
+  public final String history_forum_ids;
+  
+  @ProtoField(tag = 18, type = Message.Datatype.STRING)
+  public final String history_forum_names;
+  
   @ProtoField(tag = 14, type = Message.Datatype.INT32)
   public final Integer is_from_usercenter;
   
@@ -64,6 +67,9 @@ public final class DataReq extends Message {
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer need_post_count;
+  
+  @ProtoField(tag = 19, type = Message.Datatype.INT32)
+  public final Integer need_usergrowth_task;
   
   @ProtoField(tag = 15, type = Message.Datatype.INT32)
   public final Integer page;
@@ -93,19 +99,6 @@ public final class DataReq extends Message {
   public final Long uid;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1548228393, "Ltbclient/Profile/DataReq;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1548228393, "Ltbclient/Profile/DataReq;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_UID = long_;
     Integer integer = Integer.valueOf(0);
@@ -121,11 +114,12 @@ public final class DataReq extends Message {
     DEFAULT_SCR_DIP = Double.valueOf(0.0D);
     DEFAULT_IS_FROM_USERCENTER = integer;
     DEFAULT_PAGE = integer;
+    DEFAULT_NEED_USERGROWTH_TASK = integer;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    String str;
+    Integer integer;
     if (paramBoolean == true) {
       Long long_2 = paramBuilder.uid;
       if (long_2 == null) {
@@ -151,11 +145,11 @@ public final class DataReq extends Message {
       } else {
         this.is_guest = integer3;
       } 
-      String str1 = paramBuilder.st_type;
-      if (str1 == null) {
+      String str2 = paramBuilder.st_type;
+      if (str2 == null) {
         this.st_type = "";
       } else {
-        this.st_type = str1;
+        this.st_type = str2;
       } 
       Integer integer2 = paramBuilder.pn;
       if (integer2 == null) {
@@ -212,29 +206,50 @@ public final class DataReq extends Message {
       } else {
         this.page = integer1;
       } 
-      str = paramBuilder.friend_uid_portrait;
-      if (str == null) {
+      String str1 = paramBuilder.friend_uid_portrait;
+      if (str1 == null) {
         this.friend_uid_portrait = "";
       } else {
-        this.friend_uid_portrait = str;
+        this.friend_uid_portrait = str1;
+      } 
+      str1 = paramBuilder.history_forum_ids;
+      if (str1 == null) {
+        this.history_forum_ids = "";
+      } else {
+        this.history_forum_ids = str1;
+      } 
+      str1 = paramBuilder.history_forum_names;
+      if (str1 == null) {
+        this.history_forum_names = "";
+      } else {
+        this.history_forum_names = str1;
+      } 
+      integer = paramBuilder.need_usergrowth_task;
+      if (integer == null) {
+        this.need_usergrowth_task = DEFAULT_NEED_USERGROWTH_TASK;
+      } else {
+        this.need_usergrowth_task = integer;
       } 
     } else {
-      this.uid = ((Builder)str).uid;
-      this.need_post_count = ((Builder)str).need_post_count;
-      this.friend_uid = ((Builder)str).friend_uid;
-      this.is_guest = ((Builder)str).is_guest;
-      this.st_type = ((Builder)str).st_type;
-      this.pn = ((Builder)str).pn;
-      this.rn = ((Builder)str).rn;
-      this.has_plist = ((Builder)str).has_plist;
-      this.common = ((Builder)str).common;
-      this.scr_w = ((Builder)str).scr_w;
-      this.scr_h = ((Builder)str).scr_h;
-      this.q_type = ((Builder)str).q_type;
-      this.scr_dip = ((Builder)str).scr_dip;
-      this.is_from_usercenter = ((Builder)str).is_from_usercenter;
-      this.page = ((Builder)str).page;
-      this.friend_uid_portrait = ((Builder)str).friend_uid_portrait;
+      this.uid = ((Builder)integer).uid;
+      this.need_post_count = ((Builder)integer).need_post_count;
+      this.friend_uid = ((Builder)integer).friend_uid;
+      this.is_guest = ((Builder)integer).is_guest;
+      this.st_type = ((Builder)integer).st_type;
+      this.pn = ((Builder)integer).pn;
+      this.rn = ((Builder)integer).rn;
+      this.has_plist = ((Builder)integer).has_plist;
+      this.common = ((Builder)integer).common;
+      this.scr_w = ((Builder)integer).scr_w;
+      this.scr_h = ((Builder)integer).scr_h;
+      this.q_type = ((Builder)integer).q_type;
+      this.scr_dip = ((Builder)integer).scr_dip;
+      this.is_from_usercenter = ((Builder)integer).is_from_usercenter;
+      this.page = ((Builder)integer).page;
+      this.friend_uid_portrait = ((Builder)integer).friend_uid_portrait;
+      this.history_forum_ids = ((Builder)integer).history_forum_ids;
+      this.history_forum_names = ((Builder)integer).history_forum_names;
+      this.need_usergrowth_task = ((Builder)integer).need_usergrowth_task;
     } 
   }
   
@@ -243,10 +258,6 @@ public final class DataReq extends Message {
   }
   
   public static final class Builder extends Message.Builder<DataReq> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public CommonReq common;
     
     public Long friend_uid;
@@ -255,11 +266,17 @@ public final class DataReq extends Message {
     
     public Integer has_plist;
     
+    public String history_forum_ids;
+    
+    public String history_forum_names;
+    
     public Integer is_from_usercenter;
     
     public Integer is_guest;
     
     public Integer need_post_count;
+    
+    public Integer need_usergrowth_task;
     
     public Integer page;
     
@@ -301,22 +318,15 @@ public final class DataReq extends Message {
       this.is_from_usercenter = param1DataReq.is_from_usercenter;
       this.page = param1DataReq.page;
       this.friend_uid_portrait = param1DataReq.friend_uid_portrait;
+      this.history_forum_ids = param1DataReq.history_forum_ids;
+      this.history_forum_names = param1DataReq.history_forum_names;
+      this.need_usergrowth_task = param1DataReq.need_usergrowth_task;
     }
     
     public DataReq build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataReq)interceptResult.objValue; 
-      } 
       return new DataReq(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

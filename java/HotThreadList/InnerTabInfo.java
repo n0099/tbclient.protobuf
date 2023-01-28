@@ -1,21 +1,16 @@
 package tbclient.HotThreadList;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class InnerTabInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ICON = "";
   
   public static final String DEFAULT_JUMP_SCHEME = "";
   
   public static final String DEFAULT_NAME = "";
   
-  public transient FieldHolder $fh;
+  public static final Integer DEFAULT_NOTIFY_VERSION = Integer.valueOf(0);
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String icon;
@@ -26,21 +21,24 @@ public final class InnerTabInfo extends Message {
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String name;
   
+  @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+  public final Integer notify_version;
+  
   public InnerTabInfo(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    String str;
+    Integer integer;
     if (paramBoolean == true) {
-      String str1 = paramBuilder.name;
-      if (str1 == null) {
+      String str = paramBuilder.name;
+      if (str == null) {
         this.name = "";
       } else {
-        this.name = str1;
+        this.name = str;
       } 
-      str1 = paramBuilder.jump_scheme;
-      if (str1 == null) {
+      str = paramBuilder.jump_scheme;
+      if (str == null) {
         this.jump_scheme = "";
       } else {
-        this.jump_scheme = str1;
+        this.jump_scheme = str;
       } 
       str = paramBuilder.icon;
       if (str == null) {
@@ -48,10 +46,17 @@ public final class InnerTabInfo extends Message {
       } else {
         this.icon = str;
       } 
+      integer = paramBuilder.notify_version;
+      if (integer == null) {
+        this.notify_version = DEFAULT_NOTIFY_VERSION;
+      } else {
+        this.notify_version = integer;
+      } 
     } else {
-      this.name = ((Builder)str).name;
-      this.jump_scheme = ((Builder)str).jump_scheme;
-      this.icon = ((Builder)str).icon;
+      this.name = ((Builder)integer).name;
+      this.jump_scheme = ((Builder)integer).jump_scheme;
+      this.icon = ((Builder)integer).icon;
+      this.notify_version = ((Builder)integer).notify_version;
     } 
   }
   
@@ -60,15 +65,13 @@ public final class InnerTabInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<InnerTabInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String icon;
     
     public String jump_scheme;
     
     public String name;
+    
+    public Integer notify_version;
     
     public Builder() {}
     
@@ -79,22 +82,13 @@ public final class InnerTabInfo extends Message {
       this.name = param1InnerTabInfo.name;
       this.jump_scheme = param1InnerTabInfo.jump_scheme;
       this.icon = param1InnerTabInfo.icon;
+      this.notify_version = param1InnerTabInfo.notify_version;
     }
     
     public InnerTabInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (InnerTabInfo)interceptResult.objValue; 
-      } 
       return new InnerTabInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ChannelVideoInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_CREATE_TIME;
   
   public static final Integer DEFAULT_FORUM_ID;
@@ -42,8 +35,6 @@ public final class ChannelVideoInfo extends Message {
   public static final String DEFAULT_VIDEO_URL = "";
   
   public static final Integer DEFAULT_VIDEO_WIDTH;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 16, type = Message.Datatype.UINT32)
   public final Integer create_time;
@@ -94,19 +85,6 @@ public final class ChannelVideoInfo extends Message {
   public final Integer video_width;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1870170955, "Ltbclient/ChannelVideoInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1870170955, "Ltbclient/ChannelVideoInfo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_THREAD_ID = long_;
     Integer integer = Integer.valueOf(0);
@@ -248,10 +226,6 @@ public final class ChannelVideoInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<ChannelVideoInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer create_time;
     
     public Integer forum_id;
@@ -309,19 +283,9 @@ public final class ChannelVideoInfo extends Message {
     }
     
     public ChannelVideoInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ChannelVideoInfo)interceptResult.objValue; 
-      } 
       return new ChannelVideoInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

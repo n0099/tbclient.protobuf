@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class MyGroupInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_GROUP_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_GROUP_NAME = "";
@@ -20,8 +13,6 @@ public final class MyGroupInfo extends Message {
   public static final Integer DEFAULT_MEMBER_NUM;
   
   public static final String DEFAULT_PORTRAIT = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT64)
   public final Long group_id;
@@ -91,27 +82,7 @@ public final class MyGroupInfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(218451652, "Ltbclient/MyGroupInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(218451652, "Ltbclient/MyGroupInfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<MyGroupInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long group_id;
     
     public String group_name;
@@ -136,19 +107,9 @@ public final class MyGroupInfo extends Message {
     }
     
     public MyGroupInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (MyGroupInfo)interceptResult.objValue; 
-      } 
       return new MyGroupInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PrivSets extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_BAZHU_SHOW_INSIDE;
   
   public static final Integer DEFAULT_BAZHU_SHOW_OUTSIDE;
@@ -28,8 +21,6 @@ public final class PrivSets extends Message {
   public static final Integer DEFAULT_POST;
   
   public static final Integer DEFAULT_REPLY;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.INT32)
   public final Integer bazhu_show_inside;
@@ -59,19 +50,6 @@ public final class PrivSets extends Message {
   public final Integer reply;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1694545167, "Ltbclient/PrivSets;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1694545167, "Ltbclient/PrivSets;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_LOCATION = integer;
     DEFAULT_LIKE = integer;
@@ -160,10 +138,6 @@ public final class PrivSets extends Message {
   }
   
   public static final class Builder extends Message.Builder<PrivSets> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer bazhu_show_inside;
     
     public Integer bazhu_show_outside;
@@ -200,19 +174,9 @@ public final class PrivSets extends Message {
     }
     
     public PrivSets build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PrivSets)interceptResult.objValue; 
-      } 
       return new PrivSets(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

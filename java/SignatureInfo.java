@@ -1,14 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class SignatureInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_GAME_ID = "";
   
   public static final String DEFAULT_GAME_NAME = "";
@@ -18,8 +13,6 @@ public final class SignatureInfo extends Message {
   public static final String DEFAULT_POWER = "";
   
   public static final String DEFAULT_SERVER = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5)
   public final Avatar avatar;
@@ -94,10 +87,6 @@ public final class SignatureInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<SignatureInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Avatar avatar;
     
     public Equipment equipment;
@@ -128,19 +117,9 @@ public final class SignatureInfo extends Message {
     }
     
     public SignatureInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (SignatureInfo)interceptResult.objValue; 
-      } 
       return new SignatureInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

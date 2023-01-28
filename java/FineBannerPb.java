@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class FineBannerPb extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_FTID = Long.valueOf(0L);
   
   public static final String DEFAULT_LINK_URL = "";
@@ -18,8 +11,6 @@ public final class FineBannerPb extends Message {
   public static final String DEFAULT_PIC_URL = "";
   
   public static final String DEFAULT_TITLE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long ftid;
@@ -73,27 +64,7 @@ public final class FineBannerPb extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-2125494151, "Ltbclient/FineBannerPb;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-2125494151, "Ltbclient/FineBannerPb;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<FineBannerPb> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long ftid;
     
     public String link_url;
@@ -115,19 +86,9 @@ public final class FineBannerPb extends Message {
     }
     
     public FineBannerPb build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (FineBannerPb)interceptResult.objValue; 
-      } 
       return new FineBannerPb(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

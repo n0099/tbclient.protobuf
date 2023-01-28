@@ -1,10 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -13,8 +8,6 @@ import tbclient.ThreadInfo;
 import tbclient.User;
 
 public final class PushThreadInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_HAS_PUSHCARD;
   
   public static final Integer DEFAULT_HAS_PUSHPLACE;
@@ -22,8 +15,6 @@ public final class PushThreadInfo extends Message {
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
   
   public static final List<User> DEFAULT_USER_LIST;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer has_pushcard;
@@ -84,27 +75,7 @@ public final class PushThreadInfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(41471462, "Ltbclient/FrsPage/PushThreadInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(41471462, "Ltbclient/FrsPage/PushThreadInfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<PushThreadInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer has_pushcard;
     
     public Integer has_pushplace;
@@ -126,19 +97,9 @@ public final class PushThreadInfo extends Message {
     }
     
     public PushThreadInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PushThreadInfo)interceptResult.objValue; 
-      } 
       return new PushThreadInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

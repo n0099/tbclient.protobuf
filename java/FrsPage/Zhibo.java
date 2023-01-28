@@ -1,16 +1,9 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Zhibo extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_FORUM;
   
   public static final Integer DEFAULT_HAS_LPOST;
@@ -24,8 +17,6 @@ public final class Zhibo extends Message {
   public static final Long DEFAULT_TID;
   
   public static final Integer DEFAULT_TYPE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long forum;
@@ -49,19 +40,6 @@ public final class Zhibo extends Message {
   public final Integer type;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1251450902, "Ltbclient/FrsPage/Zhibo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1251450902, "Ltbclient/FrsPage/Zhibo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_FORUM = long_;
     DEFAULT_TID = long_;
@@ -135,10 +113,6 @@ public final class Zhibo extends Message {
   }
   
   public static final class Builder extends Message.Builder<Zhibo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long forum;
     
     public Integer has_lpost;
@@ -169,19 +143,9 @@ public final class Zhibo extends Message {
     }
     
     public Zhibo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Zhibo)interceptResult.objValue; 
-      } 
       return new Zhibo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

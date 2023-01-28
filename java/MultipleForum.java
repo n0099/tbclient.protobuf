@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class MultipleForum extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BAWU_TYPE = "";
   
   public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
@@ -20,8 +13,6 @@ public final class MultipleForum extends Message {
   public static final Integer DEFAULT_IS_BAWU;
   
   public static final Integer DEFAULT_IS_DELETED;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String bawu_type;
@@ -91,27 +82,7 @@ public final class MultipleForum extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1271851820, "Ltbclient/MultipleForum;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1271851820, "Ltbclient/MultipleForum;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<MultipleForum> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String bawu_type;
     
     public Long forum_id;
@@ -136,19 +107,9 @@ public final class MultipleForum extends Message {
     }
     
     public MultipleForum build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (MultipleForum)interceptResult.objValue; 
-      } 
       return new MultipleForum(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

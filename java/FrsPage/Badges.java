@@ -1,23 +1,14 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Badges extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_BADGE_ID = Integer.valueOf(0);
   
   public static final String DEFAULT_BADGE_URL = "";
   
   public static final String DEFAULT_WEBVIEW = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer badge_id;
@@ -61,27 +52,7 @@ public final class Badges extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(110139912, "Ltbclient/FrsPage/Badges;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(110139912, "Ltbclient/FrsPage/Badges;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<Badges> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer badge_id;
     
     public String badge_url;
@@ -100,19 +71,9 @@ public final class Badges extends Message {
     }
     
     public Badges build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Badges)interceptResult.objValue; 
-      } 
       return new Badges(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

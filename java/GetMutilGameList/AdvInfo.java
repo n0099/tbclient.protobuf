@@ -1,14 +1,9 @@
 package tbclient.GetMutilGameList;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AdvInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AD_LINK_ANDROID = "";
   
   public static final String DEFAULT_AD_LINK_IOS = "";
@@ -20,8 +15,6 @@ public final class AdvInfo extends Message {
   public static final String DEFAULT_GAME_ID = "";
   
   public static final String DEFAULT_GAME_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String ad_link_android;
@@ -96,10 +89,6 @@ public final class AdvInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<AdvInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String ad_link_android;
     
     public String ad_link_ios;
@@ -127,19 +116,9 @@ public final class AdvInfo extends Message {
     }
     
     public AdvInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AdvInfo)interceptResult.objValue; 
-      } 
       return new AdvInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

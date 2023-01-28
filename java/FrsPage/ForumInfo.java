@@ -1,10 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -15,8 +10,6 @@ import tbclient.GameInfo;
 import tbclient.ThemeColorInfo;
 
 public final class ForumInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ACCELERATE_COTENT = "";
   
   public static final Integer DEFAULT_ALBUM_OPEN_PHOTO_FRS;
@@ -140,8 +133,6 @@ public final class ForumInfo extends Message {
   public static final Integer DEFAULT_USER_LEVEL;
   
   public static final String DEFAULT_WARNING_MSG = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 50, type = Message.Datatype.STRING)
   public final String accelerate_cotent;
@@ -927,27 +918,7 @@ public final class ForumInfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-2135951729, "Ltbclient/FrsPage/ForumInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-2135951729, "Ltbclient/FrsPage/ForumInfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<ForumInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String accelerate_cotent;
     
     public AcrossForumIcon across_forum_hide;
@@ -1209,19 +1180,9 @@ public final class ForumInfo extends Message {
     }
     
     public ForumInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ForumInfo)interceptResult.objValue; 
-      } 
       return new ForumInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

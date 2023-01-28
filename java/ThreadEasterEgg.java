@@ -1,14 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ThreadEasterEgg extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ACTIVITY_ID = "";
   
   public static final String DEFAULT_POP_IMAGEURL = "";
@@ -16,8 +11,6 @@ public final class ThreadEasterEgg extends Message {
   public static final String DEFAULT_POP_TEXT = "";
   
   public static final String DEFAULT_VIDEO_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String activity_id;
@@ -76,10 +69,6 @@ public final class ThreadEasterEgg extends Message {
   }
   
   public static final class Builder extends Message.Builder<ThreadEasterEgg> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String activity_id;
     
     public String pop_imageurl;
@@ -104,19 +93,9 @@ public final class ThreadEasterEgg extends Message {
     }
     
     public ThreadEasterEgg build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ThreadEasterEgg)interceptResult.objValue; 
-      } 
       return new ThreadEasterEgg(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

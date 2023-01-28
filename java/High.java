@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class High extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_ALBUM_ID;
   
   public static final Integer DEFAULT_CREATE_TIME;
@@ -32,8 +25,6 @@ public final class High extends Message {
   public static final String DEFAULT_USER_NAME = "";
   
   public static final Integer DEFAULT_WEIGHT;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT64)
   public final Long album_id;
@@ -69,19 +60,6 @@ public final class High extends Message {
   public final Integer weight;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1098334161, "Ltbclient/High;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1098334161, "Ltbclient/High;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_ALBUM_ID = long_;
     DEFAULT_HID = long_;
@@ -184,10 +162,6 @@ public final class High extends Message {
   }
   
   public static final class Builder extends Message.Builder<High> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long album_id;
     
     public Integer create_time;
@@ -230,19 +204,9 @@ public final class High extends Message {
     }
     
     public High build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (High)interceptResult.objValue; 
-      } 
       return new High(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

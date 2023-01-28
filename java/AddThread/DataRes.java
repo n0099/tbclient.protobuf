@@ -1,8 +1,5 @@
 package tbclient.AddThread;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Advertisement;
@@ -13,12 +10,11 @@ import tbclient.PostAntiInfo;
 import tbclient.ReplyExp;
 import tbclient.TbInteraction;
 import tbclient.ThreadEasterEgg;
+import tbclient.Toast;
 import tbclient.VcodeInfo;
 import tbclient.ZhiBoInfoTW;
 
 public final class DataRes extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_COLOR_MSG = "";
   
   public static final String DEFAULT_EXT_MSG = "";
@@ -36,8 +32,6 @@ public final class DataRes extends Message {
   public static final String DEFAULT_TID = "";
   
   public static final String DEFAULT_VIDEO_ID = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 12)
   public final Advertisement advertisement;
@@ -90,6 +84,9 @@ public final class DataRes extends Message {
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String tid;
   
+  @ProtoField(tag = 20)
+  public final Toast toast;
+  
   @ProtoField(tag = 8)
   public final ZhiBoInfoTW twzhibo_info;
   
@@ -98,49 +95,48 @@ public final class DataRes extends Message {
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    String str;
     if (paramBoolean == true) {
-      String str1 = paramBuilder.opgroup;
-      if (str1 == null) {
+      String str = paramBuilder.opgroup;
+      if (str == null) {
         this.opgroup = "";
       } else {
-        this.opgroup = str1;
+        this.opgroup = str;
       } 
-      str1 = paramBuilder.tid;
-      if (str1 == null) {
+      str = paramBuilder.tid;
+      if (str == null) {
         this.tid = "";
       } else {
-        this.tid = str1;
+        this.tid = str;
       } 
-      str1 = paramBuilder.pid;
-      if (str1 == null) {
+      str = paramBuilder.pid;
+      if (str == null) {
         this.pid = "";
       } else {
-        this.pid = str1;
+        this.pid = str;
       } 
-      str1 = paramBuilder.video_id;
-      if (str1 == null) {
+      str = paramBuilder.video_id;
+      if (str == null) {
         this.video_id = "";
       } else {
-        this.video_id = str1;
+        this.video_id = str;
       } 
-      str1 = paramBuilder.msg;
-      if (str1 == null) {
+      str = paramBuilder.msg;
+      if (str == null) {
         this.msg = "";
       } else {
-        this.msg = str1;
+        this.msg = str;
       } 
-      str1 = paramBuilder.pre_msg;
-      if (str1 == null) {
+      str = paramBuilder.pre_msg;
+      if (str == null) {
         this.pre_msg = "";
       } else {
-        this.pre_msg = str1;
+        this.pre_msg = str;
       } 
-      str1 = paramBuilder.color_msg;
-      if (str1 == null) {
+      str = paramBuilder.color_msg;
+      if (str == null) {
         this.color_msg = "";
       } else {
-        this.color_msg = str1;
+        this.color_msg = str;
       } 
       this.twzhibo_info = paramBuilder.twzhibo_info;
       this.exp = paramBuilder.exp;
@@ -152,11 +148,11 @@ public final class DataRes extends Message {
       this.anti_stat = paramBuilder.anti_stat;
       this.tb_hudong = paramBuilder.tb_hudong;
       this.anti = paramBuilder.anti;
-      str1 = paramBuilder.ext_msg;
-      if (str1 == null) {
+      str = paramBuilder.ext_msg;
+      if (str == null) {
         this.ext_msg = "";
       } else {
-        this.ext_msg = str1;
+        this.ext_msg = str;
       } 
       str = paramBuilder.invitees_number;
       if (str == null) {
@@ -164,26 +160,28 @@ public final class DataRes extends Message {
       } else {
         this.invitees_number = str;
       } 
+      this.toast = paramBuilder.toast;
     } else {
-      this.opgroup = ((Builder)str).opgroup;
-      this.tid = ((Builder)str).tid;
-      this.pid = ((Builder)str).pid;
-      this.video_id = ((Builder)str).video_id;
-      this.msg = ((Builder)str).msg;
-      this.pre_msg = ((Builder)str).pre_msg;
-      this.color_msg = ((Builder)str).color_msg;
-      this.twzhibo_info = ((Builder)str).twzhibo_info;
-      this.exp = ((Builder)str).exp;
-      this.contri_info = ((Builder)str).contri_info;
-      this.star_info = ((Builder)str).star_info;
-      this.advertisement = ((Builder)str).advertisement;
-      this.icon_stamp_info = ((Builder)str).icon_stamp_info;
-      this.info = ((Builder)str).info;
-      this.anti_stat = ((Builder)str).anti_stat;
-      this.tb_hudong = ((Builder)str).tb_hudong;
-      this.anti = ((Builder)str).anti;
-      this.ext_msg = ((Builder)str).ext_msg;
-      this.invitees_number = ((Builder)str).invitees_number;
+      this.opgroup = paramBuilder.opgroup;
+      this.tid = paramBuilder.tid;
+      this.pid = paramBuilder.pid;
+      this.video_id = paramBuilder.video_id;
+      this.msg = paramBuilder.msg;
+      this.pre_msg = paramBuilder.pre_msg;
+      this.color_msg = paramBuilder.color_msg;
+      this.twzhibo_info = paramBuilder.twzhibo_info;
+      this.exp = paramBuilder.exp;
+      this.contri_info = paramBuilder.contri_info;
+      this.star_info = paramBuilder.star_info;
+      this.advertisement = paramBuilder.advertisement;
+      this.icon_stamp_info = paramBuilder.icon_stamp_info;
+      this.info = paramBuilder.info;
+      this.anti_stat = paramBuilder.anti_stat;
+      this.tb_hudong = paramBuilder.tb_hudong;
+      this.anti = paramBuilder.anti;
+      this.ext_msg = paramBuilder.ext_msg;
+      this.invitees_number = paramBuilder.invitees_number;
+      this.toast = paramBuilder.toast;
     } 
   }
   
@@ -192,10 +190,6 @@ public final class DataRes extends Message {
   }
   
   public static final class Builder extends Message.Builder<DataRes> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Advertisement advertisement;
     
     public VcodeInfo anti;
@@ -230,6 +224,8 @@ public final class DataRes extends Message {
     
     public String tid;
     
+    public Toast toast;
+    
     public ZhiBoInfoTW twzhibo_info;
     
     public String video_id;
@@ -259,22 +255,13 @@ public final class DataRes extends Message {
       this.anti = param1DataRes.anti;
       this.ext_msg = param1DataRes.ext_msg;
       this.invitees_number = param1DataRes.invitees_number;
+      this.toast = param1DataRes.toast;
     }
     
     public DataRes build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataRes)interceptResult.objValue; 
-      } 
       return new DataRes(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

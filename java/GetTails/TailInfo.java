@@ -1,16 +1,9 @@
 package tbclient.GetTails;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TailInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_FONTCOLOR = "";
   
   public static final String DEFAULT_FONTKEYNAME = "";
@@ -20,8 +13,6 @@ public final class TailInfo extends Message {
   public static final String DEFAULT_TAILCONTENT = "";
   
   public static final Integer DEFAULT_TAILID;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String fontColor;
@@ -39,19 +30,6 @@ public final class TailInfo extends Message {
   public final Integer tailId;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(486387205, "Ltbclient/GetTails/TailInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(486387205, "Ltbclient/GetTails/TailInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_TAILID = integer;
     DEFAULT_IS_SELECTED = integer;
@@ -105,10 +83,6 @@ public final class TailInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<TailInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String fontColor;
     
     public String fontKeyName;
@@ -133,19 +107,9 @@ public final class TailInfo extends Message {
     }
     
     public TailInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TailInfo)interceptResult.objValue; 
-      } 
       return new TailInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

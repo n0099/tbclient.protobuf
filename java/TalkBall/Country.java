@@ -1,19 +1,12 @@
 package tbclient.TalkBall;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Country extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ICON = "";
   
   public static final String DEFAULT_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String icon;
@@ -48,10 +41,6 @@ public final class Country extends Message {
   }
   
   public static final class Builder extends Message.Builder<Country> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String icon;
     
     public String name;
@@ -67,19 +56,9 @@ public final class Country extends Message {
     }
     
     public Country build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Country)interceptResult.objValue; 
-      } 
       return new Country(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

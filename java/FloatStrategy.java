@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class FloatStrategy extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BROWSETIMEPAGE = "";
   
   public static final Integer DEFAULT_DURATION;
@@ -24,8 +17,6 @@ public final class FloatStrategy extends Message {
   public static final String DEFAULT_TOAST = "";
   
   public static final Integer DEFAULT_UN_DO_MISSION;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String browsetimepage;
@@ -49,19 +40,6 @@ public final class FloatStrategy extends Message {
   public final Integer un_do_mission;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-15341674, "Ltbclient/FloatStrategy;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-15341674, "Ltbclient/FloatStrategy;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_UN_DO_MISSION = integer;
     DEFAULT_DURATION = integer;
@@ -133,10 +111,6 @@ public final class FloatStrategy extends Message {
   }
   
   public static final class Builder extends Message.Builder<FloatStrategy> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String browsetimepage;
     
     public Integer duration;
@@ -167,19 +141,9 @@ public final class FloatStrategy extends Message {
     }
     
     public FloatStrategy build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (FloatStrategy)interceptResult.objValue; 
-      } 
       return new FloatStrategy(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class VideoInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_FIRST_FRAME_THUMBNAIL = "";
   
   public static final Double DEFAULT_HTH_MID_LOC;
@@ -52,8 +45,6 @@ public final class VideoInfo extends Message {
   public static final Integer DEFAULT_VIDEO_WIDTH;
   
   public static final Double DEFAULT_WTH_MID_LOC;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 22, type = Message.Datatype.STRING)
   public final String first_frame_thumbnail;
@@ -122,19 +113,6 @@ public final class VideoInfo extends Message {
   public final Double wth_mid_loc;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-339395076, "Ltbclient/VideoInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-339395076, "Ltbclient/VideoInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_VIDEO_DURATION = integer;
     DEFAULT_VIDEO_WIDTH = integer;
@@ -309,10 +287,6 @@ public final class VideoInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<VideoInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String first_frame_thumbnail;
     
     public Double hth_mid_loc;
@@ -388,19 +362,9 @@ public final class VideoInfo extends Message {
     }
     
     public VideoInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (VideoInfo)interceptResult.objValue; 
-      } 
       return new VideoInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

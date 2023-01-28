@@ -1,16 +1,9 @@
 package tbclient.ForumRecommend;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class SearchValue extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_DESC = "";
   
   public static final Long DEFAULT_ID;
@@ -18,8 +11,6 @@ public final class SearchValue extends Message {
   public static final String DEFAULT_NAME = "";
   
   public static final Long DEFAULT_TYPE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String desc;
@@ -34,19 +25,6 @@ public final class SearchValue extends Message {
   public final Long type;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1719437668, "Ltbclient/ForumRecommend/SearchValue;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1719437668, "Ltbclient/ForumRecommend/SearchValue;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_TYPE = long_;
     DEFAULT_ID = long_;
@@ -93,10 +71,6 @@ public final class SearchValue extends Message {
   }
   
   public static final class Builder extends Message.Builder<SearchValue> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String desc;
     
     public Long id;
@@ -118,19 +92,9 @@ public final class SearchValue extends Message {
     }
     
     public SearchValue build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (SearchValue)interceptResult.objValue; 
-      } 
       return new SearchValue(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

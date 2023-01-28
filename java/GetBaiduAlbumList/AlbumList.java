@@ -1,16 +1,9 @@
 package tbclient.GetBaiduAlbumList;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AlbumList extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ALBUM_ID = "";
   
   public static final String DEFAULT_ALBUM_NAME = "";
@@ -28,8 +21,6 @@ public final class AlbumList extends Message {
   public static final Integer DEFAULT_PICTURE_NUM;
   
   public static final Integer DEFAULT_UPDATE_TIME;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String album_id;
@@ -59,19 +50,6 @@ public final class AlbumList extends Message {
   public final Integer update_time;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-407062561, "Ltbclient/GetBaiduAlbumList/AlbumList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-407062561, "Ltbclient/GetBaiduAlbumList/AlbumList;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_PICTURE_NUM = integer;
     DEFAULT_IS_SYSTEM = integer;
@@ -156,10 +134,6 @@ public final class AlbumList extends Message {
   }
   
   public static final class Builder extends Message.Builder<AlbumList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String album_id;
     
     public String album_name;
@@ -196,19 +170,9 @@ public final class AlbumList extends Message {
     }
     
     public AlbumList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AlbumList)interceptResult.objValue; 
-      } 
       return new AlbumList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class VoiceRoom extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_JOINED_NUM;
   
   public static final Long DEFAULT_ROOM_ID;
@@ -24,8 +17,6 @@ public final class VoiceRoom extends Message {
   public static final List<User> DEFAULT_TALKER = Collections.emptyList();
   
   public static final Long DEFAULT_TALKER_NUM;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4)
   public final User author;
@@ -111,28 +102,11 @@ public final class VoiceRoom extends Message {
   }
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-228051688, "Ltbclient/VoiceRoom;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-228051688, "Ltbclient/VoiceRoom;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_ROOM_ID = long_;
   }
   
   public static final class Builder extends Message.Builder<VoiceRoom> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public User author;
     
     public Long joined_num;
@@ -163,19 +137,9 @@ public final class VoiceRoom extends Message {
     }
     
     public VoiceRoom build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (VoiceRoom)interceptResult.objValue; 
-      } 
       return new VoiceRoom(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

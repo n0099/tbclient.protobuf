@@ -1,10 +1,5 @@
 package tbclient.FriendFeedPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -19,8 +14,6 @@ import tbclient.Voice;
 import tbclient.Zan;
 
 public final class FriendThreadInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final List<Abstract> DEFAULT_ABSTRACT;
   
   public static final Long DEFAULT_AUTHOR_ID;
@@ -62,8 +55,6 @@ public final class FriendThreadInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final List<Voice> DEFAULT_VOICE_INFO;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 14)
   public final List<Abstract> _abstract;
@@ -141,19 +132,6 @@ public final class FriendThreadInfo extends Message {
   public final Zan zan;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(270462379, "Ltbclient/FriendFeedPage/FriendThreadInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(270462379, "Ltbclient/FriendFeedPage/FriendThreadInfo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_ID = long_;
     DEFAULT_TID = long_;
@@ -344,10 +322,6 @@ public final class FriendThreadInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<FriendThreadInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<Abstract> _abstract;
     
     public AnchorInfo anchor_info;
@@ -432,19 +406,9 @@ public final class FriendThreadInfo extends Message {
     }
     
     public FriendThreadInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (FriendThreadInfo)interceptResult.objValue; 
-      } 
       return new FriendThreadInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

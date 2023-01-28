@@ -1,23 +1,14 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TwZhiBoUser extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_ANCHOR_LEVEL;
   
   public static final String DEFAULT_FIELD_EX = "";
   
   public static final Integer DEFAULT_IN_BLACK_LIST;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer anchor_level;
@@ -29,19 +20,6 @@ public final class TwZhiBoUser extends Message {
   public final Integer in_black_list;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1974478549, "Ltbclient/TwZhiBoUser;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1974478549, "Ltbclient/TwZhiBoUser;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_ANCHOR_LEVEL = integer;
     DEFAULT_IN_BLACK_LIST = integer;
@@ -81,10 +59,6 @@ public final class TwZhiBoUser extends Message {
   }
   
   public static final class Builder extends Message.Builder<TwZhiBoUser> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer anchor_level;
     
     public String field_ex;
@@ -103,19 +77,9 @@ public final class TwZhiBoUser extends Message {
     }
     
     public TwZhiBoUser build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TwZhiBoUser)interceptResult.objValue; 
-      } 
       return new TwZhiBoUser(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

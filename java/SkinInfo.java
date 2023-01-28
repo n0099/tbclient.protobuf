@@ -1,14 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class SkinInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_MONITOR_ID = "";
   
   public static final String DEFAULT_OBJ_ID = "";
@@ -18,8 +13,6 @@ public final class SkinInfo extends Message {
   public static final String DEFAULT_SKIN_SIZE = "";
   
   public static final String DEFAULT_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String monitor_id;
@@ -84,10 +77,6 @@ public final class SkinInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<SkinInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String monitor_id;
     
     public String obj_id;
@@ -112,19 +101,9 @@ public final class SkinInfo extends Message {
     }
     
     public SkinInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (SkinInfo)interceptResult.objValue; 
-      } 
       return new SkinInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

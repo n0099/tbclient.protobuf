@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class ManagerElection extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_BEGIN_VOTE_TIME;
   
   public static final Integer DEFAULT_CAN_VOTE;
@@ -32,8 +25,6 @@ public final class ManagerElection extends Message {
   public static final List<String> DEFAULT_VOTE_CONDITION_TITLE;
   
   public static final Integer DEFAULT_VOTE_NUM;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.UINT32)
   public final Integer begin_vote_time;
@@ -66,19 +57,6 @@ public final class ManagerElection extends Message {
   public final Integer vote_num;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1943492351, "Ltbclient/ManagerElection;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1943492351, "Ltbclient/ManagerElection;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_CAN_VOTE = integer;
     DEFAULT_VOTE_NUM = integer;
@@ -174,10 +152,6 @@ public final class ManagerElection extends Message {
   }
   
   public static final class Builder extends Message.Builder<ManagerElection> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer begin_vote_time;
     
     public Integer can_vote;
@@ -217,19 +191,9 @@ public final class ManagerElection extends Message {
     }
     
     public ManagerElection build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ManagerElection)interceptResult.objValue; 
-      } 
       return new ManagerElection(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

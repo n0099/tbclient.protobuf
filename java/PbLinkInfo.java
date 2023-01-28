@@ -1,15 +1,12 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PbLinkInfo extends Message {
-  public static Interceptable $ic;
+  public static final String DEFAULT_CONTENT1 = "";
+  
+  public static final String DEFAULT_CONTENT2 = "";
   
   public static final String DEFAULT_EXT_TXT = "";
   
@@ -25,7 +22,11 @@ public final class PbLinkInfo extends Message {
   
   public static final Integer DEFAULT_URL_TYPE;
   
-  public transient FieldHolder $fh;
+  @ProtoField(tag = 8, type = Message.Datatype.STRING)
+  public final String content1;
+  
+  @ProtoField(tag = 9, type = Message.Datatype.STRING)
+  public final String content2;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String ext_txt;
@@ -49,19 +50,6 @@ public final class PbLinkInfo extends Message {
   public final Integer url_type;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(498544759, "Ltbclient/PbLinkInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(498544759, "Ltbclient/PbLinkInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_SORT = integer;
     DEFAULT_URL_TYPE = integer;
@@ -69,43 +57,43 @@ public final class PbLinkInfo extends Message {
   
   public PbLinkInfo(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
+    String str;
     if (paramBoolean == true) {
-      String str = paramBuilder.title;
-      if (str == null) {
+      String str2 = paramBuilder.title;
+      if (str2 == null) {
         this.title = "";
       } else {
-        this.title = str;
+        this.title = str2;
       } 
-      str = paramBuilder.to_url;
-      if (str == null) {
+      str2 = paramBuilder.to_url;
+      if (str2 == null) {
         this.to_url = "";
       } else {
-        this.to_url = str;
+        this.to_url = str2;
       } 
-      str = paramBuilder.pic_url;
-      if (str == null) {
+      str2 = paramBuilder.pic_url;
+      if (str2 == null) {
         this.pic_url = "";
       } else {
-        this.pic_url = str;
+        this.pic_url = str2;
       } 
-      str = paramBuilder.link_from;
-      if (str == null) {
+      str2 = paramBuilder.link_from;
+      if (str2 == null) {
         this.link_from = "";
       } else {
-        this.link_from = str;
+        this.link_from = str2;
       } 
-      str = paramBuilder.ext_txt;
-      if (str == null) {
+      str2 = paramBuilder.ext_txt;
+      if (str2 == null) {
         this.ext_txt = "";
       } else {
-        this.ext_txt = str;
+        this.ext_txt = str2;
       } 
-      Integer integer1 = paramBuilder.sort;
-      if (integer1 == null) {
+      Integer integer = paramBuilder.sort;
+      if (integer == null) {
         this.sort = DEFAULT_SORT;
       } else {
-        this.sort = integer1;
+        this.sort = integer;
       } 
       integer = paramBuilder.url_type;
       if (integer == null) {
@@ -113,14 +101,28 @@ public final class PbLinkInfo extends Message {
       } else {
         this.url_type = integer;
       } 
+      String str1 = paramBuilder.content1;
+      if (str1 == null) {
+        this.content1 = "";
+      } else {
+        this.content1 = str1;
+      } 
+      str = paramBuilder.content2;
+      if (str == null) {
+        this.content2 = "";
+      } else {
+        this.content2 = str;
+      } 
     } else {
-      this.title = ((Builder)integer).title;
-      this.to_url = ((Builder)integer).to_url;
-      this.pic_url = ((Builder)integer).pic_url;
-      this.link_from = ((Builder)integer).link_from;
-      this.ext_txt = ((Builder)integer).ext_txt;
-      this.sort = ((Builder)integer).sort;
-      this.url_type = ((Builder)integer).url_type;
+      this.title = ((Builder)str).title;
+      this.to_url = ((Builder)str).to_url;
+      this.pic_url = ((Builder)str).pic_url;
+      this.link_from = ((Builder)str).link_from;
+      this.ext_txt = ((Builder)str).ext_txt;
+      this.sort = ((Builder)str).sort;
+      this.url_type = ((Builder)str).url_type;
+      this.content1 = ((Builder)str).content1;
+      this.content2 = ((Builder)str).content2;
     } 
   }
   
@@ -129,9 +131,9 @@ public final class PbLinkInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<PbLinkInfo> {
-    public static Interceptable $ic;
+    public String content1;
     
-    public transient FieldHolder $fh;
+    public String content2;
     
     public String ext_txt;
     
@@ -160,22 +162,14 @@ public final class PbLinkInfo extends Message {
       this.ext_txt = param1PbLinkInfo.ext_txt;
       this.sort = param1PbLinkInfo.sort;
       this.url_type = param1PbLinkInfo.url_type;
+      this.content1 = param1PbLinkInfo.content1;
+      this.content2 = param1PbLinkInfo.content2;
     }
     
     public PbLinkInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PbLinkInfo)interceptResult.objValue; 
-      } 
       return new PbLinkInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

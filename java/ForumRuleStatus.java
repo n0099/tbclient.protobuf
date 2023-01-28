@@ -1,23 +1,14 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumRuleStatus extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_AUDIT_STATUS;
   
   public static final Integer DEFAULT_HAS_FORUM_RULE;
   
   public static final String DEFAULT_TITLE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer audit_status;
@@ -29,19 +20,6 @@ public final class ForumRuleStatus extends Message {
   public final String title;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(2108353782, "Ltbclient/ForumRuleStatus;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(2108353782, "Ltbclient/ForumRuleStatus;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_AUDIT_STATUS = integer;
     DEFAULT_HAS_FORUM_RULE = integer;
@@ -81,10 +59,6 @@ public final class ForumRuleStatus extends Message {
   }
   
   public static final class Builder extends Message.Builder<ForumRuleStatus> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer audit_status;
     
     public Integer has_forum_rule;
@@ -103,19 +77,9 @@ public final class ForumRuleStatus extends Message {
     }
     
     public ForumRuleStatus build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ForumRuleStatus)interceptResult.objValue; 
-      } 
       return new ForumRuleStatus(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

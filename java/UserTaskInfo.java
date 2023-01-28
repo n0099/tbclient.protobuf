@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class UserTaskInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ACT_TYPE = "";
   
   public static final String DEFAULT_BRIEF = "";
@@ -25,13 +18,13 @@ public final class UserTaskInfo extends Message {
   
   public static final Integer DEFAULT_TARGET_NUM;
   
+  public static final String DEFAULT_TARGET_SCHEME = "";
+  
   public static final String DEFAULT_TASK_ICON_URL = "";
   
   public static final Integer DEFAULT_TASK_TYPE;
   
   public static final Integer DEFAULT_WEIGHT;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 10, type = Message.Datatype.STRING)
   public final String act_type;
@@ -53,6 +46,9 @@ public final class UserTaskInfo extends Message {
   
   @ProtoField(tag = 6, type = Message.Datatype.INT32)
   public final Integer target_num;
+  
+  @ProtoField(tag = 11, type = Message.Datatype.STRING)
+  public final String target_scheme;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String task_icon_url;
@@ -82,23 +78,23 @@ public final class UserTaskInfo extends Message {
       } else {
         this.id = long_;
       } 
-      String str1 = paramBuilder.name;
-      if (str1 == null) {
+      String str2 = paramBuilder.name;
+      if (str2 == null) {
         this.name = "";
       } else {
-        this.name = str1;
+        this.name = str2;
       } 
-      str1 = paramBuilder.brief;
-      if (str1 == null) {
+      str2 = paramBuilder.brief;
+      if (str2 == null) {
         this.brief = "";
       } else {
-        this.brief = str1;
+        this.brief = str2;
       } 
-      str1 = paramBuilder.task_icon_url;
-      if (str1 == null) {
+      str2 = paramBuilder.task_icon_url;
+      if (str2 == null) {
         this.task_icon_url = "";
       } else {
-        this.task_icon_url = str1;
+        this.task_icon_url = str2;
       } 
       Integer integer = paramBuilder.status;
       if (integer == null) {
@@ -130,11 +126,17 @@ public final class UserTaskInfo extends Message {
       } else {
         this.weight = integer;
       } 
-      str = paramBuilder.act_type;
-      if (str == null) {
+      String str1 = paramBuilder.act_type;
+      if (str1 == null) {
         this.act_type = "";
       } else {
-        this.act_type = str;
+        this.act_type = str1;
+      } 
+      str = paramBuilder.target_scheme;
+      if (str == null) {
+        this.target_scheme = "";
+      } else {
+        this.target_scheme = str;
       } 
     } else {
       this.id = ((Builder)str).id;
@@ -147,6 +149,7 @@ public final class UserTaskInfo extends Message {
       this.task_type = ((Builder)str).task_type;
       this.weight = ((Builder)str).weight;
       this.act_type = ((Builder)str).act_type;
+      this.target_scheme = ((Builder)str).target_scheme;
     } 
   }
   
@@ -154,27 +157,7 @@ public final class UserTaskInfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1648505491, "Ltbclient/UserTaskInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1648505491, "Ltbclient/UserTaskInfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<UserTaskInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String act_type;
     
     public String brief;
@@ -188,6 +171,8 @@ public final class UserTaskInfo extends Message {
     public Integer status;
     
     public Integer target_num;
+    
+    public String target_scheme;
     
     public String task_icon_url;
     
@@ -211,22 +196,13 @@ public final class UserTaskInfo extends Message {
       this.task_type = param1UserTaskInfo.task_type;
       this.weight = param1UserTaskInfo.weight;
       this.act_type = param1UserTaskInfo.act_type;
+      this.target_scheme = param1UserTaskInfo.target_scheme;
     }
     
     public UserTaskInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (UserTaskInfo)interceptResult.objValue; 
-      } 
       return new UserTaskInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

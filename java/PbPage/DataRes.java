@@ -1,10 +1,5 @@
 package tbclient.PbPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -16,6 +11,7 @@ import tbclient.BusinessAccountInfo;
 import tbclient.FineBannerPb;
 import tbclient.ForumRuleStatus;
 import tbclient.GraffitiRankListInfo;
+import tbclient.JumpLinkInfo;
 import tbclient.Lbs;
 import tbclient.ManagerElection;
 import tbclient.NaGuide;
@@ -35,8 +31,6 @@ import tbclient.TwZhiBoAnti;
 import tbclient.User;
 
 public final class DataRes extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ASP_SHOWN_INFO = "";
   
   public static final List<ThreadInfo> DEFAULT_BJH_RECOMMEND;
@@ -110,8 +104,6 @@ public final class DataRes extends Message {
   public static final List<RecomTopicList> DEFAULT_THREAD_TOPIC;
   
   public static final List<User> DEFAULT_USER_LIST;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5)
   public final AddPost add_post;
@@ -217,6 +209,9 @@ public final class DataRes extends Message {
   
   @ProtoField(tag = 65, type = Message.Datatype.INT32)
   public final Integer is_purchase;
+  
+  @ProtoField(tag = 74)
+  public final JumpLinkInfo jump_link_info;
   
   @ProtoField(tag = 56, type = Message.Datatype.INT32)
   public final Integer jumptotab1;
@@ -616,6 +611,7 @@ public final class DataRes extends Message {
         this.fold_comment_num = long_1;
       } 
       this.top_answer = paramBuilder.top_answer;
+      this.jump_link_info = paramBuilder.jump_link_info;
     } else {
       this.user = paramBuilder.user;
       this.forum = paramBuilder.forum;
@@ -687,6 +683,7 @@ public final class DataRes extends Message {
       this.has_fold_comment = paramBuilder.has_fold_comment;
       this.fold_comment_num = paramBuilder.fold_comment_num;
       this.top_answer = paramBuilder.top_answer;
+      this.jump_link_info = paramBuilder.jump_link_info;
     } 
   }
   
@@ -694,27 +691,7 @@ public final class DataRes extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1374404855, "Ltbclient/PbPage/DataRes;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1374404855, "Ltbclient/PbPage/DataRes;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<DataRes> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public AddPost add_post;
     
     public AlaLiveInfo ala_info;
@@ -784,6 +761,8 @@ public final class DataRes extends Message {
     public Integer is_official_forum;
     
     public Integer is_purchase;
+    
+    public JumpLinkInfo jump_link_info;
     
     public Integer jumptotab1;
     
@@ -931,22 +910,13 @@ public final class DataRes extends Message {
       this.has_fold_comment = param1DataRes.has_fold_comment;
       this.fold_comment_num = param1DataRes.fold_comment_num;
       this.top_answer = param1DataRes.top_answer;
+      this.jump_link_info = param1DataRes.jump_link_info;
     }
     
     public DataRes build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataRes)interceptResult.objValue; 
-      } 
       return new DataRes(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

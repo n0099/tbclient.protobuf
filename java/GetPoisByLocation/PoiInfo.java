@@ -1,21 +1,14 @@
 package tbclient.GetPoisByLocation;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PoiInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ADDR = "";
   
   public static final String DEFAULT_NAME = "";
   
   public static final String DEFAULT_SN = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String addr;
@@ -60,10 +53,6 @@ public final class PoiInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<PoiInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String addr;
     
     public String name;
@@ -82,19 +71,9 @@ public final class PoiInfo extends Message {
     }
     
     public PoiInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PoiInfo)interceptResult.objValue; 
-      } 
       return new PoiInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

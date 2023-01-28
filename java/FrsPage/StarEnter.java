@@ -1,16 +1,9 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class StarEnter extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_BAZHU_MARK;
   
   public static final String DEFAULT_ICON = "";
@@ -30,8 +23,6 @@ public final class StarEnter extends Message {
   public static final String DEFAULT_URL = "";
   
   public static final Integer DEFAULT_WEIGHT;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 10, type = Message.Datatype.INT32)
   public final Integer bazhu_mark;
@@ -64,19 +55,6 @@ public final class StarEnter extends Message {
   public final Integer weight;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(115636024, "Ltbclient/FrsPage/StarEnter;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(115636024, "Ltbclient/FrsPage/StarEnter;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_WEIGHT = integer;
     DEFAULT_TYPE = integer;
@@ -168,10 +146,6 @@ public final class StarEnter extends Message {
   }
   
   public static final class Builder extends Message.Builder<StarEnter> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer bazhu_mark;
     
     public String icon;
@@ -211,19 +185,9 @@ public final class StarEnter extends Message {
     }
     
     public StarEnter build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (StarEnter)interceptResult.objValue; 
-      } 
       return new StarEnter(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

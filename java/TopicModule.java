@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TopicModule extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_DISCUSS_NUM;
   
   public static final String DEFAULT_TOPIC_AVATAR = "";
@@ -22,8 +15,6 @@ public final class TopicModule extends Message {
   public static final String DEFAULT_TOPIC_IMAGE = "";
   
   public static final String DEFAULT_TOPIC_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT64)
   public final Long discuss_num;
@@ -47,19 +38,6 @@ public final class TopicModule extends Message {
   public final String topic_name;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(949000458, "Ltbclient/TopicModule;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(949000458, "Ltbclient/TopicModule;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_TOPIC_ID = long_;
     DEFAULT_DISCUSS_NUM = long_;
@@ -122,10 +100,6 @@ public final class TopicModule extends Message {
   }
   
   public static final class Builder extends Message.Builder<TopicModule> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long discuss_num;
     
     public PkModule pk_module;
@@ -156,19 +130,9 @@ public final class TopicModule extends Message {
     }
     
     public TopicModule build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TopicModule)interceptResult.objValue; 
-      } 
       return new TopicModule(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

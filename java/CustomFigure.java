@@ -1,27 +1,25 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class CustomFigure extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BACKGROUND_TYPE = "";
   
   public static final String DEFAULT_BACKGROUND_VALUE = "";
   
-  public static final String DEFAULT_FIGURE_URL = "";
+  public static final String DEFAULT_DYNAMIC_FIGURE_URL = "";
   
-  public transient FieldHolder $fh;
+  public static final String DEFAULT_FIGURE_URL = "";
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String background_type;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String background_value;
+  
+  @ProtoField(tag = 4, type = Message.Datatype.STRING)
+  public final String dynamic_figure_url;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String figure_url;
@@ -42,16 +40,23 @@ public final class CustomFigure extends Message {
       } else {
         this.background_type = str1;
       } 
-      str = paramBuilder.background_value;
-      if (str == null) {
+      str1 = paramBuilder.background_value;
+      if (str1 == null) {
         this.background_value = "";
       } else {
-        this.background_value = str;
+        this.background_value = str1;
+      } 
+      str = paramBuilder.dynamic_figure_url;
+      if (str == null) {
+        this.dynamic_figure_url = "";
+      } else {
+        this.dynamic_figure_url = str;
       } 
     } else {
       this.figure_url = ((Builder)str).figure_url;
       this.background_type = ((Builder)str).background_type;
       this.background_value = ((Builder)str).background_value;
+      this.dynamic_figure_url = ((Builder)str).dynamic_figure_url;
     } 
   }
   
@@ -60,13 +65,11 @@ public final class CustomFigure extends Message {
   }
   
   public static final class Builder extends Message.Builder<CustomFigure> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String background_type;
     
     public String background_value;
+    
+    public String dynamic_figure_url;
     
     public String figure_url;
     
@@ -79,22 +82,13 @@ public final class CustomFigure extends Message {
       this.figure_url = param1CustomFigure.figure_url;
       this.background_type = param1CustomFigure.background_type;
       this.background_value = param1CustomFigure.background_value;
+      this.dynamic_figure_url = param1CustomFigure.dynamic_figure_url;
     }
     
     public CustomFigure build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (CustomFigure)interceptResult.objValue; 
-      } 
       return new CustomFigure(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

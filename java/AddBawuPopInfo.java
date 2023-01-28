@@ -1,14 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AddBawuPopInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CONTENT = "";
   
   public static final String DEFAULT_IMG_URL = "";
@@ -16,8 +11,6 @@ public final class AddBawuPopInfo extends Message {
   public static final String DEFAULT_JUMP_URL = "";
   
   public static final String DEFAULT_TITLE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String content;
@@ -72,10 +65,6 @@ public final class AddBawuPopInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<AddBawuPopInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String content;
     
     public String img_url;
@@ -97,19 +86,9 @@ public final class AddBawuPopInfo extends Message {
     }
     
     public AddBawuPopInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AddBawuPopInfo)interceptResult.objValue; 
-      } 
       return new AddBawuPopInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,16 +1,9 @@
 package tbclient.Hottopic;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ThreadModule extends Message {
-  public static Interceptable $ic;
-  
-  public transient FieldHolder $fh;
-  
   @ProtoField(tag = 1)
   public final CommonThread thread_module_1;
   
@@ -38,10 +31,6 @@ public final class ThreadModule extends Message {
   }
   
   public static final class Builder extends Message.Builder<ThreadModule> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public CommonThread thread_module_1;
     
     public CommonThread thread_module_2;
@@ -60,19 +49,9 @@ public final class ThreadModule extends Message {
     }
     
     public ThreadModule build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ThreadModule)interceptResult.objValue; 
-      } 
       return new ThreadModule(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

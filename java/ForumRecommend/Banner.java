@@ -1,14 +1,9 @@
 package tbclient.ForumRecommend;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Banner extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_LINK = "";
   
   public static final String DEFAULT_PIC_URL = "";
@@ -18,8 +13,6 @@ public final class Banner extends Message {
   public static final String DEFAULT_TAG_NAME_WH = "";
   
   public static final String DEFAULT_TITLE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String link;
@@ -84,10 +77,6 @@ public final class Banner extends Message {
   }
   
   public static final class Builder extends Message.Builder<Banner> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String link;
     
     public String pic_url;
@@ -112,19 +101,9 @@ public final class Banner extends Message {
     }
     
     public Banner build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Banner)interceptResult.objValue; 
-      } 
       return new Banner(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

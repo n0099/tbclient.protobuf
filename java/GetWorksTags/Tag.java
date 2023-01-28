@@ -1,25 +1,16 @@
 package tbclient.GetWorksTags;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class Tag extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_FIRST_CLASS = "";
   
   public static final String DEFAULT_SECOND_CLASS = "";
   
   public static final List<String> DEFAULT_TAGS = Collections.emptyList();
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String first_class;
@@ -63,27 +54,7 @@ public final class Tag extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-442456031, "Ltbclient/GetWorksTags/Tag;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-442456031, "Ltbclient/GetWorksTags/Tag;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<Tag> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String first_class;
     
     public String second_class;
@@ -102,19 +73,9 @@ public final class Tag extends Message {
     }
     
     public Tag build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Tag)interceptResult.objValue; 
-      } 
       return new Tag(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

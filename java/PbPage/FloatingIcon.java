@@ -1,16 +1,9 @@
 package tbclient.PbPage;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class FloatingIcon extends Message {
-  public static Interceptable $ic;
-  
-  public transient FieldHolder $fh;
-  
   @ProtoField(tag = 1)
   public final FloatingIconItem pbpage;
   
@@ -28,10 +21,6 @@ public final class FloatingIcon extends Message {
   }
   
   public static final class Builder extends Message.Builder<FloatingIcon> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public FloatingIconItem pbpage;
     
     public Builder() {}
@@ -44,19 +33,9 @@ public final class FloatingIcon extends Message {
     }
     
     public FloatingIcon build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (FloatingIcon)interceptResult.objValue; 
-      } 
       return new FloatingIcon(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,23 +1,22 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TaskInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BGIMG = "";
   
+  public static final Integer DEFAULT_CARD_TYPE;
+  
   public static final Long DEFAULT_END_TIME;
+  
+  public static final String DEFAULT_FLOOR_GOD_REPLY = "";
   
   public static final Long DEFAULT_FORUM_ID;
   
   public static final String DEFAULT_FORUM_NAME = "";
+  
+  public static final Integer DEFAULT_IS_GOD_REPLY;
   
   public static final String DEFAULT_OBJ_ID = "";
   
@@ -31,13 +30,17 @@ public final class TaskInfo extends Message {
   
   public static final String DEFAULT_THREAD_IMG_SIZE = "";
   
-  public transient FieldHolder $fh;
-  
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String bgimg;
   
+  @ProtoField(tag = 15, type = Message.Datatype.INT32)
+  public final Integer card_type;
+  
   @ProtoField(tag = 6, type = Message.Datatype.INT64)
   public final Long end_time;
+  
+  @ProtoField(tag = 14, type = Message.Datatype.STRING)
+  public final String floor_god_reply;
   
   @ProtoField(tag = 8, type = Message.Datatype.INT64)
   public final Long forum_id;
@@ -45,8 +48,14 @@ public final class TaskInfo extends Message {
   @ProtoField(tag = 9, type = Message.Datatype.STRING)
   public final String forum_name;
   
+  @ProtoField(tag = 13, type = Message.Datatype.INT32)
+  public final Integer is_god_reply;
+  
   @ProtoField(tag = 10, type = Message.Datatype.STRING)
   public final String obj_id;
+  
+  @ProtoField(tag = 12)
+  public final RewardCard reward_card;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT64)
   public final Long start_time;
@@ -63,31 +72,24 @@ public final class TaskInfo extends Message {
   @ProtoField(tag = 7, type = Message.Datatype.STRING)
   public final String thread_img_size;
   
+  @ProtoField(tag = 11)
+  public final VoteSchema vote_schema;
+  
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(63767838, "Ltbclient/TaskInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(63767838, "Ltbclient/TaskInfo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_TASK_ID = long_;
     DEFAULT_THREAD_ID = long_;
     DEFAULT_START_TIME = long_;
     DEFAULT_END_TIME = long_;
     DEFAULT_FORUM_ID = long_;
+    Integer integer = Integer.valueOf(0);
+    DEFAULT_IS_GOD_REPLY = integer;
+    DEFAULT_CARD_TYPE = integer;
   }
   
   public TaskInfo(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    String str;
+    Integer integer;
     if (paramBoolean == true) {
       Long long_3 = paramBuilder.task_id;
       if (long_3 == null) {
@@ -101,17 +103,17 @@ public final class TaskInfo extends Message {
       } else {
         this.thread_id = long_3;
       } 
-      String str3 = paramBuilder.bgimg;
-      if (str3 == null) {
+      String str4 = paramBuilder.bgimg;
+      if (str4 == null) {
         this.bgimg = "";
       } else {
-        this.bgimg = str3;
+        this.bgimg = str4;
       } 
-      str3 = paramBuilder.thread_img;
-      if (str3 == null) {
+      str4 = paramBuilder.thread_img;
+      if (str4 == null) {
         this.thread_img = "";
       } else {
-        this.thread_img = str3;
+        this.thread_img = str4;
       } 
       Long long_2 = paramBuilder.start_time;
       if (long_2 == null) {
@@ -125,11 +127,11 @@ public final class TaskInfo extends Message {
       } else {
         this.end_time = long_2;
       } 
-      String str2 = paramBuilder.thread_img_size;
-      if (str2 == null) {
+      String str3 = paramBuilder.thread_img_size;
+      if (str3 == null) {
         this.thread_img_size = "";
       } else {
-        this.thread_img_size = str2;
+        this.thread_img_size = str3;
       } 
       Long long_1 = paramBuilder.forum_id;
       if (long_1 == null) {
@@ -137,29 +139,54 @@ public final class TaskInfo extends Message {
       } else {
         this.forum_id = long_1;
       } 
-      String str1 = paramBuilder.forum_name;
-      if (str1 == null) {
+      String str2 = paramBuilder.forum_name;
+      if (str2 == null) {
         this.forum_name = "";
       } else {
-        this.forum_name = str1;
+        this.forum_name = str2;
       } 
-      str = paramBuilder.obj_id;
-      if (str == null) {
+      str2 = paramBuilder.obj_id;
+      if (str2 == null) {
         this.obj_id = "";
       } else {
-        this.obj_id = str;
+        this.obj_id = str2;
+      } 
+      this.vote_schema = paramBuilder.vote_schema;
+      this.reward_card = paramBuilder.reward_card;
+      Integer integer1 = paramBuilder.is_god_reply;
+      if (integer1 == null) {
+        this.is_god_reply = DEFAULT_IS_GOD_REPLY;
+      } else {
+        this.is_god_reply = integer1;
+      } 
+      String str1 = paramBuilder.floor_god_reply;
+      if (str1 == null) {
+        this.floor_god_reply = "";
+      } else {
+        this.floor_god_reply = str1;
+      } 
+      integer = paramBuilder.card_type;
+      if (integer == null) {
+        this.card_type = DEFAULT_CARD_TYPE;
+      } else {
+        this.card_type = integer;
       } 
     } else {
-      this.task_id = ((Builder)str).task_id;
-      this.thread_id = ((Builder)str).thread_id;
-      this.bgimg = ((Builder)str).bgimg;
-      this.thread_img = ((Builder)str).thread_img;
-      this.start_time = ((Builder)str).start_time;
-      this.end_time = ((Builder)str).end_time;
-      this.thread_img_size = ((Builder)str).thread_img_size;
-      this.forum_id = ((Builder)str).forum_id;
-      this.forum_name = ((Builder)str).forum_name;
-      this.obj_id = ((Builder)str).obj_id;
+      this.task_id = ((Builder)integer).task_id;
+      this.thread_id = ((Builder)integer).thread_id;
+      this.bgimg = ((Builder)integer).bgimg;
+      this.thread_img = ((Builder)integer).thread_img;
+      this.start_time = ((Builder)integer).start_time;
+      this.end_time = ((Builder)integer).end_time;
+      this.thread_img_size = ((Builder)integer).thread_img_size;
+      this.forum_id = ((Builder)integer).forum_id;
+      this.forum_name = ((Builder)integer).forum_name;
+      this.obj_id = ((Builder)integer).obj_id;
+      this.vote_schema = ((Builder)integer).vote_schema;
+      this.reward_card = ((Builder)integer).reward_card;
+      this.is_god_reply = ((Builder)integer).is_god_reply;
+      this.floor_god_reply = ((Builder)integer).floor_god_reply;
+      this.card_type = ((Builder)integer).card_type;
     } 
   }
   
@@ -168,19 +195,23 @@ public final class TaskInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<TaskInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String bgimg;
     
+    public Integer card_type;
+    
     public Long end_time;
+    
+    public String floor_god_reply;
     
     public Long forum_id;
     
     public String forum_name;
     
+    public Integer is_god_reply;
+    
     public String obj_id;
+    
+    public RewardCard reward_card;
     
     public Long start_time;
     
@@ -191,6 +222,8 @@ public final class TaskInfo extends Message {
     public String thread_img;
     
     public String thread_img_size;
+    
+    public VoteSchema vote_schema;
     
     public Builder() {}
     
@@ -208,22 +241,17 @@ public final class TaskInfo extends Message {
       this.forum_id = param1TaskInfo.forum_id;
       this.forum_name = param1TaskInfo.forum_name;
       this.obj_id = param1TaskInfo.obj_id;
+      this.vote_schema = param1TaskInfo.vote_schema;
+      this.reward_card = param1TaskInfo.reward_card;
+      this.is_god_reply = param1TaskInfo.is_god_reply;
+      this.floor_god_reply = param1TaskInfo.floor_god_reply;
+      this.card_type = param1TaskInfo.card_type;
     }
     
     public TaskInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TaskInfo)interceptResult.objValue; 
-      } 
       return new TaskInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

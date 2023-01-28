@@ -1,17 +1,10 @@
 package tbclient.AddPost;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ANONYMOUS = "";
   
   public static final String DEFAULT_AUTHSID = "";
@@ -49,6 +42,8 @@ public final class DataReq extends Message {
   public static final String DEFAULT_IS_LOCATION = "";
   
   public static final String DEFAULT_IS_PICTXT = "";
+  
+  public static final Integer DEFAULT_IS_SHOW_BLESS;
   
   public static final String DEFAULT_IS_STORY = "";
   
@@ -100,7 +95,7 @@ public final class DataReq extends Message {
   
   public static final String DEFAULT_REPOSTID = "";
   
-  public static final Integer DEFAULT_SHOW_CUSTOM_FIGURE = Integer.valueOf(0);
+  public static final Integer DEFAULT_SHOW_CUSTOM_FIGURE;
   
   public static final String DEFAULT_SIG = "";
   
@@ -141,8 +136,6 @@ public final class DataReq extends Message {
   public static final String DEFAULT_V_FNAME = "";
   
   public static final String DEFAULT_WORKS_TAG = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String anonymous;
@@ -203,6 +196,9 @@ public final class DataReq extends Message {
   
   @ProtoField(tag = 60, type = Message.Datatype.STRING)
   public final String is_pictxt;
+  
+  @ProtoField(tag = 67, type = Message.Datatype.INT32)
+  public final Integer is_show_bless;
   
   @ProtoField(tag = 61, type = Message.Datatype.STRING)
   public final String is_story;
@@ -342,9 +338,15 @@ public final class DataReq extends Message {
   @ProtoField(tag = 25, type = Message.Datatype.STRING)
   public final String works_tag;
   
+  static {
+    Integer integer = Integer.valueOf(0);
+    DEFAULT_SHOW_CUSTOM_FIGURE = integer;
+    DEFAULT_IS_SHOW_BLESS = integer;
+  }
+  
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    String str;
+    Integer integer;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
       String str2 = paramBuilder.authsid;
@@ -719,11 +721,11 @@ public final class DataReq extends Message {
       } else {
         this.jfrom = str2;
       } 
-      Integer integer = paramBuilder.show_custom_figure;
-      if (integer == null) {
+      Integer integer1 = paramBuilder.show_custom_figure;
+      if (integer1 == null) {
         this.show_custom_figure = DEFAULT_SHOW_CUSTOM_FIGURE;
       } else {
-        this.show_custom_figure = integer;
+        this.show_custom_figure = integer1;
       } 
       String str1 = paramBuilder.from_category_id;
       if (str1 == null) {
@@ -731,79 +733,86 @@ public final class DataReq extends Message {
       } else {
         this.from_category_id = str1;
       } 
-      str = paramBuilder.to_category_id;
-      if (str == null) {
+      str1 = paramBuilder.to_category_id;
+      if (str1 == null) {
         this.to_category_id = "";
       } else {
-        this.to_category_id = str;
+        this.to_category_id = str1;
+      } 
+      integer = paramBuilder.is_show_bless;
+      if (integer == null) {
+        this.is_show_bless = DEFAULT_IS_SHOW_BLESS;
+      } else {
+        this.is_show_bless = integer;
       } 
     } else {
-      this.common = ((Builder)str).common;
-      this.authsid = ((Builder)str).authsid;
-      this.sig = ((Builder)str).sig;
-      this.tbs = ((Builder)str).tbs;
-      this.video_other = ((Builder)str).video_other;
-      this.anonymous = ((Builder)str).anonymous;
-      this.can_no_forum = ((Builder)str).can_no_forum;
-      this.is_feedback = ((Builder)str).is_feedback;
-      this.takephoto_num = ((Builder)str).takephoto_num;
-      this.entrance_type = ((Builder)str).entrance_type;
-      this.voice_md5 = ((Builder)str).voice_md5;
-      this.during_time = ((Builder)str).during_time;
-      this.vcode = ((Builder)str).vcode;
-      this.vcode_md5 = ((Builder)str).vcode_md5;
-      this.vcode_type = ((Builder)str).vcode_type;
-      this.vcode_tag = ((Builder)str).vcode_tag;
-      this.topic_id = ((Builder)str).topic_id;
-      this.new_vcode = ((Builder)str).new_vcode;
-      this.content = ((Builder)str).content;
-      this.reply_uid = ((Builder)str).reply_uid;
-      this.meme_text = ((Builder)str).meme_text;
-      this.meme_cont_sign = ((Builder)str).meme_cont_sign;
-      this.item_id = ((Builder)str).item_id;
-      this.comment_head = ((Builder)str).comment_head;
-      this.works_tag = ((Builder)str).works_tag;
-      this.fid = ((Builder)str).fid;
-      this.transform_forums = ((Builder)str).transform_forums;
-      this.v_fid = ((Builder)str).v_fid;
-      this.v_fname = ((Builder)str).v_fname;
-      this.kw = ((Builder)str).kw;
-      this.is_barrage = ((Builder)str).is_barrage;
-      this.barrage_time = ((Builder)str).barrage_time;
-      this.st_param = ((Builder)str).st_param;
-      this.ptype = ((Builder)str).ptype;
-      this.ori_ugc_nid = ((Builder)str).ori_ugc_nid;
-      this.ori_ugc_vid = ((Builder)str).ori_ugc_vid;
-      this.ori_ugc_tid = ((Builder)str).ori_ugc_tid;
-      this.ori_ugc_type = ((Builder)str).ori_ugc_type;
-      this.is_location = ((Builder)str).is_location;
-      this.lat = ((Builder)str).lat;
-      this.lng = ((Builder)str).lng;
-      this.name = ((Builder)str).name;
-      this.sn = ((Builder)str).sn;
-      this.from_fourm_id = ((Builder)str).from_fourm_id;
-      this.tid = ((Builder)str).tid;
-      this.quote_id = ((Builder)str).quote_id;
-      this.is_twzhibo_thread = ((Builder)str).is_twzhibo_thread;
-      this.floor_num = ((Builder)str).floor_num;
-      this.repostid = ((Builder)str).repostid;
-      this.sub_post_id = ((Builder)str).sub_post_id;
-      this.is_ad = ((Builder)str).is_ad;
-      this.is_addition = ((Builder)str).is_addition;
-      this.is_giftpost = ((Builder)str).is_giftpost;
-      this.st_type = ((Builder)str).st_type;
-      this.post_from = ((Builder)str).post_from;
-      this.real_lat = ((Builder)str).real_lat;
-      this.real_lng = ((Builder)str).real_lng;
-      this.name_show = ((Builder)str).name_show;
-      this.is_works = ((Builder)str).is_works;
-      this.is_pictxt = ((Builder)str).is_pictxt;
-      this.is_story = ((Builder)str).is_story;
-      this.jid = ((Builder)str).jid;
-      this.jfrom = ((Builder)str).jfrom;
-      this.show_custom_figure = ((Builder)str).show_custom_figure;
-      this.from_category_id = ((Builder)str).from_category_id;
-      this.to_category_id = ((Builder)str).to_category_id;
+      this.common = ((Builder)integer).common;
+      this.authsid = ((Builder)integer).authsid;
+      this.sig = ((Builder)integer).sig;
+      this.tbs = ((Builder)integer).tbs;
+      this.video_other = ((Builder)integer).video_other;
+      this.anonymous = ((Builder)integer).anonymous;
+      this.can_no_forum = ((Builder)integer).can_no_forum;
+      this.is_feedback = ((Builder)integer).is_feedback;
+      this.takephoto_num = ((Builder)integer).takephoto_num;
+      this.entrance_type = ((Builder)integer).entrance_type;
+      this.voice_md5 = ((Builder)integer).voice_md5;
+      this.during_time = ((Builder)integer).during_time;
+      this.vcode = ((Builder)integer).vcode;
+      this.vcode_md5 = ((Builder)integer).vcode_md5;
+      this.vcode_type = ((Builder)integer).vcode_type;
+      this.vcode_tag = ((Builder)integer).vcode_tag;
+      this.topic_id = ((Builder)integer).topic_id;
+      this.new_vcode = ((Builder)integer).new_vcode;
+      this.content = ((Builder)integer).content;
+      this.reply_uid = ((Builder)integer).reply_uid;
+      this.meme_text = ((Builder)integer).meme_text;
+      this.meme_cont_sign = ((Builder)integer).meme_cont_sign;
+      this.item_id = ((Builder)integer).item_id;
+      this.comment_head = ((Builder)integer).comment_head;
+      this.works_tag = ((Builder)integer).works_tag;
+      this.fid = ((Builder)integer).fid;
+      this.transform_forums = ((Builder)integer).transform_forums;
+      this.v_fid = ((Builder)integer).v_fid;
+      this.v_fname = ((Builder)integer).v_fname;
+      this.kw = ((Builder)integer).kw;
+      this.is_barrage = ((Builder)integer).is_barrage;
+      this.barrage_time = ((Builder)integer).barrage_time;
+      this.st_param = ((Builder)integer).st_param;
+      this.ptype = ((Builder)integer).ptype;
+      this.ori_ugc_nid = ((Builder)integer).ori_ugc_nid;
+      this.ori_ugc_vid = ((Builder)integer).ori_ugc_vid;
+      this.ori_ugc_tid = ((Builder)integer).ori_ugc_tid;
+      this.ori_ugc_type = ((Builder)integer).ori_ugc_type;
+      this.is_location = ((Builder)integer).is_location;
+      this.lat = ((Builder)integer).lat;
+      this.lng = ((Builder)integer).lng;
+      this.name = ((Builder)integer).name;
+      this.sn = ((Builder)integer).sn;
+      this.from_fourm_id = ((Builder)integer).from_fourm_id;
+      this.tid = ((Builder)integer).tid;
+      this.quote_id = ((Builder)integer).quote_id;
+      this.is_twzhibo_thread = ((Builder)integer).is_twzhibo_thread;
+      this.floor_num = ((Builder)integer).floor_num;
+      this.repostid = ((Builder)integer).repostid;
+      this.sub_post_id = ((Builder)integer).sub_post_id;
+      this.is_ad = ((Builder)integer).is_ad;
+      this.is_addition = ((Builder)integer).is_addition;
+      this.is_giftpost = ((Builder)integer).is_giftpost;
+      this.st_type = ((Builder)integer).st_type;
+      this.post_from = ((Builder)integer).post_from;
+      this.real_lat = ((Builder)integer).real_lat;
+      this.real_lng = ((Builder)integer).real_lng;
+      this.name_show = ((Builder)integer).name_show;
+      this.is_works = ((Builder)integer).is_works;
+      this.is_pictxt = ((Builder)integer).is_pictxt;
+      this.is_story = ((Builder)integer).is_story;
+      this.jid = ((Builder)integer).jid;
+      this.jfrom = ((Builder)integer).jfrom;
+      this.show_custom_figure = ((Builder)integer).show_custom_figure;
+      this.from_category_id = ((Builder)integer).from_category_id;
+      this.to_category_id = ((Builder)integer).to_category_id;
+      this.is_show_bless = ((Builder)integer).is_show_bless;
     } 
   }
   
@@ -811,27 +820,7 @@ public final class DataReq extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-551926625, "Ltbclient/AddPost/DataReq;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-551926625, "Ltbclient/AddPost/DataReq;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<DataReq> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String anonymous;
     
     public String authsid;
@@ -871,6 +860,8 @@ public final class DataReq extends Message {
     public String is_location;
     
     public String is_pictxt;
+    
+    public Integer is_show_bless;
     
     public String is_story;
     
@@ -1036,22 +1027,13 @@ public final class DataReq extends Message {
       this.show_custom_figure = param1DataReq.show_custom_figure;
       this.from_category_id = param1DataReq.from_category_id;
       this.to_category_id = param1DataReq.to_category_id;
+      this.is_show_bless = param1DataReq.is_show_bless;
     }
     
     public DataReq build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataReq)interceptResult.objValue; 
-      } 
       return new DataReq(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,16 +1,9 @@
 package tbclient.ReplyFriend;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ReplyFriendReqIdl extends Message {
-  public static Interceptable $ic;
-  
-  public transient FieldHolder $fh;
-  
   @ProtoField(tag = 1)
   public final ReqData data;
   
@@ -28,10 +21,6 @@ public final class ReplyFriendReqIdl extends Message {
   }
   
   public static final class Builder extends Message.Builder<ReplyFriendReqIdl> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public ReqData data;
     
     public Builder() {}
@@ -44,19 +33,9 @@ public final class ReplyFriendReqIdl extends Message {
     }
     
     public ReplyFriendReqIdl build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ReplyFriendReqIdl)interceptResult.objValue; 
-      } 
       return new ReplyFriendReqIdl(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

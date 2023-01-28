@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class HotUserRankEntry extends Message {
-  public static Interceptable $ic;
-  
   public static final List<ShortUserInfo> DEFAULT_HOT_USER = Collections.emptyList();
   
   public static final Boolean DEFAULT_IS_IN_RANK;
@@ -24,8 +17,6 @@ public final class HotUserRankEntry extends Message {
   public static final Integer DEFAULT_TODAY_RANK;
   
   public static final Integer DEFAULT_YESTERDAY_RANK;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1)
   public final List<ShortUserInfo> hot_user;
@@ -106,27 +97,7 @@ public final class HotUserRankEntry extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-2086985341, "Ltbclient/HotUserRankEntry;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-2086985341, "Ltbclient/HotUserRankEntry;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<HotUserRankEntry> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<ShortUserInfo> hot_user;
     
     public Boolean is_in_rank;
@@ -154,19 +125,9 @@ public final class HotUserRankEntry extends Message {
     }
     
     public HotUserRankEntry build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (HotUserRankEntry)interceptResult.objValue; 
-      } 
       return new HotUserRankEntry(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

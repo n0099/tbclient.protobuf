@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class GraffitiRankItem extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_GID;
   
   public static final Integer DEFAULT_G_TYPE;
@@ -26,8 +19,6 @@ public final class GraffitiRankItem extends Message {
   public static final String DEFAULT_URL = "";
   
   public static final Long DEFAULT_VOTE_COUNT;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.INT32)
   public final Integer g_type;
@@ -54,19 +45,6 @@ public final class GraffitiRankItem extends Message {
   public final Long vote_count;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(833201962, "Ltbclient/GraffitiRankItem;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(833201962, "Ltbclient/GraffitiRankItem;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_GID = long_;
     DEFAULT_VOTE_COUNT = long_;
@@ -145,10 +123,6 @@ public final class GraffitiRankItem extends Message {
   }
   
   public static final class Builder extends Message.Builder<GraffitiRankItem> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer g_type;
     
     public Long gid;
@@ -182,19 +156,9 @@ public final class GraffitiRankItem extends Message {
     }
     
     public GraffitiRankItem build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (GraffitiRankItem)interceptResult.objValue; 
-      } 
       return new GraffitiRankItem(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

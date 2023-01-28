@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class App extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ABTEST = "";
   
   public static final String DEFAULT_AD_ID = "";
@@ -76,8 +69,6 @@ public final class App extends Message {
   public static final String DEFAULT_VERIFY = "";
   
   public static final String DEFAULT_WEB_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 24, type = Message.Datatype.STRING)
   public final String abtest;
@@ -176,19 +167,6 @@ public final class App extends Message {
   public final String web_url;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(102915620, "Ltbclient/App;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(102915620, "Ltbclient/App;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_TYPE = integer;
     DEFAULT_POS = integer;
@@ -436,10 +414,6 @@ public final class App extends Message {
   }
   
   public static final class Builder extends Message.Builder<App> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String abtest;
     
     public String ad_id;
@@ -545,19 +519,9 @@ public final class App extends Message {
     }
     
     public App build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (App)interceptResult.objValue; 
-      } 
       return new App(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

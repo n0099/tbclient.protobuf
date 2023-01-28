@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class ServiceArea extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_PICURL = "";
   
   public static final String DEFAULT_SCHEMA = "";
@@ -26,8 +19,6 @@ public final class ServiceArea extends Message {
   public static final List<String> DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
   
   public static final String DEFAULT_VERSION = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6)
   public final SmartApp area_smart_app;
@@ -116,27 +107,7 @@ public final class ServiceArea extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1207075453, "Ltbclient/ServiceArea;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1207075453, "Ltbclient/ServiceArea;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<ServiceArea> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public SmartApp area_smart_app;
     
     public String picurl;
@@ -170,19 +141,9 @@ public final class ServiceArea extends Message {
     }
     
     public ServiceArea build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ServiceArea)interceptResult.objValue; 
-      } 
       return new ServiceArea(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

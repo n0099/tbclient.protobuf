@@ -1,16 +1,9 @@
 package tbclient.UserMuteQuery;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class MuteUser extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_MUTE_TIME;
   
   public static final String DEFAULT_NAME_SHOW = "";
@@ -20,8 +13,6 @@ public final class MuteUser extends Message {
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_USER_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer mute_time;
@@ -89,27 +80,7 @@ public final class MuteUser extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1369071294, "Ltbclient/UserMuteQuery/MuteUser;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1369071294, "Ltbclient/UserMuteQuery/MuteUser;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<MuteUser> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer mute_time;
     
     public String name_show;
@@ -134,19 +105,9 @@ public final class MuteUser extends Message {
     }
     
     public MuteUser build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (MuteUser)interceptResult.objValue; 
-      } 
       return new MuteUser(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,19 +1,10 @@
 package tbclient.GetInterview;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class InterviewDetail extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_ORDER_ID = Long.valueOf(0L);
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2)
   public final InterviewInfo answer;
@@ -47,27 +38,7 @@ public final class InterviewDetail extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-379564157, "Ltbclient/GetInterview/InterviewDetail;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-379564157, "Ltbclient/GetInterview/InterviewDetail;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<InterviewDetail> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public InterviewInfo answer;
     
     public Long order_id;
@@ -86,19 +57,9 @@ public final class InterviewDetail extends Message {
     }
     
     public InterviewDetail build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (InterviewDetail)interceptResult.objValue; 
-      } 
       return new InterviewDetail(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

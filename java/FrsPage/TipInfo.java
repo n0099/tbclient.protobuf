@@ -1,14 +1,9 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TipInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_TIP_INTERVAL = "";
   
   public static final String DEFAULT_TIP_NAME = "";
@@ -18,8 +13,6 @@ public final class TipInfo extends Message {
   public static final String DEFAULT_TIP_POP = "";
   
   public static final String DEFAULT_TIP_POP_TITLE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String tip_interval;
@@ -84,10 +77,6 @@ public final class TipInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<TipInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String tip_interval;
     
     public String tip_name;
@@ -112,19 +101,9 @@ public final class TipInfo extends Message {
     }
     
     public TipInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TipInfo)interceptResult.objValue; 
-      } 
       return new TipInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

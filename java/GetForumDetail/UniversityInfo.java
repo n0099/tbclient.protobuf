@@ -1,16 +1,9 @@
 package tbclient.GetForumDetail;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class UniversityInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_AGREE_NUM;
   
   public static final Long DEFAULT_BROWSE_NUM;
@@ -24,8 +17,6 @@ public final class UniversityInfo extends Message {
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
   
   public static final Long DEFAULT_VIDEO_TIME;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT64)
   public final Long agree_num;
@@ -116,27 +107,7 @@ public final class UniversityInfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-335783370, "Ltbclient/GetForumDetail/UniversityInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-335783370, "Ltbclient/GetForumDetail/UniversityInfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<UniversityInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long agree_num;
     
     public Long browse_num;
@@ -167,19 +138,9 @@ public final class UniversityInfo extends Message {
     }
     
     public UniversityInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (UniversityInfo)interceptResult.objValue; 
-      } 
       return new UniversityInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,16 +1,9 @@
 package tbclient.PbPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AddPost extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_ALREADY_COUNT;
   
   public static final Integer DEFAULT_CREATE_TIME;
@@ -24,8 +17,6 @@ public final class AddPost extends Message {
   public static final Integer DEFAULT_TOTAL_COUNT;
   
   public static final String DEFAULT_WARN_MSG = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer already_count;
@@ -49,19 +40,6 @@ public final class AddPost extends Message {
   public final String warn_msg;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-118246370, "Ltbclient/PbPage/AddPost;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-118246370, "Ltbclient/PbPage/AddPost;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_CREATE_TIME = integer;
     DEFAULT_ALREADY_COUNT = integer;
@@ -131,10 +109,6 @@ public final class AddPost extends Message {
   }
   
   public static final class Builder extends Message.Builder<AddPost> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer already_count;
     
     public Integer create_time;
@@ -165,19 +139,9 @@ public final class AddPost extends Message {
     }
     
     public AddPost build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AddPost)interceptResult.objValue; 
-      } 
       return new AddPost(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

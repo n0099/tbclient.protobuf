@@ -1,23 +1,14 @@
 package tbclient.Profile;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class MemberBlockInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_IS_AUTO_PAY;
   
   public static final Integer DEFAULT_IS_BAN;
   
   public static final Integer DEFAULT_IS_PERMANENT_BAN;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer is_auto_pay;
@@ -29,19 +20,6 @@ public final class MemberBlockInfo extends Message {
   public final Integer is_permanent_ban;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-2119296598, "Ltbclient/Profile/MemberBlockInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-2119296598, "Ltbclient/Profile/MemberBlockInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_IS_PERMANENT_BAN = integer;
     DEFAULT_IS_AUTO_PAY = integer;
@@ -82,10 +60,6 @@ public final class MemberBlockInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<MemberBlockInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer is_auto_pay;
     
     public Integer is_ban;
@@ -104,19 +78,9 @@ public final class MemberBlockInfo extends Message {
     }
     
     public MemberBlockInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (MemberBlockInfo)interceptResult.objValue; 
-      } 
       return new MemberBlockInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

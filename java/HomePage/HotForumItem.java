@@ -1,16 +1,9 @@
 package tbclient.HomePage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class HotForumItem extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_FORUM_AVATAR = "";
   
   public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
@@ -18,8 +11,6 @@ public final class HotForumItem extends Message {
   public static final String DEFAULT_FORUM_NAME = "";
   
   public static final Integer DEFAULT_IS_LIKED = Integer.valueOf(0);
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String forum_avatar;
@@ -73,27 +64,7 @@ public final class HotForumItem extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1988370461, "Ltbclient/HomePage/HotForumItem;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1988370461, "Ltbclient/HomePage/HotForumItem;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<HotForumItem> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String forum_avatar;
     
     public Long forum_id;
@@ -115,19 +86,9 @@ public final class HotForumItem extends Message {
     }
     
     public HotForumItem build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (HotForumItem)interceptResult.objValue; 
-      } 
       return new HotForumItem(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,10 +1,5 @@
 package tbclient.Userlike;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -14,8 +9,6 @@ import tbclient.BannerUserStory;
 import tbclient.DiscoverHotForum;
 
 public final class DataRes extends Message {
-  public static Interceptable $ic;
-  
   public static final List<App> DEFAULT_APP_LIST;
   
   public static final Integer DEFAULT_HAS_MORE;
@@ -35,8 +28,6 @@ public final class DataRes extends Message {
   public static final String DEFAULT_USER_TIPS = "";
   
   public static final Integer DEFAULT_USER_TIPS_TYPE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 16)
   public final List<App> app_list;
@@ -182,27 +173,7 @@ public final class DataRes extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1531639912, "Ltbclient/Userlike/DataRes;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1531639912, "Ltbclient/Userlike/DataRes;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<DataRes> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<App> app_list;
     
     public BannerFollowLive banner_follow_live;
@@ -257,19 +228,9 @@ public final class DataRes extends Message {
     }
     
     public DataRes build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataRes)interceptResult.objValue; 
-      } 
       return new DataRes(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

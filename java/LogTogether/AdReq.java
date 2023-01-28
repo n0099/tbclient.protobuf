@@ -1,16 +1,9 @@
 package tbclient.LogTogether;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AdReq extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_DA_CPID = "";
   
   public static final String DEFAULT_DA_EXT_INFO = "";
@@ -48,8 +41,6 @@ public final class AdReq extends Message {
   public static final String DEFAULT_DA_VERIFY = "";
   
   public static final String DEFAULT_EXT = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 12, type = Message.Datatype.STRING)
   public final String da_cpid;
@@ -109,19 +100,6 @@ public final class AdReq extends Message {
   public final String ext;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1626676795, "Ltbclient/LogTogether/AdReq;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1626676795, "Ltbclient/LogTogether/AdReq;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_DA_FID = integer;
     DEFAULT_DA_TID = integer;
@@ -278,10 +256,6 @@ public final class AdReq extends Message {
   }
   
   public static final class Builder extends Message.Builder<AdReq> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String da_cpid;
     
     public String da_ext_info;
@@ -348,19 +322,9 @@ public final class AdReq extends Message {
     }
     
     public AdReq build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AdReq)interceptResult.objValue; 
-      } 
       return new AdReq(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

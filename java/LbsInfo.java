@@ -1,21 +1,14 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class LbsInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_LAT = "";
   
   public static final String DEFAULT_LON = "";
   
   public static final String DEFAULT_TOWN = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String lat;
@@ -60,10 +53,6 @@ public final class LbsInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<LbsInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String lat;
     
     public String lon;
@@ -82,19 +71,9 @@ public final class LbsInfo extends Message {
     }
     
     public LbsInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (LbsInfo)interceptResult.objValue; 
-      } 
       return new LbsInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

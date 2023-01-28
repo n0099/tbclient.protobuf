@@ -1,16 +1,9 @@
 package tbclient.HotForum;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class HotTopicList extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_DISCUSS_NUM;
   
   public static final Integer DEFAULT_TAG;
@@ -20,8 +13,6 @@ public final class HotTopicList extends Message {
   public static final String DEFAULT_TOPIC_NAME = "";
   
   public static final Integer DEFAULT_TYPE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.UINT64)
   public final Long discuss_num;
@@ -39,19 +30,6 @@ public final class HotTopicList extends Message {
   public final Integer type;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(849530602, "Ltbclient/HotForum/HotTopicList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(849530602, "Ltbclient/HotForum/HotTopicList;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_TOPIC_ID = long_;
     Integer integer = Integer.valueOf(0);
@@ -108,10 +86,6 @@ public final class HotTopicList extends Message {
   }
   
   public static final class Builder extends Message.Builder<HotTopicList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long discuss_num;
     
     public Integer tag;
@@ -136,19 +110,9 @@ public final class HotTopicList extends Message {
     }
     
     public HotTopicList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (HotTopicList)interceptResult.objValue; 
-      } 
       return new HotTopicList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

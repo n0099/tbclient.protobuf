@@ -1,16 +1,9 @@
 package tbclient.HotForum;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AVATAR = "";
   
   public static final Long DEFAULT_FORUM_ID;
@@ -22,8 +15,6 @@ public final class ForumInfo extends Message {
   public static final Long DEFAULT_THREAD_COUNT;
   
   public static final Long DEFAULT_TIME_OUT;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String avatar;
@@ -44,19 +35,6 @@ public final class ForumInfo extends Message {
   public final Long time_out;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(897420221, "Ltbclient/HotForum/ForumInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(897420221, "Ltbclient/HotForum/ForumInfo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_FORUM_ID = long_;
     DEFAULT_TIME_OUT = long_;
@@ -119,10 +97,6 @@ public final class ForumInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<ForumInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String avatar;
     
     public Long forum_id;
@@ -150,19 +124,9 @@ public final class ForumInfo extends Message {
     }
     
     public ForumInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ForumInfo)interceptResult.objValue; 
-      } 
       return new ForumInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

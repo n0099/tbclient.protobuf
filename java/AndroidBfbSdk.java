@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AndroidBfbSdk extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ACTIVITY_NO = "";
   
   public static final String DEFAULT_ORDER_NO = "";
@@ -24,8 +17,6 @@ public final class AndroidBfbSdk extends Message {
   public static final Integer DEFAULT_SP_NO;
   
   public static final String DEFAULT_VERSION = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String activity_no;
@@ -49,19 +40,6 @@ public final class AndroidBfbSdk extends Message {
   public final String version;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1744073990, "Ltbclient/AndroidBfbSdk;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1744073990, "Ltbclient/AndroidBfbSdk;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_SP_NO = integer;
     DEFAULT_SIGN_METHOD = integer;
@@ -129,10 +107,6 @@ public final class AndroidBfbSdk extends Message {
   }
   
   public static final class Builder extends Message.Builder<AndroidBfbSdk> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String activity_no;
     
     public String order_no;
@@ -163,19 +137,9 @@ public final class AndroidBfbSdk extends Message {
     }
     
     public AndroidBfbSdk build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AndroidBfbSdk)interceptResult.objValue; 
-      } 
       return new AndroidBfbSdk(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

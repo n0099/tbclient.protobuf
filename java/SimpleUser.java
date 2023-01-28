@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class SimpleUser extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_AGREE_TYPE;
   
   public static final String DEFAULT_AHEAD_URL = "";
@@ -34,8 +27,6 @@ public final class SimpleUser extends Message {
   public static final String DEFAULT_USER_NICKNAME = "";
   
   public static final Integer DEFAULT_USER_STATUS;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.INT32)
   public final Integer agree_type;
@@ -177,27 +168,7 @@ public final class SimpleUser extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(184794132, "Ltbclient/SimpleUser;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(184794132, "Ltbclient/SimpleUser;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<SimpleUser> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer agree_type;
     
     public String ahead_url;
@@ -243,19 +214,9 @@ public final class SimpleUser extends Message {
     }
     
     public SimpleUser build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (SimpleUser)interceptResult.objValue; 
-      } 
       return new SimpleUser(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

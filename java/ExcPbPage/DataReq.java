@@ -1,17 +1,10 @@
 package tbclient.ExcPbPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_EXCID;
   
   public static final Long DEFAULT_Q_TYPE;
@@ -25,8 +18,6 @@ public final class DataReq extends Message {
   public static final Long DEFAULT_TAG_CODE;
   
   public static final Long DEFAULT_THREAD_ID;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1)
   public final CommonReq common;
@@ -53,19 +44,6 @@ public final class DataReq extends Message {
   public final Long thread_id;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(853657391, "Ltbclient/ExcPbPage/DataReq;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(853657391, "Ltbclient/ExcPbPage/DataReq;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_SCR_W = long_;
     DEFAULT_SCR_H = long_;
@@ -140,10 +118,6 @@ public final class DataReq extends Message {
   }
   
   public static final class Builder extends Message.Builder<DataReq> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public CommonReq common;
     
     public Long excid;
@@ -177,19 +151,9 @@ public final class DataReq extends Message {
     }
     
     public DataReq build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataReq)interceptResult.objValue; 
-      } 
       return new DataReq(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,21 +1,14 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TbreadDispatch extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_FLOOR_NUM = "";
   
   public static final String DEFAULT_PRODUCT_ID = "";
   
   public static final String DEFAULT_PRODUCT_TYPE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String floor_num;
@@ -60,10 +53,6 @@ public final class TbreadDispatch extends Message {
   }
   
   public static final class Builder extends Message.Builder<TbreadDispatch> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String floor_num;
     
     public String product_id;
@@ -82,19 +71,9 @@ public final class TbreadDispatch extends Message {
     }
     
     public TbreadDispatch build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TbreadDispatch)interceptResult.objValue; 
-      } 
       return new TbreadDispatch(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class RedpacketRain extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ACTIVITY_ID = "";
   
   public static final List<String> DEFAULT_DYNAMIC_IMG;
@@ -26,8 +19,6 @@ public final class RedpacketRain extends Message {
   public static final Integer DEFAULT_SHOW_TYPE;
   
   public static final Long DEFAULT_START_TIME;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String activity_id;
@@ -51,19 +42,6 @@ public final class RedpacketRain extends Message {
   public final Long start_time;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1601022392, "Ltbclient/RedpacketRain;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1601022392, "Ltbclient/RedpacketRain;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_START_TIME = long_;
     DEFAULT_END_TIME = long_;
@@ -133,10 +111,6 @@ public final class RedpacketRain extends Message {
   }
   
   public static final class Builder extends Message.Builder<RedpacketRain> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String activity_id;
     
     public List<String> dynamic_img;
@@ -167,19 +141,9 @@ public final class RedpacketRain extends Message {
     }
     
     public RedpacketRain build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (RedpacketRain)interceptResult.objValue; 
-      } 
       return new RedpacketRain(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,18 +1,11 @@
 package tbclient.GetIconList;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class Custom extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CREATE_TIME = "";
   
   public static final List<Discount> DEFAULT_DISCOUNT;
@@ -58,8 +51,6 @@ public final class Custom extends Message {
   public static final String DEFAULT_UPDATE_TIME = "";
   
   public static final Integer DEFAULT_VALIDITY;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 14, type = Message.Datatype.STRING)
   public final String create_time;
@@ -131,19 +122,6 @@ public final class Custom extends Message {
   public final Integer validity;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(479907774, "Ltbclient/GetIconList/Custom;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(479907774, "Ltbclient/GetIconList/Custom;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_NON_MEMBER_T = integer;
     DEFAULT_NON_MEMBER_I = integer;
@@ -333,10 +311,6 @@ public final class Custom extends Message {
   }
   
   public static final class Builder extends Message.Builder<Custom> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String create_time;
     
     public List<Discount> discount;
@@ -415,19 +389,9 @@ public final class Custom extends Message {
     }
     
     public Custom build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Custom)interceptResult.objValue; 
-      } 
       return new Custom(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

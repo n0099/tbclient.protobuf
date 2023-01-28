@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class UserGrowth extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_LEVEL_ID = Integer.valueOf(0);
   
   public static final Long DEFAULT_SCORE;
@@ -22,8 +15,6 @@ public final class UserGrowth extends Message {
   public static final List<UserTaskInfo> DEFAULT_TASK_INFO;
   
   public static final Double DEFAULT_TMONEY = Double.valueOf(0.0D);
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer level_id;
@@ -92,32 +83,12 @@ public final class UserGrowth extends Message {
   }
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1604536799, "Ltbclient/UserGrowth;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1604536799, "Ltbclient/UserGrowth;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
-  static {
     Long long_ = Long.valueOf(0L);
     DEFAULT_SCORE = long_;
     DEFAULT_TARGET_SCORE = long_;
   }
   
   public static final class Builder extends Message.Builder<UserGrowth> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer level_id;
     
     public Long score;
@@ -142,19 +113,9 @@ public final class UserGrowth extends Message {
     }
     
     public UserGrowth build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (UserGrowth)interceptResult.objValue; 
-      } 
       return new UserGrowth(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

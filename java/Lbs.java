@@ -1,14 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Lbs extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_DISTANCE = "";
   
   public static final String DEFAULT_LAT = "";
@@ -18,8 +13,6 @@ public final class Lbs extends Message {
   public static final String DEFAULT_NAME = "";
   
   public static final String DEFAULT_SN = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String distance;
@@ -84,10 +77,6 @@ public final class Lbs extends Message {
   }
   
   public static final class Builder extends Message.Builder<Lbs> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String distance;
     
     public String lat;
@@ -112,19 +101,9 @@ public final class Lbs extends Message {
     }
     
     public Lbs build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Lbs)interceptResult.objValue; 
-      } 
       return new Lbs(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

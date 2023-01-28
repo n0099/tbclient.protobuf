@@ -1,16 +1,9 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ActivityConfig extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_ACTIVITY_ID;
   
   public static final String DEFAULT_ADDTHREAD_ICON = "";
@@ -28,8 +21,6 @@ public final class ActivityConfig extends Message {
   public static final String DEFAULT_NIGHT_AGREE_ICON = "";
   
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.UINT64)
   public final Long activity_id;
@@ -137,27 +128,7 @@ public final class ActivityConfig extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1244411097, "Ltbclient/FrsPage/ActivityConfig;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1244411097, "Ltbclient/FrsPage/ActivityConfig;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<ActivityConfig> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long activity_id;
     
     public String addthread_icon;
@@ -194,19 +165,9 @@ public final class ActivityConfig extends Message {
     }
     
     public ActivityConfig build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ActivityConfig)interceptResult.objValue; 
-      } 
       return new ActivityConfig(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

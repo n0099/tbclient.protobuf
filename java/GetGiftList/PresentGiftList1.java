@@ -1,16 +1,9 @@
 package tbclient.GetGiftList;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PresentGiftList1 extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_ACTIVITY_TYPE;
   
   public static final Integer DEFAULT_BEGIN_TIME;
@@ -44,8 +37,6 @@ public final class PresentGiftList1 extends Message {
   public static final Integer DEFAULT_PROPORTION;
   
   public static final String DEFAULT_THUMBNAIL_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.UINT32)
   public final Integer activity_type;
@@ -99,19 +90,6 @@ public final class PresentGiftList1 extends Message {
   public final String thumbnail_url;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(44059902, "Ltbclient/GetGiftList/PresentGiftList1;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(44059902, "Ltbclient/GetGiftList/PresentGiftList1;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_GIFT_ID = integer;
     DEFAULT_PRICE = integer;
@@ -260,10 +238,6 @@ public final class PresentGiftList1 extends Message {
   }
   
   public static final class Builder extends Message.Builder<PresentGiftList1> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer activity_type;
     
     public Integer begin_time;
@@ -324,19 +298,9 @@ public final class PresentGiftList1 extends Message {
     }
     
     public PresentGiftList1 build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PresentGiftList1)interceptResult.objValue; 
-      } 
       return new PresentGiftList1(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

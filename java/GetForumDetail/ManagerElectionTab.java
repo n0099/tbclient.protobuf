@@ -1,16 +1,9 @@
 package tbclient.GetForumDetail;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ManagerElectionTab extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_IS_NEW_STRATEGY;
   
   public static final Integer DEFAULT_NEW_MANAGER_STATUS;
@@ -20,8 +13,6 @@ public final class ManagerElectionTab extends Message {
   public static final String DEFAULT_NEW_STRATEGY_TEXT = "";
   
   public static final String DEFAULT_TOAST_TEXT = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer is_new_strategy;
@@ -39,19 +30,6 @@ public final class ManagerElectionTab extends Message {
   public final String toast_text;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-909302109, "Ltbclient/GetForumDetail/ManagerElectionTab;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-909302109, "Ltbclient/GetForumDetail/ManagerElectionTab;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_IS_NEW_STRATEGY = integer;
     DEFAULT_NEW_MANAGER_STATUS = integer;
@@ -105,10 +83,6 @@ public final class ManagerElectionTab extends Message {
   }
   
   public static final class Builder extends Message.Builder<ManagerElectionTab> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer is_new_strategy;
     
     public Integer new_manager_status;
@@ -133,19 +107,9 @@ public final class ManagerElectionTab extends Message {
     }
     
     public ManagerElectionTab build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ManagerElectionTab)interceptResult.objValue; 
-      } 
       return new ManagerElectionTab(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

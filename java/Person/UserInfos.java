@@ -1,10 +1,5 @@
 package tbclient.Person;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -12,8 +7,6 @@ import java.util.List;
 import tbclient.Icon;
 
 public final class UserInfos extends Message {
-  public static Interceptable $ic;
-  
   public static final Double DEFAULT_DISTANCE;
   
   public static final List<Icon> DEFAULT_ICONINFO;
@@ -29,8 +22,6 @@ public final class UserInfos extends Message {
   public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_USER_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.DOUBLE)
   public final Double distance;
@@ -134,27 +125,7 @@ public final class UserInfos extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1397733775, "Ltbclient/Person/UserInfos;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1397733775, "Ltbclient/Person/UserInfos;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<UserInfos> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Double distance;
     
     public List<Icon> iconinfo;
@@ -191,19 +162,9 @@ public final class UserInfos extends Message {
     }
     
     public UserInfos build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (UserInfos)interceptResult.objValue; 
-      } 
       return new UserInfos(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

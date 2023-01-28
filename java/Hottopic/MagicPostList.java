@@ -1,18 +1,11 @@
 package tbclient.Hottopic;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Quote;
 import tbclient.Zan;
 
 public final class MagicPostList extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CONTENT_TEXT = "";
   
   public static final Integer DEFAULT_CREATE_TIME;
@@ -26,8 +19,6 @@ public final class MagicPostList extends Message {
   public static final Long DEFAULT_THREAD_ID;
   
   public static final String DEFAULT_TITLE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String content_text;
@@ -60,19 +51,6 @@ public final class MagicPostList extends Message {
   public final Zan zan;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-717828077, "Ltbclient/Hottopic/MagicPostList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-717828077, "Ltbclient/Hottopic/MagicPostList;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_THREAD_ID = long_;
     DEFAULT_POST_ID = long_;
@@ -149,10 +127,6 @@ public final class MagicPostList extends Message {
   }
   
   public static final class Builder extends Message.Builder<MagicPostList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String content_text;
     
     public Integer create_time;
@@ -192,19 +166,9 @@ public final class MagicPostList extends Message {
     }
     
     public MagicPostList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (MagicPostList)interceptResult.objValue; 
-      } 
       return new MagicPostList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

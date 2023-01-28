@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class PostList extends Message {
-  public static Interceptable $ic;
-  
   public static final List<Abstract> DEFAULT_ABSTRACT;
   
   public static final Long DEFAULT_AUTHOR_ID;
@@ -24,8 +17,6 @@ public final class PostList extends Message {
   public static final List<MediaNum> DEFAULT_MEDIA_NUM;
   
   public static final List<Voice> DEFAULT_VOICE_INFO;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<Abstract> _abstract;
@@ -52,19 +43,6 @@ public final class PostList extends Message {
   public final List<Voice> voice_info;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1888455923, "Ltbclient/PostList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1888455923, "Ltbclient/PostList;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_ID = long_;
     DEFAULT_ABSTRACT = Collections.emptyList();
@@ -132,10 +110,6 @@ public final class PostList extends Message {
   }
   
   public static final class Builder extends Message.Builder<PostList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<Abstract> _abstract;
     
     public Agree agree;
@@ -169,19 +143,9 @@ public final class PostList extends Message {
     }
     
     public PostList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PostList)interceptResult.objValue; 
-      } 
       return new PostList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

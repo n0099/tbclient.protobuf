@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class RecomTopicList extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AUTHOR = "";
   
   public static final Long DEFAULT_DISCUSS_NUM;
@@ -34,8 +27,6 @@ public final class RecomTopicList extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final Long DEFAULT_UPDATE_TIME;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.STRING)
   public final String author;
@@ -71,19 +62,6 @@ public final class RecomTopicList extends Message {
   public final Long update_time;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-533574062, "Ltbclient/RecomTopicList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-533574062, "Ltbclient/RecomTopicList;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_TOPIC_ID = long_;
     Integer integer = Integer.valueOf(0);
@@ -185,10 +163,6 @@ public final class RecomTopicList extends Message {
   }
   
   public static final class Builder extends Message.Builder<RecomTopicList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String author;
     
     public Long discuss_num;
@@ -231,19 +205,9 @@ public final class RecomTopicList extends Message {
     }
     
     public RecomTopicList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (RecomTopicList)interceptResult.objValue; 
-      } 
       return new RecomTopicList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

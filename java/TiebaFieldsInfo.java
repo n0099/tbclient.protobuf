@@ -1,25 +1,16 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class TiebaFieldsInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final List<String> DEFAULT_TIEBA_FIELDS = Collections.emptyList();
   
   public static final String DEFAULT_TIEBA_NAME = "";
   
   public static final List<User> DEFAULT_USER_RANK = Collections.emptyList();
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.STRING)
   public final List<String> tieba_fields;
@@ -63,27 +54,7 @@ public final class TiebaFieldsInfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(193956527, "Ltbclient/TiebaFieldsInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(193956527, "Ltbclient/TiebaFieldsInfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<TiebaFieldsInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<String> tieba_fields;
     
     public String tieba_name;
@@ -102,19 +73,9 @@ public final class TiebaFieldsInfo extends Message {
     }
     
     public TiebaFieldsInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TiebaFieldsInfo)interceptResult.objValue; 
-      } 
       return new TiebaFieldsInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

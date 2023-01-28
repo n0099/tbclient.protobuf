@@ -1,14 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Novel extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ANDROID_DETAIL_PARAMS = "";
   
   public static final String DEFAULT_ANDROID_LAST_CHARPTER_PARAMS = "";
@@ -42,8 +37,6 @@ public final class Novel extends Message {
   public static final String DEFAULT_LAST_CHAPTER_TITLE = "";
   
   public static final String DEFAULT_LAST_CHAPTER_UPDATE_TIME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 13, type = Message.Datatype.STRING)
   public final String android_detail_params;
@@ -228,10 +221,6 @@ public final class Novel extends Message {
   }
   
   public static final class Builder extends Message.Builder<Novel> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String android_detail_params;
     
     public String android_last_charpter_params;
@@ -292,19 +281,9 @@ public final class Novel extends Message {
     }
     
     public Novel build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Novel)interceptResult.objValue; 
-      } 
       return new Novel(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

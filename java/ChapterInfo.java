@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class ChapterInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_CHAPTER_ID;
   
   public static final Integer DEFAULT_CHAPTER_NO;
@@ -38,8 +31,6 @@ public final class ChapterInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Integer DEFAULT_WORDS;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT64)
   public final Long chapter_id;
@@ -81,19 +72,6 @@ public final class ChapterInfo extends Message {
   public final Integer words;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1077769962, "Ltbclient/ChapterInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1077769962, "Ltbclient/ChapterInfo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_CHAPTER_ID = long_;
     Integer integer = Integer.valueOf(0);
@@ -214,10 +192,6 @@ public final class ChapterInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<ChapterInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long chapter_id;
     
     public Integer chapter_no;
@@ -266,19 +240,9 @@ public final class ChapterInfo extends Message {
     }
     
     public ChapterInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ChapterInfo)interceptResult.objValue; 
-      } 
       return new ChapterInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

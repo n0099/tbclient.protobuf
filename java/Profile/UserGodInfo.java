@@ -1,10 +1,5 @@
 package tbclient.Profile;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -12,8 +7,6 @@ import java.util.List;
 import tbclient.ThreadInfo;
 
 public final class UserGodInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ADDRESS = "";
   
   public static final Integer DEFAULT_AGE;
@@ -29,8 +22,6 @@ public final class UserGodInfo extends Message {
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST;
   
   public static final String DEFAULT_TOTAL_THREAD = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String address;
@@ -60,19 +51,6 @@ public final class UserGodInfo extends Message {
   public final String total_thread;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-913102388, "Ltbclient/Profile/UserGodInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-913102388, "Ltbclient/Profile/UserGodInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_GOD_TYPE = integer;
     DEFAULT_FORUM_GOD_LIST = Collections.emptyList();
@@ -153,10 +131,6 @@ public final class UserGodInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<UserGodInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String address;
     
     public Integer age;
@@ -193,19 +167,9 @@ public final class UserGodInfo extends Message {
     }
     
     public UserGodInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (UserGodInfo)interceptResult.objValue; 
-      } 
       return new UserGodInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

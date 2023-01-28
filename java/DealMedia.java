@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class DealMedia extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BIG_PIC = "";
   
   public static final String DEFAULT_SMALL_PIC = "";
@@ -18,8 +11,6 @@ public final class DealMedia extends Message {
   public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
   
   public static final String DEFAULT_WATER_PIC = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String big_pic;
@@ -73,27 +64,7 @@ public final class DealMedia extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1873998029, "Ltbclient/DealMedia;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1873998029, "Ltbclient/DealMedia;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<DealMedia> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String big_pic;
     
     public String small_pic;
@@ -115,19 +86,9 @@ public final class DealMedia extends Message {
     }
     
     public DealMedia build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DealMedia)interceptResult.objValue; 
-      } 
       return new DealMedia(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

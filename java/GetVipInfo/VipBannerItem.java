@@ -1,14 +1,9 @@
 package tbclient.GetVipInfo;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class VipBannerItem extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_DESC = "";
   
   public static final String DEFAULT_IMG_URL = "";
@@ -16,8 +11,6 @@ public final class VipBannerItem extends Message {
   public static final String DEFAULT_LINK = "";
   
   public static final String DEFAULT_TITLE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String desc;
@@ -72,10 +65,6 @@ public final class VipBannerItem extends Message {
   }
   
   public static final class Builder extends Message.Builder<VipBannerItem> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String desc;
     
     public String img_url;
@@ -97,19 +86,9 @@ public final class VipBannerItem extends Message {
     }
     
     public VipBannerItem build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (VipBannerItem)interceptResult.objValue; 
-      } 
       return new VipBannerItem(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

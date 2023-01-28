@@ -1,16 +1,9 @@
 package tbclient.GetBawuInfo;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ManagerApplyInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ASSIST_APPLY_URL = "";
   
   public static final Integer DEFAULT_ASSIST_LEFT_NUM;
@@ -18,8 +11,6 @@ public final class ManagerApplyInfo extends Message {
   public static final String DEFAULT_MANAGER_APPLY_URL = "";
   
   public static final Integer DEFAULT_MANAGER_LEFT_NUM;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String assist_apply_url;
@@ -34,19 +25,6 @@ public final class ManagerApplyInfo extends Message {
   public final Integer manager_left_num;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1858128428, "Ltbclient/GetBawuInfo/ManagerApplyInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1858128428, "Ltbclient/GetBawuInfo/ManagerApplyInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_MANAGER_LEFT_NUM = integer;
     DEFAULT_ASSIST_LEFT_NUM = integer;
@@ -93,10 +71,6 @@ public final class ManagerApplyInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<ManagerApplyInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String assist_apply_url;
     
     public Integer assist_left_num;
@@ -118,19 +92,9 @@ public final class ManagerApplyInfo extends Message {
     }
     
     public ManagerApplyInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ManagerApplyInfo)interceptResult.objValue; 
-      } 
       return new ManagerApplyInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

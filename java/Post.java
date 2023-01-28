@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class Post extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_ADD_POST_NUMBER;
   
   public static final List<String> DEFAULT_ARR_VIDEO;
@@ -24,6 +17,8 @@ public final class Post extends Message {
   public static final List<CardLinkInfo> DEFAULT_CARD_LINK_INFO;
   
   public static final List<PbContent> DEFAULT_CONTENT;
+  
+  public static final String DEFAULT_DYNAMIC_URL = "";
   
   public static final List<TailInfo> DEFAULT_EXT_TAILS;
   
@@ -69,6 +64,8 @@ public final class Post extends Message {
   
   public static final String DEFAULT_QUOTE_ID = "";
   
+  public static final String DEFAULT_RUMOR_SOURCE_IMG = "";
+  
   public static final Integer DEFAULT_SHOW_SQUARED;
   
   public static final Integer DEFAULT_STORECOUNT;
@@ -84,8 +81,6 @@ public final class Post extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_VOTE_CRYPT = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 27)
   public final ActPost act_post;
@@ -114,6 +109,9 @@ public final class Post extends Message {
   @ProtoField(tag = 17, type = Message.Datatype.STRING)
   public final String bimg_url;
   
+  @ProtoField(tag = 64)
+  public final ThemeBubble bubble_info;
+  
   @ProtoField(label = Message.Label.REPEATED, tag = 59)
   public final List<CardLinkInfo> card_link_info;
   
@@ -126,8 +124,14 @@ public final class Post extends Message {
   @ProtoField(tag = 61)
   public final CustomState custom_state;
   
+  @ProtoField(tag = 63, type = Message.Datatype.STRING)
+  public final String dynamic_url;
+  
   @ProtoField(label = Message.Label.REPEATED, tag = 32)
   public final List<TailInfo> ext_tails;
+  
+  @ProtoField(tag = 66)
+  public final FestivalTipData festival_tip_data;
   
   @ProtoField(tag = 3, type = Message.Datatype.UINT32)
   public final Integer floor;
@@ -225,6 +229,9 @@ public final class Post extends Message {
   @ProtoField(tag = 50, type = Message.Datatype.STRING)
   public final String quote_id;
   
+  @ProtoField(tag = 65, type = Message.Datatype.STRING)
+  public final String rumor_source_img;
+  
   @ProtoField(tag = 47, type = Message.Datatype.INT32)
   public final Integer show_squared;
   
@@ -271,19 +278,6 @@ public final class Post extends Message {
   public final Zan zan;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1090755343, "Ltbclient/Post;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1090755343, "Ltbclient/Post;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_ID = long_;
     Integer integer = Integer.valueOf(0);
@@ -324,11 +318,11 @@ public final class Post extends Message {
       } else {
         this.id = long_3;
       } 
-      String str7 = paramBuilder.title;
-      if (str7 == null) {
+      String str8 = paramBuilder.title;
+      if (str8 == null) {
         this.title = "";
       } else {
-        this.title = str7;
+        this.title = str8;
       } 
       Integer integer9 = paramBuilder.floor;
       if (integer9 == null) {
@@ -379,11 +373,11 @@ public final class Post extends Message {
       } else {
         this.is_bub = integer8;
       } 
-      String str6 = paramBuilder.vote_crypt;
-      if (str6 == null) {
+      String str7 = paramBuilder.vote_crypt;
+      if (str7 == null) {
         this.vote_crypt = "";
       } else {
-        this.vote_crypt = str6;
+        this.vote_crypt = str7;
       } 
       Integer integer7 = paramBuilder.sub_post_number;
       if (integer7 == null) {
@@ -391,25 +385,25 @@ public final class Post extends Message {
       } else {
         this.sub_post_number = integer7;
       } 
-      String str5 = paramBuilder.time_ex;
-      if (str5 == null) {
+      String str6 = paramBuilder.time_ex;
+      if (str6 == null) {
         this.time_ex = "";
       } else {
-        this.time_ex = str5;
+        this.time_ex = str6;
       } 
       this.sub_post_list = paramBuilder.sub_post_list;
       this.add_post_list = paramBuilder.add_post_list;
-      str5 = paramBuilder.bimg_url;
-      if (str5 == null) {
+      str6 = paramBuilder.bimg_url;
+      if (str6 == null) {
         this.bimg_url = "";
       } else {
-        this.bimg_url = str5;
+        this.bimg_url = str6;
       } 
-      str5 = paramBuilder.ios_bimg_format;
-      if (str5 == null) {
+      str6 = paramBuilder.ios_bimg_format;
+      if (str6 == null) {
         this.ios_bimg_format = "";
       } else {
-        this.ios_bimg_format = str5;
+        this.ios_bimg_format = str6;
       } 
       Long long_2 = paramBuilder.author_id;
       if (long_2 == null) {
@@ -453,11 +447,11 @@ public final class Post extends Message {
       this.high_together = paramBuilder.high_together;
       this.skin_info = paramBuilder.skin_info;
       this.pb_deal_info = paramBuilder.pb_deal_info;
-      String str4 = paramBuilder.lego_card;
-      if (str4 == null) {
+      String str5 = paramBuilder.lego_card;
+      if (str5 == null) {
         this.lego_card = "";
       } else {
-        this.lego_card = str4;
+        this.lego_card = str5;
       } 
       this.agree = paramBuilder.agree;
       this.from_forum = paramBuilder.from_forum;
@@ -486,11 +480,11 @@ public final class Post extends Message {
       } else {
         this.is_fold = integer5;
       } 
-      String str3 = paramBuilder.fold_tip;
-      if (str3 == null) {
+      String str4 = paramBuilder.fold_tip;
+      if (str4 == null) {
         this.fold_tip = "";
       } else {
-        this.fold_tip = str3;
+        this.fold_tip = str4;
       } 
       Integer integer4 = paramBuilder.is_top_agree_post;
       if (integer4 == null) {
@@ -516,11 +510,11 @@ public final class Post extends Message {
       } else {
         this.is_bjh = integer3;
       } 
-      String str2 = paramBuilder.quote_id;
-      if (str2 == null) {
+      String str3 = paramBuilder.quote_id;
+      if (str3 == null) {
         this.quote_id = "";
       } else {
-        this.quote_id = str2;
+        this.quote_id = str3;
       } 
       Integer integer2 = paramBuilder.is_wonderful_post;
       if (integer2 == null) {
@@ -543,11 +537,11 @@ public final class Post extends Message {
       } else {
         this.fold_comment_status = integer1;
       } 
-      String str1 = paramBuilder.fold_comment_apply_url;
-      if (str1 == null) {
+      String str2 = paramBuilder.fold_comment_apply_url;
+      if (str2 == null) {
         this.fold_comment_apply_url = "";
       } else {
-        this.fold_comment_apply_url = str1;
+        this.fold_comment_apply_url = str2;
       } 
       this.novel_info = paramBuilder.novel_info;
       List<CardLinkInfo> list = paramBuilder.card_link_info;
@@ -559,6 +553,20 @@ public final class Post extends Message {
       this.custom_figure = paramBuilder.custom_figure;
       this.custom_state = paramBuilder.custom_state;
       this.full_length_novel = paramBuilder.full_length_novel;
+      String str1 = paramBuilder.dynamic_url;
+      if (str1 == null) {
+        this.dynamic_url = "";
+      } else {
+        this.dynamic_url = str1;
+      } 
+      this.bubble_info = paramBuilder.bubble_info;
+      str1 = paramBuilder.rumor_source_img;
+      if (str1 == null) {
+        this.rumor_source_img = "";
+      } else {
+        this.rumor_source_img = str1;
+      } 
+      this.festival_tip_data = paramBuilder.festival_tip_data;
     } else {
       this.id = paramBuilder.id;
       this.title = paramBuilder.title;
@@ -621,6 +629,10 @@ public final class Post extends Message {
       this.custom_figure = paramBuilder.custom_figure;
       this.custom_state = paramBuilder.custom_state;
       this.full_length_novel = paramBuilder.full_length_novel;
+      this.dynamic_url = paramBuilder.dynamic_url;
+      this.bubble_info = paramBuilder.bubble_info;
+      this.rumor_source_img = paramBuilder.rumor_source_img;
+      this.festival_tip_data = paramBuilder.festival_tip_data;
     } 
   }
   
@@ -629,10 +641,6 @@ public final class Post extends Message {
   }
   
   public static final class Builder extends Message.Builder<Post> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public ActPost act_post;
     
     public AddPostList add_post_list;
@@ -651,6 +659,8 @@ public final class Post extends Message {
     
     public String bimg_url;
     
+    public ThemeBubble bubble_info;
+    
     public List<CardLinkInfo> card_link_info;
     
     public List<PbContent> content;
@@ -659,7 +669,11 @@ public final class Post extends Message {
     
     public CustomState custom_state;
     
+    public String dynamic_url;
+    
     public List<TailInfo> ext_tails;
+    
+    public FestivalTipData festival_tip_data;
     
     public Integer floor;
     
@@ -724,6 +738,8 @@ public final class Post extends Message {
     public PbPresent present;
     
     public String quote_id;
+    
+    public String rumor_source_img;
     
     public Integer show_squared;
     
@@ -822,22 +838,16 @@ public final class Post extends Message {
       this.custom_figure = param1Post.custom_figure;
       this.custom_state = param1Post.custom_state;
       this.full_length_novel = param1Post.full_length_novel;
+      this.dynamic_url = param1Post.dynamic_url;
+      this.bubble_info = param1Post.bubble_info;
+      this.rumor_source_img = param1Post.rumor_source_img;
+      this.festival_tip_data = param1Post.festival_tip_data;
     }
     
     public Post build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Post)interceptResult.objValue; 
-      } 
       return new Post(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

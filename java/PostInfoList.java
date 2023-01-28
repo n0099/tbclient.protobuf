@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class PostInfoList extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final List<Abstract> DEFAULT_ABSTRACT_THREAD;
@@ -89,6 +82,8 @@ public final class PostInfoList extends Message {
   
   public static final Integer DEFAULT_SHARE_NUM;
   
+  public static final String DEFAULT_TARGET_SCHEME = "";
+  
   public static final Long DEFAULT_THREAD_ID;
   
   public static final Long DEFAULT_THREAD_TYPE;
@@ -110,8 +105,6 @@ public final class PostInfoList extends Message {
   public static final Long DEFAULT_V_FORUM_ID;
   
   public static final String DEFAULT_WONDERFUL_POST_INFO = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 14, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -257,6 +250,9 @@ public final class PostInfoList extends Message {
   @ProtoField(tag = 39, type = Message.Datatype.INT32)
   public final Integer share_num;
   
+  @ProtoField(tag = 66, type = Message.Datatype.STRING)
+  public final String target_scheme;
+  
   @ProtoField(tag = 2, type = Message.Datatype.UINT64)
   public final Long thread_id;
   
@@ -306,19 +302,6 @@ public final class PostInfoList extends Message {
   public final WorksInfo works_info;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-422954523, "Ltbclient/PostInfoList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-422954523, "Ltbclient/PostInfoList;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_FORUM_ID = long_;
     DEFAULT_THREAD_ID = long_;
@@ -362,6 +345,7 @@ public final class PostInfoList extends Message {
   
   public PostInfoList(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
+    String str;
     if (paramBoolean == true) {
       Long long_4 = paramBuilder.forum_id;
       if (long_4 == null) {
@@ -672,71 +656,78 @@ public final class PostInfoList extends Message {
       } 
       this.user_post_perm = paramBuilder.user_post_perm;
       this.voice_room = paramBuilder.voice_room;
+      str = paramBuilder.target_scheme;
+      if (str == null) {
+        this.target_scheme = "";
+      } else {
+        this.target_scheme = str;
+      } 
     } else {
-      this.forum_id = paramBuilder.forum_id;
-      this.thread_id = paramBuilder.thread_id;
-      this.post_id = paramBuilder.post_id;
-      this.is_thread = paramBuilder.is_thread;
-      this.create_time = paramBuilder.create_time;
-      this.forum_name = paramBuilder.forum_name;
-      this.title = paramBuilder.title;
-      this.content = Message.immutableCopyOf(paramBuilder.content);
-      this.content_thread = paramBuilder.content_thread;
-      this.user_name = paramBuilder.user_name;
-      this.ip = paramBuilder.ip;
-      this.is_post_deleted = paramBuilder.is_post_deleted;
-      this.ptype = paramBuilder.ptype;
-      this._abstract = paramBuilder._abstract;
-      this.abstract_thread = Message.immutableCopyOf(paramBuilder.abstract_thread);
-      this.media = Message.immutableCopyOf(paramBuilder.media);
-      this.reply_num = paramBuilder.reply_num;
-      this.user_id = paramBuilder.user_id;
-      this.user_portrait = paramBuilder.user_portrait;
-      this.post_type = paramBuilder.post_type;
-      this.lbs_info = paramBuilder.lbs_info;
-      this.quote = paramBuilder.quote;
-      this.voice_info = Message.immutableCopyOf(paramBuilder.voice_info);
-      this.anchor_info = paramBuilder.anchor_info;
-      this.hide_post = paramBuilder.hide_post;
-      this.thread_type = paramBuilder.thread_type;
-      this.twzhibo_info = paramBuilder.twzhibo_info;
-      this.poll_info = paramBuilder.poll_info;
-      this.video_info = paramBuilder.video_info;
-      this.is_deal = paramBuilder.is_deal;
-      this.deal_info = paramBuilder.deal_info;
-      this.multiple_forum_list = Message.immutableCopyOf(paramBuilder.multiple_forum_list);
-      this.freq_num = paramBuilder.freq_num;
-      this.v_forum_id = paramBuilder.v_forum_id;
-      this.name_show = paramBuilder.name_show;
-      this.ala_info = paramBuilder.ala_info;
-      this.agree_num = paramBuilder.agree_num;
-      this.view_num = paramBuilder.view_num;
-      this.share_num = paramBuilder.share_num;
-      this.agree = paramBuilder.agree;
-      this.is_remain = paramBuilder.is_remain;
-      this.origin_thread_info = paramBuilder.origin_thread_info;
-      this.is_view_year = paramBuilder.is_view_year;
-      this.is_share_thread = paramBuilder.is_share_thread;
-      this.rich_title = Message.immutableCopyOf(paramBuilder.rich_title);
-      this.rich_abstract = Message.immutableCopyOf(paramBuilder.rich_abstract);
-      this.is_ntitle = paramBuilder.is_ntitle;
-      this.article_cover = paramBuilder.article_cover;
-      this.first_post_content = Message.immutableCopyOf(paramBuilder.first_post_content);
-      this.baijiahao_info = paramBuilder.baijiahao_info;
-      this.wonderful_post_info = paramBuilder.wonderful_post_info;
-      this.item = paramBuilder.item;
-      this.item_star = Message.immutableCopyOf(paramBuilder.item_star);
-      this.pb_link_info = Message.immutableCopyOf(paramBuilder.pb_link_info);
-      this.pb_goods_info = Message.immutableCopyOf(paramBuilder.pb_goods_info);
-      this.priv_sets = Message.immutableCopyOf(paramBuilder.priv_sets);
-      this.is_author_view = paramBuilder.is_author_view;
-      this.works_info = paramBuilder.works_info;
-      this.is_manager = paramBuilder.is_manager;
-      this.is_origin_manager = paramBuilder.is_origin_manager;
-      this.good_types = paramBuilder.good_types;
-      this.top_types = paramBuilder.top_types;
-      this.user_post_perm = paramBuilder.user_post_perm;
-      this.voice_room = paramBuilder.voice_room;
+      this.forum_id = ((Builder)str).forum_id;
+      this.thread_id = ((Builder)str).thread_id;
+      this.post_id = ((Builder)str).post_id;
+      this.is_thread = ((Builder)str).is_thread;
+      this.create_time = ((Builder)str).create_time;
+      this.forum_name = ((Builder)str).forum_name;
+      this.title = ((Builder)str).title;
+      this.content = Message.immutableCopyOf(((Builder)str).content);
+      this.content_thread = ((Builder)str).content_thread;
+      this.user_name = ((Builder)str).user_name;
+      this.ip = ((Builder)str).ip;
+      this.is_post_deleted = ((Builder)str).is_post_deleted;
+      this.ptype = ((Builder)str).ptype;
+      this._abstract = ((Builder)str)._abstract;
+      this.abstract_thread = Message.immutableCopyOf(((Builder)str).abstract_thread);
+      this.media = Message.immutableCopyOf(((Builder)str).media);
+      this.reply_num = ((Builder)str).reply_num;
+      this.user_id = ((Builder)str).user_id;
+      this.user_portrait = ((Builder)str).user_portrait;
+      this.post_type = ((Builder)str).post_type;
+      this.lbs_info = ((Builder)str).lbs_info;
+      this.quote = ((Builder)str).quote;
+      this.voice_info = Message.immutableCopyOf(((Builder)str).voice_info);
+      this.anchor_info = ((Builder)str).anchor_info;
+      this.hide_post = ((Builder)str).hide_post;
+      this.thread_type = ((Builder)str).thread_type;
+      this.twzhibo_info = ((Builder)str).twzhibo_info;
+      this.poll_info = ((Builder)str).poll_info;
+      this.video_info = ((Builder)str).video_info;
+      this.is_deal = ((Builder)str).is_deal;
+      this.deal_info = ((Builder)str).deal_info;
+      this.multiple_forum_list = Message.immutableCopyOf(((Builder)str).multiple_forum_list);
+      this.freq_num = ((Builder)str).freq_num;
+      this.v_forum_id = ((Builder)str).v_forum_id;
+      this.name_show = ((Builder)str).name_show;
+      this.ala_info = ((Builder)str).ala_info;
+      this.agree_num = ((Builder)str).agree_num;
+      this.view_num = ((Builder)str).view_num;
+      this.share_num = ((Builder)str).share_num;
+      this.agree = ((Builder)str).agree;
+      this.is_remain = ((Builder)str).is_remain;
+      this.origin_thread_info = ((Builder)str).origin_thread_info;
+      this.is_view_year = ((Builder)str).is_view_year;
+      this.is_share_thread = ((Builder)str).is_share_thread;
+      this.rich_title = Message.immutableCopyOf(((Builder)str).rich_title);
+      this.rich_abstract = Message.immutableCopyOf(((Builder)str).rich_abstract);
+      this.is_ntitle = ((Builder)str).is_ntitle;
+      this.article_cover = ((Builder)str).article_cover;
+      this.first_post_content = Message.immutableCopyOf(((Builder)str).first_post_content);
+      this.baijiahao_info = ((Builder)str).baijiahao_info;
+      this.wonderful_post_info = ((Builder)str).wonderful_post_info;
+      this.item = ((Builder)str).item;
+      this.item_star = Message.immutableCopyOf(((Builder)str).item_star);
+      this.pb_link_info = Message.immutableCopyOf(((Builder)str).pb_link_info);
+      this.pb_goods_info = Message.immutableCopyOf(((Builder)str).pb_goods_info);
+      this.priv_sets = Message.immutableCopyOf(((Builder)str).priv_sets);
+      this.is_author_view = ((Builder)str).is_author_view;
+      this.works_info = ((Builder)str).works_info;
+      this.is_manager = ((Builder)str).is_manager;
+      this.is_origin_manager = ((Builder)str).is_origin_manager;
+      this.good_types = ((Builder)str).good_types;
+      this.top_types = ((Builder)str).top_types;
+      this.user_post_perm = ((Builder)str).user_post_perm;
+      this.voice_room = ((Builder)str).voice_room;
+      this.target_scheme = ((Builder)str).target_scheme;
     } 
   }
   
@@ -745,10 +736,6 @@ public final class PostInfoList extends Message {
   }
   
   public static final class Builder extends Message.Builder<PostInfoList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String _abstract;
     
     public List<Abstract> abstract_thread;
@@ -844,6 +831,8 @@ public final class PostInfoList extends Message {
     public List<PbContent> rich_title;
     
     public Integer share_num;
+    
+    public String target_scheme;
     
     public Long thread_id;
     
@@ -947,22 +936,13 @@ public final class PostInfoList extends Message {
       this.top_types = param1PostInfoList.top_types;
       this.user_post_perm = param1PostInfoList.user_post_perm;
       this.voice_room = param1PostInfoList.voice_room;
+      this.target_scheme = param1PostInfoList.target_scheme;
     }
     
     public PostInfoList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PostInfoList)interceptResult.objValue; 
-      } 
       return new PostInfoList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

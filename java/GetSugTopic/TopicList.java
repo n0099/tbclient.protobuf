@@ -1,16 +1,9 @@
 package tbclient.GetSugTopic;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TopicList extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_DISCUSS_NUM;
   
   public static final Integer DEFAULT_IS_VIDEO_TOPIC;
@@ -26,8 +19,6 @@ public final class TopicList extends Message {
   public static final String DEFAULT_TOPIC_NAME = "";
   
   public static final String DEFAULT_TOPIC_PIC = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.UINT64)
   public final Long discuss_num;
@@ -54,19 +45,6 @@ public final class TopicList extends Message {
   public final String topic_pic;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-32601337, "Ltbclient/GetSugTopic/TopicList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-32601337, "Ltbclient/GetSugTopic/TopicList;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_TOPIC_ID = long_;
     DEFAULT_DISCUSS_NUM = long_;
@@ -144,10 +122,6 @@ public final class TopicList extends Message {
   }
   
   public static final class Builder extends Message.Builder<TopicList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long discuss_num;
     
     public Integer is_video_topic;
@@ -181,19 +155,9 @@ public final class TopicList extends Message {
     }
     
     public TopicList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TopicList)interceptResult.objValue; 
-      } 
       return new TopicList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

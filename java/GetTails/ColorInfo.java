@@ -1,17 +1,10 @@
 package tbclient.GetTails;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ColorInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_FONTCOLOR = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String fontColor;
@@ -36,10 +29,6 @@ public final class ColorInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<ColorInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String fontColor;
     
     public Builder() {}
@@ -52,19 +41,9 @@ public final class ColorInfo extends Message {
     }
     
     public ColorInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ColorInfo)interceptResult.objValue; 
-      } 
       return new ColorInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

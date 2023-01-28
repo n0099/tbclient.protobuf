@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TiebaPlusInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_APP_COMPANY = "";
   
   public static final String DEFAULT_APP_ICON = "";
@@ -54,8 +47,6 @@ public final class TiebaPlusInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_WX_THUMBNAIL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 11, type = Message.Datatype.STRING)
   public final String app_company;
@@ -127,19 +118,6 @@ public final class TiebaPlusInfo extends Message {
   public final String wx_thumbnail;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1936198446, "Ltbclient/TiebaPlusInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1936198446, "Ltbclient/TiebaPlusInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_TARGET_TYPE = integer;
     DEFAULT_H5_JUMP_TYPE = integer;
@@ -317,10 +295,6 @@ public final class TiebaPlusInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<TiebaPlusInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String app_company;
     
     public String app_icon;
@@ -399,19 +373,9 @@ public final class TiebaPlusInfo extends Message {
     }
     
     public TiebaPlusInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TiebaPlusInfo)interceptResult.objValue; 
-      } 
       return new TiebaPlusInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

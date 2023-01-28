@@ -1,18 +1,11 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class StarRank extends Message {
-  public static Interceptable $ic;
-  
   public static final List<StarContriRecord> DEFAULT_CONTRI_RECORD_LIST;
   
   public static final String DEFAULT_RANK_NAME = "";
@@ -28,8 +21,6 @@ public final class StarRank extends Message {
   public static final List<StarTaskInfo> DEFAULT_USER_TASK_INFO;
   
   public static final String DEFAULT_USER_TASK_NOTICE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<StarContriRecord> contri_record_list;
@@ -56,19 +47,6 @@ public final class StarRank extends Message {
   public final String user_task_notice;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1508677606, "Ltbclient/FrsPage/StarRank;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1508677606, "Ltbclient/FrsPage/StarRank;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_RANK_RANKING = integer;
     DEFAULT_CONTRI_RECORD_LIST = Collections.emptyList();
@@ -145,10 +123,6 @@ public final class StarRank extends Message {
   }
   
   public static final class Builder extends Message.Builder<StarRank> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<StarContriRecord> contri_record_list;
     
     public String rank_name;
@@ -182,19 +156,9 @@ public final class StarRank extends Message {
     }
     
     public StarRank build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (StarRank)interceptResult.objValue; 
-      } 
       return new StarRank(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

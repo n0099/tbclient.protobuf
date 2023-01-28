@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class TogetherHi extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_ALBUM_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_ALBUM_NAME = "";
@@ -30,8 +23,6 @@ public final class TogetherHi extends Message {
   public static final List<String> DEFAULT_POTRAITS;
   
   public static final Integer DEFAULT_START_TIME;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT64)
   public final Long album_id;
@@ -145,27 +136,7 @@ public final class TogetherHi extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(378177430, "Ltbclient/TogetherHi;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(378177430, "Ltbclient/TogetherHi;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<TogetherHi> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long album_id;
     
     public String album_name;
@@ -202,19 +173,9 @@ public final class TogetherHi extends Message {
     }
     
     public TogetherHi build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TogetherHi)interceptResult.objValue; 
-      } 
       return new TogetherHi(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

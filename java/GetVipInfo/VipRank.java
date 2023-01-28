@@ -1,16 +1,9 @@
 package tbclient.GetVipInfo;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class VipRank extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CARD_ID = "";
   
   public static final String DEFAULT_CLASS_NAME = "";
@@ -22,8 +15,6 @@ public final class VipRank extends Message {
   public static final Integer DEFAULT_MY_SCORE_RANK;
   
   public static final Integer DEFAULT_TENDENCY;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String card_id;
@@ -44,19 +35,6 @@ public final class VipRank extends Message {
   public final Integer tendency;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(931156226, "Ltbclient/GetVipInfo/VipRank;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(931156226, "Ltbclient/GetVipInfo/VipRank;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_MY_SCORE_RANK = integer;
     DEFAULT_TENDENCY = integer;
@@ -117,10 +95,6 @@ public final class VipRank extends Message {
   }
   
   public static final class Builder extends Message.Builder<VipRank> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String card_id;
     
     public String class_name;
@@ -148,19 +122,9 @@ public final class VipRank extends Message {
     }
     
     public VipRank build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (VipRank)interceptResult.objValue; 
-      } 
       return new VipRank(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,17 +1,10 @@
 package tbclient.AddThread;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ANONYMOUS = "";
   
   public static final String DEFAULT_AUTHSID = "";
@@ -64,7 +57,11 @@ public final class DataReq extends Message {
   
   public static final String DEFAULT_IS_SHARE = "";
   
+  public static final Integer DEFAULT_IS_SHOW_BLESS;
+  
   public static final String DEFAULT_IS_WORKS = "";
+  
+  public static final Integer DEFAULT_IS_XIUXIU_THREAD;
   
   public static final String DEFAULT_ITEM_ID = "";
   
@@ -122,9 +119,9 @@ public final class DataReq extends Message {
   
   public static final String DEFAULT_SHARE_IMAGE = "";
   
-  public static final String DEFAULT_SHARE_SWAN_APP_KEY = "";
+  public static final String DEFAULT_SHARE_NAWS_APP_KEY = "";
   
-  public static final String DEFAULT_SHARE_SWAN_PATH = "";
+  public static final String DEFAULT_SHARE_NAWS_PATH = "";
   
   public static final Integer DEFAULT_SHOW_CUSTOM_FIGURE;
   
@@ -175,8 +172,6 @@ public final class DataReq extends Message {
   public static final String DEFAULT_VOICE_MD5 = "";
   
   public static final String DEFAULT_WORKS_TAG = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String anonymous;
@@ -259,8 +254,14 @@ public final class DataReq extends Message {
   @ProtoField(tag = 34, type = Message.Datatype.STRING)
   public final String is_share;
   
+  @ProtoField(tag = 87, type = Message.Datatype.INT32)
+  public final Integer is_show_bless;
+  
   @ProtoField(tag = 76, type = Message.Datatype.STRING)
   public final String is_works;
+  
+  @ProtoField(tag = 86, type = Message.Datatype.INT32)
+  public final Integer is_xiuxiu_thread;
   
   @ProtoField(tag = 23, type = Message.Datatype.STRING)
   public final String item_id;
@@ -347,10 +348,10 @@ public final class DataReq extends Message {
   public final String share_image;
   
   @ProtoField(tag = 71, type = Message.Datatype.STRING)
-  public final String share_swan_app_key;
+  public final String share_naws_app_key;
   
   @ProtoField(tag = 72, type = Message.Datatype.STRING)
-  public final String share_swan_path;
+  public final String share_naws_path;
   
   @ProtoField(tag = 80, type = Message.Datatype.INT32)
   public final Integer show_custom_figure;
@@ -428,23 +429,12 @@ public final class DataReq extends Message {
   public final String works_tag;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1039206347, "Ltbclient/AddThread/DataReq;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1039206347, "Ltbclient/AddThread/DataReq;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_SHOW_CUSTOM_FIGURE = integer;
     DEFAULT_IS_QUESTION = integer;
     DEFAULT_IS_CREATE_TAG = integer;
+    DEFAULT_IS_XIUXIU_THREAD = integer;
+    DEFAULT_IS_SHOW_BLESS = integer;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
@@ -854,17 +844,17 @@ public final class DataReq extends Message {
       } else {
         this.share_h5_url = str3;
       } 
-      str3 = paramBuilder.share_swan_app_key;
+      str3 = paramBuilder.share_naws_app_key;
       if (str3 == null) {
-        this.share_swan_app_key = "";
+        this.share_naws_app_key = "";
       } else {
-        this.share_swan_app_key = str3;
+        this.share_naws_app_key = str3;
       } 
-      str3 = paramBuilder.share_swan_path;
+      str3 = paramBuilder.share_naws_path;
       if (str3 == null) {
-        this.share_swan_path = "";
+        this.share_naws_path = "";
       } else {
-        this.share_swan_path = str3;
+        this.share_naws_path = str3;
       } 
       str3 = paramBuilder.real_lat;
       if (str3 == null) {
@@ -908,11 +898,11 @@ public final class DataReq extends Message {
       } else {
         this.is_article = str3;
       } 
-      Integer integer2 = paramBuilder.show_custom_figure;
-      if (integer2 == null) {
+      Integer integer3 = paramBuilder.show_custom_figure;
+      if (integer3 == null) {
         this.show_custom_figure = DEFAULT_SHOW_CUSTOM_FIGURE;
       } else {
-        this.show_custom_figure = integer2;
+        this.show_custom_figure = integer3;
       } 
       String str2 = paramBuilder.from_category_id;
       if (str2 == null) {
@@ -926,11 +916,11 @@ public final class DataReq extends Message {
       } else {
         this.to_category_id = str2;
       } 
-      Integer integer1 = paramBuilder.is_question;
-      if (integer1 == null) {
+      Integer integer2 = paramBuilder.is_question;
+      if (integer2 == null) {
         this.is_question = DEFAULT_IS_QUESTION;
       } else {
-        this.is_question = integer1;
+        this.is_question = integer2;
       } 
       String str1 = paramBuilder.question_tag_id;
       if (str1 == null) {
@@ -938,11 +928,23 @@ public final class DataReq extends Message {
       } else {
         this.question_tag_id = str1;
       } 
-      integer = paramBuilder.is_create_tag;
-      if (integer == null) {
+      Integer integer1 = paramBuilder.is_create_tag;
+      if (integer1 == null) {
         this.is_create_tag = DEFAULT_IS_CREATE_TAG;
       } else {
-        this.is_create_tag = integer;
+        this.is_create_tag = integer1;
+      } 
+      integer1 = paramBuilder.is_xiuxiu_thread;
+      if (integer1 == null) {
+        this.is_xiuxiu_thread = DEFAULT_IS_XIUXIU_THREAD;
+      } else {
+        this.is_xiuxiu_thread = integer1;
+      } 
+      integer = paramBuilder.is_show_bless;
+      if (integer == null) {
+        this.is_show_bless = DEFAULT_IS_SHOW_BLESS;
+      } else {
+        this.is_show_bless = integer;
       } 
     } else {
       this.common = ((Builder)integer).common;
@@ -1013,8 +1015,8 @@ public final class DataReq extends Message {
       this.share_abstract = ((Builder)integer).share_abstract;
       this.share_image = ((Builder)integer).share_image;
       this.share_h5_url = ((Builder)integer).share_h5_url;
-      this.share_swan_app_key = ((Builder)integer).share_swan_app_key;
-      this.share_swan_path = ((Builder)integer).share_swan_path;
+      this.share_naws_app_key = ((Builder)integer).share_naws_app_key;
+      this.share_naws_path = ((Builder)integer).share_naws_path;
       this.real_lat = ((Builder)integer).real_lat;
       this.real_lng = ((Builder)integer).real_lng;
       this.name_show = ((Builder)integer).name_show;
@@ -1028,6 +1030,8 @@ public final class DataReq extends Message {
       this.is_question = ((Builder)integer).is_question;
       this.question_tag_id = ((Builder)integer).question_tag_id;
       this.is_create_tag = ((Builder)integer).is_create_tag;
+      this.is_xiuxiu_thread = ((Builder)integer).is_xiuxiu_thread;
+      this.is_show_bless = ((Builder)integer).is_show_bless;
     } 
   }
   
@@ -1036,10 +1040,6 @@ public final class DataReq extends Message {
   }
   
   public static final class Builder extends Message.Builder<DataReq> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String anonymous;
     
     public String authsid;
@@ -1094,7 +1094,11 @@ public final class DataReq extends Message {
     
     public String is_share;
     
+    public Integer is_show_bless;
+    
     public String is_works;
+    
+    public Integer is_xiuxiu_thread;
     
     public String item_id;
     
@@ -1152,9 +1156,9 @@ public final class DataReq extends Message {
     
     public String share_image;
     
-    public String share_swan_app_key;
+    public String share_naws_app_key;
     
-    public String share_swan_path;
+    public String share_naws_path;
     
     public Integer show_custom_figure;
     
@@ -1280,8 +1284,8 @@ public final class DataReq extends Message {
       this.share_abstract = param1DataReq.share_abstract;
       this.share_image = param1DataReq.share_image;
       this.share_h5_url = param1DataReq.share_h5_url;
-      this.share_swan_app_key = param1DataReq.share_swan_app_key;
-      this.share_swan_path = param1DataReq.share_swan_path;
+      this.share_naws_app_key = param1DataReq.share_naws_app_key;
+      this.share_naws_path = param1DataReq.share_naws_path;
       this.real_lat = param1DataReq.real_lat;
       this.real_lng = param1DataReq.real_lng;
       this.name_show = param1DataReq.name_show;
@@ -1295,22 +1299,14 @@ public final class DataReq extends Message {
       this.is_question = param1DataReq.is_question;
       this.question_tag_id = param1DataReq.question_tag_id;
       this.is_create_tag = param1DataReq.is_create_tag;
+      this.is_xiuxiu_thread = param1DataReq.is_xiuxiu_thread;
+      this.is_show_bless = param1DataReq.is_show_bless;
     }
     
     public DataReq build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataReq)interceptResult.objValue; 
-      } 
       return new DataReq(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

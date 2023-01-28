@@ -1,18 +1,11 @@
 package tbclient.GetIconList;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class IconInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final List<Discount> DEFAULT_DISCOUNT;
   
   public static final Integer DEFAULT_DUBI;
@@ -34,8 +27,6 @@ public final class IconInfo extends Message {
   public static final String DEFAULT_SIGN = "";
   
   public static final String DEFAULT_TAG_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 8)
   public final List<Discount> discount;
@@ -71,19 +62,6 @@ public final class IconInfo extends Message {
   public final String tag_name;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1392578520, "Ltbclient/GetIconList/IconInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1392578520, "Ltbclient/GetIconList/IconInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_NON_MEMBER_T = integer;
     DEFAULT_DUBI = integer;
@@ -183,10 +161,6 @@ public final class IconInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<IconInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<Discount> discount;
     
     public Integer dubi;
@@ -229,19 +203,9 @@ public final class IconInfo extends Message {
     }
     
     public IconInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (IconInfo)interceptResult.objValue; 
-      } 
       return new IconInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ItemService extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_APP_ID;
   
   public static final Integer DEFAULT_CLIENT_TYPE;
@@ -22,8 +15,6 @@ public final class ItemService extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.INT32)
   public final Integer app_id;
@@ -44,19 +35,6 @@ public final class ItemService extends Message {
   public final String url;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(468268611, "Ltbclient/ItemService;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(468268611, "Ltbclient/ItemService;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_CLIENT_TYPE = integer;
     DEFAULT_TYPE = integer;
@@ -118,10 +96,6 @@ public final class ItemService extends Message {
   }
   
   public static final class Builder extends Message.Builder<ItemService> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer app_id;
     
     public Integer client_type;
@@ -149,19 +123,9 @@ public final class ItemService extends Message {
     }
     
     public ItemService build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ItemService)interceptResult.objValue; 
-      } 
       return new ItemService(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

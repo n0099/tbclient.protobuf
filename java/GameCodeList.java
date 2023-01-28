@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class GameCodeList extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_BEGIN_TIME;
   
   public static final Integer DEFAULT_CLAIMED_STATUS;
@@ -26,8 +19,6 @@ public final class GameCodeList extends Message {
   public static final Integer DEFAULT_LIST_ID;
   
   public static final Integer DEFAULT_TYPE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT32)
   public final Integer begin_time;
@@ -54,19 +45,6 @@ public final class GameCodeList extends Message {
   public final Integer type;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1103640332, "Ltbclient/GameCodeList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1103640332, "Ltbclient/GameCodeList;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_LIST_ID = integer;
     DEFAULT_TYPE = integer;
@@ -145,10 +123,6 @@ public final class GameCodeList extends Message {
   }
   
   public static final class Builder extends Message.Builder<GameCodeList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer begin_time;
     
     public Integer claimed_status;
@@ -182,19 +156,9 @@ public final class GameCodeList extends Message {
     }
     
     public GameCodeList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (GameCodeList)interceptResult.objValue; 
-      } 
       return new GameCodeList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

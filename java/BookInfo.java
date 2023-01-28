@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class BookInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AD_CODE = "";
   
   public static final String DEFAULT_AUTHOR = "";
@@ -102,8 +95,6 @@ public final class BookInfo extends Message {
   public static final Integer DEFAULT_UPDATE_TIME;
   
   public static final Integer DEFAULT_WORDS;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 20, type = Message.Datatype.STRING)
   public final String ad_code;
@@ -241,19 +232,6 @@ public final class BookInfo extends Message {
   public final Integer words;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1907670586, "Ltbclient/BookInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1907670586, "Ltbclient/BookInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_BOOK_TYPE = integer;
     DEFAULT_CLASS_ID = integer;
@@ -604,10 +582,6 @@ public final class BookInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<BookInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String ad_code;
     
     public String author;
@@ -752,19 +726,9 @@ public final class BookInfo extends Message {
     }
     
     public BookInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (BookInfo)interceptResult.objValue; 
-      } 
       return new BookInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

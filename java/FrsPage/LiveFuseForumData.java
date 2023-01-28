@@ -1,18 +1,11 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class LiveFuseForumData extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BJIMG_DARK_BIG = "";
   
   public static final String DEFAULT_BJIMG_DARK_SMALL = "";
@@ -23,6 +16,8 @@ public final class LiveFuseForumData extends Message {
   
   public static final List<String> DEFAULT_HEAD_IMG = Collections.emptyList();
   
+  public static final Integer DEFAULT_HEAD_IMG_STYLE;
+  
   public static final String DEFAULT_ICON_URL = "";
   
   public static final String DEFAULT_ONLINE_USERS = "";
@@ -31,11 +26,9 @@ public final class LiveFuseForumData extends Message {
   
   public static final List<String> DEFAULT_TITLE = Collections.emptyList();
   
-  public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
+  public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_YYEXT = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.STRING)
   public final String bjimg_dark_big;
@@ -51,6 +44,9 @@ public final class LiveFuseForumData extends Message {
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2, type = Message.Datatype.STRING)
   public final List<String> head_img;
+  
+  @ProtoField(tag = 13, type = Message.Datatype.INT32)
+  public final Integer head_img_style;
   
   @ProtoField(tag = 7, type = Message.Datatype.STRING)
   public final String icon_url;
@@ -70,9 +66,15 @@ public final class LiveFuseForumData extends Message {
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String yyext;
   
+  static {
+    Integer integer = Integer.valueOf(0);
+    DEFAULT_TYPE = integer;
+    DEFAULT_HEAD_IMG_STYLE = integer;
+  }
+  
   public LiveFuseForumData(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    String str;
+    Integer integer;
     if (paramBoolean == true) {
       String str3 = paramBuilder.online_users;
       if (str3 == null) {
@@ -98,11 +100,11 @@ public final class LiveFuseForumData extends Message {
       } else {
         this.schema = str2;
       } 
-      Integer integer = paramBuilder.type;
-      if (integer == null) {
+      Integer integer1 = paramBuilder.type;
+      if (integer1 == null) {
         this.type = DEFAULT_TYPE;
       } else {
-        this.type = integer;
+        this.type = integer1;
       } 
       String str1 = paramBuilder.yyext;
       if (str1 == null) {
@@ -134,24 +136,31 @@ public final class LiveFuseForumData extends Message {
       } else {
         this.bjimg_dark_small = str1;
       } 
-      str = paramBuilder.bjimg_light_small;
-      if (str == null) {
+      str1 = paramBuilder.bjimg_light_small;
+      if (str1 == null) {
         this.bjimg_light_small = "";
       } else {
-        this.bjimg_light_small = str;
+        this.bjimg_light_small = str1;
+      } 
+      integer = paramBuilder.head_img_style;
+      if (integer == null) {
+        this.head_img_style = DEFAULT_HEAD_IMG_STYLE;
+      } else {
+        this.head_img_style = integer;
       } 
     } else {
-      this.online_users = ((Builder)str).online_users;
-      this.head_img = Message.immutableCopyOf(((Builder)str).head_img);
-      this.title = Message.immutableCopyOf(((Builder)str).title);
-      this.schema = ((Builder)str).schema;
-      this.type = ((Builder)str).type;
-      this.yyext = ((Builder)str).yyext;
-      this.icon_url = ((Builder)str).icon_url;
-      this.bjimg_dark_big = ((Builder)str).bjimg_dark_big;
-      this.bjimg_light_big = ((Builder)str).bjimg_light_big;
-      this.bjimg_dark_small = ((Builder)str).bjimg_dark_small;
-      this.bjimg_light_small = ((Builder)str).bjimg_light_small;
+      this.online_users = ((Builder)integer).online_users;
+      this.head_img = Message.immutableCopyOf(((Builder)integer).head_img);
+      this.title = Message.immutableCopyOf(((Builder)integer).title);
+      this.schema = ((Builder)integer).schema;
+      this.type = ((Builder)integer).type;
+      this.yyext = ((Builder)integer).yyext;
+      this.icon_url = ((Builder)integer).icon_url;
+      this.bjimg_dark_big = ((Builder)integer).bjimg_dark_big;
+      this.bjimg_light_big = ((Builder)integer).bjimg_light_big;
+      this.bjimg_dark_small = ((Builder)integer).bjimg_dark_small;
+      this.bjimg_light_small = ((Builder)integer).bjimg_light_small;
+      this.head_img_style = ((Builder)integer).head_img_style;
     } 
   }
   
@@ -159,27 +168,7 @@ public final class LiveFuseForumData extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-378363296, "Ltbclient/FrsPage/LiveFuseForumData;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-378363296, "Ltbclient/FrsPage/LiveFuseForumData;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<LiveFuseForumData> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String bjimg_dark_big;
     
     public String bjimg_dark_small;
@@ -189,6 +178,8 @@ public final class LiveFuseForumData extends Message {
     public String bjimg_light_small;
     
     public List<String> head_img;
+    
+    public Integer head_img_style;
     
     public String icon_url;
     
@@ -219,22 +210,13 @@ public final class LiveFuseForumData extends Message {
       this.bjimg_light_big = param1LiveFuseForumData.bjimg_light_big;
       this.bjimg_dark_small = param1LiveFuseForumData.bjimg_dark_small;
       this.bjimg_light_small = param1LiveFuseForumData.bjimg_light_small;
+      this.head_img_style = param1LiveFuseForumData.head_img_style;
     }
     
     public LiveFuseForumData build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (LiveFuseForumData)interceptResult.objValue; 
-      } 
       return new LiveFuseForumData(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

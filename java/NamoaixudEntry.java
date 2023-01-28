@@ -1,14 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
-public final class DuxiaomanEntry extends Message {
-  public static Interceptable $ic;
-  
+public final class NamoaixudEntry extends Message {
   public static final String DEFAULT_ACTIVITY_DESC = "";
   
   public static final String DEFAULT_ACTIVITY_LINK_ADDR = "";
@@ -34,8 +29,6 @@ public final class DuxiaomanEntry extends Message {
   public static final String DEFAULT_LAYOUT_TYPE = "";
   
   public static final String DEFAULT_TIP = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.STRING)
   public final String activity_desc;
@@ -76,7 +69,7 @@ public final class DuxiaomanEntry extends Message {
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String tip;
   
-  public DuxiaomanEntry(Builder paramBuilder, boolean paramBoolean) {
+  public NamoaixudEntry(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
     String str;
     if (paramBoolean == true) {
@@ -175,15 +168,11 @@ public final class DuxiaomanEntry extends Message {
     } 
   }
   
-  public DuxiaomanEntry(Builder paramBuilder, boolean paramBoolean, a parama) {
+  public NamoaixudEntry(Builder paramBuilder, boolean paramBoolean, a parama) {
     this(paramBuilder, paramBoolean);
   }
   
-  public static final class Builder extends Message.Builder<DuxiaomanEntry> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
+  public static final class Builder extends Message.Builder<NamoaixudEntry> {
     public String activity_desc;
     
     public String activity_link_addr;
@@ -212,39 +201,29 @@ public final class DuxiaomanEntry extends Message {
     
     public Builder() {}
     
-    public Builder(DuxiaomanEntry param1DuxiaomanEntry) {
-      super(param1DuxiaomanEntry);
-      if (param1DuxiaomanEntry == null)
+    public Builder(NamoaixudEntry param1NamoaixudEntry) {
+      super(param1NamoaixudEntry);
+      if (param1NamoaixudEntry == null)
         return; 
-      this.tip = param1DuxiaomanEntry.tip;
-      this.amount = param1DuxiaomanEntry.amount;
-      this.amount_msg = param1DuxiaomanEntry.amount_msg;
-      this.encourage_icon = param1DuxiaomanEntry.encourage_icon;
-      this.encourage_desc = param1DuxiaomanEntry.encourage_desc;
-      this.goto_button_name = param1DuxiaomanEntry.goto_button_name;
-      this.goto_button_url = param1DuxiaomanEntry.goto_button_url;
-      this.activity_timestamp = param1DuxiaomanEntry.activity_timestamp;
-      this.activity_desc = param1DuxiaomanEntry.activity_desc;
-      this.activity_link_type = param1DuxiaomanEntry.activity_link_type;
-      this.activity_link_addr = param1DuxiaomanEntry.activity_link_addr;
-      this.layout_type = param1DuxiaomanEntry.layout_type;
-      this.encourage_icon_dark = param1DuxiaomanEntry.encourage_icon_dark;
+      this.tip = param1NamoaixudEntry.tip;
+      this.amount = param1NamoaixudEntry.amount;
+      this.amount_msg = param1NamoaixudEntry.amount_msg;
+      this.encourage_icon = param1NamoaixudEntry.encourage_icon;
+      this.encourage_desc = param1NamoaixudEntry.encourage_desc;
+      this.goto_button_name = param1NamoaixudEntry.goto_button_name;
+      this.goto_button_url = param1NamoaixudEntry.goto_button_url;
+      this.activity_timestamp = param1NamoaixudEntry.activity_timestamp;
+      this.activity_desc = param1NamoaixudEntry.activity_desc;
+      this.activity_link_type = param1NamoaixudEntry.activity_link_type;
+      this.activity_link_addr = param1NamoaixudEntry.activity_link_addr;
+      this.layout_type = param1NamoaixudEntry.layout_type;
+      this.encourage_icon_dark = param1NamoaixudEntry.encourage_icon_dark;
     }
     
-    public DuxiaomanEntry build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DuxiaomanEntry)interceptResult.objValue; 
-      } 
-      return new DuxiaomanEntry(this, param1Boolean, null);
+    public NamoaixudEntry build(boolean param1Boolean) {
+      return new NamoaixudEntry(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,25 +1,23 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class CustomState extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CONTENT = "";
   
   public static final String DEFAULT_ICON = "";
   
-  public transient FieldHolder $fh;
+  public static final String DEFAULT_ICON_TYPE = "";
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String content;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String icon;
+  
+  @ProtoField(tag = 3, type = Message.Datatype.STRING)
+  public final String icon_type;
   
   public CustomState(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
@@ -31,15 +29,22 @@ public final class CustomState extends Message {
       } else {
         this.icon = str1;
       } 
-      str = paramBuilder.content;
-      if (str == null) {
+      str1 = paramBuilder.content;
+      if (str1 == null) {
         this.content = "";
       } else {
-        this.content = str;
+        this.content = str1;
+      } 
+      str = paramBuilder.icon_type;
+      if (str == null) {
+        this.icon_type = "";
+      } else {
+        this.icon_type = str;
       } 
     } else {
       this.icon = ((Builder)str).icon;
       this.content = ((Builder)str).content;
+      this.icon_type = ((Builder)str).icon_type;
     } 
   }
   
@@ -48,13 +53,11 @@ public final class CustomState extends Message {
   }
   
   public static final class Builder extends Message.Builder<CustomState> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String content;
     
     public String icon;
+    
+    public String icon_type;
     
     public Builder() {}
     
@@ -64,22 +67,13 @@ public final class CustomState extends Message {
         return; 
       this.icon = param1CustomState.icon;
       this.content = param1CustomState.content;
+      this.icon_type = param1CustomState.icon_type;
     }
     
     public CustomState build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (CustomState)interceptResult.objValue; 
-      } 
       return new CustomState(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,10 +1,5 @@
 package tbclient.Personalized;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -14,8 +9,6 @@ import tbclient.AppTransmitData;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AD_CONTEXT_LIST = "";
   
   public static final String DEFAULT_AD_EXT_PARAMS = "";
@@ -56,6 +49,8 @@ public final class DataReq extends Message {
   
   public static final Integer DEFAULT_PRE_AD_THREAD_COUNT;
   
+  public static final Long DEFAULT_PUSH_TID;
+  
   public static final String DEFAULT_QUERY_EQID = "";
   
   public static final Integer DEFAULT_Q_TYPE;
@@ -79,8 +74,6 @@ public final class DataReq extends Message {
   public static final Integer DEFAULT_TAG_CHANGED;
   
   public static final Integer DEFAULT_TAG_CODE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 30, type = Message.Datatype.STRING)
   public final String ad_context_list;
@@ -151,6 +144,9 @@ public final class DataReq extends Message {
   @ProtoField(tag = 26, type = Message.Datatype.INT32)
   public final Integer pre_ad_thread_count;
   
+  @ProtoField(tag = 39, type = Message.Datatype.INT64)
+  public final Long push_tid;
+  
   @ProtoField(tag = 11, type = Message.Datatype.INT32)
   public final Integer q_type;
   
@@ -188,19 +184,6 @@ public final class DataReq extends Message {
   public final Integer tag_code;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-397390084, "Ltbclient/Personalized/DataReq;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-397390084, "Ltbclient/Personalized/DataReq;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_TAG_CODE = integer;
     DEFAULT_NEED_TAGS = integer;
@@ -218,14 +201,17 @@ public final class DataReq extends Message {
     DEFAULT_TAG_CHANGED = integer;
     DEFAULT_NEED_FORUMLIST = integer;
     DEFAULT_NEW_NET_TYPE = integer;
-    DEFAULT_FROM_TID = Long.valueOf(0L);
+    Long long_ = Long.valueOf(0L);
+    DEFAULT_FROM_TID = long_;
     DEFAULT_PRE_AD_THREAD_COUNT = integer;
     DEFAULT_NEW_INSTALL = integer;
     DEFAULT_REQUEST_TIMES = integer;
+    DEFAULT_PUSH_TID = long_;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
+    Long long_;
     if (paramBoolean == true) {
       this.common = paramBuilder.common;
       Integer integer6 = paramBuilder.tag_code;
@@ -360,11 +346,11 @@ public final class DataReq extends Message {
       } else {
         this.shoubai_cuid = str2;
       } 
-      Long long_ = paramBuilder.from_tid;
-      if (long_ == null) {
+      Long long_1 = paramBuilder.from_tid;
+      if (long_1 == null) {
         this.from_tid = DEFAULT_FROM_TID;
       } else {
-        this.from_tid = long_;
+        this.from_tid = long_1;
       } 
       Integer integer1 = paramBuilder.pre_ad_thread_count;
       if (integer1 == null) {
@@ -422,42 +408,49 @@ public final class DataReq extends Message {
         this.ad_ext_params = str1;
       } 
       this.app_transmit_data = paramBuilder.app_transmit_data;
+      long_ = paramBuilder.push_tid;
+      if (long_ == null) {
+        this.push_tid = DEFAULT_PUSH_TID;
+      } else {
+        this.push_tid = long_;
+      } 
     } else {
-      this.common = paramBuilder.common;
-      this.tag_code = paramBuilder.tag_code;
-      this.need_tags = paramBuilder.need_tags;
-      this.load_type = paramBuilder.load_type;
-      this.page_thread_count = paramBuilder.page_thread_count;
-      this.pn = paramBuilder.pn;
-      this.sug_count = paramBuilder.sug_count;
-      this.scr_w = paramBuilder.scr_w;
-      this.scr_h = paramBuilder.scr_h;
-      this.scr_dip = paramBuilder.scr_dip;
-      this.q_type = paramBuilder.q_type;
-      this.lastids = paramBuilder.lastids;
-      this.issdk = paramBuilder.issdk;
-      this.da_idfa = paramBuilder.da_idfa;
-      this.platform = paramBuilder.platform;
-      this.sex_tag = paramBuilder.sex_tag;
-      this.age_tag = paramBuilder.age_tag;
-      this.need_age_module = paramBuilder.need_age_module;
-      this.interest_tag = Message.immutableCopyOf(paramBuilder.interest_tag);
-      this.tag_changed = paramBuilder.tag_changed;
-      this.need_forumlist = paramBuilder.need_forumlist;
-      this.new_net_type = paramBuilder.new_net_type;
-      this.shoubai_cuid = paramBuilder.shoubai_cuid;
-      this.from_tid = paramBuilder.from_tid;
-      this.pre_ad_thread_count = paramBuilder.pre_ad_thread_count;
-      this.new_install = paramBuilder.new_install;
-      this.request_times = paramBuilder.request_times;
-      this.invoke_source = paramBuilder.invoke_source;
-      this.ad_context_list = paramBuilder.ad_context_list;
-      this.query_eqid = paramBuilder.query_eqid;
-      this.first_dir = paramBuilder.first_dir;
-      this.second_dir = paramBuilder.second_dir;
-      this.app_pos = paramBuilder.app_pos;
-      this.ad_ext_params = paramBuilder.ad_ext_params;
-      this.app_transmit_data = paramBuilder.app_transmit_data;
+      this.common = ((Builder)long_).common;
+      this.tag_code = ((Builder)long_).tag_code;
+      this.need_tags = ((Builder)long_).need_tags;
+      this.load_type = ((Builder)long_).load_type;
+      this.page_thread_count = ((Builder)long_).page_thread_count;
+      this.pn = ((Builder)long_).pn;
+      this.sug_count = ((Builder)long_).sug_count;
+      this.scr_w = ((Builder)long_).scr_w;
+      this.scr_h = ((Builder)long_).scr_h;
+      this.scr_dip = ((Builder)long_).scr_dip;
+      this.q_type = ((Builder)long_).q_type;
+      this.lastids = ((Builder)long_).lastids;
+      this.issdk = ((Builder)long_).issdk;
+      this.da_idfa = ((Builder)long_).da_idfa;
+      this.platform = ((Builder)long_).platform;
+      this.sex_tag = ((Builder)long_).sex_tag;
+      this.age_tag = ((Builder)long_).age_tag;
+      this.need_age_module = ((Builder)long_).need_age_module;
+      this.interest_tag = Message.immutableCopyOf(((Builder)long_).interest_tag);
+      this.tag_changed = ((Builder)long_).tag_changed;
+      this.need_forumlist = ((Builder)long_).need_forumlist;
+      this.new_net_type = ((Builder)long_).new_net_type;
+      this.shoubai_cuid = ((Builder)long_).shoubai_cuid;
+      this.from_tid = ((Builder)long_).from_tid;
+      this.pre_ad_thread_count = ((Builder)long_).pre_ad_thread_count;
+      this.new_install = ((Builder)long_).new_install;
+      this.request_times = ((Builder)long_).request_times;
+      this.invoke_source = ((Builder)long_).invoke_source;
+      this.ad_context_list = ((Builder)long_).ad_context_list;
+      this.query_eqid = ((Builder)long_).query_eqid;
+      this.first_dir = ((Builder)long_).first_dir;
+      this.second_dir = ((Builder)long_).second_dir;
+      this.app_pos = ((Builder)long_).app_pos;
+      this.ad_ext_params = ((Builder)long_).ad_ext_params;
+      this.app_transmit_data = ((Builder)long_).app_transmit_data;
+      this.push_tid = ((Builder)long_).push_tid;
     } 
   }
   
@@ -466,10 +459,6 @@ public final class DataReq extends Message {
   }
   
   public static final class Builder extends Message.Builder<DataReq> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String ad_context_list;
     
     public String ad_ext_params;
@@ -515,6 +504,8 @@ public final class DataReq extends Message {
     public Integer pn;
     
     public Integer pre_ad_thread_count;
+    
+    public Long push_tid;
     
     public Integer q_type;
     
@@ -581,22 +572,13 @@ public final class DataReq extends Message {
       this.app_pos = param1DataReq.app_pos;
       this.ad_ext_params = param1DataReq.ad_ext_params;
       this.app_transmit_data = param1DataReq.app_transmit_data;
+      this.push_tid = param1DataReq.push_tid;
     }
     
     public DataReq build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataReq)interceptResult.objValue; 
-      } 
       return new DataReq(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

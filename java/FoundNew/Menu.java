@@ -1,16 +1,9 @@
 package tbclient.FoundNew;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Menu extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_DESCRIBE = "";
   
   public static final String DEFAULT_ICON_URL = "";
@@ -24,8 +17,6 @@ public final class Menu extends Message {
   public static final String DEFAULT_STATISTICS = "";
   
   public static final String DEFAULT_TITLE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String describe;
@@ -49,19 +40,6 @@ public final class Menu extends Message {
   public final String title;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-112300171, "Ltbclient/FoundNew/Menu;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-112300171, "Ltbclient/FoundNew/Menu;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_IS_NEW = integer;
     DEFAULT_IS_RED_POINT = integer;
@@ -129,10 +107,6 @@ public final class Menu extends Message {
   }
   
   public static final class Builder extends Message.Builder<Menu> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String describe;
     
     public String icon_url;
@@ -163,19 +137,9 @@ public final class Menu extends Message {
     }
     
     public Menu build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Menu)interceptResult.objValue; 
-      } 
       return new Menu(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

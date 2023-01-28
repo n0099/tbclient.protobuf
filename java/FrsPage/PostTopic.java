@@ -1,19 +1,12 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PostTopic extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CONTENT_TOPIC = "";
   
   public static final String DEFAULT_TITLE_TOPIC = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String content_topic;
@@ -48,10 +41,6 @@ public final class PostTopic extends Message {
   }
   
   public static final class Builder extends Message.Builder<PostTopic> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String content_topic;
     
     public String title_topic;
@@ -67,19 +56,9 @@ public final class PostTopic extends Message {
     }
     
     public PostTopic build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PostTopic)interceptResult.objValue; 
-      } 
       return new PostTopic(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

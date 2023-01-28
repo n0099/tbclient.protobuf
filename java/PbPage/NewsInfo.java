@@ -1,16 +1,9 @@
 package tbclient.PbPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class NewsInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BUTTON_TEXT = "";
   
   public static final String DEFAULT_NEWS_ICON = "";
@@ -24,8 +17,6 @@ public final class NewsInfo extends Message {
   public static final String DEFAULT_SUBTITLE = "";
   
   public static final String DEFAULT_SUMMARY = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.STRING)
   public final String button_text;
@@ -49,19 +40,6 @@ public final class NewsInfo extends Message {
   public final String summary;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(999535126, "Ltbclient/PbPage/NewsInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(999535126, "Ltbclient/PbPage/NewsInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_POSITION = integer;
     DEFAULT_NEWS_TYPE = integer;
@@ -129,10 +107,6 @@ public final class NewsInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<NewsInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String button_text;
     
     public String news_icon;
@@ -163,19 +137,9 @@ public final class NewsInfo extends Message {
     }
     
     public NewsInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (NewsInfo)interceptResult.objValue; 
-      } 
       return new NewsInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

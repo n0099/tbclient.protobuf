@@ -1,14 +1,9 @@
 package tbclient.Profile;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class FinanceTabItems extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_DESC_TEXT = "";
   
   public static final String DEFAULT_ICON_URL = "";
@@ -22,8 +17,6 @@ public final class FinanceTabItems extends Message {
   public static final String DEFAULT_TAB_TYPE = "";
   
   public static final String DEFAULT_TAB_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String desc_text;
@@ -108,10 +101,6 @@ public final class FinanceTabItems extends Message {
   }
   
   public static final class Builder extends Message.Builder<FinanceTabItems> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String desc_text;
     
     public String icon_url;
@@ -142,19 +131,9 @@ public final class FinanceTabItems extends Message {
     }
     
     public FinanceTabItems build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (FinanceTabItems)interceptResult.objValue; 
-      } 
       return new FinanceTabItems(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

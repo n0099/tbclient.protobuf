@@ -1,10 +1,5 @@
 package tbclient.PbPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
@@ -12,8 +7,6 @@ import tbclient.AppTransmitData;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AD_CONTEXT_LIST = "";
   
   public static final String DEFAULT_AD_EXT_PARAMS = "";
@@ -67,6 +60,8 @@ public final class DataReq extends Message {
   public static final Integer DEFAULT_LAST;
   
   public static final String DEFAULT_LASTIDS = "";
+  
+  public static final Long DEFAULT_LAST_PID;
   
   public static final Integer DEFAULT_LZ;
   
@@ -145,8 +140,6 @@ public final class DataReq extends Message {
   public static final String DEFAULT_YUELAOU_LOCATE = "";
   
   public static final String DEFAULT_YUELAOU_PARAMS = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 68, type = Message.Datatype.STRING)
   public final String ad_context_list;
@@ -237,6 +230,9 @@ public final class DataReq extends Message {
   
   @ProtoField(tag = 23, type = Message.Datatype.INT32)
   public final Integer last;
+  
+  @ProtoField(tag = 81, type = Message.Datatype.INT64)
+  public final Long last_pid;
   
   @ProtoField(tag = 26, type = Message.Datatype.STRING)
   public final String lastids;
@@ -359,19 +355,6 @@ public final class DataReq extends Message {
   public final String yuelaou_params;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1374404917, "Ltbclient/PbPage/DataReq;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1374404917, "Ltbclient/PbPage/DataReq;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_PB_RN = integer;
     DEFAULT_MARK = integer;
@@ -417,11 +400,12 @@ public final class DataReq extends Message {
     DEFAULT_IS_FOLD_COMMENT_REQ = integer;
     DEFAULT_IS_EDIT_COMMENT_REQ = integer;
     DEFAULT_REQUEST_TIMES = integer;
+    DEFAULT_LAST_PID = long_;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
+    Long long_;
     if (paramBoolean == true) {
       Integer integer13 = paramBuilder.pb_rn;
       if (integer13 == null) {
@@ -817,83 +801,90 @@ public final class DataReq extends Message {
       } else {
         this.is_edit_comment_req = integer1;
       } 
-      integer = paramBuilder.request_times;
-      if (integer == null) {
+      integer1 = paramBuilder.request_times;
+      if (integer1 == null) {
         this.request_times = DEFAULT_REQUEST_TIMES;
       } else {
-        this.request_times = integer;
+        this.request_times = integer1;
+      } 
+      long_ = paramBuilder.last_pid;
+      if (long_ == null) {
+        this.last_pid = DEFAULT_LAST_PID;
+      } else {
+        this.last_pid = long_;
       } 
     } else {
-      this.pb_rn = ((Builder)integer).pb_rn;
-      this.mark = ((Builder)integer).mark;
-      this.back = ((Builder)integer).back;
-      this.kz = ((Builder)integer).kz;
-      this.lz = ((Builder)integer).lz;
-      this.r = ((Builder)integer).r;
-      this.pid = ((Builder)integer).pid;
-      this.with_floor = ((Builder)integer).with_floor;
-      this.floor_rn = ((Builder)integer).floor_rn;
-      this.weipost = ((Builder)integer).weipost;
-      this.message_id = ((Builder)integer).message_id;
-      this.s_model = ((Builder)integer).s_model;
-      this.rn = ((Builder)integer).rn;
-      this.scr_w = ((Builder)integer).scr_w;
-      this.scr_h = ((Builder)integer).scr_h;
-      this.scr_dip = ((Builder)integer).scr_dip;
-      this.q_type = ((Builder)integer).q_type;
-      this.pn = ((Builder)integer).pn;
-      this.st_type = ((Builder)integer).st_type;
-      this.thread_type = ((Builder)integer).thread_type;
-      this.banner = ((Builder)integer).banner;
-      this.arround = ((Builder)integer).arround;
-      this.last = ((Builder)integer).last;
-      this.msg_click = ((Builder)integer).msg_click;
-      this.common = ((Builder)integer).common;
-      this.lastids = ((Builder)integer).lastids;
-      this.st_from = ((Builder)integer).st_from;
-      this.st_link = ((Builder)integer).st_link;
-      this.st_stat = ((Builder)integer).st_stat;
-      this.st_task = ((Builder)integer).st_task;
-      this.issdk = ((Builder)integer).issdk;
-      this.query_word = ((Builder)integer).query_word;
-      this.is_comm_reverse = ((Builder)integer).is_comm_reverse;
-      this.is_jumpfloor = ((Builder)integer).is_jumpfloor;
-      this.jumpfloor_num = ((Builder)integer).jumpfloor_num;
-      this.da_idfa = ((Builder)integer).da_idfa;
-      this.platform = ((Builder)integer).platform;
-      this.jid = ((Builder)integer).jid;
-      this.fid = ((Builder)integer).fid;
-      this.jfrom = ((Builder)integer).jfrom;
-      this.yuelaou_locate = ((Builder)integer).yuelaou_locate;
-      this.yuelaou_params = ((Builder)integer).yuelaou_params;
-      this.obj_source = ((Builder)integer).obj_source;
-      this.obj_locate = ((Builder)integer).obj_locate;
-      this.obj_param1 = ((Builder)integer).obj_param1;
-      this.app_pos = ((Builder)integer).app_pos;
-      this.from_smart_frs = ((Builder)integer).from_smart_frs;
-      this.feed_nid = ((Builder)integer).feed_nid;
-      this.forum_id = ((Builder)integer).forum_id;
-      this.need_repost_recommend_forum = ((Builder)integer).need_repost_recommend_forum;
-      this.ad_param = ((Builder)integer).ad_param;
-      this.need_log = ((Builder)integer).need_log;
-      this.call_url = ((Builder)integer).call_url;
-      this.shoubai_cuid = ((Builder)integer).shoubai_cuid;
-      this.ori_ugc_nid = ((Builder)integer).ori_ugc_nid;
-      this.ori_ugc_tid = ((Builder)integer).ori_ugc_tid;
-      this.ori_ugc_type = ((Builder)integer).ori_ugc_type;
-      this.ori_ugc_vid = ((Builder)integer).ori_ugc_vid;
-      this.ad_context_list = ((Builder)integer).ad_context_list;
-      this.up_schema = ((Builder)integer).up_schema;
-      this.from_push = ((Builder)integer).from_push;
-      this.ad_ext_params = ((Builder)integer).ad_ext_params;
-      this.broadcast_id = ((Builder)integer).broadcast_id;
-      this.floor_sort_type = ((Builder)integer).floor_sort_type;
-      this.source_type = ((Builder)integer).source_type;
-      this.immersion_video_comment_source = ((Builder)integer).immersion_video_comment_source;
-      this.app_transmit_data = ((Builder)integer).app_transmit_data;
-      this.is_fold_comment_req = ((Builder)integer).is_fold_comment_req;
-      this.is_edit_comment_req = ((Builder)integer).is_edit_comment_req;
-      this.request_times = ((Builder)integer).request_times;
+      this.pb_rn = ((Builder)long_).pb_rn;
+      this.mark = ((Builder)long_).mark;
+      this.back = ((Builder)long_).back;
+      this.kz = ((Builder)long_).kz;
+      this.lz = ((Builder)long_).lz;
+      this.r = ((Builder)long_).r;
+      this.pid = ((Builder)long_).pid;
+      this.with_floor = ((Builder)long_).with_floor;
+      this.floor_rn = ((Builder)long_).floor_rn;
+      this.weipost = ((Builder)long_).weipost;
+      this.message_id = ((Builder)long_).message_id;
+      this.s_model = ((Builder)long_).s_model;
+      this.rn = ((Builder)long_).rn;
+      this.scr_w = ((Builder)long_).scr_w;
+      this.scr_h = ((Builder)long_).scr_h;
+      this.scr_dip = ((Builder)long_).scr_dip;
+      this.q_type = ((Builder)long_).q_type;
+      this.pn = ((Builder)long_).pn;
+      this.st_type = ((Builder)long_).st_type;
+      this.thread_type = ((Builder)long_).thread_type;
+      this.banner = ((Builder)long_).banner;
+      this.arround = ((Builder)long_).arround;
+      this.last = ((Builder)long_).last;
+      this.msg_click = ((Builder)long_).msg_click;
+      this.common = ((Builder)long_).common;
+      this.lastids = ((Builder)long_).lastids;
+      this.st_from = ((Builder)long_).st_from;
+      this.st_link = ((Builder)long_).st_link;
+      this.st_stat = ((Builder)long_).st_stat;
+      this.st_task = ((Builder)long_).st_task;
+      this.issdk = ((Builder)long_).issdk;
+      this.query_word = ((Builder)long_).query_word;
+      this.is_comm_reverse = ((Builder)long_).is_comm_reverse;
+      this.is_jumpfloor = ((Builder)long_).is_jumpfloor;
+      this.jumpfloor_num = ((Builder)long_).jumpfloor_num;
+      this.da_idfa = ((Builder)long_).da_idfa;
+      this.platform = ((Builder)long_).platform;
+      this.jid = ((Builder)long_).jid;
+      this.fid = ((Builder)long_).fid;
+      this.jfrom = ((Builder)long_).jfrom;
+      this.yuelaou_locate = ((Builder)long_).yuelaou_locate;
+      this.yuelaou_params = ((Builder)long_).yuelaou_params;
+      this.obj_source = ((Builder)long_).obj_source;
+      this.obj_locate = ((Builder)long_).obj_locate;
+      this.obj_param1 = ((Builder)long_).obj_param1;
+      this.app_pos = ((Builder)long_).app_pos;
+      this.from_smart_frs = ((Builder)long_).from_smart_frs;
+      this.feed_nid = ((Builder)long_).feed_nid;
+      this.forum_id = ((Builder)long_).forum_id;
+      this.need_repost_recommend_forum = ((Builder)long_).need_repost_recommend_forum;
+      this.ad_param = ((Builder)long_).ad_param;
+      this.need_log = ((Builder)long_).need_log;
+      this.call_url = ((Builder)long_).call_url;
+      this.shoubai_cuid = ((Builder)long_).shoubai_cuid;
+      this.ori_ugc_nid = ((Builder)long_).ori_ugc_nid;
+      this.ori_ugc_tid = ((Builder)long_).ori_ugc_tid;
+      this.ori_ugc_type = ((Builder)long_).ori_ugc_type;
+      this.ori_ugc_vid = ((Builder)long_).ori_ugc_vid;
+      this.ad_context_list = ((Builder)long_).ad_context_list;
+      this.up_schema = ((Builder)long_).up_schema;
+      this.from_push = ((Builder)long_).from_push;
+      this.ad_ext_params = ((Builder)long_).ad_ext_params;
+      this.broadcast_id = ((Builder)long_).broadcast_id;
+      this.floor_sort_type = ((Builder)long_).floor_sort_type;
+      this.source_type = ((Builder)long_).source_type;
+      this.immersion_video_comment_source = ((Builder)long_).immersion_video_comment_source;
+      this.app_transmit_data = ((Builder)long_).app_transmit_data;
+      this.is_fold_comment_req = ((Builder)long_).is_fold_comment_req;
+      this.is_edit_comment_req = ((Builder)long_).is_edit_comment_req;
+      this.request_times = ((Builder)long_).request_times;
+      this.last_pid = ((Builder)long_).last_pid;
     } 
   }
   
@@ -902,10 +893,6 @@ public final class DataReq extends Message {
   }
   
   public static final class Builder extends Message.Builder<DataReq> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String ad_context_list;
     
     public String ad_ext_params;
@@ -965,6 +952,8 @@ public final class DataReq extends Message {
     public Long kz;
     
     public Integer last;
+    
+    public Long last_pid;
     
     public String lastids;
     
@@ -1122,22 +1111,13 @@ public final class DataReq extends Message {
       this.is_fold_comment_req = param1DataReq.is_fold_comment_req;
       this.is_edit_comment_req = param1DataReq.is_edit_comment_req;
       this.request_times = param1DataReq.request_times;
+      this.last_pid = param1DataReq.last_pid;
     }
     
     public DataReq build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataReq)interceptResult.objValue; 
-      } 
       return new DataReq(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

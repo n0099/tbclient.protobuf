@@ -1,16 +1,11 @@
 package tbclient.Loop;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.YyExt;
 
 public final class YyLiveInfoSimple extends Message {
-  public static Interceptable $ic;
+  public static final Integer DEFAULT_AUTHOR_TYPE;
   
   public static final String DEFAULT_BTN_TEXT = "";
   
@@ -46,7 +41,8 @@ public final class YyLiveInfoSimple extends Message {
   
   public static final String DEFAULT_USER_NAME = "";
   
-  public transient FieldHolder $fh;
+  @ProtoField(tag = 19, type = Message.Datatype.INT32)
+  public final Integer author_type;
   
   @ProtoField(tag = 15, type = Message.Datatype.STRING)
   public final String btn_text;
@@ -103,19 +99,6 @@ public final class YyLiveInfoSimple extends Message {
   public final YyExt yy_ext;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-631701746, "Ltbclient/Loop/YyLiveInfoSimple;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-631701746, "Ltbclient/Loop/YyLiveInfoSimple;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_DISAPPEAR_TYPE = integer;
     DEFAULT_DISAPPEAR_SECOND = integer;
@@ -126,6 +109,7 @@ public final class YyLiveInfoSimple extends Message {
     DEFAULT_ROOM_ID = Long.valueOf(0L);
     DEFAULT_REMIND_TYPE = integer;
     DEFAULT_SHOW_PAGE = integer;
+    DEFAULT_AUTHOR_TYPE = integer;
   }
   
   public YyLiveInfoSimple(Builder paramBuilder, boolean paramBoolean) {
@@ -229,11 +213,17 @@ public final class YyLiveInfoSimple extends Message {
       } else {
         this.remind_type = integer1;
       } 
-      integer = paramBuilder.show_page;
-      if (integer == null) {
+      integer1 = paramBuilder.show_page;
+      if (integer1 == null) {
         this.show_page = DEFAULT_SHOW_PAGE;
       } else {
-        this.show_page = integer;
+        this.show_page = integer1;
+      } 
+      integer = paramBuilder.author_type;
+      if (integer == null) {
+        this.author_type = DEFAULT_AUTHOR_TYPE;
+      } else {
+        this.author_type = integer;
       } 
     } else {
       this.icon_url = ((Builder)integer).icon_url;
@@ -254,6 +244,7 @@ public final class YyLiveInfoSimple extends Message {
       this.feed_id = ((Builder)integer).feed_id;
       this.remind_type = ((Builder)integer).remind_type;
       this.show_page = ((Builder)integer).show_page;
+      this.author_type = ((Builder)integer).author_type;
     } 
   }
   
@@ -262,9 +253,7 @@ public final class YyLiveInfoSimple extends Message {
   }
   
   public static final class Builder extends Message.Builder<YyLiveInfoSimple> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
+    public Integer author_type;
     
     public String btn_text;
     
@@ -326,22 +315,13 @@ public final class YyLiveInfoSimple extends Message {
       this.feed_id = param1YyLiveInfoSimple.feed_id;
       this.remind_type = param1YyLiveInfoSimple.remind_type;
       this.show_page = param1YyLiveInfoSimple.show_page;
+      this.author_type = param1YyLiveInfoSimple.author_type;
     }
     
     public YyLiveInfoSimple build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (YyLiveInfoSimple)interceptResult.objValue; 
-      } 
       return new YyLiveInfoSimple(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

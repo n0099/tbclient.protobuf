@@ -1,19 +1,14 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ThemeCardPropMain extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ACTIVITY_URL = "";
   
   public static final String DEFAULT_DESCRIPTION = "";
+  
+  public static final String DEFAULT_DYNAMIC_URL = "";
   
   public static final String DEFAULT_EXAMPLE_URL = "";
   
@@ -31,13 +26,14 @@ public final class ThemeCardPropMain extends Message {
   
   public static final String DEFAULT_TITLE = "";
   
-  public transient FieldHolder $fh;
-  
   @ProtoField(tag = 9, type = Message.Datatype.STRING)
   public final String activity_url;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String description;
+  
+  @ProtoField(tag = 11, type = Message.Datatype.STRING)
+  public final String dynamic_url;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String example_url;
@@ -72,7 +68,7 @@ public final class ThemeCardPropMain extends Message {
   
   public ThemeCardPropMain(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
+    String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.props_id;
       if (long_ == null) {
@@ -110,17 +106,17 @@ public final class ThemeCardPropMain extends Message {
       } else {
         this.props_state_img = str2;
       } 
-      Integer integer1 = paramBuilder.in_use;
-      if (integer1 == null) {
+      Integer integer2 = paramBuilder.in_use;
+      if (integer2 == null) {
         this.in_use = DEFAULT_IN_USE;
       } else {
-        this.in_use = integer1;
+        this.in_use = integer2;
       } 
-      integer1 = paramBuilder.free_user_level;
-      if (integer1 == null) {
+      integer2 = paramBuilder.free_user_level;
+      if (integer2 == null) {
         this.free_user_level = DEFAULT_FREE_USER_LEVEL;
       } else {
-        this.free_user_level = integer1;
+        this.free_user_level = integer2;
       } 
       String str1 = paramBuilder.activity_url;
       if (str1 == null) {
@@ -128,23 +124,30 @@ public final class ThemeCardPropMain extends Message {
       } else {
         this.activity_url = str1;
       } 
-      integer = paramBuilder.is_finished;
-      if (integer == null) {
+      Integer integer1 = paramBuilder.is_finished;
+      if (integer1 == null) {
         this.is_finished = DEFAULT_IS_FINISHED;
       } else {
-        this.is_finished = integer;
+        this.is_finished = integer1;
+      } 
+      str = paramBuilder.dynamic_url;
+      if (str == null) {
+        this.dynamic_url = "";
+      } else {
+        this.dynamic_url = str;
       } 
     } else {
-      this.props_id = ((Builder)integer).props_id;
-      this.title = ((Builder)integer).title;
-      this.description = ((Builder)integer).description;
-      this.example_url = ((Builder)integer).example_url;
-      this.permission = ((Builder)integer).permission;
-      this.props_state_img = ((Builder)integer).props_state_img;
-      this.in_use = ((Builder)integer).in_use;
-      this.free_user_level = ((Builder)integer).free_user_level;
-      this.activity_url = ((Builder)integer).activity_url;
-      this.is_finished = ((Builder)integer).is_finished;
+      this.props_id = ((Builder)str).props_id;
+      this.title = ((Builder)str).title;
+      this.description = ((Builder)str).description;
+      this.example_url = ((Builder)str).example_url;
+      this.permission = ((Builder)str).permission;
+      this.props_state_img = ((Builder)str).props_state_img;
+      this.in_use = ((Builder)str).in_use;
+      this.free_user_level = ((Builder)str).free_user_level;
+      this.activity_url = ((Builder)str).activity_url;
+      this.is_finished = ((Builder)str).is_finished;
+      this.dynamic_url = ((Builder)str).dynamic_url;
     } 
   }
   
@@ -152,30 +155,12 @@ public final class ThemeCardPropMain extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1011119600, "Ltbclient/ThemeCardPropMain;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1011119600, "Ltbclient/ThemeCardPropMain;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<ThemeCardPropMain> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String activity_url;
     
     public String description;
+    
+    public String dynamic_url;
     
     public String example_url;
     
@@ -209,22 +194,13 @@ public final class ThemeCardPropMain extends Message {
       this.free_user_level = param1ThemeCardPropMain.free_user_level;
       this.activity_url = param1ThemeCardPropMain.activity_url;
       this.is_finished = param1ThemeCardPropMain.is_finished;
+      this.dynamic_url = param1ThemeCardPropMain.dynamic_url;
     }
     
     public ThemeCardPropMain build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ThemeCardPropMain)interceptResult.objValue; 
-      } 
       return new ThemeCardPropMain(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,16 +1,9 @@
 package tbclient.GetGiftCommonList;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Item extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_GIFT_ID;
   
   public static final Integer DEFAULT_IOS_COUNT;
@@ -26,8 +19,6 @@ public final class Item extends Message {
   public static final Integer DEFAULT_PRICE;
   
   public static final String DEFAULT_THUMBNAIL_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer gift_id;
@@ -54,19 +45,6 @@ public final class Item extends Message {
   public final String thumbnail_url;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1158833310, "Ltbclient/GetGiftCommonList/Item;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1158833310, "Ltbclient/GetGiftCommonList/Item;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_GIFT_ID = integer;
     DEFAULT_PRICE = integer;
@@ -143,10 +121,6 @@ public final class Item extends Message {
   }
   
   public static final class Builder extends Message.Builder<Item> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer gift_id;
     
     public Integer ios_count;
@@ -180,19 +154,9 @@ public final class Item extends Message {
     }
     
     public Item build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Item)interceptResult.objValue; 
-      } 
       return new Item(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

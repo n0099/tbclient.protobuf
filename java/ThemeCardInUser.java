@@ -1,36 +1,42 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ThemeCardInUser extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_COORDINATE = "";
+  
+  public static final String DEFAULT_DYNAMIC_URL = "";
+  
+  public static final String DEFAULT_EXCLUSIVE_NO = "";
   
   public static final String DEFAULT_IMG_ANDROID = "";
   
   public static final String DEFAULT_IMG_IOS = "";
   
+  public static final String DEFAULT_JUMP_URL = "";
+  
   public static final Integer DEFAULT_LEVEL;
   
   public static final Long DEFAULT_PROPS_ID = Long.valueOf(0L);
   
-  public transient FieldHolder $fh;
-  
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String coordinate;
+  
+  @ProtoField(tag = 6, type = Message.Datatype.STRING)
+  public final String dynamic_url;
+  
+  @ProtoField(tag = 7, type = Message.Datatype.STRING)
+  public final String exclusive_no;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String img_android;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String img_ios;
+  
+  @ProtoField(tag = 8, type = Message.Datatype.STRING)
+  public final String jump_url;
   
   @ProtoField(tag = 5, type = Message.Datatype.UINT32)
   public final Integer level;
@@ -44,7 +50,7 @@ public final class ThemeCardInUser extends Message {
   
   public ThemeCardInUser(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
+    String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.props_id;
       if (long_ == null) {
@@ -52,36 +58,57 @@ public final class ThemeCardInUser extends Message {
       } else {
         this.props_id = long_;
       } 
-      String str = paramBuilder.img_ios;
-      if (str == null) {
+      String str2 = paramBuilder.img_ios;
+      if (str2 == null) {
         this.img_ios = "";
       } else {
-        this.img_ios = str;
+        this.img_ios = str2;
       } 
-      str = paramBuilder.coordinate;
-      if (str == null) {
+      str2 = paramBuilder.coordinate;
+      if (str2 == null) {
         this.coordinate = "";
       } else {
-        this.coordinate = str;
+        this.coordinate = str2;
       } 
-      str = paramBuilder.img_android;
-      if (str == null) {
+      str2 = paramBuilder.img_android;
+      if (str2 == null) {
         this.img_android = "";
       } else {
-        this.img_android = str;
+        this.img_android = str2;
       } 
-      integer = paramBuilder.level;
+      Integer integer = paramBuilder.level;
       if (integer == null) {
         this.level = DEFAULT_LEVEL;
       } else {
         this.level = integer;
       } 
+      String str1 = paramBuilder.dynamic_url;
+      if (str1 == null) {
+        this.dynamic_url = "";
+      } else {
+        this.dynamic_url = str1;
+      } 
+      str1 = paramBuilder.exclusive_no;
+      if (str1 == null) {
+        this.exclusive_no = "";
+      } else {
+        this.exclusive_no = str1;
+      } 
+      str = paramBuilder.jump_url;
+      if (str == null) {
+        this.jump_url = "";
+      } else {
+        this.jump_url = str;
+      } 
     } else {
-      this.props_id = ((Builder)integer).props_id;
-      this.img_ios = ((Builder)integer).img_ios;
-      this.coordinate = ((Builder)integer).coordinate;
-      this.img_android = ((Builder)integer).img_android;
-      this.level = ((Builder)integer).level;
+      this.props_id = ((Builder)str).props_id;
+      this.img_ios = ((Builder)str).img_ios;
+      this.coordinate = ((Builder)str).coordinate;
+      this.img_android = ((Builder)str).img_android;
+      this.level = ((Builder)str).level;
+      this.dynamic_url = ((Builder)str).dynamic_url;
+      this.exclusive_no = ((Builder)str).exclusive_no;
+      this.jump_url = ((Builder)str).jump_url;
     } 
   }
   
@@ -89,32 +116,18 @@ public final class ThemeCardInUser extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1533901276, "Ltbclient/ThemeCardInUser;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1533901276, "Ltbclient/ThemeCardInUser;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<ThemeCardInUser> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String coordinate;
+    
+    public String dynamic_url;
+    
+    public String exclusive_no;
     
     public String img_android;
     
     public String img_ios;
+    
+    public String jump_url;
     
     public Integer level;
     
@@ -131,22 +144,15 @@ public final class ThemeCardInUser extends Message {
       this.coordinate = param1ThemeCardInUser.coordinate;
       this.img_android = param1ThemeCardInUser.img_android;
       this.level = param1ThemeCardInUser.level;
+      this.dynamic_url = param1ThemeCardInUser.dynamic_url;
+      this.exclusive_no = param1ThemeCardInUser.exclusive_no;
+      this.jump_url = param1ThemeCardInUser.jump_url;
     }
     
     public ThemeCardInUser build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ThemeCardInUser)interceptResult.objValue; 
-      } 
       return new ThemeCardInUser(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

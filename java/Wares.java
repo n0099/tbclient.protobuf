@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Wares extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_MONEY;
   
   public static final String DEFAULT_NEW_PROPS_ID = "";
@@ -22,8 +15,6 @@ public final class Wares extends Message {
   public static final String DEFAULT_WARS_ITEM = "";
   
   public static final String DEFAULT_WARS_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer money;
@@ -44,19 +35,6 @@ public final class Wares extends Message {
   public final String wars_name;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(733755087, "Ltbclient/Wares;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(733755087, "Ltbclient/Wares;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_PROPS_ID = integer;
     DEFAULT_MONEY = integer;
@@ -118,10 +96,6 @@ public final class Wares extends Message {
   }
   
   public static final class Builder extends Message.Builder<Wares> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer money;
     
     public String new_props_id;
@@ -149,19 +123,9 @@ public final class Wares extends Message {
     }
     
     public Wares build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Wares)interceptResult.objValue; 
-      } 
       return new Wares(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

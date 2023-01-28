@@ -1,25 +1,16 @@
 package tbclient.Personalized;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class CardTopic extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CARD_TITLE = "";
   
   public static final Integer DEFAULT_POSITION;
   
   public static final List<TopicInfo> DEFAULT_TOPIC_LIST = Collections.emptyList();
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String card_title;
@@ -67,27 +58,7 @@ public final class CardTopic extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-199866447, "Ltbclient/Personalized/CardTopic;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-199866447, "Ltbclient/Personalized/CardTopic;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<CardTopic> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String card_title;
     
     public Integer position;
@@ -106,19 +77,9 @@ public final class CardTopic extends Message {
     }
     
     public CardTopic build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (CardTopic)interceptResult.objValue; 
-      } 
       return new CardTopic(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

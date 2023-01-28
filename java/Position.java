@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Position extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_CARD;
   
   public static final Integer DEFAULT_FRS;
@@ -18,8 +11,6 @@ public final class Position extends Message {
   public static final Integer DEFAULT_HOME;
   
   public static final Integer DEFAULT_PB;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer card;
@@ -34,19 +25,6 @@ public final class Position extends Message {
   public final Integer pb;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1610472072, "Ltbclient/Position;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1610472072, "Ltbclient/Position;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_FRS = integer;
     DEFAULT_PB = integer;
@@ -95,10 +73,6 @@ public final class Position extends Message {
   }
   
   public static final class Builder extends Message.Builder<Position> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer card;
     
     public Integer frs;
@@ -120,19 +94,9 @@ public final class Position extends Message {
     }
     
     public Position build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Position)interceptResult.objValue; 
-      } 
       return new Position(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

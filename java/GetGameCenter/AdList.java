@@ -1,19 +1,12 @@
 package tbclient.GetGameCenter;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AdList extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_IMG_URL = "";
   
   public static final String DEFAULT_LINK_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String img_url;
@@ -48,10 +41,6 @@ public final class AdList extends Message {
   }
   
   public static final class Builder extends Message.Builder<AdList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String img_url;
     
     public String link_url;
@@ -67,19 +56,9 @@ public final class AdList extends Message {
     }
     
     public AdList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AdList)interceptResult.objValue; 
-      } 
       return new AdList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

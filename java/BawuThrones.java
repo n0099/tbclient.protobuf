@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class BawuThrones extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BAZHU_LEVEL = "";
   
   public static final Integer DEFAULT_HAS_SEND_BCAST;
@@ -26,8 +19,6 @@ public final class BawuThrones extends Message {
   public static final Integer DEFAULT_USED_BCAST_CNT;
   
   public static final Integer DEFAULT_USED_RECOMMEND_NUM;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String bazhu_level;
@@ -54,19 +45,6 @@ public final class BawuThrones extends Message {
   public final Integer used_recommend_num;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1365941833, "Ltbclient/BawuThrones;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1365941833, "Ltbclient/BawuThrones;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_TOTAL_RECOMMEND_NUM = integer;
     DEFAULT_USED_RECOMMEND_NUM = integer;
@@ -146,10 +124,6 @@ public final class BawuThrones extends Message {
   }
   
   public static final class Builder extends Message.Builder<BawuThrones> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String bazhu_level;
     
     public Integer has_send_bcast;
@@ -183,19 +157,9 @@ public final class BawuThrones extends Message {
     }
     
     public BawuThrones build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (BawuThrones)interceptResult.objValue; 
-      } 
       return new BawuThrones(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

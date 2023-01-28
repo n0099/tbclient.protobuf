@@ -1,17 +1,10 @@
 package tbclient.Hottopic;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.VideoInfo;
 
 public final class TopicInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BANG_JUMP_DESC = "";
   
   public static final String DEFAULT_BANG_TITLE = "";
@@ -51,8 +44,6 @@ public final class TopicInfo extends Message {
   public static final Integer DEFAULT_TOPIC_TAG;
   
   public static final Long DEFAULT_TOTAL_POST_NUM;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 11, type = Message.Datatype.STRING)
   public final String bang_jump_desc;
@@ -121,19 +112,6 @@ public final class TopicInfo extends Message {
   public final VideoInfo video_info;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(2135534465, "Ltbclient/Hottopic/TopicInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(2135534465, "Ltbclient/Hottopic/TopicInfo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_TOPIC_ID = long_;
     DEFAULT_TOTAL_POST_NUM = long_;
@@ -304,10 +282,6 @@ public final class TopicInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<TopicInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String bang_jump_desc;
     
     public String bang_title;
@@ -383,19 +357,9 @@ public final class TopicInfo extends Message {
     }
     
     public TopicInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TopicInfo)interceptResult.objValue; 
-      } 
       return new TopicInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

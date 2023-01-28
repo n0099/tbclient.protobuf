@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class OriForumInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ORI_AVATAR = "";
   
   public static final Long DEFAULT_ORI_FID;
@@ -18,8 +11,6 @@ public final class OriForumInfo extends Message {
   public static final String DEFAULT_ORI_FNAME = "";
   
   public static final Long DEFAULT_ORI_MEMBER_NUM;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String ori_avatar;
@@ -34,19 +25,6 @@ public final class OriForumInfo extends Message {
   public final Long ori_member_num;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(282302344, "Ltbclient/OriForumInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(282302344, "Ltbclient/OriForumInfo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_ORI_FID = long_;
     DEFAULT_ORI_MEMBER_NUM = long_;
@@ -93,10 +71,6 @@ public final class OriForumInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<OriForumInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String ori_avatar;
     
     public Long ori_fid;
@@ -118,19 +92,9 @@ public final class OriForumInfo extends Message {
     }
     
     public OriForumInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (OriForumInfo)interceptResult.objValue; 
-      } 
       return new OriForumInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

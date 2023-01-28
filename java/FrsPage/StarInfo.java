@@ -1,18 +1,11 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class StarInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final List<Focus> DEFAULT_FOCUS;
   
   public static final Integer DEFAULT_GENDER;
@@ -24,8 +17,6 @@ public final class StarInfo extends Message {
   public static final String DEFAULT_STAR_FORUM_HEADIMG = "";
   
   public static final String DEFAULT_TOP = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6)
   public final Fans fans;
@@ -79,19 +70,6 @@ public final class StarInfo extends Message {
   public final Video video;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1516609576, "Ltbclient/FrsPage/StarInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1516609576, "Ltbclient/FrsPage/StarInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_HAS_FRS_STAR = integer;
     DEFAULT_GENDER = integer;
@@ -175,10 +153,6 @@ public final class StarInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<StarInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Fans fans;
     
     public List<Focus> focus;
@@ -239,19 +213,9 @@ public final class StarInfo extends Message {
     }
     
     public StarInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (StarInfo)interceptResult.objValue; 
-      } 
       return new StarInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

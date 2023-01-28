@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AgreeList extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_ID;
   
   public static final Integer DEFAULT_IS_DEL;
@@ -22,8 +15,6 @@ public final class AgreeList extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_VIRTUAL_IMAGE_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8)
   public final User agreeer;
@@ -53,19 +44,6 @@ public final class AgreeList extends Message {
   public final String virtual_image_url;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1453213819, "Ltbclient/AgreeList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1453213819, "Ltbclient/AgreeList;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_TIME = integer;
     DEFAULT_IS_DEL = integer;
@@ -135,10 +113,6 @@ public final class AgreeList extends Message {
   }
   
   public static final class Builder extends Message.Builder<AgreeList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public User agreeer;
     
     public Long id;
@@ -175,19 +149,9 @@ public final class AgreeList extends Message {
     }
     
     public AgreeList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AgreeList)interceptResult.objValue; 
-      } 
       return new AgreeList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,14 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class FeatureCardCompetitionSubNode extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_COMPETITION_IMAGE = "";
   
   public static final String DEFAULT_TEAM1_IMAGE = "";
@@ -22,8 +17,6 @@ public final class FeatureCardCompetitionSubNode extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String competition_image;
@@ -108,10 +101,6 @@ public final class FeatureCardCompetitionSubNode extends Message {
   }
   
   public static final class Builder extends Message.Builder<FeatureCardCompetitionSubNode> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String competition_image;
     
     public String team1_image;
@@ -142,19 +131,9 @@ public final class FeatureCardCompetitionSubNode extends Message {
     }
     
     public FeatureCardCompetitionSubNode build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (FeatureCardCompetitionSubNode)interceptResult.objValue; 
-      } 
       return new FeatureCardCompetitionSubNode(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

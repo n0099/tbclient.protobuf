@@ -1,16 +1,9 @@
 package tbclient.GetVipInfo;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class VipSpecialItem extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BUTTON_TEXT_FINISH = "";
   
   public static final String DEFAULT_BUTTON_TEXT_INITIAL = "";
@@ -34,8 +27,6 @@ public final class VipSpecialItem extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_UPDATE_TIME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 12, type = Message.Datatype.STRING)
   public final String button_text_finish;
@@ -74,19 +65,6 @@ public final class VipSpecialItem extends Message {
   public final String update_time;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1645048700, "Ltbclient/GetVipInfo/VipSpecialItem;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1645048700, "Ltbclient/GetVipInfo/VipSpecialItem;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_ID = integer;
     DEFAULT_TYPE = integer;
@@ -191,10 +169,6 @@ public final class VipSpecialItem extends Message {
   }
   
   public static final class Builder extends Message.Builder<VipSpecialItem> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String button_text_finish;
     
     public String button_text_initial;
@@ -240,19 +214,9 @@ public final class VipSpecialItem extends Message {
     }
     
     public VipSpecialItem build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (VipSpecialItem)interceptResult.objValue; 
-      } 
       return new VipSpecialItem(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

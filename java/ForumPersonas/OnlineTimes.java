@@ -1,16 +1,9 @@
 package tbclient.ForumPersonas;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class OnlineTimes extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_END = "";
   
   public static final Integer DEFAULT_SEQ = Integer.valueOf(0);
@@ -18,8 +11,6 @@ public final class OnlineTimes extends Message {
   public static final String DEFAULT_START = "";
   
   public static final String DEFAULT_TIME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String end;
@@ -73,27 +64,7 @@ public final class OnlineTimes extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-765288807, "Ltbclient/ForumPersonas/OnlineTimes;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-765288807, "Ltbclient/ForumPersonas/OnlineTimes;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<OnlineTimes> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String end;
     
     public Integer seq;
@@ -115,19 +86,9 @@ public final class OnlineTimes extends Message {
     }
     
     public OnlineTimes build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (OnlineTimes)interceptResult.objValue; 
-      } 
       return new OnlineTimes(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

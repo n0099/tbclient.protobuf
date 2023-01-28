@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumCreateInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CAN_CREATE_ERRDATA = "";
   
   public static final Integer DEFAULT_CAN_CREATE_ERRNO;
@@ -18,8 +11,6 @@ public final class ForumCreateInfo extends Message {
   public static final Integer DEFAULT_IS_CAN_CREATE;
   
   public static final Integer DEFAULT_IS_SHOW_CREATE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String can_create_errdata;
@@ -34,19 +25,6 @@ public final class ForumCreateInfo extends Message {
   public final Integer is_show_create;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-255578438, "Ltbclient/ForumCreateInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-255578438, "Ltbclient/ForumCreateInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_IS_SHOW_CREATE = integer;
     DEFAULT_IS_CAN_CREATE = integer;
@@ -94,10 +72,6 @@ public final class ForumCreateInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<ForumCreateInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String can_create_errdata;
     
     public Integer can_create_errno;
@@ -119,19 +93,9 @@ public final class ForumCreateInfo extends Message {
     }
     
     public ForumCreateInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ForumCreateInfo)interceptResult.objValue; 
-      } 
       return new ForumCreateInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

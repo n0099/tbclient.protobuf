@@ -1,10 +1,5 @@
 package tbclient.Personalized;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -18,8 +13,6 @@ import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
 
 public final class DataRes extends Message {
-  public static Interceptable $ic;
-  
   public static final List<CardForum> DEFAULT_CARD_FORUM;
   
   public static final List<CardGod> DEFAULT_CARD_GOD;
@@ -36,6 +29,8 @@ public final class DataRes extends Message {
   
   public static final List<Resource> DEFAULT_RESOURCE_LIST;
   
+  public static final Integer DEFAULT_SHOW_ADSENSE;
+  
   public static final String DEFAULT_STAT_KEY = "";
   
   public static final Integer DEFAULT_STYLE_AB_TAG;
@@ -47,8 +42,6 @@ public final class DataRes extends Message {
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
   
   public static final List<ThreadPersonalized> DEFAULT_THREAD_PERSONALIZED;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 22)
   public final ActiveCenter active_center;
@@ -80,6 +73,9 @@ public final class DataRes extends Message {
   @ProtoField(tag = 21, type = Message.Datatype.INT32)
   public final Integer fresh_ctrl_num;
   
+  @ProtoField(tag = 26)
+  public final HeaderCard header_card;
+  
   @ProtoField(tag = 23)
   public final DiscoverHotForum hot_recomforum;
   
@@ -100,6 +96,9 @@ public final class DataRes extends Message {
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<Resource> resource_list;
+  
+  @ProtoField(tag = 25, type = Message.Datatype.INT32)
+  public final Integer show_adsense;
   
   @ProtoField(tag = 13, type = Message.Datatype.STRING)
   public final String stat_key;
@@ -135,6 +134,7 @@ public final class DataRes extends Message {
     DEFAULT_LIKE_FORUMS = Collections.emptyList();
     DEFAULT_STYLE_AB_TAG = integer;
     DEFAULT_FRESH_CTRL_NUM = integer;
+    DEFAULT_SHOW_ADSENSE = integer;
   }
   
   public DataRes(Builder paramBuilder, boolean paramBoolean) {
@@ -234,6 +234,13 @@ public final class DataRes extends Message {
       this.active_center = paramBuilder.active_center;
       this.hot_recomforum = paramBuilder.hot_recomforum;
       this.favorite_panel = paramBuilder.favorite_panel;
+      integer1 = paramBuilder.show_adsense;
+      if (integer1 == null) {
+        this.show_adsense = DEFAULT_SHOW_ADSENSE;
+      } else {
+        this.show_adsense = integer1;
+      } 
+      this.header_card = paramBuilder.header_card;
     } else {
       this.tag_list = Message.immutableCopyOf(paramBuilder.tag_list);
       this.thread_list = Message.immutableCopyOf(paramBuilder.thread_list);
@@ -259,6 +266,8 @@ public final class DataRes extends Message {
       this.active_center = paramBuilder.active_center;
       this.hot_recomforum = paramBuilder.hot_recomforum;
       this.favorite_panel = paramBuilder.favorite_panel;
+      this.show_adsense = paramBuilder.show_adsense;
+      this.header_card = paramBuilder.header_card;
     } 
   }
   
@@ -266,27 +275,7 @@ public final class DataRes extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-397390022, "Ltbclient/Personalized/DataRes;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-397390022, "Ltbclient/Personalized/DataRes;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<DataRes> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public ActiveCenter active_center;
     
     public AgeSexModule age_sex;
@@ -307,6 +296,8 @@ public final class DataRes extends Message {
     
     public Integer fresh_ctrl_num;
     
+    public HeaderCard header_card;
+    
     public DiscoverHotForum hot_recomforum;
     
     public List<TagStruct> interestion;
@@ -320,6 +311,8 @@ public final class DataRes extends Message {
     public RecomPostTopic recom_post_topic;
     
     public List<Resource> resource_list;
+    
+    public Integer show_adsense;
     
     public String stat_key;
     
@@ -365,22 +358,14 @@ public final class DataRes extends Message {
       this.active_center = param1DataRes.active_center;
       this.hot_recomforum = param1DataRes.hot_recomforum;
       this.favorite_panel = param1DataRes.favorite_panel;
+      this.show_adsense = param1DataRes.show_adsense;
+      this.header_card = param1DataRes.header_card;
     }
     
     public DataRes build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataRes)interceptResult.objValue; 
-      } 
       return new DataRes(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

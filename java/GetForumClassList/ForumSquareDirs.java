@@ -1,18 +1,11 @@
 package tbclient.GetForumClassList;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class ForumSquareDirs extends Message {
-  public static Interceptable $ic;
-  
   public static final List<ChildDir> DEFAULT_FORUM_LIST;
   
   public static final Long DEFAULT_ID;
@@ -28,8 +21,6 @@ public final class ForumSquareDirs extends Message {
   public static final Integer DEFAULT_TORDER;
   
   public static final Integer DEFAULT_TYPE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 7)
   public final List<ChildDir> forum_list;
@@ -56,19 +47,6 @@ public final class ForumSquareDirs extends Message {
   public final Integer type;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(985195909, "Ltbclient/GetForumClassList/ForumSquareDirs;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(985195909, "Ltbclient/GetForumClassList/ForumSquareDirs;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_ID = long_;
     Integer integer = Integer.valueOf(0);
@@ -147,10 +125,6 @@ public final class ForumSquareDirs extends Message {
   }
   
   public static final class Builder extends Message.Builder<ForumSquareDirs> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<ChildDir> forum_list;
     
     public Long id;
@@ -184,19 +158,9 @@ public final class ForumSquareDirs extends Message {
     }
     
     public ForumSquareDirs build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ForumSquareDirs)interceptResult.objValue; 
-      } 
       return new ForumSquareDirs(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

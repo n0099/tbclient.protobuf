@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class AdInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AD_DESC = "";
   
   public static final String DEFAULT_AD_NAME = "";
@@ -28,8 +21,6 @@ public final class AdInfo extends Message {
   public static final String DEFAULT_PORTRAIT = "";
   
   public static final Integer DEFAULT_SHOW_RULE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String ad_desc;
@@ -56,19 +47,6 @@ public final class AdInfo extends Message {
   public final Integer show_rule;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1025360192, "Ltbclient/AdInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1025360192, "Ltbclient/AdInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_SHOW_RULE = integer;
     DEFAULT_AD_TYPE = integer;
@@ -144,10 +122,6 @@ public final class AdInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<AdInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String ad_desc;
     
     public String ad_name;
@@ -181,19 +155,9 @@ public final class AdInfo extends Message {
     }
     
     public AdInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AdInfo)interceptResult.objValue; 
-      } 
       return new AdInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class AlaLiveInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_AUDIENCE_COUNT;
   
   public static final String DEFAULT_COVER = "";
@@ -87,6 +80,8 @@ public final class AlaLiveInfo extends Message {
   
   public static final String DEFAULT_SESSION_ID = "";
   
+  public static final Integer DEFAULT_SHOW_PAGE;
+  
   public static final List<AlaStageDislikeInfo> DEFAULT_STAGE_DISLIKE_INFO;
   
   public static final String DEFAULT_THIRD_APP_ID = "";
@@ -96,8 +91,6 @@ public final class AlaLiveInfo extends Message {
   public static final String DEFAULT_THIRD_ROOM_ID = "";
   
   public static final Long DEFAULT_THREAD_ID;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 14, type = Message.Datatype.UINT32)
   public final Integer audience_count;
@@ -219,6 +212,9 @@ public final class AlaLiveInfo extends Message {
   @ProtoField(tag = 19)
   public final AlaShareInfo share_info;
   
+  @ProtoField(tag = 50, type = Message.Datatype.INT32)
+  public final Integer show_page;
+  
   @ProtoField(label = Message.Label.REPEATED, tag = 23)
   public final List<AlaStageDislikeInfo> stage_dislike_info;
   
@@ -241,19 +237,6 @@ public final class AlaLiveInfo extends Message {
   public final YyExt yy_ext;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1589945163, "Ltbclient/AlaLiveInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1589945163, "Ltbclient/AlaLiveInfo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_LIVE_ID = long_;
     DEFAULT_GROUP_ID = long_;
@@ -277,10 +260,12 @@ public final class AlaLiveInfo extends Message {
     DEFAULT_DISLIKE_INFO = Collections.emptyList();
     DEFAULT_ROOM_ID = long_;
     DEFAULT_ROOM_STATUS = integer;
+    DEFAULT_SHOW_PAGE = integer;
   }
   
   public AlaLiveInfo(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
+    Integer integer;
     if (paramBoolean == true) {
       Long long_5 = paramBuilder.live_id;
       if (long_5 == null) {
@@ -539,54 +524,61 @@ public final class AlaLiveInfo extends Message {
         this.cover_wide = str1;
       } 
       this.yy_ext = paramBuilder.yy_ext;
+      integer = paramBuilder.show_page;
+      if (integer == null) {
+        this.show_page = DEFAULT_SHOW_PAGE;
+      } else {
+        this.show_page = integer;
+      } 
     } else {
-      this.live_id = paramBuilder.live_id;
-      this.cover = paramBuilder.cover;
-      this.session_id = paramBuilder.session_id;
-      this.rtmp_url = paramBuilder.rtmp_url;
-      this.hls_url = paramBuilder.hls_url;
-      this.group_id = paramBuilder.group_id;
-      this.media_url = paramBuilder.media_url;
-      this.media_pic = paramBuilder.media_pic;
-      this.media_id = paramBuilder.media_id;
-      this.media_subtitle = paramBuilder.media_subtitle;
-      this.description = paramBuilder.description;
-      this.user_info = paramBuilder.user_info;
-      this.duration = paramBuilder.duration;
-      this.audience_count = paramBuilder.audience_count;
-      this.live_type = paramBuilder.live_type;
-      this.screen_direction = paramBuilder.screen_direction;
-      this.label_name = paramBuilder.label_name;
-      this.live_status = paramBuilder.live_status;
-      this.share_info = paramBuilder.share_info;
-      this.distance = paramBuilder.distance;
-      this.third_app_id = paramBuilder.third_app_id;
-      this.thread_id = paramBuilder.thread_id;
-      this.stage_dislike_info = Message.immutableCopyOf(paramBuilder.stage_dislike_info);
-      this.label = paramBuilder.label;
-      this.challenge_info = paramBuilder.challenge_info;
-      this.frs_toplive_type = paramBuilder.frs_toplive_type;
-      this.frs_toplive_pic = paramBuilder.frs_toplive_pic;
-      this.frs_toplive_force = paramBuilder.frs_toplive_force;
-      this.live_from = paramBuilder.live_from;
-      this.third_room_id = paramBuilder.third_room_id;
-      this.router_type = paramBuilder.router_type;
-      this.third_live_type = paramBuilder.third_live_type;
-      this.first_headline = paramBuilder.first_headline;
-      this.second_headline = paramBuilder.second_headline;
-      this.pb_display_type = paramBuilder.pb_display_type;
-      this.recom_reason = paramBuilder.recom_reason;
-      this.open_recom_reason = paramBuilder.open_recom_reason;
-      this.open_recom_location = paramBuilder.open_recom_location;
-      this.open_recom_fans = paramBuilder.open_recom_fans;
-      this.open_recom_duration = paramBuilder.open_recom_duration;
-      this.dislike_info = Message.immutableCopyOf(paramBuilder.dislike_info);
-      this.room_id = paramBuilder.room_id;
-      this.room_status = paramBuilder.room_status;
-      this.room_name = paramBuilder.room_name;
-      this.forum_user_live_msg = paramBuilder.forum_user_live_msg;
-      this.cover_wide = paramBuilder.cover_wide;
-      this.yy_ext = paramBuilder.yy_ext;
+      this.live_id = ((Builder)integer).live_id;
+      this.cover = ((Builder)integer).cover;
+      this.session_id = ((Builder)integer).session_id;
+      this.rtmp_url = ((Builder)integer).rtmp_url;
+      this.hls_url = ((Builder)integer).hls_url;
+      this.group_id = ((Builder)integer).group_id;
+      this.media_url = ((Builder)integer).media_url;
+      this.media_pic = ((Builder)integer).media_pic;
+      this.media_id = ((Builder)integer).media_id;
+      this.media_subtitle = ((Builder)integer).media_subtitle;
+      this.description = ((Builder)integer).description;
+      this.user_info = ((Builder)integer).user_info;
+      this.duration = ((Builder)integer).duration;
+      this.audience_count = ((Builder)integer).audience_count;
+      this.live_type = ((Builder)integer).live_type;
+      this.screen_direction = ((Builder)integer).screen_direction;
+      this.label_name = ((Builder)integer).label_name;
+      this.live_status = ((Builder)integer).live_status;
+      this.share_info = ((Builder)integer).share_info;
+      this.distance = ((Builder)integer).distance;
+      this.third_app_id = ((Builder)integer).third_app_id;
+      this.thread_id = ((Builder)integer).thread_id;
+      this.stage_dislike_info = Message.immutableCopyOf(((Builder)integer).stage_dislike_info);
+      this.label = ((Builder)integer).label;
+      this.challenge_info = ((Builder)integer).challenge_info;
+      this.frs_toplive_type = ((Builder)integer).frs_toplive_type;
+      this.frs_toplive_pic = ((Builder)integer).frs_toplive_pic;
+      this.frs_toplive_force = ((Builder)integer).frs_toplive_force;
+      this.live_from = ((Builder)integer).live_from;
+      this.third_room_id = ((Builder)integer).third_room_id;
+      this.router_type = ((Builder)integer).router_type;
+      this.third_live_type = ((Builder)integer).third_live_type;
+      this.first_headline = ((Builder)integer).first_headline;
+      this.second_headline = ((Builder)integer).second_headline;
+      this.pb_display_type = ((Builder)integer).pb_display_type;
+      this.recom_reason = ((Builder)integer).recom_reason;
+      this.open_recom_reason = ((Builder)integer).open_recom_reason;
+      this.open_recom_location = ((Builder)integer).open_recom_location;
+      this.open_recom_fans = ((Builder)integer).open_recom_fans;
+      this.open_recom_duration = ((Builder)integer).open_recom_duration;
+      this.dislike_info = Message.immutableCopyOf(((Builder)integer).dislike_info);
+      this.room_id = ((Builder)integer).room_id;
+      this.room_status = ((Builder)integer).room_status;
+      this.room_name = ((Builder)integer).room_name;
+      this.forum_user_live_msg = ((Builder)integer).forum_user_live_msg;
+      this.cover_wide = ((Builder)integer).cover_wide;
+      this.yy_ext = ((Builder)integer).yy_ext;
+      this.show_page = ((Builder)integer).show_page;
     } 
   }
   
@@ -595,10 +587,6 @@ public final class AlaLiveInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<AlaLiveInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer audience_count;
     
     public AlaChallengeInfo challenge_info;
@@ -679,6 +667,8 @@ public final class AlaLiveInfo extends Message {
     
     public AlaShareInfo share_info;
     
+    public Integer show_page;
+    
     public List<AlaStageDislikeInfo> stage_dislike_info;
     
     public String third_app_id;
@@ -746,22 +736,13 @@ public final class AlaLiveInfo extends Message {
       this.forum_user_live_msg = param1AlaLiveInfo.forum_user_live_msg;
       this.cover_wide = param1AlaLiveInfo.cover_wide;
       this.yy_ext = param1AlaLiveInfo.yy_ext;
+      this.show_page = param1AlaLiveInfo.show_page;
     }
     
     public AlaLiveInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AlaLiveInfo)interceptResult.objValue; 
-      } 
       return new AlaLiveInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PsInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_GAME_ID;
   
   public static final String DEFAULT_GAME_INTRO = "";
@@ -20,8 +13,6 @@ public final class PsInfo extends Message {
   public static final Long DEFAULT_GAME_TYPE;
   
   public static final Long DEFAULT_SCORE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long game_id;
@@ -39,19 +30,6 @@ public final class PsInfo extends Message {
   public final Long score;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-168269600, "Ltbclient/PsInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-168269600, "Ltbclient/PsInfo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_GAME_ID = long_;
     DEFAULT_SCORE = long_;
@@ -106,10 +84,6 @@ public final class PsInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<PsInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long game_id;
     
     public String game_intro;
@@ -134,19 +108,9 @@ public final class PsInfo extends Message {
     }
     
     public PsInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PsInfo)interceptResult.objValue; 
-      } 
       return new PsInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

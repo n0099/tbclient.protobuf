@@ -1,14 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ReplyExp extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_COLOR_MSG = "";
   
   public static final String DEFAULT_CURRENT_LEVEL = "";
@@ -24,8 +19,6 @@ public final class ReplyExp extends Message {
   public static final String DEFAULT_QUESTION_EXP = "";
   
   public static final String DEFAULT_QUESTION_MSG = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String color_msg;
@@ -120,10 +113,6 @@ public final class ReplyExp extends Message {
   }
   
   public static final class Builder extends Message.Builder<ReplyExp> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String color_msg;
     
     public String current_level;
@@ -157,19 +146,9 @@ public final class ReplyExp extends Message {
     }
     
     public ReplyExp build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ReplyExp)interceptResult.objValue; 
-      } 
       return new ReplyExp(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

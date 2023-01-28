@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class SeniorLottery extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ACT_DESC = "";
   
   public static final List<LotteryRegular> DEFAULT_ACT_REGULAR;
@@ -22,8 +15,6 @@ public final class SeniorLottery extends Message {
   public static final List<AwardUser> DEFAULT_LUCK_USERS = Collections.emptyList();
   
   public static final String DEFAULT_MYAWARD = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String act_desc;
@@ -96,27 +87,7 @@ public final class SeniorLottery extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(110930892, "Ltbclient/SeniorLottery;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(110930892, "Ltbclient/SeniorLottery;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<SeniorLottery> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String act_desc;
     
     public List<LotteryRegular> act_regular;
@@ -144,19 +115,9 @@ public final class SeniorLottery extends Message {
     }
     
     public SeniorLottery build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (SeniorLottery)interceptResult.objValue; 
-      } 
       return new SeniorLottery(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class NewGodInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_FIELD_ID;
   
   public static final String DEFAULT_FIELD_NAME = "";
@@ -20,8 +13,6 @@ public final class NewGodInfo extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_TYPE_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer field_id;
@@ -39,19 +30,6 @@ public final class NewGodInfo extends Message {
   public final String type_name;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(357899463, "Ltbclient/NewGodInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(357899463, "Ltbclient/NewGodInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_STATUS = integer;
     DEFAULT_FIELD_ID = integer;
@@ -106,10 +84,6 @@ public final class NewGodInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<NewGodInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer field_id;
     
     public String field_name;
@@ -134,19 +108,9 @@ public final class NewGodInfo extends Message {
     }
     
     public NewGodInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (NewGodInfo)interceptResult.objValue; 
-      } 
       return new NewGodInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class User extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_AGREE_NUM;
   
   public static final String DEFAULT_APPEAL_THREAD_POPOVER = "";
@@ -38,6 +31,8 @@ public final class User extends Message {
   public static final Integer DEFAULT_DISPLAY_AUTH_TYPE;
   
   public static final String DEFAULT_DISPLAY_INTRO = "";
+  
+  public static final String DEFAULT_DYNAMIC_URL = "";
   
   public static final Integer DEFAULT_EACH_OTHER_FRIEND;
   
@@ -201,8 +196,6 @@ public final class User extends Message {
   
   public static final Integer DEFAULT_WORK_NUM;
   
-  public transient FieldHolder $fh;
-  
   @ProtoField(tag = 29, type = Message.Datatype.STRING)
   public final String BDUSS;
   
@@ -277,6 +270,9 @@ public final class User extends Message {
   
   @ProtoField(tag = 138, type = Message.Datatype.STRING)
   public final String display_intro;
+  
+  @ProtoField(tag = 140, type = Message.Datatype.STRING)
+  public final String dynamic_url;
   
   @ProtoField(tag = 83, type = Message.Datatype.INT32)
   public final Integer each_other_friend;
@@ -527,8 +523,17 @@ public final class User extends Message {
   @ProtoField(tag = 72)
   public final TbVipInfo tb_vip;
   
+  @ProtoField(tag = 142)
+  public final ThemeBackgroundInUser theme_background;
+  
   @ProtoField(tag = 69)
   public final ThemeCardInUser theme_card;
+  
+  @ProtoField(tag = 143)
+  public final ThemeMyTab theme_my_tab;
+  
+  @ProtoField(tag = 141)
+  public final ThemeTailInUser theme_tail;
   
   @ProtoField(tag = 87, type = Message.Datatype.INT32)
   public final Integer thread_num;
@@ -593,20 +598,10 @@ public final class User extends Message {
   @ProtoField(tag = 119)
   public final CreationData workcreation_data;
   
+  @ProtoField(tag = 144)
+  public final WorldCupInfo world_cup_info;
+  
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1086032090, "Ltbclient/User;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1086032090, "Ltbclient/User;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_IS_LOGIN = integer;
     Long long_ = Long.valueOf(0L);
@@ -681,7 +676,6 @@ public final class User extends Message {
   
   public User(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    List<String> list;
     if (paramBoolean == true) {
       Integer integer21 = paramBuilder.is_login;
       if (integer21 == null) {
@@ -695,23 +689,23 @@ public final class User extends Message {
       } else {
         this.id = long_2;
       } 
-      String str16 = paramBuilder.name;
-      if (str16 == null) {
+      String str17 = paramBuilder.name;
+      if (str17 == null) {
         this.name = "";
       } else {
-        this.name = str16;
+        this.name = str17;
       } 
-      str16 = paramBuilder.name_show;
-      if (str16 == null) {
+      str17 = paramBuilder.name_show;
+      if (str17 == null) {
         this.name_show = "";
       } else {
-        this.name_show = str16;
+        this.name_show = str17;
       } 
-      str16 = paramBuilder.portrait;
-      if (str16 == null) {
+      str17 = paramBuilder.portrait;
+      if (str17 == null) {
         this.portrait = "";
       } else {
-        this.portrait = str16;
+        this.portrait = str17;
       } 
       Integer integer20 = paramBuilder.no_un;
       if (integer20 == null) {
@@ -739,17 +733,17 @@ public final class User extends Message {
       } else {
         this.is_manager = integer20;
       } 
-      String str15 = paramBuilder.rank;
-      if (str15 == null) {
+      String str16 = paramBuilder.rank;
+      if (str16 == null) {
         this.rank = "";
       } else {
-        this.rank = str15;
+        this.rank = str16;
       } 
-      str15 = paramBuilder.bimg_url;
-      if (str15 == null) {
+      str16 = paramBuilder.bimg_url;
+      if (str16 == null) {
         this.bimg_url = "";
       } else {
-        this.bimg_url = str15;
+        this.bimg_url = str16;
       } 
       Integer integer19 = paramBuilder.meizhi_level;
       if (integer19 == null) {
@@ -799,11 +793,11 @@ public final class User extends Message {
       } else {
         this.is_huinibuke = integer18;
       } 
-      String str14 = paramBuilder.ios_bimg_format;
-      if (str14 == null) {
+      String str15 = paramBuilder.ios_bimg_format;
+      if (str15 == null) {
         this.ios_bimg_format = "";
       } else {
-        this.ios_bimg_format = str14;
+        this.ios_bimg_format = str15;
       } 
       Integer integer17 = paramBuilder.level_id;
       if (integer17 == null) {
@@ -823,29 +817,29 @@ public final class User extends Message {
       } else {
         this.is_bawu = integer17;
       } 
-      String str13 = paramBuilder.bawu_type;
-      if (str13 == null) {
+      String str14 = paramBuilder.bawu_type;
+      if (str14 == null) {
         this.bawu_type = "";
       } else {
-        this.bawu_type = str13;
+        this.bawu_type = str14;
       } 
-      str13 = paramBuilder.portraith;
-      if (str13 == null) {
+      str14 = paramBuilder.portraith;
+      if (str14 == null) {
         this.portraith = "";
       } else {
-        this.portraith = str13;
+        this.portraith = str14;
       } 
-      str13 = paramBuilder.ip;
-      if (str13 == null) {
+      str14 = paramBuilder.ip;
+      if (str14 == null) {
         this.ip = "";
       } else {
-        this.ip = str13;
+        this.ip = str14;
       } 
-      str13 = paramBuilder.BDUSS;
-      if (str13 == null) {
+      str14 = paramBuilder.BDUSS;
+      if (str14 == null) {
         this.BDUSS = "";
       } else {
-        this.BDUSS = str13;
+        this.BDUSS = str14;
       } 
       Integer integer16 = paramBuilder.fans_num;
       if (integer16 == null) {
@@ -871,11 +865,11 @@ public final class User extends Message {
       } else {
         this.my_like_num = integer16;
       } 
-      String str12 = paramBuilder.intro;
-      if (str12 == null) {
+      String str13 = paramBuilder.intro;
+      if (str13 == null) {
         this.intro = "";
       } else {
-        this.intro = str12;
+        this.intro = str13;
       } 
       Integer integer15 = paramBuilder.has_concerned;
       if (integer15 == null) {
@@ -883,11 +877,11 @@ public final class User extends Message {
       } else {
         this.has_concerned = integer15;
       } 
-      String str11 = paramBuilder.passwd;
-      if (str11 == null) {
+      String str12 = paramBuilder.passwd;
+      if (str12 == null) {
         this.passwd = "";
       } else {
-        this.passwd = str11;
+        this.passwd = str12;
       } 
       Integer integer14 = paramBuilder.post_num;
       if (integer14 == null) {
@@ -895,11 +889,11 @@ public final class User extends Message {
       } else {
         this.post_num = integer14;
       } 
-      String str10 = paramBuilder.tb_age;
-      if (str10 == null) {
+      String str11 = paramBuilder.tb_age;
+      if (str11 == null) {
         this.tb_age = "";
       } else {
-        this.tb_age = str10;
+        this.tb_age = str11;
       } 
       Integer integer13 = paramBuilder.is_mem;
       if (integer13 == null) {
@@ -999,17 +993,17 @@ public final class User extends Message {
       } else {
         this.friend_num = long_1;
       } 
-      String str9 = paramBuilder.fans_nickname;
-      if (str9 == null) {
+      String str10 = paramBuilder.fans_nickname;
+      if (str10 == null) {
         this.fans_nickname = "";
       } else {
-        this.fans_nickname = str9;
+        this.fans_nickname = str10;
       } 
-      str9 = paramBuilder.bg_pic;
-      if (str9 == null) {
+      str10 = paramBuilder.bg_pic;
+      if (str10 == null) {
         this.bg_pic = "";
       } else {
-        this.bg_pic = str9;
+        this.bg_pic = str10;
       } 
       this.parr_scores = paramBuilder.parr_scores;
       this.novel_fans_info = paramBuilder.novel_fans_info;
@@ -1061,11 +1055,11 @@ public final class User extends Message {
       } 
       this.pendant = paramBuilder.pendant;
       this.ala_info = paramBuilder.ala_info;
-      String str8 = paramBuilder.seal_prefix;
-      if (str8 == null) {
+      String str9 = paramBuilder.seal_prefix;
+      if (str9 == null) {
         this.seal_prefix = "";
       } else {
-        this.seal_prefix = str8;
+        this.seal_prefix = str9;
       } 
       Integer integer7 = paramBuilder.has_bottle_enter;
       if (integer7 == null) {
@@ -1145,11 +1139,11 @@ public final class User extends Message {
       } else {
         this.can_modify_avatar = integer7;
       } 
-      String str7 = paramBuilder.modify_avatar_desc;
-      if (str7 == null) {
+      String str8 = paramBuilder.modify_avatar_desc;
+      if (str8 == null) {
         this.modify_avatar_desc = "";
       } else {
-        this.modify_avatar_desc = str7;
+        this.modify_avatar_desc = str8;
       } 
       Integer integer6 = paramBuilder.influence;
       if (integer6 == null) {
@@ -1157,11 +1151,11 @@ public final class User extends Message {
       } else {
         this.influence = integer6;
       } 
-      String str6 = paramBuilder.level_influence;
-      if (str6 == null) {
+      String str7 = paramBuilder.level_influence;
+      if (str7 == null) {
         this.level_influence = "";
       } else {
-        this.level_influence = str6;
+        this.level_influence = str7;
       } 
       this.new_god_data = paramBuilder.new_god_data;
       this.bawu_thrones = paramBuilder.bawu_thrones;
@@ -1173,11 +1167,11 @@ public final class User extends Message {
       } else {
         this.is_default_avatar = integer5;
       } 
-      String str5 = paramBuilder.uk;
-      if (str5 == null) {
+      String str6 = paramBuilder.uk;
+      if (str6 == null) {
         this.uk = "";
       } else {
-        this.uk = str5;
+        this.uk = str6;
       } 
       this.creation_data = paramBuilder.creation_data;
       Integer integer4 = paramBuilder.favorite_num;
@@ -1188,11 +1182,11 @@ public final class User extends Message {
       } 
       this.live_room_info = paramBuilder.live_room_info;
       this.business_account_info = paramBuilder.business_account_info;
-      String str4 = paramBuilder.appeal_thread_popover;
-      if (str4 == null) {
+      String str5 = paramBuilder.appeal_thread_popover;
+      if (str5 == null) {
         this.appeal_thread_popover = "";
       } else {
-        this.appeal_thread_popover = str4;
+        this.appeal_thread_popover = str5;
       } 
       List<ForumToolPerm> list2 = paramBuilder.forum_tool_auth;
       if (list2 == null) {
@@ -1219,17 +1213,17 @@ public final class User extends Message {
         this.total_agree_num = integer3;
       } 
       this.workcreation_data = paramBuilder.workcreation_data;
-      String str3 = paramBuilder.tieba_uid;
-      if (str3 == null) {
+      String str4 = paramBuilder.tieba_uid;
+      if (str4 == null) {
         this.tieba_uid = "";
       } else {
-        this.tieba_uid = str3;
+        this.tieba_uid = str4;
       } 
-      str3 = paramBuilder.follow_from;
-      if (str3 == null) {
+      str4 = paramBuilder.follow_from;
+      if (str4 == null) {
         this.follow_from = "";
       } else {
-        this.follow_from = str3;
+        this.follow_from = str4;
       } 
       List<BazhuSign> list1 = paramBuilder.manager_forum;
       if (list1 == null) {
@@ -1244,18 +1238,18 @@ public final class User extends Message {
         this.display_auth_type = integer2;
       } 
       this.work_creator_info = paramBuilder.work_creator_info;
-      String str2 = paramBuilder.level_name;
-      if (str2 == null) {
+      String str3 = paramBuilder.level_name;
+      if (str3 == null) {
         this.level_name = "";
       } else {
-        this.level_name = str2;
+        this.level_name = str3;
       } 
       this.edit_config = paramBuilder.edit_config;
-      str2 = paramBuilder.ip_address;
-      if (str2 == null) {
+      str3 = paramBuilder.ip_address;
+      if (str3 == null) {
         this.ip_address = "";
       } else {
-        this.ip_address = str2;
+        this.ip_address = str3;
       } 
       Integer integer1 = paramBuilder.is_nickname_editing;
       if (integer1 == null) {
@@ -1263,157 +1257,172 @@ public final class User extends Message {
       } else {
         this.is_nickname_editing = integer1;
       } 
-      String str1 = paramBuilder.editing_nickname;
-      if (str1 == null) {
+      String str2 = paramBuilder.editing_nickname;
+      if (str2 == null) {
         this.editing_nickname = "";
       } else {
-        this.editing_nickname = str1;
+        this.editing_nickname = str2;
       } 
       this.virtual_image_info = paramBuilder.virtual_image_info;
       this.user_growth = paramBuilder.user_growth;
-      str1 = paramBuilder.display_intro;
-      if (str1 == null) {
+      str2 = paramBuilder.display_intro;
+      if (str2 == null) {
         this.display_intro = "";
       } else {
-        this.display_intro = str1;
+        this.display_intro = str2;
       } 
-      list = paramBuilder.new_icon_url;
+      List<String> list = paramBuilder.new_icon_url;
       if (list == null) {
         this.new_icon_url = DEFAULT_NEW_ICON_URL;
       } else {
         this.new_icon_url = Message.immutableCopyOf(list);
       } 
+      String str1 = paramBuilder.dynamic_url;
+      if (str1 == null) {
+        this.dynamic_url = "";
+      } else {
+        this.dynamic_url = str1;
+      } 
+      this.theme_tail = paramBuilder.theme_tail;
+      this.theme_background = paramBuilder.theme_background;
+      this.theme_my_tab = paramBuilder.theme_my_tab;
+      this.world_cup_info = paramBuilder.world_cup_info;
     } else {
-      this.is_login = ((Builder)list).is_login;
-      this.id = ((Builder)list).id;
-      this.name = ((Builder)list).name;
-      this.name_show = ((Builder)list).name_show;
-      this.portrait = ((Builder)list).portrait;
-      this.no_un = ((Builder)list).no_un;
-      this.type = ((Builder)list).type;
-      this.new_user_info = ((Builder)list).new_user_info;
-      this.userhide = ((Builder)list).userhide;
-      this.balv = ((Builder)list).balv;
-      this.is_manager = ((Builder)list).is_manager;
-      this.rank = ((Builder)list).rank;
-      this.bimg_url = ((Builder)list).bimg_url;
-      this.meizhi_level = ((Builder)list).meizhi_level;
-      this.is_verify = ((Builder)list).is_verify;
-      this.is_interestman = ((Builder)list).is_interestman;
-      this.iconinfo = Message.immutableCopyOf(((Builder)list).iconinfo);
-      this.tshow_icon = Message.immutableCopyOf(((Builder)list).tshow_icon);
-      this.user_type = ((Builder)list).user_type;
-      this.is_coreuser = ((Builder)list).is_coreuser;
-      this.is_huinibuke = ((Builder)list).is_huinibuke;
-      this.ios_bimg_format = ((Builder)list).ios_bimg_format;
-      this.level_id = ((Builder)list).level_id;
-      this.is_like = ((Builder)list).is_like;
-      this.is_bawu = ((Builder)list).is_bawu;
-      this.bawu_type = ((Builder)list).bawu_type;
-      this.portraith = ((Builder)list).portraith;
-      this.ip = ((Builder)list).ip;
-      this.BDUSS = ((Builder)list).BDUSS;
-      this.fans_num = ((Builder)list).fans_num;
-      this.concern_num = ((Builder)list).concern_num;
-      this.sex = ((Builder)list).sex;
-      this.my_like_num = ((Builder)list).my_like_num;
-      this.intro = ((Builder)list).intro;
-      this.has_concerned = ((Builder)list).has_concerned;
-      this.passwd = ((Builder)list).passwd;
-      this.post_num = ((Builder)list).post_num;
-      this.tb_age = ((Builder)list).tb_age;
-      this.is_mem = ((Builder)list).is_mem;
-      this.bimg_end_time = ((Builder)list).bimg_end_time;
-      this.pay_member_info = ((Builder)list).pay_member_info;
-      this.gender = ((Builder)list).gender;
-      this.is_mask = ((Builder)list).is_mask;
-      this.user_pics = Message.immutableCopyOf(((Builder)list).user_pics);
-      this.priv_sets = ((Builder)list).priv_sets;
-      this.is_friend = ((Builder)list).is_friend;
-      this.likeForum = Message.immutableCopyOf(((Builder)list).likeForum);
-      this.groupList = Message.immutableCopyOf(((Builder)list).groupList);
-      this.gift_num = ((Builder)list).gift_num;
-      this.gift_list = Message.immutableCopyOf(((Builder)list).gift_list);
-      this.is_select_tail = ((Builder)list).is_select_tail;
-      this.is_guanfang = ((Builder)list).is_guanfang;
-      this.bookmark_count = ((Builder)list).bookmark_count;
-      this.bookmark_new_count = ((Builder)list).bookmark_new_count;
-      this.mute_user = Message.immutableCopyOf(((Builder)list).mute_user);
-      this.friend_num = ((Builder)list).friend_num;
-      this.fans_nickname = ((Builder)list).fans_nickname;
-      this.bg_pic = ((Builder)list).bg_pic;
-      this.parr_scores = ((Builder)list).parr_scores;
-      this.novel_fans_info = ((Builder)list).novel_fans_info;
-      this.vipInfo = ((Builder)list).vipInfo;
-      this.god_data = ((Builder)list).god_data;
-      this.heavy_user = ((Builder)list).heavy_user;
-      this.vip_show_info = ((Builder)list).vip_show_info;
-      this.new_tshow_icon = Message.immutableCopyOf(((Builder)list).new_tshow_icon);
-      this.tw_anchor_info = ((Builder)list).tw_anchor_info;
-      this.profit_list = Message.immutableCopyOf(((Builder)list).profit_list);
-      this.consume_info = ((Builder)list).consume_info;
-      this.theme_card = ((Builder)list).theme_card;
-      this.vip_close_ad = ((Builder)list).vip_close_ad;
-      this.activity_sponsor = ((Builder)list).activity_sponsor;
-      this.tb_vip = ((Builder)list).tb_vip;
-      this.no_post_high = ((Builder)list).no_post_high;
-      this.ecom = ((Builder)list).ecom;
-      this.visitor_num = ((Builder)list).visitor_num;
-      this.total_visitor_num = ((Builder)list).total_visitor_num;
-      this.pendant = ((Builder)list).pendant;
-      this.ala_info = ((Builder)list).ala_info;
-      this.seal_prefix = ((Builder)list).seal_prefix;
-      this.has_bottle_enter = ((Builder)list).has_bottle_enter;
-      this.video_channel_info = ((Builder)list).video_channel_info;
-      this.spring_virtual_user = ((Builder)list).spring_virtual_user;
-      this.each_other_friend = ((Builder)list).each_other_friend;
-      this.esport_data = ((Builder)list).esport_data;
-      this.ala_live_info = ((Builder)list).ala_live_info;
-      this.nickname_update_time = ((Builder)list).nickname_update_time;
-      this.thread_num = ((Builder)list).thread_num;
-      this.agree_num = ((Builder)list).agree_num;
-      this.left_call_num = ((Builder)list).left_call_num;
-      this.is_invited = ((Builder)list).is_invited;
-      this.is_fans = ((Builder)list).is_fans;
-      this.priv_thread = ((Builder)list).priv_thread;
-      this.is_videobiggie = ((Builder)list).is_videobiggie;
-      this.is_show_redpacket = ((Builder)list).is_show_redpacket;
-      this.baijiahao_info = ((Builder)list).baijiahao_info;
-      this.birthday_info = ((Builder)list).birthday_info;
-      this.can_modify_avatar = ((Builder)list).can_modify_avatar;
-      this.modify_avatar_desc = ((Builder)list).modify_avatar_desc;
-      this.influence = ((Builder)list).influence;
-      this.level_influence = ((Builder)list).level_influence;
-      this.new_god_data = ((Builder)list).new_god_data;
-      this.bawu_thrones = ((Builder)list).bawu_thrones;
-      this.call_fans_info = ((Builder)list).call_fans_info;
-      this.bazhu_grade = ((Builder)list).bazhu_grade;
-      this.is_default_avatar = ((Builder)list).is_default_avatar;
-      this.uk = ((Builder)list).uk;
-      this.creation_data = ((Builder)list).creation_data;
-      this.favorite_num = ((Builder)list).favorite_num;
-      this.live_room_info = ((Builder)list).live_room_info;
-      this.business_account_info = ((Builder)list).business_account_info;
-      this.appeal_thread_popover = ((Builder)list).appeal_thread_popover;
-      this.forum_tool_auth = Message.immutableCopyOf(((Builder)list).forum_tool_auth);
-      this.work_num = ((Builder)list).work_num;
-      this.show_pb_private_flag = ((Builder)list).show_pb_private_flag;
-      this.total_agree_num = ((Builder)list).total_agree_num;
-      this.workcreation_data = ((Builder)list).workcreation_data;
-      this.tieba_uid = ((Builder)list).tieba_uid;
-      this.follow_from = ((Builder)list).follow_from;
-      this.manager_forum = Message.immutableCopyOf(((Builder)list).manager_forum);
-      this.display_auth_type = ((Builder)list).display_auth_type;
-      this.work_creator_info = ((Builder)list).work_creator_info;
-      this.level_name = ((Builder)list).level_name;
-      this.edit_config = ((Builder)list).edit_config;
-      this.ip_address = ((Builder)list).ip_address;
-      this.is_nickname_editing = ((Builder)list).is_nickname_editing;
-      this.editing_nickname = ((Builder)list).editing_nickname;
-      this.virtual_image_info = ((Builder)list).virtual_image_info;
-      this.user_growth = ((Builder)list).user_growth;
-      this.display_intro = ((Builder)list).display_intro;
-      this.new_icon_url = Message.immutableCopyOf(((Builder)list).new_icon_url);
+      this.is_login = paramBuilder.is_login;
+      this.id = paramBuilder.id;
+      this.name = paramBuilder.name;
+      this.name_show = paramBuilder.name_show;
+      this.portrait = paramBuilder.portrait;
+      this.no_un = paramBuilder.no_un;
+      this.type = paramBuilder.type;
+      this.new_user_info = paramBuilder.new_user_info;
+      this.userhide = paramBuilder.userhide;
+      this.balv = paramBuilder.balv;
+      this.is_manager = paramBuilder.is_manager;
+      this.rank = paramBuilder.rank;
+      this.bimg_url = paramBuilder.bimg_url;
+      this.meizhi_level = paramBuilder.meizhi_level;
+      this.is_verify = paramBuilder.is_verify;
+      this.is_interestman = paramBuilder.is_interestman;
+      this.iconinfo = Message.immutableCopyOf(paramBuilder.iconinfo);
+      this.tshow_icon = Message.immutableCopyOf(paramBuilder.tshow_icon);
+      this.user_type = paramBuilder.user_type;
+      this.is_coreuser = paramBuilder.is_coreuser;
+      this.is_huinibuke = paramBuilder.is_huinibuke;
+      this.ios_bimg_format = paramBuilder.ios_bimg_format;
+      this.level_id = paramBuilder.level_id;
+      this.is_like = paramBuilder.is_like;
+      this.is_bawu = paramBuilder.is_bawu;
+      this.bawu_type = paramBuilder.bawu_type;
+      this.portraith = paramBuilder.portraith;
+      this.ip = paramBuilder.ip;
+      this.BDUSS = paramBuilder.BDUSS;
+      this.fans_num = paramBuilder.fans_num;
+      this.concern_num = paramBuilder.concern_num;
+      this.sex = paramBuilder.sex;
+      this.my_like_num = paramBuilder.my_like_num;
+      this.intro = paramBuilder.intro;
+      this.has_concerned = paramBuilder.has_concerned;
+      this.passwd = paramBuilder.passwd;
+      this.post_num = paramBuilder.post_num;
+      this.tb_age = paramBuilder.tb_age;
+      this.is_mem = paramBuilder.is_mem;
+      this.bimg_end_time = paramBuilder.bimg_end_time;
+      this.pay_member_info = paramBuilder.pay_member_info;
+      this.gender = paramBuilder.gender;
+      this.is_mask = paramBuilder.is_mask;
+      this.user_pics = Message.immutableCopyOf(paramBuilder.user_pics);
+      this.priv_sets = paramBuilder.priv_sets;
+      this.is_friend = paramBuilder.is_friend;
+      this.likeForum = Message.immutableCopyOf(paramBuilder.likeForum);
+      this.groupList = Message.immutableCopyOf(paramBuilder.groupList);
+      this.gift_num = paramBuilder.gift_num;
+      this.gift_list = Message.immutableCopyOf(paramBuilder.gift_list);
+      this.is_select_tail = paramBuilder.is_select_tail;
+      this.is_guanfang = paramBuilder.is_guanfang;
+      this.bookmark_count = paramBuilder.bookmark_count;
+      this.bookmark_new_count = paramBuilder.bookmark_new_count;
+      this.mute_user = Message.immutableCopyOf(paramBuilder.mute_user);
+      this.friend_num = paramBuilder.friend_num;
+      this.fans_nickname = paramBuilder.fans_nickname;
+      this.bg_pic = paramBuilder.bg_pic;
+      this.parr_scores = paramBuilder.parr_scores;
+      this.novel_fans_info = paramBuilder.novel_fans_info;
+      this.vipInfo = paramBuilder.vipInfo;
+      this.god_data = paramBuilder.god_data;
+      this.heavy_user = paramBuilder.heavy_user;
+      this.vip_show_info = paramBuilder.vip_show_info;
+      this.new_tshow_icon = Message.immutableCopyOf(paramBuilder.new_tshow_icon);
+      this.tw_anchor_info = paramBuilder.tw_anchor_info;
+      this.profit_list = Message.immutableCopyOf(paramBuilder.profit_list);
+      this.consume_info = paramBuilder.consume_info;
+      this.theme_card = paramBuilder.theme_card;
+      this.vip_close_ad = paramBuilder.vip_close_ad;
+      this.activity_sponsor = paramBuilder.activity_sponsor;
+      this.tb_vip = paramBuilder.tb_vip;
+      this.no_post_high = paramBuilder.no_post_high;
+      this.ecom = paramBuilder.ecom;
+      this.visitor_num = paramBuilder.visitor_num;
+      this.total_visitor_num = paramBuilder.total_visitor_num;
+      this.pendant = paramBuilder.pendant;
+      this.ala_info = paramBuilder.ala_info;
+      this.seal_prefix = paramBuilder.seal_prefix;
+      this.has_bottle_enter = paramBuilder.has_bottle_enter;
+      this.video_channel_info = paramBuilder.video_channel_info;
+      this.spring_virtual_user = paramBuilder.spring_virtual_user;
+      this.each_other_friend = paramBuilder.each_other_friend;
+      this.esport_data = paramBuilder.esport_data;
+      this.ala_live_info = paramBuilder.ala_live_info;
+      this.nickname_update_time = paramBuilder.nickname_update_time;
+      this.thread_num = paramBuilder.thread_num;
+      this.agree_num = paramBuilder.agree_num;
+      this.left_call_num = paramBuilder.left_call_num;
+      this.is_invited = paramBuilder.is_invited;
+      this.is_fans = paramBuilder.is_fans;
+      this.priv_thread = paramBuilder.priv_thread;
+      this.is_videobiggie = paramBuilder.is_videobiggie;
+      this.is_show_redpacket = paramBuilder.is_show_redpacket;
+      this.baijiahao_info = paramBuilder.baijiahao_info;
+      this.birthday_info = paramBuilder.birthday_info;
+      this.can_modify_avatar = paramBuilder.can_modify_avatar;
+      this.modify_avatar_desc = paramBuilder.modify_avatar_desc;
+      this.influence = paramBuilder.influence;
+      this.level_influence = paramBuilder.level_influence;
+      this.new_god_data = paramBuilder.new_god_data;
+      this.bawu_thrones = paramBuilder.bawu_thrones;
+      this.call_fans_info = paramBuilder.call_fans_info;
+      this.bazhu_grade = paramBuilder.bazhu_grade;
+      this.is_default_avatar = paramBuilder.is_default_avatar;
+      this.uk = paramBuilder.uk;
+      this.creation_data = paramBuilder.creation_data;
+      this.favorite_num = paramBuilder.favorite_num;
+      this.live_room_info = paramBuilder.live_room_info;
+      this.business_account_info = paramBuilder.business_account_info;
+      this.appeal_thread_popover = paramBuilder.appeal_thread_popover;
+      this.forum_tool_auth = Message.immutableCopyOf(paramBuilder.forum_tool_auth);
+      this.work_num = paramBuilder.work_num;
+      this.show_pb_private_flag = paramBuilder.show_pb_private_flag;
+      this.total_agree_num = paramBuilder.total_agree_num;
+      this.workcreation_data = paramBuilder.workcreation_data;
+      this.tieba_uid = paramBuilder.tieba_uid;
+      this.follow_from = paramBuilder.follow_from;
+      this.manager_forum = Message.immutableCopyOf(paramBuilder.manager_forum);
+      this.display_auth_type = paramBuilder.display_auth_type;
+      this.work_creator_info = paramBuilder.work_creator_info;
+      this.level_name = paramBuilder.level_name;
+      this.edit_config = paramBuilder.edit_config;
+      this.ip_address = paramBuilder.ip_address;
+      this.is_nickname_editing = paramBuilder.is_nickname_editing;
+      this.editing_nickname = paramBuilder.editing_nickname;
+      this.virtual_image_info = paramBuilder.virtual_image_info;
+      this.user_growth = paramBuilder.user_growth;
+      this.display_intro = paramBuilder.display_intro;
+      this.new_icon_url = Message.immutableCopyOf(paramBuilder.new_icon_url);
+      this.dynamic_url = paramBuilder.dynamic_url;
+      this.theme_tail = paramBuilder.theme_tail;
+      this.theme_background = paramBuilder.theme_background;
+      this.theme_my_tab = paramBuilder.theme_my_tab;
+      this.world_cup_info = paramBuilder.world_cup_info;
     } 
   }
   
@@ -1422,10 +1431,6 @@ public final class User extends Message {
   }
   
   public static final class Builder extends Message.Builder<User> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String BDUSS;
     
     public ActivitySponsor activity_sponsor;
@@ -1475,6 +1480,8 @@ public final class User extends Message {
     public Integer display_auth_type;
     
     public String display_intro;
+    
+    public String dynamic_url;
     
     public Integer each_other_friend;
     
@@ -1642,7 +1649,13 @@ public final class User extends Message {
     
     public TbVipInfo tb_vip;
     
+    public ThemeBackgroundInUser theme_background;
+    
     public ThemeCardInUser theme_card;
+    
+    public ThemeMyTab theme_my_tab;
+    
+    public ThemeTailInUser theme_tail;
     
     public Integer thread_num;
     
@@ -1685,6 +1698,8 @@ public final class User extends Message {
     public Integer work_num;
     
     public CreationData workcreation_data;
+    
+    public WorldCupInfo world_cup_info;
     
     public Builder() {}
     
@@ -1822,22 +1837,17 @@ public final class User extends Message {
       this.user_growth = param1User.user_growth;
       this.display_intro = param1User.display_intro;
       this.new_icon_url = Message.copyOf(param1User.new_icon_url);
+      this.dynamic_url = param1User.dynamic_url;
+      this.theme_tail = param1User.theme_tail;
+      this.theme_background = param1User.theme_background;
+      this.theme_my_tab = param1User.theme_my_tab;
+      this.world_cup_info = param1User.world_cup_info;
     }
     
     public User build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (User)interceptResult.objValue; 
-      } 
       return new User(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

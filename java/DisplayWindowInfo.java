@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class DisplayWindowInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_INTRO = "";
   
   public static final Integer DEFAULT_IS_DISPLAY;
@@ -26,8 +19,6 @@ public final class DisplayWindowInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Long DEFAULT_UNIT_PRICE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4)
   public final DealMedia img;
@@ -57,19 +48,6 @@ public final class DisplayWindowInfo extends Message {
   public final Long unit_price;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1328787333, "Ltbclient/DisplayWindowInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1328787333, "Ltbclient/DisplayWindowInfo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_PRODUCT_ID = long_;
     DEFAULT_UNIT_PRICE = long_;
@@ -150,10 +128,6 @@ public final class DisplayWindowInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<DisplayWindowInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public DealMedia img;
     
     public String intro;
@@ -190,19 +164,9 @@ public final class DisplayWindowInfo extends Message {
     }
     
     public DisplayWindowInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DisplayWindowInfo)interceptResult.objValue; 
-      } 
       return new DisplayWindowInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

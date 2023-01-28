@@ -1,16 +1,9 @@
 package tbclient.GetForumDetail;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumDataCenter extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_HOMEPAGE_THREAD_CNT;
   
   public static final Integer DEFAULT_HOMEPAGE_THREAD_CNT_DIFF;
@@ -34,8 +27,6 @@ public final class ForumDataCenter extends Message {
   public static final Double DEFAULT_USER_SIGN_RATE;
   
   public static final Double DEFAULT_USER_SIGN_RATE_DIFF;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 11, type = Message.Datatype.INT32)
   public final Integer homepage_thread_cnt;
@@ -74,19 +65,6 @@ public final class ForumDataCenter extends Message {
   public final Double user_sign_rate_diff;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1209376860, "Ltbclient/GetForumDetail/ForumDataCenter;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1209376860, "Ltbclient/GetForumDetail/ForumDataCenter;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_NEW_PV_CNT = integer;
     DEFAULT_NEW_PV_CNT_DIFF = integer;
@@ -200,10 +178,6 @@ public final class ForumDataCenter extends Message {
   }
   
   public static final class Builder extends Message.Builder<ForumDataCenter> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer homepage_thread_cnt;
     
     public Integer homepage_thread_cnt_diff;
@@ -249,19 +223,9 @@ public final class ForumDataCenter extends Message {
     }
     
     public ForumDataCenter build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ForumDataCenter)interceptResult.objValue; 
-      } 
       return new ForumDataCenter(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

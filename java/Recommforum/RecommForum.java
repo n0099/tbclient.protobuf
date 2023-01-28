@@ -1,10 +1,5 @@
 package tbclient.Recommforum;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -12,15 +7,11 @@ import java.util.List;
 import tbclient.RecommendForumInfo;
 
 public final class RecommForum extends Message {
-  public static Interceptable $ic;
-  
   public static final List<RecommendForumInfo> DEFAULT_FORUMS = Collections.emptyList();
   
   public static final Integer DEFAULT_PAGE_SIZE = Integer.valueOf(0);
   
   public static final String DEFAULT_TITLE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<RecommendForumInfo> forums;
@@ -64,27 +55,7 @@ public final class RecommForum extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(64982800, "Ltbclient/Recommforum/RecommForum;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(64982800, "Ltbclient/Recommforum/RecommForum;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<RecommForum> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<RecommendForumInfo> forums;
     
     public Integer page_size;
@@ -103,19 +74,9 @@ public final class RecommForum extends Message {
     }
     
     public RecommForum build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (RecommForum)interceptResult.objValue; 
-      } 
       return new RecommForum(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

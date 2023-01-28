@@ -1,16 +1,9 @@
 package tbclient.SlotMachineRank;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class SmRankItem extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_PORTRAIT = "";
   
   public static final Long DEFAULT_USER_ID;
@@ -20,8 +13,6 @@ public final class SmRankItem extends Message {
   public static final String DEFAULT_USER_NAME = "";
   
   public static final Integer DEFAULT_WIN;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String portrait;
@@ -39,19 +30,6 @@ public final class SmRankItem extends Message {
   public final Integer win;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1010386082, "Ltbclient/SlotMachineRank/SmRankItem;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1010386082, "Ltbclient/SlotMachineRank/SmRankItem;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_USER_LEVEL = integer;
     DEFAULT_WIN = integer;
@@ -106,10 +84,6 @@ public final class SmRankItem extends Message {
   }
   
   public static final class Builder extends Message.Builder<SmRankItem> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String portrait;
     
     public Long user_id;
@@ -134,19 +108,9 @@ public final class SmRankItem extends Message {
     }
     
     public SmRankItem build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (SmRankItem)interceptResult.objValue; 
-      } 
       return new SmRankItem(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

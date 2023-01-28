@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ParrScores extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_I_MONEY;
   
   public static final Long DEFAULT_I_OTHER;
@@ -30,8 +23,6 @@ public final class ParrScores extends Message {
   public static final Integer DEFAULT_SCORES_TOTAL;
   
   public static final Integer DEFAULT_UPDATE_TIME;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9, type = Message.Datatype.UINT64)
   public final Long i_money;
@@ -64,19 +55,6 @@ public final class ParrScores extends Message {
   public final Integer update_time;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(850072543, "Ltbclient/ParrScores;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(850072543, "Ltbclient/ParrScores;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_SCORES_TOTAL = integer;
     DEFAULT_SCORES_FETCH = integer;
@@ -174,10 +152,6 @@ public final class ParrScores extends Message {
   }
   
   public static final class Builder extends Message.Builder<ParrScores> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long i_money;
     
     public Long i_other;
@@ -217,19 +191,9 @@ public final class ParrScores extends Message {
     }
     
     public ParrScores build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ParrScores)interceptResult.objValue; 
-      } 
       return new ParrScores(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

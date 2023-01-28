@@ -1,16 +1,9 @@
 package tbclient.GetMemberTaskList;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PointTaskInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_IS_FINISH;
   
   public static final Integer DEFAULT_POINTS_ADD;
@@ -22,8 +15,6 @@ public final class PointTaskInfo extends Message {
   public static final String DEFAULT_TASK_NAME = "";
   
   public static final Integer DEFAULT_TYPE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.INT32)
   public final Integer is_finish;
@@ -104,27 +95,7 @@ public final class PointTaskInfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-141165506, "Ltbclient/GetMemberTaskList/PointTaskInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-141165506, "Ltbclient/GetMemberTaskList/PointTaskInfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<PointTaskInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer is_finish;
     
     public Integer points_add;
@@ -152,19 +123,9 @@ public final class PointTaskInfo extends Message {
     }
     
     public PointTaskInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PointTaskInfo)interceptResult.objValue; 
-      } 
       return new PointTaskInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

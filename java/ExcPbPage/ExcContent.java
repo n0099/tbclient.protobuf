@@ -1,16 +1,9 @@
 package tbclient.ExcPbPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ExcContent extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_ALIGN;
   
   public static final String DEFAULT_BIG_CDN_SRC = "";
@@ -36,8 +29,6 @@ public final class ExcContent extends Message {
   public static final String DEFAULT_TEXT = "";
   
   public static final Long DEFAULT_TYPE = Long.valueOf(0L);
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 11, type = Message.Datatype.INT32)
   public final Integer align;
@@ -187,27 +178,7 @@ public final class ExcContent extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1068970230, "Ltbclient/ExcPbPage/ExcContent;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1068970230, "Ltbclient/ExcPbPage/ExcContent;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<ExcContent> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer align;
     
     public String big_cdn_src;
@@ -256,19 +227,9 @@ public final class ExcContent extends Message {
     }
     
     public ExcContent build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ExcContent)interceptResult.objValue; 
-      } 
       return new ExcContent(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

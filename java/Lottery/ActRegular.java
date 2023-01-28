@@ -1,16 +1,9 @@
 package tbclient.Lottery;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ActRegular extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BTN_NAME = "";
   
   public static final Integer DEFAULT_CHANCE;
@@ -18,8 +11,6 @@ public final class ActRegular extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String btn_name;
@@ -34,19 +25,6 @@ public final class ActRegular extends Message {
   public final String url;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(103944129, "Ltbclient/Lottery/ActRegular;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(103944129, "Ltbclient/Lottery/ActRegular;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_TYPE = integer;
     DEFAULT_CHANCE = integer;
@@ -93,10 +71,6 @@ public final class ActRegular extends Message {
   }
   
   public static final class Builder extends Message.Builder<ActRegular> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String btn_name;
     
     public Integer chance;
@@ -118,19 +92,9 @@ public final class ActRegular extends Message {
     }
     
     public ActRegular build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ActRegular)interceptResult.objValue; 
-      } 
       return new ActRegular(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

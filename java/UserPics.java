@@ -1,19 +1,12 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class UserPics extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BIG = "";
   
   public static final String DEFAULT_SMALL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String big;
@@ -48,10 +41,6 @@ public final class UserPics extends Message {
   }
   
   public static final class Builder extends Message.Builder<UserPics> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String big;
     
     public String small;
@@ -67,19 +56,9 @@ public final class UserPics extends Message {
     }
     
     public UserPics build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (UserPics)interceptResult.objValue; 
-      } 
       return new UserPics(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

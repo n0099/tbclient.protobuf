@@ -1,19 +1,22 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class FrsTabInfo extends Message {
-  public static Interceptable $ic;
+  public static final String DEFAULT_CLICK_MONITOR_URL = "";
+  
+  public static final String DEFAULT_DEMOTE_URL = "";
+  
+  public static final String DEFAULT_EXPOSURE_MONITOR_URL = "";
   
   public static final Integer DEFAULT_IS_DEFAULT;
   
   public static final Integer DEFAULT_IS_GENERAL_TAB;
+  
+  public static final Integer DEFAULT_IS_NO_SHOW_IN_PUBLISHER;
+  
+  public static final Integer DEFAULT_IS_NO_SHOW_PUBLISHER;
   
   public static final Integer DEFAULT_NEED_PAGE;
   
@@ -33,7 +36,14 @@ public final class FrsTabInfo extends Message {
   
   public static final Integer DEFAULT_TAB_VERSION;
   
-  public transient FieldHolder $fh;
+  @ProtoField(tag = 14, type = Message.Datatype.STRING)
+  public final String click_monitor_url;
+  
+  @ProtoField(tag = 15, type = Message.Datatype.STRING)
+  public final String demote_url;
+  
+  @ProtoField(tag = 13, type = Message.Datatype.STRING)
+  public final String exposure_monitor_url;
   
   @ProtoField(tag = 12)
   public final TabPic head_pics;
@@ -43,6 +53,12 @@ public final class FrsTabInfo extends Message {
   
   @ProtoField(tag = 7, type = Message.Datatype.INT32)
   public final Integer is_general_tab;
+  
+  @ProtoField(tag = 17, type = Message.Datatype.INT32)
+  public final Integer is_no_show_in_publisher;
+  
+  @ProtoField(tag = 16, type = Message.Datatype.INT32)
+  public final Integer is_no_show_publisher;
   
   @ProtoField(tag = 11, type = Message.Datatype.INT32)
   public final Integer need_page;
@@ -72,19 +88,6 @@ public final class FrsTabInfo extends Message {
   public final Integer tab_version;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-481893931, "Ltbclient/FrsTabInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-481893931, "Ltbclient/FrsTabInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_TAB_ID = integer;
     DEFAULT_TAB_TYPE = integer;
@@ -92,91 +95,129 @@ public final class FrsTabInfo extends Message {
     DEFAULT_TAB_VERSION = integer;
     DEFAULT_IS_DEFAULT = integer;
     DEFAULT_NEED_PAGE = integer;
+    DEFAULT_IS_NO_SHOW_PUBLISHER = integer;
+    DEFAULT_IS_NO_SHOW_IN_PUBLISHER = integer;
   }
   
   public FrsTabInfo(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
+    Integer integer;
     if (paramBoolean == true) {
-      Integer integer3 = paramBuilder.tab_id;
-      if (integer3 == null) {
+      Integer integer4 = paramBuilder.tab_id;
+      if (integer4 == null) {
         this.tab_id = DEFAULT_TAB_ID;
       } else {
-        this.tab_id = integer3;
+        this.tab_id = integer4;
       } 
-      integer3 = paramBuilder.tab_type;
-      if (integer3 == null) {
+      integer4 = paramBuilder.tab_type;
+      if (integer4 == null) {
         this.tab_type = DEFAULT_TAB_TYPE;
       } else {
-        this.tab_type = integer3;
+        this.tab_type = integer4;
       } 
-      String str2 = paramBuilder.tab_name;
-      if (str2 == null) {
+      String str3 = paramBuilder.tab_name;
+      if (str3 == null) {
         this.tab_name = "";
       } else {
-        this.tab_name = str2;
+        this.tab_name = str3;
       } 
-      str2 = paramBuilder.tab_url;
-      if (str2 == null) {
+      str3 = paramBuilder.tab_url;
+      if (str3 == null) {
         this.tab_url = "";
       } else {
-        this.tab_url = str2;
+        this.tab_url = str3;
       } 
-      str2 = paramBuilder.tab_gid;
-      if (str2 == null) {
+      str3 = paramBuilder.tab_gid;
+      if (str3 == null) {
         this.tab_gid = "";
       } else {
-        this.tab_gid = str2;
+        this.tab_gid = str3;
       } 
-      str2 = paramBuilder.tab_title;
-      if (str2 == null) {
+      str3 = paramBuilder.tab_title;
+      if (str3 == null) {
         this.tab_title = "";
       } else {
-        this.tab_title = str2;
+        this.tab_title = str3;
       } 
-      Integer integer2 = paramBuilder.is_general_tab;
-      if (integer2 == null) {
+      Integer integer3 = paramBuilder.is_general_tab;
+      if (integer3 == null) {
         this.is_general_tab = DEFAULT_IS_GENERAL_TAB;
       } else {
-        this.is_general_tab = integer2;
+        this.is_general_tab = integer3;
       } 
-      String str1 = paramBuilder.tab_code;
-      if (str1 == null) {
+      String str2 = paramBuilder.tab_code;
+      if (str2 == null) {
         this.tab_code = "";
       } else {
-        this.tab_code = str1;
+        this.tab_code = str2;
       } 
-      Integer integer1 = paramBuilder.tab_version;
-      if (integer1 == null) {
+      Integer integer2 = paramBuilder.tab_version;
+      if (integer2 == null) {
         this.tab_version = DEFAULT_TAB_VERSION;
       } else {
-        this.tab_version = integer1;
+        this.tab_version = integer2;
       } 
-      integer1 = paramBuilder.is_default;
-      if (integer1 == null) {
+      integer2 = paramBuilder.is_default;
+      if (integer2 == null) {
         this.is_default = DEFAULT_IS_DEFAULT;
       } else {
-        this.is_default = integer1;
+        this.is_default = integer2;
       } 
-      integer1 = paramBuilder.need_page;
-      if (integer1 == null) {
+      integer2 = paramBuilder.need_page;
+      if (integer2 == null) {
         this.need_page = DEFAULT_NEED_PAGE;
       } else {
-        this.need_page = integer1;
+        this.need_page = integer2;
       } 
       this.head_pics = paramBuilder.head_pics;
+      String str1 = paramBuilder.exposure_monitor_url;
+      if (str1 == null) {
+        this.exposure_monitor_url = "";
+      } else {
+        this.exposure_monitor_url = str1;
+      } 
+      str1 = paramBuilder.click_monitor_url;
+      if (str1 == null) {
+        this.click_monitor_url = "";
+      } else {
+        this.click_monitor_url = str1;
+      } 
+      str1 = paramBuilder.demote_url;
+      if (str1 == null) {
+        this.demote_url = "";
+      } else {
+        this.demote_url = str1;
+      } 
+      Integer integer1 = paramBuilder.is_no_show_publisher;
+      if (integer1 == null) {
+        this.is_no_show_publisher = DEFAULT_IS_NO_SHOW_PUBLISHER;
+      } else {
+        this.is_no_show_publisher = integer1;
+      } 
+      integer = paramBuilder.is_no_show_in_publisher;
+      if (integer == null) {
+        this.is_no_show_in_publisher = DEFAULT_IS_NO_SHOW_IN_PUBLISHER;
+      } else {
+        this.is_no_show_in_publisher = integer;
+      } 
     } else {
-      this.tab_id = paramBuilder.tab_id;
-      this.tab_type = paramBuilder.tab_type;
-      this.tab_name = paramBuilder.tab_name;
-      this.tab_url = paramBuilder.tab_url;
-      this.tab_gid = paramBuilder.tab_gid;
-      this.tab_title = paramBuilder.tab_title;
-      this.is_general_tab = paramBuilder.is_general_tab;
-      this.tab_code = paramBuilder.tab_code;
-      this.tab_version = paramBuilder.tab_version;
-      this.is_default = paramBuilder.is_default;
-      this.need_page = paramBuilder.need_page;
-      this.head_pics = paramBuilder.head_pics;
+      this.tab_id = ((Builder)integer).tab_id;
+      this.tab_type = ((Builder)integer).tab_type;
+      this.tab_name = ((Builder)integer).tab_name;
+      this.tab_url = ((Builder)integer).tab_url;
+      this.tab_gid = ((Builder)integer).tab_gid;
+      this.tab_title = ((Builder)integer).tab_title;
+      this.is_general_tab = ((Builder)integer).is_general_tab;
+      this.tab_code = ((Builder)integer).tab_code;
+      this.tab_version = ((Builder)integer).tab_version;
+      this.is_default = ((Builder)integer).is_default;
+      this.need_page = ((Builder)integer).need_page;
+      this.head_pics = ((Builder)integer).head_pics;
+      this.exposure_monitor_url = ((Builder)integer).exposure_monitor_url;
+      this.click_monitor_url = ((Builder)integer).click_monitor_url;
+      this.demote_url = ((Builder)integer).demote_url;
+      this.is_no_show_publisher = ((Builder)integer).is_no_show_publisher;
+      this.is_no_show_in_publisher = ((Builder)integer).is_no_show_in_publisher;
     } 
   }
   
@@ -185,15 +226,21 @@ public final class FrsTabInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<FrsTabInfo> {
-    public static Interceptable $ic;
+    public String click_monitor_url;
     
-    public transient FieldHolder $fh;
+    public String demote_url;
+    
+    public String exposure_monitor_url;
     
     public TabPic head_pics;
     
     public Integer is_default;
     
     public Integer is_general_tab;
+    
+    public Integer is_no_show_in_publisher;
+    
+    public Integer is_no_show_publisher;
     
     public Integer need_page;
     
@@ -231,22 +278,17 @@ public final class FrsTabInfo extends Message {
       this.is_default = param1FrsTabInfo.is_default;
       this.need_page = param1FrsTabInfo.need_page;
       this.head_pics = param1FrsTabInfo.head_pics;
+      this.exposure_monitor_url = param1FrsTabInfo.exposure_monitor_url;
+      this.click_monitor_url = param1FrsTabInfo.click_monitor_url;
+      this.demote_url = param1FrsTabInfo.demote_url;
+      this.is_no_show_publisher = param1FrsTabInfo.is_no_show_publisher;
+      this.is_no_show_in_publisher = param1FrsTabInfo.is_no_show_in_publisher;
     }
     
     public FrsTabInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (FrsTabInfo)interceptResult.objValue; 
-      } 
       return new FrsTabInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

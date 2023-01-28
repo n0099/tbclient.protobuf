@@ -1,18 +1,11 @@
 package tbclient.RecomVertical;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class ThreadPersonalized extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ABTEST_TAG = "";
   
   public static final List<DislikeReason> DEFAULT_DISLIKE_RESOURCE;
@@ -24,8 +17,6 @@ public final class ThreadPersonalized extends Message {
   public static final Long DEFAULT_TID = Long.valueOf(0L);
   
   public static final String DEFAULT_WEIGHT = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String abtest_tag;
@@ -103,27 +94,7 @@ public final class ThreadPersonalized extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(612411948, "Ltbclient/RecomVertical/ThreadPersonalized;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(612411948, "Ltbclient/RecomVertical/ThreadPersonalized;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<ThreadPersonalized> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String abtest_tag;
     
     public List<DislikeReason> dislike_resource;
@@ -151,19 +122,9 @@ public final class ThreadPersonalized extends Message {
     }
     
     public ThreadPersonalized build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ThreadPersonalized)interceptResult.objValue; 
-      } 
       return new ThreadPersonalized(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

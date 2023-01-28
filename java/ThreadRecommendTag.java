@@ -1,20 +1,16 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ThreadRecommendTag extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_TEXT = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3)
   public final ThemeColorInfo background_color;
+  
+  @ProtoField(tag = 4)
+  public final ThemeColorInfo boundary_color;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String text;
@@ -33,10 +29,12 @@ public final class ThreadRecommendTag extends Message {
       } 
       this.text_color = paramBuilder.text_color;
       this.background_color = paramBuilder.background_color;
+      this.boundary_color = paramBuilder.boundary_color;
     } else {
       this.text = paramBuilder.text;
       this.text_color = paramBuilder.text_color;
       this.background_color = paramBuilder.background_color;
+      this.boundary_color = paramBuilder.boundary_color;
     } 
   }
   
@@ -45,11 +43,9 @@ public final class ThreadRecommendTag extends Message {
   }
   
   public static final class Builder extends Message.Builder<ThreadRecommendTag> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public ThemeColorInfo background_color;
+    
+    public ThemeColorInfo boundary_color;
     
     public String text;
     
@@ -64,22 +60,13 @@ public final class ThreadRecommendTag extends Message {
       this.text = param1ThreadRecommendTag.text;
       this.text_color = param1ThreadRecommendTag.text_color;
       this.background_color = param1ThreadRecommendTag.background_color;
+      this.boundary_color = param1ThreadRecommendTag.boundary_color;
     }
     
     public ThreadRecommendTag build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ThreadRecommendTag)interceptResult.objValue; 
-      } 
       return new ThreadRecommendTag(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

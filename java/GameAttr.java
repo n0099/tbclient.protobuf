@@ -1,19 +1,12 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class GameAttr extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_IS_OPEN = "";
   
   public static final String DEFAULT_USER_ID = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String is_open;
@@ -53,10 +46,6 @@ public final class GameAttr extends Message {
   }
   
   public static final class Builder extends Message.Builder<GameAttr> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String is_open;
     
     public SignatureInfo signature_info;
@@ -75,19 +64,9 @@ public final class GameAttr extends Message {
     }
     
     public GameAttr build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (GameAttr)interceptResult.objValue; 
-      } 
       return new GameAttr(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

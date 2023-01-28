@@ -1,14 +1,9 @@
 package tbclient.GetToken;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class DataRes extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BTN_CANCEL = "";
   
   public static final String DEFAULT_BTN_SURE = "";
@@ -20,8 +15,6 @@ public final class DataRes extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7)
   public final ToastInfo activity_done;
@@ -100,10 +93,6 @@ public final class DataRes extends Message {
   }
   
   public static final class Builder extends Message.Builder<DataRes> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public ToastInfo activity_done;
     
     public String btn_cancel;
@@ -134,19 +123,9 @@ public final class DataRes extends Message {
     }
     
     public DataRes build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataRes)interceptResult.objValue; 
-      } 
       return new DataRes(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

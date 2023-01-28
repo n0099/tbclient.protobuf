@@ -1,10 +1,5 @@
 package tbclient.GameIndex;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -12,15 +7,11 @@ import java.util.List;
 import tbclient.GameInfo;
 
 public final class CategoryList extends Message {
-  public static Interceptable $ic;
-  
   public static final List<GameInfo> DEFAULT_CATEGORY_GAME_LIST = Collections.emptyList();
   
   public static final Integer DEFAULT_CATEGORY_ID = Integer.valueOf(0);
   
   public static final String DEFAULT_CATEGORY_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 2)
   public final List<GameInfo> category_game_list;
@@ -64,27 +55,7 @@ public final class CategoryList extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-559125274, "Ltbclient/GameIndex/CategoryList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-559125274, "Ltbclient/GameIndex/CategoryList;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<CategoryList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<GameInfo> category_game_list;
     
     public Integer category_id;
@@ -103,19 +74,9 @@ public final class CategoryList extends Message {
     }
     
     public CategoryList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (CategoryList)interceptResult.objValue; 
-      } 
       return new CategoryList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

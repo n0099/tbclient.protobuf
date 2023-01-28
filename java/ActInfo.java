@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ActInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_ACTIVITY_ID;
   
   public static final Integer DEFAULT_ACTIVITY_TYPE;
@@ -36,8 +29,6 @@ public final class ActInfo extends Message {
   public static final Integer DEFAULT_TOTAL_NUM;
   
   public static final String DEFAULT_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.INT32)
   public final Integer activity_id;
@@ -82,19 +73,6 @@ public final class ActInfo extends Message {
   public final String url;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1411783995, "Ltbclient/ActInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1411783995, "Ltbclient/ActInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_ACTIVITY_TYPE = integer;
     DEFAULT_STATUS = integer;
@@ -214,10 +192,6 @@ public final class ActInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<ActInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer activity_id;
     
     public Integer activity_type;
@@ -269,19 +243,9 @@ public final class ActInfo extends Message {
     }
     
     public ActInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ActInfo)interceptResult.objValue; 
-      } 
       return new ActInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

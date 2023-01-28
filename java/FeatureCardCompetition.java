@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class FeatureCardCompetition extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_FLOOR;
   
   public static final List<FeatureCardCompetitionSubNode> DEFAULT_SUB_NODES = Collections.emptyList();
@@ -20,8 +13,6 @@ public final class FeatureCardCompetition extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Integer DEFAULT_TYPE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.UINT32)
   public final Integer floor;
@@ -81,27 +72,7 @@ public final class FeatureCardCompetition extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-2058948488, "Ltbclient/FeatureCardCompetition;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-2058948488, "Ltbclient/FeatureCardCompetition;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<FeatureCardCompetition> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer floor;
     
     public List<FeatureCardCompetitionSubNode> sub_nodes;
@@ -123,19 +94,9 @@ public final class FeatureCardCompetition extends Message {
     }
     
     public FeatureCardCompetition build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (FeatureCardCompetition)interceptResult.objValue; 
-      } 
       return new FeatureCardCompetition(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

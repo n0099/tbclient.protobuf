@@ -1,16 +1,9 @@
 package tbclient.Loop;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class IconPop extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CATEGORY_ID = "";
   
   public static final String DEFAULT_EXT = "";
@@ -60,8 +53,6 @@ public final class IconPop extends Message {
   public static final String DEFAULT_WEIGHT = "";
   
   public static final String DEFAULT_YB_PRICE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 14, type = Message.Datatype.STRING)
   public final String category_id;
@@ -325,27 +316,7 @@ public final class IconPop extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1487392420, "Ltbclient/Loop/IconPop;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1487392420, "Ltbclient/Loop/IconPop;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<IconPop> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String category_id;
     
     public String ext;
@@ -430,19 +401,9 @@ public final class IconPop extends Message {
     }
     
     public IconPop build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (IconPop)interceptResult.objValue; 
-      } 
       return new IconPop(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

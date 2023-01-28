@@ -1,19 +1,12 @@
 package tbclient.GetThemeList;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ThemeCarousel extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ACTIVE_URL = "";
   
   public static final String DEFAULT_PIC_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String active_url;
@@ -48,10 +41,6 @@ public final class ThemeCarousel extends Message {
   }
   
   public static final class Builder extends Message.Builder<ThemeCarousel> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String active_url;
     
     public String pic_url;
@@ -67,19 +56,9 @@ public final class ThemeCarousel extends Message {
     }
     
     public ThemeCarousel build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ThemeCarousel)interceptResult.objValue; 
-      } 
       return new ThemeCarousel(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

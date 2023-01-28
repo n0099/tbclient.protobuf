@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class ItemInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_APK_NAME = "";
   
   public static final String DEFAULT_BRIEF = "";
@@ -48,8 +41,6 @@ public final class ItemInfo extends Message {
   public static final List<TagInfo> DEFAULT_TAG_INFO;
   
   public static final String DEFAULT_TEMPLATE_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 24)
   public final ApkDetail apk_detail;
@@ -281,28 +272,11 @@ public final class ItemInfo extends Message {
   }
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(2036664400, "Ltbclient/ItemInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(2036664400, "Ltbclient/ItemInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_ID = integer;
   }
   
   public static final class Builder extends Message.Builder<ItemInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public ApkDetail apk_detail;
     
     public String apk_name;
@@ -384,19 +358,9 @@ public final class ItemInfo extends Message {
     }
     
     public ItemInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ItemInfo)interceptResult.objValue; 
-      } 
       return new ItemInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

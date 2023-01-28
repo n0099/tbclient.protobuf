@@ -1,23 +1,14 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class NewParrScores extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_I_TOTAL;
   
   public static final Long DEFAULT_SCORES_TOTAL;
   
   public static final Integer DEFAULT_UPDATE_TIME = Integer.valueOf(0);
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.UINT64)
   public final Long i_total;
@@ -66,28 +57,11 @@ public final class NewParrScores extends Message {
   }
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-2128087885, "Ltbclient/NewParrScores;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-2128087885, "Ltbclient/NewParrScores;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_SCORES_TOTAL = long_;
   }
   
   public static final class Builder extends Message.Builder<NewParrScores> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long i_total;
     
     public Long scores_total;
@@ -106,19 +80,9 @@ public final class NewParrScores extends Message {
     }
     
     public NewParrScores build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (NewParrScores)interceptResult.objValue; 
-      } 
       return new NewParrScores(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

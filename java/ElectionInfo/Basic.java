@@ -1,16 +1,9 @@
 package tbclient.ElectionInfo;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Basic extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BEGIN_APPLY_TIME = "";
   
   public static final String DEFAULT_BEGIN_AUDIT_TIME = "";
@@ -28,8 +21,6 @@ public final class Basic extends Message {
   public static final Integer DEFAULT_STATUS;
   
   public static final Integer DEFAULT_TOTAL_VOTE_NUM;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String begin_apply_time;
@@ -62,19 +53,6 @@ public final class Basic extends Message {
   public final Integer total_vote_num;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1323323541, "Ltbclient/ElectionInfo/Basic;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1323323541, "Ltbclient/ElectionInfo/Basic;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_STATUS = integer;
     DEFAULT_CANDIDATE_NUM = integer;
@@ -160,10 +138,6 @@ public final class Basic extends Message {
   }
   
   public static final class Builder extends Message.Builder<Basic> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String begin_apply_time;
     
     public String begin_audit_time;
@@ -203,19 +177,9 @@ public final class Basic extends Message {
     }
     
     public Basic build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Basic)interceptResult.objValue; 
-      } 
       return new Basic(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

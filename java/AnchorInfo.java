@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AnchorInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_AUTHOR_ID;
   
   public static final String DEFAULT_AUTHOR_NAME = "";
@@ -48,8 +41,6 @@ public final class AnchorInfo extends Message {
   public static final Integer DEFAULT_STATUS;
   
   public static final Integer DEFAULT_TYPE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT64)
   public final Long author_id;
@@ -112,19 +103,6 @@ public final class AnchorInfo extends Message {
   public final Integer type;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(48167022, "Ltbclient/AnchorInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(48167022, "Ltbclient/AnchorInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_START_TIME = integer;
     DEFAULT_STATUS = integer;
@@ -287,10 +265,6 @@ public final class AnchorInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<AnchorInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long author_id;
     
     public String author_name;
@@ -360,19 +334,9 @@ public final class AnchorInfo extends Message {
     }
     
     public AnchorInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AnchorInfo)interceptResult.objValue; 
-      } 
       return new AnchorInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

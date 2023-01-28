@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Abstract extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_DURING_TIME = "";
   
   public static final String DEFAULT_LINK = "";
@@ -24,8 +17,6 @@ public final class Abstract extends Message {
   public static final String DEFAULT_UN = "";
   
   public static final String DEFAULT_VOICE_MD5 = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String during_time;
@@ -109,27 +100,7 @@ public final class Abstract extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(2083611311, "Ltbclient/Abstract;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(2083611311, "Ltbclient/Abstract;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<Abstract> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String during_time;
     
     public String link;
@@ -160,19 +131,9 @@ public final class Abstract extends Message {
     }
     
     public Abstract build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Abstract)interceptResult.objValue; 
-      } 
       return new Abstract(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

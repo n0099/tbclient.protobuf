@@ -1,16 +1,9 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TopCode extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CODE_LINK = "";
   
   public static final String DEFAULT_GAME_LINK = "";
@@ -28,8 +21,6 @@ public final class TopCode extends Message {
   public static final String DEFAULT_SURPLUSGIFT = "";
   
   public static final String DEFAULT_TYPE_TEXT = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String code_link;
@@ -133,27 +124,7 @@ public final class TopCode extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(275922492, "Ltbclient/FrsPage/TopCode;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(275922492, "Ltbclient/FrsPage/TopCode;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<TopCode> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String code_link;
     
     public String game_link;
@@ -190,19 +161,9 @@ public final class TopCode extends Message {
     }
     
     public TopCode build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TopCode)interceptResult.objValue; 
-      } 
       return new TopCode(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

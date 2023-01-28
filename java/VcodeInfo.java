@@ -1,21 +1,14 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class VcodeInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_VCODE_MD5 = "";
   
   public static final String DEFAULT_VCODE_PIC_URL = "";
   
   public static final String DEFAULT_VCODE_TYPE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4)
   public final VcodeExtra vcode_extra;
@@ -64,10 +57,6 @@ public final class VcodeInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<VcodeInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public VcodeExtra vcode_extra;
     
     public String vcode_md5;
@@ -89,19 +78,9 @@ public final class VcodeInfo extends Message {
     }
     
     public VcodeInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (VcodeInfo)interceptResult.objValue; 
-      } 
       return new VcodeInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

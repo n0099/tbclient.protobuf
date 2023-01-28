@@ -1,10 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -12,8 +7,6 @@ import java.util.List;
 import tbclient.OriForumInfo;
 
 public final class BrandForumInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BRAND_DESC = "";
   
   public static final String DEFAULT_JUMP_DESC = "";
@@ -21,8 +14,6 @@ public final class BrandForumInfo extends Message {
   public static final String DEFAULT_JUMP_URL = "";
   
   public static final List<OriForumInfo> DEFAULT_RELATION_FORUM = Collections.emptyList();
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String brand_desc;
@@ -81,27 +72,7 @@ public final class BrandForumInfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1935109008, "Ltbclient/FrsPage/BrandForumInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1935109008, "Ltbclient/FrsPage/BrandForumInfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<BrandForumInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String brand_desc;
     
     public HeadImgs head_imgs;
@@ -126,19 +97,9 @@ public final class BrandForumInfo extends Message {
     }
     
     public BrandForumInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (BrandForumInfo)interceptResult.objValue; 
-      } 
       return new BrandForumInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

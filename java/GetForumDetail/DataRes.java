@@ -1,10 +1,5 @@
 package tbclient.GetForumDetail;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -19,8 +14,6 @@ import tbclient.ServiceArea;
 import tbclient.SimpleThreadInfo;
 
 public final class DataRes extends Message {
-  public static Interceptable $ic;
-  
   public static final List<BawuAction> DEFAULT_BAWU_ACTIONS;
   
   public static final Integer DEFAULT_IS_BAWU_SHOW;
@@ -34,8 +27,6 @@ public final class DataRes extends Message {
   public static final Integer DEFAULT_IS_FORUM_DATA_SHOW;
   
   public static final List<SimpleThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 12)
   public final ApplyStatus apply_status;
@@ -187,27 +178,7 @@ public final class DataRes extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(750498670, "Ltbclient/GetForumDetail/DataRes;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(750498670, "Ltbclient/GetForumDetail/DataRes;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<DataRes> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public ApplyStatus apply_status;
     
     public List<BawuAction> bawu_actions;
@@ -274,19 +245,9 @@ public final class DataRes extends Message {
     }
     
     public DataRes build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataRes)interceptResult.objValue; 
-      } 
       return new DataRes(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,10 +1,5 @@
 package tbclient.ForumRecommend;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -14,8 +9,6 @@ import tbclient.PrivateForumInfo;
 import tbclient.ThemeColorInfo;
 
 public final class LikeForum extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_CONTENT = "";
@@ -43,8 +36,6 @@ public final class LikeForum extends Message {
   public static final Integer DEFAULT_SORT_TYPE;
   
   public static final List<FrsTabInfo> DEFAULT_TAB_INFO;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String avatar;
@@ -95,19 +86,6 @@ public final class LikeForum extends Message {
   public final ThemeColorInfo theme_color;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1017200155, "Ltbclient/ForumRecommend/LikeForum;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1017200155, "Ltbclient/ForumRecommend/LikeForum;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_FORUM_ID = long_;
     Integer integer = Integer.valueOf(0);
@@ -238,10 +216,6 @@ public final class LikeForum extends Message {
   }
   
   public static final class Builder extends Message.Builder<LikeForum> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String avatar;
     
     public String content;
@@ -299,19 +273,9 @@ public final class LikeForum extends Message {
     }
     
     public LikeForum build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (LikeForum)interceptResult.objValue; 
-      } 
       return new LikeForum(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

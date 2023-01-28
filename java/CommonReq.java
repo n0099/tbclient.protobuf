@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class CommonReq extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_ACTIVE_TIMESTAMP;
   
   public static final String DEFAULT_AFDI = "";
@@ -29,8 +22,6 @@ public final class CommonReq extends Message {
   
   public static final String DEFAULT_C3_AID = "";
   
-  public static final String DEFAULT_CAID = "";
-  
   public static final String DEFAULT_CAM = "";
   
   public static final Integer DEFAULT_CMODE;
@@ -40,6 +31,10 @@ public final class CommonReq extends Message {
   public static final String DEFAULT_CUID_GALAXY2 = "";
   
   public static final String DEFAULT_CUID_GID = "";
+  
+  public static final String DEFAULT_DEVICE_SCORE = "";
+  
+  public static final String DEFAULT_DIAC = "";
   
   public static final String DEFAULT_DI_DIORDNA = "";
   
@@ -85,11 +80,15 @@ public final class CommonReq extends Message {
   
   public static final String DEFAULT_M_SIZE_U = "";
   
+  public static final String DEFAULT_NAWS_GAME_VER = "";
+  
   public static final Integer DEFAULT_NET_TYPE;
   
   public static final String DEFAULT_OAID = "";
   
   public static final Integer DEFAULT_PERSONALIZED_REC_SWITCH;
+  
+  public static final Integer DEFAULT_PURE_MODE;
   
   public static final String DEFAULT_PVERSION = "";
   
@@ -119,13 +118,13 @@ public final class CommonReq extends Message {
   
   public static final String DEFAULT_SUBAPP_TYPE = "";
   
-  public static final String DEFAULT_SWAN_GAME_VER = "";
-  
   public static final String DEFAULT_TBS = "";
   
   public static final String DEFAULT_USER_AGENT = "";
   
   public static final String DEFAULT_VFDI = "";
+  
+  public static final Integer DEFAULT_XCX_MODE;
   
   public static final String DEFAULT_Z_ID = "";
   
@@ -142,8 +141,6 @@ public final class CommonReq extends Message {
   public static final String DEFAULT__PHONE_NEWIMEI = "";
   
   public static final Long DEFAULT__TIMESTAMP;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 10, type = Message.Datatype.STRING)
   public final String BDUSS;
@@ -193,9 +190,6 @@ public final class CommonReq extends Message {
   @ProtoField(tag = 35, type = Message.Datatype.STRING)
   public final String c3_aid;
   
-  @ProtoField(tag = 46, type = Message.Datatype.STRING)
-  public final String caid;
-  
   @ProtoField(tag = 66, type = Message.Datatype.STRING)
   public final String cam;
   
@@ -211,8 +205,14 @@ public final class CommonReq extends Message {
   @ProtoField(tag = 33, type = Message.Datatype.STRING)
   public final String cuid_gid;
   
+  @ProtoField(tag = 70, type = Message.Datatype.STRING)
+  public final String device_score;
+  
   @ProtoField(tag = 68, type = Message.Datatype.STRING)
   public final String di_diordna;
+  
+  @ProtoField(tag = 46, type = Message.Datatype.STRING)
+  public final String diac;
   
   @ProtoField(tag = 53, type = Message.Datatype.STRING)
   public final String event_day;
@@ -277,6 +277,9 @@ public final class CommonReq extends Message {
   @ProtoField(tag = 9, type = Message.Datatype.STRING)
   public final String model;
   
+  @ProtoField(tag = 44, type = Message.Datatype.STRING)
+  public final String naws_game_ver;
+  
   @ProtoField(tag = 12, type = Message.Datatype.INT32)
   public final Integer net_type;
   
@@ -285,6 +288,9 @@ public final class CommonReq extends Message {
   
   @ProtoField(tag = 63, type = Message.Datatype.INT32)
   public final Integer personalized_rec_switch;
+  
+  @ProtoField(tag = 71, type = Message.Datatype.INT32)
+  public final Integer pure_mode;
   
   @ProtoField(tag = 24, type = Message.Datatype.STRING)
   public final String pversion;
@@ -328,9 +334,6 @@ public final class CommonReq extends Message {
   @ProtoField(tag = 13, type = Message.Datatype.STRING)
   public final String subapp_type;
   
-  @ProtoField(tag = 44, type = Message.Datatype.STRING)
-  public final String swan_game_ver;
-  
   @ProtoField(tag = 11, type = Message.Datatype.STRING)
   public final String tbs;
   
@@ -340,23 +343,13 @@ public final class CommonReq extends Message {
   @ProtoField(tag = 69, type = Message.Datatype.STRING)
   public final String vfdi;
   
+  @ProtoField(tag = 72, type = Message.Datatype.INT32)
+  public final Integer xcx_mode;
+  
   @ProtoField(tag = 31, type = Message.Datatype.STRING)
   public final String z_id;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1811576750, "Ltbclient/CommonReq;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1811576750, "Ltbclient/CommonReq;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT__CLIENT_TYPE = integer;
     Long long_ = Long.valueOf(0L);
@@ -373,17 +366,19 @@ public final class CommonReq extends Message {
     DEFAULT_CMODE = integer;
     DEFAULT_START_TYPE = integer;
     DEFAULT_PERSONALIZED_REC_SWITCH = integer;
+    DEFAULT_PURE_MODE = integer;
+    DEFAULT_XCX_MODE = integer;
   }
   
   public CommonReq(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    String str;
+    Integer integer;
     if (paramBoolean == true) {
-      Integer integer7 = paramBuilder._client_type;
-      if (integer7 == null) {
+      Integer integer8 = paramBuilder._client_type;
+      if (integer8 == null) {
         this._client_type = DEFAULT__CLIENT_TYPE;
       } else {
-        this._client_type = integer7;
+        this._client_type = integer8;
       } 
       String str8 = paramBuilder._client_version;
       if (str8 == null) {
@@ -445,11 +440,11 @@ public final class CommonReq extends Message {
       } else {
         this.tbs = str7;
       } 
-      Integer integer6 = paramBuilder.net_type;
-      if (integer6 == null) {
+      Integer integer7 = paramBuilder.net_type;
+      if (integer7 == null) {
         this.net_type = DEFAULT_NET_TYPE;
       } else {
-        this.net_type = integer6;
+        this.net_type = integer7;
       } 
       String str6 = paramBuilder.subapp_type;
       if (str6 == null) {
@@ -595,17 +590,17 @@ public final class CommonReq extends Message {
       } else {
         this.sample_id = str6;
       } 
-      Integer integer5 = paramBuilder.scr_w;
-      if (integer5 == null) {
+      Integer integer6 = paramBuilder.scr_w;
+      if (integer6 == null) {
         this.scr_w = DEFAULT_SCR_W;
       } else {
-        this.scr_w = integer5;
+        this.scr_w = integer6;
       } 
-      integer5 = paramBuilder.scr_h;
-      if (integer5 == null) {
+      integer6 = paramBuilder.scr_h;
+      if (integer6 == null) {
         this.scr_h = DEFAULT_SCR_H;
       } else {
-        this.scr_h = integer5;
+        this.scr_h = integer6;
       } 
       Double double_ = paramBuilder.scr_dip;
       if (double_ == null) {
@@ -613,17 +608,17 @@ public final class CommonReq extends Message {
       } else {
         this.scr_dip = double_;
       } 
-      Integer integer4 = paramBuilder.q_type;
-      if (integer4 == null) {
+      Integer integer5 = paramBuilder.q_type;
+      if (integer5 == null) {
         this.q_type = DEFAULT_Q_TYPE;
       } else {
-        this.q_type = integer4;
+        this.q_type = integer5;
       } 
-      integer4 = paramBuilder.is_teenager;
-      if (integer4 == null) {
+      integer5 = paramBuilder.is_teenager;
+      if (integer5 == null) {
         this.is_teenager = DEFAULT_IS_TEENAGER;
       } else {
-        this.is_teenager = integer4;
+        this.is_teenager = integer5;
       } 
       String str5 = paramBuilder.sdk_ver;
       if (str5 == null) {
@@ -637,11 +632,11 @@ public final class CommonReq extends Message {
       } else {
         this.framework_ver = str5;
       } 
-      str5 = paramBuilder.swan_game_ver;
+      str5 = paramBuilder.naws_game_ver;
       if (str5 == null) {
-        this.swan_game_ver = "";
+        this.naws_game_ver = "";
       } else {
-        this.swan_game_ver = str5;
+        this.naws_game_ver = str5;
       } 
       str5 = paramBuilder.idfa;
       if (str5 == null) {
@@ -649,11 +644,11 @@ public final class CommonReq extends Message {
       } else {
         this.idfa = str5;
       } 
-      str5 = paramBuilder.caid;
+      str5 = paramBuilder.diac;
       if (str5 == null) {
-        this.caid = "";
+        this.diac = "";
       } else {
-        this.caid = str5;
+        this.diac = str5;
       } 
       Long long_1 = paramBuilder.active_timestamp;
       if (long_1 == null) {
@@ -685,11 +680,11 @@ public final class CommonReq extends Message {
       } else {
         this.android_id = str4;
       } 
-      Integer integer3 = paramBuilder.cmode;
-      if (integer3 == null) {
+      Integer integer4 = paramBuilder.cmode;
+      if (integer4 == null) {
         this.cmode = DEFAULT_CMODE;
       } else {
-        this.cmode = integer3;
+        this.cmode = integer4;
       } 
       String str3 = paramBuilder.start_scheme;
       if (str3 == null) {
@@ -697,11 +692,11 @@ public final class CommonReq extends Message {
       } else {
         this.start_scheme = str3;
       } 
-      Integer integer2 = paramBuilder.start_type;
-      if (integer2 == null) {
+      Integer integer3 = paramBuilder.start_type;
+      if (integer3 == null) {
         this.start_type = DEFAULT_START_TYPE;
       } else {
-        this.start_type = integer2;
+        this.start_type = integer3;
       } 
       String str2 = paramBuilder.shoubai_cuid;
       if (str2 == null) {
@@ -733,11 +728,11 @@ public final class CommonReq extends Message {
       } else {
         this.user_agent = str2;
       } 
-      Integer integer1 = paramBuilder.personalized_rec_switch;
-      if (integer1 == null) {
+      Integer integer2 = paramBuilder.personalized_rec_switch;
+      if (integer2 == null) {
         this.personalized_rec_switch = DEFAULT_PERSONALIZED_REC_SWITCH;
       } else {
-        this.personalized_rec_switch = integer1;
+        this.personalized_rec_switch = integer2;
       } 
       String str1 = paramBuilder.iemi;
       if (str1 == null) {
@@ -769,79 +764,100 @@ public final class CommonReq extends Message {
       } else {
         this.di_diordna = str1;
       } 
-      str = paramBuilder.vfdi;
-      if (str == null) {
+      str1 = paramBuilder.vfdi;
+      if (str1 == null) {
         this.vfdi = "";
       } else {
-        this.vfdi = str;
+        this.vfdi = str1;
+      } 
+      str1 = paramBuilder.device_score;
+      if (str1 == null) {
+        this.device_score = "";
+      } else {
+        this.device_score = str1;
+      } 
+      Integer integer1 = paramBuilder.pure_mode;
+      if (integer1 == null) {
+        this.pure_mode = DEFAULT_PURE_MODE;
+      } else {
+        this.pure_mode = integer1;
+      } 
+      integer = paramBuilder.xcx_mode;
+      if (integer == null) {
+        this.xcx_mode = DEFAULT_XCX_MODE;
+      } else {
+        this.xcx_mode = integer;
       } 
     } else {
-      this._client_type = ((Builder)str)._client_type;
-      this._client_version = ((Builder)str)._client_version;
-      this._client_id = ((Builder)str)._client_id;
-      this.apid = ((Builder)str).apid;
-      this._phone_imei = ((Builder)str)._phone_imei;
-      this.from = ((Builder)str).from;
-      this.cuid = ((Builder)str).cuid;
-      this._timestamp = ((Builder)str)._timestamp;
-      this.model = ((Builder)str).model;
-      this.BDUSS = ((Builder)str).BDUSS;
-      this.tbs = ((Builder)str).tbs;
-      this.net_type = ((Builder)str).net_type;
-      this.subapp_type = ((Builder)str).subapp_type;
-      this._phone_newimei = ((Builder)str)._phone_newimei;
-      this.ka = ((Builder)str).ka;
-      this.m_api = ((Builder)str).m_api;
-      this.m_logid = ((Builder)str).m_logid;
-      this.m_cost = ((Builder)str).m_cost;
-      this.m_result = ((Builder)str).m_result;
-      this.m_size_u = ((Builder)str).m_size_u;
-      this.m_size_d = ((Builder)str).m_size_d;
-      this.smallflow = ((Builder)str).smallflow;
-      this.sign = ((Builder)str).sign;
-      this.pversion = ((Builder)str).pversion;
-      this._os_version = ((Builder)str)._os_version;
-      this.brand = ((Builder)str).brand;
-      this.brand_type = ((Builder)str).brand_type;
-      this.lego_lib_version = ((Builder)str).lego_lib_version;
-      this.applist = ((Builder)str).applist;
-      this.stoken = ((Builder)str).stoken;
-      this.z_id = ((Builder)str).z_id;
-      this.cuid_galaxy2 = ((Builder)str).cuid_galaxy2;
-      this.cuid_gid = ((Builder)str).cuid_gid;
-      this.oaid = ((Builder)str).oaid;
-      this.c3_aid = ((Builder)str).c3_aid;
-      this.sample_id = ((Builder)str).sample_id;
-      this.scr_w = ((Builder)str).scr_w;
-      this.scr_h = ((Builder)str).scr_h;
-      this.scr_dip = ((Builder)str).scr_dip;
-      this.q_type = ((Builder)str).q_type;
-      this.is_teenager = ((Builder)str).is_teenager;
-      this.sdk_ver = ((Builder)str).sdk_ver;
-      this.framework_ver = ((Builder)str).framework_ver;
-      this.swan_game_ver = ((Builder)str).swan_game_ver;
-      this.idfa = ((Builder)str).idfa;
-      this.caid = ((Builder)str).caid;
-      this.active_timestamp = ((Builder)str).active_timestamp;
-      this.first_install_time = ((Builder)str).first_install_time;
-      this.last_update_time = ((Builder)str).last_update_time;
-      this.event_day = ((Builder)str).event_day;
-      this.android_id = ((Builder)str).android_id;
-      this.cmode = ((Builder)str).cmode;
-      this.start_scheme = ((Builder)str).start_scheme;
-      this.start_type = ((Builder)str).start_type;
-      this.shoubai_cuid = ((Builder)str).shoubai_cuid;
-      this.mac = ((Builder)str).mac;
-      this.idfv = ((Builder)str).idfv;
-      this.extra = ((Builder)str).extra;
-      this.user_agent = ((Builder)str).user_agent;
-      this.personalized_rec_switch = ((Builder)str).personalized_rec_switch;
-      this.iemi = ((Builder)str).iemi;
-      this.iemiwen = ((Builder)str).iemiwen;
-      this.cam = ((Builder)str).cam;
-      this.afdi = ((Builder)str).afdi;
-      this.di_diordna = ((Builder)str).di_diordna;
-      this.vfdi = ((Builder)str).vfdi;
+      this._client_type = ((Builder)integer)._client_type;
+      this._client_version = ((Builder)integer)._client_version;
+      this._client_id = ((Builder)integer)._client_id;
+      this.apid = ((Builder)integer).apid;
+      this._phone_imei = ((Builder)integer)._phone_imei;
+      this.from = ((Builder)integer).from;
+      this.cuid = ((Builder)integer).cuid;
+      this._timestamp = ((Builder)integer)._timestamp;
+      this.model = ((Builder)integer).model;
+      this.BDUSS = ((Builder)integer).BDUSS;
+      this.tbs = ((Builder)integer).tbs;
+      this.net_type = ((Builder)integer).net_type;
+      this.subapp_type = ((Builder)integer).subapp_type;
+      this._phone_newimei = ((Builder)integer)._phone_newimei;
+      this.ka = ((Builder)integer).ka;
+      this.m_api = ((Builder)integer).m_api;
+      this.m_logid = ((Builder)integer).m_logid;
+      this.m_cost = ((Builder)integer).m_cost;
+      this.m_result = ((Builder)integer).m_result;
+      this.m_size_u = ((Builder)integer).m_size_u;
+      this.m_size_d = ((Builder)integer).m_size_d;
+      this.smallflow = ((Builder)integer).smallflow;
+      this.sign = ((Builder)integer).sign;
+      this.pversion = ((Builder)integer).pversion;
+      this._os_version = ((Builder)integer)._os_version;
+      this.brand = ((Builder)integer).brand;
+      this.brand_type = ((Builder)integer).brand_type;
+      this.lego_lib_version = ((Builder)integer).lego_lib_version;
+      this.applist = ((Builder)integer).applist;
+      this.stoken = ((Builder)integer).stoken;
+      this.z_id = ((Builder)integer).z_id;
+      this.cuid_galaxy2 = ((Builder)integer).cuid_galaxy2;
+      this.cuid_gid = ((Builder)integer).cuid_gid;
+      this.oaid = ((Builder)integer).oaid;
+      this.c3_aid = ((Builder)integer).c3_aid;
+      this.sample_id = ((Builder)integer).sample_id;
+      this.scr_w = ((Builder)integer).scr_w;
+      this.scr_h = ((Builder)integer).scr_h;
+      this.scr_dip = ((Builder)integer).scr_dip;
+      this.q_type = ((Builder)integer).q_type;
+      this.is_teenager = ((Builder)integer).is_teenager;
+      this.sdk_ver = ((Builder)integer).sdk_ver;
+      this.framework_ver = ((Builder)integer).framework_ver;
+      this.naws_game_ver = ((Builder)integer).naws_game_ver;
+      this.idfa = ((Builder)integer).idfa;
+      this.diac = ((Builder)integer).diac;
+      this.active_timestamp = ((Builder)integer).active_timestamp;
+      this.first_install_time = ((Builder)integer).first_install_time;
+      this.last_update_time = ((Builder)integer).last_update_time;
+      this.event_day = ((Builder)integer).event_day;
+      this.android_id = ((Builder)integer).android_id;
+      this.cmode = ((Builder)integer).cmode;
+      this.start_scheme = ((Builder)integer).start_scheme;
+      this.start_type = ((Builder)integer).start_type;
+      this.shoubai_cuid = ((Builder)integer).shoubai_cuid;
+      this.mac = ((Builder)integer).mac;
+      this.idfv = ((Builder)integer).idfv;
+      this.extra = ((Builder)integer).extra;
+      this.user_agent = ((Builder)integer).user_agent;
+      this.personalized_rec_switch = ((Builder)integer).personalized_rec_switch;
+      this.iemi = ((Builder)integer).iemi;
+      this.iemiwen = ((Builder)integer).iemiwen;
+      this.cam = ((Builder)integer).cam;
+      this.afdi = ((Builder)integer).afdi;
+      this.di_diordna = ((Builder)integer).di_diordna;
+      this.vfdi = ((Builder)integer).vfdi;
+      this.device_score = ((Builder)integer).device_score;
+      this.pure_mode = ((Builder)integer).pure_mode;
+      this.xcx_mode = ((Builder)integer).xcx_mode;
     } 
   }
   
@@ -850,10 +866,6 @@ public final class CommonReq extends Message {
   }
   
   public static final class Builder extends Message.Builder<CommonReq> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String BDUSS;
     
     public String _client_id;
@@ -886,8 +898,6 @@ public final class CommonReq extends Message {
     
     public String c3_aid;
     
-    public String caid;
-    
     public String cam;
     
     public Integer cmode;
@@ -898,7 +908,11 @@ public final class CommonReq extends Message {
     
     public String cuid_gid;
     
+    public String device_score;
+    
     public String di_diordna;
+    
+    public String diac;
     
     public String event_day;
     
@@ -942,11 +956,15 @@ public final class CommonReq extends Message {
     
     public String model;
     
+    public String naws_game_ver;
+    
     public Integer net_type;
     
     public String oaid;
     
     public Integer personalized_rec_switch;
+    
+    public Integer pure_mode;
     
     public String pversion;
     
@@ -976,13 +994,13 @@ public final class CommonReq extends Message {
     
     public String subapp_type;
     
-    public String swan_game_ver;
-    
     public String tbs;
     
     public String user_agent;
     
     public String vfdi;
+    
+    public Integer xcx_mode;
     
     public String z_id;
     
@@ -1035,9 +1053,9 @@ public final class CommonReq extends Message {
       this.is_teenager = param1CommonReq.is_teenager;
       this.sdk_ver = param1CommonReq.sdk_ver;
       this.framework_ver = param1CommonReq.framework_ver;
-      this.swan_game_ver = param1CommonReq.swan_game_ver;
+      this.naws_game_ver = param1CommonReq.naws_game_ver;
       this.idfa = param1CommonReq.idfa;
-      this.caid = param1CommonReq.caid;
+      this.diac = param1CommonReq.diac;
       this.active_timestamp = param1CommonReq.active_timestamp;
       this.first_install_time = param1CommonReq.first_install_time;
       this.last_update_time = param1CommonReq.last_update_time;
@@ -1058,22 +1076,15 @@ public final class CommonReq extends Message {
       this.afdi = param1CommonReq.afdi;
       this.di_diordna = param1CommonReq.di_diordna;
       this.vfdi = param1CommonReq.vfdi;
+      this.device_score = param1CommonReq.device_score;
+      this.pure_mode = param1CommonReq.pure_mode;
+      this.xcx_mode = param1CommonReq.xcx_mode;
     }
     
     public CommonReq build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (CommonReq)interceptResult.objValue; 
-      } 
       return new CommonReq(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

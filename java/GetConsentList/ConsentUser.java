@@ -1,16 +1,9 @@
 package tbclient.GetConsentList;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ConsentUser extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_AUTHOR_ID;
   
   public static final String DEFAULT_AUTHOR_NAME = "";
@@ -32,8 +25,6 @@ public final class ConsentUser extends Message {
   public static final String DEFAULT_USER_NAME = "";
   
   public static final String DEFAULT_USER_NAME_SHOW = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT64)
   public final Long author_id;
@@ -69,19 +60,6 @@ public final class ConsentUser extends Message {
   public final String user_name_show;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(2121257241, "Ltbclient/GetConsentList/ConsentUser;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(2121257241, "Ltbclient/GetConsentList/ConsentUser;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_USER_ID = long_;
     DEFAULT_AUTHOR_ID = long_;
@@ -181,10 +159,6 @@ public final class ConsentUser extends Message {
   }
   
   public static final class Builder extends Message.Builder<ConsentUser> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long author_id;
     
     public String author_name;
@@ -227,19 +201,9 @@ public final class ConsentUser extends Message {
     }
     
     public ConsentUser build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ConsentUser)interceptResult.objValue; 
-      } 
       return new ConsentUser(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

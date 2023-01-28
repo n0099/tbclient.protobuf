@@ -1,16 +1,9 @@
 package tbclient.GetForumClassList;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ChildDir extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_DESC = "";
@@ -30,8 +23,6 @@ public final class ChildDir extends Message {
   public static final Long DEFAULT_THREAD_NUM;
   
   public static final Long DEFAULT_TORDER;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.STRING)
   public final String avatar;
@@ -64,19 +55,6 @@ public final class ChildDir extends Message {
   public final Long torder;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-261953732, "Ltbclient/GetForumClassList/ChildDir;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-261953732, "Ltbclient/GetForumClassList/ChildDir;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_FORUM_LID = long_;
     DEFAULT_TORDER = long_;
@@ -167,10 +145,6 @@ public final class ChildDir extends Message {
   }
   
   public static final class Builder extends Message.Builder<ChildDir> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String avatar;
     
     public String desc;
@@ -210,19 +184,9 @@ public final class ChildDir extends Message {
     }
     
     public ChildDir build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ChildDir)interceptResult.objValue; 
-      } 
       return new ChildDir(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

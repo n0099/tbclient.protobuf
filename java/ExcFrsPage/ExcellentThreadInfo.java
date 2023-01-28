@@ -1,10 +1,5 @@
 package tbclient.ExcFrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -12,8 +7,6 @@ import java.util.List;
 import tbclient.ZhiBoInfoTW;
 
 public final class ExcellentThreadInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final String DEFAULT_ABTEST = "";
@@ -49,8 +42,6 @@ public final class ExcellentThreadInfo extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final Long DEFAULT_ZANSUM;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -110,19 +101,6 @@ public final class ExcellentThreadInfo extends Message {
   public final Long zansum;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(2038358924, "Ltbclient/ExcFrsPage/ExcellentThreadInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(2038358924, "Ltbclient/ExcFrsPage/ExcellentThreadInfo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_EXCID = long_;
     DEFAULT_THREAD_ID = long_;
@@ -281,10 +259,6 @@ public final class ExcellentThreadInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<ExcellentThreadInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String _abstract;
     
     public String abtest;
@@ -351,19 +325,9 @@ public final class ExcellentThreadInfo extends Message {
     }
     
     public ExcellentThreadInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ExcellentThreadInfo)interceptResult.objValue; 
-      } 
       return new ExcellentThreadInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

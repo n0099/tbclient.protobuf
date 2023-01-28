@@ -1,10 +1,5 @@
 package tbclient.SearchPostForum;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -12,8 +7,6 @@ import java.util.List;
 import tbclient.FrsTabInfo;
 
 public final class SearchForum extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_CONCERN_NUM = "";
@@ -31,8 +24,6 @@ public final class SearchForum extends Message {
   public static final String DEFAULT_SLOGAN = "";
   
   public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String avatar;
@@ -136,27 +127,7 @@ public final class SearchForum extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-610670654, "Ltbclient/SearchPostForum/SearchForum;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-610670654, "Ltbclient/SearchPostForum/SearchForum;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<SearchForum> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String avatar;
     
     public String concern_num;
@@ -193,19 +164,9 @@ public final class SearchForum extends Message {
     }
     
     public SearchForum build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (SearchForum)interceptResult.objValue; 
-      } 
       return new SearchForum(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

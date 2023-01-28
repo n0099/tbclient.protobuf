@@ -1,21 +1,14 @@
 package tbclient.BazhuGrade;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class GradeRight extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_DESC = "";
   
   public static final String DEFAULT_IMAGE = "";
   
   public static final String DEFAULT_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String desc;
@@ -60,10 +53,6 @@ public final class GradeRight extends Message {
   }
   
   public static final class Builder extends Message.Builder<GradeRight> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String desc;
     
     public String image;
@@ -82,19 +71,9 @@ public final class GradeRight extends Message {
     }
     
     public GradeRight build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (GradeRight)interceptResult.objValue; 
-      } 
       return new GradeRight(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

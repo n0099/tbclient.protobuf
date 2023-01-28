@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AlbumElement extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_ALBUM_HEIGHT;
   
   public static final String DEFAULT_ALBUM_THUMB_URL = "";
@@ -20,8 +13,6 @@ public final class AlbumElement extends Message {
   public static final String DEFAULT_ALBUM_URL = "";
   
   public static final Integer DEFAULT_ALBUM_WIDTH;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.UINT32)
   public final Integer album_height;
@@ -39,19 +30,6 @@ public final class AlbumElement extends Message {
   public final Integer album_width;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1272248228, "Ltbclient/AlbumElement;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1272248228, "Ltbclient/AlbumElement;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_ALBUM_TYPE = integer;
     DEFAULT_ALBUM_HEIGHT = integer;
@@ -106,10 +84,6 @@ public final class AlbumElement extends Message {
   }
   
   public static final class Builder extends Message.Builder<AlbumElement> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer album_height;
     
     public String album_thumb_url;
@@ -134,19 +108,9 @@ public final class AlbumElement extends Message {
     }
     
     public AlbumElement build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AlbumElement)interceptResult.objValue; 
-      } 
       return new AlbumElement(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

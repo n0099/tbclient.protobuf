@@ -1,16 +1,9 @@
 package tbclient.GetGiftMyList;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Gift extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_GIFT_ID;
   
   public static final String DEFAULT_NAME = "";
@@ -22,8 +15,6 @@ public final class Gift extends Message {
   public static final Integer DEFAULT_SEND_TIME;
   
   public static final String DEFAULT_THUMBNAIL_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.UINT32)
   public final Integer gift_id;
@@ -44,19 +35,6 @@ public final class Gift extends Message {
   public final String thumbnail_url;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(414863010, "Ltbclient/GetGiftMyList/Gift;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(414863010, "Ltbclient/GetGiftMyList/Gift;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_GIFT_ID = integer;
     DEFAULT_SEND_TIME = integer;
@@ -118,10 +96,6 @@ public final class Gift extends Message {
   }
   
   public static final class Builder extends Message.Builder<Gift> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer gift_id;
     
     public String name;
@@ -149,19 +123,9 @@ public final class Gift extends Message {
     }
     
     public Gift build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Gift)interceptResult.objValue; 
-      } 
       return new Gift(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

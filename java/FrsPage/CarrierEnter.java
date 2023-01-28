@@ -1,14 +1,9 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class CarrierEnter extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_HEADLINE_COVER = "";
   
   public static final String DEFAULT_OBJ_ID = "";
@@ -18,8 +13,6 @@ public final class CarrierEnter extends Message {
   public static final String DEFAULT_TITLE = "";
   
   public static final String DEFAULT_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String headline_cover;
@@ -84,10 +77,6 @@ public final class CarrierEnter extends Message {
   }
   
   public static final class Builder extends Message.Builder<CarrierEnter> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String headline_cover;
     
     public String obj_id;
@@ -112,19 +101,9 @@ public final class CarrierEnter extends Message {
     }
     
     public CarrierEnter build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (CarrierEnter)interceptResult.objValue; 
-      } 
       return new CarrierEnter(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

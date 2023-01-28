@@ -1,10 +1,5 @@
 package tbclient.Hottopic;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -13,15 +8,11 @@ import tbclient.Page;
 import tbclient.ThreadInfo;
 
 public final class HotThread extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_HOT_TITLE = "";
   
   public static final Integer DEFAULT_IS_NEW_URL;
   
   public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String hot_title;
@@ -74,27 +65,7 @@ public final class HotThread extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1598032007, "Ltbclient/Hottopic/HotThread;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1598032007, "Ltbclient/Hottopic/HotThread;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<HotThread> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String hot_title;
     
     public Integer is_new_url;
@@ -116,19 +87,9 @@ public final class HotThread extends Message {
     }
     
     public HotThread build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (HotThread)interceptResult.objValue; 
-      } 
       return new HotThread(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

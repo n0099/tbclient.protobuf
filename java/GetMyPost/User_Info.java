@@ -1,10 +1,5 @@
 package tbclient.GetMyPost;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.BaijiahaoInfo;
@@ -13,8 +8,6 @@ import tbclient.GodInfo;
 import tbclient.NewGodInfo;
 
 public final class User_Info extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BAWU_TYPE = "";
   
   public static final String DEFAULT_FANS_NICKNAME = "";
@@ -44,8 +37,6 @@ public final class User_Info extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final Integer DEFAULT_USERHIDE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 18)
   public final BaijiahaoInfo baijiahao_info;
@@ -108,19 +99,6 @@ public final class User_Info extends Message {
   public final Integer userhide;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(269672592, "Ltbclient/GetMyPost/User_Info;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(269672592, "Ltbclient/GetMyPost/User_Info;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_IS_LOGIN = integer;
     DEFAULT_ID = Long.valueOf(0L);
@@ -261,10 +239,6 @@ public final class User_Info extends Message {
   }
   
   public static final class Builder extends Message.Builder<User_Info> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public BaijiahaoInfo baijiahao_info;
     
     public Balv balv;
@@ -334,19 +308,9 @@ public final class User_Info extends Message {
     }
     
     public User_Info build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (User_Info)interceptResult.objValue; 
-      } 
       return new User_Info(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

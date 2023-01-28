@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class SimpleForum extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_EXT = "";
@@ -41,11 +34,11 @@ public final class SimpleForum extends Message {
   
   public static final Integer DEFAULT_POST_NUM;
   
+  public static final String DEFAULT_RECOMMEND_TIP = "";
+  
   public static final String DEFAULT_SECOND_CLASS = "";
   
   public static final List<FrsTabInfo> DEFAULT_TAB_INFO;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String avatar;
@@ -95,6 +88,9 @@ public final class SimpleForum extends Message {
   @ProtoField(tag = 13, type = Message.Datatype.INT32)
   public final Integer post_num;
   
+  @ProtoField(tag = 20, type = Message.Datatype.STRING)
+  public final String recommend_tip;
+  
   @ProtoField(tag = 8, type = Message.Datatype.STRING)
   public final String second_class;
   
@@ -119,6 +115,7 @@ public final class SimpleForum extends Message {
   
   public SimpleForum(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
+    String str;
     if (paramBoolean == true) {
       Long long_ = paramBuilder.id;
       if (long_ == null) {
@@ -219,26 +216,33 @@ public final class SimpleForum extends Message {
         this.is_frs_mask = integer1;
       } 
       this.theme_color = paramBuilder.theme_color;
+      str = paramBuilder.recommend_tip;
+      if (str == null) {
+        this.recommend_tip = "";
+      } else {
+        this.recommend_tip = str;
+      } 
     } else {
-      this.id = paramBuilder.id;
-      this.name = paramBuilder.name;
-      this.is_exists = paramBuilder.is_exists;
-      this.avatar = paramBuilder.avatar;
-      this.is_liked = paramBuilder.is_liked;
-      this.is_signed = paramBuilder.is_signed;
-      this.first_class = paramBuilder.first_class;
-      this.second_class = paramBuilder.second_class;
-      this.ext = paramBuilder.ext;
-      this.level_id = paramBuilder.level_id;
-      this.multi_forum_perm = paramBuilder.multi_forum_perm;
-      this.member_num = paramBuilder.member_num;
-      this.post_num = paramBuilder.post_num;
-      this.is_brand_forum = paramBuilder.is_brand_forum;
-      this.tab_info = Message.immutableCopyOf(paramBuilder.tab_info);
-      this.forum_toutu = paramBuilder.forum_toutu;
-      this.deleted_reason_info = paramBuilder.deleted_reason_info;
-      this.is_frs_mask = paramBuilder.is_frs_mask;
-      this.theme_color = paramBuilder.theme_color;
+      this.id = ((Builder)str).id;
+      this.name = ((Builder)str).name;
+      this.is_exists = ((Builder)str).is_exists;
+      this.avatar = ((Builder)str).avatar;
+      this.is_liked = ((Builder)str).is_liked;
+      this.is_signed = ((Builder)str).is_signed;
+      this.first_class = ((Builder)str).first_class;
+      this.second_class = ((Builder)str).second_class;
+      this.ext = ((Builder)str).ext;
+      this.level_id = ((Builder)str).level_id;
+      this.multi_forum_perm = ((Builder)str).multi_forum_perm;
+      this.member_num = ((Builder)str).member_num;
+      this.post_num = ((Builder)str).post_num;
+      this.is_brand_forum = ((Builder)str).is_brand_forum;
+      this.tab_info = Message.immutableCopyOf(((Builder)str).tab_info);
+      this.forum_toutu = ((Builder)str).forum_toutu;
+      this.deleted_reason_info = ((Builder)str).deleted_reason_info;
+      this.is_frs_mask = ((Builder)str).is_frs_mask;
+      this.theme_color = ((Builder)str).theme_color;
+      this.recommend_tip = ((Builder)str).recommend_tip;
     } 
   }
   
@@ -246,27 +250,7 @@ public final class SimpleForum extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1000911222, "Ltbclient/SimpleForum;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1000911222, "Ltbclient/SimpleForum;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<SimpleForum> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String avatar;
     
     public DeletedReasonInfo deleted_reason_info;
@@ -299,6 +283,8 @@ public final class SimpleForum extends Message {
     
     public Integer post_num;
     
+    public String recommend_tip;
+    
     public String second_class;
     
     public List<FrsTabInfo> tab_info;
@@ -330,22 +316,13 @@ public final class SimpleForum extends Message {
       this.deleted_reason_info = param1SimpleForum.deleted_reason_info;
       this.is_frs_mask = param1SimpleForum.is_frs_mask;
       this.theme_color = param1SimpleForum.theme_color;
+      this.recommend_tip = param1SimpleForum.recommend_tip;
     }
     
     public SimpleForum build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (SimpleForum)interceptResult.objValue; 
-      } 
       return new SimpleForum(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

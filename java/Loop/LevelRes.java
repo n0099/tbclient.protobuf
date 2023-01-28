@@ -1,16 +1,9 @@
 package tbclient.Loop;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class LevelRes extends Message {
-  public static Interceptable $ic;
-  
-  public transient FieldHolder $fh;
-  
   @ProtoField(tag = 1)
   public final LevelPop pop;
   
@@ -28,10 +21,6 @@ public final class LevelRes extends Message {
   }
   
   public static final class Builder extends Message.Builder<LevelRes> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public LevelPop pop;
     
     public Builder() {}
@@ -44,19 +33,9 @@ public final class LevelRes extends Message {
     }
     
     public LevelRes build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (LevelRes)interceptResult.objValue; 
-      } 
       return new LevelRes(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

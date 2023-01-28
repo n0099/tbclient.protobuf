@@ -1,25 +1,16 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class PbTopAgreePost extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_FORUM_TOP_LIST = "";
   
   public static final List<Long> DEFAULT_POST_ID_LIST;
   
   public static final List<Post> DEFAULT_POST_LIST = Collections.emptyList();
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String forum_top_list;
@@ -67,27 +58,7 @@ public final class PbTopAgreePost extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-2011550584, "Ltbclient/PbTopAgreePost;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-2011550584, "Ltbclient/PbTopAgreePost;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<PbTopAgreePost> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String forum_top_list;
     
     public List<Long> post_id_list;
@@ -106,19 +77,9 @@ public final class PbTopAgreePost extends Message {
     }
     
     public PbTopAgreePost build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PbTopAgreePost)interceptResult.objValue; 
-      } 
       return new PbTopAgreePost(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

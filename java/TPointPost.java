@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class TPointPost extends Message {
-  public static Interceptable $ic;
-  
   public static final List<ActBtn> DEFAULT_ACT_BTN;
   
   public static final Integer DEFAULT_HIDDEN_DAY;
@@ -34,8 +27,6 @@ public final class TPointPost extends Message {
   public static final Integer DEFAULT_TEMPLATE_TYPE;
   
   public static final List<Timgs> DEFAULT_T_IMGS;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 5)
   public final List<ActBtn> act_btn;
@@ -177,28 +168,11 @@ public final class TPointPost extends Message {
   }
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1724244907, "Ltbclient/TPointPost;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1724244907, "Ltbclient/TPointPost;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_IS_TUIGUANG = integer;
   }
   
   public static final class Builder extends Message.Builder<TPointPost> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<ActBtn> act_btn;
     
     public DetailInfo detail_info;
@@ -247,19 +221,9 @@ public final class TPointPost extends Message {
     }
     
     public TPointPost build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TPointPost)interceptResult.objValue; 
-      } 
       return new TPointPost(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

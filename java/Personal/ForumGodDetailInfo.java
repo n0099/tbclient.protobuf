@@ -1,16 +1,9 @@
 package tbclient.Personal;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumGodDetailInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AVATAR = "";
   
   public static final String DEFAULT_DETAIL_INTRO = "";
@@ -24,8 +17,6 @@ public final class ForumGodDetailInfo extends Message {
   public static final String DEFAULT_INTRO = "";
   
   public static final Long DEFAULT_USER_ID;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.STRING)
   public final String avatar;
@@ -49,19 +40,6 @@ public final class ForumGodDetailInfo extends Message {
   public final Long user_id;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-747974564, "Ltbclient/Personal/ForumGodDetailInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-747974564, "Ltbclient/Personal/ForumGodDetailInfo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_GOD_ID = long_;
     DEFAULT_USER_ID = long_;
@@ -130,10 +108,6 @@ public final class ForumGodDetailInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<ForumGodDetailInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String avatar;
     
     public String detail_intro;
@@ -164,19 +138,9 @@ public final class ForumGodDetailInfo extends Message {
     }
     
     public ForumGodDetailInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ForumGodDetailInfo)interceptResult.objValue; 
-      } 
       return new ForumGodDetailInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

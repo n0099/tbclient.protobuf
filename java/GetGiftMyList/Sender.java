@@ -1,23 +1,14 @@
 package tbclient.GetGiftMyList;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Sender extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_NAME_SHOW = "";
   
   public static final String DEFAULT_PORTRAIT = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT64)
   public final Long id;
@@ -61,27 +52,7 @@ public final class Sender extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1203942525, "Ltbclient/GetGiftMyList/Sender;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1203942525, "Ltbclient/GetGiftMyList/Sender;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<Sender> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Long id;
     
     public String name_show;
@@ -100,19 +71,9 @@ public final class Sender extends Message {
     }
     
     public Sender build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Sender)interceptResult.objValue; 
-      } 
       return new Sender(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

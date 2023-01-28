@@ -1,18 +1,11 @@
 package tbclient.GetOrder;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 import tbclient.Wares;
 
 public final class DataReq extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CLICK_ZONE = "";
   
   public static final Integer DEFAULT_IS_AUTOPAY;
@@ -30,8 +23,6 @@ public final class DataReq extends Message {
   public static final String DEFAULT_REFER_PAGE = "";
   
   public static final String DEFAULT_WALLET_SDK_UA = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 10, type = Message.Datatype.STRING)
   public final String click_zone;
@@ -67,19 +58,6 @@ public final class DataReq extends Message {
   public final Wares wares;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1502074164, "Ltbclient/GetOrder/DataReq;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1502074164, "Ltbclient/GetOrder/DataReq;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_PAY_TYPE = integer;
     DEFAULT_IS_LEFT = integer;
@@ -162,10 +140,6 @@ public final class DataReq extends Message {
   }
   
   public static final class Builder extends Message.Builder<DataReq> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String click_zone;
     
     public CommonReq common;
@@ -208,12 +182,6 @@ public final class DataReq extends Message {
     }
     
     public DataReq build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataReq)interceptResult.objValue; 
-      } 
       return new DataReq(this, param1Boolean);
     }
   }

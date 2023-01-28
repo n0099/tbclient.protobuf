@@ -1,14 +1,9 @@
 package tbclient.PbPage;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class FloatingIconItem extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CLICK_STATISTICS_URL = "";
   
   public static final String DEFAULT_DEEPLINK = "";
@@ -34,8 +29,6 @@ public final class FloatingIconItem extends Message {
   public static final String DEFAULT_URL = "";
   
   public static final String DEFAULT_VIEW_STATISTICS_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String click_statistics_url;
@@ -180,10 +173,6 @@ public final class FloatingIconItem extends Message {
   }
   
   public static final class Builder extends Message.Builder<FloatingIconItem> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String click_statistics_url;
     
     public String deeplink;
@@ -232,19 +221,9 @@ public final class FloatingIconItem extends Message {
     }
     
     public FloatingIconItem build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (FloatingIconItem)interceptResult.objValue; 
-      } 
       return new FloatingIconItem(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

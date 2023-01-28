@@ -1,16 +1,9 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumHeadlineImgInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_HEADLINE_URL = "";
   
   public static final String DEFAULT_IMG_URL = "";
@@ -24,8 +17,6 @@ public final class ForumHeadlineImgInfo extends Message {
   public static final Long DEFAULT_THREAD_USER_ID;
   
   public static final String DEFAULT_THREAD_USER_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 7, type = Message.Datatype.STRING)
   public final String headline_url;
@@ -49,19 +40,6 @@ public final class ForumHeadlineImgInfo extends Message {
   public final String thread_user_name;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1268013380, "Ltbclient/FrsPage/ForumHeadlineImgInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1268013380, "Ltbclient/FrsPage/ForumHeadlineImgInfo;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_THREAD_ID = long_;
     DEFAULT_THREAD_USER_ID = long_;
@@ -130,10 +108,6 @@ public final class ForumHeadlineImgInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<ForumHeadlineImgInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String headline_url;
     
     public String img_url;
@@ -164,19 +138,9 @@ public final class ForumHeadlineImgInfo extends Message {
     }
     
     public ForumHeadlineImgInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ForumHeadlineImgInfo)interceptResult.objValue; 
-      } 
       return new ForumHeadlineImgInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,23 +1,14 @@
 package tbclient.GetUpdateInfo;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ThemeSkinUpdateInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_PACKAGE_URL = "";
   
   public static final Integer DEFAULT_PROPS_ID;
   
   public static final Integer DEFAULT_PROPS_VERSION;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String package_url;
@@ -29,19 +20,6 @@ public final class ThemeSkinUpdateInfo extends Message {
   public final Integer props_version;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1104914038, "Ltbclient/GetUpdateInfo/ThemeSkinUpdateInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1104914038, "Ltbclient/GetUpdateInfo/ThemeSkinUpdateInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_PROPS_ID = integer;
     DEFAULT_PROPS_VERSION = integer;
@@ -81,10 +59,6 @@ public final class ThemeSkinUpdateInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<ThemeSkinUpdateInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String package_url;
     
     public Integer props_id;
@@ -103,19 +77,9 @@ public final class ThemeSkinUpdateInfo extends Message {
     }
     
     public ThemeSkinUpdateInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ThemeSkinUpdateInfo)interceptResult.objValue; 
-      } 
       return new ThemeSkinUpdateInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

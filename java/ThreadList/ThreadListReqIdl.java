@@ -1,16 +1,9 @@
 package tbclient.ThreadList;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ThreadListReqIdl extends Message {
-  public static Interceptable $ic;
-  
-  public transient FieldHolder $fh;
-  
   @ProtoField(tag = 1)
   public final DataReq data;
   
@@ -28,10 +21,6 @@ public final class ThreadListReqIdl extends Message {
   }
   
   public static final class Builder extends Message.Builder<ThreadListReqIdl> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public DataReq data;
     
     public Builder() {}
@@ -44,19 +33,9 @@ public final class ThreadListReqIdl extends Message {
     }
     
     public ThreadListReqIdl build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ThreadListReqIdl)interceptResult.objValue; 
-      } 
       return new ThreadListReqIdl(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

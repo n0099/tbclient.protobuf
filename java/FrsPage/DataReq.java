@@ -1,10 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
@@ -12,8 +7,6 @@ import tbclient.AppTransmitData;
 import tbclient.CommonReq;
 
 public final class DataReq extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_AD_BEAR_CONTEXT = "";
   
   public static final String DEFAULT_AD_BEAR_SID = "";
@@ -102,6 +95,8 @@ public final class DataReq extends Message {
   
   public static final String DEFAULT_PORTRAIT = "";
   
+  public static final Long DEFAULT_PUSH_TID;
+  
   public static final Integer DEFAULT_Q_TYPE;
   
   public static final Integer DEFAULT_REQUEST_TIMES;
@@ -143,8 +138,6 @@ public final class DataReq extends Message {
   public static final String DEFAULT_YUELAOU_LOCATE = "";
   
   public static final String DEFAULT_YUELAOU_PARAMS = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 65, type = Message.Datatype.STRING)
   public final String ad_bear_context;
@@ -290,6 +283,9 @@ public final class DataReq extends Message {
   @ProtoField(tag = 34, type = Message.Datatype.STRING)
   public final String portrait;
   
+  @ProtoField(tag = 70, type = Message.Datatype.INT64)
+  public final Long push_tid;
+  
   @ProtoField(tag = 14, type = Message.Datatype.INT32)
   public final Integer q_type;
   
@@ -354,19 +350,6 @@ public final class DataReq extends Message {
   public final String yuelaou_params;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1238029110, "Ltbclient/FrsPage/DataReq;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1238029110, "Ltbclient/FrsPage/DataReq;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_RN = integer;
     DEFAULT_RN_NEED = integer;
@@ -412,11 +395,12 @@ public final class DataReq extends Message {
     DEFAULT_HAS_AD_BEAR = integer;
     DEFAULT_AD_BEAR_SID_PRICE = double_;
     DEFAULT_REQUEST_TIMES = integer;
+    DEFAULT_PUSH_TID = long_;
   }
   
   public DataReq(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
+    Long long_;
     if (paramBoolean == true) {
       String str15 = paramBuilder.kw;
       if (str15 == null) {
@@ -424,71 +408,71 @@ public final class DataReq extends Message {
       } else {
         this.kw = str15;
       } 
-      Integer integer15 = paramBuilder.rn;
-      if (integer15 == null) {
+      Integer integer16 = paramBuilder.rn;
+      if (integer16 == null) {
         this.rn = DEFAULT_RN;
       } else {
-        this.rn = integer15;
+        this.rn = integer16;
       } 
-      integer15 = paramBuilder.rn_need;
-      if (integer15 == null) {
+      integer16 = paramBuilder.rn_need;
+      if (integer16 == null) {
         this.rn_need = DEFAULT_RN_NEED;
       } else {
-        this.rn_need = integer15;
+        this.rn_need = integer16;
       } 
-      integer15 = paramBuilder.is_good;
-      if (integer15 == null) {
+      integer16 = paramBuilder.is_good;
+      if (integer16 == null) {
         this.is_good = DEFAULT_IS_GOOD;
       } else {
-        this.is_good = integer15;
+        this.is_good = integer16;
       } 
-      integer15 = paramBuilder.cid;
-      if (integer15 == null) {
+      integer16 = paramBuilder.cid;
+      if (integer16 == null) {
         this.cid = DEFAULT_CID;
       } else {
-        this.cid = integer15;
+        this.cid = integer16;
       } 
-      integer15 = paramBuilder.withcal;
-      if (integer15 == null) {
+      integer16 = paramBuilder.withcal;
+      if (integer16 == null) {
         this.withcal = DEFAULT_WITHCAL;
       } else {
-        this.withcal = integer15;
+        this.withcal = integer16;
       } 
-      integer15 = paramBuilder.noval;
-      if (integer15 == null) {
+      integer16 = paramBuilder.noval;
+      if (integer16 == null) {
         this.noval = DEFAULT_NOVAL;
       } else {
-        this.noval = integer15;
+        this.noval = integer16;
       } 
-      integer15 = paramBuilder.with_group;
-      if (integer15 == null) {
+      integer16 = paramBuilder.with_group;
+      if (integer16 == null) {
         this.with_group = DEFAULT_WITH_GROUP;
       } else {
-        this.with_group = integer15;
+        this.with_group = integer16;
       } 
-      integer15 = paramBuilder.need_badge;
-      if (integer15 == null) {
+      integer16 = paramBuilder.need_badge;
+      if (integer16 == null) {
         this.need_badge = DEFAULT_NEED_BADGE;
       } else {
-        this.need_badge = integer15;
+        this.need_badge = integer16;
       } 
-      integer15 = paramBuilder.frs_rn;
-      if (integer15 == null) {
+      integer16 = paramBuilder.frs_rn;
+      if (integer16 == null) {
         this.frs_rn = DEFAULT_FRS_RN;
       } else {
-        this.frs_rn = integer15;
+        this.frs_rn = integer16;
       } 
-      integer15 = paramBuilder.scr_w;
-      if (integer15 == null) {
+      integer16 = paramBuilder.scr_w;
+      if (integer16 == null) {
         this.scr_w = DEFAULT_SCR_W;
       } else {
-        this.scr_w = integer15;
+        this.scr_w = integer16;
       } 
-      integer15 = paramBuilder.scr_h;
-      if (integer15 == null) {
+      integer16 = paramBuilder.scr_h;
+      if (integer16 == null) {
         this.scr_h = DEFAULT_SCR_H;
       } else {
-        this.scr_h = integer15;
+        this.scr_h = integer16;
       } 
       Double double_2 = paramBuilder.scr_dip;
       if (double_2 == null) {
@@ -496,17 +480,17 @@ public final class DataReq extends Message {
       } else {
         this.scr_dip = double_2;
       } 
-      Integer integer14 = paramBuilder.q_type;
-      if (integer14 == null) {
+      Integer integer15 = paramBuilder.q_type;
+      if (integer15 == null) {
         this.q_type = DEFAULT_Q_TYPE;
       } else {
-        this.q_type = integer14;
+        this.q_type = integer15;
       } 
-      integer14 = paramBuilder.pn;
-      if (integer14 == null) {
+      integer15 = paramBuilder.pn;
+      if (integer15 == null) {
         this.pn = DEFAULT_PN;
       } else {
-        this.pn = integer14;
+        this.pn = integer15;
       } 
       String str14 = paramBuilder.st_type;
       if (str14 == null) {
@@ -514,23 +498,23 @@ public final class DataReq extends Message {
       } else {
         this.st_type = str14;
       } 
-      Integer integer13 = paramBuilder.ctime;
-      if (integer13 == null) {
+      Integer integer14 = paramBuilder.ctime;
+      if (integer14 == null) {
         this.ctime = DEFAULT_CTIME;
       } else {
-        this.ctime = integer13;
+        this.ctime = integer14;
       } 
-      integer13 = paramBuilder.data_size;
-      if (integer13 == null) {
+      integer14 = paramBuilder.data_size;
+      if (integer14 == null) {
         this.data_size = DEFAULT_DATA_SIZE;
       } else {
-        this.data_size = integer13;
+        this.data_size = integer14;
       } 
-      integer13 = paramBuilder.net_error;
-      if (integer13 == null) {
+      integer14 = paramBuilder.net_error;
+      if (integer14 == null) {
         this.net_error = DEFAULT_NET_ERROR;
       } else {
-        this.net_error = integer13;
+        this.net_error = integer14;
       } 
       Boolean bool3 = paramBuilder.check_login;
       if (bool3 == null) {
@@ -544,17 +528,17 @@ public final class DataReq extends Message {
       } else {
         this.forum_name = str13;
       } 
-      Integer integer12 = paramBuilder.result_num;
-      if (integer12 == null) {
+      Integer integer13 = paramBuilder.result_num;
+      if (integer13 == null) {
         this.result_num = DEFAULT_RESULT_NUM;
       } else {
-        this.result_num = integer12;
+        this.result_num = integer13;
       } 
-      integer12 = paramBuilder.class_id;
-      if (integer12 == null) {
+      integer13 = paramBuilder.class_id;
+      if (integer13 == null) {
         this.class_id = DEFAULT_CLASS_ID;
       } else {
-        this.class_id = integer12;
+        this.class_id = integer13;
       } 
       String str12 = paramBuilder.ip_str;
       if (str12 == null) {
@@ -562,11 +546,11 @@ public final class DataReq extends Message {
       } else {
         this.ip_str = str12;
       } 
-      Integer integer11 = paramBuilder.ip_int;
-      if (integer11 == null) {
+      Integer integer12 = paramBuilder.ip_int;
+      if (integer12 == null) {
         this.ip_int = DEFAULT_IP_INT;
       } else {
-        this.ip_int = integer11;
+        this.ip_int = integer12;
       } 
       String str11 = paramBuilder.module_name;
       if (str11 == null) {
@@ -574,17 +558,17 @@ public final class DataReq extends Message {
       } else {
         this.module_name = str11;
       } 
-      Integer integer10 = paramBuilder.st_param;
-      if (integer10 == null) {
+      Integer integer11 = paramBuilder.st_param;
+      if (integer11 == null) {
         this.st_param = DEFAULT_ST_PARAM;
       } else {
-        this.st_param = integer10;
+        this.st_param = integer11;
       } 
-      integer10 = paramBuilder.smile_grade;
-      if (integer10 == null) {
+      integer11 = paramBuilder.smile_grade;
+      if (integer11 == null) {
         this.smile_grade = DEFAULT_SMILE_GRADE;
       } else {
-        this.smile_grade = integer10;
+        this.smile_grade = integer11;
       } 
       Boolean bool2 = paramBuilder.support_noun;
       if (bool2 == null) {
@@ -610,11 +594,11 @@ public final class DataReq extends Message {
       } else {
         this.user_name = str10;
       } 
-      Integer integer9 = paramBuilder.no_un;
-      if (integer9 == null) {
+      Integer integer10 = paramBuilder.no_un;
+      if (integer10 == null) {
         this.no_un = DEFAULT_NO_UN;
       } else {
-        this.no_un = integer9;
+        this.no_un = integer10;
       } 
       String str9 = paramBuilder.portrait;
       if (str9 == null) {
@@ -653,11 +637,11 @@ public final class DataReq extends Message {
       } else {
         this.lastids = str8;
       } 
-      Integer integer8 = paramBuilder.issdk;
-      if (integer8 == null) {
+      Integer integer9 = paramBuilder.issdk;
+      if (integer9 == null) {
         this.issdk = DEFAULT_ISSDK;
       } else {
-        this.issdk = integer8;
+        this.issdk = integer9;
       } 
       String str7 = paramBuilder.da_idfa;
       if (str7 == null) {
@@ -671,11 +655,11 @@ public final class DataReq extends Message {
       } else {
         this.platform = str7;
       } 
-      Integer integer7 = paramBuilder.category_id;
-      if (integer7 == null) {
+      Integer integer8 = paramBuilder.category_id;
+      if (integer8 == null) {
         this.category_id = DEFAULT_CATEGORY_ID;
       } else {
-        this.category_id = integer7;
+        this.category_id = integer8;
       } 
       String str6 = paramBuilder.yuelaou_locate;
       if (str6 == null) {
@@ -689,11 +673,11 @@ public final class DataReq extends Message {
       } else {
         this.yuelaou_params = str6;
       } 
-      Integer integer6 = paramBuilder.sort_type;
-      if (integer6 == null) {
+      Integer integer7 = paramBuilder.sort_type;
+      if (integer7 == null) {
         this.sort_type = DEFAULT_SORT_TYPE;
       } else {
-        this.sort_type = integer6;
+        this.sort_type = integer7;
       } 
       Long long_2 = paramBuilder.last_click_tid;
       if (long_2 == null) {
@@ -701,11 +685,11 @@ public final class DataReq extends Message {
       } else {
         this.last_click_tid = long_2;
       } 
-      Integer integer5 = paramBuilder.load_type;
-      if (integer5 == null) {
+      Integer integer6 = paramBuilder.load_type;
+      if (integer6 == null) {
         this.load_type = DEFAULT_LOAD_TYPE;
       } else {
-        this.load_type = integer5;
+        this.load_type = integer6;
       } 
       this.app_pos = paramBuilder.app_pos;
       this.ad_param = paramBuilder.ad_param;
@@ -727,17 +711,17 @@ public final class DataReq extends Message {
       } else {
         this.call_url = str5;
       } 
-      Integer integer4 = paramBuilder.is_selection;
-      if (integer4 == null) {
+      Integer integer5 = paramBuilder.is_selection;
+      if (integer5 == null) {
         this.is_selection = DEFAULT_IS_SELECTION;
       } else {
-        this.is_selection = integer4;
+        this.is_selection = integer5;
       } 
-      integer4 = paramBuilder.call_from;
-      if (integer4 == null) {
+      integer5 = paramBuilder.call_from;
+      if (integer5 == null) {
         this.call_from = DEFAULT_CALL_FROM;
       } else {
-        this.call_from = integer4;
+        this.call_from = integer5;
       } 
       String str4 = paramBuilder.shoubai_cuid;
       if (str4 == null) {
@@ -751,11 +735,11 @@ public final class DataReq extends Message {
       } else {
         this.hot_thread_id = long_1;
       } 
-      Integer integer3 = paramBuilder.is_default_navtab;
-      if (integer3 == null) {
+      Integer integer4 = paramBuilder.is_default_navtab;
+      if (integer4 == null) {
         this.is_default_navtab = DEFAULT_IS_DEFAULT_NAVTAB;
       } else {
-        this.is_default_navtab = integer3;
+        this.is_default_navtab = integer4;
       } 
       String str3 = paramBuilder.ad_context_list;
       if (str3 == null) {
@@ -775,11 +759,11 @@ public final class DataReq extends Message {
       } else {
         this.ad_ext_params = str3;
       } 
-      Integer integer2 = paramBuilder.default_sort_type;
-      if (integer2 == null) {
+      Integer integer3 = paramBuilder.default_sort_type;
+      if (integer3 == null) {
         this.default_sort_type = DEFAULT_DEFAULT_SORT_TYPE;
       } else {
-        this.default_sort_type = integer2;
+        this.default_sort_type = integer3;
       } 
       this.app_transmit_data = paramBuilder.app_transmit_data;
       String str2 = paramBuilder.ad_bear_context;
@@ -788,11 +772,11 @@ public final class DataReq extends Message {
       } else {
         this.ad_bear_context = str2;
       } 
-      Integer integer1 = paramBuilder.has_ad_bear;
-      if (integer1 == null) {
+      Integer integer2 = paramBuilder.has_ad_bear;
+      if (integer2 == null) {
         this.has_ad_bear = DEFAULT_HAS_AD_BEAR;
       } else {
-        this.has_ad_bear = integer1;
+        this.has_ad_bear = integer2;
       } 
       String str1 = paramBuilder.ad_bear_sid;
       if (str1 == null) {
@@ -806,82 +790,89 @@ public final class DataReq extends Message {
       } else {
         this.ad_bear_sid_price = double_1;
       } 
-      integer = paramBuilder.request_times;
-      if (integer == null) {
+      Integer integer1 = paramBuilder.request_times;
+      if (integer1 == null) {
         this.request_times = DEFAULT_REQUEST_TIMES;
       } else {
-        this.request_times = integer;
+        this.request_times = integer1;
+      } 
+      long_ = paramBuilder.push_tid;
+      if (long_ == null) {
+        this.push_tid = DEFAULT_PUSH_TID;
+      } else {
+        this.push_tid = long_;
       } 
     } else {
-      this.kw = ((Builder)integer).kw;
-      this.rn = ((Builder)integer).rn;
-      this.rn_need = ((Builder)integer).rn_need;
-      this.is_good = ((Builder)integer).is_good;
-      this.cid = ((Builder)integer).cid;
-      this.withcal = ((Builder)integer).withcal;
-      this.noval = ((Builder)integer).noval;
-      this.with_group = ((Builder)integer).with_group;
-      this.need_badge = ((Builder)integer).need_badge;
-      this.frs_rn = ((Builder)integer).frs_rn;
-      this.scr_w = ((Builder)integer).scr_w;
-      this.scr_h = ((Builder)integer).scr_h;
-      this.scr_dip = ((Builder)integer).scr_dip;
-      this.q_type = ((Builder)integer).q_type;
-      this.pn = ((Builder)integer).pn;
-      this.st_type = ((Builder)integer).st_type;
-      this.ctime = ((Builder)integer).ctime;
-      this.data_size = ((Builder)integer).data_size;
-      this.net_error = ((Builder)integer).net_error;
-      this.check_login = ((Builder)integer).check_login;
-      this.forum_name = ((Builder)integer).forum_name;
-      this.result_num = ((Builder)integer).result_num;
-      this.class_id = ((Builder)integer).class_id;
-      this.ip_str = ((Builder)integer).ip_str;
-      this.ip_int = ((Builder)integer).ip_int;
-      this.module_name = ((Builder)integer).module_name;
-      this.st_param = ((Builder)integer).st_param;
-      this.smile_grade = ((Builder)integer).smile_grade;
-      this.support_noun = ((Builder)integer).support_noun;
-      this.login = ((Builder)integer).login;
-      this.user_id = ((Builder)integer).user_id;
-      this.user_name = ((Builder)integer).user_name;
-      this.no_un = ((Builder)integer).no_un;
-      this.portrait = ((Builder)integer).portrait;
-      this.mobile = ((Builder)integer).mobile;
-      this.email = ((Builder)integer).email;
-      this.debug = ((Builder)integer).debug;
-      this.cookie = ((Builder)integer).cookie;
-      this.common = ((Builder)integer).common;
-      this.lastids = ((Builder)integer).lastids;
-      this.issdk = ((Builder)integer).issdk;
-      this.da_idfa = ((Builder)integer).da_idfa;
-      this.platform = ((Builder)integer).platform;
-      this.category_id = ((Builder)integer).category_id;
-      this.yuelaou_locate = ((Builder)integer).yuelaou_locate;
-      this.yuelaou_params = ((Builder)integer).yuelaou_params;
-      this.sort_type = ((Builder)integer).sort_type;
-      this.last_click_tid = ((Builder)integer).last_click_tid;
-      this.load_type = ((Builder)integer).load_type;
-      this.app_pos = ((Builder)integer).app_pos;
-      this.ad_param = ((Builder)integer).ad_param;
-      this.obj_locate = ((Builder)integer).obj_locate;
-      this.obj_source = ((Builder)integer).obj_source;
-      this.call_url = ((Builder)integer).call_url;
-      this.is_selection = ((Builder)integer).is_selection;
-      this.call_from = ((Builder)integer).call_from;
-      this.shoubai_cuid = ((Builder)integer).shoubai_cuid;
-      this.hot_thread_id = ((Builder)integer).hot_thread_id;
-      this.is_default_navtab = ((Builder)integer).is_default_navtab;
-      this.ad_context_list = ((Builder)integer).ad_context_list;
-      this.up_schema = ((Builder)integer).up_schema;
-      this.ad_ext_params = ((Builder)integer).ad_ext_params;
-      this.default_sort_type = ((Builder)integer).default_sort_type;
-      this.app_transmit_data = ((Builder)integer).app_transmit_data;
-      this.ad_bear_context = ((Builder)integer).ad_bear_context;
-      this.has_ad_bear = ((Builder)integer).has_ad_bear;
-      this.ad_bear_sid = ((Builder)integer).ad_bear_sid;
-      this.ad_bear_sid_price = ((Builder)integer).ad_bear_sid_price;
-      this.request_times = ((Builder)integer).request_times;
+      this.kw = ((Builder)long_).kw;
+      this.rn = ((Builder)long_).rn;
+      this.rn_need = ((Builder)long_).rn_need;
+      this.is_good = ((Builder)long_).is_good;
+      this.cid = ((Builder)long_).cid;
+      this.withcal = ((Builder)long_).withcal;
+      this.noval = ((Builder)long_).noval;
+      this.with_group = ((Builder)long_).with_group;
+      this.need_badge = ((Builder)long_).need_badge;
+      this.frs_rn = ((Builder)long_).frs_rn;
+      this.scr_w = ((Builder)long_).scr_w;
+      this.scr_h = ((Builder)long_).scr_h;
+      this.scr_dip = ((Builder)long_).scr_dip;
+      this.q_type = ((Builder)long_).q_type;
+      this.pn = ((Builder)long_).pn;
+      this.st_type = ((Builder)long_).st_type;
+      this.ctime = ((Builder)long_).ctime;
+      this.data_size = ((Builder)long_).data_size;
+      this.net_error = ((Builder)long_).net_error;
+      this.check_login = ((Builder)long_).check_login;
+      this.forum_name = ((Builder)long_).forum_name;
+      this.result_num = ((Builder)long_).result_num;
+      this.class_id = ((Builder)long_).class_id;
+      this.ip_str = ((Builder)long_).ip_str;
+      this.ip_int = ((Builder)long_).ip_int;
+      this.module_name = ((Builder)long_).module_name;
+      this.st_param = ((Builder)long_).st_param;
+      this.smile_grade = ((Builder)long_).smile_grade;
+      this.support_noun = ((Builder)long_).support_noun;
+      this.login = ((Builder)long_).login;
+      this.user_id = ((Builder)long_).user_id;
+      this.user_name = ((Builder)long_).user_name;
+      this.no_un = ((Builder)long_).no_un;
+      this.portrait = ((Builder)long_).portrait;
+      this.mobile = ((Builder)long_).mobile;
+      this.email = ((Builder)long_).email;
+      this.debug = ((Builder)long_).debug;
+      this.cookie = ((Builder)long_).cookie;
+      this.common = ((Builder)long_).common;
+      this.lastids = ((Builder)long_).lastids;
+      this.issdk = ((Builder)long_).issdk;
+      this.da_idfa = ((Builder)long_).da_idfa;
+      this.platform = ((Builder)long_).platform;
+      this.category_id = ((Builder)long_).category_id;
+      this.yuelaou_locate = ((Builder)long_).yuelaou_locate;
+      this.yuelaou_params = ((Builder)long_).yuelaou_params;
+      this.sort_type = ((Builder)long_).sort_type;
+      this.last_click_tid = ((Builder)long_).last_click_tid;
+      this.load_type = ((Builder)long_).load_type;
+      this.app_pos = ((Builder)long_).app_pos;
+      this.ad_param = ((Builder)long_).ad_param;
+      this.obj_locate = ((Builder)long_).obj_locate;
+      this.obj_source = ((Builder)long_).obj_source;
+      this.call_url = ((Builder)long_).call_url;
+      this.is_selection = ((Builder)long_).is_selection;
+      this.call_from = ((Builder)long_).call_from;
+      this.shoubai_cuid = ((Builder)long_).shoubai_cuid;
+      this.hot_thread_id = ((Builder)long_).hot_thread_id;
+      this.is_default_navtab = ((Builder)long_).is_default_navtab;
+      this.ad_context_list = ((Builder)long_).ad_context_list;
+      this.up_schema = ((Builder)long_).up_schema;
+      this.ad_ext_params = ((Builder)long_).ad_ext_params;
+      this.default_sort_type = ((Builder)long_).default_sort_type;
+      this.app_transmit_data = ((Builder)long_).app_transmit_data;
+      this.ad_bear_context = ((Builder)long_).ad_bear_context;
+      this.has_ad_bear = ((Builder)long_).has_ad_bear;
+      this.ad_bear_sid = ((Builder)long_).ad_bear_sid;
+      this.ad_bear_sid_price = ((Builder)long_).ad_bear_sid_price;
+      this.request_times = ((Builder)long_).request_times;
+      this.push_tid = ((Builder)long_).push_tid;
     } 
   }
   
@@ -890,10 +881,6 @@ public final class DataReq extends Message {
   }
   
   public static final class Builder extends Message.Builder<DataReq> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String ad_bear_context;
     
     public String ad_bear_sid;
@@ -989,6 +976,8 @@ public final class DataReq extends Message {
     public Integer pn;
     
     public String portrait;
+    
+    public Long push_tid;
     
     public Integer q_type;
     
@@ -1107,22 +1096,13 @@ public final class DataReq extends Message {
       this.ad_bear_sid = param1DataReq.ad_bear_sid;
       this.ad_bear_sid_price = param1DataReq.ad_bear_sid_price;
       this.request_times = param1DataReq.request_times;
+      this.push_tid = param1DataReq.push_tid;
     }
     
     public DataReq build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DataReq)interceptResult.objValue; 
-      } 
       return new DataReq(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

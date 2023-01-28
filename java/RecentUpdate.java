@@ -1,21 +1,14 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class RecentUpdate extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_LOG = "";
   
   public static final String DEFAULT_UPDATE_TIME = "";
   
   public static final String DEFAULT_VERSION = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String log;
@@ -60,10 +53,6 @@ public final class RecentUpdate extends Message {
   }
   
   public static final class Builder extends Message.Builder<RecentUpdate> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String log;
     
     public String update_time;
@@ -82,19 +71,9 @@ public final class RecentUpdate extends Message {
     }
     
     public RecentUpdate build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (RecentUpdate)interceptResult.objValue; 
-      } 
       return new RecentUpdate(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

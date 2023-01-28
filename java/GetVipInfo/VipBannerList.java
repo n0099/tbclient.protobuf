@@ -1,18 +1,11 @@
 package tbclient.GetVipInfo;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class VipBannerList extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_CARD_ID = "";
   
   public static final String DEFAULT_CLASS_NAME = "";
@@ -22,8 +15,6 @@ public final class VipBannerList extends Message {
   public static final String DEFAULT_CLASS_URL_NAME = "";
   
   public static final List<VipBannerItem> DEFAULT_ITEM = Collections.emptyList();
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String card_id;
@@ -87,27 +78,7 @@ public final class VipBannerList extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(940770500, "Ltbclient/GetVipInfo/VipBannerList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(940770500, "Ltbclient/GetVipInfo/VipBannerList;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<VipBannerList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String card_id;
     
     public String class_name;
@@ -132,19 +103,9 @@ public final class VipBannerList extends Message {
     }
     
     public VipBannerList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (VipBannerList)interceptResult.objValue; 
-      } 
       return new VipBannerList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,19 +1,12 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AlaLiveNotify extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_NOTI_CONTENT = "";
   
   public static final String DEFAULT_NOTI_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String noti_content;
@@ -48,10 +41,6 @@ public final class AlaLiveNotify extends Message {
   }
   
   public static final class Builder extends Message.Builder<AlaLiveNotify> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String noti_content;
     
     public String noti_url;
@@ -67,19 +56,9 @@ public final class AlaLiveNotify extends Message {
     }
     
     public AlaLiveNotify build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AlaLiveNotify)interceptResult.objValue; 
-      } 
       return new AlaLiveNotify(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

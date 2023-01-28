@@ -1,16 +1,9 @@
 package tbclient.GetOrder;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class NotifyPopup extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_APPENDIX_LINK = "";
   
   public static final Integer DEFAULT_APPENDIX_OPTIONAL;
@@ -38,8 +31,6 @@ public final class NotifyPopup extends Message {
   public static final String DEFAULT_Y_BTN_LINK = "";
   
   public static final String DEFAULT_Y_BTN_TEXT = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 6, type = Message.Datatype.UINT32)
   public final Integer app_size;
@@ -84,19 +75,6 @@ public final class NotifyPopup extends Message {
   public final String y_btn_text;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(408779333, "Ltbclient/GetOrder/NotifyPopup;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(408779333, "Ltbclient/GetOrder/NotifyPopup;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_POPUP_ID = integer;
     DEFAULT_POPUP_TIMES = integer;
@@ -212,10 +190,6 @@ public final class NotifyPopup extends Message {
   }
   
   public static final class Builder extends Message.Builder<NotifyPopup> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer app_size;
     
     public String app_version;
@@ -267,12 +241,6 @@ public final class NotifyPopup extends Message {
     }
     
     public NotifyPopup build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (NotifyPopup)interceptResult.objValue; 
-      } 
       return new NotifyPopup(this, param1Boolean);
     }
   }

@@ -1,16 +1,9 @@
 package tbclient.Hottopic;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PkModule extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_MODULE_NAME = "";
   
   public static final Long DEFAULT_PK_ID;
@@ -22,8 +15,6 @@ public final class PkModule extends Message {
   public static final Long DEFAULT_USER_PK_ID;
   
   public static final Integer DEFAULT_USER_PK_INDEX;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String module_name;
@@ -53,19 +44,6 @@ public final class PkModule extends Message {
   public final Integer user_pk_index;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1189122479, "Ltbclient/Hottopic/PkModule;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1189122479, "Ltbclient/Hottopic/PkModule;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_PK_TYPE = integer;
     DEFAULT_USER_PK_INDEX = integer;
@@ -135,10 +113,6 @@ public final class PkModule extends Message {
   }
   
   public static final class Builder extends Message.Builder<PkModule> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String module_name;
     
     public PkView pk_1;
@@ -175,19 +149,9 @@ public final class PkModule extends Message {
     }
     
     public PkModule build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PkModule)interceptResult.objValue; 
-      } 
       return new PkModule(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,10 +1,5 @@
 package tbclient.Userlike;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -13,15 +8,11 @@ import tbclient.ThreadInfo;
 import tbclient.User;
 
 public final class ConcernData extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_RECOM_TYPE;
   
   public static final List<User> DEFAULT_RECOM_USER_LIST;
   
   public static final Integer DEFAULT_SOURCE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2)
   public final PostData post_data;
@@ -39,19 +30,6 @@ public final class ConcernData extends Message {
   public final ThreadInfo thread_list;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1005888404, "Ltbclient/Userlike/ConcernData;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1005888404, "Ltbclient/Userlike/ConcernData;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_RECOM_TYPE = integer;
     DEFAULT_SOURCE = integer;
@@ -96,10 +74,6 @@ public final class ConcernData extends Message {
   }
   
   public static final class Builder extends Message.Builder<ConcernData> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public PostData post_data;
     
     public Integer recom_type;
@@ -124,19 +98,9 @@ public final class ConcernData extends Message {
     }
     
     public ConcernData build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ConcernData)interceptResult.objValue; 
-      } 
       return new ConcernData(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

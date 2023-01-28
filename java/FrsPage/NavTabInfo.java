@@ -1,10 +1,5 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -12,15 +7,11 @@ import java.util.List;
 import tbclient.FrsTabInfo;
 
 public final class NavTabInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final List<FrsTabInfo> DEFAULT_HEAD;
   
   public static final List<FrsTabInfo> DEFAULT_MENU;
   
   public static final List<FrsTabInfo> DEFAULT_TAB = Collections.emptyList();
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 3)
   public final List<FrsTabInfo> head;
@@ -69,27 +60,7 @@ public final class NavTabInfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(2069084024, "Ltbclient/FrsPage/NavTabInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(2069084024, "Ltbclient/FrsPage/NavTabInfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<NavTabInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<FrsTabInfo> head;
     
     public List<FrsTabInfo> menu;
@@ -108,19 +79,9 @@ public final class NavTabInfo extends Message {
     }
     
     public NavTabInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (NavTabInfo)interceptResult.objValue; 
-      } 
       return new NavTabInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

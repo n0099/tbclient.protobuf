@@ -1,24 +1,15 @@
 package tbclient.TopicList;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.VideoInfo;
 
 public final class MediaTopic extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_PIC_URL = "";
   
   public static final Long DEFAULT_TOPIC_ID = Long.valueOf(0L);
   
   public static final String DEFAULT_TOPIC_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String pic_url;
@@ -67,27 +58,7 @@ public final class MediaTopic extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1712209276, "Ltbclient/TopicList/MediaTopic;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1712209276, "Ltbclient/TopicList/MediaTopic;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<MediaTopic> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String pic_url;
     
     public Long topic_id;
@@ -109,19 +80,9 @@ public final class MediaTopic extends Message {
     }
     
     public MediaTopic build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (MediaTopic)interceptResult.objValue; 
-      } 
       return new MediaTopic(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

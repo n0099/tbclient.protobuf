@@ -1,16 +1,9 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class YuleActivity extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ACTIVITY_ALL_ICON = "";
   
   public static final String DEFAULT_ACTIVITY_HALF_ICON = "";
@@ -20,8 +13,6 @@ public final class YuleActivity extends Message {
   public static final Integer DEFAULT_ACTIVITY_TYPE = Integer.valueOf(0);
   
   public static final String DEFAULT_ACTIVITY_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.STRING)
   public final String activity_all_icon;
@@ -85,27 +76,7 @@ public final class YuleActivity extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-250733516, "Ltbclient/FrsPage/YuleActivity;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-250733516, "Ltbclient/FrsPage/YuleActivity;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<YuleActivity> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String activity_all_icon;
     
     public String activity_half_icon;
@@ -130,19 +101,9 @@ public final class YuleActivity extends Message {
     }
     
     public YuleActivity build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (YuleActivity)interceptResult.objValue; 
-      } 
       return new YuleActivity(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

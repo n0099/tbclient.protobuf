@@ -1,16 +1,9 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class RankInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Double DEFAULT_DIR_RATE;
   
   public static final Integer DEFAULT_MEMBER_COUNT;
@@ -18,8 +11,6 @@ public final class RankInfo extends Message {
   public static final Integer DEFAULT_SIGN_COUNT;
   
   public static final Integer DEFAULT_SIGN_RANK;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 4, type = Message.Datatype.DOUBLE)
   public final Double dir_rate;
@@ -34,19 +25,6 @@ public final class RankInfo extends Message {
   public final Integer sign_rank;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-10571202, "Ltbclient/FrsPage/RankInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-10571202, "Ltbclient/FrsPage/RankInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_SIGN_COUNT = integer;
     DEFAULT_SIGN_RANK = integer;
@@ -95,10 +73,6 @@ public final class RankInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<RankInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Double dir_rate;
     
     public Integer member_count;
@@ -120,19 +94,9 @@ public final class RankInfo extends Message {
     }
     
     public RankInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (RankInfo)interceptResult.objValue; 
-      } 
       return new RankInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,17 +1,10 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class CommonForum extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_COMMON_FORUM = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String common_forum;
@@ -36,10 +29,6 @@ public final class CommonForum extends Message {
   }
   
   public static final class Builder extends Message.Builder<CommonForum> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String common_forum;
     
     public Builder() {}
@@ -52,19 +41,9 @@ public final class CommonForum extends Message {
     }
     
     public CommonForum build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (CommonForum)interceptResult.objValue; 
-      } 
       return new CommonForum(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

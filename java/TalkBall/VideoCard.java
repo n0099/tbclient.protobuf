@@ -1,14 +1,9 @@
 package tbclient.TalkBall;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class VideoCard extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_COVER_IMAGE = "";
   
   public static final String DEFAULT_THREAD_ID = "";
@@ -20,8 +15,6 @@ public final class VideoCard extends Message {
   public static final String DEFAULT_TOPIC_TITLE = "";
   
   public static final String DEFAULT_VIDEO_DURATION = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String cover_image;
@@ -96,10 +89,6 @@ public final class VideoCard extends Message {
   }
   
   public static final class Builder extends Message.Builder<VideoCard> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String cover_image;
     
     public String thread_id;
@@ -127,19 +116,9 @@ public final class VideoCard extends Message {
     }
     
     public VideoCard build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (VideoCard)interceptResult.objValue; 
-      } 
       return new VideoCard(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

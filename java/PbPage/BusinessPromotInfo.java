@@ -1,24 +1,15 @@
 package tbclient.PbPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.SendCardInfo;
 
 public final class BusinessPromotInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_IS_HEADLINEPOST;
   
   public static final Long DEFAULT_IS_PROMOT = Long.valueOf(0L);
   
   public static final Integer DEFAULT_IS_S_CARD;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer is_headlinepost;
@@ -72,27 +63,7 @@ public final class BusinessPromotInfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(132483076, "Ltbclient/PbPage/BusinessPromotInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(132483076, "Ltbclient/PbPage/BusinessPromotInfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<BusinessPromotInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer is_headlinepost;
     
     public Long is_promot;
@@ -114,19 +85,9 @@ public final class BusinessPromotInfo extends Message {
     }
     
     public BusinessPromotInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (BusinessPromotInfo)interceptResult.objValue; 
-      } 
       return new BusinessPromotInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

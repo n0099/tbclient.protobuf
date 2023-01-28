@@ -1,19 +1,12 @@
 package tbclient.PbPage;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class AppealInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_APPEAL_URL = "";
   
   public static final String DEFAULT_SOURCE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String appeal_url;
@@ -48,10 +41,6 @@ public final class AppealInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<AppealInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String appeal_url;
     
     public String source;
@@ -67,19 +56,9 @@ public final class AppealInfo extends Message {
     }
     
     public AppealInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (AppealInfo)interceptResult.objValue; 
-      } 
       return new AppealInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

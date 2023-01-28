@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class SubPostList extends Message {
-  public static Interceptable $ic;
-  
   public static final Long DEFAULT_AUTHOR_ID;
   
   public static final List<PbContent> DEFAULT_CONTENT;
@@ -30,8 +23,6 @@ public final class SubPostList extends Message {
   public static final Integer DEFAULT_TIME;
   
   public static final String DEFAULT_TITLE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 9)
   public final Agree agree;
@@ -70,19 +61,6 @@ public final class SubPostList extends Message {
   public final String title;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1754025433, "Ltbclient/SubPostList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1754025433, "Ltbclient/SubPostList;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_ID = long_;
     DEFAULT_CONTENT = Collections.emptyList();
@@ -177,10 +155,6 @@ public final class SubPostList extends Message {
   }
   
   public static final class Builder extends Message.Builder<SubPostList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Agree agree;
     
     public User author;
@@ -226,19 +200,9 @@ public final class SubPostList extends Message {
     }
     
     public SubPostList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (SubPostList)interceptResult.objValue; 
-      } 
       return new SubPostList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,21 +1,14 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class TbVipInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_INTRO = "";
   
   public static final String DEFAULT_V_DETAIL = "";
   
   public static final String DEFAULT_V_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String intro;
@@ -60,10 +53,6 @@ public final class TbVipInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<TbVipInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String intro;
     
     public String v_detail;
@@ -82,19 +71,9 @@ public final class TbVipInfo extends Message {
     }
     
     public TbVipInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (TbVipInfo)interceptResult.objValue; 
-      } 
       return new TbVipInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

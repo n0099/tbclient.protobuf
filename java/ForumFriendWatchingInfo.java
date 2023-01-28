@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class ForumFriendWatchingInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_FORUM_AVATAR = "";
   
   public static final String DEFAULT_FORUM_NAME = "";
@@ -18,8 +11,6 @@ public final class ForumFriendWatchingInfo extends Message {
   public static final Integer DEFAULT_SHOW_NUM = Integer.valueOf(0);
   
   public static final String DEFAULT_SHOW_TYPE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.STRING)
   public final String forum_avatar;
@@ -73,27 +64,7 @@ public final class ForumFriendWatchingInfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1713644955, "Ltbclient/ForumFriendWatchingInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1713644955, "Ltbclient/ForumFriendWatchingInfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<ForumFriendWatchingInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String forum_avatar;
     
     public String forum_name;
@@ -115,19 +86,9 @@ public final class ForumFriendWatchingInfo extends Message {
     }
     
     public ForumFriendWatchingInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (ForumFriendWatchingInfo)interceptResult.objValue; 
-      } 
       return new ForumFriendWatchingInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

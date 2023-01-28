@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PbContent extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BIG_CDN_SRC = "";
   
   public static final String DEFAULT_BIG_SIZE = "";
@@ -51,6 +44,8 @@ public final class PbContent extends Message {
   
   public static final String DEFAULT_LINK = "";
   
+  public static final Integer DEFAULT_LINK_TYPE;
+  
   public static final String DEFAULT_MEDIA_SUBTITLE = "";
   
   public static final Integer DEFAULT_ORIGIN_SIZE;
@@ -82,8 +77,6 @@ public final class PbContent extends Message {
   public static final String DEFAULT_VOICE_MD5 = "";
   
   public static final Integer DEFAULT_WIDTH;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 17, type = Message.Datatype.STRING)
   public final String _static;
@@ -157,6 +150,9 @@ public final class PbContent extends Message {
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String link;
   
+  @ProtoField(tag = 43, type = Message.Datatype.INT32)
+  public final Integer link_type;
+  
   @ProtoField(tag = 31, type = Message.Datatype.STRING)
   public final String media_subtitle;
   
@@ -212,19 +208,6 @@ public final class PbContent extends Message {
   public final Integer width;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-775276706, "Ltbclient/PbContent;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-775276706, "Ltbclient/PbContent;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_TYPE = integer;
     DEFAULT_DURING_TIME = integer;
@@ -243,11 +226,12 @@ public final class PbContent extends Message {
     DEFAULT_SHOW_ORIGINAL_BTN = integer;
     DEFAULT_ITEM_ID = long_;
     DEFAULT_PIC_ID = long_;
+    DEFAULT_LINK_TYPE = integer;
   }
   
   public PbContent(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Long long_;
+    Integer integer;
     if (paramBoolean == true) {
       Integer integer6 = paramBuilder.type;
       if (integer6 == null) {
@@ -333,11 +317,11 @@ public final class PbContent extends Message {
       } else {
         this.is_sub = integer5;
       } 
-      Long long_2 = paramBuilder.uid;
-      if (long_2 == null) {
+      Long long_3 = paramBuilder.uid;
+      if (long_3 == null) {
         this.uid = DEFAULT_UID;
       } else {
-        this.uid = long_2;
+        this.uid = long_3;
       } 
       String str6 = paramBuilder.dynamic;
       if (str6 == null) {
@@ -451,11 +435,11 @@ public final class PbContent extends Message {
       } else {
         this.topic_special_icon = str2;
       } 
-      Long long_1 = paramBuilder.item_id;
-      if (long_1 == null) {
+      Long long_2 = paramBuilder.item_id;
+      if (long_2 == null) {
         this.item_id = DEFAULT_ITEM_ID;
       } else {
-        this.item_id = long_1;
+        this.item_id = long_2;
       } 
       String str1 = paramBuilder.item_forum_name;
       if (str1 == null) {
@@ -465,55 +449,62 @@ public final class PbContent extends Message {
       } 
       this.tiebaplus_info = paramBuilder.tiebaplus_info;
       this.item = paramBuilder.item;
-      long_ = paramBuilder.pic_id;
-      if (long_ == null) {
+      Long long_1 = paramBuilder.pic_id;
+      if (long_1 == null) {
         this.pic_id = DEFAULT_PIC_ID;
       } else {
-        this.pic_id = long_;
+        this.pic_id = long_1;
+      } 
+      integer = paramBuilder.link_type;
+      if (integer == null) {
+        this.link_type = DEFAULT_LINK_TYPE;
+      } else {
+        this.link_type = integer;
       } 
     } else {
-      this.type = ((Builder)long_).type;
-      this.text = ((Builder)long_).text;
-      this.link = ((Builder)long_).link;
-      this.src = ((Builder)long_).src;
-      this.bsize = ((Builder)long_).bsize;
-      this.big_src = ((Builder)long_).big_src;
-      this.big_size = ((Builder)long_).big_size;
-      this.cdn_src = ((Builder)long_).cdn_src;
-      this.big_cdn_src = ((Builder)long_).big_cdn_src;
-      this.imgtype = ((Builder)long_).imgtype;
-      this.c = ((Builder)long_).c;
-      this.voice_md5 = ((Builder)long_).voice_md5;
-      this.during_time = ((Builder)long_).during_time;
-      this.is_sub = ((Builder)long_).is_sub;
-      this.uid = ((Builder)long_).uid;
-      this.dynamic = ((Builder)long_).dynamic;
-      this._static = ((Builder)long_)._static;
-      this.width = ((Builder)long_).width;
-      this.height = ((Builder)long_).height;
-      this.packet_name = ((Builder)long_).packet_name;
-      this.phonetype = ((Builder)long_).phonetype;
-      this.is_native_app = ((Builder)long_).is_native_app;
-      this.native_app = ((Builder)long_).native_app;
-      this.e_type = ((Builder)long_).e_type;
-      this.origin_src = ((Builder)long_).origin_src;
-      this.btn_type = ((Builder)long_).btn_type;
-      this.origin_size = ((Builder)long_).origin_size;
-      this.count = ((Builder)long_).count;
-      this.graffiti_info = ((Builder)long_).graffiti_info;
-      this.high_together = ((Builder)long_).high_together;
-      this.media_subtitle = ((Builder)long_).media_subtitle;
-      this.url_type = ((Builder)long_).url_type;
-      this.meme_info = ((Builder)long_).meme_info;
-      this.is_long_pic = ((Builder)long_).is_long_pic;
-      this.show_original_btn = ((Builder)long_).show_original_btn;
-      this.cdn_src_active = ((Builder)long_).cdn_src_active;
-      this.topic_special_icon = ((Builder)long_).topic_special_icon;
-      this.item_id = ((Builder)long_).item_id;
-      this.item_forum_name = ((Builder)long_).item_forum_name;
-      this.tiebaplus_info = ((Builder)long_).tiebaplus_info;
-      this.item = ((Builder)long_).item;
-      this.pic_id = ((Builder)long_).pic_id;
+      this.type = ((Builder)integer).type;
+      this.text = ((Builder)integer).text;
+      this.link = ((Builder)integer).link;
+      this.src = ((Builder)integer).src;
+      this.bsize = ((Builder)integer).bsize;
+      this.big_src = ((Builder)integer).big_src;
+      this.big_size = ((Builder)integer).big_size;
+      this.cdn_src = ((Builder)integer).cdn_src;
+      this.big_cdn_src = ((Builder)integer).big_cdn_src;
+      this.imgtype = ((Builder)integer).imgtype;
+      this.c = ((Builder)integer).c;
+      this.voice_md5 = ((Builder)integer).voice_md5;
+      this.during_time = ((Builder)integer).during_time;
+      this.is_sub = ((Builder)integer).is_sub;
+      this.uid = ((Builder)integer).uid;
+      this.dynamic = ((Builder)integer).dynamic;
+      this._static = ((Builder)integer)._static;
+      this.width = ((Builder)integer).width;
+      this.height = ((Builder)integer).height;
+      this.packet_name = ((Builder)integer).packet_name;
+      this.phonetype = ((Builder)integer).phonetype;
+      this.is_native_app = ((Builder)integer).is_native_app;
+      this.native_app = ((Builder)integer).native_app;
+      this.e_type = ((Builder)integer).e_type;
+      this.origin_src = ((Builder)integer).origin_src;
+      this.btn_type = ((Builder)integer).btn_type;
+      this.origin_size = ((Builder)integer).origin_size;
+      this.count = ((Builder)integer).count;
+      this.graffiti_info = ((Builder)integer).graffiti_info;
+      this.high_together = ((Builder)integer).high_together;
+      this.media_subtitle = ((Builder)integer).media_subtitle;
+      this.url_type = ((Builder)integer).url_type;
+      this.meme_info = ((Builder)integer).meme_info;
+      this.is_long_pic = ((Builder)integer).is_long_pic;
+      this.show_original_btn = ((Builder)integer).show_original_btn;
+      this.cdn_src_active = ((Builder)integer).cdn_src_active;
+      this.topic_special_icon = ((Builder)integer).topic_special_icon;
+      this.item_id = ((Builder)integer).item_id;
+      this.item_forum_name = ((Builder)integer).item_forum_name;
+      this.tiebaplus_info = ((Builder)integer).tiebaplus_info;
+      this.item = ((Builder)integer).item;
+      this.pic_id = ((Builder)integer).pic_id;
+      this.link_type = ((Builder)integer).link_type;
     } 
   }
   
@@ -522,10 +513,6 @@ public final class PbContent extends Message {
   }
   
   public static final class Builder extends Message.Builder<PbContent> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String _static;
     
     public String big_cdn_src;
@@ -573,6 +560,8 @@ public final class PbContent extends Message {
     public Long item_id;
     
     public String link;
+    
+    public Integer link_type;
     
     public String media_subtitle;
     
@@ -658,22 +647,13 @@ public final class PbContent extends Message {
       this.tiebaplus_info = param1PbContent.tiebaplus_info;
       this.item = param1PbContent.item;
       this.pic_id = param1PbContent.pic_id;
+      this.link_type = param1PbContent.link_type;
     }
     
     public PbContent build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PbContent)interceptResult.objValue; 
-      } 
       return new PbContent(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

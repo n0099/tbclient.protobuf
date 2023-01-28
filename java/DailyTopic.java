@@ -1,14 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class DailyTopic extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_TOPIC_ABSTRACT = "";
   
   public static final String DEFAULT_TOPIC_PIC = "";
@@ -18,8 +13,6 @@ public final class DailyTopic extends Message {
   public static final String DEFAULT_TOPIC_TITLE = "";
   
   public static final String DEFAULT_TOPIC_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String topic_abstract;
@@ -84,10 +77,6 @@ public final class DailyTopic extends Message {
   }
   
   public static final class Builder extends Message.Builder<DailyTopic> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String topic_abstract;
     
     public String topic_pic;
@@ -112,19 +101,9 @@ public final class DailyTopic extends Message {
     }
     
     public DailyTopic build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DailyTopic)interceptResult.objValue; 
-      } 
       return new DailyTopic(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

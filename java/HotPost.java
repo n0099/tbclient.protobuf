@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class HotPost extends Message {
-  public static Interceptable $ic;
-  
   public static final List<PbContent> DEFAULT_CONTENT;
   
   public static final Integer DEFAULT_CREATE_TIME;
@@ -30,8 +23,6 @@ public final class HotPost extends Message {
   public static final Long DEFAULT_USER_ID;
   
   public static final String DEFAULT_USER_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 7)
   public final List<PbContent> content;
@@ -64,19 +55,6 @@ public final class HotPost extends Message {
   public final String user_name;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-30396872, "Ltbclient/HotPost;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-30396872, "Ltbclient/HotPost;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_THREAD_ID = long_;
     DEFAULT_POST_ID = long_;
@@ -166,10 +144,6 @@ public final class HotPost extends Message {
   }
   
   public static final class Builder extends Message.Builder<HotPost> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<PbContent> content;
     
     public Integer create_time;
@@ -209,19 +183,9 @@ public final class HotPost extends Message {
     }
     
     public HotPost build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (HotPost)interceptResult.objValue; 
-      } 
       return new HotPost(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

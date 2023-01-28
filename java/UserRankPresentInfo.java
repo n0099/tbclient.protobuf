@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class UserRankPresentInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_PORTRAIT = "";
   
   public static final Integer DEFAULT_PRESENT_NUM;
@@ -20,8 +13,6 @@ public final class UserRankPresentInfo extends Message {
   public static final Integer DEFAULT_USER_ID;
   
   public static final String DEFAULT_USER_NAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String portrait;
@@ -39,19 +30,6 @@ public final class UserRankPresentInfo extends Message {
   public final String user_name;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-631931533, "Ltbclient/UserRankPresentInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-631931533, "Ltbclient/UserRankPresentInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_USER_ID = integer;
     DEFAULT_PRESENT_NUM = integer;
@@ -106,10 +84,6 @@ public final class UserRankPresentInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<UserRankPresentInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String portrait;
     
     public Integer present_num;
@@ -134,19 +108,9 @@ public final class UserRankPresentInfo extends Message {
     }
     
     public UserRankPresentInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (UserRankPresentInfo)interceptResult.objValue; 
-      } 
       return new UserRankPresentInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

@@ -1,16 +1,9 @@
 package tbclient.GetHorseRaceLampList;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class LiveList extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_AMOUNT;
   
   public static final Long DEFAULT_LIVE_ID;
@@ -24,8 +17,6 @@ public final class LiveList extends Message {
   public static final Long DEFAULT_USER_ID;
   
   public static final String DEFAULT_USER_NICKNAME = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.INT32)
   public final Integer amount;
@@ -49,19 +40,6 @@ public final class LiveList extends Message {
   public final String user_nickname;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-678100838, "Ltbclient/GetHorseRaceLampList/LiveList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-678100838, "Ltbclient/GetHorseRaceLampList/LiveList;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_LIVE_ID = long_;
     DEFAULT_USER_ID = long_;
@@ -133,10 +111,6 @@ public final class LiveList extends Message {
   }
   
   public static final class Builder extends Message.Builder<LiveList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer amount;
     
     public Long live_id;
@@ -167,19 +141,9 @@ public final class LiveList extends Message {
     }
     
     public LiveList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (LiveList)interceptResult.objValue; 
-      } 
       return new LiveList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

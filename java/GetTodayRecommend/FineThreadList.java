@@ -1,18 +1,11 @@
 package tbclient.GetTodayRecommend;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class FineThreadList extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_ABSTRACT = "";
   
   public static final Long DEFAULT_FROMFID;
@@ -36,8 +29,6 @@ public final class FineThreadList extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final Long DEFAULT_ZAN_NUM;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 5, type = Message.Datatype.STRING)
   public final String _abstract;
@@ -76,19 +67,6 @@ public final class FineThreadList extends Message {
   public final Long zan_num;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-222303503, "Ltbclient/GetTodayRecommend/FineThreadList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-222303503, "Ltbclient/GetTodayRecommend/FineThreadList;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_FTID = long_;
     DEFAULT_TID = long_;
@@ -199,10 +177,6 @@ public final class FineThreadList extends Message {
   }
   
   public static final class Builder extends Message.Builder<FineThreadList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String _abstract;
     
     public Long fromfid;
@@ -248,19 +222,9 @@ public final class FineThreadList extends Message {
     }
     
     public FineThreadList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (FineThreadList)interceptResult.objValue; 
-      } 
       return new FineThreadList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

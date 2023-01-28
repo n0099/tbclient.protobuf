@@ -1,16 +1,9 @@
 package tbclient.PbPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PostBanner extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BANNER_NAME = "";
   
   public static final String DEFAULT_BANNER_PIC = "";
@@ -22,8 +15,6 @@ public final class PostBanner extends Message {
   public static final Integer DEFAULT_CLIENT_TYPE;
   
   public static final Integer DEFAULT_LINK_TYPE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String banner_name;
@@ -44,19 +35,6 @@ public final class PostBanner extends Message {
   public final Integer link_type;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-388162901, "Ltbclient/PbPage/PostBanner;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-388162901, "Ltbclient/PbPage/PostBanner;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_BANNER_POSITION = integer;
     DEFAULT_LINK_TYPE = integer;
@@ -118,10 +96,6 @@ public final class PostBanner extends Message {
   }
   
   public static final class Builder extends Message.Builder<PostBanner> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String banner_name;
     
     public String banner_pic;
@@ -149,19 +123,9 @@ public final class PostBanner extends Message {
     }
     
     public PostBanner build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PostBanner)interceptResult.objValue; 
-      } 
       return new PostBanner(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

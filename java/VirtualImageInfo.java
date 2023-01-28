@@ -1,19 +1,14 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class VirtualImageInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_ALLOW_CUSTOMIZE;
+  
+  public static final String DEFAULT_DYNAMIC_VIRTUAL_IMAGE_URL = "";
   
   public static final Integer DEFAULT_IMAGE_AGREE_COUNT;
   
@@ -37,10 +32,11 @@ public final class VirtualImageInfo extends Message {
   
   public static final String DEFAULT_VIRTUAL_IMAGE_URL = "";
   
-  public transient FieldHolder $fh;
-  
   @ProtoField(tag = 11, type = Message.Datatype.INT32)
   public final Integer allow_customize;
+  
+  @ProtoField(tag = 14, type = Message.Datatype.STRING)
+  public final String dynamic_virtual_image_url;
   
   @ProtoField(tag = 3, type = Message.Datatype.INT32)
   public final Integer image_agree_count;
@@ -79,19 +75,6 @@ public final class VirtualImageInfo extends Message {
   public final String virtual_image_url;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(27834995, "Ltbclient/VirtualImageInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(27834995, "Ltbclient/VirtualImageInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_ISSET_VIRTUAL_IMAGE = integer;
     DEFAULT_IMAGE_AGREE_COUNT = integer;
@@ -107,7 +90,7 @@ public final class VirtualImageInfo extends Message {
   
   public VirtualImageInfo(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    Integer integer;
+    String str;
     if (paramBoolean == true) {
       Integer integer4 = paramBuilder.isset_virtual_image;
       if (integer4 == null) {
@@ -176,26 +159,33 @@ public final class VirtualImageInfo extends Message {
       } else {
         this.is_display = integer1;
       } 
-      integer = paramBuilder.is_background_firstly;
-      if (integer == null) {
+      integer1 = paramBuilder.is_background_firstly;
+      if (integer1 == null) {
         this.is_background_firstly = DEFAULT_IS_BACKGROUND_FIRSTLY;
       } else {
-        this.is_background_firstly = integer;
+        this.is_background_firstly = integer1;
+      } 
+      str = paramBuilder.dynamic_virtual_image_url;
+      if (str == null) {
+        this.dynamic_virtual_image_url = "";
+      } else {
+        this.dynamic_virtual_image_url = str;
       } 
     } else {
-      this.isset_virtual_image = ((Builder)integer).isset_virtual_image;
-      this.virtual_image_url = ((Builder)integer).virtual_image_url;
-      this.image_agree_count = ((Builder)integer).image_agree_count;
-      this.is_allow_agree = ((Builder)integer).is_allow_agree;
-      this.virtual_background_type = ((Builder)integer).virtual_background_type;
-      this.virtual_background = ((Builder)integer).virtual_background;
-      this.recent_incr_agree = ((Builder)integer).recent_incr_agree;
-      this.snapshoot_id = ((Builder)integer).snapshoot_id;
-      this.personal_state = ((Builder)integer).personal_state;
-      this.state_list = Message.immutableCopyOf(((Builder)integer).state_list);
-      this.allow_customize = ((Builder)integer).allow_customize;
-      this.is_display = ((Builder)integer).is_display;
-      this.is_background_firstly = ((Builder)integer).is_background_firstly;
+      this.isset_virtual_image = ((Builder)str).isset_virtual_image;
+      this.virtual_image_url = ((Builder)str).virtual_image_url;
+      this.image_agree_count = ((Builder)str).image_agree_count;
+      this.is_allow_agree = ((Builder)str).is_allow_agree;
+      this.virtual_background_type = ((Builder)str).virtual_background_type;
+      this.virtual_background = ((Builder)str).virtual_background;
+      this.recent_incr_agree = ((Builder)str).recent_incr_agree;
+      this.snapshoot_id = ((Builder)str).snapshoot_id;
+      this.personal_state = ((Builder)str).personal_state;
+      this.state_list = Message.immutableCopyOf(((Builder)str).state_list);
+      this.allow_customize = ((Builder)str).allow_customize;
+      this.is_display = ((Builder)str).is_display;
+      this.is_background_firstly = ((Builder)str).is_background_firstly;
+      this.dynamic_virtual_image_url = ((Builder)str).dynamic_virtual_image_url;
     } 
   }
   
@@ -204,11 +194,9 @@ public final class VirtualImageInfo extends Message {
   }
   
   public static final class Builder extends Message.Builder<VirtualImageInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer allow_customize;
+    
+    public String dynamic_virtual_image_url;
     
     public Integer image_agree_count;
     
@@ -253,22 +241,13 @@ public final class VirtualImageInfo extends Message {
       this.allow_customize = param1VirtualImageInfo.allow_customize;
       this.is_display = param1VirtualImageInfo.is_display;
       this.is_background_firstly = param1VirtualImageInfo.is_background_firstly;
+      this.dynamic_virtual_image_url = param1VirtualImageInfo.dynamic_virtual_image_url;
     }
     
     public VirtualImageInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (VirtualImageInfo)interceptResult.objValue; 
-      } 
       return new VirtualImageInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

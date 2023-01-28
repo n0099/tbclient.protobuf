@@ -1,16 +1,9 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class Banner extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_BANNER_TYPE;
   
   public static final String DEFAULT_BANNER_URL = "";
@@ -30,8 +23,6 @@ public final class Banner extends Message {
   public static final Integer DEFAULT_TYPE;
   
   public static final String DEFAULT_VALUE = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.INT32)
   public final Integer banner_type;
@@ -64,19 +55,6 @@ public final class Banner extends Message {
   public final String value;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(119583628, "Ltbclient/FrsPage/Banner;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(119583628, "Ltbclient/FrsPage/Banner;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_BANNER_TYPE = integer;
     DEFAULT_TYPE = integer;
@@ -166,10 +144,6 @@ public final class Banner extends Message {
   }
   
   public static final class Builder extends Message.Builder<Banner> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer banner_type;
     
     public String banner_url;
@@ -209,19 +183,9 @@ public final class Banner extends Message {
     }
     
     public Banner build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Banner)interceptResult.objValue; 
-      } 
       return new Banner(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

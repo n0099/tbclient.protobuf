@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PresentMyList extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_CREATE_TIME;
   
   public static final String DEFAULT_CURRENCY_TYPE = "";
@@ -36,8 +29,6 @@ public final class PresentMyList extends Message {
   public static final Long DEFAULT_PRESENT_SCORES;
   
   public static final String DEFAULT_THUMBNAIL_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 8, type = Message.Datatype.UINT32)
   public final Integer create_time;
@@ -79,19 +70,6 @@ public final class PresentMyList extends Message {
   public final String thumbnail_url;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1750871872, "Ltbclient/PresentMyList;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1750871872, "Ltbclient/PresentMyList;");
-          return;
-        } 
-      } 
-    } 
     Long long_ = Long.valueOf(0L);
     DEFAULT_PAY_USERID = long_;
     Integer integer = Integer.valueOf(0);
@@ -206,10 +184,6 @@ public final class PresentMyList extends Message {
   }
   
   public static final class Builder extends Message.Builder<PresentMyList> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer create_time;
     
     public String currency_type;
@@ -258,19 +232,9 @@ public final class PresentMyList extends Message {
     }
     
     public PresentMyList build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PresentMyList)interceptResult.objValue; 
-      } 
       return new PresentMyList(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

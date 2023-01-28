@@ -1,16 +1,9 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class PrivateForumShareinfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_CREATE_TIME = Integer.valueOf(0);
   
   public static final String DEFAULT_MANAGER_PORTRAIT = "";
@@ -18,8 +11,6 @@ public final class PrivateForumShareinfo extends Message {
   public static final String DEFAULT_MANAGER_USER_NAME = "";
   
   public static final String DEFAULT_SHARE_URL = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer create_time;
@@ -73,27 +64,7 @@ public final class PrivateForumShareinfo extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-2042487249, "Ltbclient/FrsPage/PrivateForumShareinfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-2042487249, "Ltbclient/FrsPage/PrivateForumShareinfo;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<PrivateForumShareinfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer create_time;
     
     public String manager_portrait;
@@ -115,19 +86,9 @@ public final class PrivateForumShareinfo extends Message {
     }
     
     public PrivateForumShareinfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (PrivateForumShareinfo)interceptResult.objValue; 
-      } 
       return new PrivateForumShareinfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

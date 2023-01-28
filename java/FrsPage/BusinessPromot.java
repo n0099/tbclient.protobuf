@@ -1,17 +1,12 @@
 package tbclient.FrsPage;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class BusinessPromot extends Message {
-  public static Interceptable $ic;
+  public static final Integer DEFAULT_BAN_DIALOG;
   
   public static final List<BusinessPromotCommentList> DEFAULT_COMMENT_LIST;
   
@@ -71,7 +66,8 @@ public final class BusinessPromot extends Message {
   
   public static final String DEFAULT_VIDEO_URL = "";
   
-  public transient FieldHolder $fh;
+  @ProtoField(tag = 30, type = Message.Datatype.INT32)
+  public final Integer ban_dialog;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 8)
   public final List<BusinessPromotCommentList> comment_list;
@@ -161,19 +157,6 @@ public final class BusinessPromot extends Message {
   public final String video_url;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(1003384755, "Ltbclient/FrsPage/BusinessPromot;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(1003384755, "Ltbclient/FrsPage/BusinessPromot;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_TYPE = integer;
     DEFAULT_JOIN_NUM = integer;
@@ -185,11 +168,12 @@ public final class BusinessPromot extends Message {
     DEFAULT_IS_ALLOW_SHAKE = bool;
     DEFAULT_IS_AD = bool;
     DEFAULT_IS_DOWNLOAD = bool;
+    DEFAULT_BAN_DIALOG = integer;
   }
   
   public BusinessPromot(Builder paramBuilder, boolean paramBoolean) {
     super(paramBuilder);
-    String str;
+    Integer integer;
     if (paramBoolean == true) {
       String str5 = paramBuilder.title;
       if (str5 == null) {
@@ -359,42 +343,49 @@ public final class BusinessPromot extends Message {
       } else {
         this.cover_url = str1;
       } 
-      str = paramBuilder.video_url;
-      if (str == null) {
+      str1 = paramBuilder.video_url;
+      if (str1 == null) {
         this.video_url = "";
       } else {
-        this.video_url = str;
+        this.video_url = str1;
+      } 
+      integer = paramBuilder.ban_dialog;
+      if (integer == null) {
+        this.ban_dialog = DEFAULT_BAN_DIALOG;
+      } else {
+        this.ban_dialog = integer;
       } 
     } else {
-      this.title = ((Builder)str).title;
-      this.img = ((Builder)str).img;
-      this.img_popup = ((Builder)str).img_popup;
-      this.type = ((Builder)str).type;
-      this.thread_id = ((Builder)str).thread_id;
-      this.url = ((Builder)str).url;
-      this.join_num = ((Builder)str).join_num;
-      this.comment_list = Message.immutableCopyOf(((Builder)str).comment_list);
-      this.id = ((Builder)str).id;
-      this.thread_type = ((Builder)str).thread_type;
-      this.schema = ((Builder)str).schema;
-      this.third_statistics_url = Message.immutableCopyOf(((Builder)str).third_statistics_url);
-      this.is_allow_shake = ((Builder)str).is_allow_shake;
-      this.is_ad = ((Builder)str).is_ad;
-      this.package_name = ((Builder)str).package_name;
-      this.download_appname = ((Builder)str).download_appname;
-      this.download_developer = ((Builder)str).download_developer;
-      this.download_package_size = ((Builder)str).download_package_size;
-      this.download_privacy_policy = ((Builder)str).download_privacy_policy;
-      this.download_url = ((Builder)str).download_url;
-      this.download_img = ((Builder)str).download_img;
-      this.download_version = ((Builder)str).download_version;
-      this.download_user_power = ((Builder)str).download_user_power;
-      this.is_download = ((Builder)str).is_download;
-      this.download_item_id = ((Builder)str).download_item_id;
-      this.download_package_name = ((Builder)str).download_package_name;
-      this.download_appid = ((Builder)str).download_appid;
-      this.cover_url = ((Builder)str).cover_url;
-      this.video_url = ((Builder)str).video_url;
+      this.title = ((Builder)integer).title;
+      this.img = ((Builder)integer).img;
+      this.img_popup = ((Builder)integer).img_popup;
+      this.type = ((Builder)integer).type;
+      this.thread_id = ((Builder)integer).thread_id;
+      this.url = ((Builder)integer).url;
+      this.join_num = ((Builder)integer).join_num;
+      this.comment_list = Message.immutableCopyOf(((Builder)integer).comment_list);
+      this.id = ((Builder)integer).id;
+      this.thread_type = ((Builder)integer).thread_type;
+      this.schema = ((Builder)integer).schema;
+      this.third_statistics_url = Message.immutableCopyOf(((Builder)integer).third_statistics_url);
+      this.is_allow_shake = ((Builder)integer).is_allow_shake;
+      this.is_ad = ((Builder)integer).is_ad;
+      this.package_name = ((Builder)integer).package_name;
+      this.download_appname = ((Builder)integer).download_appname;
+      this.download_developer = ((Builder)integer).download_developer;
+      this.download_package_size = ((Builder)integer).download_package_size;
+      this.download_privacy_policy = ((Builder)integer).download_privacy_policy;
+      this.download_url = ((Builder)integer).download_url;
+      this.download_img = ((Builder)integer).download_img;
+      this.download_version = ((Builder)integer).download_version;
+      this.download_user_power = ((Builder)integer).download_user_power;
+      this.is_download = ((Builder)integer).is_download;
+      this.download_item_id = ((Builder)integer).download_item_id;
+      this.download_package_name = ((Builder)integer).download_package_name;
+      this.download_appid = ((Builder)integer).download_appid;
+      this.cover_url = ((Builder)integer).cover_url;
+      this.video_url = ((Builder)integer).video_url;
+      this.ban_dialog = ((Builder)integer).ban_dialog;
     } 
   }
   
@@ -403,9 +394,7 @@ public final class BusinessPromot extends Message {
   }
   
   public static final class Builder extends Message.Builder<BusinessPromot> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
+    public Integer ban_dialog;
     
     public List<BusinessPromotCommentList> comment_list;
     
@@ -500,22 +489,13 @@ public final class BusinessPromot extends Message {
       this.download_appid = param1BusinessPromot.download_appid;
       this.cover_url = param1BusinessPromot.cover_url;
       this.video_url = param1BusinessPromot.video_url;
+      this.ban_dialog = param1BusinessPromot.ban_dialog;
     }
     
     public BusinessPromot build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (BusinessPromot)interceptResult.objValue; 
-      } 
       return new BusinessPromot(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

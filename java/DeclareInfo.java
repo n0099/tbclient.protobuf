@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class DeclareInfo extends Message {
-  public static Interceptable $ic;
-  
   public static final Integer DEFAULT_DECLARE_ID;
   
   public static final Long DEFAULT_DECLARE_NUM = Long.valueOf(0L);
@@ -20,8 +13,6 @@ public final class DeclareInfo extends Message {
   public static final String DEFAULT_DECLARE_URL = "";
   
   public static final Integer DEFAULT_IS_DECLARE;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 1, type = Message.Datatype.INT32)
   public final Integer declare_id;
@@ -90,28 +81,11 @@ public final class DeclareInfo extends Message {
   }
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(76404717, "Ltbclient/DeclareInfo;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(76404717, "Ltbclient/DeclareInfo;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_DECLARE_ID = integer;
   }
   
   public static final class Builder extends Message.Builder<DeclareInfo> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public Integer declare_id;
     
     public Long declare_num;
@@ -136,19 +110,9 @@ public final class DeclareInfo extends Message {
     }
     
     public DeclareInfo build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (DeclareInfo)interceptResult.objValue; 
-      } 
       return new DeclareInfo(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

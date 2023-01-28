@@ -1,19 +1,12 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class RankRuler extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_BOTTOM_LINK = "";
   
   public static final String DEFAULT_TOP_LINK = "";
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 2, type = Message.Datatype.STRING)
   public final String bottom_link;
@@ -48,10 +41,6 @@ public final class RankRuler extends Message {
   }
   
   public static final class Builder extends Message.Builder<RankRuler> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String bottom_link;
     
     public String top_link;
@@ -67,19 +56,9 @@ public final class RankRuler extends Message {
     }
     
     public RankRuler build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (RankRuler)interceptResult.objValue; 
-      } 
       return new RankRuler(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

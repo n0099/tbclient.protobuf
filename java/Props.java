@@ -1,18 +1,11 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 
 public final class Props extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_END_TIME = "";
   
   public static final String DEFAULT_EXPIRED_NOTIFY = "";
@@ -42,8 +35,6 @@ public final class Props extends Message {
   public static final String DEFAULT_USED_STATUS = "";
   
   public static final List<String> DEFAULT__WORD;
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(label = Message.Label.REPEATED, tag = 14, type = Message.Datatype.STRING)
   public final List<String> _word;
@@ -91,19 +82,6 @@ public final class Props extends Message {
   public final String used_status;
   
   static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(548972085, "Ltbclient/Props;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(548972085, "Ltbclient/Props;");
-          return;
-        } 
-      } 
-    } 
     Integer integer = Integer.valueOf(0);
     DEFAULT_PROPS_ID = integer;
     DEFAULT_LEFT_NUM = integer;
@@ -231,10 +209,6 @@ public final class Props extends Message {
   }
   
   public static final class Builder extends Message.Builder<Props> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public List<String> _word;
     
     public String end_time;
@@ -289,19 +263,9 @@ public final class Props extends Message {
     }
     
     public Props build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (Props)interceptResult.objValue; 
-      } 
       return new Props(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }

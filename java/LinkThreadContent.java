@@ -1,16 +1,9 @@
 package tbclient;
 
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptable;
-import com.baidu.titan.sdk.runtime.ClassClinitInterceptorStorage;
-import com.baidu.titan.sdk.runtime.FieldHolder;
-import com.baidu.titan.sdk.runtime.InterceptResult;
-import com.baidu.titan.sdk.runtime.Interceptable;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 
 public final class LinkThreadContent extends Message {
-  public static Interceptable $ic;
-  
   public static final String DEFAULT_LINK_ABSTRACT = "";
   
   public static final String DEFAULT_LINK_HEAD_BIG_PIC = "";
@@ -22,8 +15,6 @@ public final class LinkThreadContent extends Message {
   public static final String DEFAULT_LINK_TITLE = "";
   
   public static final Integer DEFAULT_LINK_TYPE = Integer.valueOf(0);
-  
-  public transient FieldHolder $fh;
   
   @ProtoField(tag = 3, type = Message.Datatype.STRING)
   public final String link_abstract;
@@ -97,27 +88,7 @@ public final class LinkThreadContent extends Message {
     this(paramBuilder, paramBoolean);
   }
   
-  static {
-    ClassClinitInterceptable classClinitInterceptable = ClassClinitInterceptorStorage.$ic;
-    if (classClinitInterceptable != null) {
-      InterceptResult interceptResult = classClinitInterceptable.invokeClinit(-1273981936, "Ltbclient/LinkThreadContent;");
-      if (interceptResult != null) {
-        Interceptable interceptable = interceptResult.interceptor;
-        if (interceptable != null)
-          $ic = interceptable; 
-        if ((interceptResult.flags & 0x1) != 0) {
-          classClinitInterceptable.invokePostClinit(-1273981936, "Ltbclient/LinkThreadContent;");
-          return;
-        } 
-      } 
-    } 
-  }
-  
   public static final class Builder extends Message.Builder<LinkThreadContent> {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-    
     public String link_abstract;
     
     public String link_head_big_pic;
@@ -145,19 +116,9 @@ public final class LinkThreadContent extends Message {
     }
     
     public LinkThreadContent build(boolean param1Boolean) {
-      Interceptable interceptable = $ic;
-      if (interceptable != null) {
-        InterceptResult interceptResult = interceptable.invokeZ(1048577, this, param1Boolean);
-        if (interceptResult != null)
-          return (LinkThreadContent)interceptResult.objValue; 
-      } 
       return new LinkThreadContent(this, param1Boolean, null);
     }
   }
   
-  public static class a {
-    public static Interceptable $ic;
-    
-    public transient FieldHolder $fh;
-  }
+  public static class a {}
 }
