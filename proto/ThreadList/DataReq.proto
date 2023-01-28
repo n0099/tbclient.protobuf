@@ -31,4 +31,5 @@ message DataReq {
     int32 has_ad_bear = 23;
     string ad_bear_sid = 24;
     double ad_bear_sid_price = 25;
+    int32 request_times = 26;
 }

@@ -7,4 +7,6 @@ message ReplyExp {
     string current_level = 4;
     string old = 5;
     string inc = 6;
+    string question_msg = 7;
+    string question_exp = 8;
 }

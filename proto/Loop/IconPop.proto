@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+message IconPop {
+    int64 icon_id = 6;
+    string name = 7;
+    string level = 8;
+    string weight = 9;
+    string pic = 10;
+    string sprite = 11;
+    string status = 12;
+    string type = 13;
+    string category_id = 14;
+    string time_interval = 15;
+    string is_force = 16;
+    string is_advanced = 17;
+    string ext = 18;
+    string title = 19;
+    string title_url = 20;
+    string intro = 21;
+    string intro_url = 22;
+    string forum_list = 23;
+    string pay_pic_pc = 24;
+    string pay_pic_pad = 25;
+    string yb_price = 26;
+    string is_new_style = 27;
+    string pic78 = 28;
+    string pic120 = 29;
+    string pic160 = 30;
+}

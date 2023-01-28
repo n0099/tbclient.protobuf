@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "Loop/LevelPop.proto";
+
+message LevelRes {
+    LevelPop pop = 1;
+}

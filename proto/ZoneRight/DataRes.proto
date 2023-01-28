@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "ZoneRight/Toast.proto";
+import "Toast.proto";
 
 message DataRes {
     uint32 has_right = 1;

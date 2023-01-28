@@ -75,4 +75,5 @@ message DataReq {
     AppTransmitData app_transmit_data = 77;
     int32 is_fold_comment_req = 78;
     int32 is_edit_comment_req = 79;
+    int32 request_times = 80;
 }

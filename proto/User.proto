@@ -36,6 +36,7 @@ import "ThemeCardInUser.proto";
 import "TshowInfo.proto";
 import "TwAnchorProfitItem.proto";
 import "TwZhiBoUser.proto";
+import "UserGrowth.proto";
 import "UserPics.proto";
 import "UserVideoChannelInfo.proto";
 import "UserVipInfo.proto";
@@ -172,4 +173,7 @@ message User {
     int32 is_nickname_editing = 128;
     string editing_nickname = 129;
     VirtualImageInfo virtual_image_info = 136;
+    UserGrowth user_growth = 137;
+    string display_intro = 138;
+    repeated string new_icon_url = 139;
 }

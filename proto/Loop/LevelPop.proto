@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message LevelPop {
+    string title = 1;
+    string desc = 2;
+    string btn_text = 3;
+    string btn_scheme = 4;
+    int32 level = 5;
+    string cancel_btn_text = 7;
+}

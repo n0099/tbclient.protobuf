@@ -12,4 +12,5 @@ message Basic {
     uint32 total_vote_num = 7;
     bool is_voted = 8;
     NoticeContent notice = 9;
+    string begin_audit_time = 10;
 }

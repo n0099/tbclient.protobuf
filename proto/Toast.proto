@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "ToastContent.proto";
+
+message Toast {
+    int32 icon_type = 1;
+    repeated ToastContent content = 2;
+}
