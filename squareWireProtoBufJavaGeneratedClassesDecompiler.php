@@ -40,15 +40,15 @@ foreach (scanAllDir($inputDir) as $filePath) {
     preg_match_all('/\s*@ProtoField\((label = Message.Label.(?<label>.*?), |)tag = (?<id>\d+)(, type = Message\.Datatype\.(?<type>.*?)|)\)\s*public final (?<javaType>.*?) (?<name>.*?);/', $file, $fieldMatches, PREG_SET_ORDER);
     $fields = [];
     $imports = [];
-    $missingImports = [];
+    $possibleJavaImports = [];
     foreach ($fieldMatches as $field) {
         ['label' => $label, 'id' => $id, 'type' => $type, 'javaType' => $javaType, 'name' => $name] = $field;
         $label = strtolower($label);
         $label = empty($label) ? '' : "$label ";
         if (empty($type)) {
-            $typeWithoutList = [];
-            preg_match('/(List<|)(?<typeWithoutList>.*[^>])/', $javaType, $typeWithoutList);
-            $type = $typeWithoutList['typeWithoutList'];
+            $memberTypeOfGenericList = [];
+            preg_match('/(List<|)(?<generic>.*[^>])/', $javaType, $memberTypeOfGenericList);
+            $type = str_replace('tbclient.', '', $memberTypeOfGenericList['generic']);
             if (file_exists("{$inputDir}/{$type}.java")) {
                 $imports[] = 'import "' . $type . '.proto";';
             } else {
@@ -56,10 +56,11 @@ foreach (scanAllDir($inputDir) as $filePath) {
                 preg_match('/package (?<package>.*?);/', $file, $package);
                 $typePathWithPackagePrefix = str_replace('.', '/', str_replace('tbclient.', '', $package['package'])) . "/{$type}";
                 if (file_exists("{$inputDir}/{$typePathWithPackagePrefix}.java")) {
+                    // relatively imported under current package
                     $imports[] = 'import "' . $typePathWithPackagePrefix . '.proto";';
                 } else {
                     // insert without package prefix since missing imports usually will be relatively imported by $javaImports
-                    $missingImports[] = 'import "' . $type . '.proto";';
+                    $possibleJavaImports[] = 'import "' . $type . '.proto";';
                 }
             }
         } else {
@@ -71,21 +72,27 @@ foreach (scanAllDir($inputDir) as $filePath) {
 
     $javaImports = [];
     preg_match_all('/import tbclient\.(?<import>.*?);/', $file, $javaImports);
-    $imports += array_map(fn ($importPath) => 'import "' . str_replace('.', '/', $importPath) . '.proto";', $javaImports['import']);
-    
+    $imports = [...$imports, ...array_map(fn (string $importPath) =>
+        'import "' . str_replace('.', '/', $importPath) . '.proto";', $javaImports['import'])];
+
     ksort($fields);
     sort($imports);
     $imports = array_unique($imports);
-    if (count(array_diff($missingImports, $imports)) !== 0) {
+
+    $importsWithoutPath = preg_replace('/^import "([a-z]+\/)+([a-z]+)\.proto";$/i', 'import "$2.proto";', $imports);
+    $missingImports = array_diff($possibleJavaImports, $imports, $importsWithoutPath);
+    if (count($missingImports) !== 0) {
         echo "  failed to reslove following type names:\n";
-        var_dump(array_diff($missingImports, $imports));
+        echo join("\n", array_map(fn (string $i) => "    $i", $missingImports)) . "\n";
     }
 
     $pathInfo = pathinfo($filePath);
     $messageName = $pathInfo['filename'];
     $indent = "\n    ";
     $importsStr = count($imports) === 0 ? '' : join("\n", $imports) . "\n\n";
-    $outputProtoFile = "syntax = \"proto3\";\n\n{$importsStr}message $messageName {" . $indent . join($indent, $fields) . "\n}\n";
+    $outputProtoFile = "syntax = \"proto3\";\n\n{$importsStr}message $messageName {" .
+        $indent . join($indent, $fields) .
+        "\n}\n";
     $outFileDirPath = "$outDir/{$pathInfo['dirname']}";
     if (!is_dir($outFileDirPath)) mkdir(trim($outFileDirPath, '.'));
     file_put_contents("$outFileDirPath/$messageName.proto", $outputProtoFile);
