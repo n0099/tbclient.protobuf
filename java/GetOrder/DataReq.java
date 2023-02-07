@@ -18,6 +18,8 @@ public final class DataReq extends Message {
 
     /* renamed from: common  reason: collision with root package name */
     public final CommonReq f1251common;
+    @ProtoField(tag = 13, type = Message.Datatype.INT64)
+    public final Long from_scene;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer is_autopay;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -39,6 +41,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PAY_TYPE = 0;
     public static final Integer DEFAULT_IS_LEFT = 0;
     public static final Integer DEFAULT_IS_AUTOPAY = 0;
+    public static final Long DEFAULT_FROM_SCENE = 0L;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -46,6 +49,7 @@ public final class DataReq extends Message {
 
         /* renamed from: common  reason: collision with root package name */
         public CommonReq f1252common;
+        public Long from_scene;
         public Integer is_autopay;
         public Integer is_left;
         public String mobile;
@@ -75,6 +79,7 @@ public final class DataReq extends Message {
             this.refer_page = dataReq.refer_page;
             this.click_zone = dataReq.click_zone;
             this.wallet_sdk_ua = dataReq.wallet_sdk_ua;
+            this.from_scene = dataReq.from_scene;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -140,9 +145,15 @@ public final class DataReq extends Message {
             String str6 = builder.wallet_sdk_ua;
             if (str6 == null) {
                 this.wallet_sdk_ua = "";
-                return;
             } else {
                 this.wallet_sdk_ua = str6;
+            }
+            Long l = builder.from_scene;
+            if (l == null) {
+                this.from_scene = DEFAULT_FROM_SCENE;
+                return;
+            } else {
+                this.from_scene = l;
                 return;
             }
         }
@@ -157,5 +168,6 @@ public final class DataReq extends Message {
         this.refer_page = builder.refer_page;
         this.click_zone = builder.click_zone;
         this.wallet_sdk_ua = builder.wallet_sdk_ua;
+        this.from_scene = builder.from_scene;
     }
 }
