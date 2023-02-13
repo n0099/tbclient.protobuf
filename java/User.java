@@ -244,6 +244,8 @@ public final class User extends Message {
     public final String seal_prefix;
     @ProtoField(tag = 32, type = Message.Datatype.INT32)
     public final Integer sex;
+    @ProtoField(tag = Cea708Decoder.COMMAND_SPC)
+    public final ShakeAdSwitch shake_ad_switch;
     @ProtoField(tag = 117, type = Message.Datatype.INT32)
     public final Integer show_pb_private_flag;
     @ProtoField(tag = 82)
@@ -480,6 +482,7 @@ public final class User extends Message {
         public String rank;
         public String seal_prefix;
         public Integer sex;
+        public ShakeAdSwitch shake_ad_switch;
         public Integer show_pb_private_flag;
         public SpringVirtualUser spring_virtual_user;
         public String tb_age;
@@ -654,6 +657,7 @@ public final class User extends Message {
             this.theme_background = user.theme_background;
             this.theme_my_tab = user.theme_my_tab;
             this.world_cup_info = user.world_cup_info;
+            this.shake_ad_switch = user.shake_ad_switch;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1276,6 +1280,7 @@ public final class User extends Message {
             this.theme_background = builder.theme_background;
             this.theme_my_tab = builder.theme_my_tab;
             this.world_cup_info = builder.world_cup_info;
+            this.shake_ad_switch = builder.shake_ad_switch;
             return;
         }
         this.is_login = builder.is_login;
@@ -1413,5 +1418,6 @@ public final class User extends Message {
         this.theme_background = builder.theme_background;
         this.theme_my_tab = builder.theme_my_tab;
         this.world_cup_info = builder.world_cup_info;
+        this.shake_ad_switch = builder.shake_ad_switch;
     }
 }
