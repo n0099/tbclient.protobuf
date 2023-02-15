@@ -4,11 +4,14 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.ThemeColorInfo;
 import tbclient.ThreadInfo;
 /* loaded from: classes9.dex */
 public final class HeaderCard extends Message {
     public static final String DEFAULT_CARD_TITLE = "";
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
+    @ProtoField(tag = 3)
+    public final ThemeColorInfo card_background;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String card_title;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -16,6 +19,7 @@ public final class HeaderCard extends Message {
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<HeaderCard> {
+        public ThemeColorInfo card_background;
         public String card_title;
         public List<ThreadInfo> thread_list;
 
@@ -29,6 +33,7 @@ public final class HeaderCard extends Message {
             }
             this.card_title = headerCard.card_title;
             this.thread_list = Message.copyOf(headerCard.thread_list);
+            this.card_background = headerCard.card_background;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -50,13 +55,14 @@ public final class HeaderCard extends Message {
             List<ThreadInfo> list = builder.thread_list;
             if (list == null) {
                 this.thread_list = DEFAULT_THREAD_LIST;
-                return;
             } else {
                 this.thread_list = Message.immutableCopyOf(list);
-                return;
             }
+            this.card_background = builder.card_background;
+            return;
         }
         this.card_title = builder.card_title;
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
+        this.card_background = builder.card_background;
     }
 }

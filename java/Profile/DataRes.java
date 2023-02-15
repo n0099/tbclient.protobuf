@@ -60,6 +60,8 @@ public final class DataRes extends Message {
     public final Highlist highs;
     @ProtoField(tag = 29, type = Message.Datatype.INT32)
     public final Integer is_black_white;
+    @ProtoField(label = Message.Label.REPEATED, tag = 43)
+    public final List<KingkongPositionRow> kingkong_position;
     @ProtoField(tag = 15)
     public final ModuleInfo module_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 42)
@@ -115,6 +117,7 @@ public final class DataRes extends Message {
     public static final List<UcCardInfo> DEFAULT_COMMON_CARD = Collections.emptyList();
     public static final List<CustomGrid> DEFAULT_CUSTOM_GRID = Collections.emptyList();
     public static final List<CustomGrid> DEFAULT_MORE_GRID = Collections.emptyList();
+    public static final List<KingkongPositionRow> DEFAULT_KINGKONG_POSITION = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -133,6 +136,7 @@ public final class DataRes extends Message {
         public GoodsWin goods_win;
         public Highlist highs;
         public Integer is_black_white;
+        public List<KingkongPositionRow> kingkong_position;
         public ModuleInfo module_info;
         public List<CustomGrid> more_grid;
         public Namoaixud namoaixud;
@@ -199,6 +203,7 @@ public final class DataRes extends Message {
             this.common_card = Message.copyOf(dataRes.common_card);
             this.custom_grid = Message.copyOf(dataRes.custom_grid);
             this.more_grid = Message.copyOf(dataRes.more_grid);
+            this.kingkong_position = Message.copyOf(dataRes.kingkong_position);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -314,9 +319,15 @@ public final class DataRes extends Message {
             List<CustomGrid> list11 = builder.more_grid;
             if (list11 == null) {
                 this.more_grid = DEFAULT_MORE_GRID;
-                return;
             } else {
                 this.more_grid = Message.immutableCopyOf(list11);
+            }
+            List<KingkongPositionRow> list12 = builder.kingkong_position;
+            if (list12 == null) {
+                this.kingkong_position = DEFAULT_KINGKONG_POSITION;
+                return;
+            } else {
+                this.kingkong_position = Message.immutableCopyOf(list12);
                 return;
             }
         }
@@ -356,5 +367,6 @@ public final class DataRes extends Message {
         this.common_card = Message.immutableCopyOf(builder.common_card);
         this.custom_grid = Message.immutableCopyOf(builder.custom_grid);
         this.more_grid = Message.immutableCopyOf(builder.more_grid);
+        this.kingkong_position = Message.immutableCopyOf(builder.kingkong_position);
     }
 }
