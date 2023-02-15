@@ -1,8 +1,10 @@
 syntax = "proto3";
 
+import "ThemeColorInfo.proto";
 import "ThreadInfo.proto";
 
 message HeaderCard {
     string card_title = 1;
     repeated ThreadInfo thread_list = 2;
+    ThemeColorInfo card_background = 3;
 }

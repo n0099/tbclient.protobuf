@@ -16,6 +16,7 @@ import "ModuleInfo.proto";
 import "NamoaixudEntry.proto";
 import "PostInfoList.proto";
 import "Profile/FinanceTab.proto";
+import "Profile/KingkongPositionRow.proto";
 import "Profile/MemberBlockInfo.proto";
 import "Profile/Namoaixud.proto";
 import "Profile/NicknameInfo.proto";
@@ -69,4 +70,5 @@ message DataRes {
     repeated UcCardInfo common_card = 40;
     repeated CustomGrid custom_grid = 41;
     repeated CustomGrid more_grid = 42;
+    repeated KingkongPositionRow kingkong_position = 43;
 }
