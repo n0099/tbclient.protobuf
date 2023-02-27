@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "ZoneRight/DataReq.proto";
-
-message ZoneRightReqIdl {
-    DataReq data = 1;
-}

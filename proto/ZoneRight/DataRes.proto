@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "Toast.proto";
-
-message DataRes {
-    uint32 has_right = 1;
-    Toast toast = 2;
-}

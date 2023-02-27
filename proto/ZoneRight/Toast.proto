@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message Toast {
-    uint32 type = 1;
-    string content = 2;
-}
