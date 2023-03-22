@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "RedNotify/DataReq.proto";
-
-message RedNotifyReqIdl {
-    DataReq data = 1;
-}

@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "UnreadTip/DataRes.proto";
-
-message UnreadTipResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

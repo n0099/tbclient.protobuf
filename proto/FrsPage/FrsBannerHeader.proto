@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "IconUrlInfo.proto";
 import "ThemeColorInfo.proto";
 
 message FrsBannerHeader {
@@ -13,4 +14,6 @@ message FrsBannerHeader {
     string jump_tips = 8;
     string jump_link = 9;
     string type = 10;
+    IconUrlInfo jump_tips_icon = 11;
+    IconUrlInfo brand_icon = 12;
 }

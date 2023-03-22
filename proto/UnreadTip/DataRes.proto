@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-message DataRes {
-    uint32 user_count = 1;
-    repeated string portrait_list = 2;
-    uint64 hide_unix = 3;
-    string show_tip = 4;
-    uint32 thread_count = 5;
-}

@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "Personalized/HeadCardCover.proto";
 import "ThemeColorInfo.proto";
 import "ThreadInfo.proto";
 
@@ -7,4 +8,5 @@ message HeaderCard {
     string card_title = 1;
     repeated ThreadInfo thread_list = 2;
     ThemeColorInfo card_background = 3;
+    HeadCardCover cover = 4;
 }
