@@ -226,6 +226,8 @@ public final class User extends Message {
     public final PayMemberInfo pay_member_info;
     @ProtoField(tag = 77)
     public final Pendant pendant;
+    @ProtoField(label = Message.Label.REPEATED, tag = Cea708Decoder.COMMAND_SPL, type = Message.Datatype.STRING)
+    public final List<String> pendants;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String portrait;
     @ProtoField(tag = 27, type = Message.Datatype.STRING)
@@ -374,6 +376,7 @@ public final class User extends Message {
     public static final Integer DEFAULT_DISPLAY_AUTH_TYPE = 0;
     public static final Integer DEFAULT_IS_NICKNAME_EDITING = 0;
     public static final List<String> DEFAULT_NEW_ICON_URL = Collections.emptyList();
+    public static final List<String> DEFAULT_PENDANTS = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<User> {
@@ -473,6 +476,7 @@ public final class User extends Message {
         public String passwd;
         public PayMemberInfo pay_member_info;
         public Pendant pendant;
+        public List<String> pendants;
         public String portrait;
         public String portraith;
         public Integer post_num;
@@ -658,6 +662,7 @@ public final class User extends Message {
             this.theme_my_tab = user.theme_my_tab;
             this.world_cup_info = user.world_cup_info;
             this.shake_ad_switch = user.shake_ad_switch;
+            this.pendants = Message.copyOf(user.pendants);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1281,7 +1286,14 @@ public final class User extends Message {
             this.theme_my_tab = builder.theme_my_tab;
             this.world_cup_info = builder.world_cup_info;
             this.shake_ad_switch = builder.shake_ad_switch;
-            return;
+            List<String> list13 = builder.pendants;
+            if (list13 == null) {
+                this.pendants = DEFAULT_PENDANTS;
+                return;
+            } else {
+                this.pendants = Message.immutableCopyOf(list13);
+                return;
+            }
         }
         this.is_login = builder.is_login;
         this.id = builder.id;
@@ -1419,5 +1431,6 @@ public final class User extends Message {
         this.theme_my_tab = builder.theme_my_tab;
         this.world_cup_info = builder.world_cup_info;
         this.shake_ad_switch = builder.shake_ad_switch;
+        this.pendants = Message.immutableCopyOf(builder.pendants);
     }
 }

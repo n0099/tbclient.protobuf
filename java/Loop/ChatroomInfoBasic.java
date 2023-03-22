@@ -5,12 +5,13 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class ChatroomInfoBasic extends Message {
     public static final String DEFAULT_AVATAR = "";
-    public static final Long DEFAULT_FORUM_ID = 0L;
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_UNREAD_NUM = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String avatar;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer btn_type;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -19,10 +20,13 @@ public final class ChatroomInfoBasic extends Message {
     public final String name;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String unread_num;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_BTN_TYPE = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ChatroomInfoBasic> {
         public String avatar;
+        public Integer btn_type;
         public Long forum_id;
         public String forum_name;
         public String name;
@@ -41,6 +45,7 @@ public final class ChatroomInfoBasic extends Message {
             this.avatar = chatroomInfoBasic.avatar;
             this.name = chatroomInfoBasic.name;
             this.unread_num = chatroomInfoBasic.unread_num;
+            this.btn_type = chatroomInfoBasic.btn_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -80,9 +85,15 @@ public final class ChatroomInfoBasic extends Message {
             String str4 = builder.unread_num;
             if (str4 == null) {
                 this.unread_num = "";
-                return;
             } else {
                 this.unread_num = str4;
+            }
+            Integer num = builder.btn_type;
+            if (num == null) {
+                this.btn_type = DEFAULT_BTN_TYPE;
+                return;
+            } else {
+                this.btn_type = num;
                 return;
             }
         }
@@ -91,5 +102,6 @@ public final class ChatroomInfoBasic extends Message {
         this.avatar = builder.avatar;
         this.name = builder.name;
         this.unread_num = builder.unread_num;
+        this.btn_type = builder.btn_type;
     }
 }

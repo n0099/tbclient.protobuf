@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.TagLabelInfo;
 /* loaded from: classes9.dex */
 public final class LiveFuseForumData extends Message {
     public static final String DEFAULT_BJIMG_DARK_BIG = "";
@@ -28,6 +29,8 @@ public final class LiveFuseForumData extends Message {
     public final Integer head_img_style;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String icon_url;
+    @ProtoField(label = Message.Label.REPEATED, tag = 14)
+    public final List<TagLabelInfo> label_infos;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String online_users;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -42,6 +45,7 @@ public final class LiveFuseForumData extends Message {
     public static final List<String> DEFAULT_TITLE = Collections.emptyList();
     public static final Integer DEFAULT_TYPE = 0;
     public static final Integer DEFAULT_HEAD_IMG_STYLE = 0;
+    public static final List<TagLabelInfo> DEFAULT_LABEL_INFOS = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<LiveFuseForumData> {
@@ -52,6 +56,7 @@ public final class LiveFuseForumData extends Message {
         public List<String> head_img;
         public Integer head_img_style;
         public String icon_url;
+        public List<TagLabelInfo> label_infos;
         public String online_users;
         public String schema;
         public List<String> title;
@@ -78,6 +83,7 @@ public final class LiveFuseForumData extends Message {
             this.bjimg_dark_small = liveFuseForumData.bjimg_dark_small;
             this.bjimg_light_small = liveFuseForumData.bjimg_light_small;
             this.head_img_style = liveFuseForumData.head_img_style;
+            this.label_infos = Message.copyOf(liveFuseForumData.label_infos);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -159,9 +165,15 @@ public final class LiveFuseForumData extends Message {
             Integer num2 = builder.head_img_style;
             if (num2 == null) {
                 this.head_img_style = DEFAULT_HEAD_IMG_STYLE;
-                return;
             } else {
                 this.head_img_style = num2;
+            }
+            List<TagLabelInfo> list3 = builder.label_infos;
+            if (list3 == null) {
+                this.label_infos = DEFAULT_LABEL_INFOS;
+                return;
+            } else {
+                this.label_infos = Message.immutableCopyOf(list3);
                 return;
             }
         }
@@ -177,5 +189,6 @@ public final class LiveFuseForumData extends Message {
         this.bjimg_dark_small = builder.bjimg_dark_small;
         this.bjimg_light_small = builder.bjimg_light_small;
         this.head_img_style = builder.head_img_style;
+        this.label_infos = Message.immutableCopyOf(builder.label_infos);
     }
 }

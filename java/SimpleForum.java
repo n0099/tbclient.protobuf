@@ -43,6 +43,8 @@ public final class SimpleForum extends Message {
     public final MultiForumPerm multi_forum_perm;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
+    @ProtoField(label = Message.Label.REPEATED, tag = 21, type = Message.Datatype.STRING)
+    public final List<String> pendants;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer post_num;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
@@ -63,6 +65,7 @@ public final class SimpleForum extends Message {
     public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
     public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
     public static final Integer DEFAULT_IS_FRS_MASK = 0;
+    public static final List<String> DEFAULT_PENDANTS = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<SimpleForum> {
@@ -81,6 +84,7 @@ public final class SimpleForum extends Message {
         public Integer member_num;
         public MultiForumPerm multi_forum_perm;
         public String name;
+        public List<String> pendants;
         public Integer post_num;
         public String recommend_tip;
         public String second_class;
@@ -115,6 +119,7 @@ public final class SimpleForum extends Message {
             this.is_frs_mask = simpleForum.is_frs_mask;
             this.theme_color = simpleForum.theme_color;
             this.recommend_tip = simpleForum.recommend_tip;
+            this.pendants = Message.copyOf(simpleForum.pendants);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -229,9 +234,15 @@ public final class SimpleForum extends Message {
             String str7 = builder.recommend_tip;
             if (str7 == null) {
                 this.recommend_tip = "";
-                return;
             } else {
                 this.recommend_tip = str7;
+            }
+            List<String> list2 = builder.pendants;
+            if (list2 == null) {
+                this.pendants = DEFAULT_PENDANTS;
+                return;
+            } else {
+                this.pendants = Message.immutableCopyOf(list2);
                 return;
             }
         }
@@ -255,5 +266,6 @@ public final class SimpleForum extends Message {
         this.is_frs_mask = builder.is_frs_mask;
         this.theme_color = builder.theme_color;
         this.recommend_tip = builder.recommend_tip;
+        this.pendants = Message.immutableCopyOf(builder.pendants);
     }
 }

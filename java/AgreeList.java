@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class AgreeList extends Message {
+    public static final String DEFAULT_TARGET_SCHEME = "";
     public static final String DEFAULT_VIRTUAL_IMAGE_URL = "";
     @ProtoField(tag = 8)
     public final User agreeer;
@@ -15,6 +16,8 @@ public final class AgreeList extends Message {
     public final Post post_info;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer snapshoot_pic_id;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String target_scheme;
     @ProtoField(tag = 1)
     public final ThreadInfo thread_info;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -36,6 +39,7 @@ public final class AgreeList extends Message {
         public Integer is_del;
         public Post post_info;
         public Integer snapshoot_pic_id;
+        public String target_scheme;
         public ThreadInfo thread_info;
         public Integer time;
         public Integer type;
@@ -58,6 +62,7 @@ public final class AgreeList extends Message {
             this.post_info = agreeList.post_info;
             this.virtual_image_url = agreeList.virtual_image_url;
             this.snapshoot_pic_id = agreeList.snapshoot_pic_id;
+            this.target_scheme = agreeList.target_scheme;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -106,9 +111,15 @@ public final class AgreeList extends Message {
             Integer num4 = builder.snapshoot_pic_id;
             if (num4 == null) {
                 this.snapshoot_pic_id = DEFAULT_SNAPSHOOT_PIC_ID;
-                return;
             } else {
                 this.snapshoot_pic_id = num4;
+            }
+            String str2 = builder.target_scheme;
+            if (str2 == null) {
+                this.target_scheme = "";
+                return;
+            } else {
+                this.target_scheme = str2;
                 return;
             }
         }
@@ -121,5 +132,6 @@ public final class AgreeList extends Message {
         this.post_info = builder.post_info;
         this.virtual_image_url = builder.virtual_image_url;
         this.snapshoot_pic_id = builder.snapshoot_pic_id;
+        this.target_scheme = builder.target_scheme;
     }
 }

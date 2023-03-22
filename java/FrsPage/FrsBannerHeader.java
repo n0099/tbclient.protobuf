@@ -2,6 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import tbclient.IconUrlInfo;
 import tbclient.ThemeColorInfo;
 /* loaded from: classes9.dex */
 public final class FrsBannerHeader extends Message {
@@ -13,6 +14,8 @@ public final class FrsBannerHeader extends Message {
     public static final String DEFAULT_TYPE = "";
     @ProtoField(tag = 7)
     public final ThemeColorInfo background_color;
+    @ProtoField(tag = 12)
+    public final IconUrlInfo brand_icon;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String content1;
     @ProtoField(tag = 4)
@@ -29,12 +32,15 @@ public final class FrsBannerHeader extends Message {
     public final String jump_tips;
     @ProtoField(tag = 6)
     public final ThemeColorInfo jump_tips_color;
+    @ProtoField(tag = 11)
+    public final IconUrlInfo jump_tips_icon;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String type;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<FrsBannerHeader> {
         public ThemeColorInfo background_color;
+        public IconUrlInfo brand_icon;
         public String content1;
         public ThemeColorInfo content1_color;
         public String content2;
@@ -43,6 +49,7 @@ public final class FrsBannerHeader extends Message {
         public String jump_link;
         public String jump_tips;
         public ThemeColorInfo jump_tips_color;
+        public IconUrlInfo jump_tips_icon;
         public String type;
 
         public Builder() {
@@ -63,6 +70,8 @@ public final class FrsBannerHeader extends Message {
             this.jump_tips = frsBannerHeader.jump_tips;
             this.jump_link = frsBannerHeader.jump_link;
             this.type = frsBannerHeader.type;
+            this.jump_tips_icon = frsBannerHeader.jump_tips_icon;
+            this.brand_icon = frsBannerHeader.brand_icon;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -112,11 +121,12 @@ public final class FrsBannerHeader extends Message {
             String str6 = builder.type;
             if (str6 == null) {
                 this.type = "";
-                return;
             } else {
                 this.type = str6;
-                return;
             }
+            this.jump_tips_icon = builder.jump_tips_icon;
+            this.brand_icon = builder.brand_icon;
+            return;
         }
         this.icon_url = builder.icon_url;
         this.content1 = builder.content1;
@@ -128,5 +138,7 @@ public final class FrsBannerHeader extends Message {
         this.jump_tips = builder.jump_tips;
         this.jump_link = builder.jump_link;
         this.type = builder.type;
+        this.jump_tips_icon = builder.jump_tips_icon;
+        this.brand_icon = builder.brand_icon;
     }
 }

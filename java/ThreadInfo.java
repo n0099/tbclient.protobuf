@@ -3,6 +3,7 @@ package tbclient;
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.down.manage.DownloadConstants;
 import com.baidu.location.BDLocation;
+import com.facebook.imageutils.JfifUtil;
 import com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor;
 import com.google.android.exoplayer2.extractor.ts.H262Reader;
 import com.google.android.exoplayer2.extractor.ts.PsExtractor;
@@ -21,6 +22,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_CLICK_MONITOR_URL = "";
     public static final String DEFAULT_CLICK_URL = "";
     public static final String DEFAULT_COLLECT_MARK_PID = "";
+    public static final String DEFAULT_CONVERT_BTN_TYPE = "";
     public static final String DEFAULT_DAILY_PAPER_TIME = "";
     public static final String DEFAULT_ECOM = "";
     public static final String DEFAULT_EXPOSURE_MONITOR_URL = "";
@@ -46,6 +48,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_RECOM_WEIGHT = "";
     public static final String DEFAULT_SCARD_PACKET_ID = "";
     public static final String DEFAULT_TAB_NAME = "";
+    public static final String DEFAULT_TARGET_SCHEME = "";
     public static final String DEFAULT_THREAD_SHARE_LINK = "";
     public static final String DEFAULT_TIEBAPLUS_EXTRA_PARAM = "";
     public static final String DEFAULT_TIEBAPLUS_ORDER_ID = "";
@@ -117,6 +120,8 @@ public final class ThreadInfo extends Message {
     public final Integer collect_status;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer comment_num;
+    @ProtoField(tag = 218, type = Message.Datatype.STRING)
+    public final String convert_btn_type;
     @ProtoField(tag = 45, type = Message.Datatype.INT32)
     public final Integer create_time;
     @ProtoField(tag = 211)
@@ -371,6 +376,8 @@ public final class ThreadInfo extends Message {
     public final String scard_packet_id;
     @ProtoField(tag = 135, type = Message.Datatype.INT64)
     public final Long share_num;
+    @ProtoField(tag = JfifUtil.MARKER_SOI, type = Message.Datatype.UINT32)
+    public final Integer show_ad_subscript;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer show_commented;
     @ProtoField(tag = 100)
@@ -387,6 +394,8 @@ public final class ThreadInfo extends Message {
     public final String tab_name;
     @ProtoField(tag = 200, type = Message.Datatype.INT32)
     public final Integer tab_show_mode;
+    @ProtoField(tag = 217, type = Message.Datatype.STRING)
+    public final String target_scheme;
     @ProtoField(tag = 83)
     public final TaskInfo task_info;
     @ProtoField(tag = 116)
@@ -577,6 +586,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_PICTXT = 0;
     public static final Integer DEFAULT_IS_HIGHLIGHT = 0;
     public static final Integer DEFAULT_IS_XIUXIU_THREAD = 0;
+    public static final Integer DEFAULT_SHOW_AD_SUBSCRIPT = 0;
 
     public ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1546,7 +1556,26 @@ public final class ThreadInfo extends Message {
                 this.is_xiuxiu_thread = num77;
             }
             this.ablum_info = builder.ablum_info;
-            return;
+            Integer num78 = builder.show_ad_subscript;
+            if (num78 == null) {
+                this.show_ad_subscript = DEFAULT_SHOW_AD_SUBSCRIPT;
+            } else {
+                this.show_ad_subscript = num78;
+            }
+            String str47 = builder.target_scheme;
+            if (str47 == null) {
+                this.target_scheme = "";
+            } else {
+                this.target_scheme = str47;
+            }
+            String str48 = builder.convert_btn_type;
+            if (str48 == null) {
+                this.convert_btn_type = "";
+                return;
+            } else {
+                this.convert_btn_type = str48;
+                return;
+            }
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -1753,6 +1782,9 @@ public final class ThreadInfo extends Message {
         this.is_highlight = builder.is_highlight;
         this.is_xiuxiu_thread = builder.is_xiuxiu_thread;
         this.ablum_info = builder.ablum_info;
+        this.show_ad_subscript = builder.show_ad_subscript;
+        this.target_scheme = builder.target_scheme;
+        this.convert_btn_type = builder.convert_btn_type;
     }
 
     /* loaded from: classes9.dex */
@@ -1785,6 +1817,7 @@ public final class ThreadInfo extends Message {
         public Integer collect_num;
         public Integer collect_status;
         public Integer comment_num;
+        public String convert_btn_type;
         public Integer create_time;
         public CustomFigure custom_figure;
         public CustomState custom_state;
@@ -1912,6 +1945,7 @@ public final class ThreadInfo extends Message {
         public List<PbContent> rich_title;
         public String scard_packet_id;
         public Long share_num;
+        public Integer show_ad_subscript;
         public Integer show_commented;
         public SkinInfo skin_info;
         public StarRankIcon star_rank_icon;
@@ -1920,6 +1954,7 @@ public final class ThreadInfo extends Message {
         public Integer tab_id;
         public String tab_name;
         public Integer tab_show_mode;
+        public String target_scheme;
         public TaskInfo task_info;
         public TbreadDispatch tbread_dispatch_info;
         public List<ThreadRecommendInfo> thread_recommend_infos;
@@ -2176,6 +2211,9 @@ public final class ThreadInfo extends Message {
             this.is_highlight = threadInfo.is_highlight;
             this.is_xiuxiu_thread = threadInfo.is_xiuxiu_thread;
             this.ablum_info = threadInfo.ablum_info;
+            this.show_ad_subscript = threadInfo.show_ad_subscript;
+            this.target_scheme = threadInfo.target_scheme;
+            this.convert_btn_type = threadInfo.convert_btn_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */

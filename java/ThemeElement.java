@@ -9,6 +9,8 @@ public final class ThemeElement extends Message {
     public static final String DEFAULT_FONT_COLOR = "";
     public static final String DEFAULT_LIGHT_COLOR = "";
     public static final String DEFAULT_PATTERN_IMAGE = "";
+    public static final Long DEFAULT_PATTERN_IMAGE_HEIGHT = 0L;
+    public static final Long DEFAULT_PATTERN_IMAGE_WIDTH = 0L;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String common_color;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -19,6 +21,10 @@ public final class ThemeElement extends Message {
     public final String light_color;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String pattern_image;
+    @ProtoField(tag = 6, type = Message.Datatype.INT64)
+    public final Long pattern_image_height;
+    @ProtoField(tag = 7, type = Message.Datatype.INT64)
+    public final Long pattern_image_width;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<ThemeElement> {
@@ -27,6 +33,8 @@ public final class ThemeElement extends Message {
         public String font_color;
         public String light_color;
         public String pattern_image;
+        public Long pattern_image_height;
+        public Long pattern_image_width;
 
         public Builder() {
         }
@@ -41,6 +49,8 @@ public final class ThemeElement extends Message {
             this.light_color = themeElement.light_color;
             this.pattern_image = themeElement.pattern_image;
             this.font_color = themeElement.font_color;
+            this.pattern_image_height = themeElement.pattern_image_height;
+            this.pattern_image_width = themeElement.pattern_image_width;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -80,9 +90,21 @@ public final class ThemeElement extends Message {
             String str5 = builder.font_color;
             if (str5 == null) {
                 this.font_color = "";
-                return;
             } else {
                 this.font_color = str5;
+            }
+            Long l = builder.pattern_image_height;
+            if (l == null) {
+                this.pattern_image_height = DEFAULT_PATTERN_IMAGE_HEIGHT;
+            } else {
+                this.pattern_image_height = l;
+            }
+            Long l2 = builder.pattern_image_width;
+            if (l2 == null) {
+                this.pattern_image_width = DEFAULT_PATTERN_IMAGE_WIDTH;
+                return;
+            } else {
+                this.pattern_image_width = l2;
                 return;
             }
         }
@@ -91,5 +113,7 @@ public final class ThemeElement extends Message {
         this.light_color = builder.light_color;
         this.pattern_image = builder.pattern_image;
         this.font_color = builder.font_color;
+        this.pattern_image_height = builder.pattern_image_height;
+        this.pattern_image_width = builder.pattern_image_width;
     }
 }
