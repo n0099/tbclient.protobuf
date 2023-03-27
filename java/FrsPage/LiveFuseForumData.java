@@ -31,6 +31,8 @@ public final class LiveFuseForumData extends Message {
     public final String icon_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 14)
     public final List<TagLabelInfo> label_infos;
+    @ProtoField(tag = 15)
+    public final NovelExt novel;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String online_users;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -57,6 +59,7 @@ public final class LiveFuseForumData extends Message {
         public Integer head_img_style;
         public String icon_url;
         public List<TagLabelInfo> label_infos;
+        public NovelExt novel;
         public String online_users;
         public String schema;
         public List<String> title;
@@ -84,6 +87,7 @@ public final class LiveFuseForumData extends Message {
             this.bjimg_light_small = liveFuseForumData.bjimg_light_small;
             this.head_img_style = liveFuseForumData.head_img_style;
             this.label_infos = Message.copyOf(liveFuseForumData.label_infos);
+            this.novel = liveFuseForumData.novel;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -171,11 +175,11 @@ public final class LiveFuseForumData extends Message {
             List<TagLabelInfo> list3 = builder.label_infos;
             if (list3 == null) {
                 this.label_infos = DEFAULT_LABEL_INFOS;
-                return;
             } else {
                 this.label_infos = Message.immutableCopyOf(list3);
-                return;
             }
+            this.novel = builder.novel;
+            return;
         }
         this.online_users = builder.online_users;
         this.head_img = Message.immutableCopyOf(builder.head_img);
@@ -190,5 +194,6 @@ public final class LiveFuseForumData extends Message {
         this.bjimg_light_small = builder.bjimg_light_small;
         this.head_img_style = builder.head_img_style;
         this.label_infos = Message.immutableCopyOf(builder.label_infos);
+        this.novel = builder.novel;
     }
 }

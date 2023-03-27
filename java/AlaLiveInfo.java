@@ -121,6 +121,8 @@ public final class AlaLiveInfo extends Message {
     public final Long thread_id;
     @ProtoField(tag = 12)
     public final AlaUserInfo user_info;
+    @ProtoField(tag = 51)
+    public final UniversalLabel user_label;
     @ProtoField(tag = 49)
     public final YyExt yy_ext;
     public static final Long DEFAULT_LIVE_ID = 0L;
@@ -195,6 +197,7 @@ public final class AlaLiveInfo extends Message {
         public String third_room_id;
         public Long thread_id;
         public AlaUserInfo user_info;
+        public UniversalLabel user_label;
         public YyExt yy_ext;
 
         public Builder() {
@@ -253,6 +256,7 @@ public final class AlaLiveInfo extends Message {
             this.cover_wide = alaLiveInfo.cover_wide;
             this.yy_ext = alaLiveInfo.yy_ext;
             this.show_page = alaLiveInfo.show_page;
+            this.user_label = alaLiveInfo.user_label;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -525,11 +529,11 @@ public final class AlaLiveInfo extends Message {
             Integer num15 = builder.show_page;
             if (num15 == null) {
                 this.show_page = DEFAULT_SHOW_PAGE;
-                return;
             } else {
                 this.show_page = num15;
-                return;
             }
+            this.user_label = builder.user_label;
+            return;
         }
         this.live_id = builder.live_id;
         this.cover = builder.cover;
@@ -579,5 +583,6 @@ public final class AlaLiveInfo extends Message {
         this.cover_wide = builder.cover_wide;
         this.yy_ext = builder.yy_ext;
         this.show_page = builder.show_page;
+        this.user_label = builder.user_label;
     }
 }

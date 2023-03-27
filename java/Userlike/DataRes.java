@@ -25,6 +25,8 @@ public final class DataRes extends Message {
     public final DiscoverHotForum hot_recomforum;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String last_tips;
+    @ProtoField(tag = 19)
+    public final PageData page_data;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String page_tag;
     @ProtoField(tag = 10, type = Message.Datatype.UINT64)
@@ -58,6 +60,7 @@ public final class DataRes extends Message {
         public Integer has_more;
         public DiscoverHotForum hot_recomforum;
         public String last_tips;
+        public PageData page_data;
         public String page_tag;
         public Long req_unix;
         public List<ConcernData> thread_info;
@@ -91,6 +94,7 @@ public final class DataRes extends Message {
             this.hot_recomforum = dataRes.hot_recomforum;
             this.app_list = Message.copyOf(dataRes.app_list);
             this.user_follow_live = dataRes.user_follow_live;
+            this.page_data = dataRes.page_data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -168,6 +172,7 @@ public final class DataRes extends Message {
                 this.app_list = Message.immutableCopyOf(list3);
             }
             this.user_follow_live = builder.user_follow_live;
+            this.page_data = builder.page_data;
             return;
         }
         this.thread_info = Message.immutableCopyOf(builder.thread_info);
@@ -185,5 +190,6 @@ public final class DataRes extends Message {
         this.hot_recomforum = builder.hot_recomforum;
         this.app_list = Message.immutableCopyOf(builder.app_list);
         this.user_follow_live = builder.user_follow_live;
+        this.page_data = builder.page_data;
     }
 }

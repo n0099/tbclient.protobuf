@@ -103,6 +103,8 @@ public final class Post extends Message {
     public final Integer need_log;
     @ProtoField(tag = 58)
     public final NovelInfo novel_info;
+    @ProtoField(tag = 67)
+    public final NovelRecomCard novel_recom_card;
     @ProtoField(tag = 42)
     public final OriginThreadInfo origin_thread_info;
     @ProtoField(tag = 54)
@@ -220,6 +222,7 @@ public final class Post extends Message {
         public String lego_card;
         public Integer need_log;
         public NovelInfo novel_info;
+        public NovelRecomCard novel_recom_card;
         public OriginThreadInfo origin_thread_info;
         public Item outer_item;
         public DealInfo pb_deal_info;
@@ -316,6 +319,7 @@ public final class Post extends Message {
             this.bubble_info = post.bubble_info;
             this.rumor_source_img = post.rumor_source_img;
             this.festival_tip_data = post.festival_tip_data;
+            this.novel_recom_card = post.novel_recom_card;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -583,6 +587,7 @@ public final class Post extends Message {
                 this.rumor_source_img = str11;
             }
             this.festival_tip_data = builder.festival_tip_data;
+            this.novel_recom_card = builder.novel_recom_card;
             return;
         }
         this.id = builder.id;
@@ -650,5 +655,6 @@ public final class Post extends Message {
         this.bubble_info = builder.bubble_info;
         this.rumor_source_img = builder.rumor_source_img;
         this.festival_tip_data = builder.festival_tip_data;
+        this.novel_recom_card = builder.novel_recom_card;
     }
 }

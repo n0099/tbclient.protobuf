@@ -11,6 +11,7 @@ public final class ServiceArea extends Message {
     public static final String DEFAULT_SERVICENAME = "";
     public static final String DEFAULT_SERVICEURL = "";
     public static final String DEFAULT_SERVICE_TYPE = "";
+    public static final String DEFAULT_TAG = "";
     public static final List<String> DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
     public static final String DEFAULT_VERSION = "";
     @ProtoField(tag = 6)
@@ -25,6 +26,8 @@ public final class ServiceArea extends Message {
     public final String servicename;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String serviceurl;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String tag;
     @ProtoField(label = Message.Label.REPEATED, tag = 8, type = Message.Datatype.STRING)
     public final List<String> third_statistics_url;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -38,6 +41,7 @@ public final class ServiceArea extends Message {
         public String service_type;
         public String servicename;
         public String serviceurl;
+        public String tag;
         public List<String> third_statistics_url;
         public String version;
 
@@ -57,6 +61,7 @@ public final class ServiceArea extends Message {
             this.area_smart_app = serviceArea.area_smart_app;
             this.schema = serviceArea.schema;
             this.third_statistics_url = Message.copyOf(serviceArea.third_statistics_url);
+            this.tag = serviceArea.tag;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -109,9 +114,15 @@ public final class ServiceArea extends Message {
             List<String> list = builder.third_statistics_url;
             if (list == null) {
                 this.third_statistics_url = DEFAULT_THIRD_STATISTICS_URL;
-                return;
             } else {
                 this.third_statistics_url = Message.immutableCopyOf(list);
+            }
+            String str7 = builder.tag;
+            if (str7 == null) {
+                this.tag = "";
+                return;
+            } else {
+                this.tag = str7;
                 return;
             }
         }
@@ -123,5 +134,6 @@ public final class ServiceArea extends Message {
         this.area_smart_app = builder.area_smart_app;
         this.schema = builder.schema;
         this.third_statistics_url = Message.immutableCopyOf(builder.third_statistics_url);
+        this.tag = builder.tag;
     }
 }
