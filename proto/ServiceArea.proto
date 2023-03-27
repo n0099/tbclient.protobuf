@@ -11,4 +11,5 @@ message ServiceArea {
     SmartApp area_smart_app = 6;
     string schema = 7;
     repeated string third_statistics_url = 8;
+    string tag = 9;
 }

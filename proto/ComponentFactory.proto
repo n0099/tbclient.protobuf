@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+import "AbstractComponent.proto";
+import "FeedEntrybarComponent.proto";
+import "FeedHeadComponent.proto";
+import "FeedHeadFigureComponent.proto";
+import "FeedItem.proto";
+import "FeedLinkComponent.proto";
+import "FeedLiveComponent.proto";
+import "FeedOriginComponent.proto";
+import "FeedPicComponent.proto";
+import "FeedSocialComponent.proto";
+import "FeedVideoComponent.proto";
+import "SidewayRecomComponent.proto";
+import "TitleComponent.proto";
+import "Voice.proto";
+
+message ComponentFactory {
+    string component = 1;
+    TitleComponent feed_title = 3;
+    AbstractComponent feed_abstract = 4;
+    FeedHeadComponent feed_head = 5;
+    FeedHeadFigureComponent feed_head_figure = 6;
+    FeedPicComponent feed_pic = 7;
+    FeedSocialComponent feed_social = 8;
+    FeedVideoComponent feed_video = 9;
+    FeedEntrybarComponent feed_entrybar = 10;
+    Voice feed_voice = 11;
+    FeedLiveComponent feed_live = 12;
+    string base_text = 13;
+    SidewayRecomComponent sideway_recom = 14;
+    FeedItem feed_item = 15;
+    FeedOriginComponent feed_origin = 16;
+    FeedLinkComponent feed_link = 17;
+}

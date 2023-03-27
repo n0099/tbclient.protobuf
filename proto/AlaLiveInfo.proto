@@ -6,6 +6,7 @@ import "AlaShareInfo.proto";
 import "AlaStageDislikeInfo.proto";
 import "AlaUserInfo.proto";
 import "DislikeInfo.proto";
+import "UniversalLabel.proto";
 import "YyExt.proto";
 
 message AlaLiveInfo {
@@ -57,4 +58,5 @@ message AlaLiveInfo {
     string cover_wide = 48;
     YyExt yy_ext = 49;
     int32 show_page = 50;
+    UniversalLabel user_label = 51;
 }

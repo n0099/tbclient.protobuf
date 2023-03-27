@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "FeedHeadIcon.proto";
+import "FeedHeadText.proto";
+
+message FeedHeadSymbol {
+    FeedHeadIcon icon = 1;
+    uint32 type = 2;
+    FeedHeadText text = 3;
+    string schema = 4;
+}

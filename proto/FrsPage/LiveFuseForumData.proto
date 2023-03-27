@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "FrsPage/NovelExt.proto";
 import "TagLabelInfo.proto";
 
 message LiveFuseForumData {
@@ -16,4 +17,5 @@ message LiveFuseForumData {
     string bjimg_light_small = 11;
     int32 head_img_style = 13;
     repeated TagLabelInfo label_infos = 14;
+    NovelExt novel = 15;
 }

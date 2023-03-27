@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "FeedLayout.proto";
+import "SidewayLayout.proto";
+
+message LayoutFactory {
+    string layout = 1;
+    FeedLayout feed = 2;
+    SidewayLayout sideway = 3;
+}

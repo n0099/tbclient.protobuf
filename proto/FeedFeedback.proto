@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message FeedFeedback {
+    string type = 1;
+    string title = 2;
+    string button_text = 3;
+    string common_id = 4;
+}

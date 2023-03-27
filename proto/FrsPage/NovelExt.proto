@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "ThemeColorInfo.proto";
+
+message NovelExt {
+    int64 chapter_time = 1;
+    string _abstract = 2;
+    ThemeColorInfo new_labels = 3;
+    ThemeColorInfo chapter_bg_color = 4;
+    ThemeColorInfo chapter_name_color = 5;
+    ThemeColorInfo chapter_time_color = 6;
+}
