@@ -5,6 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ActiveCenter;
+import tbclient.CommonTaskInfo;
 import tbclient.FloatStrategy;
 import tbclient.MissionInfo;
 /* loaded from: classes9.dex */
@@ -29,9 +30,12 @@ public final class DataRes extends Message {
     public final String newuser_pop_money;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String newuser_pop_top;
+    @ProtoField(label = Message.Label.REPEATED, tag = 11)
+    public final List<CommonTaskInfo> task_list;
     public static final Integer DEFAULT_IS_NEW_USER = 0;
     public static final List<MissionInfo> DEFAULT_MISSION_LIST = Collections.emptyList();
     public static final List<FloatStrategy> DEFAULT_FLOAT_LIST = Collections.emptyList();
+    public static final List<CommonTaskInfo> DEFAULT_TASK_LIST = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -43,6 +47,7 @@ public final class DataRes extends Message {
         public String newuser_pop_clickurl;
         public String newuser_pop_money;
         public String newuser_pop_top;
+        public List<CommonTaskInfo> task_list;
 
         public Builder() {
         }
@@ -60,6 +65,7 @@ public final class DataRes extends Message {
             this.newuser_pop_money = dataRes.newuser_pop_money;
             this.newuser_pop_top = dataRes.newuser_pop_top;
             this.active_center = dataRes.active_center;
+            this.task_list = Message.copyOf(dataRes.task_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -115,7 +121,14 @@ public final class DataRes extends Message {
                 this.newuser_pop_top = str4;
             }
             this.active_center = builder.active_center;
-            return;
+            List<CommonTaskInfo> list3 = builder.task_list;
+            if (list3 == null) {
+                this.task_list = DEFAULT_TASK_LIST;
+                return;
+            } else {
+                this.task_list = Message.immutableCopyOf(list3);
+                return;
+            }
         }
         this.is_new_user = builder.is_new_user;
         this.active_url = builder.active_url;
@@ -125,5 +138,6 @@ public final class DataRes extends Message {
         this.newuser_pop_money = builder.newuser_pop_money;
         this.newuser_pop_top = builder.newuser_pop_top;
         this.active_center = builder.active_center;
+        this.task_list = Message.immutableCopyOf(builder.task_list);
     }
 }

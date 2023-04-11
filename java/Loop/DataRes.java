@@ -11,6 +11,8 @@ public final class DataRes extends Message {
     public static final List<AlaLiveInfo> DEFAULT_LIVE_INDEX_SECOND_FLOOR = Collections.emptyList();
     public static final List<AlaLiveInfo> DEFAULT_LIVE_PIC_SECOND_FLOOR = Collections.emptyList();
     public static final String DEFAULT_UNIQ_ID = "";
+    @ProtoField(tag = 12)
+    public final MemberBroadcastInfo activity_broadcast;
     @ProtoField(tag = 7)
     public final ChatroomFrsRes chatroom_frs;
     @ProtoField(tag = 9)
@@ -36,6 +38,7 @@ public final class DataRes extends Message {
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public MemberBroadcastInfo activity_broadcast;
         public ChatroomFrsRes chatroom_frs;
         public ChatroomMessageTabData chatroom_message_tab;
         public FestivalInfo festival_info;
@@ -67,6 +70,7 @@ public final class DataRes extends Message {
             this.chatroom_message_tab = dataRes.chatroom_message_tab;
             this.member_broadcast = dataRes.member_broadcast;
             this.festival_info = dataRes.festival_info;
+            this.activity_broadcast = dataRes.activity_broadcast;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -110,6 +114,7 @@ public final class DataRes extends Message {
             this.chatroom_message_tab = builder.chatroom_message_tab;
             this.member_broadcast = builder.member_broadcast;
             this.festival_info = builder.festival_info;
+            this.activity_broadcast = builder.activity_broadcast;
             return;
         }
         this.live = builder.live;
@@ -123,5 +128,6 @@ public final class DataRes extends Message {
         this.chatroom_message_tab = builder.chatroom_message_tab;
         this.member_broadcast = builder.member_broadcast;
         this.festival_info = builder.festival_info;
+        this.activity_broadcast = builder.activity_broadcast;
     }
 }

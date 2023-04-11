@@ -8,8 +8,13 @@ public final class TaskInfo extends Message {
     public static final String DEFAULT_FLOOR_GOD_REPLY = "";
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_OBJ_ID = "";
+    public static final String DEFAULT_THEME_COLOR = "";
     public static final String DEFAULT_THREAD_IMG = "";
     public static final String DEFAULT_THREAD_IMG_SIZE = "";
+    public static final String DEFAULT_TOP_BACKGROUND_IMG = "";
+    public static final String DEFAULT_WEBVIEW_DATA = "";
+    public static final String DEFAULT_WEBVIEW_URL = "";
+    public static final String DEFAULT_WH_RATE = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String bgimg;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
@@ -32,14 +37,24 @@ public final class TaskInfo extends Message {
     public final Long start_time;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long task_id;
+    @ProtoField(tag = 19, type = Message.Datatype.STRING)
+    public final String theme_color;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long thread_id;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String thread_img;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String thread_img_size;
+    @ProtoField(tag = 18, type = Message.Datatype.STRING)
+    public final String top_background_img;
     @ProtoField(tag = 11)
     public final VoteSchema vote_schema;
+    @ProtoField(tag = 20, type = Message.Datatype.STRING)
+    public final String webview_data;
+    @ProtoField(tag = 17, type = Message.Datatype.STRING)
+    public final String webview_url;
+    @ProtoField(tag = 16, type = Message.Datatype.STRING)
+    public final String wh_rate;
     public static final Long DEFAULT_TASK_ID = 0L;
     public static final Long DEFAULT_THREAD_ID = 0L;
     public static final Long DEFAULT_START_TIME = 0L;
@@ -61,10 +76,15 @@ public final class TaskInfo extends Message {
         public RewardCard reward_card;
         public Long start_time;
         public Long task_id;
+        public String theme_color;
         public Long thread_id;
         public String thread_img;
         public String thread_img_size;
+        public String top_background_img;
         public VoteSchema vote_schema;
+        public String webview_data;
+        public String webview_url;
+        public String wh_rate;
 
         public Builder() {
         }
@@ -89,6 +109,11 @@ public final class TaskInfo extends Message {
             this.is_god_reply = taskInfo.is_god_reply;
             this.floor_god_reply = taskInfo.floor_god_reply;
             this.card_type = taskInfo.card_type;
+            this.wh_rate = taskInfo.wh_rate;
+            this.webview_url = taskInfo.webview_url;
+            this.top_background_img = taskInfo.top_background_img;
+            this.theme_color = taskInfo.theme_color;
+            this.webview_data = taskInfo.webview_data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -178,9 +203,39 @@ public final class TaskInfo extends Message {
             Integer num2 = builder.card_type;
             if (num2 == null) {
                 this.card_type = DEFAULT_CARD_TYPE;
-                return;
             } else {
                 this.card_type = num2;
+            }
+            String str7 = builder.wh_rate;
+            if (str7 == null) {
+                this.wh_rate = "";
+            } else {
+                this.wh_rate = str7;
+            }
+            String str8 = builder.webview_url;
+            if (str8 == null) {
+                this.webview_url = "";
+            } else {
+                this.webview_url = str8;
+            }
+            String str9 = builder.top_background_img;
+            if (str9 == null) {
+                this.top_background_img = "";
+            } else {
+                this.top_background_img = str9;
+            }
+            String str10 = builder.theme_color;
+            if (str10 == null) {
+                this.theme_color = "";
+            } else {
+                this.theme_color = str10;
+            }
+            String str11 = builder.webview_data;
+            if (str11 == null) {
+                this.webview_data = "";
+                return;
+            } else {
+                this.webview_data = str11;
                 return;
             }
         }
@@ -199,5 +254,10 @@ public final class TaskInfo extends Message {
         this.is_god_reply = builder.is_god_reply;
         this.floor_god_reply = builder.floor_god_reply;
         this.card_type = builder.card_type;
+        this.wh_rate = builder.wh_rate;
+        this.webview_url = builder.webview_url;
+        this.top_background_img = builder.top_background_img;
+        this.theme_color = builder.theme_color;
+        this.webview_data = builder.webview_data;
     }
 }

@@ -10,12 +10,15 @@ public final class Post extends Message {
     public static final String DEFAULT_DYNAMIC_URL = "";
     public static final String DEFAULT_FOLD_COMMENT_APPLY_URL = "";
     public static final String DEFAULT_FOLD_TIP = "";
+    public static final String DEFAULT_ICON_URL = "";
     public static final String DEFAULT_IOS_BIMG_FORMAT = "";
     public static final String DEFAULT_LEGO_CARD = "";
     public static final String DEFAULT_QUOTE_ID = "";
     public static final String DEFAULT_RUMOR_SOURCE_IMG = "";
     public static final String DEFAULT_TIME_EX = "";
     public static final String DEFAULT_TITLE = "";
+    public static final String DEFAULT_TOUTIAO_CARD_TAG = "";
+    public static final String DEFAULT_TOUTIAO_CARD_TAG_COLOR = "";
     public static final String DEFAULT_VOTE_CRYPT = "";
     @ProtoField(tag = 27)
     public final ActPost act_post;
@@ -65,6 +68,8 @@ public final class Post extends Message {
     public final FullLengthNovel full_length_novel;
     @ProtoField(tag = 33)
     public final TogetherHi high_together;
+    @ProtoField(tag = 69, type = Message.Datatype.STRING)
+    public final String icon_url;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long id;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
@@ -119,6 +124,8 @@ public final class Post extends Message {
     public final String quote_id;
     @ProtoField(tag = 65, type = Message.Datatype.STRING)
     public final String rumor_source_img;
+    @ProtoField(tag = 68, type = Message.Datatype.INT32)
+    public final Integer shield_icon;
     @ProtoField(tag = 47, type = Message.Datatype.INT32)
     public final Integer show_squared;
     @ProtoField(tag = 21)
@@ -141,6 +148,10 @@ public final class Post extends Message {
     public final String time_ex;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
+    @ProtoField(tag = 70, type = Message.Datatype.STRING)
+    public final String toutiao_card_tag;
+    @ProtoField(tag = 71, type = Message.Datatype.STRING)
+    public final String toutiao_card_tag_color;
     @ProtoField(tag = 26)
     public final TPointPost tpoint_post;
     @ProtoField(tag = 29)
@@ -176,6 +187,7 @@ public final class Post extends Message {
     public static final List<HeadItem> DEFAULT_ITEM_STAR = Collections.emptyList();
     public static final Integer DEFAULT_FOLD_COMMENT_STATUS = 0;
     public static final List<CardLinkInfo> DEFAULT_CARD_LINK_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_SHIELD_ICON = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<Post> {
@@ -203,6 +215,7 @@ public final class Post extends Message {
         public SimpleForum from_forum;
         public FullLengthNovel full_length_novel;
         public TogetherHi high_together;
+        public String icon_url;
         public Long id;
         public Integer img_num_abtest;
         public String ios_bimg_format;
@@ -230,6 +243,7 @@ public final class Post extends Message {
         public PbPresent present;
         public String quote_id;
         public String rumor_source_img;
+        public Integer shield_icon;
         public Integer show_squared;
         public SignatureData signature;
         public SkinInfo skin_info;
@@ -241,6 +255,8 @@ public final class Post extends Message {
         public Integer time;
         public String time_ex;
         public String title;
+        public String toutiao_card_tag;
+        public String toutiao_card_tag_color;
         public TPointPost tpoint_post;
         public VideoInfo video_info;
         public String vote_crypt;
@@ -320,6 +336,10 @@ public final class Post extends Message {
             this.rumor_source_img = post.rumor_source_img;
             this.festival_tip_data = post.festival_tip_data;
             this.novel_recom_card = post.novel_recom_card;
+            this.shield_icon = post.shield_icon;
+            this.icon_url = post.icon_url;
+            this.toutiao_card_tag = post.toutiao_card_tag;
+            this.toutiao_card_tag_color = post.toutiao_card_tag_color;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -588,7 +608,32 @@ public final class Post extends Message {
             }
             this.festival_tip_data = builder.festival_tip_data;
             this.novel_recom_card = builder.novel_recom_card;
-            return;
+            Integer num20 = builder.shield_icon;
+            if (num20 == null) {
+                this.shield_icon = DEFAULT_SHIELD_ICON;
+            } else {
+                this.shield_icon = num20;
+            }
+            String str12 = builder.icon_url;
+            if (str12 == null) {
+                this.icon_url = "";
+            } else {
+                this.icon_url = str12;
+            }
+            String str13 = builder.toutiao_card_tag;
+            if (str13 == null) {
+                this.toutiao_card_tag = "";
+            } else {
+                this.toutiao_card_tag = str13;
+            }
+            String str14 = builder.toutiao_card_tag_color;
+            if (str14 == null) {
+                this.toutiao_card_tag_color = "";
+                return;
+            } else {
+                this.toutiao_card_tag_color = str14;
+                return;
+            }
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -656,5 +701,9 @@ public final class Post extends Message {
         this.rumor_source_img = builder.rumor_source_img;
         this.festival_tip_data = builder.festival_tip_data;
         this.novel_recom_card = builder.novel_recom_card;
+        this.shield_icon = builder.shield_icon;
+        this.icon_url = builder.icon_url;
+        this.toutiao_card_tag = builder.toutiao_card_tag;
+        this.toutiao_card_tag_color = builder.toutiao_card_tag_color;
     }
 }
