@@ -98,4 +98,8 @@ message Post {
     string rumor_source_img = 65;
     FestivalTipData festival_tip_data = 66;
     NovelRecomCard novel_recom_card = 67;
+    int32 shield_icon = 68;
+    string icon_url = 69;
+    string toutiao_card_tag = 70;
+    string toutiao_card_tag_color = 71;
 }
