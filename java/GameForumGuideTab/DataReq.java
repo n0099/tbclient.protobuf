@@ -21,12 +21,15 @@ public final class DataReq extends Message {
     public final Integer sub_label_id;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer sub_tab_id;
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer tab_id;
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_PS = 0;
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_SUB_TAB_ID = 0;
     public static final Integer DEFAULT_SUB_LABEL_ID = 0;
     public static final Integer DEFAULT_NEED_TAB_STUCT = 0;
+    public static final Integer DEFAULT_TAB_ID = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -39,6 +42,7 @@ public final class DataReq extends Message {
         public Integer ps;
         public Integer sub_label_id;
         public Integer sub_tab_id;
+        public Integer tab_id;
 
         public Builder() {
         }
@@ -55,6 +59,7 @@ public final class DataReq extends Message {
             this.sub_tab_id = dataReq.sub_tab_id;
             this.sub_label_id = dataReq.sub_label_id;
             this.need_tab_stuct = dataReq.need_tab_stuct;
+            this.tab_id = dataReq.tab_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -101,9 +106,15 @@ public final class DataReq extends Message {
             Integer num5 = builder.need_tab_stuct;
             if (num5 == null) {
                 this.need_tab_stuct = DEFAULT_NEED_TAB_STUCT;
-                return;
             } else {
                 this.need_tab_stuct = num5;
+            }
+            Integer num6 = builder.tab_id;
+            if (num6 == null) {
+                this.tab_id = DEFAULT_TAB_ID;
+                return;
+            } else {
+                this.tab_id = num6;
                 return;
             }
         }
@@ -114,5 +125,6 @@ public final class DataReq extends Message {
         this.sub_tab_id = builder.sub_tab_id;
         this.sub_label_id = builder.sub_label_id;
         this.need_tab_stuct = builder.need_tab_stuct;
+        this.tab_id = builder.tab_id;
     }
 }

@@ -15,6 +15,8 @@ public final class FeedForumInfo extends Message {
     public final String forum_name;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer is_like;
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer is_private_forum;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer member_count;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -28,6 +30,7 @@ public final class FeedForumInfo extends Message {
     public static final Integer DEFAULT_POST_NUM = 0;
     public static final Integer DEFAULT_POS = 0;
     public static final Integer DEFAULT_IS_LIKE = 0;
+    public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<FeedForumInfo> {
@@ -35,6 +38,7 @@ public final class FeedForumInfo extends Message {
         public Long forum_id;
         public String forum_name;
         public Integer is_like;
+        public Integer is_private_forum;
         public Integer member_count;
         public Integer pos;
         public Integer post_num;
@@ -56,6 +60,7 @@ public final class FeedForumInfo extends Message {
             this.reason = feedForumInfo.reason;
             this.pos = feedForumInfo.pos;
             this.is_like = feedForumInfo.is_like;
+            this.is_private_forum = feedForumInfo.is_private_forum;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -113,9 +118,15 @@ public final class FeedForumInfo extends Message {
             Integer num4 = builder.is_like;
             if (num4 == null) {
                 this.is_like = DEFAULT_IS_LIKE;
-                return;
             } else {
                 this.is_like = num4;
+            }
+            Integer num5 = builder.is_private_forum;
+            if (num5 == null) {
+                this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
+                return;
+            } else {
+                this.is_private_forum = num5;
                 return;
             }
         }
@@ -127,5 +138,6 @@ public final class FeedForumInfo extends Message {
         this.reason = builder.reason;
         this.pos = builder.pos;
         this.is_like = builder.is_like;
+        this.is_private_forum = builder.is_private_forum;
     }
 }
