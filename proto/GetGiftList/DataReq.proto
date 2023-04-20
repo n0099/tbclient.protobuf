@@ -5,4 +5,5 @@ import "CommonReq.proto";
 message DataReq {
     string scene_from = 1;
     uint64 benefit_userid = 3;
+    uint32 show_draw_gift = 4;
 }

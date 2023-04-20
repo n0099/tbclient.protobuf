@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message AdTypeReq {
+    uint64 forum_id = 1;
+    string page_name = 2;
+    uint32 page_num = 3;
+}

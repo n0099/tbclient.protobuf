@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message VipSpreadItem {
+    string img_url = 1;
+    string link = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "OriginThreadInfo.proto";
+import "User.proto";
+
+message ForumMessageInfo {
+    OriginThreadInfo origin_thread_info = 1;
+    int32 content_type = 2;
+    User replyer = 3;
+}

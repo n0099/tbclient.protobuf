@@ -70,4 +70,13 @@ message CommonReq {
     string device_score = 70;
     int32 pure_mode = 71;
     int32 xcx_mode = 72;
+    string ledom = 73;
+    string diao = 74;
+    string noisrev_so = 75;
+    string dnard = 76;
+    string epyt_dnarb = 77;
+    int32 w_rcs = 78;
+    int32 h_rcs = 79;
+    double pid_rcs = 80;
+    int32 need_decrypt = 81;
 }

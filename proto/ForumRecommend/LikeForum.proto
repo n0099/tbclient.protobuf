@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "BlockPopInfo.proto";
 import "FrsTabInfo.proto";
 import "PrivateForumInfo.proto";
 import "ThemeColorInfo.proto";
@@ -10,6 +11,7 @@ message LikeForum {
     string avatar = 3;
     int32 is_sign = 4;
     int32 level_id = 5;
+    int32 is_liveforum = 6;
     uint32 is_brand_forum = 7;
     string content = 9;
     int32 is_top = 10;
@@ -21,4 +23,8 @@ message LikeForum {
     PrivateForumInfo private_forum_info = 19;
     int64 hot_thread_id = 20;
     repeated FrsTabInfo tab_info = 21;
+    string concern_num = 22;
+    string thread_num = 23;
+    string has_concerned = 24;
+    BlockPopInfo block_pop_info = 25;
 }

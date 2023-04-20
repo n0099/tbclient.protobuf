@@ -7,4 +7,5 @@ message VipBanner {
     string bubble = 4;
     string url = 5;
     string button_url = 6;
+    string sub_lable = 7;
 }

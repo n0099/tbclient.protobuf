@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message StarContri {
+    string color_msg = 1;
+    string after_msg = 2;
+}

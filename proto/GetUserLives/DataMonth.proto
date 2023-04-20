@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message DataMonth {
+    int64 total_live_duration = 1;
+    int64 live_count = 2;
+}

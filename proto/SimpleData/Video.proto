@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "SimpleData/EncourageInfo.proto";
+
+message Video {
+    string url = 1;
+    string poster = 2;
+    int32 duration = 3;
+    string video_type = 4;
+    EncourageInfo encourage_info = 5;
+}
