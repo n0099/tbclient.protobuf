@@ -13,6 +13,8 @@ import tbclient.SugRankingInfo;
 public final class DataRes extends Message {
     @ProtoField(tag = 4)
     public final RecommendForumInfo forum_card;
+    @ProtoField(label = Message.Label.REPEATED, tag = 8)
+    public final List<RecommendForumInfo> forum_cards;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<ForumInfo> forum_list;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
@@ -29,10 +31,12 @@ public final class DataRes extends Message {
     public static final List<String> DEFAULT_LIST = Collections.emptyList();
     public static final List<ForumInfo> DEFAULT_FORUM_LIST = Collections.emptyList();
     public static final List<SugLiveInfo> DEFAULT_LIVE_CARD = Collections.emptyList();
+    public static final List<RecommendForumInfo> DEFAULT_FORUM_CARDS = Collections.emptyList();
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public RecommendForumInfo forum_card;
+        public List<RecommendForumInfo> forum_cards;
         public List<ForumInfo> forum_list;
         public Integer forum_loc;
         public Item item_card;
@@ -55,6 +59,7 @@ public final class DataRes extends Message {
             this.item_card = dataRes.item_card;
             this.live_card = Message.copyOf(dataRes.live_card);
             this.ranking_card = dataRes.ranking_card;
+            this.forum_cards = Message.copyOf(dataRes.forum_cards);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -94,7 +99,14 @@ public final class DataRes extends Message {
                 this.live_card = Message.immutableCopyOf(list3);
             }
             this.ranking_card = builder.ranking_card;
-            return;
+            List<RecommendForumInfo> list4 = builder.forum_cards;
+            if (list4 == null) {
+                this.forum_cards = DEFAULT_FORUM_CARDS;
+                return;
+            } else {
+                this.forum_cards = Message.immutableCopyOf(list4);
+                return;
+            }
         }
         this.forum_loc = builder.forum_loc;
         this.list = Message.immutableCopyOf(builder.list);
@@ -103,5 +115,6 @@ public final class DataRes extends Message {
         this.item_card = builder.item_card;
         this.live_card = Message.immutableCopyOf(builder.live_card);
         this.ranking_card = builder.ranking_card;
+        this.forum_cards = Message.immutableCopyOf(builder.forum_cards);
     }
 }

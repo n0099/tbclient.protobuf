@@ -46,6 +46,8 @@ public final class DataRes extends Message {
     public final List<SimpleForum> like_forums;
     @ProtoField(tag = 17)
     public final LiveAnswer live_answer;
+    @ProtoField(tag = 27)
+    public final PageData page_data;
     @ProtoField(tag = 19)
     public final RecomPostTopic recom_post_topic;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
@@ -99,6 +101,7 @@ public final class DataRes extends Message {
         public Integer is_new_url;
         public List<SimpleForum> like_forums;
         public LiveAnswer live_answer;
+        public PageData page_data;
         public RecomPostTopic recom_post_topic;
         public List<Resource> resource_list;
         public Integer show_adsense;
@@ -144,6 +147,7 @@ public final class DataRes extends Message {
             this.favorite_panel = dataRes.favorite_panel;
             this.show_adsense = dataRes.show_adsense;
             this.header_card = dataRes.header_card;
+            this.page_data = dataRes.page_data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -257,6 +261,7 @@ public final class DataRes extends Message {
                 this.show_adsense = num5;
             }
             this.header_card = builder.header_card;
+            this.page_data = builder.page_data;
             return;
         }
         this.tag_list = Message.immutableCopyOf(builder.tag_list);
@@ -285,5 +290,6 @@ public final class DataRes extends Message {
         this.favorite_panel = builder.favorite_panel;
         this.show_adsense = builder.show_adsense;
         this.header_card = builder.header_card;
+        this.page_data = builder.page_data;
     }
 }

@@ -4,7 +4,6 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes9.dex */
 public final class CommonReq extends Message {
-    public static final Long DEFAULT_ACTIVE_TIMESTAMP;
     public static final String DEFAULT_AFDI = "";
     public static final String DEFAULT_ANDROID_ID = "";
     public static final String DEFAULT_APID = "";
@@ -14,7 +13,6 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_BRAND_TYPE = "";
     public static final String DEFAULT_C3_AID = "";
     public static final String DEFAULT_CAM = "";
-    public static final Integer DEFAULT_CMODE;
     public static final String DEFAULT_CUID = "";
     public static final String DEFAULT_CUID_GALAXY2 = "";
     public static final String DEFAULT_CUID_GID = "";
@@ -22,21 +20,18 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_DIAC = "";
     public static final String DEFAULT_DIAO = "";
     public static final String DEFAULT_DI_DIORDNA = "";
-    public static final String DEFAULT_DNARD = "";
+    public static final String DEFAULT_DNARB = "";
     public static final String DEFAULT_EPYT_DNARB = "";
     public static final String DEFAULT_EVENT_DAY = "";
     public static final String DEFAULT_EXTRA = "";
-    public static final Long DEFAULT_FIRST_INSTALL_TIME;
     public static final String DEFAULT_FRAMEWORK_VER = "";
     public static final String DEFAULT_FROM = "";
-    public static final Integer DEFAULT_H_RCS;
+    public static final String DEFAULT_H_RCS = "";
     public static final String DEFAULT_IDFA = "";
     public static final String DEFAULT_IDFV = "";
     public static final String DEFAULT_IEMI = "";
     public static final String DEFAULT_IEMIWEN = "";
-    public static final Integer DEFAULT_IS_TEENAGER;
     public static final String DEFAULT_KA = "";
-    public static final Long DEFAULT_LAST_UPDATE_TIME;
     public static final String DEFAULT_LEDOM = "";
     public static final String DEFAULT_LEGO_LIB_VERSION = "";
     public static final String DEFAULT_MAC = "";
@@ -48,29 +43,22 @@ public final class CommonReq extends Message {
     public static final String DEFAULT_M_SIZE_D = "";
     public static final String DEFAULT_M_SIZE_U = "";
     public static final String DEFAULT_NAWS_GAME_VER = "";
-    public static final Integer DEFAULT_NEED_DECRYPT;
     public static final String DEFAULT_NOISREV_SO = "";
     public static final String DEFAULT_OAID = "";
-    public static final Integer DEFAULT_PERSONALIZED_REC_SWITCH;
-    public static final Double DEFAULT_PID_RCS;
-    public static final Integer DEFAULT_PURE_MODE;
+    public static final String DEFAULT_PID_RCS = "";
     public static final String DEFAULT_PVERSION = "";
-    public static final Integer DEFAULT_Q_TYPE;
     public static final String DEFAULT_SAMPLE_ID = "";
-    public static final Double DEFAULT_SCR_DIP;
     public static final String DEFAULT_SDK_VER = "";
     public static final String DEFAULT_SHOUBAI_CUID = "";
     public static final String DEFAULT_SIGN = "";
     public static final String DEFAULT_SMALLFLOW = "";
     public static final String DEFAULT_START_SCHEME = "";
-    public static final Integer DEFAULT_START_TYPE;
     public static final String DEFAULT_STOKEN = "";
     public static final String DEFAULT_SUBAPP_TYPE = "";
     public static final String DEFAULT_TBS = "";
     public static final String DEFAULT_USER_AGENT = "";
     public static final String DEFAULT_VFDI = "";
-    public static final Integer DEFAULT_W_RCS;
-    public static final Integer DEFAULT_XCX_MODE;
+    public static final String DEFAULT_W_RCS = "";
     public static final String DEFAULT_Z_ID = "";
     public static final String DEFAULT__CLIENT_ID = "";
     public static final String DEFAULT__CLIENT_VERSION = "";
@@ -128,7 +116,7 @@ public final class CommonReq extends Message {
     @ProtoField(tag = 74, type = Message.Datatype.STRING)
     public final String diao;
     @ProtoField(tag = 76, type = Message.Datatype.STRING)
-    public final String dnard;
+    public final String dnarb;
     @ProtoField(tag = 77, type = Message.Datatype.STRING)
     public final String epyt_dnarb;
     @ProtoField(tag = 53, type = Message.Datatype.STRING)
@@ -141,8 +129,8 @@ public final class CommonReq extends Message {
     public final String framework_ver;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String from;
-    @ProtoField(tag = 79, type = Message.Datatype.INT32)
-    public final Integer h_rcs;
+    @ProtoField(tag = 79, type = Message.Datatype.STRING)
+    public final String h_rcs;
     @ProtoField(tag = 45, type = Message.Datatype.STRING)
     public final String idfa;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
@@ -179,6 +167,8 @@ public final class CommonReq extends Message {
     public final String model;
     @ProtoField(tag = 44, type = Message.Datatype.STRING)
     public final String naws_game_ver;
+    @ProtoField(tag = 82, type = Message.Datatype.INT32)
+    public final Integer need_cam_decrypt;
     @ProtoField(tag = 81, type = Message.Datatype.INT32)
     public final Integer need_decrypt;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
@@ -189,8 +179,8 @@ public final class CommonReq extends Message {
     public final String oaid;
     @ProtoField(tag = 63, type = Message.Datatype.INT32)
     public final Integer personalized_rec_switch;
-    @ProtoField(tag = 80, type = Message.Datatype.DOUBLE)
-    public final Double pid_rcs;
+    @ProtoField(tag = 80, type = Message.Datatype.STRING)
+    public final String pid_rcs;
     @ProtoField(tag = 71, type = Message.Datatype.INT32)
     public final Integer pure_mode;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
@@ -227,8 +217,8 @@ public final class CommonReq extends Message {
     public final String user_agent;
     @ProtoField(tag = 69, type = Message.Datatype.STRING)
     public final String vfdi;
-    @ProtoField(tag = 78, type = Message.Datatype.INT32)
-    public final Integer w_rcs;
+    @ProtoField(tag = 78, type = Message.Datatype.STRING)
+    public final String w_rcs;
     @ProtoField(tag = 72, type = Message.Datatype.INT32)
     public final Integer xcx_mode;
     @ProtoField(tag = 31, type = Message.Datatype.STRING)
@@ -238,6 +228,19 @@ public final class CommonReq extends Message {
     public static final Integer DEFAULT_NET_TYPE = 0;
     public static final Integer DEFAULT_SCR_W = 0;
     public static final Integer DEFAULT_SCR_H = 0;
+    public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
+    public static final Integer DEFAULT_Q_TYPE = 0;
+    public static final Integer DEFAULT_IS_TEENAGER = 0;
+    public static final Long DEFAULT_ACTIVE_TIMESTAMP = 0L;
+    public static final Long DEFAULT_FIRST_INSTALL_TIME = 0L;
+    public static final Long DEFAULT_LAST_UPDATE_TIME = 0L;
+    public static final Integer DEFAULT_CMODE = 0;
+    public static final Integer DEFAULT_START_TYPE = 0;
+    public static final Integer DEFAULT_PERSONALIZED_REC_SWITCH = 0;
+    public static final Integer DEFAULT_PURE_MODE = 0;
+    public static final Integer DEFAULT_XCX_MODE = 0;
+    public static final Integer DEFAULT_NEED_DECRYPT = 0;
+    public static final Integer DEFAULT_NEED_CAM_DECRYPT = 0;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<CommonReq> {
@@ -266,14 +269,14 @@ public final class CommonReq extends Message {
         public String di_diordna;
         public String diac;
         public String diao;
-        public String dnard;
+        public String dnarb;
         public String epyt_dnarb;
         public String event_day;
         public String extra;
         public Long first_install_time;
         public String framework_ver;
         public String from;
-        public Integer h_rcs;
+        public String h_rcs;
         public String idfa;
         public String idfv;
         public String iemi;
@@ -292,12 +295,13 @@ public final class CommonReq extends Message {
         public String mac;
         public String model;
         public String naws_game_ver;
+        public Integer need_cam_decrypt;
         public Integer need_decrypt;
         public Integer net_type;
         public String noisrev_so;
         public String oaid;
         public Integer personalized_rec_switch;
-        public Double pid_rcs;
+        public String pid_rcs;
         public Integer pure_mode;
         public String pversion;
         public Integer q_type;
@@ -316,7 +320,7 @@ public final class CommonReq extends Message {
         public String tbs;
         public String user_agent;
         public String vfdi;
-        public Integer w_rcs;
+        public String w_rcs;
         public Integer xcx_mode;
         public String z_id;
 
@@ -400,12 +404,13 @@ public final class CommonReq extends Message {
             this.ledom = commonReq.ledom;
             this.diao = commonReq.diao;
             this.noisrev_so = commonReq.noisrev_so;
-            this.dnard = commonReq.dnard;
+            this.dnarb = commonReq.dnarb;
             this.epyt_dnarb = commonReq.epyt_dnarb;
             this.w_rcs = commonReq.w_rcs;
             this.h_rcs = commonReq.h_rcs;
             this.pid_rcs = commonReq.pid_rcs;
             this.need_decrypt = commonReq.need_decrypt;
+            this.need_cam_decrypt = commonReq.need_cam_decrypt;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -413,25 +418,6 @@ public final class CommonReq extends Message {
         public CommonReq build(boolean z) {
             return new CommonReq(this, z);
         }
-    }
-
-    static {
-        Double valueOf = Double.valueOf(0.0d);
-        DEFAULT_SCR_DIP = valueOf;
-        DEFAULT_Q_TYPE = 0;
-        DEFAULT_IS_TEENAGER = 0;
-        DEFAULT_ACTIVE_TIMESTAMP = 0L;
-        DEFAULT_FIRST_INSTALL_TIME = 0L;
-        DEFAULT_LAST_UPDATE_TIME = 0L;
-        DEFAULT_CMODE = 0;
-        DEFAULT_START_TYPE = 0;
-        DEFAULT_PERSONALIZED_REC_SWITCH = 0;
-        DEFAULT_PURE_MODE = 0;
-        DEFAULT_XCX_MODE = 0;
-        DEFAULT_W_RCS = 0;
-        DEFAULT_H_RCS = 0;
-        DEFAULT_PID_RCS = valueOf;
-        DEFAULT_NEED_DECRYPT = 0;
     }
 
     public CommonReq(Builder builder, boolean z) {
@@ -869,11 +855,11 @@ public final class CommonReq extends Message {
             } else {
                 this.noisrev_so = str56;
             }
-            String str57 = builder.dnard;
+            String str57 = builder.dnarb;
             if (str57 == null) {
-                this.dnard = "";
+                this.dnarb = "";
             } else {
-                this.dnard = str57;
+                this.dnarb = str57;
             }
             String str58 = builder.epyt_dnarb;
             if (str58 == null) {
@@ -881,30 +867,36 @@ public final class CommonReq extends Message {
             } else {
                 this.epyt_dnarb = str58;
             }
-            Integer num12 = builder.w_rcs;
+            String str59 = builder.w_rcs;
+            if (str59 == null) {
+                this.w_rcs = "";
+            } else {
+                this.w_rcs = str59;
+            }
+            String str60 = builder.h_rcs;
+            if (str60 == null) {
+                this.h_rcs = "";
+            } else {
+                this.h_rcs = str60;
+            }
+            String str61 = builder.pid_rcs;
+            if (str61 == null) {
+                this.pid_rcs = "";
+            } else {
+                this.pid_rcs = str61;
+            }
+            Integer num12 = builder.need_decrypt;
             if (num12 == null) {
-                this.w_rcs = DEFAULT_W_RCS;
-            } else {
-                this.w_rcs = num12;
-            }
-            Integer num13 = builder.h_rcs;
-            if (num13 == null) {
-                this.h_rcs = DEFAULT_H_RCS;
-            } else {
-                this.h_rcs = num13;
-            }
-            Double d2 = builder.pid_rcs;
-            if (d2 == null) {
-                this.pid_rcs = DEFAULT_PID_RCS;
-            } else {
-                this.pid_rcs = d2;
-            }
-            Integer num14 = builder.need_decrypt;
-            if (num14 == null) {
                 this.need_decrypt = DEFAULT_NEED_DECRYPT;
+            } else {
+                this.need_decrypt = num12;
+            }
+            Integer num13 = builder.need_cam_decrypt;
+            if (num13 == null) {
+                this.need_cam_decrypt = DEFAULT_NEED_CAM_DECRYPT;
                 return;
             } else {
-                this.need_decrypt = num14;
+                this.need_cam_decrypt = num13;
                 return;
             }
         }
@@ -980,11 +972,12 @@ public final class CommonReq extends Message {
         this.ledom = builder.ledom;
         this.diao = builder.diao;
         this.noisrev_so = builder.noisrev_so;
-        this.dnard = builder.dnard;
+        this.dnarb = builder.dnarb;
         this.epyt_dnarb = builder.epyt_dnarb;
         this.w_rcs = builder.w_rcs;
         this.h_rcs = builder.h_rcs;
         this.pid_rcs = builder.pid_rcs;
         this.need_decrypt = builder.need_decrypt;
+        this.need_cam_decrypt = builder.need_cam_decrypt;
     }
 }

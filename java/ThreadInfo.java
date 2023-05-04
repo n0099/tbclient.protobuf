@@ -204,6 +204,8 @@ public final class ThreadInfo extends Message {
     public final Integer is_deal;
     @ProtoField(tag = 181, type = Message.Datatype.INT32)
     public final Integer is_deleted;
+    @ProtoField(tag = 219, type = Message.Datatype.INT32)
+    public final Integer is_excellent_thread;
     @ProtoField(tag = Constants.METHOD_IM_FETCH_BUSINESS_SESSION_MSG, type = Message.Datatype.INT32)
     public final Integer is_frs_mask;
     @ProtoField(tag = 42, type = Message.Datatype.INT32)
@@ -350,8 +352,6 @@ public final class ThreadInfo extends Message {
     public final Integer push_end_time;
     @ProtoField(tag = 91)
     public final PushStatus push_status;
-    @ProtoField(tag = 207, type = Message.Datatype.INT32)
-    public final Integer readonly;
     @ProtoField(tag = Cea708Decoder.COMMAND_SPA, type = Message.Datatype.STRING)
     public final String recom_extra;
     @ProtoField(tag = 109, type = Message.Datatype.STRING)
@@ -586,10 +586,10 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_FRS_MASK = 0;
     public static final Integer DEFAULT_TAB_SHOW_MODE = 0;
     public static final Integer DEFAULT_IS_PICTXT = 0;
-    public static final Integer DEFAULT_READONLY = 0;
     public static final Integer DEFAULT_IS_HIGHLIGHT = 0;
     public static final Integer DEFAULT_IS_XIUXIU_THREAD = 0;
     public static final Integer DEFAULT_SHOW_AD_SUBSCRIPT = 0;
+    public static final Integer DEFAULT_IS_EXCELLENT_THREAD = 0;
 
     public ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1543,33 +1543,27 @@ public final class ThreadInfo extends Message {
             } else {
                 this.click_monitor_url = str46;
             }
-            Integer num76 = builder.readonly;
-            if (num76 == null) {
-                this.readonly = DEFAULT_READONLY;
-            } else {
-                this.readonly = num76;
-            }
             this.thread_recommend_tag = builder.thread_recommend_tag;
             this.custom_figure = builder.custom_figure;
             this.custom_state = builder.custom_state;
-            Integer num77 = builder.is_highlight;
-            if (num77 == null) {
+            Integer num76 = builder.is_highlight;
+            if (num76 == null) {
                 this.is_highlight = DEFAULT_IS_HIGHLIGHT;
             } else {
-                this.is_highlight = num77;
+                this.is_highlight = num76;
             }
-            Integer num78 = builder.is_xiuxiu_thread;
-            if (num78 == null) {
+            Integer num77 = builder.is_xiuxiu_thread;
+            if (num77 == null) {
                 this.is_xiuxiu_thread = DEFAULT_IS_XIUXIU_THREAD;
             } else {
-                this.is_xiuxiu_thread = num78;
+                this.is_xiuxiu_thread = num77;
             }
             this.ablum_info = builder.ablum_info;
-            Integer num79 = builder.show_ad_subscript;
-            if (num79 == null) {
+            Integer num78 = builder.show_ad_subscript;
+            if (num78 == null) {
                 this.show_ad_subscript = DEFAULT_SHOW_AD_SUBSCRIPT;
             } else {
-                this.show_ad_subscript = num79;
+                this.show_ad_subscript = num78;
             }
             String str47 = builder.target_scheme;
             if (str47 == null) {
@@ -1580,9 +1574,15 @@ public final class ThreadInfo extends Message {
             String str48 = builder.convert_btn_type;
             if (str48 == null) {
                 this.convert_btn_type = "";
-                return;
             } else {
                 this.convert_btn_type = str48;
+            }
+            Integer num79 = builder.is_excellent_thread;
+            if (num79 == null) {
+                this.is_excellent_thread = DEFAULT_IS_EXCELLENT_THREAD;
+                return;
+            } else {
+                this.is_excellent_thread = num79;
                 return;
             }
         }
@@ -1785,7 +1785,6 @@ public final class ThreadInfo extends Message {
         this.is_pictxt = builder.is_pictxt;
         this.exposure_monitor_url = builder.exposure_monitor_url;
         this.click_monitor_url = builder.click_monitor_url;
-        this.readonly = builder.readonly;
         this.thread_recommend_tag = builder.thread_recommend_tag;
         this.custom_figure = builder.custom_figure;
         this.custom_state = builder.custom_state;
@@ -1795,6 +1794,7 @@ public final class ThreadInfo extends Message {
         this.show_ad_subscript = builder.show_ad_subscript;
         this.target_scheme = builder.target_scheme;
         this.convert_btn_type = builder.convert_btn_type;
+        this.is_excellent_thread = builder.is_excellent_thread;
     }
 
     /* loaded from: classes9.dex */
@@ -1869,6 +1869,7 @@ public final class ThreadInfo extends Message {
         public Integer is_copythread;
         public Integer is_deal;
         public Integer is_deleted;
+        public Integer is_excellent_thread;
         public Integer is_frs_mask;
         public Integer is_global_top;
         public Integer is_god;
@@ -1942,7 +1943,6 @@ public final class ThreadInfo extends Message {
         public PsInfo ps_info;
         public Integer push_end_time;
         public PushStatus push_status;
-        public Integer readonly;
         public String recom_extra;
         public String recom_reason;
         public String recom_source;
@@ -2216,7 +2216,6 @@ public final class ThreadInfo extends Message {
             this.is_pictxt = threadInfo.is_pictxt;
             this.exposure_monitor_url = threadInfo.exposure_monitor_url;
             this.click_monitor_url = threadInfo.click_monitor_url;
-            this.readonly = threadInfo.readonly;
             this.thread_recommend_tag = threadInfo.thread_recommend_tag;
             this.custom_figure = threadInfo.custom_figure;
             this.custom_state = threadInfo.custom_state;
@@ -2226,6 +2225,7 @@ public final class ThreadInfo extends Message {
             this.show_ad_subscript = threadInfo.show_ad_subscript;
             this.target_scheme = threadInfo.target_scheme;
             this.convert_btn_type = threadInfo.convert_btn_type;
+            this.is_excellent_thread = threadInfo.is_excellent_thread;
         }
 
         /* JADX DEBUG: Method merged with bridge method */

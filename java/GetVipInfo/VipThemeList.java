@@ -12,7 +12,6 @@ public final class VipThemeList extends Message {
     public static final String DEFAULT_CLASS_URL_NAME = "";
     public static final List<VipThemeItem> DEFAULT_ITEM = Collections.emptyList();
     public static final List<VipThemeItem> DEFAULT_ITEM_CARD = Collections.emptyList();
-    public static final String DEFAULT_SUB_CLASS_NAME = "";
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String card_id;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -25,8 +24,6 @@ public final class VipThemeList extends Message {
     public final List<VipThemeItem> item;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<VipThemeItem> item_card;
-    @ProtoField(tag = 7, type = Message.Datatype.STRING)
-    public final String sub_class_name;
 
     /* loaded from: classes9.dex */
     public static final class Builder extends Message.Builder<VipThemeList> {
@@ -36,7 +33,6 @@ public final class VipThemeList extends Message {
         public String class_url_name;
         public List<VipThemeItem> item;
         public List<VipThemeItem> item_card;
-        public String sub_class_name;
 
         public Builder() {
         }
@@ -52,7 +48,6 @@ public final class VipThemeList extends Message {
             this.item = Message.copyOf(vipThemeList.item);
             this.item_card = Message.copyOf(vipThemeList.item_card);
             this.card_id = vipThemeList.card_id;
-            this.sub_class_name = vipThemeList.sub_class_name;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -98,15 +93,9 @@ public final class VipThemeList extends Message {
             String str4 = builder.card_id;
             if (str4 == null) {
                 this.card_id = "";
-            } else {
-                this.card_id = str4;
-            }
-            String str5 = builder.sub_class_name;
-            if (str5 == null) {
-                this.sub_class_name = "";
                 return;
             } else {
-                this.sub_class_name = str5;
+                this.card_id = str4;
                 return;
             }
         }
@@ -116,6 +105,5 @@ public final class VipThemeList extends Message {
         this.item = Message.immutableCopyOf(builder.item);
         this.item_card = Message.immutableCopyOf(builder.item_card);
         this.card_id = builder.card_id;
-        this.sub_class_name = builder.sub_class_name;
     }
 }

@@ -24,8 +24,6 @@ public final class DataReq extends Message {
     public final Integer is_autopay;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer is_left;
-    @ProtoField(tag = 11, type = Message.Datatype.UINT64)
-    public final Long live_id;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String mobile;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -43,7 +41,6 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PAY_TYPE = 0;
     public static final Integer DEFAULT_IS_LEFT = 0;
     public static final Integer DEFAULT_IS_AUTOPAY = 0;
-    public static final Long DEFAULT_LIVE_ID = 0L;
     public static final Long DEFAULT_FROM_SCENE = 0L;
 
     /* loaded from: classes9.dex */
@@ -55,7 +52,6 @@ public final class DataReq extends Message {
         public Long from_scene;
         public Integer is_autopay;
         public Integer is_left;
-        public Long live_id;
         public String mobile;
         public String order_url;
         public Integer pay_type;
@@ -82,7 +78,6 @@ public final class DataReq extends Message {
             this.payment_pos_key = dataReq.payment_pos_key;
             this.refer_page = dataReq.refer_page;
             this.click_zone = dataReq.click_zone;
-            this.live_id = dataReq.live_id;
             this.wallet_sdk_ua = dataReq.wallet_sdk_ua;
             this.from_scene = dataReq.from_scene;
         }
@@ -147,24 +142,18 @@ public final class DataReq extends Message {
             } else {
                 this.click_zone = str5;
             }
-            Long l = builder.live_id;
-            if (l == null) {
-                this.live_id = DEFAULT_LIVE_ID;
-            } else {
-                this.live_id = l;
-            }
             String str6 = builder.wallet_sdk_ua;
             if (str6 == null) {
                 this.wallet_sdk_ua = "";
             } else {
                 this.wallet_sdk_ua = str6;
             }
-            Long l2 = builder.from_scene;
-            if (l2 == null) {
+            Long l = builder.from_scene;
+            if (l == null) {
                 this.from_scene = DEFAULT_FROM_SCENE;
                 return;
             } else {
-                this.from_scene = l2;
+                this.from_scene = l;
                 return;
             }
         }
@@ -178,7 +167,6 @@ public final class DataReq extends Message {
         this.payment_pos_key = builder.payment_pos_key;
         this.refer_page = builder.refer_page;
         this.click_zone = builder.click_zone;
-        this.live_id = builder.live_id;
         this.wallet_sdk_ua = builder.wallet_sdk_ua;
         this.from_scene = builder.from_scene;
     }
