@@ -13,7 +13,6 @@ message DataReq {
     string payment_pos_key = 8;
     string refer_page = 9;
     string click_zone = 10;
-    uint64 live_id = 11;
     string wallet_sdk_ua = 12;
     int64 from_scene = 13;
 }

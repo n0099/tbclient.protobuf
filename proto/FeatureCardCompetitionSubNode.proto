@@ -8,5 +8,4 @@ message FeatureCardCompetitionSubNode {
     string team1_image = 5;
     string team2_name = 6;
     string team2_image = 7;
-    string competition_logo = 8;
 }

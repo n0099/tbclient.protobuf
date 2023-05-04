@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message OpArea {
-    string title = 1;
-    string sub_title = 2;
-    string icon = 3;
-    string path = 4;
-}

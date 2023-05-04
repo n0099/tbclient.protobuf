@@ -23,7 +23,6 @@ message DataRes {
     string top_tips = 12;
     BannerFollowLive banner_follow_live = 13;
     DiscoverHotForum hot_recomforum = 14;
-    string abtest_tag = 15;
     repeated App app_list = 16;
     UserFollowLive user_follow_live = 17;
     PageData page_data = 19;

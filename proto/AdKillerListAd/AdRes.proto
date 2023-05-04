@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "App.proto";
-
-message AdRes {
-    uint32 live_in_seconds = 1;
-    App app = 2;
-}

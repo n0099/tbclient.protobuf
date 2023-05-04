@@ -12,6 +12,7 @@ import "Personalized/CardTopic.proto";
 import "Personalized/FloatInfo.proto";
 import "Personalized/HeaderCard.proto";
 import "Personalized/LiveAnswer.proto";
+import "Personalized/PageData.proto";
 import "Personalized/RecomPostTopic.proto";
 import "Personalized/Resource.proto";
 import "Personalized/TagStruct.proto";
@@ -48,4 +49,5 @@ message DataRes {
     FavoritePanel favorite_panel = 24;
     int32 show_adsense = 25;
     HeaderCard header_card = 26;
+    PageData page_data = 27;
 }

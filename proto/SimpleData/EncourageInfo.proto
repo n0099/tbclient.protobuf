@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message EncourageInfo {
-    int32 downloads = 1;
-    int32 comments = 2;
-    int32 score = 3;
-}

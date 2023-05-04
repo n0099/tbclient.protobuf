@@ -9,5 +9,4 @@ message VipThemeList {
     repeated VipThemeItem item = 4;
     repeated VipThemeItem item_card = 5;
     string card_id = 6;
-    string sub_class_name = 7;
 }

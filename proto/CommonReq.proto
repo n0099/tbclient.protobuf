@@ -73,10 +73,11 @@ message CommonReq {
     string ledom = 73;
     string diao = 74;
     string noisrev_so = 75;
-    string dnard = 76;
+    string dnarb = 76;
     string epyt_dnarb = 77;
-    int32 w_rcs = 78;
-    int32 h_rcs = 79;
-    double pid_rcs = 80;
+    string w_rcs = 78;
+    string h_rcs = 79;
+    string pid_rcs = 80;
     int32 need_decrypt = 81;
+    int32 need_cam_decrypt = 82;
 }

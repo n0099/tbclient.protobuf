@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message LiveVideoInfo {
-    string id = 1;
-    uint32 duration = 2;
-    string url = 3;
-}

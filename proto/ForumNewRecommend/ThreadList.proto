@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-message ThreadList {
-    int64 tid = 1;
-    string title = 2;
-    string pic = 3;
-}

@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message FdirItem {
-    string lv1_name = 1;
-    repeated string lv2_name = 2;
-}
