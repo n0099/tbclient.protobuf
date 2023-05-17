@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class MoneyInfoAndroid extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_ICON = "";
@@ -44,7 +44,7 @@ public final class MoneyInfoAndroid extends Message {
     public static final Integer DEFAULT_DEFAULT = 0;
     public static final Integer DEFAULT_ORIGINAL_COST = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<MoneyInfoAndroid> {
         public Integer _default;
         public String desc;

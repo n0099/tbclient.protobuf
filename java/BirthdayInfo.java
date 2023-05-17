@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class BirthdayInfo extends Message {
     public static final String DEFAULT_CONSTELLATION = "";
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -17,7 +17,7 @@ public final class BirthdayInfo extends Message {
     public static final Integer DEFAULT_BIRTHDAY_SHOW_STATUS = 0;
     public static final Integer DEFAULT_AGE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<BirthdayInfo> {
         public Integer age;
         public Integer birthday_show_status;

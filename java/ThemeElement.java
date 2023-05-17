@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ThemeElement extends Message {
     public static final String DEFAULT_COMMON_COLOR = "";
     public static final String DEFAULT_DARK_COLOR = "";
@@ -26,7 +26,7 @@ public final class ThemeElement extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
     public final Long pattern_image_width;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ThemeElement> {
         public String common_color;
         public String dark_color;

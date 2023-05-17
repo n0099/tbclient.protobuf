@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.IconUrlInfo;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FrsBannerHeader extends Message {
     public static final String DEFAULT_CONTENT1 = "";
     public static final String DEFAULT_CONTENT2 = "";
@@ -37,7 +37,7 @@ public final class FrsBannerHeader extends Message {
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
     public final String type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FrsBannerHeader> {
         public ThemeColorInfo background_color;
         public IconUrlInfo brand_icon;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     public static final List<ForumInfo> DEFAULT_FORUM_INFO = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -14,7 +14,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 3)
     public final HotTopic hot_topic;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<ForumInfo> forum_info;
         public HotSearch hot_search;

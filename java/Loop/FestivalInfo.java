@@ -3,7 +3,7 @@ package tbclient.Loop;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FestivalInfo extends Message {
     public static final String DEFAULT_BLESS = "";
     public static final String DEFAULT_COMMENT_TIPS = "";
@@ -23,7 +23,7 @@ public final class FestivalInfo extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String write_select_tips;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FestivalInfo> {
         public String bless;
         public String comment_tips;

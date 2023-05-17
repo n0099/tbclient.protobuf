@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class UniversityTabInfo extends Message {
     public static final List<UniversityInfo> DEFAULT_CONTENT = Collections.emptyList();
     public static final String DEFAULT_TAB_NAME = "";
@@ -13,7 +13,7 @@ public final class UniversityTabInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tab_name;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<UniversityTabInfo> {
         public List<UniversityInfo> content;
         public String tab_name;

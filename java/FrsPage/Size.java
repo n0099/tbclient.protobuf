@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Size extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer height;
@@ -11,7 +11,7 @@ public final class Size extends Message {
     public static final Integer DEFAULT_WIDTH = 0;
     public static final Integer DEFAULT_HEIGHT = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Size> {
         public Integer height;
         public Integer width;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class Quote extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_IP = "";
@@ -20,7 +20,7 @@ public final class Quote extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Quote> {
         public String content;
         public String ip;

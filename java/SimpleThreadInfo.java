@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class SimpleThreadInfo extends Message {
     public static final String DEFAULT_TITLE = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
@@ -27,7 +27,7 @@ public final class SimpleThreadInfo extends Message {
     public static final List<Abstract> DEFAULT_ABSTRACT = Collections.emptyList();
     public static final Long DEFAULT_THREAD_TYPE = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SimpleThreadInfo> {
         public List<Abstract> _abstract;
         public Integer last_time_int;

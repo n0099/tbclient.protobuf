@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ParrScores extends Message {
     @ProtoField(tag = 9, type = Message.Datatype.UINT64)
     public final Long i_money;
@@ -35,7 +35,7 @@ public final class ParrScores extends Message {
     public static final Long DEFAULT_I_MONEY = 0L;
     public static final Long DEFAULT_I_OTHER = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ParrScores> {
         public Long i_money;
         public Long i_other;

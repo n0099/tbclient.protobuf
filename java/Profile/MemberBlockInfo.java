@@ -2,7 +2,7 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class MemberBlockInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer is_auto_pay;
@@ -14,7 +14,7 @@ public final class MemberBlockInfo extends Message {
     public static final Integer DEFAULT_IS_AUTO_PAY = 0;
     public static final Integer DEFAULT_IS_BAN = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<MemberBlockInfo> {
         public Integer is_auto_pay;
         public Integer is_ban;

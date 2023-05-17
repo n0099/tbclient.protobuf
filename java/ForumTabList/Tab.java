@@ -2,7 +2,7 @@ package tbclient.ForumTabList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Tab extends Message {
     public static final String DEFAULT_SEQ = "";
     public static final Long DEFAULT_TAB_ID = 0L;
@@ -14,7 +14,7 @@ public final class Tab extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tab_name;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Tab> {
         public String seq;
         public Long tab_id;

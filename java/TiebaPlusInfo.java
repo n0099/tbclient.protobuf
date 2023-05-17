@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class TiebaPlusInfo extends Message {
     public static final String DEFAULT_APP_COMPANY = "";
     public static final String DEFAULT_APP_ICON = "";
@@ -73,7 +73,7 @@ public final class TiebaPlusInfo extends Message {
     public static final Integer DEFAULT_IS_APPOINT = 0;
     public static final Integer DEFAULT_JUMP_SETTING = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TiebaPlusInfo> {
         public String app_company;
         public String app_icon;

@@ -3,14 +3,14 @@ package tbclient.GetMoreMsg;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class GetMoreMsgResIdl extends Message {
     @ProtoField(tag = 2)
     public final DataRes data;
     @ProtoField(tag = 1)
     public final Error error;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<GetMoreMsgResIdl> {
         public DataRes data;
         public Error error;

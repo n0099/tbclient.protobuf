@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class RecomTopicList extends Message {
     public static final String DEFAULT_AUTHOR = "";
     public static final String DEFAULT_TOPIC_DESC = "";
@@ -40,7 +40,7 @@ public final class RecomTopicList extends Message {
     public static final List<Media> DEFAULT_MEDIA = Collections.emptyList();
     public static final Integer DEFAULT_IS_VIDEO_TOPIC = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecomTopicList> {
         public String author;
         public Long discuss_num;

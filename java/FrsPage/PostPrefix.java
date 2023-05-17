@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class PostPrefix extends Message {
     public static final Integer DEFAULT_MODE = 0;
     public static final String DEFAULT_TEXT = "";
@@ -17,7 +17,7 @@ public final class PostPrefix extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PostPrefix> {
         public Integer mode;
         public String text;

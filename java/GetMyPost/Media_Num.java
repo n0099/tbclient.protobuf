@@ -2,13 +2,13 @@ package tbclient.GetMyPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Media_Num extends Message {
     public static final Integer DEFAULT_PIC = 0;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer pic;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Media_Num> {
         public Integer pic;
 

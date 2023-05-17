@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class Toast extends Message {
     public static final String DEFAULT_BACKGROUND = "";
     public static final String DEFAULT_ICON_URL = "";
@@ -37,7 +37,7 @@ public final class Toast extends Message {
     public static final Integer DEFAULT_ICON_HEIGHT = 0;
     public static final Integer DEFAULT_HUD_WIDTH = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Toast> {
         public String background;
         public List<ToastContent> content;

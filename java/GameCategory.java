@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class GameCategory extends Message {
     public static final String DEFAULT_ICON_URL = "";
     public static final String DEFAULT_NAME = "";
@@ -19,7 +19,7 @@ public final class GameCategory extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final List<String> DEFAULT_GAME_LIST = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<GameCategory> {
         public List<String> game_list;
         public String icon_url;

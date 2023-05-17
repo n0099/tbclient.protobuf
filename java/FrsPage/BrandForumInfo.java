@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.OriForumInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class BrandForumInfo extends Message {
     public static final String DEFAULT_BRAND_DESC = "";
     public static final String DEFAULT_JUMP_DESC = "";
@@ -22,7 +22,7 @@ public final class BrandForumInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<OriForumInfo> relation_forum;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<BrandForumInfo> {
         public String brand_desc;
         public HeadImgs head_imgs;

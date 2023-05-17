@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class LayoutFactory extends Message {
     public static final String DEFAULT_LAYOUT = "";
     @ProtoField(tag = 2)
@@ -12,7 +12,7 @@ public final class LayoutFactory extends Message {
     @ProtoField(tag = 3)
     public final SidewayLayout sideway;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<LayoutFactory> {
         public FeedLayout feed;
         public String layout;

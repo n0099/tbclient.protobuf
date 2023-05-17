@@ -3,7 +3,7 @@ package tbclient.ForumMenu;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_COOKIE = "";
     @ProtoField(tag = 5)
@@ -22,7 +22,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_FORUM_ID = 0;
     public static final Integer DEFAULT_ST_PARAM = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */

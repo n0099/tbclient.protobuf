@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FavoritePanel extends Message {
     public static final String DEFAULT_IMG_URL = "";
     public static final String DEFAULT_MAIN_TITLE = "";
@@ -23,7 +23,7 @@ public final class FavoritePanel extends Message {
     public static final Long DEFAULT_NUMBER = 0L;
     public static final Integer DEFAULT_MAX_TIMES = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FavoritePanel> {
         public String img_url;
         public String main_title;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class UniversalLabel extends Message {
     public static final String DEFAULT_BACKGROUND_COLOR = "";
     public static final String DEFAULT_BACKGROUND_COLOR_BLACK = "";
@@ -26,7 +26,7 @@ public final class UniversalLabel extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String text_color_black;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<UniversalLabel> {
         public String background_color;
         public String background_color_black;

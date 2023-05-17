@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ParrProps extends Message {
     public static final Integer DEFAULT_PORTRAIT_TIME = 0;
     public static final List<Props> DEFAULT_PROPS = Collections.emptyList();
@@ -15,7 +15,7 @@ public final class ParrProps extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<Props> props;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ParrProps> {
         public Level level;
         public Integer portrait_time;

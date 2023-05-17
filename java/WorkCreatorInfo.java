@@ -2,13 +2,13 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class WorkCreatorInfo extends Message {
     public static final String DEFAULT_AUTH_DESC = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String auth_desc;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<WorkCreatorInfo> {
         public String auth_desc;
 

@@ -3,14 +3,14 @@ package tbclient.GetTopicRelateThread;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class GetTopicRelateThreadResIdl extends Message {
     @ProtoField(tag = 1)
     public final DataRes data;
     @ProtoField(tag = 2)
     public final Error error;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<GetTopicRelateThreadResIdl> {
         public DataRes data;
         public Error error;

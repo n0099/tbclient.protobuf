@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.GuessLikeThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class GuessLikeStruct extends Message {
     public static final List<GuessLikeThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
     public static final String DEFAULT_TITLE = "";
@@ -14,7 +14,7 @@ public final class GuessLikeStruct extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<GuessLikeStruct> {
         public List<GuessLikeThreadInfo> thread_list;
         public String title;

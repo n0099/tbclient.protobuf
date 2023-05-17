@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class VirtualImageInfo extends Message {
     public static final String DEFAULT_DYNAMIC_VIRTUAL_IMAGE_URL = "";
     public static final String DEFAULT_VIRTUAL_BACKGROUND = "";
@@ -48,7 +48,7 @@ public final class VirtualImageInfo extends Message {
     public static final Integer DEFAULT_IS_DISPLAY = 0;
     public static final Integer DEFAULT_IS_BACKGROUND_FIRSTLY = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VirtualImageInfo> {
         public Integer allow_customize;
         public String dynamic_virtual_image_url;

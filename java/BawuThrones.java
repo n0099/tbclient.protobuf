@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class BawuThrones extends Message {
     public static final String DEFAULT_BAZHU_LEVEL = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -29,7 +29,7 @@ public final class BawuThrones extends Message {
     public static final Integer DEFAULT_HAS_SEND_BCAST = 0;
     public static final Integer DEFAULT_NEWEST_BCAST_PUSHUSER_CNT = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<BawuThrones> {
         public String bazhu_level;
         public Integer has_send_bcast;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Info extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer post_num;
@@ -16,7 +16,7 @@ public final class Info extends Message {
     public static final Integer DEFAULT_POST_NUM = 0;
     public static final List<RecmForumInfo> DEFAULT_RECM_FORUM_LIST = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Info> {
         public Integer post_num;
         public List<RecmForumInfo> recm_forum_list;

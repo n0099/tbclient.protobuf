@@ -5,13 +5,13 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Post;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     public static final List<Post> DEFAULT_POST_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<Post> post_list;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Post> post_list;
 

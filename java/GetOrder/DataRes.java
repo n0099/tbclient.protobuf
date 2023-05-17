@@ -2,7 +2,7 @@ package tbclient.GetOrder;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_CALL_TYPE = "";
     public static final String DEFAULT_EXTDATA = "";
@@ -76,7 +76,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SDKSTYLE = 0;
     public static final Integer DEFAULT_SIGNTYPE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String call_type;
         public Long customerId;

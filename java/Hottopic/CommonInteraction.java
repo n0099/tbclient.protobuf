@@ -2,7 +2,7 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class CommonInteraction extends Message {
     public static final String DEFAULT_AFTER_CLICK_PIC = "";
     public static final String DEFAULT_BEFORE_CLICK_PIC = "";
@@ -29,7 +29,7 @@ public final class CommonInteraction extends Message {
     public static final Long DEFAULT_PK_ID = 0L;
     public static final Long DEFAULT_USER_PK_ID = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<CommonInteraction> {
         public String after_click_pic;
         public String before_click_pic;

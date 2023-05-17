@@ -2,7 +2,7 @@ package tbclient.NewHottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class PkModule extends Message {
     public static final Long DEFAULT_PK_ID = 0L;
     public static final Long DEFAULT_USER_PK_ID = 0L;
@@ -15,7 +15,7 @@ public final class PkModule extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long user_pk_id;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PkModule> {
         public PkItem agree;
         public PkItem disagree;

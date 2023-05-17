@@ -2,13 +2,13 @@ package tbclient.Loop;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ChatroomMessageTabData extends Message {
     public static final Boolean DEFAULT_HAVE_NEW_MSG = Boolean.FALSE;
     @ProtoField(tag = 1, type = Message.Datatype.BOOL)
     public final Boolean have_new_msg;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ChatroomMessageTabData> {
         public Boolean have_new_msg;
 

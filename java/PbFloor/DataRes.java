@@ -10,7 +10,7 @@ import tbclient.Post;
 import tbclient.SimpleForum;
 import tbclient.SubPostList;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2)
     public final Anti anti;
@@ -34,7 +34,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SERVER_TIME = 0;
     public static final Integer DEFAULT_IS_BLACK_WHITE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Anti anti;
         public SimpleForum display_forum;

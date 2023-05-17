@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ThemeCardInUser extends Message {
     public static final String DEFAULT_COORDINATE = "";
     public static final String DEFAULT_DYNAMIC_URL = "";
@@ -29,7 +29,7 @@ public final class ThemeCardInUser extends Message {
     public static final Long DEFAULT_PROPS_ID = 0L;
     public static final Integer DEFAULT_LEVEL = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ThemeCardInUser> {
         public String coordinate;
         public String dynamic_url;

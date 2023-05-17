@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class SmartApp extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_AVATAR = "";
@@ -35,7 +35,7 @@ public final class SmartApp extends Message {
     public static final Integer DEFAULT_IS_RECOM = 0;
     public static final Integer DEFAULT_IS_GAME = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SmartApp> {
         public String _abstract;
         public String avatar;

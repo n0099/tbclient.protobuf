@@ -3,7 +3,7 @@ package tbclient.GetMemberInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     @ProtoField(tag = 2)
@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long forum_id;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */

@@ -2,7 +2,7 @@ package tbclient.HotForum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class SearchValue extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_NAME = "";
@@ -20,7 +20,7 @@ public final class SearchValue extends Message {
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_IS_VIDEO_TOPIC = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<SearchValue> {
         public String desc;
         public Long id;

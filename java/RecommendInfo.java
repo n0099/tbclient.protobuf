@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class RecommendInfo extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final List<SchoolRecomUserInfo> DEFAULT_USER_LIST = Collections.emptyList();
@@ -13,7 +13,7 @@ public final class RecommendInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<SchoolRecomUserInfo> user_list;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecommendInfo> {
         public String title;
         public List<SchoolRecomUserInfo> user_list;

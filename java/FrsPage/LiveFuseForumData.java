@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.TagLabelInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class LiveFuseForumData extends Message {
     public static final String DEFAULT_BJIMG_DARK_BIG = "";
     public static final String DEFAULT_BJIMG_DARK_SMALL = "";
@@ -49,7 +49,7 @@ public final class LiveFuseForumData extends Message {
     public static final Integer DEFAULT_HEAD_IMG_STYLE = 0;
     public static final List<TagLabelInfo> DEFAULT_LABEL_INFOS = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<LiveFuseForumData> {
         public String bjimg_dark_big;
         public String bjimg_dark_small;

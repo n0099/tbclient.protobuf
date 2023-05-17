@@ -3,7 +3,7 @@ package tbclient.Realtime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ABTEST_TAG = "";
     public static final String DEFAULT_ORI_UGC_NID = "";
@@ -43,7 +43,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_LOCATION = 0;
     public static final Integer DEFAULT_TYPE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String abtest_tag;
 

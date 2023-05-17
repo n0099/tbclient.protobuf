@@ -2,7 +2,7 @@ package tbclient.Bigvip;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class UserInfoBigVip extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_PORTRAITH = "";
@@ -29,7 +29,7 @@ public final class UserInfoBigVip extends Message {
     public static final Integer DEFAULT_MESSAGE_ACCEPT = 0;
     public static final Integer DEFAULT_MUTE_NOTIFICATIONS = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<UserInfoBigVip> {
         public Integer message_accept;
         public Integer mute_notifications;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class IconStampInfo extends Message {
     public static final String DEFAULT_STAMP_TEXT = "";
     public static final String DEFAULT_STAMP_TITLE = "";
@@ -14,7 +14,7 @@ public final class IconStampInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer stamp_type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<IconStampInfo> {
         public String stamp_text;
         public String stamp_title;

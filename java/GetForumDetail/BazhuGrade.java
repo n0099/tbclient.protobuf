@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.GradePoint;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class BazhuGrade extends Message {
     public static final String DEFAULT_ESTIMATION_LEFT_TEXT = "";
     public static final String DEFAULT_GRADE = "";
@@ -23,7 +23,7 @@ public final class BazhuGrade extends Message {
     public static final List<GradePoint> DEFAULT_GRADE_POINT = Collections.emptyList();
     public static final Integer DEFAULT_ESTIMATION_LEFT_TIME = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<BazhuGrade> {
         public String estimation_left_text;
         public Integer estimation_left_time;

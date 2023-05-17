@@ -2,7 +2,7 @@ package tbclient.GetForumClassList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class BannerBaseInfo extends Message {
     public static final String DEFAULT_IMAGE_URL = "";
     public static final String DEFAULT_LINK = "";
@@ -23,7 +23,7 @@ public final class BannerBaseInfo extends Message {
     public static final Integer DEFAULT_RANK = 0;
     public static final Integer DEFAULT_TYPE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<BannerBaseInfo> {
         public String image_url;
         public String link;

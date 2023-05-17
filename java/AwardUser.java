@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class AwardUser extends Message {
     public static final String DEFAULT_AWARD_NAME = "";
     public static final String DEFAULT_USER_NAME = "";
@@ -17,7 +17,7 @@ public final class AwardUser extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_AWARD_TIME = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AwardUser> {
         public String award_name;
         public Integer award_time;

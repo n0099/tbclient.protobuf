@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class NovelRecomCard extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_AUTHOR = "";
@@ -58,7 +58,7 @@ public final class NovelRecomCard extends Message {
     public static final List<ThemeColorInfo> DEFAULT_TITLE_LABELS = Collections.emptyList();
     public static final Long DEFAULT_CHAPTER_TIME = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<NovelRecomCard> {
         public String _abstract;
         public String author;

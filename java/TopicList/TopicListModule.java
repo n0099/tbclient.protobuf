@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class TopicListModule extends Message {
     public static final String DEFAULT_MODULE_TITLE = "";
     public static final String DEFAULT_RULE_JUMP_URL = "";
@@ -19,7 +19,7 @@ public final class TopicListModule extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<TopicList> topic_list;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TopicListModule> {
         public String module_title;
         public String rule_jump_url;

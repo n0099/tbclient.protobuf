@@ -2,7 +2,7 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FinanceTabItems extends Message {
     public static final String DEFAULT_DESC_TEXT = "";
     public static final String DEFAULT_ICON_URL = "";
@@ -26,7 +26,7 @@ public final class FinanceTabItems extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tab_url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FinanceTabItems> {
         public String desc_text;
         public String icon_url;

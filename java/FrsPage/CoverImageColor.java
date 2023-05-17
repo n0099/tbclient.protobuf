@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class CoverImageColor extends Message {
     public static final Integer DEFAULT_MODEL = 0;
     public static final String DEFAULT_VALUE = "";
@@ -11,7 +11,7 @@ public final class CoverImageColor extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String value;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<CoverImageColor> {
         public Integer model;
         public String value;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class UserSessionInfo extends Message {
     public static final String DEFAULT_BDUSS = "";
     public static final String DEFAULT_EMAIL = "";
@@ -14,7 +14,7 @@ public final class UserSessionInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String mobile;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<UserSessionInfo> {
         public String bduss;
         public String email;

@@ -2,7 +2,7 @@ package tbclient.GetBaiduAlbumList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class AlbumList extends Message {
     public static final String DEFAULT_ALBUM_ID = "";
     public static final String DEFAULT_ALBUM_NAME = "";
@@ -32,7 +32,7 @@ public final class AlbumList extends Message {
     public static final Integer DEFAULT_UPDATE_TIME = 0;
     public static final Integer DEFAULT_IS_NETDISK = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AlbumList> {
         public String album_id;
         public String album_name;

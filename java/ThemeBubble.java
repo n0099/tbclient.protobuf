@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ThemeBubble extends Message {
     public static final String DEFAULT_JUMP_URL = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -14,7 +14,7 @@ public final class ThemeBubble extends Message {
     public static final Integer DEFAULT_PROPS_ID = 0;
     public static final Integer DEFAULT_PACKAGE_ID = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ThemeBubble> {
         public String jump_url;
         public Integer package_id;

@@ -3,7 +3,7 @@ package tbclient.UpdateTail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ReqData extends Message {
     public static final String DEFAULT_FONTCOLOR = "";
     public static final String DEFAULT_FONTKEYNAME = "";
@@ -22,7 +22,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer tailId;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */

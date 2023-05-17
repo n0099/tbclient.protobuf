@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class VoteSchema extends Message {
     public static final String DEFAULT_JUMP_URL = "";
     public static final String DEFAULT_TEXT_AFTER_VOTE = "";
@@ -14,7 +14,7 @@ public final class VoteSchema extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String text_before_vote;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VoteSchema> {
         public String jump_url;
         public String text_after_vote;

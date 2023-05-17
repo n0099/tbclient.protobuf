@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class TabPicDesc extends Message {
     public static final Integer DEFAULT_PIC_HEIGHT = 0;
     public static final Integer DEFAULT_PIC_WIDTH = 0;
@@ -17,7 +17,7 @@ public final class TabPicDesc extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String unselected_pic_url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TabPicDesc> {
         public Integer pic_height;
         public Integer pic_width;

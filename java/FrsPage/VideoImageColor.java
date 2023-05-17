@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class VideoImageColor extends Message {
     public static final String DEFAULT_COLOR = "";
     public static final Integer DEFAULT_TIME = 0;
@@ -11,7 +11,7 @@ public final class VideoImageColor extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer time;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<VideoImageColor> {
         public String color;
         public Integer time;

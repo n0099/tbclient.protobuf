@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class PrivateForumInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer private_forum_audit_status;
@@ -11,7 +11,7 @@ public final class PrivateForumInfo extends Message {
     public static final Integer DEFAULT_PRIVATE_FORUM_STATUS = 0;
     public static final Integer DEFAULT_PRIVATE_FORUM_AUDIT_STATUS = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PrivateForumInfo> {
         public Integer private_forum_audit_status;
         public Integer private_forum_status;

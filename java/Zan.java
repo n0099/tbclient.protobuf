@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class Zan extends Message {
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer consent_type;
@@ -25,7 +25,7 @@ public final class Zan extends Message {
     public static final List<Long> DEFAULT_LIKER_ID = Collections.emptyList();
     public static final Integer DEFAULT_CONSENT_TYPE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Zan> {
         public Integer consent_type;
         public Integer is_liked;

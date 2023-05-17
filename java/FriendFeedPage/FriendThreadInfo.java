@@ -12,7 +12,7 @@ import tbclient.MediaNum;
 import tbclient.User;
 import tbclient.Voice;
 import tbclient.Zan;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FriendThreadInfo extends Message {
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_TIMELINE = "";
@@ -86,7 +86,7 @@ public final class FriendThreadInfo extends Message {
     public static final Integer DEFAULT_IS_VOICE_THREAD = 0;
     public static final Long DEFAULT_THREAD_TYPE = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FriendThreadInfo> {
         public List<Abstract> _abstract;
         public AnchorInfo anchor_info;

@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.RankRuler;
 import tbclient.TiebaFieldsInfo;
 import tbclient.User;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2)
     public final User current_user;
@@ -25,7 +25,7 @@ public final class DataRes extends Message {
     public static final Long DEFAULT_TIMESTAMP = 0L;
     public static final Boolean DEFAULT_HAS_MORE = Boolean.FALSE;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public User current_user;
         public TiebaFieldsInfo field_info;

@@ -2,7 +2,7 @@ package tbclient.UserMuteQuery;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class MuteUser extends Message {
     public static final String DEFAULT_NAME_SHOW = "";
     public static final String DEFAULT_PORTRAIT = "";
@@ -20,7 +20,7 @@ public final class MuteUser extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Integer DEFAULT_MUTE_TIME = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<MuteUser> {
         public Integer mute_time;
         public String name_show;

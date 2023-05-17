@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ToastConfig extends Message {
     public static final String DEFAULT_PRE_COLOR_MSG = "";
     public static final String DEFAULT_TOAST_BACK_IMAGE = "";
@@ -11,7 +11,7 @@ public final class ToastConfig extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String toast_back_image;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ToastConfig> {
         public String pre_color_msg;
         public String toast_back_image;

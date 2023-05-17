@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class AdList extends Message {
     public static final String DEFAULT_AD_LINK_ANDROID = "";
     public static final String DEFAULT_AD_LINK_IOS = "";
@@ -19,7 +19,7 @@ public final class AdList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4, type = Message.Datatype.STRING)
     public final List<String> ad_pic;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AdList> {
         public String ad_link_android;
         public String ad_link_ios;

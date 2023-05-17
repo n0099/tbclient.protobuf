@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class BazhuUniversity extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<UniversityInfo> banner;
@@ -16,7 +16,7 @@ public final class BazhuUniversity extends Message {
     public static final List<UniversityInfo> DEFAULT_BANNER = Collections.emptyList();
     public static final List<UniversityTabInfo> DEFAULT_TAB = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<BazhuUniversity> {
         public List<UniversityInfo> banner;
         public List<UniversityInfo> entrance;

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeColorInfo;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class HeaderCard extends Message {
     public static final String DEFAULT_CARD_TITLE = "";
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
@@ -19,7 +19,7 @@ public final class HeaderCard extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThreadInfo> thread_list;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<HeaderCard> {
         public ThemeColorInfo card_background;
         public String card_title;

@@ -4,13 +4,13 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class UserDynamic extends Message {
     public static final List<User> DEFAULT_CONCERNED_USER_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<User> concerned_user_list;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<UserDynamic> {
         public List<User> concerned_user_list;
 

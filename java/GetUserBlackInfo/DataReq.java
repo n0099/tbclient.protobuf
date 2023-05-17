@@ -3,7 +3,7 @@ package tbclient.GetUserBlackInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_BLACK_UID = 0L;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     /* renamed from: common  reason: collision with root package name */
     public final CommonReq f1262common;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long black_uid;
 

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FinanceTab extends Message {
     public static final String DEFAULT_GENERAL_TAB_TEXT = "";
     public static final String DEFAULT_GENERAL_TAB_URL = "";
@@ -19,7 +19,7 @@ public final class FinanceTab extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FinanceTab> {
         public String general_tab_text;
         public String general_tab_url;

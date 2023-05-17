@@ -2,7 +2,7 @@ package tbclient.GetBookStore;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Shelf extends Message {
     public static final String DEFAULT_CARTOON_NAME = "";
     public static final String DEFAULT_COVER_IMG = "";
@@ -26,7 +26,7 @@ public final class Shelf extends Message {
     public static final Integer DEFAULT_FIRST_CHAPTER_ID = 0;
     public static final Long DEFAULT_UPDATE_TIME = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Shelf> {
         public Long cartoon_id;
         public String cartoon_name;

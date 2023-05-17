@@ -2,7 +2,7 @@ package tbclient.SearchFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class userInfo extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final Long DEFAULT_USER_ID = 0L;
@@ -14,7 +14,7 @@ public final class userInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<userInfo> {
         public String portrait;
         public Long user_id;

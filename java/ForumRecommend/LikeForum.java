@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.FrsTabInfo;
 import tbclient.PrivateForumInfo;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class LikeForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_CONTENT = "";
@@ -56,7 +56,7 @@ public final class LikeForum extends Message {
     public static final Long DEFAULT_HOT_THREAD_ID = 0L;
     public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<LikeForum> {
         public String avatar;
         public String content;

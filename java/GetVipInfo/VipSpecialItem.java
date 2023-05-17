@@ -2,7 +2,7 @@ package tbclient.GetVipInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class VipSpecialItem extends Message {
     public static final String DEFAULT_BUTTON_TEXT_FINISH = "";
     public static final String DEFAULT_BUTTON_TEXT_INITIAL = "";
@@ -41,7 +41,7 @@ public final class VipSpecialItem extends Message {
     public static final Integer DEFAULT_TASK_ID = 0;
     public static final Integer DEFAULT_IS_FINISH = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<VipSpecialItem> {
         public String button_text_finish;
         public String button_text_initial;

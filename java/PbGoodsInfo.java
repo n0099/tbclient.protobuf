@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class PbGoodsInfo extends Message {
     public static final String DEFAULT_GOODS_FROM = "";
     public static final String DEFAULT_GOODS_IMAGE = "";
@@ -29,7 +29,7 @@ public final class PbGoodsInfo extends Message {
     public static final Integer DEFAULT_SORT = 0;
     public static final Long DEFAULT_GOODS_ID = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PbGoodsInfo> {
         public String goods_from;
         public Long goods_id;

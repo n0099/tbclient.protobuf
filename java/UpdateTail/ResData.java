@@ -2,13 +2,13 @@ package tbclient.UpdateTail;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ResData extends Message {
     public static final Long DEFAULT_TAILID = 0L;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long tailId;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ResData> {
         public Long tailId;
 

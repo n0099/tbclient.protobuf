@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.App;
 import tbclient.BannerUserStory;
 import tbclient.DiscoverHotForum;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_LAST_TIPS = "";
     public static final String DEFAULT_PAGE_TAG = "";
@@ -52,7 +52,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_USER_TIPS_TYPE = 0;
     public static final List<App> DEFAULT_APP_LIST = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<App> app_list;
         public BannerFollowLive banner_follow_live;

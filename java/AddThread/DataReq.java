@@ -3,7 +3,7 @@ package tbclient.AddThread;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ANONYMOUS = "";
     public static final String DEFAULT_AUTHSID = "";
@@ -262,7 +262,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_IS_XIUXIU_THREAD = 0;
     public static final Integer DEFAULT_IS_SHOW_BLESS = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String anonymous;
         public String authsid;

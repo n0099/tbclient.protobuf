@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class GeneralResource extends Message {
     public static final Integer DEFAULT_RES_FLOOR = 0;
     public static final String DEFAULT_RES_IMAGE = "";
@@ -14,7 +14,7 @@ public final class GeneralResource extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String res_link;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<GeneralResource> {
         public Integer res_floor;
         public String res_image;

@@ -2,7 +2,7 @@ package tbclient.HomePage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class HotVideoItem extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_THUMBNAIL_URL = "";
@@ -26,7 +26,7 @@ public final class HotVideoItem extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String video_url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<HotVideoItem> {
         public String _abstract;
         public String thumbnail_url;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class PrivatePopInfo extends Message {
     public static final String DEFAULT_POP_CONTENT = "";
     public static final String DEFAULT_POP_TYPE = "";
@@ -23,7 +23,7 @@ public final class PrivatePopInfo extends Message {
     public static final Integer DEFAULT_POP_FORUM_ID = 0;
     public static final Integer DEFAULT_DAY = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PrivatePopInfo> {
         public Integer day;
         public String pop_content;

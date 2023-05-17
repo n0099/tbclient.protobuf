@@ -2,7 +2,7 @@ package tbclient.GetAlbumPhotoList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class AlbumPhoList extends Message {
     public static final String DEFAULT_ALBUM_ID = "";
     public static final String DEFAULT_BIG_PIC = "";
@@ -17,7 +17,7 @@ public final class AlbumPhoList extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String small_pic;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AlbumPhoList> {
         public String album_id;
         public String big_pic;

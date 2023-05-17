@@ -3,7 +3,7 @@ package tbclient.GetGiftListByCategoryId;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_CATEGORY_ID = 0;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     /* renamed from: common  reason: collision with root package name */
     public final CommonReq f1196common;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer category_id;
 

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class LinkThreadInfo extends Message {
     public static final List<LinkThreadContent> DEFAULT_LINK_CONTENT = Collections.emptyList();
     public static final String DEFAULT_LINK_URL = "";
@@ -16,7 +16,7 @@ public final class LinkThreadInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String link_url_code;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<LinkThreadInfo> {
         public List<LinkThreadContent> link_content;
         public String link_url;

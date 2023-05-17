@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeSkinPropMain;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ThemeSkinInMain extends Message {
     public static final List<ThemeSkinPropMain> DEFAULT_PROPS = Collections.emptyList();
     public static final String DEFAULT_SKIN_CATEGORY = "";
@@ -14,7 +14,7 @@ public final class ThemeSkinInMain extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String skin_category;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ThemeSkinInMain> {
         public List<ThemeSkinPropMain> props;
         public String skin_category;

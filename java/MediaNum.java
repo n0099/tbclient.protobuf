@@ -2,13 +2,13 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class MediaNum extends Message {
     public static final Integer DEFAULT_PIC = 0;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer pic;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<MediaNum> {
         public Integer pic;
 

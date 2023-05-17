@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class TwAnchorProfitItem extends Message {
     public static final String DEFAULT_ICON_LOCK_URL = "";
     public static final String DEFAULT_ICON_UNLOCK_URL = "";
@@ -20,7 +20,7 @@ public final class TwAnchorProfitItem extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final Integer DEFAULT_AVAILABLE_ANCHOR_LEVEL = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TwAnchorProfitItem> {
         public Integer available_anchor_level;
         public String icon_lock_url;

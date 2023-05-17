@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class EsportRank extends Message {
     public static final Integer DEFAULT_RANK = 0;
     public static final String DEFAULT_TEXT = "";
@@ -19,7 +19,7 @@ public final class EsportRank extends Message {
     @ProtoField(tag = 3)
     public final EsportUser user;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<EsportRank> {
         public Integer rank;
         public String text;

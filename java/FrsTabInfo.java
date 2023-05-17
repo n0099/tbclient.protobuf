@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FrsTabInfo extends Message {
     public static final String DEFAULT_CLICK_MONITOR_URL = "";
     public static final String DEFAULT_DEMOTE_URL = "";
@@ -55,7 +55,7 @@ public final class FrsTabInfo extends Message {
     public static final Integer DEFAULT_IS_NO_SHOW_PUBLISHER = 0;
     public static final Integer DEFAULT_IS_NO_SHOW_IN_PUBLISHER = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FrsTabInfo> {
         public String click_monitor_url;
         public String demote_url;

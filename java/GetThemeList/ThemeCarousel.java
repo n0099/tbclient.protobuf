@@ -2,7 +2,7 @@ package tbclient.GetThemeList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ThemeCarousel extends Message {
     public static final String DEFAULT_ACTIVE_URL = "";
     public static final String DEFAULT_PIC_URL = "";
@@ -11,7 +11,7 @@ public final class ThemeCarousel extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String pic_url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ThemeCarousel> {
         public String active_url;
         public String pic_url;

@@ -2,7 +2,7 @@ package tbclient.GetUserBookMarkList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Mark extends Message {
     public static final String DEFAULT_BOOK_ID = "";
     public static final String DEFAULT_CHAPTER_TITLE = "";
@@ -32,7 +32,7 @@ public final class Mark extends Message {
     public static final Long DEFAULT_POSITION = 0L;
     public static final Integer DEFAULT_UPDATE_TIME = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Mark> {
         public String book_id;
         public Long chapter_id;

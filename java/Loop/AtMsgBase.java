@@ -2,7 +2,7 @@ package tbclient.Loop;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class AtMsgBase extends Message {
     public static final Long DEFAULT_MSG_ID = 0L;
     public static final String DEFAULT_MSG_KEY = "";
@@ -11,7 +11,7 @@ public final class AtMsgBase extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String msg_key;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AtMsgBase> {
         public Long msg_id;
         public String msg_key;

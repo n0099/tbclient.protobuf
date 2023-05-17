@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class PermissionList extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer chat;
@@ -14,7 +14,7 @@ public final class PermissionList extends Message {
     public static final Integer DEFAULT_INTERACT = 0;
     public static final Integer DEFAULT_CHAT = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PermissionList> {
         public Integer chat;
         public Integer follow;

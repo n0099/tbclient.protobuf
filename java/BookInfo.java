@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class BookInfo extends Message {
     public static final String DEFAULT_AD_CODE = "";
     public static final String DEFAULT_AUTHOR = "";
@@ -142,7 +142,7 @@ public final class BookInfo extends Message {
     public static final Integer DEFAULT_CHARGE_TYPE = 0;
     public static final Integer DEFAULT_MEMBER_SHOW_TYPE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<BookInfo> {
         public String ad_code;
         public String author;

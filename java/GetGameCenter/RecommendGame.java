@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class RecommendGame extends Message {
     public static final String DEFAULT_ANDR_PK_NAME = "";
     public static final String DEFAULT_APPLE_ID = "";
@@ -82,7 +82,7 @@ public final class RecommendGame extends Message {
     public static final Integer DEFAULT_CATEGORY_ID = 0;
     public static final Long DEFAULT_DEADLINE = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<RecommendGame> {
         public String andr_pk_name;
         public String apple_id;

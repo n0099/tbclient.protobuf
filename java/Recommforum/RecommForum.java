@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.RecommendForumInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class RecommForum extends Message {
     public static final List<RecommendForumInfo> DEFAULT_FORUMS = Collections.emptyList();
     public static final Integer DEFAULT_PAGE_SIZE = 0;
@@ -17,7 +17,7 @@ public final class RecommForum extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecommForum> {
         public List<RecommendForumInfo> forums;
         public Integer page_size;

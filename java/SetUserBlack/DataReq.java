@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 import tbclient.PermissionList;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_BLACK_UID = 0L;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -16,7 +16,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 3)
     public final PermissionList perm_list;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long black_uid;
 

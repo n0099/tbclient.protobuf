@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.PbContent;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class NebulaHotThread extends Message {
     public static final String DEFAULT_GROUP_NAME = "";
     public static final String DEFAULT_THREAD_ID = "";
@@ -32,7 +32,7 @@ public final class NebulaHotThread extends Message {
     public static final Integer DEFAULT_THREAD_THUMBNAIL_TYPE = 0;
     public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<NebulaHotThread> {
         public Integer comment_number;
         public List<PbContent> content;

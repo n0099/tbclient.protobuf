@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ForumFriendWatchingInfo extends Message {
     public static final String DEFAULT_FORUM_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -17,7 +17,7 @@ public final class ForumFriendWatchingInfo extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String show_type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ForumFriendWatchingInfo> {
         public String forum_avatar;
         public String forum_name;

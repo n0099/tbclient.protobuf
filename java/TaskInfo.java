@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class TaskInfo extends Message {
     public static final String DEFAULT_BGIMG = "";
     public static final String DEFAULT_FLOOR_GOD_REPLY = "";
@@ -63,7 +63,7 @@ public final class TaskInfo extends Message {
     public static final Integer DEFAULT_IS_GOD_REPLY = 0;
     public static final Integer DEFAULT_CARD_TYPE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TaskInfo> {
         public String bgimg;
         public Integer card_type;

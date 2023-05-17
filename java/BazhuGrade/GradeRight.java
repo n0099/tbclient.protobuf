@@ -2,7 +2,7 @@ package tbclient.BazhuGrade;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class GradeRight extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_IMAGE = "";
@@ -14,7 +14,7 @@ public final class GradeRight extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<GradeRight> {
         public String desc;
         public String image;

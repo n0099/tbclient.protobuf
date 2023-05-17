@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.AlaLiveInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     public static final List<AlaLiveInfo> DEFAULT_LIVE_FOLLOW_SECOND_FLOOR = Collections.emptyList();
     public static final List<AlaLiveInfo> DEFAULT_LIVE_INDEX_SECOND_FLOOR = Collections.emptyList();
@@ -36,7 +36,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String uniq_id;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public MemberBroadcastInfo activity_broadcast;
         public ChatroomFrsRes chatroom_frs;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class OriginThreadInfo extends Message {
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_TID = "";
@@ -81,7 +81,7 @@ public final class OriginThreadInfo extends Message {
     public static final Integer DEFAULT_TOP_TYPES = 0;
     public static final Integer DEFAULT_IS_FRS_MASK = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<OriginThreadInfo> {
         public List<Abstract> _abstract;
         public Agree agree;

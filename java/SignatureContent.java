@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class SignatureContent extends Message {
     public static final String DEFAULT_TEXT = "";
     public static final Integer DEFAULT_TYPE = 0;
@@ -11,7 +11,7 @@ public final class SignatureContent extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SignatureContent> {
         public String text;
         public Integer type;

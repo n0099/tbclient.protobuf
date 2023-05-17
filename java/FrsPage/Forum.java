@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Forum extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final String DEFAULT_LEVEL1_DIR_NAME = "";
@@ -11,7 +11,7 @@ public final class Forum extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String level1_dir_name;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Forum> {
         public Long forum_id;
         public String level1_dir_name;

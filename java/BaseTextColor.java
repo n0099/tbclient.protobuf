@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class BaseTextColor extends Message {
     public static final String DEFAULT_DAY = "";
     public static final String DEFAULT_NIGHT = "";
@@ -14,7 +14,7 @@ public final class BaseTextColor extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<BaseTextColor> {
         public String day;
         public String night;

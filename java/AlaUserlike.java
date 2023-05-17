@@ -2,14 +2,14 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class AlaUserlike extends Message {
     @ProtoField(tag = 2)
     public final AlaLiveInfo ala_live_info;
     @ProtoField(tag = 1)
     public final User user;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AlaUserlike> {
         public AlaLiveInfo ala_live_info;
         public User user;

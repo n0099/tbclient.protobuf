@@ -2,7 +2,7 @@ package tbclient.GetIconList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Discount extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer rebate;
@@ -11,7 +11,7 @@ public final class Discount extends Message {
     public static final Integer DEFAULT_RECHARGE = 0;
     public static final Integer DEFAULT_REBATE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Discount> {
         public Integer rebate;
         public Integer recharge;

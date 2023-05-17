@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Calendar extends Message {
     public static final Integer DEFAULT_D = 0;
     public static final Integer DEFAULT_RANK = 0;
@@ -17,7 +17,7 @@ public final class Calendar extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String t;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Calendar> {
         public Integer d;
         public Integer rank;

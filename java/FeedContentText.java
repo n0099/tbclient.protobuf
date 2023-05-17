@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FeedContentText extends Message {
     public static final String DEFAULT_TEXT = "";
     @ProtoField(tag = 3)
@@ -12,7 +12,7 @@ public final class FeedContentText extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String text;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FeedContentText> {
         public FeedContentColor bg_color;
         public FeedContentColor color;

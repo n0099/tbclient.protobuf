@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ChatRoomAtInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer at_all_msg_count;
@@ -22,7 +22,7 @@ public final class ChatRoomAtInfo extends Message {
     public static final List<AtMsgBase> DEFAULT_AT_ALL_MSG_LIST = Collections.emptyList();
     public static final List<AtMsgBase> DEFAULT_AT_SINGLE_MSG_LIST = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ChatRoomAtInfo> {
         public Integer at_all_msg_count;
         public List<AtMsgBase> at_all_msg_list;

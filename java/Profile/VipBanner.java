@@ -2,7 +2,7 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class VipBanner extends Message {
     public static final String DEFAULT_BUBBLE = "";
     public static final String DEFAULT_BUTTON_LABLE = "";
@@ -23,7 +23,7 @@ public final class VipBanner extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VipBanner> {
         public String bubble;
         public String button_lable;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class SignActivityInfo extends Message {
     public static final String DEFAULT_ACTIVITY_FAIL_MSG = "";
     public static final String DEFAULT_ACTIVITY_MSG = "";
@@ -50,7 +50,7 @@ public final class SignActivityInfo extends Message {
     public static final Integer DEFAULT_GIFT_TYPE = 0;
     public static final Integer DEFAULT_ICON_LIFECYCLE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SignActivityInfo> {
         public Integer activity_duration;
         public String activity_fail_msg;

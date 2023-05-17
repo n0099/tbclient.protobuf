@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class NebulaHotThreads extends Message {
     public static final List<NebulaHotThread> DEFAULT_THREADS = Collections.emptyList();
     public static final String DEFAULT_URL = "";
@@ -13,7 +13,7 @@ public final class NebulaHotThreads extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<NebulaHotThreads> {
         public List<NebulaHotThread> threads;
         public String url;

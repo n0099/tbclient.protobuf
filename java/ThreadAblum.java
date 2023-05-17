@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ThreadAblum extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final Long DEFAULT_TAB_ID = 0L;
@@ -11,7 +11,7 @@ public final class ThreadAblum extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long tab_id;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ThreadAblum> {
         public Integer id;
         public Long tab_id;

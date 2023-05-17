@@ -2,12 +2,12 @@ package tbclient.Loop;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class LevelRes extends Message {
     @ProtoField(tag = 1)
     public final LevelPop pop;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<LevelRes> {
         public LevelPop pop;
 

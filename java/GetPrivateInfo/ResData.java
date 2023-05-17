@@ -3,7 +3,7 @@ package tbclient.GetPrivateInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.SimpleUser;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ResData extends Message {
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer bazhu_show_inside;
@@ -35,7 +35,7 @@ public final class ResData extends Message {
     public static final Integer DEFAULT_BAZHU_SHOW_INSIDE = 0;
     public static final Integer DEFAULT_BAZHU_SHOW_OUTSIDE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ResData> {
         public Integer bazhu_show_inside;
         public Integer bazhu_show_outside;

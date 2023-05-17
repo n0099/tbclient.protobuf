@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class BazhuSign extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_LEVEL = "";
@@ -11,7 +11,7 @@ public final class BazhuSign extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String level;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<BazhuSign> {
         public String desc;
         public String level;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ForumList extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_CONTENT = "";
@@ -29,7 +29,7 @@ public final class ForumList extends Message {
     public static final Long DEFAULT_POST_NUM = 0L;
     public static final Long DEFAULT_THREAD_NUM = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ForumList> {
         public String avatar;
         public String content;

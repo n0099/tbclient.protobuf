@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ChatroomSignInfo extends Message {
     public static final Long DEFAULT_CHATROOM_ID = 0L;
     public static final String DEFAULT_GUIDE_TEXT = "";
@@ -14,7 +14,7 @@ public final class ChatroomSignInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String jump_scheme;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ChatroomSignInfo> {
         public Long chatroom_id;
         public String guide_text;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class VcodeInfo extends Message {
     public static final String DEFAULT_VCODE_MD5 = "";
     public static final String DEFAULT_VCODE_PIC_URL = "";
@@ -16,7 +16,7 @@ public final class VcodeInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String vcode_type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VcodeInfo> {
         public VcodeExtra vcode_extra;
         public String vcode_md5;

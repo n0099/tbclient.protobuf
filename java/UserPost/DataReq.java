@@ -3,7 +3,7 @@ package tbclient.UserPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_COOKIE = "";
     public static final String DEFAULT_EMAIL = "";
@@ -121,7 +121,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_FROM_TYPE = 0;
     public static final Long DEFAULT_BEGIN_THREAD_ID = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long begin_thread_id;
         public Integer begin_time;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ThreadEasterEgg extends Message {
     public static final String DEFAULT_ACTIVITY_ID = "";
     public static final String DEFAULT_POP_IMAGEURL = "";
@@ -19,7 +19,7 @@ public final class ThreadEasterEgg extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String video_url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ThreadEasterEgg> {
         public String activity_id;
         public String pop_imageurl;

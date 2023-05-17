@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class VideoTags extends Message {
     public static final String DEFAULT_FIRST = "";
     public static final String DEFAULT_SECOND = "";
@@ -16,7 +16,7 @@ public final class VideoTags extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.STRING)
     public final List<String> tags;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VideoTags> {
         public String first;
         public String second;

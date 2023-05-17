@@ -2,7 +2,7 @@ package tbclient.GetForumClassList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ForumInfo extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_AVATAR = "";
@@ -20,7 +20,7 @@ public final class ForumInfo extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_IS_LIKE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
         public String _abstract;
         public String avatar;

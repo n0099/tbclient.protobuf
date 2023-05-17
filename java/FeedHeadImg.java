@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FeedHeadImg extends Message {
     public static final String DEFAULT_CORNER_URL = "";
     public static final String DEFAULT_IMG_URL = "";
@@ -20,7 +20,7 @@ public final class FeedHeadImg extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer shape_type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FeedHeadImg> {
         public String corner_url;
         public String img_url;

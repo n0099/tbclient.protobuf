@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class AppCode extends Message {
     public static final String DEFAULT_BUTTON_TEXT = "";
     public static final String DEFAULT_GAME_ICON = "";
@@ -14,7 +14,7 @@ public final class AppCode extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String post_url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AppCode> {
         public String button_text;
         public String game_icon;

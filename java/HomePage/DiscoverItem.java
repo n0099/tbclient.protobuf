@@ -2,7 +2,7 @@ package tbclient.HomePage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DiscoverItem extends Message {
     public static final String DEFAULT_DESCRIBE = "";
     public static final String DEFAULT_ICON_URL = "";
@@ -26,7 +26,7 @@ public final class DiscoverItem extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DiscoverItem> {
         public String describe;
         public String icon_url;

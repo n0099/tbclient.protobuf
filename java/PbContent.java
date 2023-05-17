@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class PbContent extends Message {
     public static final String DEFAULT_BIG_CDN_SRC = "";
     public static final String DEFAULT_BIG_SIZE = "";
@@ -128,7 +128,7 @@ public final class PbContent extends Message {
     public static final Long DEFAULT_PIC_ID = 0L;
     public static final Integer DEFAULT_LINK_TYPE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PbContent> {
         public String _static;
         public String big_cdn_src;

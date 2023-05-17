@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class AlbumElement extends Message {
     public static final String DEFAULT_ALBUM_THUMB_URL = "";
     public static final String DEFAULT_ALBUM_URL = "";
@@ -20,7 +20,7 @@ public final class AlbumElement extends Message {
     public static final Integer DEFAULT_ALBUM_HEIGHT = 0;
     public static final Integer DEFAULT_ALBUM_WIDTH = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AlbumElement> {
         public Integer album_height;
         public String album_thumb_url;

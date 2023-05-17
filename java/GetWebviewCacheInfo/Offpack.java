@@ -2,7 +2,7 @@ package tbclient.GetWebviewCacheInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Offpack extends Message {
     public static final Integer DEFAULT_IS_USE = 0;
     public static final String DEFAULT_MD5 = "";
@@ -20,7 +20,7 @@ public final class Offpack extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String webview_version;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Offpack> {
         public Integer is_use;
         public String md5;

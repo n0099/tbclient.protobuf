@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class NewParrScores extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long i_total;
@@ -14,7 +14,7 @@ public final class NewParrScores extends Message {
     public static final Integer DEFAULT_UPDATE_TIME = 0;
     public static final Long DEFAULT_I_TOTAL = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<NewParrScores> {
         public Long i_total;
         public Long scores_total;

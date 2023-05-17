@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ForumHeadIcon extends Message {
     public static final Integer DEFAULT_GRADE = 0;
     public static final String DEFAULT_URL = "";
@@ -11,7 +11,7 @@ public final class ForumHeadIcon extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ForumHeadIcon> {
         public Integer grade;
         public String url;

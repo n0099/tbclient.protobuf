@@ -3,7 +3,7 @@ package tbclient.FrsPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class NovelExt extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final Long DEFAULT_CHAPTER_TIME = 0L;
@@ -20,7 +20,7 @@ public final class NovelExt extends Message {
     @ProtoField(tag = 3)
     public final ThemeColorInfo new_labels;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<NovelExt> {
         public String _abstract;
         public ThemeColorInfo chapter_bg_color;

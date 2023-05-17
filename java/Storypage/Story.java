@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class Story extends Message {
     public static final List<ThreadInfo> DEFAULT_STORY_LIST = Collections.emptyList();
     public static final Integer DEFAULT_STORY_USER_TYPE = 0;
@@ -17,7 +17,7 @@ public final class Story extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer story_user_type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Story> {
         public List<ThreadInfo> story_list;
         public User story_user;

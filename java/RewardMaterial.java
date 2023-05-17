@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class RewardMaterial extends Message {
     public static final String DEFAULT_ICON = "";
     public static final Integer DEFAULT_IS_MATCHED = 0;
@@ -17,7 +17,7 @@ public final class RewardMaterial extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String unlock_level;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RewardMaterial> {
         public String icon;
         public Integer is_matched;

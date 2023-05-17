@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.PbContent;
 import tbclient.User;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class InterviewInfo extends Message {
     @ProtoField(tag = 5)
     public final User author;
@@ -26,7 +26,7 @@ public final class InterviewInfo extends Message {
     public static final Integer DEFAULT_TYPE = 0;
     public static final Long DEFAULT_MAIN_PID = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<InterviewInfo> {
         public User author;
         public List<PbContent> content;

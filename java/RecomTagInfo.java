@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class RecomTagInfo extends Message {
     public static final String DEFAULT_FIRST_CLASS = "";
     public static final Integer DEFAULT_ID = 0;
@@ -17,7 +17,7 @@ public final class RecomTagInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String pic;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecomTagInfo> {
         public String first_class;
         public Integer id;

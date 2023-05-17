@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Media;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FineThreadInfo extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_TITLE = "";
@@ -26,7 +26,7 @@ public final class FineThreadInfo extends Message {
     public static final List<Media> DEFAULT_MEDIA = Collections.emptyList();
     public static final Integer DEFAULT_PUBLISH_TIME = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FineThreadInfo> {
         public String _abstract;
         public Long ftid;

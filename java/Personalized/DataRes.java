@@ -11,7 +11,7 @@ import tbclient.DiscoverHotForum;
 import tbclient.FavoritePanel;
 import tbclient.SimpleForum;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_STAT_KEY = "";
     @ProtoField(tag = 22)
@@ -83,7 +83,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_FRESH_CTRL_NUM = 0;
     public static final Integer DEFAULT_SHOW_ADSENSE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActiveCenter active_center;
         public AgeSexModule age_sex;

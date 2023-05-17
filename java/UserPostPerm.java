@@ -2,13 +2,13 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class UserPostPerm extends Message {
     public static final Integer DEFAULT_NOT_SHOW_HIDE_THREAD = 0;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer not_show_hide_thread;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<UserPostPerm> {
         public Integer not_show_hide_thread;
 

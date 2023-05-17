@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ModuleInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer max_module_num;
@@ -16,7 +16,7 @@ public final class ModuleInfo extends Message {
     public static final Integer DEFAULT_MAX_MODULE_NUM = 0;
     public static final Integer DEFAULT_MAX_MODULE_THREAD_NUM = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ModuleInfo> {
         public Integer max_module_num;
         public Integer max_module_thread_num;

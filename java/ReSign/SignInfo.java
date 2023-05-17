@@ -2,7 +2,7 @@ package tbclient.ReSign;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class SignInfo extends Message {
     public static final Integer DEFAULT_IS_SIGN_IN = 0;
     public static final String DEFAULT_SIGN_DATE = "";
@@ -11,7 +11,7 @@ public final class SignInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String sign_date;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SignInfo> {
         public Integer is_sign_in;
         public String sign_date;

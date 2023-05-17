@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Page extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer cur_good_id;
@@ -47,7 +47,7 @@ public final class Page extends Message {
     public static final Integer DEFAULT_LZ_TOTAL_FLOOR = 0;
     public static final Integer DEFAULT_NEW_TOTAL_PAGE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Page> {
         public Integer cur_good_id;
         public Integer current_page;

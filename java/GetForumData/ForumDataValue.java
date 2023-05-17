@@ -2,7 +2,7 @@ package tbclient.GetForumData;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ForumDataValue extends Message {
     public static final String DEFAULT_DATE = "";
     public static final Double DEFAULT_VALUE = Double.valueOf(0.0d);
@@ -11,7 +11,7 @@ public final class ForumDataValue extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.DOUBLE)
     public final Double value;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ForumDataValue> {
         public String date;
         public Double value;

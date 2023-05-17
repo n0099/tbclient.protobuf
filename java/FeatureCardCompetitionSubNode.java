@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FeatureCardCompetitionSubNode extends Message {
     public static final String DEFAULT_COMPETITION_IMAGE = "";
     public static final String DEFAULT_TEAM1_IMAGE = "";
@@ -26,7 +26,7 @@ public final class FeatureCardCompetitionSubNode extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FeatureCardCompetitionSubNode> {
         public String competition_image;
         public String team1_image;

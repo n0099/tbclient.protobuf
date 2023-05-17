@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.VideoTemplateContent;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ACTIVITY_URL = "";
     public static final String DEFAULT_BACK_URL = "";
@@ -26,7 +26,7 @@ public final class DataRes extends Message {
     public static final List<VideoTemplateContent> DEFAULT_VIDEO_TEMPLATE_CONTENT = Collections.emptyList();
     public static final Integer DEFAULT_TOPIC_ID = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String activity_url;
         public String back_url;

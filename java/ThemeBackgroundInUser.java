@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ThemeBackgroundInUser extends Message {
     public static final String DEFAULT_DYNAMIC = "";
     public static final String DEFAULT_EXCLUSIVE_NO = "";
@@ -20,7 +20,7 @@ public final class ThemeBackgroundInUser extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
     public final Long props_id;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ThemeBackgroundInUser> {
         public String dynamic;
         public String exclusive_no;

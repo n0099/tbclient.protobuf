@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class UserTaskInfo extends Message {
     public static final String DEFAULT_ACT_TYPE = "";
     public static final String DEFAULT_BRIEF = "";
@@ -38,7 +38,7 @@ public final class UserTaskInfo extends Message {
     public static final Integer DEFAULT_TASK_TYPE = 0;
     public static final Integer DEFAULT_WEIGHT = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<UserTaskInfo> {
         public String act_type;
         public String brief;

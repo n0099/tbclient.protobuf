@@ -2,7 +2,7 @@ package tbclient.GetOrder;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class NotifyPopup extends Message {
     public static final String DEFAULT_APPENDIX_LINK = "";
     public static final String DEFAULT_APPENDIX_TEXT = "";
@@ -47,7 +47,7 @@ public final class NotifyPopup extends Message {
     public static final Integer DEFAULT_APP_SIZE = 0;
     public static final Integer DEFAULT_APPENDIX_OPTIONAL = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<NotifyPopup> {
         public Integer app_size;
         public String app_version;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class VoiceRoom extends Message {
     public static final String DEFAULT_ROOM_NAME = "";
     @ProtoField(tag = 4)
@@ -27,7 +27,7 @@ public final class VoiceRoom extends Message {
     public static final Long DEFAULT_TALKER_NUM = 0L;
     public static final Integer DEFAULT_STATUS = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VoiceRoom> {
         public User author;
         public Long joined_num;

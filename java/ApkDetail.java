@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ApkDetail extends Message {
     public static final String DEFAULT_AUTHORITY_URL = "";
     public static final String DEFAULT_DEVELOPER = "";
@@ -38,7 +38,7 @@ public final class ApkDetail extends Message {
     public static final Integer DEFAULT_NEED_INNER_BUY = 0;
     public static final Integer DEFAULT_PKG_SOURCE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ApkDetail> {
         public String authority_url;
         public String developer;

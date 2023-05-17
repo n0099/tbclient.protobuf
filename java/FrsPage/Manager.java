@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Manager extends Message {
     public static final Long DEFAULT_ID = 0L;
     public static final String DEFAULT_NAME = "";
@@ -17,7 +17,7 @@ public final class Manager extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String show_name;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Manager> {
         public Long id;
         public String name;

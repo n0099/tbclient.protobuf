@@ -2,7 +2,7 @@ package tbclient.GetSugTopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2)
     public final TopicListModule bang_topic;
@@ -13,7 +13,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 5)
     public final TopicListModule video_topic;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public TopicListModule bang_topic;
         public TopicListModule sug_topic;

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer begin_id;
@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_BEGIN_ID = 0;
     public static final Integer DEFAULT_PN = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer begin_id;
         public List<Integer> classid_list;

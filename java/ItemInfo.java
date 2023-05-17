@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ItemInfo extends Message {
     public static final String DEFAULT_APK_NAME = "";
     public static final String DEFAULT_BRIEF = "";
@@ -73,7 +73,7 @@ public final class ItemInfo extends Message {
     public static final List<TagInfo> DEFAULT_TAG_INFO = Collections.emptyList();
     public static final Integer DEFAULT_BUTTON_LINK_TYPE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ItemInfo> {
         public ApkDetail apk_detail;
         public String apk_name;

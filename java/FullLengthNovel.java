@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FullLengthNovel extends Message {
     public static final Integer DEFAULT_BUTTON_HEIGH = 0;
     public static final String DEFAULT_HAS_TRUNCATE = "";
@@ -14,7 +14,7 @@ public final class FullLengthNovel extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String schema;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FullLengthNovel> {
         public Integer button_heigh;
         public String has_truncate;

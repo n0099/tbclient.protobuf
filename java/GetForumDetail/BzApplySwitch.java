@@ -1,10 +1,10 @@
 package tbclient.GetForumDetail;
 
 import com.squareup.wire.Message;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class BzApplySwitch extends Message {
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<BzApplySwitch> {
         public Builder() {
         }

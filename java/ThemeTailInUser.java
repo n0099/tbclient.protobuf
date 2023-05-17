@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ThemeTailInUser extends Message {
     public static final String DEFAULT_DYNAMIC = "";
     public static final String DEFAULT_PROPS_ID = "";
@@ -14,7 +14,7 @@ public final class ThemeTailInUser extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ThemeTailInUser> {
         public String dynamic;
         public String props_id;

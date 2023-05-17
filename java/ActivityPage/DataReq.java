@@ -3,7 +3,7 @@ package tbclient.ActivityPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ACTIVITY_NAME = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -31,7 +31,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_DIP = 0;
     public static final Integer DEFAULT_Q_TYPE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String activity_name;
 

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class PollInfo extends Message {
     public static final String DEFAULT_POLLED_VALUE = "";
     public static final String DEFAULT_TIPS = "";
@@ -46,7 +46,7 @@ public final class PollInfo extends Message {
     public static final Long DEFAULT_TOTAL_POLL = 0L;
     public static final Integer DEFAULT_LAST_TIME = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PollInfo> {
         public Integer end_time;
         public Integer is_multi;

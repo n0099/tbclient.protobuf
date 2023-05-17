@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DealInfo extends Message {
     public static final String DEFAULT_DES = "";
     public static final String DEFAULT_SELLER_ADDRESS = "";
@@ -49,7 +49,7 @@ public final class DealInfo extends Message {
     public static final List<DealAuthInfo> DEFAULT_AUTH_INFO = Collections.emptyList();
     public static final Long DEFAULT_SHIP_FEE = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DealInfo> {
         public List<DealAuthInfo> auth_info;
         public String des;

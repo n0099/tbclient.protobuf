@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class UserRankPresentInfo extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_USER_NAME = "";
@@ -20,7 +20,7 @@ public final class UserRankPresentInfo extends Message {
     public static final Integer DEFAULT_PRESENT_NUM = 0;
     public static final Long DEFAULT_PRESENT_SCORES = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<UserRankPresentInfo> {
         public String portrait;
         public Integer present_num;

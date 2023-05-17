@@ -2,7 +2,7 @@ package tbclient.GetRecommendTopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class TopicList extends Message {
     public static final String DEFAULT_TOPIC_DESC = "";
     public static final String DEFAULT_TOPIC_NAME = "";
@@ -26,7 +26,7 @@ public final class TopicList extends Message {
     public static final Integer DEFAULT_TAG = 0;
     public static final Integer DEFAULT_IS_VIDEO_TOPIC = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<TopicList> {
         public Long discuss_num;
         public Integer is_video_topic;

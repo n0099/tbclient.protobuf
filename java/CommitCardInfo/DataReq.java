@@ -3,7 +3,7 @@ package tbclient.CommitCardInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_CARD_TYPE = 0;
     public static final String DEFAULT_IMAGE_INFO = "";
@@ -16,7 +16,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String image_info;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer card_type;
 

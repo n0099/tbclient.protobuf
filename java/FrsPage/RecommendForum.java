@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class RecommendForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_LINK = "";
@@ -23,7 +23,7 @@ public final class RecommendForum extends Message {
     public static final Integer DEFAULT_MEMBER_NUM = 0;
     public static final Integer DEFAULT_THREAD_NUM = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<RecommendForum> {
         public String avatar;
         public String link;

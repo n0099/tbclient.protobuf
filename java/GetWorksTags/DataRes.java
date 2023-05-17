@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     public static final List<Category> DEFAULT_CATEGORY = Collections.emptyList();
     public static final List<Tag> DEFAULT_TAGS = Collections.emptyList();
@@ -13,7 +13,7 @@ public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<Tag> tags;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Category> category;
         public List<Tag> tags;

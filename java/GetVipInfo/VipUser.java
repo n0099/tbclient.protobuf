@@ -2,7 +2,7 @@ package tbclient.GetVipInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class VipUser extends Message {
     public static final String DEFAULT_CARD_ID = "";
     public static final String DEFAULT_NAME = "";
@@ -44,7 +44,7 @@ public final class VipUser extends Message {
     public static final Integer DEFAULT_NOW_TIME = 0;
     public static final Integer DEFAULT_TASK_SCORES = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<VipUser> {
         public VipParrScores Parr_scores;
         public String card_id;

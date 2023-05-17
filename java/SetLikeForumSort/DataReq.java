@@ -3,7 +3,7 @@ package tbclient.SetLikeForumSort;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_NEW_LIKE_LIST = "";
     public static final String DEFAULT_ORIGINAL_LIKE_LIST = "";
@@ -19,7 +19,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String tbs;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */

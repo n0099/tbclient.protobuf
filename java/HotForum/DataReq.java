@@ -3,7 +3,7 @@ package tbclient.HotForum;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_LYO = 0;
     @ProtoField(tag = 1)
@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer lyo;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */

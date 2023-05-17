@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FeedHeadIcon extends Message {
     public static final String DEFAULT_DEGRADE_URL = "";
     public static final String DEFAULT_URL = "";
@@ -32,7 +32,7 @@ public final class FeedHeadIcon extends Message {
     public static final Integer DEFAULT_DEGRADE_HEIGHT = 0;
     public static final Integer DEFAULT_DEGRADE_PRIORITY = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FeedHeadIcon> {
         public Integer can_degrade;
         public Integer degrade_height;

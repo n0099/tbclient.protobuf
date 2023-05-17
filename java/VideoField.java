@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class VideoField extends Message {
     public static final String DEFAULT_URL = "";
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
@@ -25,7 +25,7 @@ public final class VideoField extends Message {
     public static final Integer DEFAULT_PLAY_COUNT = 0;
     public static final Integer DEFAULT_IS_VERTICAL = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VideoField> {
         public Integer duration;
         public Integer height;

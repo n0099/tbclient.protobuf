@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class PostList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<Abstract> _abstract;
@@ -29,7 +29,7 @@ public final class PostList extends Message {
     public static final List<Voice> DEFAULT_VOICE_INFO = Collections.emptyList();
     public static final Long DEFAULT_AUTHOR_ID = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PostList> {
         public List<Abstract> _abstract;
         public Agree agree;

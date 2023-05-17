@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class TipInfo extends Message {
     public static final String DEFAULT_TIP_INTERVAL = "";
     public static final String DEFAULT_TIP_NAME = "";
@@ -20,7 +20,7 @@ public final class TipInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tip_pop_title;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<TipInfo> {
         public String tip_interval;
         public String tip_name;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class StateInfo extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_TEXT = "";
@@ -20,7 +20,7 @@ public final class StateInfo extends Message {
     public static final Integer DEFAULT_ICON_PID = 0;
     public static final Long DEFAULT_ICON_PID_NEW = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<StateInfo> {
         public String icon;
         public Integer icon_pid;

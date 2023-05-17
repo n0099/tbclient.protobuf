@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Item extends Message {
     public static final String DEFAULT_APK_NAME = "";
     public static final String DEFAULT_BUTTON_LINK = "";
@@ -51,7 +51,7 @@ public final class Item extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 5, type = Message.Datatype.STRING)
     public final List<String> tags;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Item> {
         public ApkDetail apk_detail;
         public String apk_name;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class LikeUserInfo extends Message {
     public static final String DEFAULT_MESSAGE = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -18,7 +18,7 @@ public final class LikeUserInfo extends Message {
     public static final List<ForumInfo> DEFAULT_FORUM_INFO = Collections.emptyList();
     public static final List<PostInfo> DEFAULT_POST_INFO = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<LikeUserInfo> {
         public List<ForumInfo> forum_info;
         public String message;

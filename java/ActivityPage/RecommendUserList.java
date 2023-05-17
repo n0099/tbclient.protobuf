@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.User;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class RecommendUserList extends Message {
     public static final Integer DEFAULT_FLOOR_POSITION = 0;
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
@@ -14,7 +14,7 @@ public final class RecommendUserList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<User> user_list;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<RecommendUserList> {
         public Integer floor_position;
         public List<User> user_list;

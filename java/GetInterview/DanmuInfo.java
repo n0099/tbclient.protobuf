@@ -3,7 +3,7 @@ package tbclient.GetInterview;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.User;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DanmuInfo extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final Long DEFAULT_POST_ID = 0L;
@@ -14,7 +14,7 @@ public final class DanmuInfo extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long post_id;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DanmuInfo> {
         public User author;
         public String content;

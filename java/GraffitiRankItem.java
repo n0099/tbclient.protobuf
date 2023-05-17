@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class GraffitiRankItem extends Message {
     public static final String DEFAULT_PIC_ID = "";
     public static final String DEFAULT_THUMB_URL = "";
@@ -29,7 +29,7 @@ public final class GraffitiRankItem extends Message {
     public static final Long DEFAULT_UID = 0L;
     public static final Integer DEFAULT_G_TYPE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<GraffitiRankItem> {
         public Integer g_type;
         public Long gid;

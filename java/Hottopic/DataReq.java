@@ -3,7 +3,7 @@ package tbclient.Hottopic;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_FIRST_DIR = "";
     public static final String DEFAULT_SECOND_DIR = "";
@@ -49,7 +49,7 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_TOPIC_TID = 0L;
     public static final Integer DEFAULT_IS_VIDEO_TOPIC = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer call_from;
 

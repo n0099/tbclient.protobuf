@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Banner extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_NAME = "";
@@ -28,7 +28,7 @@ public final class Banner extends Message {
     public static final Long DEFAULT_START_TIME = 0L;
     public static final Long DEFAULT_END_TIME = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Banner> {
         public String desc;
         public Long end_time;

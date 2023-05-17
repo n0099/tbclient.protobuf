@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class RecentUpdate extends Message {
     public static final String DEFAULT_LOG = "";
     public static final String DEFAULT_UPDATE_TIME = "";
@@ -14,7 +14,7 @@ public final class RecentUpdate extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String version;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecentUpdate> {
         public String log;
         public String update_time;

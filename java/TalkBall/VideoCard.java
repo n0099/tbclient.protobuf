@@ -2,7 +2,7 @@ package tbclient.TalkBall;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class VideoCard extends Message {
     public static final String DEFAULT_COVER_IMAGE = "";
     public static final String DEFAULT_THREAD_ID = "";
@@ -23,7 +23,7 @@ public final class VideoCard extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String video_duration;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VideoCard> {
         public String cover_image;
         public String thread_id;

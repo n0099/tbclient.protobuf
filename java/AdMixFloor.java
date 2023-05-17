@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class AdMixFloor extends Message {
     public static final String DEFAULT_ADVERTISE_ID = "";
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
@@ -17,7 +17,7 @@ public final class AdMixFloor extends Message {
     public static final Integer DEFAULT_FLOOR_NUM = 0;
     public static final Long DEFAULT_AD_ID = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AdMixFloor> {
         public Long ad_id;
         public Integer ad_type;

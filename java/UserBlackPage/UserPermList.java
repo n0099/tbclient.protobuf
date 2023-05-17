@@ -3,7 +3,7 @@ package tbclient.UserBlackPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.PermissionList;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class UserPermList extends Message {
     public static final String DEFAULT_NAME_SHOW = "";
     public static final String DEFAULT_PORTRAIT = "";
@@ -20,7 +20,7 @@ public final class UserPermList extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<UserPermList> {
         public String name_show;
         public PermissionList perm_list;

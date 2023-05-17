@@ -3,7 +3,7 @@ package tbclient.GeneralTabList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_BEAR_CONTEXT = "";
     public static final String DEFAULT_AD_BEAR_SID = "";
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
     public static final Double DEFAULT_AD_BEAR_SID_PRICE = Double.valueOf(0.0d);
     public static final Integer DEFAULT_REQUEST_TIMES = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_bear_context;
         public String ad_bear_sid;

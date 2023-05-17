@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class SignatureInfo extends Message {
     public static final String DEFAULT_GAME_ID = "";
     public static final String DEFAULT_GAME_NAME = "";
@@ -24,7 +24,7 @@ public final class SignatureInfo extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String server;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SignatureInfo> {
         public Avatar avatar;
         public Equipment equipment;

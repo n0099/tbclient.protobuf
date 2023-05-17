@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ReplyExp extends Message {
     public static final String DEFAULT_COLOR_MSG = "";
     public static final String DEFAULT_CURRENT_LEVEL = "";
@@ -29,7 +29,7 @@ public final class ReplyExp extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String question_msg;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ReplyExp> {
         public String color_msg;
         public String current_level;

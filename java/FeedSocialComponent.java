@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FeedSocialComponent extends Message {
     @ProtoField(tag = 1)
     public final Agree agree;
@@ -19,7 +19,7 @@ public final class FeedSocialComponent extends Message {
     public static final Long DEFAULT_TID = 0L;
     public static final Long DEFAULT_FID = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FeedSocialComponent> {
         public Agree agree;
         public Integer comment_num;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class JumpLinkInfo extends Message {
     public static final String DEFAULT_BACKGROUND_COLOR = "";
     public static final String DEFAULT_LINK_COLOR = "";
@@ -29,7 +29,7 @@ public final class JumpLinkInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title_text;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<JumpLinkInfo> {
         public String background_color;
         public String link_color;

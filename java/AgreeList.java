@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class AgreeList extends Message {
     public static final String DEFAULT_TARGET_SCHEME = "";
     public static final String DEFAULT_VIRTUAL_IMAGE_URL = "";
@@ -32,7 +32,7 @@ public final class AgreeList extends Message {
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_SNAPSHOOT_PIC_ID = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AgreeList> {
         public User agreeer;
         public Long id;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class GradePoint extends Message {
     public static final String DEFAULT_POINT_NAME = "";
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -17,7 +17,7 @@ public final class GradePoint extends Message {
     public static final Integer DEFAULT_CURRENT_POINT = 0;
     public static final Integer DEFAULT_NEXT_POINT = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<GradePoint> {
         public Integer current_point;
         public Integer next_point;

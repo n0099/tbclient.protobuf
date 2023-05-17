@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ActiveCenterMission extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_FINAL_REWARD_URL = "";
@@ -38,7 +38,7 @@ public final class ActiveCenterMission extends Message {
     public static final Integer DEFAULT_TOTAL_LIMIT = 0;
     public static final Integer DEFAULT_ACTIVITY_ID = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ActiveCenterMission> {
         public Integer active_id;
         public Integer activity_id;

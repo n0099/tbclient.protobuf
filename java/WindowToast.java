@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class WindowToast extends Message {
     public static final String DEFAULT_TOAST_CONTENT = "";
     public static final String DEFAULT_TOAST_LINK = "";
@@ -14,7 +14,7 @@ public final class WindowToast extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer toast_type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<WindowToast> {
         public String toast_content;
         public String toast_link;

@@ -2,13 +2,13 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Global extends Message {
     public static final String DEFAULT_TBMALL_NEWPROPS = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tbmall_newprops;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Global> {
         public String tbmall_newprops;
 

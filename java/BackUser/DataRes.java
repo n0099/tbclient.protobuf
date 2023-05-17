@@ -2,13 +2,13 @@ package tbclient.BackUser;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_BACK_USER = 0;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer is_back_user;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer is_back_user;
 

@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.INT64)
     public final List<Long> bcast_ids;
@@ -30,7 +30,7 @@ public final class DataReq extends Message {
     public static final List<Long> DEFAULT_BCAST_IDS = Collections.emptyList();
     public static final Long DEFAULT_STAFF_ID64 = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public List<Long> bcast_ids;
 

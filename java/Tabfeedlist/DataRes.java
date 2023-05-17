@@ -8,7 +8,7 @@ import tbclient.GeneralResource;
 import tbclient.HotUserRankEntry;
 import tbclient.RecommendForumInfo;
 import tbclient.ThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 3)
     public final HotUserRankEntry hot_userrank_entry;
@@ -25,7 +25,7 @@ public final class DataRes extends Message {
     public static final List<RecommendForumInfo> DEFAULT_RECOMMEND_FORUM_INFO = Collections.emptyList();
     public static final Integer DEFAULT_IS_NEW_URL = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public HotUserRankEntry hot_userrank_entry;
         public Integer is_new_url;

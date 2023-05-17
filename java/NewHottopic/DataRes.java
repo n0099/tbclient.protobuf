@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     public static final List<SpecialTopic> DEFAULT_SPECIAL_TOPIC = Collections.emptyList();
     @ProtoField(tag = 2)
@@ -18,7 +18,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final TopicDetail topic_info;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public PkModule pk_module;
         public RelateThread relate_thread;

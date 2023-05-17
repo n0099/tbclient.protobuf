@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class RewardCard extends Message {
     public static final String DEFAULT_BANNER_JUMP_URL = "";
     public static final String DEFAULT_BUTTON_TEXT = "";
@@ -49,7 +49,7 @@ public final class RewardCard extends Message {
     public static final List<RewardMaterial> DEFAULT_REWARD_MATERIAL = Collections.emptyList();
     public static final List<String> DEFAULT_HEAD_IMGS = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RewardCard> {
         public String banner_jump_url;
         public String button_text;

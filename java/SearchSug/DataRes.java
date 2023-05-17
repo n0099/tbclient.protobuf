@@ -9,7 +9,7 @@ import tbclient.Item;
 import tbclient.RecommendForumInfo;
 import tbclient.SugLiveInfo;
 import tbclient.SugRankingInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 4)
     public final RecommendForumInfo forum_card;
@@ -33,7 +33,7 @@ public final class DataRes extends Message {
     public static final List<SugLiveInfo> DEFAULT_LIVE_CARD = Collections.emptyList();
     public static final List<RecommendForumInfo> DEFAULT_FORUM_CARDS = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public RecommendForumInfo forum_card;
         public List<RecommendForumInfo> forum_cards;

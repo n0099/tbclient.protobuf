@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class PushThreadInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer has_pushcard;
@@ -21,7 +21,7 @@ public final class PushThreadInfo extends Message {
     public static final Integer DEFAULT_HAS_PUSHPLACE = 0;
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PushThreadInfo> {
         public Integer has_pushcard;
         public Integer has_pushplace;

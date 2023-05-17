@@ -2,7 +2,7 @@ package tbclient.GetForumDetail;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class UniversityInfo extends Message {
     public static final String DEFAULT_PIC_URL = "";
     public static final String DEFAULT_TITLE = "";
@@ -26,7 +26,7 @@ public final class UniversityInfo extends Message {
     public static final Long DEFAULT_BROWSE_NUM = 0L;
     public static final Long DEFAULT_VIDEO_TIME = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<UniversityInfo> {
         public Long agree_num;
         public Long browse_num;

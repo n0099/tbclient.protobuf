@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ComponentFactory extends Message {
     public static final String DEFAULT_BASE_TEXT = "";
     public static final String DEFAULT_COMPONENT = "";
@@ -39,7 +39,7 @@ public final class ComponentFactory extends Message {
     @ProtoField(tag = 14)
     public final SidewayRecomComponent sideway_recom;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ComponentFactory> {
         public String base_text;
         public String component;

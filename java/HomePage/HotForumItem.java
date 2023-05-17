@@ -2,7 +2,7 @@ package tbclient.HomePage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class HotForumItem extends Message {
     public static final String DEFAULT_FORUM_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -17,7 +17,7 @@ public final class HotForumItem extends Message {
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_IS_LIKED = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<HotForumItem> {
         public String forum_avatar;
         public Long forum_id;

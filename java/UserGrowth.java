@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class UserGrowth extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer level_id;
@@ -22,7 +22,7 @@ public final class UserGrowth extends Message {
     public static final Double DEFAULT_TMONEY = Double.valueOf(0.0d);
     public static final List<UserTaskInfo> DEFAULT_TASK_INFO = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<UserGrowth> {
         public Integer level_id;
         public Long score;

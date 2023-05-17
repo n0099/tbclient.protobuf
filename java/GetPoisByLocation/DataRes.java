@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_FORMATTED_ADDRESS = "";
     public static final List<PoiInfo> DEFAULT_POI_INFO = Collections.emptyList();
@@ -13,7 +13,7 @@ public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<PoiInfo> poi_info;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String formatted_address;
         public List<PoiInfo> poi_info;

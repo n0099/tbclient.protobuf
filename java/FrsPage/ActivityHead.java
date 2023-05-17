@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ActivityHead extends Message {
     public static final String DEFAULT_ACTIVITY_TITLE = "";
     public static final String DEFAULT_OBJ_ID = "";
@@ -48,7 +48,7 @@ public final class ActivityHead extends Message {
     public static final Integer DEFAULT_PULL_DOWN_INTERVAL = 0;
     public static final Boolean DEFAULT_IS_AD = Boolean.FALSE;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ActivityHead> {
         public String activity_title;
         public Integer activity_type;

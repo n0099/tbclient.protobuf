@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ActPost extends Message {
     public static final List<ActHot> DEFAULT_ACT_HOT = Collections.emptyList();
     public static final List<LinkInfo> DEFAULT_LINK_INFO = Collections.emptyList();
@@ -16,7 +16,7 @@ public final class ActPost extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String list_head;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ActPost> {
         public List<ActHot> act_hot;
         public List<LinkInfo> link_info;

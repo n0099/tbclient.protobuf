@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FeedLiveComponent extends Message {
     public static final String DEFAULT_AUDIENCE_LABEL = "";
     public static final String DEFAULT_BOTTOM_LABEL = "";
@@ -20,7 +20,7 @@ public final class FeedLiveComponent extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String top_label;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FeedLiveComponent> {
         public String audience_label;
         public String bottom_label;

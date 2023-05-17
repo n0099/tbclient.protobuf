@@ -5,7 +5,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class User extends Message {
     public static final String DEFAULT_APPEAL_THREAD_POPOVER = "";
     public static final String DEFAULT_BAWU_TYPE = "";
@@ -246,7 +246,7 @@ public final class User extends Message {
     public final String seal_prefix;
     @ProtoField(tag = 32, type = Message.Datatype.INT32)
     public final Integer sex;
-    @ProtoField(tag = Cea708Decoder.COMMAND_SPC)
+    @ProtoField(tag = 145)
     public final ShakeAdSwitch shake_ad_switch;
     @ProtoField(tag = 117, type = Message.Datatype.INT32)
     public final Integer show_pb_private_flag;
@@ -378,7 +378,7 @@ public final class User extends Message {
     public static final List<String> DEFAULT_NEW_ICON_URL = Collections.emptyList();
     public static final List<String> DEFAULT_PENDANTS = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<User> {
         public String BDUSS;
         public ActivitySponsor activity_sponsor;

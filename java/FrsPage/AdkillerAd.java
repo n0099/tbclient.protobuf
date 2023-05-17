@@ -3,7 +3,7 @@ package tbclient.FrsPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.App;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class AdkillerAd extends Message {
     public static final Integer DEFAULT_CAN_CLOSE = 0;
     public static final String DEFAULT_GAME_URL = "";
@@ -17,7 +17,7 @@ public final class AdkillerAd extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tag;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AdkillerAd> {
         public App app;
         public Integer can_close;

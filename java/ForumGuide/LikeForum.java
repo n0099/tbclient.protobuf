@@ -3,7 +3,7 @@ package tbclient.ForumGuide;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class LikeForum extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -41,7 +41,7 @@ public final class LikeForum extends Message {
     public static final Integer DEFAULT_LEVEL_ID = 0;
     public static final Integer DEFAULT_IS_SIGN = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<LikeForum> {
         public String avatar;
         public Long forum_id;

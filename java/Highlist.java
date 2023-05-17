@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Highlist extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.BOOL)
     public final Boolean has_more;
@@ -13,7 +13,7 @@ public final class Highlist extends Message {
     public static final List<High> DEFAULT_LIST = Collections.emptyList();
     public static final Boolean DEFAULT_HAS_MORE = Boolean.FALSE;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Highlist> {
         public Boolean has_more;
         public List<High> list;

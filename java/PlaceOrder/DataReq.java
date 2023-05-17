@@ -3,7 +3,7 @@ package tbclient.PlaceOrder;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_BENEFIT_USERNAME = "";
     public static final String DEFAULT_SCENE_FROM = "";
@@ -40,7 +40,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_ACCOUNT_TYPE = 0;
     public static final Integer DEFAULT_CURRENCY = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long account_id;
         public Integer account_type;

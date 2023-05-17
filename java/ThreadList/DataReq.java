@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.AppTransmitData;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_BEAR_CONTEXT = "";
     public static final String DEFAULT_AD_BEAR_SID = "";
@@ -84,7 +84,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_Q_TYPE = 0;
     public static final Long DEFAULT_USER_ID = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_bear_context;
         public String ad_bear_sid;

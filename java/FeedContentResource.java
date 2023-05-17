@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FeedContentResource extends Message {
     public static final String DEFAULT_SCHEMA = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 11)
@@ -25,7 +25,7 @@ public final class FeedContentResource extends Message {
     public static final List<FeedKV> DEFAULT_BUSINESS_INFO = Collections.emptyList();
     public static final List<FeedKV> DEFAULT_LOG_INFO = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FeedContentResource> {
         public List<FeedKV> business_info;
         public FeedContentEmoji emoji_info;

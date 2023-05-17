@@ -2,7 +2,7 @@ package tbclient.Loop;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class LevelPop extends Message {
     public static final String DEFAULT_BTN_SCHEME = "";
     public static final String DEFAULT_BTN_TEXT = "";
@@ -23,7 +23,7 @@ public final class LevelPop extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<LevelPop> {
         public String btn_scheme;
         public String btn_text;

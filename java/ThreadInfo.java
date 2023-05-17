@@ -9,12 +9,11 @@ import com.google.android.exoplayer2.extractor.ts.H262Reader;
 import com.google.android.exoplayer2.extractor.ts.PsExtractor;
 import com.google.android.exoplayer2.extractor.ts.TsExtractor;
 import com.google.android.exoplayer2.text.cea.Cea708Decoder;
-import com.google.android.material.behavior.HideBottomViewOnScrollBehavior;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ThreadInfo extends Message {
     public static final String DEFAULT_AB_TAG = "";
     public static final String DEFAULT_ARTICLE_COVER = "";
@@ -390,7 +389,7 @@ public final class ThreadInfo extends Message {
     public final Integer storecount;
     @ProtoField(tag = 159, type = Message.Datatype.STRING)
     public final String t_share_img;
-    @ProtoField(tag = HideBottomViewOnScrollBehavior.EXIT_ANIMATION_DURATION, type = Message.Datatype.INT32)
+    @ProtoField(tag = 175, type = Message.Datatype.INT32)
     public final Integer tab_id;
     @ProtoField(tag = MatroskaExtractor.ID_PIXEL_WIDTH, type = Message.Datatype.STRING)
     public final String tab_name;
@@ -442,7 +441,7 @@ public final class ThreadInfo extends Message {
     public final TopicModule topic_module;
     @ProtoField(tag = 149, type = Message.Datatype.STRING)
     public final String topic_user_name;
-    @ProtoField(tag = Cea708Decoder.COMMAND_SPC, type = Message.Datatype.UINT64)
+    @ProtoField(tag = 145, type = Message.Datatype.UINT64)
     public final Long trans_num;
     @ProtoField(tag = 72)
     public final ZhiBoInfoTW twzhibo_info;
@@ -1797,7 +1796,7 @@ public final class ThreadInfo extends Message {
         this.is_excellent_thread = builder.is_excellent_thread;
     }
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ThreadInfo> {
         public List<Abstract> _abstract;
         public String ab_tag;

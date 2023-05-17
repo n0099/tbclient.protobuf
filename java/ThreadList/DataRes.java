@@ -8,7 +8,7 @@ import tbclient.AdMixFloor;
 import tbclient.BannerList;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_AD_SAMPLE_MAP_KEY = "";
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
@@ -34,7 +34,7 @@ public final class DataRes extends Message {
     public static final List<AdMixFloor> DEFAULT_AD_MIX_LIST = Collections.emptyList();
     public static final Integer DEFAULT_AD_SHOW_SELECT = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<AdMixFloor> ad_mix_list;
         public String ad_sample_map_key;

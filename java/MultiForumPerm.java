@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class MultiForumPerm extends Message {
     public static final String DEFAULT_BAWU_TYPE = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -17,7 +17,7 @@ public final class MultiForumPerm extends Message {
     public static final Integer DEFAULT_IS_DELETED = 0;
     public static final Integer DEFAULT_IS_BLOCK_BAWU_DELETE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<MultiForumPerm> {
         public String bawu_type;
         public Integer is_bawu;

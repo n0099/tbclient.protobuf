@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.PbContent;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class MemberBroadcastInfo extends Message {
     public static final String DEFAULT_BACKGROUND_SRC = "";
     public static final String DEFAULT_BTN_BACKGROUND_COLOR = "";
@@ -59,7 +59,7 @@ public final class MemberBroadcastInfo extends Message {
     public static final Integer DEFAULT_SCENE_CONDITION = 0;
     public static final Integer DEFAULT_SHOW_TIME = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<MemberBroadcastInfo> {
         public String background_src;
         public Integer broadcast_type;

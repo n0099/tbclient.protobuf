@@ -12,7 +12,7 @@ import tbclient.PriManagerApplyInfo;
 import tbclient.RecommendForumInfo;
 import tbclient.ServiceArea;
 import tbclient.SimpleThreadInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_IS_BAZHU_SHOW = "";
     @ProtoField(tag = 12)
@@ -60,7 +60,7 @@ public final class DataRes extends Message {
     public static final List<BawuAction> DEFAULT_BAWU_ACTIONS = Collections.emptyList();
     public static final Integer DEFAULT_IS_FORUM_CARD_ENABLE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ApplyStatus apply_status;
         public List<BawuAction> bawu_actions;

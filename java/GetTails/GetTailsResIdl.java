@@ -3,14 +3,14 @@ package tbclient.GetTails;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class GetTailsResIdl extends Message {
     @ProtoField(tag = 1)
     public final ResData data;
     @ProtoField(tag = 2)
     public final Error error;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<GetTailsResIdl> {
         public ResData data;
         public Error error;

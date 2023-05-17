@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ExcellentThreadInfo extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_ABTEST = "";
@@ -64,7 +64,7 @@ public final class ExcellentThreadInfo extends Message {
     public static final Long DEFAULT_RANK = 0L;
     public static final Integer DEFAULT_PUBLISH_TIME = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ExcellentThreadInfo> {
         public String _abstract;
         public String abtest;

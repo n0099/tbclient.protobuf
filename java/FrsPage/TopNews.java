@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class TopNews extends Message {
     public static final String DEFAULT_NEWS_LINK = "";
     public static final String DEFAULT_SUMMARY = "";
@@ -11,7 +11,7 @@ public final class TopNews extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String summary;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<TopNews> {
         public String news_link;
         public String summary;

@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Zhibo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long forum;
@@ -26,7 +26,7 @@ public final class Zhibo extends Message {
     public static final Integer DEFAULT_HAS_LPOST = 0;
     public static final Integer DEFAULT_LPOST_TYPE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Zhibo> {
         public Long forum;
         public Integer has_lpost;

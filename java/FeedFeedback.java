@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FeedFeedback extends Message {
     public static final String DEFAULT_BUTTON_TEXT = "";
     public static final String DEFAULT_COMMON_ID = "";
@@ -17,7 +17,7 @@ public final class FeedFeedback extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FeedFeedback> {
         public String button_text;
         public String common_id;

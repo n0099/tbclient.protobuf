@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class RecommendTip extends Message {
     public static final String DEFAULT_IS_FOLLOW = "";
     public static final String DEFAULT_REASON = "";
@@ -11,7 +11,7 @@ public final class RecommendTip extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String reason;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecommendTip> {
         public String is_follow;
         public String reason;

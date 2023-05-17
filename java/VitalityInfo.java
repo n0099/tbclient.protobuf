@@ -2,12 +2,12 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class VitalityInfo extends Message {
     @ProtoField(tag = 1)
     public final FrequentlyForumInfo frequently_forum_info;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VitalityInfo> {
         public FrequentlyForumInfo frequently_forum_info;
 

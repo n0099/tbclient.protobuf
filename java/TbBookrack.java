@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class TbBookrack extends Message {
     public static final String DEFAULT_BOOKTOWN = "";
     public static final String DEFAULT_ICON = "";
@@ -25,7 +25,7 @@ public final class TbBookrack extends Message {
     public static final Integer DEFAULT_NUM = 0;
     public static final List<BookInfo> DEFAULT_BOOK_LIST = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TbBookrack> {
         public List<BookInfo> book_list;
         public String booktown;

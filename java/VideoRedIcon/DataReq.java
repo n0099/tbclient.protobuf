@@ -3,7 +3,7 @@ package tbclient.VideoRedIcon;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CALL_FROM = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     /* renamed from: common  reason: collision with root package name */
     public final CommonReq f1388common;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String call_from;
 

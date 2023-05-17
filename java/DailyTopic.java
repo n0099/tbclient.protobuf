@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DailyTopic extends Message {
     public static final String DEFAULT_TOPIC_ABSTRACT = "";
     public static final String DEFAULT_TOPIC_PIC = "";
@@ -20,7 +20,7 @@ public final class DailyTopic extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String topic_url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DailyTopic> {
         public String topic_abstract;
         public String topic_pic;

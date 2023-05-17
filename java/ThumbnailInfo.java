@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ThumbnailInfo extends Message {
     public static final String DEFAULT_URL = "";
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -14,7 +14,7 @@ public final class ThumbnailInfo extends Message {
     public static final Integer DEFAULT_WIDTH = 0;
     public static final Integer DEFAULT_HEIGHT = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ThumbnailInfo> {
         public Integer height;
         public String url;

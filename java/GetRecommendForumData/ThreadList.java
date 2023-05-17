@@ -2,7 +2,7 @@ package tbclient.GetRecommendForumData;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ThreadList extends Message {
     public static final String DEFAULT_PIC = "";
     public static final Long DEFAULT_TID = 0L;
@@ -14,7 +14,7 @@ public final class ThreadList extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ThreadList> {
         public String pic;
         public Long tid;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class HotUserRankEntry extends Message {
     public static final String DEFAULT_MODULE_ICON = "";
     public static final String DEFAULT_MODULE_NAME = "";
@@ -25,7 +25,7 @@ public final class HotUserRankEntry extends Message {
     public static final Integer DEFAULT_YESTERDAY_RANK = 0;
     public static final Boolean DEFAULT_IS_IN_RANK = Boolean.FALSE;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<HotUserRankEntry> {
         public List<ShortUserInfo> hot_user;
         public Boolean is_in_rank;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ItemTable extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer comment_star;
@@ -22,7 +22,7 @@ public final class ItemTable extends Message {
     public static final List<ItemPoint> DEFAULT_ITEM_POINT = Collections.emptyList();
     public static final List<ItemPlot> DEFAULT_ITEM_PLOT = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ItemTable> {
         public Integer comment_star;
         public Integer is_commented;

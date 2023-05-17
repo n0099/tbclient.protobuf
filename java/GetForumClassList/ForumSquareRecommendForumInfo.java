@@ -2,7 +2,7 @@ package tbclient.GetForumClassList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ForumSquareRecommendForumInfo extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_AVATAR = "";
@@ -29,7 +29,7 @@ public final class ForumSquareRecommendForumInfo extends Message {
     public static final Long DEFAULT_MEMBER_COUNT = 0L;
     public static final Long DEFAULT_THREAD_COUNT = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ForumSquareRecommendForumInfo> {
         public String _abstract;
         public String avatar;

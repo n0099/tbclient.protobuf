@@ -3,7 +3,7 @@ package tbclient.StoryReply;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.User;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class StoryReplyInfo extends Message {
     public static final String DEFAULT_CONTENT_TEXT = "";
     @ProtoField(tag = 5)
@@ -20,7 +20,7 @@ public final class StoryReplyInfo extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Long DEFAULT_THREAD_ID = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<StoryReplyInfo> {
         public User author;
         public String content_text;

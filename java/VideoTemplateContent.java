@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class VideoTemplateContent extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final Double DEFAULT_POSITION_TYPE;
@@ -38,7 +38,7 @@ public final class VideoTemplateContent extends Message {
     public static final Long DEFAULT_START_TIME = 0L;
     public static final Long DEFAULT_END_TIME = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VideoTemplateContent> {
         public String content;
         public Long end_time;

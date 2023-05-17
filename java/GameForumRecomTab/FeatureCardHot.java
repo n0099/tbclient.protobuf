@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.FeatureCardHotSubNode;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FeatureCardHot extends Message {
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_TYPE = "";
@@ -20,7 +20,7 @@ public final class FeatureCardHot extends Message {
     public static final List<FeatureCardHotSubNode> DEFAULT_SUB_NODES = Collections.emptyList();
     public static final Integer DEFAULT_FLOOR = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FeatureCardHot> {
         public Integer floor;
         public List<FeatureCardHotSubNode> sub_nodes;

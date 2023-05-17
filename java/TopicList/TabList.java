@@ -2,7 +2,7 @@ package tbclient.TopicList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class TabList extends Message {
     public static final String DEFAULT_SHARE_DESC = "";
     public static final String DEFAULT_SHARE_PIC = "";
@@ -23,7 +23,7 @@ public final class TabList extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String tab_type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TabList> {
         public String share_desc;
         public String share_pic;

@@ -9,7 +9,7 @@ import tbclient.NewFloorInfo;
 import tbclient.OriginThreadInfo;
 import tbclient.User;
 import tbclient.Zan;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ReplyList extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_FNAME = "";
@@ -93,7 +93,7 @@ public final class ReplyList extends Message {
     public static final List<NewFloorInfo> DEFAULT_NEW_FLOOR_INFO = Collections.emptyList();
     public static final Integer DEFAULT_HAS_AGREE = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ReplyList> {
         public Baijiahao baijiahao;
         public String content;

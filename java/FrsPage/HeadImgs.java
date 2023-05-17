@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class HeadImgs extends Message {
     public static final String DEFAULT_BTN_TEXT = "";
     public static final String DEFAULT_COVER_URL = "";
@@ -87,7 +87,7 @@ public final class HeadImgs extends Message {
     public static final Integer DEFAULT_DOWNLOAD_ITEM_ID = 0;
     public static final List<VideoImageColor> DEFAULT_VIDEO_IMAGE_COLOR = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<HeadImgs> {
         public String btn_text;
         public CoverImageColor cover_image_color;

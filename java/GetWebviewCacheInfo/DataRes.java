@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_MD5 = "";
     public static final List<Offpack> DEFAULT_OFFPACK_LIST = Collections.emptyList();
@@ -19,7 +19,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String webview_version;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public String md5;
         public List<Offpack> offpack_list;

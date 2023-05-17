@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FeedHeadSymbol extends Message {
     public static final String DEFAULT_SCHEMA = "";
     public static final Integer DEFAULT_TYPE = 0;
@@ -15,7 +15,7 @@ public final class FeedHeadSymbol extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer type;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FeedHeadSymbol> {
         public FeedHeadIcon icon;
         public String schema;

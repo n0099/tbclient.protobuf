@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.PostInfoList;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long ctime;
@@ -32,7 +32,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_VIEW_CARD_NUM = 0;
     public static final Integer DEFAULT_REDDOT_DELETED_THREAD = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Long ctime;
         public Integer hide_post;

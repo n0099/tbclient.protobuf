@@ -2,7 +2,7 @@ package tbclient.GetBookStore;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class Category extends Message {
     public static final Integer DEFAULT_CATEGORY_ID = 0;
     public static final String DEFAULT_CATEGORY_TEXT = "";
@@ -11,7 +11,7 @@ public final class Category extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String category_text;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<Category> {
         public Integer category_id;
         public String category_text;

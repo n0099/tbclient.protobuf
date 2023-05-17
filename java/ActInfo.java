@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ActInfo extends Message {
     public static final String DEFAULT_BANNER_IMG = "";
     public static final String DEFAULT_BANNER_IMG_SIZE = "";
@@ -46,7 +46,7 @@ public final class ActInfo extends Message {
     public static final Boolean DEFAULT_IS_SENIOR = Boolean.FALSE;
     public static final Integer DEFAULT_SHOW_TOTAL_NUM = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ActInfo> {
         public Integer activity_id;
         public Integer activity_type;

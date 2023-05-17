@@ -2,12 +2,12 @@ package tbclient.UserPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class UserPostReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<UserPostReqIdl> {
         public DataReq data;
 

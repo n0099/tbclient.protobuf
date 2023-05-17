@@ -2,7 +2,7 @@ package tbclient.HomePage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class HotThreadItem extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -35,7 +35,7 @@ public final class HotThreadItem extends Message {
     public static final Long DEFAULT_ZAN_NUM = 0L;
     public static final Long DEFAULT_COMMENT_NUM = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<HotThreadItem> {
         public String _abstract;
         public Long comment_num;

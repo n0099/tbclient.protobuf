@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.SimpleUser;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class AgreeBanner extends Message {
     public static final String DEFAULT_ICON_URL = "";
     public static final String DEFAULT_TEXT = "";
@@ -20,7 +20,7 @@ public final class AgreeBanner extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AgreeBanner> {
         public String icon_url;
         public String text;

@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.FansRankUserInfo;
 import tbclient.PresentMyList;
 import tbclient.PresetMyGiftPage;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.UINT32)
     public final Integer blue_diamond;
@@ -37,7 +37,7 @@ public final class DataRes extends Message {
     public static final List<FansRankUserInfo> DEFAULT_RANK_LIST = Collections.emptyList();
     public static final Integer DEFAULT_CURRENCY = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer blue_diamond;
         public presentMoneyTxt blue_diamond_txt;

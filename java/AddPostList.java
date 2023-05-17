@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class AddPostList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<SubPostList> add_post_list;
@@ -19,7 +19,7 @@ public final class AddPostList extends Message {
     public static final Integer DEFAULT_TOTAL_COUNT = 0;
     public static final List<SubPostList> DEFAULT_ADD_POST_LIST = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<AddPostList> {
         public List<SubPostList> add_post_list;
         public Long pid;

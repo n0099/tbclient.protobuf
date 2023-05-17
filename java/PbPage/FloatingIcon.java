@@ -2,12 +2,12 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class FloatingIcon extends Message {
     @ProtoField(tag = 1)
     public final FloatingIconItem pbpage;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<FloatingIcon> {
         public FloatingIconItem pbpage;
 

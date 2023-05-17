@@ -2,7 +2,7 @@ package tbclient.Personalized;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class TagInfo extends Message {
     public static final String DEFAULT_LEGO_QS = "";
     public static final String DEFAULT_STAT_KEY = "";
@@ -23,7 +23,7 @@ public final class TagInfo extends Message {
     public static final Integer DEFAULT_TAG_TYPE = 0;
     public static final Long DEFAULT_LEGO_PAGE_ID = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<TagInfo> {
         public Long lego_page_id;
         public String lego_qs;

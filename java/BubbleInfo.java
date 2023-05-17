@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class BubbleInfo extends Message {
     public static final Integer DEFAULT_BUBBLE_ID = 0;
     public static final String DEFAULT_BUBBLE_PIC = "";
@@ -14,7 +14,7 @@ public final class BubbleInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String bubble_text;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<BubbleInfo> {
         public Integer bubble_id;
         public String bubble_pic;

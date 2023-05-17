@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class SugRankingInfo extends Message {
     public static final String DEFAULT_RANK_TITLE = "";
     @ProtoField(tag = 2)
@@ -10,7 +10,7 @@ public final class SugRankingInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String rank_title;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SugRankingInfo> {
         public RankingParam rank_param;
         public String rank_title;

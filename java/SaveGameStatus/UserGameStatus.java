@@ -2,7 +2,7 @@ package tbclient.SaveGameStatus;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class UserGameStatus extends Message {
     public static final String DEFAULT_GAME_ID = "";
     public static final Integer DEFAULT_STATUS = 0;
@@ -11,7 +11,7 @@ public final class UserGameStatus extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer status;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<UserGameStatus> {
         public String game_id;
         public Integer status;

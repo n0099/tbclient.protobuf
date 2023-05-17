@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ItemThemeColorElement extends Message {
     public static final String DEFAULT_BOTTOM_COLOR = "";
     public static final String DEFAULT_EDIT_BUTTON_COLOR = "";
@@ -14,7 +14,7 @@ public final class ItemThemeColorElement extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String top_color;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ItemThemeColorElement> {
         public String bottom_color;
         public String edit_button_color;

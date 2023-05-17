@@ -2,7 +2,7 @@ package tbclient.GetCartoonCategoryList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class CartoonInfo extends Message {
     public static final String DEFAULT_CARTOON_NAME = "";
     public static final String DEFAULT_COVER_IMG = "";
@@ -26,7 +26,7 @@ public final class CartoonInfo extends Message {
     public static final Integer DEFAULT_IS_FINISH = 0;
     public static final Integer DEFAULT_TOTAL_CHAPTER = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<CartoonInfo> {
         public Long cartoon_id;
         public String cartoon_name;

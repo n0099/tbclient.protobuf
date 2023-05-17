@@ -5,13 +5,13 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.LayoutFactory;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class PageData extends Message {
     public static final List<LayoutFactory> DEFAULT_FEED_LIST = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<LayoutFactory> feed_list;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<PageData> {
         public List<LayoutFactory> feed_list;
 

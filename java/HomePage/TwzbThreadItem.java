@@ -2,7 +2,7 @@ package tbclient.HomePage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class TwzbThreadItem extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_LINK_URL = "";
@@ -20,7 +20,7 @@ public final class TwzbThreadItem extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<TwzbThreadItem> {
         public String _abstract;
         public String link_url;

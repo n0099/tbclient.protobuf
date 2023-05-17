@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class ClassForumInfo extends Message {
     public static final String DEFAULT_CLASS_ICON = "";
     public static final String DEFAULT_CLASS_NAME = "";
@@ -19,7 +19,7 @@ public final class ClassForumInfo extends Message {
     public static final List<RecommendForumInfo> DEFAULT_FORUM_INFO = Collections.emptyList();
     public static final Integer DEFAULT_CLASS_ID = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<ClassForumInfo> {
         public String class_icon;
         public Integer class_id;

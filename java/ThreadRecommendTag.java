@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class ThreadRecommendTag extends Message {
     public static final String DEFAULT_TEXT = "";
     @ProtoField(tag = 3)
@@ -14,7 +14,7 @@ public final class ThreadRecommendTag extends Message {
     @ProtoField(tag = 2)
     public final ThemeColorInfo text_color;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ThreadRecommendTag> {
         public ThemeColorInfo background_color;
         public ThemeColorInfo boundary_color;

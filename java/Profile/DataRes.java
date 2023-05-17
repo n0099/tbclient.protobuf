@@ -27,7 +27,7 @@ import tbclient.UcCardInfo;
 import tbclient.User;
 import tbclient.UserManChannelInfo;
 import tbclient.UserMap;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_UK = "";
     @ProtoField(tag = 16)
@@ -119,7 +119,7 @@ public final class DataRes extends Message {
     public static final List<CustomGrid> DEFAULT_MORE_GRID = Collections.emptyList();
     public static final List<KingkongPositionRow> DEFAULT_KINGKONG_POSITION = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AlaLiveInfo ala_live_info;
         public List<AlaLiveInfo> ala_live_record;

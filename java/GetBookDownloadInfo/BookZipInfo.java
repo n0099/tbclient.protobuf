@@ -2,7 +2,7 @@ package tbclient.GetBookDownloadInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class BookZipInfo extends Message {
     public static final String DEFAULT_MD5 = "";
     public static final String DEFAULT_NAME = "";
@@ -17,7 +17,7 @@ public final class BookZipInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<BookZipInfo> {
         public String md5;
         public String name;

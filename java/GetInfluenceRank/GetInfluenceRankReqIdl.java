@@ -2,12 +2,12 @@ package tbclient.GetInfluenceRank;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class GetInfluenceRankReqIdl extends Message {
     @ProtoField(tag = 1)
     public final DataReq data;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<GetInfluenceRankReqIdl> {
         public DataReq data;
 

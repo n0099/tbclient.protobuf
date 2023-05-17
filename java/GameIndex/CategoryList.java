@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.GameInfo;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class CategoryList extends Message {
     public static final List<GameInfo> DEFAULT_CATEGORY_GAME_LIST = Collections.emptyList();
     public static final Integer DEFAULT_CATEGORY_ID = 0;
@@ -17,7 +17,7 @@ public final class CategoryList extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String category_name;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<CategoryList> {
         public List<GameInfo> category_game_list;
         public Integer category_id;

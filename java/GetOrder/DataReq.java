@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 import tbclient.Wares;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CLICK_ZONE = "";
     public static final String DEFAULT_MOBILE = "";
@@ -43,7 +43,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_IS_AUTOPAY = 0;
     public static final Long DEFAULT_FROM_SCENE = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String click_zone;
 

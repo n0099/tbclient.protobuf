@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class SeniorLottery extends Message {
     public static final String DEFAULT_ACT_DESC = "";
     public static final String DEFAULT_MYAWARD = "";
@@ -24,7 +24,7 @@ public final class SeniorLottery extends Message {
     public static final List<AwardUser> DEFAULT_LUCK_USERS = Collections.emptyList();
     public static final List<LotteryRegular> DEFAULT_ACT_REGULAR = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SeniorLottery> {
         public String act_desc;
         public List<LotteryRegular> act_regular;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class RecomThreadList extends Message {
     public static final String DEFAULT_RECOMMEND_DATE = "";
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -19,7 +19,7 @@ public final class RecomThreadList extends Message {
     public static final List<ThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
     public static final Long DEFAULT_CURRENT_PV = 0L;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecomThreadList> {
         public Long current_pv;
         public String recommend_date;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes9.dex */
+/* loaded from: classes2.dex */
 public final class SignatureData extends Message {
     public static final String DEFAULT_FONTCOLOR = "";
     public static final String DEFAULT_FONTKEYNAME = "";
@@ -19,7 +19,7 @@ public final class SignatureData extends Message {
     public static final Integer DEFAULT_SIGNATURE_ID = 0;
     public static final List<SignatureContent> DEFAULT_CONTENT = Collections.emptyList();
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SignatureData> {
         public List<SignatureContent> content;
         public String fontColor;

@@ -2,7 +2,7 @@ package tbclient.GetOfficialSwitch;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes9.dex */
+/* loaded from: classes10.dex */
 public final class OfficialList extends Message {
     public static final String DEFAULT_NAME = "";
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -14,7 +14,7 @@ public final class OfficialList extends Message {
     public static final Long DEFAULT_UID = 0L;
     public static final Integer DEFAULT_IS_ON = 0;
 
-    /* loaded from: classes9.dex */
+    /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<OfficialList> {
         public Integer is_on;
         public String name;
