@@ -29,6 +29,7 @@ import "NovelFansInfo.proto";
 import "PayMemberInfo.proto";
 import "Pendant.proto";
 import "PrivSets.proto";
+import "ShakeAdSwitch.proto";
 import "SimpleUser.proto";
 import "SpringVirtualUser.proto";
 import "TbVipInfo.proto";
@@ -175,4 +176,5 @@ message User {
     VirtualImageInfo virtual_image_info = 136;
     string display_intro = 138;
     ThemeTailInUser theme_tail = 141;
+    ShakeAdSwitch shake_ad_switch = 145;
 }

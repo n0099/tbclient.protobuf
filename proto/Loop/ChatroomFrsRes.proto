@@ -7,4 +7,5 @@ message ChatroomFrsRes {
     repeated int64 hot_list = 1;
     repeated ChatroomList room_list = 2;
     ChatroomGuide guide_config = 3;
+    int32 hot_list_origin_num = 4;
 }
