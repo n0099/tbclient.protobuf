@@ -22,10 +22,6 @@ class Data extends \Google\Protobuf\Internal\Message
      */
     protected $rn = 0;
     /**
-     * Generated from protobuf field <code>int32 q_type = 17;</code>
-     */
-    protected $q_type = 0;
-    /**
      * Generated from protobuf field <code>int32 pn = 18;</code>
      */
     protected $pn = 0;
@@ -46,7 +42,6 @@ class Data extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $kz
      *     @type int $rn
-     *     @type int $q_type
      *     @type int $pn
      *     @type \TbClient\Api\Request\Common $common
      *     @type int $is_fold_comment_req
@@ -97,28 +92,6 @@ class Data extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->rn = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 q_type = 17;</code>
-     * @return int
-     */
-    public function getQType()
-    {
-        return $this->q_type;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 q_type = 17;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setQType($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->q_type = $var;
 
         return $this;
     }

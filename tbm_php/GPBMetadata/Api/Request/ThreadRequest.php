@@ -17,17 +17,16 @@ class ThreadRequest
         \GPBMetadata\Api\Request\Common::initOnce();
         $pool->internalAddGeneratedFile(
             '
-˜
-Api/Request/ThreadRequest.prototbClient.api.request"Ö
+‡
+Api/Request/ThreadRequest.prototbClient.api.request"Å
 ThreadRequest6
-data (2(.tbClient.api.request.ThreadRequest.DataŒ
+data (2(.tbClient.api.request.ThreadRequest.Data|
 Data
 
 kw (	
 
 rn (
-rn_need (
-q_type (
+rn_need (
 
 pn (,
 common\' (2.tbClient.api.request.Common

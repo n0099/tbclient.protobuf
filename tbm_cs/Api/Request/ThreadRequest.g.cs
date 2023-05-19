@@ -25,16 +25,16 @@ namespace TbClient.Api.Request {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch9BcGkvUmVxdWVzdC9UaHJlYWRSZXF1ZXN0LnByb3RvEhR0YkNsaWVudC5h",
-            "cGkucmVxdWVzdBoYQXBpL1JlcXVlc3QvQ29tbW9uLnByb3RvItYBCg1UaHJl",
+            "cGkucmVxdWVzdBoYQXBpL1JlcXVlc3QvQ29tbW9uLnByb3RvIsUBCg1UaHJl",
             "YWRSZXF1ZXN0EjYKBGRhdGEYASABKAsyKC50YkNsaWVudC5hcGkucmVxdWVz",
-            "dC5UaHJlYWRSZXF1ZXN0LkRhdGEajAEKBERhdGESCgoCa3cYASABKAkSCgoC",
-            "cm4YAiABKAUSDwoHcm5fbmVlZBgDIAEoBRIOCgZxX3R5cGUYDiABKAUSCgoC",
-            "cG4YDyABKAUSLAoGY29tbW9uGCcgASgLMhwudGJDbGllbnQuYXBpLnJlcXVl",
-            "c3QuQ29tbW9uEhEKCXNvcnRfdHlwZRgvIAEoBWIGcHJvdG8z"));
+            "dC5UaHJlYWRSZXF1ZXN0LkRhdGEafAoERGF0YRIKCgJrdxgBIAEoCRIKCgJy",
+            "bhgCIAEoBRIPCgdybl9uZWVkGAMgASgFEgoKAnBuGA8gASgFEiwKBmNvbW1v",
+            "bhgnIAEoCzIcLnRiQ2xpZW50LmFwaS5yZXF1ZXN0LkNvbW1vbhIRCglzb3J0",
+            "X3R5cGUYLyABKAViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TbClient.Api.Request.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Request.ThreadRequest), global::TbClient.Api.Request.ThreadRequest.Parser, new[]{ "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Request.ThreadRequest.Types.Data), global::TbClient.Api.Request.ThreadRequest.Types.Data.Parser, new[]{ "Kw", "Rn", "RnNeed", "QType", "Pn", "Common", "SortType" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Request.ThreadRequest), global::TbClient.Api.Request.ThreadRequest.Parser, new[]{ "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Request.ThreadRequest.Types.Data), global::TbClient.Api.Request.ThreadRequest.Types.Data.Parser, new[]{ "Kw", "Rn", "RnNeed", "Pn", "Common", "SortType" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -279,7 +279,6 @@ namespace TbClient.Api.Request {
           kw_ = other.kw_;
           rn_ = other.rn_;
           rnNeed_ = other.rnNeed_;
-          qType_ = other.qType_;
           pn_ = other.pn_;
           common_ = other.common_ != null ? other.common_.Clone() : null;
           sortType_ = other.sortType_;
@@ -325,18 +324,6 @@ namespace TbClient.Api.Request {
           get { return rnNeed_; }
           set {
             rnNeed_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "q_type" field.</summary>
-        public const int QTypeFieldNumber = 14;
-        private int qType_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public int QType {
-          get { return qType_; }
-          set {
-            qType_ = value;
           }
         }
 
@@ -394,7 +381,6 @@ namespace TbClient.Api.Request {
           if (Kw != other.Kw) return false;
           if (Rn != other.Rn) return false;
           if (RnNeed != other.RnNeed) return false;
-          if (QType != other.QType) return false;
           if (Pn != other.Pn) return false;
           if (!object.Equals(Common, other.Common)) return false;
           if (SortType != other.SortType) return false;
@@ -408,7 +394,6 @@ namespace TbClient.Api.Request {
           if (Kw.Length != 0) hash ^= Kw.GetHashCode();
           if (Rn != 0) hash ^= Rn.GetHashCode();
           if (RnNeed != 0) hash ^= RnNeed.GetHashCode();
-          if (QType != 0) hash ^= QType.GetHashCode();
           if (Pn != 0) hash ^= Pn.GetHashCode();
           if (common_ != null) hash ^= Common.GetHashCode();
           if (SortType != 0) hash ^= SortType.GetHashCode();
@@ -441,10 +426,6 @@ namespace TbClient.Api.Request {
           if (RnNeed != 0) {
             output.WriteRawTag(24);
             output.WriteInt32(RnNeed);
-          }
-          if (QType != 0) {
-            output.WriteRawTag(112);
-            output.WriteInt32(QType);
           }
           if (Pn != 0) {
             output.WriteRawTag(120);
@@ -480,10 +461,6 @@ namespace TbClient.Api.Request {
             output.WriteRawTag(24);
             output.WriteInt32(RnNeed);
           }
-          if (QType != 0) {
-            output.WriteRawTag(112);
-            output.WriteInt32(QType);
-          }
           if (Pn != 0) {
             output.WriteRawTag(120);
             output.WriteInt32(Pn);
@@ -515,9 +492,6 @@ namespace TbClient.Api.Request {
           if (RnNeed != 0) {
             size += 1 + pb::CodedOutputStream.ComputeInt32Size(RnNeed);
           }
-          if (QType != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeInt32Size(QType);
-          }
           if (Pn != 0) {
             size += 1 + pb::CodedOutputStream.ComputeInt32Size(Pn);
           }
@@ -547,9 +521,6 @@ namespace TbClient.Api.Request {
           }
           if (other.RnNeed != 0) {
             RnNeed = other.RnNeed;
-          }
-          if (other.QType != 0) {
-            QType = other.QType;
           }
           if (other.Pn != 0) {
             Pn = other.Pn;
@@ -588,10 +559,6 @@ namespace TbClient.Api.Request {
               }
               case 24: {
                 RnNeed = input.ReadInt32();
-                break;
-              }
-              case 112: {
-                QType = input.ReadInt32();
                 break;
               }
               case 120: {
@@ -634,10 +601,6 @@ namespace TbClient.Api.Request {
               }
               case 24: {
                 RnNeed = input.ReadInt32();
-                break;
-              }
-              case 112: {
-                QType = input.ReadInt32();
                 break;
               }
               case 120: {

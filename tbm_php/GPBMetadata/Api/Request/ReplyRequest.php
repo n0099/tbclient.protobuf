@@ -17,16 +17,15 @@ class ReplyRequest
         \GPBMetadata\Api\Request\Common::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ž
-Api/Request/ReplyRequest.prototbClient.api.request"Í
+ý
+Api/Request/ReplyRequest.prototbClient.api.request"¼
 ReplyRequest5
-data (2\'.tbClient.api.request.ReplyRequest.Data…
+data (2\'.tbClient.api.request.ReplyRequest.Datau
 Data
 
 kz (
 
-rn (
-q_type (
+rn (
 
 pn (,
 common (2.tbClient.api.request.Common
