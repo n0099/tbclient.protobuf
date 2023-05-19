@@ -29,10 +29,6 @@ class Data extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.tbClient.api.request.Common common = 25;</code>
      */
     protected $common = null;
-    /**
-     * Generated from protobuf field <code>int32 is_fold_comment_req = 78;</code>
-     */
-    protected $is_fold_comment_req = 0;
 
     /**
      * Constructor.
@@ -44,7 +40,6 @@ class Data extends \Google\Protobuf\Internal\Message
      *     @type int $rn
      *     @type int $pn
      *     @type \TbClient\Api\Request\Common $common
-     *     @type int $is_fold_comment_req
      * }
      */
     public function __construct($data = NULL) {
@@ -146,28 +141,6 @@ class Data extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \TbClient\Api\Request\Common::class);
         $this->common = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 is_fold_comment_req = 78;</code>
-     * @return int
-     */
-    public function getIsFoldCommentReq()
-    {
-        return $this->is_fold_comment_req;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 is_fold_comment_req = 78;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setIsFoldCommentReq($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->is_fold_comment_req = $var;
 
         return $this;
     }

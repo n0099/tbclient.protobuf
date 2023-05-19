@@ -29,10 +29,6 @@ class Data extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .tbClient.User user_list = 13;</code>
      */
     private $user_list;
-    /**
-     * Generated from protobuf field <code>int32 has_fold_comment = 68;</code>
-     */
-    protected $has_fold_comment = 0;
 
     /**
      * Constructor.
@@ -44,7 +40,6 @@ class Data extends \Google\Protobuf\Internal\Message
      *     @type \TbClient\Forum\SimpleForum $forum
      *     @type array<\TbClient\Post\Reply>|\Google\Protobuf\Internal\RepeatedField $post_list
      *     @type array<\TbClient\User>|\Google\Protobuf\Internal\RepeatedField $user_list
-     *     @type int $has_fold_comment
      * }
      */
     public function __construct($data = NULL) {
@@ -156,28 +151,6 @@ class Data extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \TbClient\User::class);
         $this->user_list = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 has_fold_comment = 68;</code>
-     * @return int
-     */
-    public function getHasFoldComment()
-    {
-        return $this->has_fold_comment;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 has_fold_comment = 68;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setHasFoldComment($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->has_fold_comment = $var;
 
         return $this;
     }

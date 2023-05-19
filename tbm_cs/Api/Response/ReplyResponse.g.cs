@@ -27,17 +27,17 @@ namespace TbClient.Api.Response {
             "CiBBcGkvUmVzcG9uc2UvUmVwbHlSZXNwb25zZS5wcm90bxIVdGJDbGllbnQu",
             "YXBpLnJlc3BvbnNlGhBQb3N0L1JlcGx5LnByb3RvGhdGb3J1bS9TaW1wbGVG",
             "b3J1bS5wcm90bxoLRXJyb3IucHJvdG8aClBhZ2UucHJvdG8aClVzZXIucHJv",
-            "dG8ioQIKDVJlcGx5UmVzcG9uc2USHgoFZXJyb3IYASABKAsyDy50YkNsaWVu",
+            "dG8ihwIKDVJlcGx5UmVzcG9uc2USHgoFZXJyb3IYASABKAsyDy50YkNsaWVu",
             "dC5FcnJvchI3CgRkYXRhGAIgASgLMikudGJDbGllbnQuYXBpLnJlc3BvbnNl",
-            "LlJlcGx5UmVzcG9uc2UuRGF0YRq2AQoERGF0YRIcCgRwYWdlGAMgASgLMg4u",
+            "LlJlcGx5UmVzcG9uc2UuRGF0YRqcAQoERGF0YRIcCgRwYWdlGAMgASgLMg4u",
             "dGJDbGllbnQuUGFnZRIqCgVmb3J1bRgCIAEoCzIbLnRiQ2xpZW50LmZvcnVt",
             "LlNpbXBsZUZvcnVtEicKCXBvc3RfbGlzdBgGIAMoCzIULnRiQ2xpZW50LnBv",
-            "c3QuUmVwbHkSIQoJdXNlcl9saXN0GA0gAygLMg4udGJDbGllbnQuVXNlchIY",
-            "ChBoYXNfZm9sZF9jb21tZW50GEQgASgFYgZwcm90bzM="));
+            "c3QuUmVwbHkSIQoJdXNlcl9saXN0GA0gAygLMg4udGJDbGllbnQuVXNlcmIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TbClient.Post.ReplyReflection.Descriptor, global::TbClient.Forum.SimpleForumReflection.Descriptor, global::TbClient.ErrorReflection.Descriptor, global::TbClient.PageReflection.Descriptor, global::TbClient.UserReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Response.ReplyResponse), global::TbClient.Api.Response.ReplyResponse.Parser, new[]{ "Error", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Response.ReplyResponse.Types.Data), global::TbClient.Api.Response.ReplyResponse.Types.Data.Parser, new[]{ "Page", "Forum", "PostList", "UserList", "HasFoldComment" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Response.ReplyResponse), global::TbClient.Api.Response.ReplyResponse.Parser, new[]{ "Error", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Api.Response.ReplyResponse.Types.Data), global::TbClient.Api.Response.ReplyResponse.Types.Data.Parser, new[]{ "Page", "Forum", "PostList", "UserList" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -329,7 +329,6 @@ namespace TbClient.Api.Response {
           forum_ = other.forum_ != null ? other.forum_.Clone() : null;
           postList_ = other.postList_.Clone();
           userList_ = other.userList_.Clone();
-          hasFoldComment_ = other.hasFoldComment_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -385,18 +384,6 @@ namespace TbClient.Api.Response {
           get { return userList_; }
         }
 
-        /// <summary>Field number for the "has_fold_comment" field.</summary>
-        public const int HasFoldCommentFieldNumber = 68;
-        private int hasFoldComment_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public int HasFoldComment {
-          get { return hasFoldComment_; }
-          set {
-            hasFoldComment_ = value;
-          }
-        }
-
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
@@ -416,7 +403,6 @@ namespace TbClient.Api.Response {
           if (!object.Equals(Forum, other.Forum)) return false;
           if(!postList_.Equals(other.postList_)) return false;
           if(!userList_.Equals(other.userList_)) return false;
-          if (HasFoldComment != other.HasFoldComment) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -428,7 +414,6 @@ namespace TbClient.Api.Response {
           if (forum_ != null) hash ^= Forum.GetHashCode();
           hash ^= postList_.GetHashCode();
           hash ^= userList_.GetHashCode();
-          if (HasFoldComment != 0) hash ^= HasFoldComment.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -457,10 +442,6 @@ namespace TbClient.Api.Response {
           }
           postList_.WriteTo(output, _repeated_postList_codec);
           userList_.WriteTo(output, _repeated_userList_codec);
-          if (HasFoldComment != 0) {
-            output.WriteRawTag(160, 4);
-            output.WriteInt32(HasFoldComment);
-          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -481,10 +462,6 @@ namespace TbClient.Api.Response {
           }
           postList_.WriteTo(ref output, _repeated_postList_codec);
           userList_.WriteTo(ref output, _repeated_userList_codec);
-          if (HasFoldComment != 0) {
-            output.WriteRawTag(160, 4);
-            output.WriteInt32(HasFoldComment);
-          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -503,9 +480,6 @@ namespace TbClient.Api.Response {
           }
           size += postList_.CalculateSize(_repeated_postList_codec);
           size += userList_.CalculateSize(_repeated_userList_codec);
-          if (HasFoldComment != 0) {
-            size += 2 + pb::CodedOutputStream.ComputeInt32Size(HasFoldComment);
-          }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -532,9 +506,6 @@ namespace TbClient.Api.Response {
           }
           postList_.Add(other.postList_);
           userList_.Add(other.userList_);
-          if (other.HasFoldComment != 0) {
-            HasFoldComment = other.HasFoldComment;
-          }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
 
@@ -572,10 +543,6 @@ namespace TbClient.Api.Response {
                 userList_.AddEntriesFrom(input, _repeated_userList_codec);
                 break;
               }
-              case 544: {
-                HasFoldComment = input.ReadInt32();
-                break;
-              }
             }
           }
         #endif
@@ -611,10 +578,6 @@ namespace TbClient.Api.Response {
               }
               case 106: {
                 userList_.AddEntriesFrom(ref input, _repeated_userList_codec);
-                break;
-              }
-              case 544: {
-                HasFoldComment = input.ReadInt32();
                 break;
               }
             }

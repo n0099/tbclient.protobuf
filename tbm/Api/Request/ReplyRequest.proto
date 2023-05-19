@@ -8,7 +8,6 @@ message ReplyRequest {
         int32 rn = 13;
         int32 pn = 18;
         Common common = 25;
-        int32 is_fold_comment_req = 78;
     };
     Data data = 1;
 }
