@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class Post extends Message {
     public static final String DEFAULT_BIMG_URL = "";
     public static final String DEFAULT_DYNAMIC_URL = "";
@@ -189,7 +189,7 @@ public final class Post extends Message {
     public static final List<CardLinkInfo> DEFAULT_CARD_LINK_INFO = Collections.emptyList();
     public static final Integer DEFAULT_SHIELD_ICON = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Post> {
         public ActPost act_post;
         public AddPostList add_post_list;

@@ -5,7 +5,6 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes10.dex */
 public final class DataReq extends Message {
-    public static final Long DEFAULT_BENEFIT_USERID = 0L;
     public static final String DEFAULT_SCENE_FROM = "";
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long benefit_userid;
@@ -15,6 +14,10 @@ public final class DataReq extends Message {
     public final CommonReq f1194common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String scene_from;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+    public final Integer show_draw_gift;
+    public static final Long DEFAULT_BENEFIT_USERID = 0L;
+    public static final Integer DEFAULT_SHOW_DRAW_GIFT = 0;
 
     /* loaded from: classes10.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -23,6 +26,7 @@ public final class DataReq extends Message {
         /* renamed from: common  reason: collision with root package name */
         public CommonReq f1195common;
         public String scene_from;
+        public Integer show_draw_gift;
 
         public Builder() {
         }
@@ -35,6 +39,7 @@ public final class DataReq extends Message {
             this.scene_from = dataReq.scene_from;
             this.f1195common = dataReq.f1194common;
             this.benefit_userid = dataReq.benefit_userid;
+            this.show_draw_gift = dataReq.show_draw_gift;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -57,14 +62,21 @@ public final class DataReq extends Message {
             Long l = builder.benefit_userid;
             if (l == null) {
                 this.benefit_userid = DEFAULT_BENEFIT_USERID;
-                return;
             } else {
                 this.benefit_userid = l;
+            }
+            Integer num = builder.show_draw_gift;
+            if (num == null) {
+                this.show_draw_gift = DEFAULT_SHOW_DRAW_GIFT;
+                return;
+            } else {
+                this.show_draw_gift = num;
                 return;
             }
         }
         this.scene_from = builder.scene_from;
         this.f1194common = builder.f1195common;
         this.benefit_userid = builder.benefit_userid;
+        this.show_draw_gift = builder.show_draw_gift;
     }
 }

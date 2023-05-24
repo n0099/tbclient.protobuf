@@ -2,7 +2,7 @@ package tbclient.Personalized;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class TagStruct extends Message {
     public static final Integer DEFAULT_SELECTED = 0;
     public static final String DEFAULT_TAG_NAME = "";
@@ -11,7 +11,7 @@ public final class TagStruct extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tag_name;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TagStruct> {
         public Integer selected;
         public String tag_name;

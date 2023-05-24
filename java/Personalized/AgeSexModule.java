@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class AgeSexModule extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<TagStruct> age_tag;
@@ -13,7 +13,7 @@ public final class AgeSexModule extends Message {
     public static final List<TagStruct> DEFAULT_SEX_TAG = Collections.emptyList();
     public static final List<TagStruct> DEFAULT_AGE_TAG = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<AgeSexModule> {
         public List<TagStruct> age_tag;
         public List<TagStruct> sex_tag;

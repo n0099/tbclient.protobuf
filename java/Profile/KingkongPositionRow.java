@@ -2,7 +2,7 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class KingkongPositionRow extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_ICON_SRC = "";
@@ -26,7 +26,7 @@ public final class KingkongPositionRow extends Message {
     public static final Integer DEFAULT_UNI_ID = 0;
     public static final Integer DEFAULT_ACTION_TYPE = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<KingkongPositionRow> {
         public Integer action_type;
         public String desc;

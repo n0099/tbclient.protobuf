@@ -2,7 +2,7 @@ package tbclient.PlaceOrder;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_GOODS_NAME = "";
     public static final String DEFAULT_GOODS_PIC = "";
@@ -59,7 +59,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_GIFT_COUNT = 0;
     public static final Integer DEFAULT_CURRENCY = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer currency;
         public Integer gift_count;

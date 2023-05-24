@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class LiveAnswer extends Message {
     public static final String DEFAULT_BANNER_URL = "";
     public static final String DEFAULT_JUMP_URL = "";
@@ -28,7 +28,7 @@ public final class LiveAnswer extends Message {
     public static final List<String> DEFAULT_SHOW_STATISTICS_URLS = Collections.emptyList();
     public static final List<String> DEFAULT_CLICK_STATISTICS_URLS = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<LiveAnswer> {
         public Long activity_id;
         public Integer banner_high;

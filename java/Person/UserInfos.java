@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Icon;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class UserInfos extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_SEX = "";
@@ -34,7 +34,7 @@ public final class UserInfos extends Message {
     public static final Integer DEFAULT_LASTEST_TIME = 0;
     public static final List<Icon> DEFAULT_ICONINFO = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<UserInfos> {
         public Double distance;
         public List<Icon> iconinfo;

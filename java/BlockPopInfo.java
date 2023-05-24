@@ -8,6 +8,8 @@ public final class BlockPopInfo extends Message {
     public static final String DEFAULT_AHEAD_URL = "";
     public static final String DEFAULT_APPEAL_MSG = "";
     public static final String DEFAULT_BLOCK_INFO = "";
+    public static final String DEFAULT_IS_LIKE = "";
+    public static final String DEFAULT_IS_NCLASS = "";
     public static final String DEFAULT_OK_INFO = "";
     public static final String DEFAULT_SUB_BLOCK_INFO = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -24,6 +26,10 @@ public final class BlockPopInfo extends Message {
     public final String block_info;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer can_post;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String is_like;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String is_nclass;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String ok_info;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
@@ -41,6 +47,8 @@ public final class BlockPopInfo extends Message {
         public Integer appeal_status;
         public String block_info;
         public Integer can_post;
+        public String is_like;
+        public String is_nclass;
         public String ok_info;
         public String sub_block_info;
 
@@ -60,6 +68,8 @@ public final class BlockPopInfo extends Message {
             this.ahead_type = blockPopInfo.ahead_type;
             this.appeal_status = blockPopInfo.appeal_status;
             this.appeal_msg = blockPopInfo.appeal_msg;
+            this.is_like = blockPopInfo.is_like;
+            this.is_nclass = blockPopInfo.is_nclass;
             this.sub_block_info = blockPopInfo.sub_block_info;
         }
 
@@ -121,12 +131,24 @@ public final class BlockPopInfo extends Message {
             } else {
                 this.appeal_msg = str5;
             }
-            String str6 = builder.sub_block_info;
+            String str6 = builder.is_like;
             if (str6 == null) {
+                this.is_like = "";
+            } else {
+                this.is_like = str6;
+            }
+            String str7 = builder.is_nclass;
+            if (str7 == null) {
+                this.is_nclass = "";
+            } else {
+                this.is_nclass = str7;
+            }
+            String str8 = builder.sub_block_info;
+            if (str8 == null) {
                 this.sub_block_info = "";
                 return;
             } else {
-                this.sub_block_info = str6;
+                this.sub_block_info = str8;
                 return;
             }
         }
@@ -138,6 +160,8 @@ public final class BlockPopInfo extends Message {
         this.ahead_type = builder.ahead_type;
         this.appeal_status = builder.appeal_status;
         this.appeal_msg = builder.appeal_msg;
+        this.is_like = builder.is_like;
+        this.is_nclass = builder.is_nclass;
         this.sub_block_info = builder.sub_block_info;
     }
 }

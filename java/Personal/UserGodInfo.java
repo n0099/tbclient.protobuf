@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class UserGodInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<ForumGodDetailInfo> forum_god_list;
@@ -15,7 +15,7 @@ public final class UserGodInfo extends Message {
     public static final Integer DEFAULT_GOD_TYPE = 0;
     public static final List<ForumGodDetailInfo> DEFAULT_FORUM_GOD_LIST = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<UserGodInfo> {
         public List<ForumGodDetailInfo> forum_god_list;
         public GodDetailInfo god_info;

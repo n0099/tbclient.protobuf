@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class PicInfo extends Message {
     public static final String DEFAULT_BIG_PIC_URL = "";
     public static final Double DEFAULT_CROP_POINT_HEIGHT_RATIO;
@@ -29,7 +29,7 @@ public final class PicInfo extends Message {
     public static final Integer DEFAULT_HEIGHT = 0;
     public static final Integer DEFAULT_IS_LONG_PIC = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PicInfo> {
         public String big_pic_url;
         public Double crop_point_height_ratio;

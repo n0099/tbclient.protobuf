@@ -21,6 +21,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_ORI_UGC_NID = "";
     public static final String DEFAULT_ORI_UGC_TID = "";
     public static final String DEFAULT_ORI_UGC_VID = "";
+    public static final String DEFAULT_PB_TEST_INFO = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_QUERY_WORD = "";
     public static final String DEFAULT_SHOUBAI_CUID = "";
@@ -36,6 +37,8 @@ public final class DataReq extends Message {
     public final String ad_ext_params;
     @ProtoField(tag = 58)
     public final AdParam ad_param;
+    @ProtoField(tag = 67, type = Message.Datatype.INT32)
+    public final Integer after_ad_thread_count;
     @ProtoField(tag = 53)
     public final AppPosInfo app_pos;
     @ProtoField(tag = 77)
@@ -124,6 +127,8 @@ public final class DataReq extends Message {
     public final String ori_ugc_vid;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer pb_rn;
+    @ProtoField(tag = 70, type = Message.Datatype.STRING)
+    public final String pb_test_info;
     @ProtoField(tag = 7, type = Message.Datatype.INT64)
     public final Long pid;
     @ProtoField(tag = 43, type = Message.Datatype.STRING)
@@ -209,6 +214,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_NEED_REPOST_RECOMMEND_FORUM = 0;
     public static final Integer DEFAULT_NEED_LOG = 0;
     public static final Integer DEFAULT_ORI_UGC_TYPE = 0;
+    public static final Integer DEFAULT_AFTER_AD_THREAD_COUNT = 0;
     public static final Integer DEFAULT_FROM_PUSH = 0;
     public static final Long DEFAULT_BROADCAST_ID = 0L;
     public static final Integer DEFAULT_FLOOR_SORT_TYPE = 0;
@@ -224,6 +230,7 @@ public final class DataReq extends Message {
         public String ad_context_list;
         public String ad_ext_params;
         public AdParam ad_param;
+        public Integer after_ad_thread_count;
         public AppPosInfo app_pos;
         public AppTransmitData app_transmit_data;
         public Integer arround;
@@ -269,6 +276,7 @@ public final class DataReq extends Message {
         public Integer ori_ugc_type;
         public String ori_ugc_vid;
         public Integer pb_rn;
+        public String pb_test_info;
         public Long pid;
         public String platform;
         public Integer pn;
@@ -361,8 +369,10 @@ public final class DataReq extends Message {
             this.ori_ugc_tid = dataReq.ori_ugc_tid;
             this.ori_ugc_type = dataReq.ori_ugc_type;
             this.ori_ugc_vid = dataReq.ori_ugc_vid;
+            this.after_ad_thread_count = dataReq.after_ad_thread_count;
             this.ad_context_list = dataReq.ad_context_list;
             this.up_schema = dataReq.up_schema;
+            this.pb_test_info = dataReq.pb_test_info;
             this.from_push = dataReq.from_push;
             this.ad_ext_params = dataReq.ad_ext_params;
             this.broadcast_id = dataReq.broadcast_id;
@@ -719,6 +729,12 @@ public final class DataReq extends Message {
             } else {
                 this.ori_ugc_vid = str20;
             }
+            Integer num29 = builder.after_ad_thread_count;
+            if (num29 == null) {
+                this.after_ad_thread_count = DEFAULT_AFTER_AD_THREAD_COUNT;
+            } else {
+                this.after_ad_thread_count = num29;
+            }
             String str21 = builder.ad_context_list;
             if (str21 == null) {
                 this.ad_context_list = "";
@@ -731,17 +747,23 @@ public final class DataReq extends Message {
             } else {
                 this.up_schema = str22;
             }
-            Integer num29 = builder.from_push;
-            if (num29 == null) {
+            String str23 = builder.pb_test_info;
+            if (str23 == null) {
+                this.pb_test_info = "";
+            } else {
+                this.pb_test_info = str23;
+            }
+            Integer num30 = builder.from_push;
+            if (num30 == null) {
                 this.from_push = DEFAULT_FROM_PUSH;
             } else {
-                this.from_push = num29;
+                this.from_push = num30;
             }
-            String str23 = builder.ad_ext_params;
-            if (str23 == null) {
+            String str24 = builder.ad_ext_params;
+            if (str24 == null) {
                 this.ad_ext_params = "";
             } else {
-                this.ad_ext_params = str23;
+                this.ad_ext_params = str24;
             }
             Long l7 = builder.broadcast_id;
             if (l7 == null) {
@@ -749,42 +771,42 @@ public final class DataReq extends Message {
             } else {
                 this.broadcast_id = l7;
             }
-            Integer num30 = builder.floor_sort_type;
-            if (num30 == null) {
+            Integer num31 = builder.floor_sort_type;
+            if (num31 == null) {
                 this.floor_sort_type = DEFAULT_FLOOR_SORT_TYPE;
             } else {
-                this.floor_sort_type = num30;
+                this.floor_sort_type = num31;
             }
-            Integer num31 = builder.source_type;
-            if (num31 == null) {
+            Integer num32 = builder.source_type;
+            if (num32 == null) {
                 this.source_type = DEFAULT_SOURCE_TYPE;
             } else {
-                this.source_type = num31;
+                this.source_type = num32;
             }
-            Integer num32 = builder.immersion_video_comment_source;
-            if (num32 == null) {
+            Integer num33 = builder.immersion_video_comment_source;
+            if (num33 == null) {
                 this.immersion_video_comment_source = DEFAULT_IMMERSION_VIDEO_COMMENT_SOURCE;
             } else {
-                this.immersion_video_comment_source = num32;
+                this.immersion_video_comment_source = num33;
             }
             this.app_transmit_data = builder.app_transmit_data;
-            Integer num33 = builder.is_fold_comment_req;
-            if (num33 == null) {
+            Integer num34 = builder.is_fold_comment_req;
+            if (num34 == null) {
                 this.is_fold_comment_req = DEFAULT_IS_FOLD_COMMENT_REQ;
             } else {
-                this.is_fold_comment_req = num33;
+                this.is_fold_comment_req = num34;
             }
-            Integer num34 = builder.is_edit_comment_req;
-            if (num34 == null) {
+            Integer num35 = builder.is_edit_comment_req;
+            if (num35 == null) {
                 this.is_edit_comment_req = DEFAULT_IS_EDIT_COMMENT_REQ;
             } else {
-                this.is_edit_comment_req = num34;
+                this.is_edit_comment_req = num35;
             }
-            Integer num35 = builder.request_times;
-            if (num35 == null) {
+            Integer num36 = builder.request_times;
+            if (num36 == null) {
                 this.request_times = DEFAULT_REQUEST_TIMES;
             } else {
-                this.request_times = num35;
+                this.request_times = num36;
             }
             Long l8 = builder.last_pid;
             if (l8 == null) {
@@ -853,8 +875,10 @@ public final class DataReq extends Message {
         this.ori_ugc_tid = builder.ori_ugc_tid;
         this.ori_ugc_type = builder.ori_ugc_type;
         this.ori_ugc_vid = builder.ori_ugc_vid;
+        this.after_ad_thread_count = builder.after_ad_thread_count;
         this.ad_context_list = builder.ad_context_list;
         this.up_schema = builder.up_schema;
+        this.pb_test_info = builder.pb_test_info;
         this.from_push = builder.from_push;
         this.ad_ext_params = builder.ad_ext_params;
         this.broadcast_id = builder.broadcast_id;

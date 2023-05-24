@@ -7,6 +7,7 @@ public final class VipBanner extends Message {
     public static final String DEFAULT_BUBBLE = "";
     public static final String DEFAULT_BUTTON_LABLE = "";
     public static final String DEFAULT_BUTTON_URL = "";
+    public static final String DEFAULT_SUB_LABLE = "";
     public static final String DEFAULT_SUB_TITLE = "";
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_URL = "";
@@ -16,6 +17,8 @@ public final class VipBanner extends Message {
     public final String button_lable;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String button_url;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String sub_lable;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String sub_title;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -28,6 +31,7 @@ public final class VipBanner extends Message {
         public String bubble;
         public String button_lable;
         public String button_url;
+        public String sub_lable;
         public String sub_title;
         public String title;
         public String url;
@@ -46,6 +50,7 @@ public final class VipBanner extends Message {
             this.bubble = vipBanner.bubble;
             this.url = vipBanner.url;
             this.button_url = vipBanner.button_url;
+            this.sub_lable = vipBanner.sub_lable;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -91,9 +96,15 @@ public final class VipBanner extends Message {
             String str6 = builder.button_url;
             if (str6 == null) {
                 this.button_url = "";
-                return;
             } else {
                 this.button_url = str6;
+            }
+            String str7 = builder.sub_lable;
+            if (str7 == null) {
+                this.sub_lable = "";
+                return;
+            } else {
+                this.sub_lable = str7;
                 return;
             }
         }
@@ -103,5 +114,6 @@ public final class VipBanner extends Message {
         this.bubble = builder.bubble;
         this.url = builder.url;
         this.button_url = builder.button_url;
+        this.sub_lable = builder.sub_lable;
     }
 }

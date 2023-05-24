@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes2.dex */
 public final class VideoField extends Message {
+    public static final String DEFAULT_MD5 = "";
     public static final String DEFAULT_URL = "";
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer duration;
@@ -11,6 +12,8 @@ public final class VideoField extends Message {
     public final Integer height;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer is_vertical;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String md5;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer play_count;
     @ProtoField(tag = 6)
@@ -30,6 +33,7 @@ public final class VideoField extends Message {
         public Integer duration;
         public Integer height;
         public Integer is_vertical;
+        public String md5;
         public Integer play_count;
         public ThumbnailInfo thumbnail;
         public String url;
@@ -50,6 +54,7 @@ public final class VideoField extends Message {
             this.play_count = videoField.play_count;
             this.thumbnail = videoField.thumbnail;
             this.is_vertical = videoField.is_vertical;
+            this.md5 = videoField.md5;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -96,9 +101,15 @@ public final class VideoField extends Message {
             Integer num5 = builder.is_vertical;
             if (num5 == null) {
                 this.is_vertical = DEFAULT_IS_VERTICAL;
-                return;
             } else {
                 this.is_vertical = num5;
+            }
+            String str2 = builder.md5;
+            if (str2 == null) {
+                this.md5 = "";
+                return;
+            } else {
+                this.md5 = str2;
                 return;
             }
         }
@@ -109,5 +120,6 @@ public final class VideoField extends Message {
         this.play_count = builder.play_count;
         this.thumbnail = builder.thumbnail;
         this.is_vertical = builder.is_vertical;
+        this.md5 = builder.md5;
     }
 }

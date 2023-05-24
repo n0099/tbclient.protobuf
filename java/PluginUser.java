@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class PluginUser extends Message {
     public static final String DEFAULT_USER_NAME_SHOW = "";
     public static final String DEFAULT_USER_PHOTO = "";
@@ -20,7 +20,7 @@ public final class PluginUser extends Message {
     public static final Integer DEFAULT_USER_TYPE = 0;
     public static final Integer DEFAULT_IS_DOWNLOAD_CARD_WHITEUSER = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PluginUser> {
         public Integer is_download_card_whiteuser;
         public Long user_id;

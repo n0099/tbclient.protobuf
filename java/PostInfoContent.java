@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class PostInfoContent extends Message {
     public static final String DEFAULT_TARGET_SCHEME = "";
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
@@ -19,13 +19,15 @@ public final class PostInfoContent extends Message {
     public final Long post_type;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String target_scheme;
+    @ProtoField(tag = 6)
+    public final WorksInfo works_info;
     public static final List<Abstract> DEFAULT_POST_CONTENT = Collections.emptyList();
     public static final Long DEFAULT_CREATE_TIME = 0L;
     public static final Long DEFAULT_POST_TYPE = 0L;
     public static final Long DEFAULT_POST_ID = 0L;
     public static final Integer DEFAULT_IS_AUTHOR_VIEW = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PostInfoContent> {
         public Long create_time;
         public Integer is_author_view;
@@ -33,6 +35,7 @@ public final class PostInfoContent extends Message {
         public Long post_id;
         public Long post_type;
         public String target_scheme;
+        public WorksInfo works_info;
 
         public Builder() {
         }
@@ -47,6 +50,7 @@ public final class PostInfoContent extends Message {
             this.post_type = postInfoContent.post_type;
             this.post_id = postInfoContent.post_id;
             this.is_author_view = postInfoContent.is_author_view;
+            this.works_info = postInfoContent.works_info;
             this.target_scheme = postInfoContent.target_scheme;
         }
 
@@ -90,6 +94,7 @@ public final class PostInfoContent extends Message {
             } else {
                 this.is_author_view = num;
             }
+            this.works_info = builder.works_info;
             String str = builder.target_scheme;
             if (str == null) {
                 this.target_scheme = "";
@@ -104,6 +109,7 @@ public final class PostInfoContent extends Message {
         this.post_type = builder.post_type;
         this.post_id = builder.post_id;
         this.is_author_view = builder.is_author_view;
+        this.works_info = builder.works_info;
         this.target_scheme = builder.target_scheme;
     }
 }

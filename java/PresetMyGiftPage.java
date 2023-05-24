@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class PresetMyGiftPage extends Message {
     public static final Integer DEFAULT_CUR_PAGE = 0;
     public static final Integer DEFAULT_HAS_MORE = 0;
@@ -14,7 +14,7 @@ public final class PresetMyGiftPage extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer total;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PresetMyGiftPage> {
         public Integer cur_page;
         public Integer has_more;

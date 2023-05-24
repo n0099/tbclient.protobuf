@@ -2,10 +2,13 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes10.dex */
 public final class ComponentFactory extends Message {
     public static final String DEFAULT_BASE_TEXT = "";
     public static final String DEFAULT_COMPONENT = "";
+    public static final List<ThreadRecommendInfo> DEFAULT_FEED_RECOMTAG = Collections.emptyList();
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String base_text;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -28,12 +31,18 @@ public final class ComponentFactory extends Message {
     public final FeedOriginComponent feed_origin;
     @ProtoField(tag = 7)
     public final FeedPicComponent feed_pic;
+    @ProtoField(tag = 20)
+    public final FeedPostExpose feed_postexpose;
+    @ProtoField(label = Message.Label.REPEATED, tag = 18)
+    public final List<ThreadRecommendInfo> feed_recomtag;
     @ProtoField(tag = 8)
     public final FeedSocialComponent feed_social;
     @ProtoField(tag = 3)
     public final TitleComponent feed_title;
     @ProtoField(tag = 9)
     public final FeedVideoComponent feed_video;
+    @ProtoField(tag = 19)
+    public final FeedVideoAdComponent feed_videoad;
     @ProtoField(tag = 11)
     public final Voice feed_voice;
     @ProtoField(tag = 14)
@@ -52,9 +61,12 @@ public final class ComponentFactory extends Message {
         public FeedLiveComponent feed_live;
         public FeedOriginComponent feed_origin;
         public FeedPicComponent feed_pic;
+        public FeedPostExpose feed_postexpose;
+        public List<ThreadRecommendInfo> feed_recomtag;
         public FeedSocialComponent feed_social;
         public TitleComponent feed_title;
         public FeedVideoComponent feed_video;
+        public FeedVideoAdComponent feed_videoad;
         public Voice feed_voice;
         public SidewayRecomComponent sideway_recom;
 
@@ -82,6 +94,9 @@ public final class ComponentFactory extends Message {
             this.feed_item = componentFactory.feed_item;
             this.feed_origin = componentFactory.feed_origin;
             this.feed_link = componentFactory.feed_link;
+            this.feed_recomtag = Message.copyOf(componentFactory.feed_recomtag);
+            this.feed_videoad = componentFactory.feed_videoad;
+            this.feed_postexpose = componentFactory.feed_postexpose;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -120,6 +135,14 @@ public final class ComponentFactory extends Message {
             this.feed_item = builder.feed_item;
             this.feed_origin = builder.feed_origin;
             this.feed_link = builder.feed_link;
+            List<ThreadRecommendInfo> list = builder.feed_recomtag;
+            if (list == null) {
+                this.feed_recomtag = DEFAULT_FEED_RECOMTAG;
+            } else {
+                this.feed_recomtag = Message.immutableCopyOf(list);
+            }
+            this.feed_videoad = builder.feed_videoad;
+            this.feed_postexpose = builder.feed_postexpose;
             return;
         }
         this.component = builder.component;
@@ -138,5 +161,8 @@ public final class ComponentFactory extends Message {
         this.feed_item = builder.feed_item;
         this.feed_origin = builder.feed_origin;
         this.feed_link = builder.feed_link;
+        this.feed_recomtag = Message.immutableCopyOf(builder.feed_recomtag);
+        this.feed_videoad = builder.feed_videoad;
+        this.feed_postexpose = builder.feed_postexpose;
     }
 }

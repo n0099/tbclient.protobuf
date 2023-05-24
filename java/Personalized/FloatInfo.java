@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FloatInfo extends Message {
     public static final String DEFAULT_FLOAT_URL = "";
     public static final String DEFAULT_JUMP_URL = "";
@@ -28,7 +28,7 @@ public final class FloatInfo extends Message {
     public static final Long DEFAULT_ACTIVITY_ID = 0L;
     public static final Integer DEFAULT_SHOW_TYPE = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FloatInfo> {
         public Long activity_id;
         public List<String> dynamic_url;

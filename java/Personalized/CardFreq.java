@@ -2,7 +2,7 @@ package tbclient.Personalized;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class CardFreq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long end_time;
@@ -14,7 +14,7 @@ public final class CardFreq extends Message {
     public static final Long DEFAULT_END_TIME = 0L;
     public static final Long DEFAULT_SHOW_TIMES = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<CardFreq> {
         public Long end_time;
         public Long show_times;

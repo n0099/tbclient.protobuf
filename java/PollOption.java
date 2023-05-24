@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class PollOption extends Message {
     public static final String DEFAULT_IMAGE = "";
     public static final String DEFAULT_TEXT = "";
@@ -17,7 +17,7 @@ public final class PollOption extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final Long DEFAULT_NUM = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PollOption> {
         public Integer id;
         public String image;

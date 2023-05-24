@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class PostInfoList extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_ARTICLE_COVER = "";
@@ -43,6 +43,8 @@ public final class PostInfoList extends Message {
     public final Integer create_time;
     @ProtoField(tag = 31)
     public final DealInfo deal_info;
+    @ProtoField(tag = 65)
+    public final EditInfo edit_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 49)
     public final List<PbContent> first_post_content;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -187,7 +189,7 @@ public final class PostInfoList extends Message {
     public static final Integer DEFAULT_GOOD_TYPES = 0;
     public static final Integer DEFAULT_TOP_TYPES = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PostInfoList> {
         public String _abstract;
         public List<Abstract> abstract_thread;
@@ -201,6 +203,7 @@ public final class PostInfoList extends Message {
         public String content_thread;
         public Integer create_time;
         public DealInfo deal_info;
+        public EditInfo edit_info;
         public List<PbContent> first_post_content;
         public Long forum_id;
         public String forum_name;
@@ -327,6 +330,7 @@ public final class PostInfoList extends Message {
             this.top_types = postInfoList.top_types;
             this.user_post_perm = postInfoList.user_post_perm;
             this.voice_room = postInfoList.voice_room;
+            this.edit_info = postInfoList.edit_info;
             this.target_scheme = postInfoList.target_scheme;
         }
 
@@ -649,6 +653,7 @@ public final class PostInfoList extends Message {
             }
             this.user_post_perm = builder.user_post_perm;
             this.voice_room = builder.voice_room;
+            this.edit_info = builder.edit_info;
             String str13 = builder.target_scheme;
             if (str13 == null) {
                 this.target_scheme = "";
@@ -722,6 +727,7 @@ public final class PostInfoList extends Message {
         this.top_types = builder.top_types;
         this.user_post_perm = builder.user_post_perm;
         this.voice_room = builder.voice_room;
+        this.edit_info = builder.edit_info;
         this.target_scheme = builder.target_scheme;
     }
 }
