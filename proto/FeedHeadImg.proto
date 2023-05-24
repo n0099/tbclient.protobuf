@@ -6,4 +6,5 @@ message FeedHeadImg {
     string pendant_url = 3;
     string corner_url = 4;
     string schema = 5;
+    repeated string masks = 6;
 }

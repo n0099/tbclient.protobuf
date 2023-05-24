@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message CaiUser {
+    string user_name = 1;
+    string portrait = 2;
+}

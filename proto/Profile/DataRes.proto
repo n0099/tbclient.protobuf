@@ -53,6 +53,7 @@ message DataRes {
     NicknameInfo nickname_info = 17;
     repeated AlaLiveInfo ala_live_record = 19;
     repeated UserMap url_map = 20;
+    int32 show_answer = 21;
     repeated BannerImage banner = 22;
     repeated SmartApp recom_naws_list = 23;
     Namoaixud namoaixud = 24;

@@ -9,4 +9,5 @@ message DataReq {
     int32 sub_tab_id = 6;
     int32 sub_label_id = 7;
     int32 need_tab_stuct = 8;
+    int32 tab_id = 9;
 }

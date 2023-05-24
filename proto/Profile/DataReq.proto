@@ -21,4 +21,5 @@ message DataReq {
     string history_forum_ids = 17;
     string history_forum_names = 18;
     int32 need_usergrowth_task = 19;
+    int32 is_enable_naws = 20;
 }

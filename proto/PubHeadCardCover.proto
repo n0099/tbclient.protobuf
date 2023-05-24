@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "PubCardFreq.proto";
+import "PubMatchCardInfo.proto";
+import "ThemeColorInfo.proto";
+
+message PubHeadCardCover {
+    ThemeColorInfo card_background = 1;
+    PubCardFreq freq = 2;
+    PubMatchCardInfo match_info = 3;
+}

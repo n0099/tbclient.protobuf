@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "PkCoreInfo.proto";
+import "PkLiveInfo.proto";
+
+message PkInfo {
+    PkCoreInfo pk_info = 1;
+    PkLiveInfo anchor_info = 2;
+    PkLiveInfo rival_info = 3;
+}

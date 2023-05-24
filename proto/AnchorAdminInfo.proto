@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message AnchorAdminInfo {
+    int64 user_id = 1;
+    string user_name = 2;
+    string user_nickname = 3;
+    string portrait = 4;
+    int32 sex = 5;
+}

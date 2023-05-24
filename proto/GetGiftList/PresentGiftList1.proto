@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "GetGiftList/Category.proto";
+
 message PresentGiftList1 {
     uint32 gift_id = 1;
     string gift_name = 2;
@@ -17,5 +19,8 @@ message PresentGiftList1 {
     uint32 gift_count = 14;
     uint32 pitch_on = 15;
     uint32 currency_unit = 16;
+    Category category_id = 17;
+    uint32 is_combo = 18;
+    uint32 animation_type = 19;
     int32 currency = 20;
 }

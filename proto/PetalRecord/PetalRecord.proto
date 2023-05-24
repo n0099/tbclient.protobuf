@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message PetalRecord {
+    string flow_type = 1;
+    int32 petal_num = 2;
+    uint64 create_time = 3;
+}
