@@ -2,7 +2,7 @@ package tbclient.GetForumDetail;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ForumDataCenter extends Message {
     public static final Integer DEFAULT_HOMEPAGE_THREAD_CNT;
     public static final Integer DEFAULT_HOMEPAGE_THREAD_CNT_DIFF;
@@ -41,7 +41,7 @@ public final class ForumDataCenter extends Message {
     public static final Integer DEFAULT_NEW_FOLLOW_CNT_DIFF = 0;
     public static final Integer DEFAULT_USER_DURATION_AVG = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ForumDataCenter> {
         public Integer homepage_thread_cnt;
         public Integer homepage_thread_cnt_diff;

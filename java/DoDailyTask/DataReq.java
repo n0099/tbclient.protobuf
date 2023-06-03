@@ -3,21 +3,21 @@ package tbclient.DoDailyTask;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final Long DEFAULT_TASK_ID = 0L;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1134common;
+    public final CommonReq f1280common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long task_id;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1135common;
+        public CommonReq f1281common;
         public Long task_id;
 
         public Builder() {
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1135common = dataReq.f1134common;
+            this.f1281common = dataReq.f1280common;
             this.task_id = dataReq.task_id;
         }
 
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1134common = builder.f1135common;
+            this.f1280common = builder.f1281common;
             Long l = builder.task_id;
             if (l == null) {
                 this.task_id = DEFAULT_TASK_ID;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1134common = builder.f1135common;
+        this.f1280common = builder.f1281common;
         this.task_id = builder.task_id;
     }
 }

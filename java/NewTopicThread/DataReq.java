@@ -3,7 +3,7 @@ package tbclient.NewTopicThread;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CALL_FROM = "";
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1304common;
+    public final CommonReq f1450common;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long last_feed_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -22,12 +22,12 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_PAGE_NO = 0L;
     public static final Long DEFAULT_LAST_FEED_ID = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1305common;
+        public CommonReq f1451common;
         public Long last_feed_id;
         public Long page_no;
         public Long topic_id;
@@ -40,7 +40,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1305common = dataReq.f1304common;
+            this.f1451common = dataReq.f1450common;
             this.topic_id = dataReq.topic_id;
             this.page_no = dataReq.page_no;
             this.call_from = dataReq.call_from;
@@ -57,7 +57,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1304common = builder.f1305common;
+            this.f1450common = builder.f1451common;
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
@@ -85,7 +85,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1304common = builder.f1305common;
+        this.f1450common = builder.f1451common;
         this.topic_id = builder.topic_id;
         this.page_no = builder.page_no;
         this.call_from = builder.call_from;

@@ -3,7 +3,7 @@ package tbclient.Loop;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.YyExt;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class YyLiveInfoSimple extends Message {
     public static final String DEFAULT_BTN_TEXT = "";
     public static final String DEFAULT_DESC = "";
@@ -62,7 +62,7 @@ public final class YyLiveInfoSimple extends Message {
     public static final Integer DEFAULT_SHOW_PAGE = 0;
     public static final Integer DEFAULT_AUTHOR_TYPE = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<YyLiveInfoSimple> {
         public Integer author_type;
         public String btn_text;

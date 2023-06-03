@@ -3,7 +3,7 @@ package tbclient.GetForumSquare;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CLASS_NAME = "";
     public static final String DEFAULT_SECOND_CLASS_NAME = "";
@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1188common;
+    public final CommonReq f1334common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -25,12 +25,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_RN = 0;
     public static final Long DEFAULT_USER_ID = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String class_name;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1189common;
+        public CommonReq f1335common;
         public Integer pn;
         public Integer rn;
         public String second_class_name;
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1189common = dataReq.f1188common;
+            this.f1335common = dataReq.f1334common;
             this.class_name = dataReq.class_name;
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1188common = builder.f1189common;
+            this.f1334common = builder.f1335common;
             String str = builder.class_name;
             if (str == null) {
                 this.class_name = "";
@@ -96,7 +96,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1188common = builder.f1189common;
+        this.f1334common = builder.f1335common;
         this.class_name = builder.class_name;
         this.pn = builder.pn;
         this.rn = builder.rn;

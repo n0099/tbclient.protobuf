@@ -8,8 +8,6 @@ import tbclient.AlaLiveInfo;
 import tbclient.Anti;
 import tbclient.BannerList;
 import tbclient.BusinessAccountInfo;
-import tbclient.EditConfig;
-import tbclient.EditInfo;
 import tbclient.FineBannerPb;
 import tbclient.ForumRuleStatus;
 import tbclient.GraffitiRankListInfo;
@@ -31,7 +29,7 @@ import tbclient.SimpleUser;
 import tbclient.ThreadInfo;
 import tbclient.TwZhiBoAnti;
 import tbclient.User;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_FOLD_TIP = "";
@@ -59,10 +57,6 @@ public final class DataRes extends Message {
     public final BusinessPromotInfo business_promot_info;
     @ProtoField(tag = 39)
     public final SimpleForum display_forum;
-    @ProtoField(tag = 71)
-    public final EditConfig edit_config;
-    @ProtoField(tag = 72)
-    public final EditInfo edit_info;
     @ProtoField(tag = 46, type = Message.Datatype.INT32)
     public final Integer exp_guide_today;
     @ProtoField(tag = 45, type = Message.Datatype.INT32)
@@ -165,6 +159,8 @@ public final class DataRes extends Message {
     public final Integer server_time;
     @ProtoField(tag = 61, type = Message.Datatype.INT32)
     public final Integer show_adsense;
+    @ProtoField(tag = 75)
+    public final SimilarContent similar_content;
     @ProtoField(tag = 50, type = Message.Datatype.INT32)
     public final Integer sort_type;
     @ProtoField(tag = 32, type = Message.Datatype.INT32)
@@ -217,7 +213,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_HAS_FOLD_COMMENT = 0;
     public static final Long DEFAULT_FOLD_COMMENT_NUM = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AddPost add_post;
         public AlaLiveInfo ala_info;
@@ -229,8 +225,6 @@ public final class DataRes extends Message {
         public BusinessAccountInfo business_account_info;
         public BusinessPromotInfo business_promot_info;
         public SimpleForum display_forum;
-        public EditConfig edit_config;
-        public EditInfo edit_info;
         public Integer exp_guide_today;
         public Integer exp_news_today;
         public FeedExtInfo feed_info;
@@ -282,6 +276,7 @@ public final class DataRes extends Message {
         public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
         public Integer show_adsense;
+        public SimilarContent similar_content;
         public Integer sort_type;
         public Integer switch_read_open;
         public ThreadInfo thread;
@@ -370,10 +365,9 @@ public final class DataRes extends Message {
             this.pb_notice = dataRes.pb_notice;
             this.has_fold_comment = dataRes.has_fold_comment;
             this.fold_comment_num = dataRes.fold_comment_num;
-            this.edit_config = dataRes.edit_config;
-            this.edit_info = dataRes.edit_info;
             this.top_answer = dataRes.top_answer;
             this.jump_link_info = dataRes.jump_link_info;
+            this.similar_content = dataRes.similar_content;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -640,10 +634,9 @@ public final class DataRes extends Message {
             } else {
                 this.fold_comment_num = l2;
             }
-            this.edit_config = builder.edit_config;
-            this.edit_info = builder.edit_info;
             this.top_answer = builder.top_answer;
             this.jump_link_info = builder.jump_link_info;
+            this.similar_content = builder.similar_content;
             return;
         }
         this.user = builder.user;
@@ -715,9 +708,8 @@ public final class DataRes extends Message {
         this.pb_notice = builder.pb_notice;
         this.has_fold_comment = builder.has_fold_comment;
         this.fold_comment_num = builder.fold_comment_num;
-        this.edit_config = builder.edit_config;
-        this.edit_info = builder.edit_info;
         this.top_answer = builder.top_answer;
         this.jump_link_info = builder.jump_link_info;
+        this.similar_content = builder.similar_content;
     }
 }

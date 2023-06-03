@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class GroupFeedCard extends Message {
     public static final String DEFAULT_CARD_TITLE = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -16,7 +16,7 @@ public final class GroupFeedCard extends Message {
     public static final Integer DEFAULT_INDEX = 0;
     public static final List<FeedGroupInfo> DEFAULT_GROUP_LIST = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<GroupFeedCard> {
         public String card_title;
         public List<FeedGroupInfo> group_list;

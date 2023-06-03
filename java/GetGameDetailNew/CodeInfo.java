@@ -2,7 +2,7 @@ package tbclient.GetGameDetailNew;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class CodeInfo extends Message {
     public static final String DEFAULT_GAME_CODE = "";
     public static final String DEFAULT_GIFT_CODE = "";
@@ -23,7 +23,7 @@ public final class CodeInfo extends Message {
     public static final Integer DEFAULT_KAIFU_ID = 0;
     public static final Integer DEFAULT_CODE_TYPE = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<CodeInfo> {
         public Integer code_status;
         public Integer code_type;

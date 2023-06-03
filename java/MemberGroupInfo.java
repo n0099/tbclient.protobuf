@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class MemberGroupInfo extends Message {
     public static final String DEFAULT_MEMBER_GROUP_TYPE = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
@@ -16,7 +16,7 @@ public final class MemberGroupInfo extends Message {
     public static final Integer DEFAULT_MEMBER_GROUP_NUM = 0;
     public static final List<BawuRoleInfoPub> DEFAULT_MEMBER_GROUP_LIST = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<MemberGroupInfo> {
         public List<BawuRoleInfoPub> member_group_list;
         public Integer member_group_num;

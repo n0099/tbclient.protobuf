@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DisplayWindowInfo extends Message {
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_TITLE = "";
@@ -31,7 +31,7 @@ public final class DisplayWindowInfo extends Message {
     public static final Integer DEFAULT_IS_DISPLAY = 0;
     public static final Long DEFAULT_SALES = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DisplayWindowInfo> {
         public DealMedia img;
         public String intro;

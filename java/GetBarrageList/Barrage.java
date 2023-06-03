@@ -2,7 +2,7 @@ package tbclient.GetBarrageList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class Barrage extends Message {
     public static final String DEFAULT_COLOR = "";
     public static final String DEFAULT_CONTENT = "";
@@ -14,7 +14,7 @@ public final class Barrage extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long user_id;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Barrage> {
         public String color;
         public String content;

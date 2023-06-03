@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class Group extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer group_count;
@@ -11,7 +11,7 @@ public final class Group extends Message {
     public static final Integer DEFAULT_HIDE_RECOMMEND_GROUP = 0;
     public static final Integer DEFAULT_GROUP_COUNT = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Group> {
         public Integer group_count;
         public Integer hide_recommend_group;

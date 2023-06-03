@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class BetInfo extends Message {
     public static final String DEFAULT_BET = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -14,7 +14,7 @@ public final class BetInfo extends Message {
     public static final Long DEFAULT_SCORE = 0L;
     public static final Integer DEFAULT_NO = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<BetInfo> {
         public String bet;
         public Integer no;

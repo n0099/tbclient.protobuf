@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class LiveRes extends Message {
     public static final String DEFAULT_IS_END = "";
     public static final List<YyLiveInfoSimple> DEFAULT_LIVE_LIST = Collections.emptyList();
@@ -18,7 +18,7 @@ public final class LiveRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<LiveNormalConfig> normal_config_list;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<LiveRes> {
         public String is_end;
         public List<YyLiveInfoSimple> live_list;

@@ -2,7 +2,7 @@ package tbclient.GetBigday;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class BigdayInfo extends Message {
     public static final String DEFAULT_IMG_URL = "";
     public static final String DEFAULT_JUMP_URL = "";
@@ -26,7 +26,7 @@ public final class BigdayInfo extends Message {
     public static final Long DEFAULT_ID = 0L;
     public static final Integer DEFAULT_IMG_COLOUR = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<BigdayInfo> {
         public Long end_time;
         public Long id;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class EverydayThread extends Message {
     public static final List<FineThreadInfo> DEFAULT_FINE_THREAD_LIST = Collections.emptyList();
     public static final Integer DEFAULT_SHOW_TIME = 0;
@@ -13,7 +13,7 @@ public final class EverydayThread extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer show_time;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<EverydayThread> {
         public List<FineThreadInfo> fine_thread_list;
         public Integer show_time;

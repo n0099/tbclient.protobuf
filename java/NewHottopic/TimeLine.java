@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class TimeLine extends Message {
     public static final List<TimeLineInfo> DEFAULT_TIMELINE_INFO = Collections.emptyList();
     public static final String DEFAULT_TITLE = "";
@@ -13,7 +13,7 @@ public final class TimeLine extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TimeLine> {
         public List<TimeLineInfo> timeline_info;
         public String title;

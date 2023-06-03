@@ -2,7 +2,7 @@ package tbclient.Loop;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class IconPop extends Message {
     public static final String DEFAULT_CATEGORY_ID = "";
     public static final String DEFAULT_EXT = "";
@@ -80,7 +80,7 @@ public final class IconPop extends Message {
     @ProtoField(tag = 26, type = Message.Datatype.STRING)
     public final String yb_price;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<IconPop> {
         public String category_id;
         public String ext;

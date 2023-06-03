@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FloatingIconItem extends Message {
     public static final String DEFAULT_CLICK_STATISTICS_URL = "";
     public static final String DEFAULT_DEEPLINK = "";
@@ -44,7 +44,7 @@ public final class FloatingIconItem extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String view_statistics_url;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FloatingIconItem> {
         public String click_statistics_url;
         public String deeplink;

@@ -40,6 +40,8 @@ public final class Post extends Message {
     public final String bimg_url;
     @ProtoField(tag = 64)
     public final ThemeBubble bubble_info;
+    @ProtoField(tag = 72)
+    public final CallRobotEntrance call_robot_entrance;
     @ProtoField(label = Message.Label.REPEATED, tag = 59)
     public final List<CardLinkInfo> card_link_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
@@ -201,6 +203,7 @@ public final class Post extends Message {
         public Long author_id;
         public String bimg_url;
         public ThemeBubble bubble_info;
+        public CallRobotEntrance call_robot_entrance;
         public List<CardLinkInfo> card_link_info;
         public List<PbContent> content;
         public CustomFigure custom_figure;
@@ -340,6 +343,7 @@ public final class Post extends Message {
             this.icon_url = post.icon_url;
             this.toutiao_card_tag = post.toutiao_card_tag;
             this.toutiao_card_tag_color = post.toutiao_card_tag_color;
+            this.call_robot_entrance = post.call_robot_entrance;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -629,11 +633,11 @@ public final class Post extends Message {
             String str14 = builder.toutiao_card_tag_color;
             if (str14 == null) {
                 this.toutiao_card_tag_color = "";
-                return;
             } else {
                 this.toutiao_card_tag_color = str14;
-                return;
             }
+            this.call_robot_entrance = builder.call_robot_entrance;
+            return;
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -705,5 +709,6 @@ public final class Post extends Message {
         this.icon_url = builder.icon_url;
         this.toutiao_card_tag = builder.toutiao_card_tag;
         this.toutiao_card_tag_color = builder.toutiao_card_tag_color;
+        this.call_robot_entrance = builder.call_robot_entrance;
     }
 }

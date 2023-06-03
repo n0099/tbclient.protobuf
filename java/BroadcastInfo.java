@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class BroadcastInfo extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_CTR = "";
@@ -36,7 +36,7 @@ public final class BroadcastInfo extends Message {
     public static final Integer DEFAULT_PV = 0;
     public static final Integer DEFAULT_AUDIT_STATUS = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<BroadcastInfo> {
         public Integer audit_status;
         public Long bcast_id;

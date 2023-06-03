@@ -2,7 +2,7 @@ package tbclient.ForumRecommend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class NewRecommend extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -20,7 +20,7 @@ public final class NewRecommend extends Message {
     public static final Integer DEFAULT_MEMBER_COUNT = 0;
     public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<NewRecommend> {
         public String avatar;
         public Long forum_id;

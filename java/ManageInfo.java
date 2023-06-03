@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ManageInfo extends Message {
     public static final Integer DEFAULT_ITEM_SOURCE = 0;
     @ProtoField(tag = 1)
@@ -12,7 +12,7 @@ public final class ManageInfo extends Message {
     @ProtoField(tag = 2)
     public final TiebaPlusInfo tiebaplus_info;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ManageInfo> {
         public Item item;
         public Integer item_source;

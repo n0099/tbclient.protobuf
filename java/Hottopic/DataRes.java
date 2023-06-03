@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Banner;
 import tbclient.RecomTopicList;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_RELATE_FORUM_TITLE = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 16)
@@ -50,7 +50,7 @@ public final class DataRes extends Message {
     public static final List<SpecialTopic> DEFAULT_SPECIAL_TOPIC = Collections.emptyList();
     public static final List<Banner> DEFAULT_BANNER = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
         public CommonInteraction bless_module;

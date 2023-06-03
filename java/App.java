@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class App extends Message {
     public static final String DEFAULT_ABTEST = "";
     public static final String DEFAULT_AD_ID = "";
@@ -103,7 +103,7 @@ public final class App extends Message {
     public static final Integer DEFAULT_PLAN_ID = 0;
     public static final List<GoodsInfo> DEFAULT_GOODS_INFO = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<App> {
         public String abtest;
         public String ad_id;

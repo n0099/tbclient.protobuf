@@ -3,13 +3,13 @@ package tbclient.ForumMenu;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_COOKIE = "";
     @ProtoField(tag = 5)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1146common;
+    public final CommonReq f1292common;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String cookie;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -22,11 +22,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_FORUM_ID = 0;
     public static final Integer DEFAULT_ST_PARAM = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1147common;
+        public CommonReq f1293common;
         public String cookie;
         public Integer forum_id;
         public Integer st_param;
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
             this.forum_id = dataReq.forum_id;
             this.st_param = dataReq.st_param;
             this.cookie = dataReq.cookie;
-            this.f1147common = dataReq.f1146common;
+            this.f1293common = dataReq.f1292common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -81,13 +81,13 @@ public final class DataReq extends Message {
             } else {
                 this.cookie = str;
             }
-            this.f1146common = builder.f1147common;
+            this.f1292common = builder.f1293common;
             return;
         }
         this.update_time = builder.update_time;
         this.forum_id = builder.forum_id;
         this.st_param = builder.st_param;
         this.cookie = builder.cookie;
-        this.f1146common = builder.f1147common;
+        this.f1292common = builder.f1293common;
     }
 }

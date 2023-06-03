@@ -2,7 +2,7 @@ package tbclient.GetInterview;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class InterviewDetail extends Message {
     public static final Long DEFAULT_ORDER_ID = 0L;
     @ProtoField(tag = 2)
@@ -12,7 +12,7 @@ public final class InterviewDetail extends Message {
     @ProtoField(tag = 1)
     public final InterviewInfo question;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<InterviewDetail> {
         public InterviewInfo answer;
         public Long order_id;

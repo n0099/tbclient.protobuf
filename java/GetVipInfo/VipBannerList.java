@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class VipBannerList extends Message {
     public static final String DEFAULT_CARD_ID = "";
     public static final String DEFAULT_CLASS_NAME = "";
@@ -22,7 +22,7 @@ public final class VipBannerList extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
     public final List<VipBannerItem> item;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VipBannerList> {
         public String card_id;
         public String class_name;

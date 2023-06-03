@@ -2,7 +2,7 @@ package tbclient.GetForumDetail;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ApplyStatus extends Message {
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer fdir_next_apply_time;
@@ -23,7 +23,7 @@ public final class ApplyStatus extends Message {
     public static final Integer DEFAULT_IS_FDIR_APPLYING = 0;
     public static final Integer DEFAULT_FDIR_NEXT_APPLY_TIME = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ApplyStatus> {
         public Integer fdir_next_apply_time;
         public Integer is_avatar_applying;

@@ -3,12 +3,12 @@ package tbclient.GetUserByTiebaUid;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.User;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 1)
     public final User user;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public User user;
 

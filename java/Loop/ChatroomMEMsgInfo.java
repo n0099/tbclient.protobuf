@@ -2,7 +2,7 @@ package tbclient.Loop;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ChatroomMEMsgInfo extends Message {
     public static final String DEFAULT_CONTENT = "";
     public static final String DEFAULT_FROM_NAME = "";
@@ -20,7 +20,7 @@ public final class ChatroomMEMsgInfo extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String special_msg;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ChatroomMEMsgInfo> {
         public String content;
         public String from_name;

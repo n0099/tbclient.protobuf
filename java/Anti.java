@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class Anti extends Message {
     public static final String DEFAULT_FORBID_INFO = "";
     public static final String DEFAULT_IFXIAOYING = "";
@@ -96,7 +96,7 @@ public final class Anti extends Message {
     public static final Boolean DEFAULT_IS_SEXYFORUM = Boolean.FALSE;
     public static final Integer DEFAULT_USER_CHAT_BLOCK = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Anti> {
         public BlockPopInfo block_pop_info;
         public Integer block_stat;

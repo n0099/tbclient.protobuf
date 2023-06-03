@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ClientPlatform extends Message {
     public static final String DEFAULT_SCHEDULE_CAL = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -10,7 +10,7 @@ public final class ClientPlatform extends Message {
     @ProtoField(tag = 2)
     public final StarSchedule star_schedule;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ClientPlatform> {
         public String schedule_cal;
         public StarSchedule star_schedule;

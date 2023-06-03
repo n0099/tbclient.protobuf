@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ForumMemberInfo extends Message {
     public static final List<User> DEFAULT_MEMBER_LIST = Collections.emptyList();
     public static final String DEFAULT_TITLE = "";
@@ -16,7 +16,7 @@ public final class ForumMemberInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String total;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ForumMemberInfo> {
         public List<User> member_list;
         public String title;

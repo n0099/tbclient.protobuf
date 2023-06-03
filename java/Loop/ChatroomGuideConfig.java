@@ -2,7 +2,7 @@ package tbclient.Loop;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ChatroomGuideConfig extends Message {
     public static final String DEFAULT_BKGRD_DAY = "";
     public static final String DEFAULT_BKGRD_NIGHT = "";
@@ -35,7 +35,7 @@ public final class ChatroomGuideConfig extends Message {
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String small_icon_night;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ChatroomGuideConfig> {
         public String bkgrd_day;
         public String bkgrd_night;

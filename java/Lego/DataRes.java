@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final List<String> DEFAULT_CARDS = Collections.emptyList();
     public static final Integer DEFAULT_HAS_MORE = 0;
@@ -16,7 +16,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String page_info;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<String> cards;
         public Integer has_more;

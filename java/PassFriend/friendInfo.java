@@ -2,7 +2,7 @@ package tbclient.PassFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class friendInfo extends Message {
     public static final String DEFAULT_KEY = "";
     public static final String DEFAULT_PORTRAIT = "";
@@ -20,7 +20,7 @@ public final class friendInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<friendInfo> {
         public String key;
         public String portrait;

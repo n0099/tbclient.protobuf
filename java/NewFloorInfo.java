@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class NewFloorInfo extends Message {
     public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
     public static final Integer DEFAULT_IS_FLOOR = 0;
@@ -13,7 +13,7 @@ public final class NewFloorInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer is_floor;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<NewFloorInfo> {
         public List<PbContent> content;
         public Integer is_floor;

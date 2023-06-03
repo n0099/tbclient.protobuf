@@ -2,7 +2,7 @@ package tbclient.NewHottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class TopicDetail extends Message {
     public static final String DEFAULT_BG_IMAGE = "";
     public static final String DEFAULT_SHARE_PIC = "";
@@ -29,7 +29,7 @@ public final class TopicDetail extends Message {
     public static final Long DEFAULT_TOPIC_ID = 0L;
     public static final Long DEFAULT_DISCUSS_NUM = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TopicDetail> {
         public String bg_image;
         public Long discuss_num;

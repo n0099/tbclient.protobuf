@@ -2,31 +2,25 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import java.util.Collections;
-import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FeedFeedback extends Message {
     public static final String DEFAULT_BUTTON_TEXT = "";
     public static final String DEFAULT_COMMON_ID = "";
-    public static final List<FeedbackReason> DEFAULT_DISLIKE = Collections.emptyList();
     public static final String DEFAULT_TITLE = "";
     public static final String DEFAULT_TYPE = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String button_text;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String common_id;
-    @ProtoField(label = Message.Label.REPEATED, tag = 5)
-    public final List<FeedbackReason> dislike;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String type;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FeedFeedback> {
         public String button_text;
         public String common_id;
-        public List<FeedbackReason> dislike;
         public String title;
         public String type;
 
@@ -42,7 +36,6 @@ public final class FeedFeedback extends Message {
             this.title = feedFeedback.title;
             this.button_text = feedFeedback.button_text;
             this.common_id = feedFeedback.common_id;
-            this.dislike = Message.copyOf(feedFeedback.dislike);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -76,15 +69,9 @@ public final class FeedFeedback extends Message {
             String str4 = builder.common_id;
             if (str4 == null) {
                 this.common_id = "";
-            } else {
-                this.common_id = str4;
-            }
-            List<FeedbackReason> list = builder.dislike;
-            if (list == null) {
-                this.dislike = DEFAULT_DISLIKE;
                 return;
             } else {
-                this.dislike = Message.immutableCopyOf(list);
+                this.common_id = str4;
                 return;
             }
         }
@@ -92,6 +79,5 @@ public final class FeedFeedback extends Message {
         this.title = builder.title;
         this.button_text = builder.button_text;
         this.common_id = builder.common_id;
-        this.dislike = Message.immutableCopyOf(builder.dislike);
     }
 }

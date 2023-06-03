@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class RecreationRankInfo extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_RANK_COLOR = "";
@@ -26,7 +26,7 @@ public final class RecreationRankInfo extends Message {
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer show_type;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecreationRankInfo> {
         public String icon;
         public String rank_color;

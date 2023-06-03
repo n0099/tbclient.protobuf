@@ -2,13 +2,13 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class CommonForum extends Message {
     public static final String DEFAULT_COMMON_FORUM = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String common_forum;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<CommonForum> {
         public String common_forum;
 

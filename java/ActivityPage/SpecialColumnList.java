@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class SpecialColumnList extends Message {
     public static final Integer DEFAULT_FLOOR_POSITION = 0;
     public static final List<SpecialColumn> DEFAULT_ITEM_LIST = Collections.emptyList();
@@ -16,7 +16,7 @@ public final class SpecialColumnList extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String special_column_name;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SpecialColumnList> {
         public Integer floor_position;
         public List<SpecialColumn> item_list;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FeatureCardGame extends Message {
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -19,7 +19,7 @@ public final class FeatureCardGame extends Message {
     public static final Integer DEFAULT_TYPE = 0;
     public static final Integer DEFAULT_FLOOR = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FeatureCardGame> {
         public Integer floor;
         public List<FeatureCardGameSubNode> sub_nodes;

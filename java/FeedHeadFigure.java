@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FeedHeadFigure extends Message {
     public static final String DEFAULT_BG_TYPE = "";
     public static final String DEFAULT_BG_VALUE = "";
@@ -17,7 +17,7 @@ public final class FeedHeadFigure extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String img_url;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FeedHeadFigure> {
         public String bg_type;
         public String bg_value;

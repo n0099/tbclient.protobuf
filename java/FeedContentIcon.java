@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FeedContentIcon extends Message {
     public static final String DEFAULT_DAY_URL = "";
     public static final String DEFAULT_NIGHT_URL = "";
@@ -17,7 +17,7 @@ public final class FeedContentIcon extends Message {
     public static final Integer DEFAULT_WIDTH = 0;
     public static final Integer DEFAULT_HEIGHT = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FeedContentIcon> {
         public String day_url;
         public Integer height;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class CustomGrid extends Message {
     public static final String DEFAULT_ACTION_URI = "";
     public static final String DEFAULT_DESC = "";
@@ -29,7 +29,7 @@ public final class CustomGrid extends Message {
     public static final Integer DEFAULT_TYPE = 0;
     public static final Long DEFAULT_RED_POINT_VERSION = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<CustomGrid> {
         public Integer action_type;
         public String action_uri;

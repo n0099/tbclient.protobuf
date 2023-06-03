@@ -2,7 +2,7 @@ package tbclient.HomePage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class GodInfoItem extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_GOD_INTRO = "";
@@ -20,7 +20,7 @@ public final class GodInfoItem extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String user_name;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<GodInfoItem> {
         public String avatar;
         public String god_intro;

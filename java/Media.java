@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class Media extends Message {
     public static final String DEFAULT_BIG_PIC = "";
     public static final String DEFAULT_BSIZE = "";
@@ -74,7 +74,7 @@ public final class Media extends Message {
     public static final Integer DEFAULT_SHOW_ORIGINAL_BTN = 0;
     public static final Integer DEFAULT_IS_BLOCKED_PIC = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Media> {
         public String big_pic;
         public String bsize;

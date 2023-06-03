@@ -2,7 +2,7 @@ package tbclient.Loop;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ChatroomGuide extends Message {
     public static final Integer DEFAULT_HOT_NUM = 0;
     @ProtoField(tag = 2)
@@ -12,7 +12,7 @@ public final class ChatroomGuide extends Message {
     @ProtoField(tag = 3)
     public final ChatroomGuideConfig manual_config;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ChatroomGuide> {
         public ChatroomGuideConfig hot_config;
         public Integer hot_num;

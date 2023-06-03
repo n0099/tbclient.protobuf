@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.RecomTopicList;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class HotTopic extends Message {
     public static final Integer DEFAULT_FLOOR_POSITION = 0;
     public static final List<RecomTopicList> DEFAULT_TOPIC_LIST = Collections.emptyList();
@@ -14,7 +14,7 @@ public final class HotTopic extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<RecomTopicList> topic_list;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<HotTopic> {
         public Integer floor_position;
         public List<RecomTopicList> topic_list;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class Novel extends Message {
     public static final String DEFAULT_ANDROID_DETAIL_PARAMS = "";
     public static final String DEFAULT_ANDROID_LAST_CHARPTER_PARAMS = "";
@@ -56,7 +56,7 @@ public final class Novel extends Message {
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String last_chapter_update_time;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Novel> {
         public String android_detail_params;
         public String android_last_charpter_params;

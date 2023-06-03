@@ -2,7 +2,7 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class AddPost extends Message {
     public static final String DEFAULT_LAST_ADDITION_CONTENT = "";
     public static final String DEFAULT_POST_ID = "";
@@ -26,7 +26,7 @@ public final class AddPost extends Message {
     public static final Integer DEFAULT_TOTAL_COUNT = 0;
     public static final Integer DEFAULT_LAST_ADDITION_TIME = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<AddPost> {
         public Integer already_count;
         public Integer create_time;

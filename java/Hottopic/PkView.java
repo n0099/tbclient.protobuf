@@ -2,7 +2,7 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class PkView extends Message {
     public static final String DEFAULT_PK_DESC = "";
     public static final String DEFAULT_PK_ICON = "";
@@ -23,7 +23,7 @@ public final class PkView extends Message {
     public static final Integer DEFAULT_PK_INDEX = 0;
     public static final Integer DEFAULT_HAS_CLICKED = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PkView> {
         public Integer has_clicked;
         public String pk_desc;

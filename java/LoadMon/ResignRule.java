@@ -2,7 +2,7 @@ package tbclient.LoadMon;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ResignRule extends Message {
     public static final Integer DEFAULT_CARD_NUM = 0;
     public static final String DEFAULT_RANGE = "";
@@ -11,7 +11,7 @@ public final class ResignRule extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String range;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ResignRule> {
         public Integer card_num;
         public String range;

@@ -2,7 +2,7 @@ package tbclient.AddTaskScores;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_FINISH = 0;
     public static final Integer DEFAULT_SCORES = 0;
@@ -11,7 +11,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer scores;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer is_finish;
         public Integer scores;

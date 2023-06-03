@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeCardPropMain;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ThemeCardInMain extends Message {
     public static final String DEFAULT_CARD_CATEGORY = "";
     public static final List<ThemeCardPropMain> DEFAULT_PROPS = Collections.emptyList();
@@ -14,7 +14,7 @@ public final class ThemeCardInMain extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThemeCardPropMain> props;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ThemeCardInMain> {
         public String card_category;
         public List<ThemeCardPropMain> props;

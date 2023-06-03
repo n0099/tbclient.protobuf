@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class BawuRoleInfoPub extends Message {
     public static final String DEFAULT_LEVEL_NAME = "";
     public static final String DEFAULT_NAME_SHOW = "";
@@ -34,7 +34,7 @@ public final class BawuRoleInfoPub extends Message {
     public static final Integer DEFAULT_ROLE_ID = 0;
     public static final Integer DEFAULT_USER_LEVEL = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<BawuRoleInfoPub> {
         public BaijiahaoInfo baijiahao_info;
         public Long forum_id;

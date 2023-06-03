@@ -2,7 +2,7 @@ package tbclient.GetGameDetailNew;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class RankItem extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_USER_NAME = "";
@@ -17,7 +17,7 @@ public final class RankItem extends Message {
     public static final Long DEFAULT_USER_ID = 0L;
     public static final Long DEFAULT_GRADE = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RankItem> {
         public Long grade;
         public String portrait;

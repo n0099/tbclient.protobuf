@@ -2,7 +2,7 @@ package tbclient.GetReportType;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ReportType extends Message {
     public static final Integer DEFAULT_TYPE_ID = 0;
     public static final String DEFAULT_TYPE_TEXT = "";
@@ -11,7 +11,7 @@ public final class ReportType extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String type_text;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ReportType> {
         public Integer type_id;
         public String type_text;

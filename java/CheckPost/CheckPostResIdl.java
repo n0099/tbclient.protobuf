@@ -3,14 +3,14 @@ package tbclient.CheckPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class CheckPostResIdl extends Message {
     @ProtoField(tag = 1)
     public final ResData data;
     @ProtoField(tag = 2)
     public final Error error;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<CheckPostResIdl> {
         public ResData data;
         public Error error;

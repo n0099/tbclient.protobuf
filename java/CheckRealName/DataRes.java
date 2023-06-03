@@ -1,10 +1,10 @@
 package tbclient.CheckRealName;
 
 import com.squareup.wire.Message;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Builder() {
         }

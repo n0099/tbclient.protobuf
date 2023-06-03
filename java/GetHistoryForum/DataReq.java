@@ -3,21 +3,21 @@ package tbclient.GetHistoryForum;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_HISTORY = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1198common;
+    public final CommonReq f1344common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String history;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1199common;
+        public CommonReq f1345common;
         public String history;
 
         public Builder() {
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1199common = dataReq.f1198common;
+            this.f1345common = dataReq.f1344common;
             this.history = dataReq.history;
         }
 
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1198common = builder.f1199common;
+            this.f1344common = builder.f1345common;
             String str = builder.history;
             if (str == null) {
                 this.history = "";
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1198common = builder.f1199common;
+        this.f1344common = builder.f1345common;
         this.history = builder.history;
     }
 }

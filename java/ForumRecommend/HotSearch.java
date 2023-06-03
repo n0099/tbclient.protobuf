@@ -2,7 +2,7 @@ package tbclient.ForumRecommend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class HotSearch extends Message {
     public static final String DEFAULT_SEARCH_TITLE = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -10,7 +10,7 @@ public final class HotSearch extends Message {
     @ProtoField(tag = 2)
     public final SearchValue search_value;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<HotSearch> {
         public String search_title;
         public SearchValue search_value;

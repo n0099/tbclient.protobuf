@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class OrderList extends Message {
     public static final String DEFAULT_ACTIVITY_DESC = "";
     public static final String DEFAULT_ACTIVITY_URL = "";
@@ -50,7 +50,7 @@ public final class OrderList extends Message {
     public static final Long DEFAULT_SCORES = 0L;
     public static final Integer DEFAULT_PRICE_TYPE = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<OrderList> {
         public String activity_desc;
         public String activity_url;

@@ -2,13 +2,13 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ForumButton extends Message {
     public static final Integer DEFAULT_IS_BLUEV = 0;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer is_blueV;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ForumButton> {
         public Integer is_blueV;
 

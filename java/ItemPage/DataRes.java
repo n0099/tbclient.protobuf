@@ -10,7 +10,7 @@ import tbclient.ItemGameInfo;
 import tbclient.ItemInfo;
 import tbclient.RecommendForumInfo;
 import tbclient.ThreadInfo;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_LINK = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 6)
@@ -43,7 +43,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_DISCUSSION_ID = 0;
     public static final Integer DEFAULT_HAS_TORNADO = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<AlbumElement> album_list;
         public Integer discussion_id;

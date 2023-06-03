@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class PostTopic extends Message {
     public static final String DEFAULT_CONTENT_TOPIC = "";
     public static final String DEFAULT_TITLE_TOPIC = "";
@@ -11,7 +11,7 @@ public final class PostTopic extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title_topic;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PostTopic> {
         public String content_topic;
         public String title_topic;

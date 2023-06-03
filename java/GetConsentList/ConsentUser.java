@@ -2,7 +2,7 @@ package tbclient.GetConsentList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ConsentUser extends Message {
     public static final String DEFAULT_AUTHOR_NAME = "";
     public static final String DEFAULT_AUTHOR_NAME_SHOW = "";
@@ -38,7 +38,7 @@ public final class ConsentUser extends Message {
     public static final Integer DEFAULT_CREATE_TIME = 0;
     public static final Long DEFAULT_GID = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ConsentUser> {
         public Long author_id;
         public String author_name;

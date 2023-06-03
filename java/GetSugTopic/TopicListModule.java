@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class TopicListModule extends Message {
     public static final String DEFAULT_MODULE_TITLE = "";
     public static final List<TopicList> DEFAULT_TOPIC_LIST = Collections.emptyList();
@@ -13,7 +13,7 @@ public final class TopicListModule extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<TopicList> topic_list;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TopicListModule> {
         public String module_title;
         public List<TopicList> topic_list;

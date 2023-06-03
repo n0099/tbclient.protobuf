@@ -3,14 +3,14 @@ package tbclient.ExcZan;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer action;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1140common;
+    public final CommonReq f1286common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long excid;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
@@ -22,12 +22,12 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_POST_ID = 0L;
     public static final Integer DEFAULT_ACTION = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer action;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1141common;
+        public CommonReq f1287common;
         public Long excid;
         public Long post_id;
         public Long thread_id;
@@ -40,7 +40,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1141common = dataReq.f1140common;
+            this.f1287common = dataReq.f1286common;
             this.excid = dataReq.excid;
             this.thread_id = dataReq.thread_id;
             this.post_id = dataReq.post_id;
@@ -57,7 +57,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1140common = builder.f1141common;
+            this.f1286common = builder.f1287common;
             Long l = builder.excid;
             if (l == null) {
                 this.excid = DEFAULT_EXCID;
@@ -85,7 +85,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1140common = builder.f1141common;
+        this.f1286common = builder.f1287common;
         this.excid = builder.excid;
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;

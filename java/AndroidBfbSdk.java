@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class AndroidBfbSdk extends Message {
     public static final String DEFAULT_ACTIVITY_NO = "";
     public static final String DEFAULT_ORDER_NO = "";
@@ -26,7 +26,7 @@ public final class AndroidBfbSdk extends Message {
     public static final Integer DEFAULT_SP_NO = 0;
     public static final Integer DEFAULT_SIGN_METHOD = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<AndroidBfbSdk> {
         public String activity_no;
         public String order_no;

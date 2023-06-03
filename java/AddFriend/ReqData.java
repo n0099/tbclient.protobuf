@@ -3,7 +3,7 @@ package tbclient.AddFriend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ReqData extends Message {
     public static final Long DEFAULT_FRIEND_ID = 0L;
     public static final String DEFAULT_MESSAGE = "";
@@ -11,7 +11,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1096common;
+    public final CommonReq f1242common;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
     public final Long friend_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -19,11 +19,11 @@ public final class ReqData extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String st_type;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1097common;
+        public CommonReq f1243common;
         public Long friend_id;
         public String message;
         public String st_type;
@@ -39,7 +39,7 @@ public final class ReqData extends Message {
             this.friend_id = reqData.friend_id;
             this.message = reqData.message;
             this.st_type = reqData.st_type;
-            this.f1097common = reqData.f1096common;
+            this.f1243common = reqData.f1242common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -70,12 +70,12 @@ public final class ReqData extends Message {
             } else {
                 this.st_type = str2;
             }
-            this.f1096common = builder.f1097common;
+            this.f1242common = builder.f1243common;
             return;
         }
         this.friend_id = builder.friend_id;
         this.message = builder.message;
         this.st_type = builder.st_type;
-        this.f1096common = builder.f1097common;
+        this.f1242common = builder.f1243common;
     }
 }

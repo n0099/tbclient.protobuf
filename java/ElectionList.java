@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ElectionList extends Message {
     public static final String DEFAULT_APPLY_DECLARATION = "";
     public static final String DEFAULT_NAME_SHOW = "";
@@ -47,7 +47,7 @@ public final class ElectionList extends Message {
     public static final Integer DEFAULT_IS_CHEAT = 0;
     public static final Integer DEFAULT_IS_PASS_AUDIT = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ElectionList> {
         public Integer agree_num;
         public String apply_declaration;

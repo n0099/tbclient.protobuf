@@ -2,7 +2,7 @@ package tbclient.GetVipInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class VipPayMemberInfo extends Message {
     public static final String DEFAULT_PIC_URL = "";
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
@@ -17,7 +17,7 @@ public final class VipPayMemberInfo extends Message {
     public static final Integer DEFAULT_END_TIME = 0;
     public static final Integer DEFAULT_NOW_TIME = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VipPayMemberInfo> {
         public Integer end_time;
         public Integer now_time;

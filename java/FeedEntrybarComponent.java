@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FeedEntrybarComponent extends Message {
     public static final String DEFAULT_SCHEMA = "";
     public static final String DEFAULT_TEXT = "";
@@ -11,7 +11,7 @@ public final class FeedEntrybarComponent extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String text;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FeedEntrybarComponent> {
         public String schema;
         public String text;

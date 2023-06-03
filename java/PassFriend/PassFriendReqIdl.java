@@ -2,12 +2,12 @@ package tbclient.PassFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class PassFriendReqIdl extends Message {
     @ProtoField(tag = 1)
     public final ReqData data;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PassFriendReqIdl> {
         public ReqData data;
 

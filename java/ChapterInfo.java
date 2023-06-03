@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ChapterInfo extends Message {
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -46,7 +46,7 @@ public final class ChapterInfo extends Message {
     public static final Integer DEFAULT_CHAPTER_NO = 0;
     public static final Long DEFAULT_THREAD_ID = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ChapterInfo> {
         public Long chapter_id;
         public Integer chapter_no;

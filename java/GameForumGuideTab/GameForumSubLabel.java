@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class GameForumSubLabel extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final List<GameForumSubLabel> DEFAULT_SUB_LABEL_LIST = Collections.emptyList();
@@ -16,7 +16,7 @@ public final class GameForumSubLabel extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String sub_tab_name;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<GameForumSubLabel> {
         public Integer id;
         public List<GameForumSubLabel> sub_label_list;

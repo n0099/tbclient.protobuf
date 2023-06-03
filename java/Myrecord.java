@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class Myrecord extends Message {
     public static final String DEFAULT_APPLY_DECLARATION = "";
     public static final String DEFAULT_NAME_SHOW = "";
@@ -41,7 +41,7 @@ public final class Myrecord extends Message {
     public static final Integer DEFAULT_POST_NUM = 0;
     public static final Long DEFAULT_TID = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Myrecord> {
         public Integer agree_num;
         public String apply_declaration;

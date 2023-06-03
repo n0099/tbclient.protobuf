@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class HotLiveWithCategory extends Message {
     public static final String DEFAULT_BITMAP_WH_RATIO = "";
     public static final String DEFAULT_ENTRY_NAME = "";
@@ -19,23 +19,19 @@ public final class HotLiveWithCategory extends Message {
     public final List<ThreadInfo> live;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer live_tab_type;
-    @ProtoField(label = Message.Label.REPEATED, tag = 7, type = Message.Datatype.STRING)
-    public final List<String> sub_type_list;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer tab_id;
     public static final Integer DEFAULT_TAB_ID = 0;
     public static final List<ThreadInfo> DEFAULT_LIVE = Collections.emptyList();
     public static final Integer DEFAULT_LIVE_TAB_TYPE = 0;
-    public static final List<String> DEFAULT_SUB_TYPE_LIST = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<HotLiveWithCategory> {
         public String bitmap_wh_ratio;
         public String entry_name;
         public String label_name;
         public List<ThreadInfo> live;
         public Integer live_tab_type;
-        public List<String> sub_type_list;
         public Integer tab_id;
 
         public Builder() {
@@ -52,7 +48,6 @@ public final class HotLiveWithCategory extends Message {
             this.live = Message.copyOf(hotLiveWithCategory.live);
             this.label_name = hotLiveWithCategory.label_name;
             this.live_tab_type = hotLiveWithCategory.live_tab_type;
-            this.sub_type_list = Message.copyOf(hotLiveWithCategory.sub_type_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -98,15 +93,9 @@ public final class HotLiveWithCategory extends Message {
             Integer num2 = builder.live_tab_type;
             if (num2 == null) {
                 this.live_tab_type = DEFAULT_LIVE_TAB_TYPE;
-            } else {
-                this.live_tab_type = num2;
-            }
-            List<String> list2 = builder.sub_type_list;
-            if (list2 == null) {
-                this.sub_type_list = DEFAULT_SUB_TYPE_LIST;
                 return;
             } else {
-                this.sub_type_list = Message.immutableCopyOf(list2);
+                this.live_tab_type = num2;
                 return;
             }
         }
@@ -116,6 +105,5 @@ public final class HotLiveWithCategory extends Message {
         this.live = Message.immutableCopyOf(builder.live);
         this.label_name = builder.label_name;
         this.live_tab_type = builder.live_tab_type;
-        this.sub_type_list = Message.immutableCopyOf(builder.sub_type_list);
     }
 }

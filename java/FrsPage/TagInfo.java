@@ -3,7 +3,7 @@ package tbclient.FrsPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.RecomTagInfo;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class TagInfo extends Message {
     public static final String DEFAULT_FIRST_CATEGORY = "";
     public static final String DEFAULT_TAG_NAME = "";
@@ -41,7 +41,7 @@ public final class TagInfo extends Message {
     public static final Integer DEFAULT_RELATION_WEIGHT = 0;
     public static final Integer DEFAULT_OP_TIME = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TagInfo> {
         public Integer color;
         public String first_category;

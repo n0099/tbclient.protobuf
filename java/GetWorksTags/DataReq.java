@@ -3,24 +3,24 @@ package tbclient.GetWorksTags;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_FIRST_CLASS = "";
     public static final String DEFAULT_SECOND_CLASS = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1276common;
+    public final CommonReq f1422common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String first_class;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String second_class;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1277common;
+        public CommonReq f1423common;
         public String first_class;
         public String second_class;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1277common = dataReq.f1276common;
+            this.f1423common = dataReq.f1422common;
             this.first_class = dataReq.first_class;
             this.second_class = dataReq.second_class;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1276common = builder.f1277common;
+            this.f1422common = builder.f1423common;
             String str = builder.first_class;
             if (str == null) {
                 this.first_class = "";
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1276common = builder.f1277common;
+        this.f1422common = builder.f1423common;
         this.first_class = builder.first_class;
         this.second_class = builder.second_class;
     }

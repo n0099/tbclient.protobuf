@@ -10,7 +10,7 @@ import tbclient.FrequentlyForumInfo;
 import tbclient.FrsTabInfo;
 import tbclient.PrivatePopInfo;
 import tbclient.RecommendForumInfo;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_MSIGN_TEXT = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -69,7 +69,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_SORT_TYPE = 0;
     public static final List<FrsTabInfo> DEFAULT_NAV_TAB_INFO = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Banner> banner;
         public ForumCreateInfo forum_create_info;

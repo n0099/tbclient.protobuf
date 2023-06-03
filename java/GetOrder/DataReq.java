@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 import tbclient.Wares;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CLICK_ZONE = "";
     public static final String DEFAULT_MOBILE = "";
@@ -17,15 +17,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1224common;
+    public final CommonReq f1370common;
     @ProtoField(tag = 13, type = Message.Datatype.INT64)
     public final Long from_scene;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
     public final Integer is_autopay;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer is_left;
-    @ProtoField(tag = 11, type = Message.Datatype.UINT64)
-    public final Long live_id;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String mobile;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -43,19 +41,17 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PAY_TYPE = 0;
     public static final Integer DEFAULT_IS_LEFT = 0;
     public static final Integer DEFAULT_IS_AUTOPAY = 0;
-    public static final Long DEFAULT_LIVE_ID = 0L;
     public static final Long DEFAULT_FROM_SCENE = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String click_zone;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1225common;
+        public CommonReq f1371common;
         public Long from_scene;
         public Integer is_autopay;
         public Integer is_left;
-        public Long live_id;
         public String mobile;
         public String order_url;
         public Integer pay_type;
@@ -72,7 +68,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1225common = dataReq.f1224common;
+            this.f1371common = dataReq.f1370common;
             this.pay_type = dataReq.pay_type;
             this.is_left = dataReq.is_left;
             this.order_url = dataReq.order_url;
@@ -82,7 +78,6 @@ public final class DataReq extends Message {
             this.payment_pos_key = dataReq.payment_pos_key;
             this.refer_page = dataReq.refer_page;
             this.click_zone = dataReq.click_zone;
-            this.live_id = dataReq.live_id;
             this.wallet_sdk_ua = dataReq.wallet_sdk_ua;
             this.from_scene = dataReq.from_scene;
         }
@@ -97,7 +92,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1224common = builder.f1225common;
+            this.f1370common = builder.f1371common;
             Integer num = builder.pay_type;
             if (num == null) {
                 this.pay_type = DEFAULT_PAY_TYPE;
@@ -147,28 +142,22 @@ public final class DataReq extends Message {
             } else {
                 this.click_zone = str5;
             }
-            Long l = builder.live_id;
-            if (l == null) {
-                this.live_id = DEFAULT_LIVE_ID;
-            } else {
-                this.live_id = l;
-            }
             String str6 = builder.wallet_sdk_ua;
             if (str6 == null) {
                 this.wallet_sdk_ua = "";
             } else {
                 this.wallet_sdk_ua = str6;
             }
-            Long l2 = builder.from_scene;
-            if (l2 == null) {
+            Long l = builder.from_scene;
+            if (l == null) {
                 this.from_scene = DEFAULT_FROM_SCENE;
                 return;
             } else {
-                this.from_scene = l2;
+                this.from_scene = l;
                 return;
             }
         }
-        this.f1224common = builder.f1225common;
+        this.f1370common = builder.f1371common;
         this.pay_type = builder.pay_type;
         this.is_left = builder.is_left;
         this.order_url = builder.order_url;
@@ -178,7 +167,6 @@ public final class DataReq extends Message {
         this.payment_pos_key = builder.payment_pos_key;
         this.refer_page = builder.refer_page;
         this.click_zone = builder.click_zone;
-        this.live_id = builder.live_id;
         this.wallet_sdk_ua = builder.wallet_sdk_ua;
         this.from_scene = builder.from_scene;
     }

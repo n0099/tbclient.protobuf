@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FeedOriginComponent extends Message {
     public static final List<FeedContentResource> DEFAULT_ABSTRACT = Collections.emptyList();
     public static final String DEFAULT_SCHEMA = "";
@@ -19,7 +19,7 @@ public final class FeedOriginComponent extends Message {
     @ProtoField(tag = 3)
     public final VideoField video;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FeedOriginComponent> {
         public List<FeedContentResource> _abstract;
         public FeedItem item;

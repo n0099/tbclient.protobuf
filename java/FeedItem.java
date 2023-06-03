@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FeedItem extends Message {
     public static final List<FeedKV> DEFAULT_BUSINESS_INFO;
     public static final String DEFAULT_BUTTON_LINK = "";
@@ -31,7 +31,7 @@ public final class FeedItem extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 5, type = Message.Datatype.STRING)
     public final List<String> tags;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FeedItem> {
         public List<FeedKV> business_info;
         public String button_link;

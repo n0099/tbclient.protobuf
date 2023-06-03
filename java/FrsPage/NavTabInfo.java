@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.FrsTabInfo;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class NavTabInfo extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<FrsTabInfo> head;
@@ -17,7 +17,7 @@ public final class NavTabInfo extends Message {
     public static final List<FrsTabInfo> DEFAULT_MENU = Collections.emptyList();
     public static final List<FrsTabInfo> DEFAULT_HEAD = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<NavTabInfo> {
         public List<FrsTabInfo> head;
         public List<FrsTabInfo> menu;

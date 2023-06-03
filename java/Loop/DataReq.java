@@ -3,7 +3,7 @@ package tbclient.Loop;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_CHATROOM_NEW_MSG = "";
     public static final String DEFAULT_DATA_TYPE = "";
@@ -18,7 +18,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1296common;
+    public final CommonReq f1442common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String data_type;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -31,14 +31,14 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_CHATROOM_ID = 0L;
     public static final Integer DEFAULT_CHATROOM_MASK = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Long chatroom_id;
         public Integer chatroom_mask;
         public String chatroom_new_msg;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1297common;
+        public CommonReq f1443common;
         public String data_type;
         public Long fid;
         public String forum_name;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1297common = dataReq.f1296common;
+            this.f1443common = dataReq.f1442common;
             this.data_type = dataReq.data_type;
             this.chatroom_new_msg = dataReq.chatroom_new_msg;
             this.fid = dataReq.fid;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1296common = builder.f1297common;
+            this.f1442common = builder.f1443common;
             String str = builder.data_type;
             if (str == null) {
                 this.data_type = "";
@@ -118,7 +118,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1296common = builder.f1297common;
+        this.f1442common = builder.f1443common;
         this.data_type = builder.data_type;
         this.chatroom_new_msg = builder.chatroom_new_msg;
         this.fid = builder.fid;

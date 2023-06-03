@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class AdInfo extends Message {
     public static final String DEFAULT_AD_DESC = "";
     public static final String DEFAULT_AD_NAME = "";
@@ -31,7 +31,7 @@ public final class AdInfo extends Message {
     public static final Integer DEFAULT_AD_TYPE = 0;
     public static final List<Media> DEFAULT_MEDIA = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<AdInfo> {
         public String ad_desc;
         public String ad_name;

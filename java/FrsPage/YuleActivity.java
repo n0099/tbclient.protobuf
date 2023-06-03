@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class YuleActivity extends Message {
     public static final String DEFAULT_ACTIVITY_ALL_ICON = "";
     public static final String DEFAULT_ACTIVITY_HALF_ICON = "";
@@ -20,7 +20,7 @@ public final class YuleActivity extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String activity_url;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<YuleActivity> {
         public String activity_all_icon;
         public String activity_half_icon;

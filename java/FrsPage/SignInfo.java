@@ -3,7 +3,7 @@ package tbclient.FrsPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.ChatroomSignInfo;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class SignInfo extends Message {
     public static final Integer DEFAULT_HAS_CHATROOM_SIGN = 0;
     @ProtoField(tag = 4)
@@ -15,7 +15,7 @@ public final class SignInfo extends Message {
     @ProtoField(tag = 1)
     public final SignUser user_info;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SignInfo> {
         public ChatroomSignInfo chatroom_sign_info;
         public SignForum forum_info;

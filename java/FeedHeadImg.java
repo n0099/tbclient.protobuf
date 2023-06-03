@@ -2,34 +2,28 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-import java.util.Collections;
-import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FeedHeadImg extends Message {
     public static final String DEFAULT_CORNER_URL = "";
     public static final String DEFAULT_IMG_URL = "";
     public static final String DEFAULT_PENDANT_URL = "";
     public static final String DEFAULT_SCHEMA = "";
+    public static final Integer DEFAULT_SHAPE_TYPE = 0;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String corner_url;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String img_url;
-    @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.STRING)
-    public final List<String> masks;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String pendant_url;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String schema;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer shape_type;
-    public static final Integer DEFAULT_SHAPE_TYPE = 0;
-    public static final List<String> DEFAULT_MASKS = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FeedHeadImg> {
         public String corner_url;
         public String img_url;
-        public List<String> masks;
         public String pendant_url;
         public String schema;
         public Integer shape_type;
@@ -47,7 +41,6 @@ public final class FeedHeadImg extends Message {
             this.pendant_url = feedHeadImg.pendant_url;
             this.corner_url = feedHeadImg.corner_url;
             this.schema = feedHeadImg.schema;
-            this.masks = Message.copyOf(feedHeadImg.masks);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -87,15 +80,9 @@ public final class FeedHeadImg extends Message {
             String str4 = builder.schema;
             if (str4 == null) {
                 this.schema = "";
-            } else {
-                this.schema = str4;
-            }
-            List<String> list = builder.masks;
-            if (list == null) {
-                this.masks = DEFAULT_MASKS;
                 return;
             } else {
-                this.masks = Message.immutableCopyOf(list);
+                this.schema = str4;
                 return;
             }
         }
@@ -104,6 +91,5 @@ public final class FeedHeadImg extends Message {
         this.pendant_url = builder.pendant_url;
         this.corner_url = builder.corner_url;
         this.schema = builder.schema;
-        this.masks = Message.immutableCopyOf(builder.masks);
     }
 }

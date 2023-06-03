@@ -3,7 +3,7 @@ package tbclient.AdNewLog;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final Integer DEFAULT_DA_FROM = 0;
     public static final String DEFAULT_DA_LOCATE = "";
@@ -14,7 +14,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1094common;
+    public final CommonReq f1240common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer da_from;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -28,11 +28,11 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String token;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1095common;
+        public CommonReq f1241common;
         public Integer da_from;
         public String da_locate;
         public String da_type;
@@ -48,7 +48,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1095common = dataReq.f1094common;
+            this.f1241common = dataReq.f1240common;
             this.token = dataReq.token;
             this.da_locate = dataReq.da_locate;
             this.da_from = dataReq.da_from;
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1094common = builder.f1095common;
+            this.f1240common = builder.f1241common;
             String str = builder.token;
             if (str == null) {
                 this.token = "";
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1094common = builder.f1095common;
+        this.f1240common = builder.f1241common;
         this.token = builder.token;
         this.da_locate = builder.da_locate;
         this.da_from = builder.da_from;

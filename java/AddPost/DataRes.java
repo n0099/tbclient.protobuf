@@ -13,7 +13,7 @@ import tbclient.ThreadEasterEgg;
 import tbclient.Toast;
 import tbclient.VcodeInfo;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_COLOR_MSG = "";
     public static final String DEFAULT_EXT_MSG = "";
@@ -62,7 +62,7 @@ public final class DataRes extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String video_id;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Advertisement advertisement;
         public VcodeInfo anti;

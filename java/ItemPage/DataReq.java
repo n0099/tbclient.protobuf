@@ -3,12 +3,12 @@ package tbclient.ItemPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1290common;
+    public final CommonReq f1436common;
     @ProtoField(tag = 2, type = Message.Datatype.UINT32)
     public final Integer item_id;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -25,11 +25,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_DIP = 0;
     public static final Integer DEFAULT_Q_TYPE = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1291common;
+        public CommonReq f1437common;
         public Integer item_id;
         public Integer q_type;
         public Integer scr_dip;
@@ -44,7 +44,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1291common = dataReq.f1290common;
+            this.f1437common = dataReq.f1436common;
             this.item_id = dataReq.item_id;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
@@ -62,7 +62,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1290common = builder.f1291common;
+            this.f1436common = builder.f1437common;
             Integer num = builder.item_id;
             if (num == null) {
                 this.item_id = DEFAULT_ITEM_ID;
@@ -96,7 +96,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1290common = builder.f1291common;
+        this.f1436common = builder.f1437common;
         this.item_id = builder.item_id;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;

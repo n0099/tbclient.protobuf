@@ -51,6 +51,10 @@ public final class SimpleForum extends Message {
     public final String recommend_tip;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String second_class;
+    @ProtoField(tag = 22)
+    public final ForumShowInfo show_info;
+    @ProtoField(tag = 23)
+    public final SpritePBGuide sprite_pb_guide;
     @ProtoField(label = Message.Label.REPEATED, tag = 15)
     public final List<FrsTabInfo> tab_info;
     @ProtoField(tag = 19)
@@ -88,6 +92,8 @@ public final class SimpleForum extends Message {
         public Integer post_num;
         public String recommend_tip;
         public String second_class;
+        public ForumShowInfo show_info;
+        public SpritePBGuide sprite_pb_guide;
         public List<FrsTabInfo> tab_info;
         public ThemeColorInfo theme_color;
 
@@ -120,6 +126,8 @@ public final class SimpleForum extends Message {
             this.theme_color = simpleForum.theme_color;
             this.recommend_tip = simpleForum.recommend_tip;
             this.pendants = Message.copyOf(simpleForum.pendants);
+            this.show_info = simpleForum.show_info;
+            this.sprite_pb_guide = simpleForum.sprite_pb_guide;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -240,11 +248,12 @@ public final class SimpleForum extends Message {
             List<String> list2 = builder.pendants;
             if (list2 == null) {
                 this.pendants = DEFAULT_PENDANTS;
-                return;
             } else {
                 this.pendants = Message.immutableCopyOf(list2);
-                return;
             }
+            this.show_info = builder.show_info;
+            this.sprite_pb_guide = builder.sprite_pb_guide;
+            return;
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -267,5 +276,7 @@ public final class SimpleForum extends Message {
         this.theme_color = builder.theme_color;
         this.recommend_tip = builder.recommend_tip;
         this.pendants = Message.immutableCopyOf(builder.pendants);
+        this.show_info = builder.show_info;
+        this.sprite_pb_guide = builder.sprite_pb_guide;
     }
 }

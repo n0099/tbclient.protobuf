@@ -2,7 +2,7 @@ package tbclient.HomePage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class AppItem extends Message {
     public static final String DEFAULT_APP_ICON = "";
     public static final String DEFAULT_APP_LINK = "";
@@ -17,7 +17,7 @@ public final class AppItem extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer icon_type;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<AppItem> {
         public String app_icon;
         public String app_link;

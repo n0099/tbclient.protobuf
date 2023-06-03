@@ -3,21 +3,21 @@ package tbclient.DeleteTail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ReqData extends Message {
     public static final Integer DEFAULT_TAILID = 0;
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1132common;
+    public final CommonReq f1278common;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
     public final Integer tailId;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1133common;
+        public CommonReq f1279common;
         public Integer tailId;
 
         public Builder() {
@@ -29,7 +29,7 @@ public final class ReqData extends Message {
                 return;
             }
             this.tailId = reqData.tailId;
-            this.f1133common = reqData.f1132common;
+            this.f1279common = reqData.f1278common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -48,10 +48,10 @@ public final class ReqData extends Message {
             } else {
                 this.tailId = num;
             }
-            this.f1132common = builder.f1133common;
+            this.f1278common = builder.f1279common;
             return;
         }
         this.tailId = builder.tailId;
-        this.f1132common = builder.f1133common;
+        this.f1278common = builder.f1279common;
     }
 }

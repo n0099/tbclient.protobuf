@@ -2,7 +2,7 @@ package tbclient.GetForumLevelList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ForumLevelInfo extends Message {
     public static final Integer DEFAULT_ID = 0;
     public static final String DEFAULT_NAME = "";
@@ -11,7 +11,7 @@ public final class ForumLevelInfo extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ForumLevelInfo> {
         public Integer id;
         public String name;

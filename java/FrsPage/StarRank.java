@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class StarRank extends Message {
     public static final String DEFAULT_RANK_NAME = "";
     public static final String DEFAULT_URL = "";
@@ -31,7 +31,7 @@ public final class StarRank extends Message {
     public static final Integer DEFAULT_USER_CONTRI_SCORE = 0;
     public static final List<StarTaskInfo> DEFAULT_USER_TASK_INFO = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<StarRank> {
         public List<StarContriRecord> contri_record_list;
         public String rank_name;

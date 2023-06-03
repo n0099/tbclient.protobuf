@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer begin_id;
@@ -14,20 +14,20 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1270common;
+    public final CommonReq f1416common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer pn;
     public static final List<Integer> DEFAULT_CLASSID_LIST = Collections.emptyList();
     public static final Integer DEFAULT_BEGIN_ID = 0;
     public static final Integer DEFAULT_PN = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer begin_id;
         public List<Integer> classid_list;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1271common;
+        public CommonReq f1417common;
         public Integer pn;
 
         public Builder() {
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1271common = dataReq.f1270common;
+            this.f1417common = dataReq.f1416common;
             this.classid_list = Message.copyOf(dataReq.classid_list);
             this.begin_id = dataReq.begin_id;
             this.pn = dataReq.pn;
@@ -54,7 +54,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1270common = builder.f1271common;
+            this.f1416common = builder.f1417common;
             List<Integer> list = builder.classid_list;
             if (list == null) {
                 this.classid_list = DEFAULT_CLASSID_LIST;
@@ -76,7 +76,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1270common = builder.f1271common;
+        this.f1416common = builder.f1417common;
         this.classid_list = Message.immutableCopyOf(builder.classid_list);
         this.begin_id = builder.begin_id;
         this.pn = builder.pn;

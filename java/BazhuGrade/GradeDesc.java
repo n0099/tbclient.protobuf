@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class GradeDesc extends Message {
     public static final String DEFAULT_GRADE = "";
     public static final Integer DEFAULT_POINT = 0;
@@ -16,7 +16,7 @@ public final class GradeDesc extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<GradeRight> rights;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<GradeDesc> {
         public String grade;
         public Integer point;

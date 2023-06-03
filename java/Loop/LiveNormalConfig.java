@@ -2,7 +2,7 @@ package tbclient.Loop;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class LiveNormalConfig extends Message {
     public static final String DEFAULT_ICON_SCHEME = "";
     public static final String DEFAULT_ICON_URL_DAY = "";
@@ -17,7 +17,7 @@ public final class LiveNormalConfig extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer show_page;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<LiveNormalConfig> {
         public String icon_scheme;
         public String icon_url_day;

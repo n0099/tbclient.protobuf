@@ -7,7 +7,7 @@ import java.util.List;
 import tbclient.ForumMember;
 import tbclient.MemberGroupInfo;
 import tbclient.PriManagerApplyInfo;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     @ProtoField(tag = 2)
     public final ForumMember forum_member_info;
@@ -27,7 +27,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
     public static final Integer DEFAULT_IS_BAWUAPPLY_SHOW = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ForumMember forum_member_info;
         public Integer is_bawuapply_show;

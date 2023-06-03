@@ -5,13 +5,13 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.Lbs;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final List<Lbs> DEFAULT_POI_INFO = Collections.emptyList();
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
     public final List<Lbs> poi_info;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Lbs> poi_info;
 

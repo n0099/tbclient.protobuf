@@ -3,7 +3,7 @@ package tbclient.GeneralTabList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_AD_BEAR_CONTEXT = "";
     public static final String DEFAULT_AD_BEAR_SID = "";
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1156common;
+    public final CommonReq f1302common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
     public static final Double DEFAULT_AD_BEAR_SID_PRICE = Double.valueOf(0.0d);
     public static final Integer DEFAULT_REQUEST_TIMES = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String ad_bear_context;
         public String ad_bear_sid;
@@ -75,7 +75,7 @@ public final class DataReq extends Message {
         public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1157common;
+        public CommonReq f1303common;
         public Long forum_id;
         public Integer has_ad_bear;
         public Integer is_default_navtab;
@@ -100,7 +100,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1157common = dataReq.f1156common;
+            this.f1303common = dataReq.f1302common;
             this.tab_id = dataReq.tab_id;
             this.forum_id = dataReq.forum_id;
             this.pn = dataReq.pn;
@@ -132,7 +132,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1156common = builder.f1157common;
+            this.f1302common = builder.f1303common;
             Integer num = builder.tab_id;
             if (num == null) {
                 this.tab_id = DEFAULT_TAB_ID;
@@ -250,7 +250,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1156common = builder.f1157common;
+        this.f1302common = builder.f1303common;
         this.tab_id = builder.tab_id;
         this.forum_id = builder.forum_id;
         this.pn = builder.pn;

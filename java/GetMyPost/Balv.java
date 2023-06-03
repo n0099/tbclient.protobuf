@@ -2,7 +2,7 @@ package tbclient.GetMyPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class Balv extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer days_tofree;
@@ -14,7 +14,7 @@ public final class Balv extends Message {
     public static final Integer DEFAULT_IS_BLOCK = 0;
     public static final Integer DEFAULT_DAYS_TOFREE = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Balv> {
         public Integer days_tofree;
         public Integer is_black;

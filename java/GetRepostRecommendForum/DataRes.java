@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.SimpleForum;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_RECOMMEND_EXT = "";
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
@@ -17,7 +17,7 @@ public final class DataRes extends Message {
     public static final List<SimpleForum> DEFAULT_RECOMMEND_FORUM_LIST = Collections.emptyList();
     public static final Integer DEFAULT_PRIV_THREAD = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public Integer priv_thread;
         public String recommend_ext;

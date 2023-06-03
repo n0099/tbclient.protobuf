@@ -38,7 +38,7 @@ import tbclient.User;
 import tbclient.VitalityInfo;
 import tbclient.WindowToast;
 import tbclient.ZhiBoInfoTW;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_AD_SAMPLE_MAP_KEY = "";
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
@@ -320,7 +320,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_BAWU_UNREAD_NOTICE_NUM = 0;
     public static final Integer DEFAULT_IS_MEMBER_BROADCAST_FORUM = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ActivityConfig activity_config;
         public ActivityHead activityhead;

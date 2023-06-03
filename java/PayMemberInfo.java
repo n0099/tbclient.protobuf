@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class PayMemberInfo extends Message {
     public static final String DEFAULT_EXPIRE_REMIND = "";
     public static final String DEFAULT_PIC_URL = "";
@@ -20,7 +20,7 @@ public final class PayMemberInfo extends Message {
     public static final Integer DEFAULT_PROPS_ID = 0;
     public static final Integer DEFAULT_END_TIME = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PayMemberInfo> {
         public Integer end_time;
         public String expire_remind;

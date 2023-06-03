@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class GoodsInfo extends Message {
     public static final String DEFAULT_AD_SOURCE = "";
     public static final String DEFAULT_BRAND_ICON = "";
@@ -92,7 +92,7 @@ public final class GoodsInfo extends Message {
     public static final Integer DEFAULT_HEIGHT = 0;
     public static final Integer DEFAULT_LABEL_MEASURE = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<GoodsInfo> {
         public String ad_source;
         public String brand_icon;

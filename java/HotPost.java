@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class HotPost extends Message {
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_USER_NAME = "";
@@ -36,7 +36,7 @@ public final class HotPost extends Message {
     public static final Integer DEFAULT_CREATE_TIME = 0;
     public static final Integer DEFAULT_FLOOR = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<HotPost> {
         public List<PbContent> content;
         public Integer create_time;

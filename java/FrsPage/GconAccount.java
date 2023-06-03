@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class GconAccount extends Message {
     public static final Integer DEFAULT_HAS_ACCOUNT = 0;
     public static final String DEFAULT_MENU_NAME = "";
@@ -11,7 +11,7 @@ public final class GconAccount extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String menu_name;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<GconAccount> {
         public Integer has_account;
         public String menu_name;

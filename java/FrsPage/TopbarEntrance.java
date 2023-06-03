@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class TopbarEntrance extends Message {
     public static final String DEFAULT_GUIDE_TIP_FIRST_TEXT = "";
     public static final String DEFAULT_GUIDE_TIP_TEXT = "";
@@ -14,7 +14,7 @@ public final class TopbarEntrance extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String jump_url;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TopbarEntrance> {
         public String guide_tip_first_text;
         public String guide_tip_text;

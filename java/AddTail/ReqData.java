@@ -3,7 +3,7 @@ package tbclient.AddTail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ReqData extends Message {
     public static final String DEFAULT_FONTCOLOR = "";
     public static final String DEFAULT_FONTKEYNAME = "";
@@ -11,7 +11,7 @@ public final class ReqData extends Message {
     @ProtoField(tag = 4)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1104common;
+    public final CommonReq f1250common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String fontColor;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -19,11 +19,11 @@ public final class ReqData extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String tailContent;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ReqData> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1105common;
+        public CommonReq f1251common;
         public String fontColor;
         public String fontKeyName;
         public String tailContent;
@@ -39,7 +39,7 @@ public final class ReqData extends Message {
             this.tailContent = reqData.tailContent;
             this.fontColor = reqData.fontColor;
             this.fontKeyName = reqData.fontKeyName;
-            this.f1105common = reqData.f1104common;
+            this.f1251common = reqData.f1250common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -70,12 +70,12 @@ public final class ReqData extends Message {
             } else {
                 this.fontKeyName = str3;
             }
-            this.f1104common = builder.f1105common;
+            this.f1250common = builder.f1251common;
             return;
         }
         this.tailContent = builder.tailContent;
         this.fontColor = builder.fontColor;
         this.fontKeyName = builder.fontKeyName;
-        this.f1104common = builder.f1105common;
+        this.f1250common = builder.f1251common;
     }
 }

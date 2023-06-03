@@ -2,7 +2,7 @@ package tbclient.GetForumClassList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class RecommendForumClass extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final Long DEFAULT_FORUM_CLASS_ID = 0L;
@@ -26,7 +26,7 @@ public final class RecommendForumClass extends Message {
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecommendForumClass> {
         public String _abstract;
         public Long forum_class_id;

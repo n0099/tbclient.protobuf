@@ -2,7 +2,7 @@ package tbclient.GetMyPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class Media extends Message {
     public static final String DEFAULT_PIC_URL = "";
     public static final Integer DEFAULT_TYPE = 0;
@@ -11,7 +11,7 @@ public final class Media extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer type;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Media> {
         public String pic_url;
         public Integer type;

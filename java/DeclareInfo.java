@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DeclareInfo extends Message {
     public static final String DEFAULT_DECLARE_TEXT = "";
     public static final String DEFAULT_DECLARE_URL = "";
@@ -20,7 +20,7 @@ public final class DeclareInfo extends Message {
     public static final Long DEFAULT_DECLARE_NUM = 0L;
     public static final Integer DEFAULT_IS_DECLARE = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DeclareInfo> {
         public Integer declare_id;
         public Long declare_num;

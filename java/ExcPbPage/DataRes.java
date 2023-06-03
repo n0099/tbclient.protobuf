@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.Post;
 import tbclient.User;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final List<Post> DEFAULT_POST_LIST = Collections.emptyList();
     public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
@@ -19,7 +19,7 @@ public final class DataRes extends Message {
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<User> user_list;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<Post> post_list;
         public ExcellentPbThreadInfo thread_info;

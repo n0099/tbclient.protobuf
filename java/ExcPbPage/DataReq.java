@@ -3,12 +3,12 @@ package tbclient.ExcPbPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1138common;
+    public final CommonReq f1284common;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
     public final Long excid;
     @ProtoField(tag = 5, type = Message.Datatype.UINT64)
@@ -31,11 +31,11 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_THREAD_ID = 0L;
     public static final Long DEFAULT_TAG_CODE = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1139common;
+        public CommonReq f1285common;
         public Long excid;
         public Long q_type;
         public Long scr_dip;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1139common = dataReq.f1138common;
+            this.f1285common = dataReq.f1284common;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.scr_dip = dataReq.scr_dip;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1138common = builder.f1139common;
+            this.f1284common = builder.f1285common;
             Long l = builder.scr_w;
             if (l == null) {
                 this.scr_w = DEFAULT_SCR_W;
@@ -118,7 +118,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1138common = builder.f1139common;
+        this.f1284common = builder.f1285common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.scr_dip = builder.scr_dip;

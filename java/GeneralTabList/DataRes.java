@@ -12,7 +12,7 @@ import tbclient.SportPageHeadInfo;
 import tbclient.SportScheduleInfo;
 import tbclient.ThreadInfo;
 import tbclient.User;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_AD_SAMPLE_MAP_KEY = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 12)
@@ -51,7 +51,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_AD_SHOW_SELECT = 0;
     public static final List<AdMixFloor> DEFAULT_AD_MIX_LIST = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public List<AdMixFloor> ad_mix_list;
         public String ad_sample_map_key;

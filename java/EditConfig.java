@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class EditConfig extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer is_first_edit;
@@ -11,7 +11,7 @@ public final class EditConfig extends Message {
     public static final Integer DEFAULT_SHOW_EDIT = 0;
     public static final Integer DEFAULT_IS_FIRST_EDIT = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<EditConfig> {
         public Integer is_first_edit;
         public Integer show_edit;

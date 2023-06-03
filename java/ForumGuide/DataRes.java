@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ForumCreateInfo;
 import tbclient.ThreadInfo;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_MSIGN_TEXT = "";
     @ProtoField(tag = 3)
@@ -32,7 +32,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_MSIGN_LEVEL = 0;
     public static final List<ThreadInfo> DEFAULT_VOICE_ROOM_LIST = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public ForumCreateInfo forum_create_info;
         public List<HotSearch> hot_search;

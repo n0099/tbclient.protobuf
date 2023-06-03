@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DynamicInfo extends Message {
     public static final String DEFAULT_IS_HIDE = "";
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
@@ -20,7 +20,7 @@ public final class DynamicInfo extends Message {
     public static final Long DEFAULT_DYNAMIC_TIMESTAMP = 0L;
     public static final Integer DEFAULT_TYPE = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DynamicInfo> {
         public Long dynamic_timestamp;
         public ForumDynamic forum_dynamic;

@@ -4,11 +4,9 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FeedHeadComponent extends Message {
     public static final String DEFAULT_SCHEMA = "";
-    @ProtoField(tag = 5)
-    public final FeedHeadButton button;
     @ProtoField(label = Message.Label.REPEATED, tag = 3)
     public final List<FeedHeadSymbol> extra_data;
     @ProtoField(tag = 1)
@@ -20,9 +18,8 @@ public final class FeedHeadComponent extends Message {
     public static final List<FeedHeadSymbol> DEFAULT_MAIN_DATA = Collections.emptyList();
     public static final List<FeedHeadSymbol> DEFAULT_EXTRA_DATA = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FeedHeadComponent> {
-        public FeedHeadButton button;
         public List<FeedHeadSymbol> extra_data;
         public FeedHeadImg image_data;
         public List<FeedHeadSymbol> main_data;
@@ -40,7 +37,6 @@ public final class FeedHeadComponent extends Message {
             this.main_data = Message.copyOf(feedHeadComponent.main_data);
             this.extra_data = Message.copyOf(feedHeadComponent.extra_data);
             this.schema = feedHeadComponent.schema;
-            this.button = feedHeadComponent.button;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -69,16 +65,15 @@ public final class FeedHeadComponent extends Message {
             String str = builder.schema;
             if (str == null) {
                 this.schema = "";
+                return;
             } else {
                 this.schema = str;
+                return;
             }
-            this.button = builder.button;
-            return;
         }
         this.image_data = builder.image_data;
         this.main_data = Message.immutableCopyOf(builder.main_data);
         this.extra_data = Message.immutableCopyOf(builder.extra_data);
         this.schema = builder.schema;
-        this.button = builder.button;
     }
 }

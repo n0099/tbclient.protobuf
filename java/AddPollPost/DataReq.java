@@ -3,13 +3,13 @@ package tbclient.AddPollPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_OPTIONS = "";
     @ProtoField(tag = 3)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1100common;
+    public final CommonReq f1246common;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -19,11 +19,11 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_THREAD_ID = 0L;
     public static final Long DEFAULT_FORUM_ID = 0L;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1101common;
+        public CommonReq f1247common;
         public Long forum_id;
         public String options;
         public Long thread_id;
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
             }
             this.thread_id = dataReq.thread_id;
             this.options = dataReq.options;
-            this.f1101common = dataReq.f1100common;
+            this.f1247common = dataReq.f1246common;
             this.forum_id = dataReq.forum_id;
         }
 
@@ -64,7 +64,7 @@ public final class DataReq extends Message {
             } else {
                 this.options = str;
             }
-            this.f1100common = builder.f1101common;
+            this.f1246common = builder.f1247common;
             Long l2 = builder.forum_id;
             if (l2 == null) {
                 this.forum_id = DEFAULT_FORUM_ID;
@@ -76,7 +76,7 @@ public final class DataReq extends Message {
         }
         this.thread_id = builder.thread_id;
         this.options = builder.options;
-        this.f1100common = builder.f1101common;
+        this.f1246common = builder.f1247common;
         this.forum_id = builder.forum_id;
     }
 }

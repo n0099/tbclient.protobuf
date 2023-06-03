@@ -2,7 +2,7 @@ package tbclient.GetVipInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class VipBannerItem extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_IMG_URL = "";
@@ -17,7 +17,7 @@ public final class VipBannerItem extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VipBannerItem> {
         public String desc;
         public String img_url;

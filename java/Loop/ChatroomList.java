@@ -2,7 +2,7 @@ package tbclient.Loop;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ChatroomList extends Message {
     public static final String DEFAULT_JUMP_URL = "";
     public static final Long DEFAULT_ROOM_ID = 0L;
@@ -17,7 +17,7 @@ public final class ChatroomList extends Message {
     @ProtoField(tag = 2)
     public final ChatroomInfoBasic room_info;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ChatroomList> {
         public ChatRoomAtInfo at_info;
         public String jump_url;

@@ -1,7 +1,6 @@
 package tbclient;
 
 import com.baidu.android.imsdk.internal.Constants;
-import com.baidu.down.manage.DownloadConstants;
 import com.baidu.location.BDLocation;
 import com.facebook.imageutils.JfifUtil;
 import com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor;
@@ -9,6 +8,7 @@ import com.google.android.exoplayer2.extractor.ts.H262Reader;
 import com.google.android.exoplayer2.extractor.ts.PsExtractor;
 import com.google.android.exoplayer2.extractor.ts.TsExtractor;
 import com.google.android.exoplayer2.text.cea.Cea708Decoder;
+import com.qq.e.comm.adevent.AdEventType;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -123,9 +123,9 @@ public final class ThreadInfo extends Message {
     public final String convert_btn_type;
     @ProtoField(tag = 45, type = Message.Datatype.INT32)
     public final Integer create_time;
-    @ProtoField(tag = 211)
+    @ProtoField(tag = AdEventType.VIDEO_LOADING)
     public final CustomFigure custom_figure;
-    @ProtoField(tag = 212)
+    @ProtoField(tag = AdEventType.VIDEO_PRELOADED)
     public final CustomState custom_state;
     @ProtoField(tag = Cea708Decoder.COMMAND_DF2, type = Message.Datatype.STRING)
     public final String daily_paper_time;
@@ -155,7 +155,7 @@ public final class ThreadInfo extends Message {
     public final ForumFriendWatchingInfo forum_friend_watching_info;
     @ProtoField(tag = 155)
     public final SimpleForum forum_info;
-    @ProtoField(tag = MatroskaExtractor.ID_CUE_POINT, type = Message.Datatype.STRING)
+    @ProtoField(tag = 187, type = Message.Datatype.STRING)
     public final String forum_user_live_msg;
     @ProtoField(tag = 130, type = Message.Datatype.INT64)
     public final Long freq_num;
@@ -217,7 +217,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_good;
     @ProtoField(tag = 165, type = Message.Datatype.INT32)
     public final Integer is_headlinepost;
-    @ProtoField(tag = 213, type = Message.Datatype.INT32)
+    @ProtoField(tag = AdEventType.VIDEO_PRELOAD_ERROR, type = Message.Datatype.INT32)
     public final Integer is_highlight;
     @ProtoField(tag = 128, type = Message.Datatype.INT32)
     public final Integer is_link_thread;
@@ -351,8 +351,6 @@ public final class ThreadInfo extends Message {
     public final Integer push_end_time;
     @ProtoField(tag = 91)
     public final PushStatus push_status;
-    @ProtoField(tag = 207, type = Message.Datatype.INT32)
-    public final Integer readonly;
     @ProtoField(tag = Cea708Decoder.COMMAND_SPA, type = Message.Datatype.STRING)
     public final String recom_extra;
     @ProtoField(tag = 109, type = Message.Datatype.STRING)
@@ -425,7 +423,7 @@ public final class ThreadInfo extends Message {
     public final String tiebaplus_extra_param;
     @ProtoField(tag = 194, type = Message.Datatype.STRING)
     public final String tiebaplus_order_id;
-    @ProtoField(tag = DownloadConstants.STATUS_WAITING_FOR_NETWORK, type = Message.Datatype.STRING)
+    @ProtoField(tag = 195, type = Message.Datatype.STRING)
     public final String tiebaplus_token;
     @ProtoField(tag = 53, type = Message.Datatype.INT32)
     public final Integer time;
@@ -587,7 +585,6 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_FRS_MASK = 0;
     public static final Integer DEFAULT_TAB_SHOW_MODE = 0;
     public static final Integer DEFAULT_IS_PICTXT = 0;
-    public static final Integer DEFAULT_READONLY = 0;
     public static final Integer DEFAULT_IS_HIGHLIGHT = 0;
     public static final Integer DEFAULT_IS_XIUXIU_THREAD = 0;
     public static final Integer DEFAULT_SHOW_AD_SUBSCRIPT = 0;
@@ -1545,33 +1542,27 @@ public final class ThreadInfo extends Message {
             } else {
                 this.click_monitor_url = str46;
             }
-            Integer num76 = builder.readonly;
-            if (num76 == null) {
-                this.readonly = DEFAULT_READONLY;
-            } else {
-                this.readonly = num76;
-            }
             this.thread_recommend_tag = builder.thread_recommend_tag;
             this.custom_figure = builder.custom_figure;
             this.custom_state = builder.custom_state;
-            Integer num77 = builder.is_highlight;
-            if (num77 == null) {
+            Integer num76 = builder.is_highlight;
+            if (num76 == null) {
                 this.is_highlight = DEFAULT_IS_HIGHLIGHT;
             } else {
-                this.is_highlight = num77;
+                this.is_highlight = num76;
             }
-            Integer num78 = builder.is_xiuxiu_thread;
-            if (num78 == null) {
+            Integer num77 = builder.is_xiuxiu_thread;
+            if (num77 == null) {
                 this.is_xiuxiu_thread = DEFAULT_IS_XIUXIU_THREAD;
             } else {
-                this.is_xiuxiu_thread = num78;
+                this.is_xiuxiu_thread = num77;
             }
             this.ablum_info = builder.ablum_info;
-            Integer num79 = builder.show_ad_subscript;
-            if (num79 == null) {
+            Integer num78 = builder.show_ad_subscript;
+            if (num78 == null) {
                 this.show_ad_subscript = DEFAULT_SHOW_AD_SUBSCRIPT;
             } else {
-                this.show_ad_subscript = num79;
+                this.show_ad_subscript = num78;
             }
             String str47 = builder.target_scheme;
             if (str47 == null) {
@@ -1585,12 +1576,12 @@ public final class ThreadInfo extends Message {
             } else {
                 this.convert_btn_type = str48;
             }
-            Integer num80 = builder.is_excellent_thread;
-            if (num80 == null) {
+            Integer num79 = builder.is_excellent_thread;
+            if (num79 == null) {
                 this.is_excellent_thread = DEFAULT_IS_EXCELLENT_THREAD;
                 return;
             } else {
-                this.is_excellent_thread = num80;
+                this.is_excellent_thread = num79;
                 return;
             }
         }
@@ -1793,7 +1784,6 @@ public final class ThreadInfo extends Message {
         this.is_pictxt = builder.is_pictxt;
         this.exposure_monitor_url = builder.exposure_monitor_url;
         this.click_monitor_url = builder.click_monitor_url;
-        this.readonly = builder.readonly;
         this.thread_recommend_tag = builder.thread_recommend_tag;
         this.custom_figure = builder.custom_figure;
         this.custom_state = builder.custom_state;
@@ -1952,7 +1942,6 @@ public final class ThreadInfo extends Message {
         public PsInfo ps_info;
         public Integer push_end_time;
         public PushStatus push_status;
-        public Integer readonly;
         public String recom_extra;
         public String recom_reason;
         public String recom_source;
@@ -2226,7 +2215,6 @@ public final class ThreadInfo extends Message {
             this.is_pictxt = threadInfo.is_pictxt;
             this.exposure_monitor_url = threadInfo.exposure_monitor_url;
             this.click_monitor_url = threadInfo.click_monitor_url;
-            this.readonly = threadInfo.readonly;
             this.thread_recommend_tag = threadInfo.thread_recommend_tag;
             this.custom_figure = threadInfo.custom_figure;
             this.custom_state = threadInfo.custom_state;

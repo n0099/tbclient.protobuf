@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class GameCodeList extends Message {
     public static final String DEFAULT_CLAIMED_VALUE = "";
     public static final String DEFAULT_LABEL = "";
@@ -29,7 +29,7 @@ public final class GameCodeList extends Message {
     public static final Integer DEFAULT_ITEM_ID = 0;
     public static final Integer DEFAULT_CLAIMED_STATUS = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<GameCodeList> {
         public Integer begin_time;
         public Integer claimed_status;

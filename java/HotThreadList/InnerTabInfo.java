@@ -2,7 +2,7 @@ package tbclient.HotThreadList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class InnerTabInfo extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_JUMP_SCHEME = "";
@@ -17,7 +17,7 @@ public final class InnerTabInfo extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
     public final Integer notify_version;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<InnerTabInfo> {
         public String icon;
         public String jump_scheme;

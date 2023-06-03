@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class CardLinkInfo extends Message {
     public static final String DEFAULT_BTN_STYLE = "";
     public static final String DEFAULT_BTN_TEXT = "";
@@ -38,7 +38,7 @@ public final class CardLinkInfo extends Message {
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<CardLinkInfo> {
         public String btn_style;
         public String btn_text;

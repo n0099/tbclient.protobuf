@@ -2,14 +2,14 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ForumGroup extends Message {
     @ProtoField(tag = 2)
     public final GroupFeedCard feed_card;
     @ProtoField(tag = 1)
     public final TopbarEntrance topbar_entrance;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ForumGroup> {
         public GroupFeedCard feed_card;
         public TopbarEntrance topbar_entrance;

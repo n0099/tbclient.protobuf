@@ -2,7 +2,7 @@ package tbclient.Acrossforum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class AcrossForum extends Message {
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_FORUM_NAME = "";
@@ -11,7 +11,7 @@ public final class AcrossForum extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String forum_name;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<AcrossForum> {
         public String desc;
         public String forum_name;

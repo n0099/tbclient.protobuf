@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class Feedback extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_TITLE = "";
@@ -14,7 +14,7 @@ public final class Feedback extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String url;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Feedback> {
         public String icon;
         public String title;

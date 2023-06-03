@@ -2,13 +2,13 @@ package tbclient.LoadMon;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class SignInfo extends Message {
     public static final String DEFAULT_DATE = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String date;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SignInfo> {
         public String date;
 

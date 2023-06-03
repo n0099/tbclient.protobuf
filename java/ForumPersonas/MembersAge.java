@@ -2,7 +2,7 @@ package tbclient.ForumPersonas;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class MembersAge extends Message {
     public static final String DEFAULT_NAME = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -14,7 +14,7 @@ public final class MembersAge extends Message {
     public static final Integer DEFAULT_SEQ = 0;
     public static final Double DEFAULT_RATE = Double.valueOf(0.0d);
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<MembersAge> {
         public String name;
         public Double rate;

@@ -2,7 +2,7 @@ package tbclient.GetGameCenter;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class AdList extends Message {
     public static final String DEFAULT_IMG_URL = "";
     public static final String DEFAULT_LINK_URL = "";
@@ -11,7 +11,7 @@ public final class AdList extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String link_url;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<AdList> {
         public String img_url;
         public String link_url;

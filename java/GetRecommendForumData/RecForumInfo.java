@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeColorInfo;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class RecForumInfo extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_FORUM_ID = "";
@@ -34,7 +34,7 @@ public final class RecForumInfo extends Message {
     public static final List<ThreadList> DEFAULT_THREADLIST = Collections.emptyList();
     public static final Boolean DEFAULT_NEED_TRANS = Boolean.FALSE;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecForumInfo> {
         public String avatar;
         public String forum_id;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class LotteryTheme extends Message {
     public static final String DEFAULT_BGCOLOR = "";
     public static final String DEFAULT_BGIMAGE = "";
@@ -11,7 +11,7 @@ public final class LotteryTheme extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String bgimage;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<LotteryTheme> {
         public String bgcolor;
         public String bgimage;

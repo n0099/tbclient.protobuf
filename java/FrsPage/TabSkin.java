@@ -2,7 +2,7 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class TabSkin extends Message {
     public static final String DEFAULT_ICON = "";
     public static final String DEFAULT_ICON_NIGHT = "";
@@ -14,7 +14,7 @@ public final class TabSkin extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer tab_id;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TabSkin> {
         public String icon;
         public String icon_night;

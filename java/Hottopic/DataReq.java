@@ -3,7 +3,7 @@ package tbclient.Hottopic;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_FIRST_DIR = "";
     public static final String DEFAULT_SECOND_DIR = "";
@@ -13,7 +13,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1284common;
+    public final CommonReq f1430common;
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
     public final Long fid;
     @ProtoField(tag = 10, type = Message.Datatype.STRING)
@@ -49,12 +49,12 @@ public final class DataReq extends Message {
     public static final Long DEFAULT_TOPIC_TID = 0L;
     public static final Integer DEFAULT_IS_VIDEO_TOPIC = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public Integer call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1285common;
+        public CommonReq f1431common;
         public Long fid;
         public String first_dir;
         public Integer is_video_topic;
@@ -76,7 +76,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1285common = dataReq.f1284common;
+            this.f1431common = dataReq.f1430common;
             this.topic_id = dataReq.topic_id;
             this.topic_name = dataReq.topic_name;
             this.scr_w = dataReq.scr_w;
@@ -102,7 +102,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1284common = builder.f1285common;
+            this.f1430common = builder.f1431common;
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
@@ -184,7 +184,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1284common = builder.f1285common;
+        this.f1430common = builder.f1431common;
         this.topic_id = builder.topic_id;
         this.topic_name = builder.topic_name;
         this.scr_w = builder.scr_w;

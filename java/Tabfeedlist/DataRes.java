@@ -4,17 +4,12 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-import tbclient.DiscoverHotForum;
 import tbclient.GeneralResource;
 import tbclient.HotUserRankEntry;
 import tbclient.RecommendForumInfo;
 import tbclient.ThreadInfo;
 /* loaded from: classes2.dex */
 public final class DataRes extends Message {
-    @ProtoField(tag = 7)
-    public final HotUserRankEntry god_userrank_entry;
-    @ProtoField(tag = 6)
-    public final DiscoverHotForum hot_recmforum;
     @ProtoField(tag = 3)
     public final HotUserRankEntry hot_userrank_entry;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -32,8 +27,6 @@ public final class DataRes extends Message {
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
-        public HotUserRankEntry god_userrank_entry;
-        public DiscoverHotForum hot_recmforum;
         public HotUserRankEntry hot_userrank_entry;
         public Integer is_new_url;
         public List<RecommendForumInfo> recommend_forum_info;
@@ -53,8 +46,6 @@ public final class DataRes extends Message {
             this.hot_userrank_entry = dataRes.hot_userrank_entry;
             this.recommend_forum_info = Message.copyOf(dataRes.recommend_forum_info);
             this.is_new_url = dataRes.is_new_url;
-            this.hot_recmforum = dataRes.hot_recmforum;
-            this.god_userrank_entry = dataRes.god_userrank_entry;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -89,19 +80,16 @@ public final class DataRes extends Message {
             Integer num = builder.is_new_url;
             if (num == null) {
                 this.is_new_url = DEFAULT_IS_NEW_URL;
+                return;
             } else {
                 this.is_new_url = num;
+                return;
             }
-            this.hot_recmforum = builder.hot_recmforum;
-            this.god_userrank_entry = builder.god_userrank_entry;
-            return;
         }
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
         this.resource_list = Message.immutableCopyOf(builder.resource_list);
         this.hot_userrank_entry = builder.hot_userrank_entry;
         this.recommend_forum_info = Message.immutableCopyOf(builder.recommend_forum_info);
         this.is_new_url = builder.is_new_url;
-        this.hot_recmforum = builder.hot_recmforum;
-        this.god_userrank_entry = builder.god_userrank_entry;
     }
 }

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FineThreadList extends Message {
     public static final String DEFAULT_ABSTRACT = "";
     public static final String DEFAULT_FROMFNAME = "";
@@ -43,7 +43,7 @@ public final class FineThreadList extends Message {
     public static final Integer DEFAULT_THREAD_TYPE = 0;
     public static final List<String> DEFAULT_PICS = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FineThreadList> {
         public String _abstract;
         public Long fromfid;

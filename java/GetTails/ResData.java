@@ -5,7 +5,7 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ThemeTailInUser;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ResData extends Message {
     public static final String DEFAULT_DEFAULT_COLOR = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
@@ -19,7 +19,7 @@ public final class ResData extends Message {
     public static final List<TailInfo> DEFAULT_TAILLIST = Collections.emptyList();
     public static final List<ColorInfo> DEFAULT_COLORLIST = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ResData> {
         public List<ColorInfo> colorList;
         public String default_color;

@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Quote;
 import tbclient.Zan;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class MagicPostList extends Message {
     public static final String DEFAULT_CONTENT_TEXT = "";
     public static final String DEFAULT_TITLE = "";
@@ -34,7 +34,7 @@ public final class MagicPostList extends Message {
     public static final Integer DEFAULT_POST_NO = 0;
     public static final Integer DEFAULT_IS_COMMENT = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<MagicPostList> {
         public String content_text;
         public Integer create_time;

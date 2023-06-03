@@ -3,7 +3,7 @@ package tbclient.GetRemindLiveRooms;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.YyExt;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class YyLiveInfoSimple extends Message {
     public static final String DEFAULT_BTN_TEXT = "";
     public static final String DEFAULT_DESC = "";
@@ -29,7 +29,7 @@ public final class YyLiveInfoSimple extends Message {
     @ProtoField(tag = 5)
     public final YyExt yy_ext;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<YyLiveInfoSimple> {
         public String btn_text;
         public String desc;

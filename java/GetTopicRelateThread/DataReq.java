@@ -3,13 +3,13 @@ package tbclient.GetTopicRelateThread;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_TOPIC_NAME = "";
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1258common;
+    public final CommonReq f1404common;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
     public final Long last_id;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
@@ -46,11 +46,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PMY_SOURCE = 0;
     public static final Integer DEFAULT_SORT_TYPE = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1259common;
+        public CommonReq f1405common;
         public Long last_id;
         public Integer page_no;
         public Integer pmy_source;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1259common = dataReq.f1258common;
+            this.f1405common = dataReq.f1404common;
             this.topic_id = dataReq.topic_id;
             this.topic_name = dataReq.topic_name;
             this.rn = dataReq.rn;
@@ -97,7 +97,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1258common = builder.f1259common;
+            this.f1404common = builder.f1405common;
             Long l = builder.topic_id;
             if (l == null) {
                 this.topic_id = DEFAULT_TOPIC_ID;
@@ -173,7 +173,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1258common = builder.f1259common;
+        this.f1404common = builder.f1405common;
         this.topic_id = builder.topic_id;
         this.topic_name = builder.topic_name;
         this.rn = builder.rn;

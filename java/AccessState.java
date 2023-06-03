@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class AccessState extends Message {
     public static final String DEFAULT_TOKEN = "";
     public static final String DEFAULT_TYPE = "";
@@ -13,7 +13,7 @@ public final class AccessState extends Message {
     @ProtoField(tag = 3)
     public final UserSessionInfo userinfo;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<AccessState> {
         public String token;
         public String type;

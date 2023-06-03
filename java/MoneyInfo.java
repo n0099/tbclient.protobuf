@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class MoneyInfo extends Message {
     public static final Integer DEFAULT_DEFAULT = 0;
     public static final String DEFAULT_DISCOUNT = "";
@@ -35,7 +35,7 @@ public final class MoneyInfo extends Message {
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<MoneyInfo> {
         public Integer _default;
         public String discount;

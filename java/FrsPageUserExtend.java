@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FrsPageUserExtend extends Message {
     public static final String DEFAULT_TIPS = "";
     @ProtoField(label = Message.Label.REPEATED, tag = 4)
@@ -16,7 +16,7 @@ public final class FrsPageUserExtend extends Message {
     public static final Integer DEFAULT_USER_EXTEND_STOREY = 0;
     public static final List<User> DEFAULT_DATA = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FrsPageUserExtend> {
         public List<User> data;
         public String tips;

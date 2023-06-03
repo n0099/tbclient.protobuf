@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class FeedPicComponent extends Message {
     public static final List<PicInfo> DEFAULT_PICS = Collections.emptyList();
     public static final String DEFAULT_SCHEMA = "";
@@ -13,7 +13,7 @@ public final class FeedPicComponent extends Message {
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String schema;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FeedPicComponent> {
         public List<PicInfo> pics;
         public String schema;

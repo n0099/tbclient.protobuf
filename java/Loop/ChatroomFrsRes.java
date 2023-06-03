@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ChatroomFrsRes extends Message {
     @ProtoField(tag = 3)
     public final ChatroomGuide guide_config;
@@ -18,7 +18,7 @@ public final class ChatroomFrsRes extends Message {
     public static final List<ChatroomList> DEFAULT_ROOM_LIST = Collections.emptyList();
     public static final Integer DEFAULT_HOT_LIST_ORIGIN_NUM = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ChatroomFrsRes> {
         public ChatroomGuide guide_config;
         public List<Long> hot_list;

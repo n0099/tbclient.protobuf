@@ -2,13 +2,13 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class EsportInfo extends Message {
     public static final String DEFAULT_INTRO = "";
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String intro;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<EsportInfo> {
         public String intro;
 

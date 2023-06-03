@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class RecommendBook extends Message {
     public static final String DEFAULT_BOOK_ID = "";
     public static final String DEFAULT_IMAGE = "";
@@ -25,7 +25,7 @@ public final class RecommendBook extends Message {
     public static final Integer DEFAULT_TYPE = 0;
     public static final List<String> DEFAULT_DESC = Collections.emptyList();
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecommendBook> {
         public String book_id;
         public List<String> desc;

@@ -2,7 +2,7 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class EditInfo extends Message {
     public static final String DEFAULT_EDIT_ERROR_MSG = "";
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -23,7 +23,7 @@ public final class EditInfo extends Message {
     public static final Integer DEFAULT_EDIT_FROM = 0;
     public static final Integer DEFAULT_EDIT_ERROR_NO = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<EditInfo> {
         public Integer edit_enable;
         public String edit_error_msg;

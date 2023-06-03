@@ -2,7 +2,7 @@ package tbclient.ForumRecommend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class Banner extends Message {
     public static final String DEFAULT_LINK = "";
     public static final String DEFAULT_PIC_URL = "";
@@ -20,7 +20,7 @@ public final class Banner extends Message {
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String title;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Banner> {
         public String link;
         public String pic_url;

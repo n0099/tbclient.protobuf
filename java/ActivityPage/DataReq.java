@@ -3,7 +3,7 @@ package tbclient.ActivityPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ACTIVITY_NAME = "";
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1092common;
+    public final CommonReq f1238common;
     @ProtoField(tag = 3, type = Message.Datatype.INT32)
     public final Integer pn;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -31,12 +31,12 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SCR_DIP = 0;
     public static final Integer DEFAULT_Q_TYPE = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String activity_name;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1093common;
+        public CommonReq f1239common;
         public Integer pn;
         public Integer q_type;
         public Integer rn;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1093common = dataReq.f1092common;
+            this.f1239common = dataReq.f1238common;
             this.activity_name = dataReq.activity_name;
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1092common = builder.f1093common;
+            this.f1238common = builder.f1239common;
             String str = builder.activity_name;
             if (str == null) {
                 this.activity_name = "";
@@ -118,7 +118,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1092common = builder.f1093common;
+        this.f1238common = builder.f1239common;
         this.activity_name = builder.activity_name;
         this.pn = builder.pn;
         this.rn = builder.rn;

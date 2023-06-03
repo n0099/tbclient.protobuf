@@ -2,7 +2,7 @@ package tbclient.GetMutilGameList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class AdvInfo extends Message {
     public static final String DEFAULT_AD_LINK_ANDROID = "";
     public static final String DEFAULT_AD_LINK_IOS = "";
@@ -23,7 +23,7 @@ public final class AdvInfo extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String game_name;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<AdvInfo> {
         public String ad_link_android;
         public String ad_link_ios;

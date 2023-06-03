@@ -2,7 +2,7 @@ package tbclient.MFollow;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class MFollowResult extends Message {
     public static final Boolean DEFAULT_IS_SUCCESS = Boolean.FALSE;
     public static final String DEFAULT_MSG = "";
@@ -14,7 +14,7 @@ public final class MFollowResult extends Message {
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String portrait;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<MFollowResult> {
         public Boolean is_success;
         public String msg;

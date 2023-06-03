@@ -2,7 +2,7 @@ package tbclient.GetForumDetail;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class ManagerElectionTab extends Message {
     public static final Integer DEFAULT_IS_NEW_STRATEGY = 0;
     public static final Integer DEFAULT_NEW_MANAGER_STATUS = 0;
@@ -20,7 +20,7 @@ public final class ManagerElectionTab extends Message {
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String toast_text;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ManagerElectionTab> {
         public Integer is_new_strategy;
         public Integer new_manager_status;

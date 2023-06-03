@@ -3,7 +3,7 @@ package tbclient.AddPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_ANONYMOUS = "";
     public static final String DEFAULT_AUTHSID = "";
@@ -82,7 +82,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1102common;
+    public final CommonReq f1248common;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String content;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -208,7 +208,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_SHOW_CUSTOM_FIGURE = 0;
     public static final Integer DEFAULT_IS_SHOW_BLESS = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
         public String anonymous;
         public String authsid;
@@ -217,7 +217,7 @@ public final class DataReq extends Message {
         public String comment_head;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1103common;
+        public CommonReq f1249common;
         public String content;
         public String during_time;
         public String entrance_type;
@@ -288,7 +288,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1103common = dataReq.f1102common;
+            this.f1249common = dataReq.f1248common;
             this.authsid = dataReq.authsid;
             this.sig = dataReq.sig;
             this.tbs = dataReq.tbs;
@@ -367,7 +367,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1102common = builder.f1103common;
+            this.f1248common = builder.f1249common;
             String str = builder.authsid;
             if (str == null) {
                 this.authsid = "";
@@ -767,7 +767,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1102common = builder.f1103common;
+        this.f1248common = builder.f1249common;
         this.authsid = builder.authsid;
         this.sig = builder.sig;
         this.tbs = builder.tbs;

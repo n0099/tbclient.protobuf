@@ -4,7 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class VipBasicList extends Message {
     public static final String DEFAULT_CARD_ID = "";
     public static final String DEFAULT_CLASS_NAME = "";
@@ -25,7 +25,7 @@ public final class VipBasicList extends Message {
     public static final List<VipSpecialItem> DEFAULT_ITEM = Collections.emptyList();
     public static final Integer DEFAULT_CARD_TYPE = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<VipBasicList> {
         public String card_id;
         public Integer card_type;

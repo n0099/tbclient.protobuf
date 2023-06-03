@@ -3,12 +3,12 @@ package tbclient.ItemManage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-/* loaded from: classes10.dex */
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1288common;
+    public final CommonReq f1434common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -19,11 +19,11 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_PN = 0;
     public static final Integer DEFAULT_RN = 0;
 
-    /* loaded from: classes10.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1289common;
+        public CommonReq f1435common;
         public Integer pn;
         public Integer rn;
         public Integer tab_id;
@@ -36,7 +36,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1289common = dataReq.f1288common;
+            this.f1435common = dataReq.f1434common;
             this.tab_id = dataReq.tab_id;
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1288common = builder.f1289common;
+            this.f1434common = builder.f1435common;
             Integer num = builder.tab_id;
             if (num == null) {
                 this.tab_id = DEFAULT_TAB_ID;
@@ -74,7 +74,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1288common = builder.f1289common;
+        this.f1434common = builder.f1435common;
         this.tab_id = builder.tab_id;
         this.pn = builder.pn;
         this.rn = builder.rn;
