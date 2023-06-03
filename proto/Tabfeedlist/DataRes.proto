@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "DiscoverHotForum.proto";
 import "GeneralResource.proto";
 import "HotUserRankEntry.proto";
 import "RecommendForumInfo.proto";
@@ -12,6 +11,4 @@ message DataRes {
     HotUserRankEntry hot_userrank_entry = 3;
     repeated RecommendForumInfo recommend_forum_info = 4;
     int32 is_new_url = 5;
-    DiscoverHotForum hot_recmforum = 6;
-    HotUserRankEntry god_userrank_entry = 7;
 }

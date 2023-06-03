@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message NobilityTdou {
-    uint64 tdou_num = 1;
-    uint32 status = 2;
-    uint32 expire_time = 3;
-    uint32 clear_time = 4;
-}

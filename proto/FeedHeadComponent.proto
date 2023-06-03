@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "FeedHeadButton.proto";
 import "FeedHeadImg.proto";
 import "FeedHeadSymbol.proto";
 
@@ -9,5 +8,4 @@ message FeedHeadComponent {
     repeated FeedHeadSymbol main_data = 2;
     repeated FeedHeadSymbol extra_data = 3;
     string schema = 4;
-    FeedHeadButton button = 5;
 }

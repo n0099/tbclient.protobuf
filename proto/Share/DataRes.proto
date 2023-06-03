@@ -1,8 +1,5 @@
 syntax = "proto3";
 
-import "Share/StarContri.proto";
-
 message DataRes {
     int64 tid = 1;
-    StarContri contri = 2;
 }

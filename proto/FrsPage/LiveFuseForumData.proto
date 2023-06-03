@@ -15,7 +15,6 @@ message LiveFuseForumData {
     string bjimg_light_big = 9;
     string bjimg_dark_small = 10;
     string bjimg_light_small = 11;
-    int32 card_style = 12;
     int32 head_img_style = 13;
     repeated TagLabelInfo label_infos = 14;
     NovelExt novel = 15;

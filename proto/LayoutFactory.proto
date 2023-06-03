@@ -1,12 +1,10 @@
 syntax = "proto3";
 
 import "FeedLayout.proto";
-import "HeadcardLayout.proto";
 import "SidewayLayout.proto";
 
 message LayoutFactory {
     string layout = 1;
     FeedLayout feed = 2;
     SidewayLayout sideway = 3;
-    HeadcardLayout headcard = 4;
 }

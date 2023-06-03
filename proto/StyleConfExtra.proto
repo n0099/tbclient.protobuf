@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message StyleConfExtra {
+    string first_post_guide = 1;
+    string guide = 2;
+}

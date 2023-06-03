@@ -1,7 +1,6 @@
 syntax = "proto3";
 
 import "Abstract.proto";
-import "WorksInfo.proto";
 
 message PostInfoContent {
     repeated Abstract post_content = 1;
@@ -9,6 +8,5 @@ message PostInfoContent {
     uint64 post_type = 3;
     uint64 post_id = 4;
     int32 is_author_view = 5;
-    WorksInfo works_info = 6;
     string target_scheme = 7;
 }

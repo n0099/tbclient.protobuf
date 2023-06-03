@@ -4,5 +4,4 @@ message BawuAction {
     string name = 1;
     int32 type = 2;
     string url = 3;
-    int32 unread_num = 4;
 }

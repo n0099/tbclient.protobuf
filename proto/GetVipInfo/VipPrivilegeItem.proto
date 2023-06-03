@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-message VipPrivilegeItem {
-    string img_url = 1;
-    string title = 2;
-    string desc = 3;
-    string link = 4;
-}

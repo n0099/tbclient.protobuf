@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "AbilityConf.proto";
+import "StyleConf.proto";
+
+message CallRobotEntrance {
+    string ability_type = 1;
+    AbilityConf ability_conf = 2;
+    StyleConf style_conf = 3;
+}

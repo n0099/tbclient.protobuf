@@ -4,6 +4,7 @@ import "ActPost.proto";
 import "AddPostList.proto";
 import "Advertisement.proto";
 import "Agree.proto";
+import "CallRobotEntrance.proto";
 import "CardLinkInfo.proto";
 import "CustomFigure.proto";
 import "CustomState.proto";
@@ -102,4 +103,5 @@ message Post {
     string icon_url = 69;
     string toutiao_card_tag = 70;
     string toutiao_card_tag_color = 71;
+    CallRobotEntrance call_robot_entrance = 72;
 }

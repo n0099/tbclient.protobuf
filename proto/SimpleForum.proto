@@ -1,8 +1,10 @@
 syntax = "proto3";
 
 import "DeletedReasonInfo.proto";
+import "ForumShowInfo.proto";
 import "FrsTabInfo.proto";
 import "MultiForumPerm.proto";
+import "SpritePBGuide.proto";
 import "ThemeColorInfo.proto";
 
 message SimpleForum {
@@ -27,4 +29,6 @@ message SimpleForum {
     ThemeColorInfo theme_color = 19;
     string recommend_tip = 20;
     repeated string pendants = 21;
+    ForumShowInfo show_info = 22;
+    SpritePBGuide sprite_pb_guide = 23;
 }
