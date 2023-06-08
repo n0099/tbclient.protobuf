@@ -3,4 +3,7 @@ syntax = "proto3";
 message StyleConfExtra {
     string first_post_guide = 1;
     string guide = 2;
+    string bot_name = 3;
+    string bot_portrait = 4;
+    string bot_reply_content = 5;
 }
