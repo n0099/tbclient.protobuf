@@ -104,4 +104,6 @@ message Post {
     string toutiao_card_tag = 70;
     string toutiao_card_tag_color = 71;
     CallRobotEntrance call_robot_entrance = 72;
+    int32 is_bot_reply = 73;
+    string bot_reply_content = 74;
 }

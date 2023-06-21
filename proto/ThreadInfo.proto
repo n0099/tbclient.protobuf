@@ -239,4 +239,5 @@ message ThreadInfo {
     string target_scheme = 217;
     string convert_btn_type = 218;
     int32 is_excellent_thread = 219;
+    repeated Post hot_post_list = 221;
 }
