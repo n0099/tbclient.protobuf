@@ -2,6 +2,7 @@ package tbclient;
 
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.location.BDLocation;
+import com.baidu.pass.biometrics.face.liveness.PassFaceRecogManager;
 import com.facebook.imageutils.JfifUtil;
 import com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor;
 import com.google.android.exoplayer2.extractor.ts.H262Reader;
@@ -171,6 +172,8 @@ public final class ThreadInfo extends Message {
     public final HotTWThreadInfo hotTWInfo;
     @ProtoField(tag = 182, type = Message.Datatype.INT32)
     public final Integer hot_num;
+    @ProtoField(label = Message.Label.REPEATED, tag = 221)
+    public final List<Post> hot_post_list;
     @ProtoField(tag = 66, type = Message.Datatype.INT32)
     public final Integer hot_weight;
     @ProtoField(tag = 1, type = Message.Datatype.INT64)
@@ -293,6 +296,8 @@ public final class ThreadInfo extends Message {
     public final String lego_card;
     @ProtoField(tag = 129)
     public final LinkThreadInfo link_info;
+    @ProtoField(tag = PassFaceRecogManager.j, type = Message.Datatype.INT32)
+    public final Integer literature_flag;
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String live_post_type;
     @ProtoField(tag = 67, type = Message.Datatype.STRING)
@@ -589,6 +594,8 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_XIUXIU_THREAD = 0;
     public static final Integer DEFAULT_SHOW_AD_SUBSCRIPT = 0;
     public static final Integer DEFAULT_IS_EXCELLENT_THREAD = 0;
+    public static final Integer DEFAULT_LITERATURE_FLAG = 0;
+    public static final List<Post> DEFAULT_HOT_POST_LIST = Collections.emptyList();
 
     public ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1579,9 +1586,21 @@ public final class ThreadInfo extends Message {
             Integer num79 = builder.is_excellent_thread;
             if (num79 == null) {
                 this.is_excellent_thread = DEFAULT_IS_EXCELLENT_THREAD;
-                return;
             } else {
                 this.is_excellent_thread = num79;
+            }
+            Integer num80 = builder.literature_flag;
+            if (num80 == null) {
+                this.literature_flag = DEFAULT_LITERATURE_FLAG;
+            } else {
+                this.literature_flag = num80;
+            }
+            List<Post> list19 = builder.hot_post_list;
+            if (list19 == null) {
+                this.hot_post_list = DEFAULT_HOT_POST_LIST;
+                return;
+            } else {
+                this.hot_post_list = Message.immutableCopyOf(list19);
                 return;
             }
         }
@@ -1794,6 +1813,8 @@ public final class ThreadInfo extends Message {
         this.target_scheme = builder.target_scheme;
         this.convert_btn_type = builder.convert_btn_type;
         this.is_excellent_thread = builder.is_excellent_thread;
+        this.literature_flag = builder.literature_flag;
+        this.hot_post_list = Message.immutableCopyOf(builder.hot_post_list);
     }
 
     /* loaded from: classes2.dex */
@@ -1852,6 +1873,7 @@ public final class ThreadInfo extends Message {
         public TogetherHi high_together;
         public HotTWThreadInfo hotTWInfo;
         public Integer hot_num;
+        public List<Post> hot_post_list;
         public Integer hot_weight;
         public Long id;
         public Integer if_comment;
@@ -1913,6 +1935,7 @@ public final class ThreadInfo extends Message {
         public Integer last_time_int;
         public String lego_card;
         public LinkThreadInfo link_info;
+        public Integer literature_flag;
         public String live_post_type;
         public String livecover_src;
         public Lbs location;
@@ -2225,6 +2248,8 @@ public final class ThreadInfo extends Message {
             this.target_scheme = threadInfo.target_scheme;
             this.convert_btn_type = threadInfo.convert_btn_type;
             this.is_excellent_thread = threadInfo.is_excellent_thread;
+            this.literature_flag = threadInfo.literature_flag;
+            this.hot_post_list = Message.copyOf(threadInfo.hot_post_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */

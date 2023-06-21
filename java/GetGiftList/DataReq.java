@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1340common;
+    public final CommonReq f1338common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String scene_from;
 
@@ -21,7 +21,7 @@ public final class DataReq extends Message {
         public Long benefit_userid;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1341common;
+        public CommonReq f1339common;
         public String scene_from;
 
         public Builder() {
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.scene_from = dataReq.scene_from;
-            this.f1341common = dataReq.f1340common;
+            this.f1339common = dataReq.f1338common;
             this.benefit_userid = dataReq.benefit_userid;
         }
 
@@ -53,7 +53,7 @@ public final class DataReq extends Message {
             } else {
                 this.scene_from = str;
             }
-            this.f1340common = builder.f1341common;
+            this.f1338common = builder.f1339common;
             Long l = builder.benefit_userid;
             if (l == null) {
                 this.benefit_userid = DEFAULT_BENEFIT_USERID;
@@ -64,7 +64,7 @@ public final class DataReq extends Message {
             }
         }
         this.scene_from = builder.scene_from;
-        this.f1340common = builder.f1341common;
+        this.f1338common = builder.f1339common;
         this.benefit_userid = builder.benefit_userid;
     }
 }

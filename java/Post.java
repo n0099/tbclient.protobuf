@@ -7,6 +7,7 @@ import java.util.List;
 /* loaded from: classes2.dex */
 public final class Post extends Message {
     public static final String DEFAULT_BIMG_URL = "";
+    public static final String DEFAULT_BOT_REPLY_CONTENT = "";
     public static final String DEFAULT_DYNAMIC_URL = "";
     public static final String DEFAULT_FOLD_COMMENT_APPLY_URL = "";
     public static final String DEFAULT_FOLD_TIP = "";
@@ -38,6 +39,8 @@ public final class Post extends Message {
     public final Long author_id;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String bimg_url;
+    @ProtoField(tag = 74, type = Message.Datatype.STRING)
+    public final String bot_reply_content;
     @ProtoField(tag = 64)
     public final ThemeBubble bubble_info;
     @ProtoField(tag = 72)
@@ -80,6 +83,8 @@ public final class Post extends Message {
     public final String ios_bimg_format;
     @ProtoField(tag = 48, type = Message.Datatype.INT32)
     public final Integer is_bjh;
+    @ProtoField(tag = 73, type = Message.Datatype.INT32)
+    public final Integer is_bot_reply;
     @ProtoField(tag = 11, type = Message.Datatype.UINT32)
     public final Integer is_bub;
     @ProtoField(tag = 43, type = Message.Datatype.INT32)
@@ -190,6 +195,7 @@ public final class Post extends Message {
     public static final Integer DEFAULT_FOLD_COMMENT_STATUS = 0;
     public static final List<CardLinkInfo> DEFAULT_CARD_LINK_INFO = Collections.emptyList();
     public static final Integer DEFAULT_SHIELD_ICON = 0;
+    public static final Integer DEFAULT_IS_BOT_REPLY = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Post> {
@@ -202,6 +208,7 @@ public final class Post extends Message {
         public User author;
         public Long author_id;
         public String bimg_url;
+        public String bot_reply_content;
         public ThemeBubble bubble_info;
         public CallRobotEntrance call_robot_entrance;
         public List<CardLinkInfo> card_link_info;
@@ -223,6 +230,7 @@ public final class Post extends Message {
         public Integer img_num_abtest;
         public String ios_bimg_format;
         public Integer is_bjh;
+        public Integer is_bot_reply;
         public Integer is_bub;
         public Integer is_fold;
         public Integer is_hot_post;
@@ -344,6 +352,8 @@ public final class Post extends Message {
             this.toutiao_card_tag = post.toutiao_card_tag;
             this.toutiao_card_tag_color = post.toutiao_card_tag_color;
             this.call_robot_entrance = post.call_robot_entrance;
+            this.is_bot_reply = post.is_bot_reply;
+            this.bot_reply_content = post.bot_reply_content;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -637,7 +647,20 @@ public final class Post extends Message {
                 this.toutiao_card_tag_color = str14;
             }
             this.call_robot_entrance = builder.call_robot_entrance;
-            return;
+            Integer num21 = builder.is_bot_reply;
+            if (num21 == null) {
+                this.is_bot_reply = DEFAULT_IS_BOT_REPLY;
+            } else {
+                this.is_bot_reply = num21;
+            }
+            String str15 = builder.bot_reply_content;
+            if (str15 == null) {
+                this.bot_reply_content = "";
+                return;
+            } else {
+                this.bot_reply_content = str15;
+                return;
+            }
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -710,5 +733,7 @@ public final class Post extends Message {
         this.toutiao_card_tag = builder.toutiao_card_tag;
         this.toutiao_card_tag_color = builder.toutiao_card_tag_color;
         this.call_robot_entrance = builder.call_robot_entrance;
+        this.is_bot_reply = builder.is_bot_reply;
+        this.bot_reply_content = builder.bot_reply_content;
     }
 }

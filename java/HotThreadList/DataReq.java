@@ -10,7 +10,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1428common;
+    public final CommonReq f1426common;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String tab_code;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1429common;
+        public CommonReq f1427common;
         public String tab_code;
         public String tab_id;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1429common = dataReq.f1428common;
+            this.f1427common = dataReq.f1426common;
             this.tab_id = dataReq.tab_id;
             this.tab_code = dataReq.tab_code;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1428common = builder.f1429common;
+            this.f1426common = builder.f1427common;
             String str = builder.tab_id;
             if (str == null) {
                 this.tab_id = "";
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1428common = builder.f1429common;
+        this.f1426common = builder.f1427common;
         this.tab_id = builder.tab_id;
         this.tab_code = builder.tab_code;
     }

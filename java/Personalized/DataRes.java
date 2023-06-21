@@ -36,6 +36,8 @@ public final class DataRes extends Message {
     public final Integer fresh_ctrl_num;
     @ProtoField(tag = 26)
     public final HeaderCard header_card;
+    @ProtoField(tag = 28)
+    public final HotCard hot_card;
     @ProtoField(tag = 23)
     public final DiscoverHotForum hot_recomforum;
     @ProtoField(label = Message.Label.REPEATED, tag = 11)
@@ -96,6 +98,7 @@ public final class DataRes extends Message {
         public FloatInfo float_info;
         public Integer fresh_ctrl_num;
         public HeaderCard header_card;
+        public HotCard hot_card;
         public DiscoverHotForum hot_recomforum;
         public List<TagStruct> interestion;
         public Integer is_new_url;
@@ -148,6 +151,7 @@ public final class DataRes extends Message {
             this.show_adsense = dataRes.show_adsense;
             this.header_card = dataRes.header_card;
             this.page_data = dataRes.page_data;
+            this.hot_card = dataRes.hot_card;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -262,6 +266,7 @@ public final class DataRes extends Message {
             }
             this.header_card = builder.header_card;
             this.page_data = builder.page_data;
+            this.hot_card = builder.hot_card;
             return;
         }
         this.tag_list = Message.immutableCopyOf(builder.tag_list);
@@ -291,5 +296,6 @@ public final class DataRes extends Message {
         this.show_adsense = builder.show_adsense;
         this.header_card = builder.header_card;
         this.page_data = builder.page_data;
+        this.hot_card = builder.hot_card;
     }
 }

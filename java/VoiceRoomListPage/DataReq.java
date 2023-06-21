@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1538common;
+    public final CommonReq f1536common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long fid;
 
@@ -21,7 +21,7 @@ public final class DataReq extends Message {
         public Long call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1539common;
+        public CommonReq f1537common;
         public Long fid;
 
         public Builder() {
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1539common = dataReq.f1538common;
+            this.f1537common = dataReq.f1536common;
             this.call_from = dataReq.call_from;
             this.fid = dataReq.fid;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1538common = builder.f1539common;
+            this.f1536common = builder.f1537common;
             Long l = builder.call_from;
             if (l == null) {
                 this.call_from = DEFAULT_CALL_FROM;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1538common = builder.f1539common;
+        this.f1536common = builder.f1537common;
         this.call_from = builder.call_from;
         this.fid = builder.fid;
     }

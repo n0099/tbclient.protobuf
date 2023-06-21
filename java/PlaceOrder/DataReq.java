@@ -18,7 +18,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1462common;
+    public final CommonReq f1460common;
     @ProtoField(tag = 13, type = Message.Datatype.UINT32)
     public final Integer currency;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -48,7 +48,7 @@ public final class DataReq extends Message {
         public String benefit_username;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1463common;
+        public CommonReq f1461common;
         public Integer currency;
         public Integer gift_id;
         public Integer num;
@@ -64,7 +64,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1463common = dataReq.f1462common;
+            this.f1461common = dataReq.f1460common;
             this.scene_from = dataReq.scene_from;
             this.gift_id = dataReq.gift_id;
             this.benefit_userid = dataReq.benefit_userid;
@@ -87,7 +87,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1462common = builder.f1463common;
+            this.f1460common = builder.f1461common;
             String str = builder.scene_from;
             if (str == null) {
                 this.scene_from = "";
@@ -151,7 +151,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1462common = builder.f1463common;
+        this.f1460common = builder.f1461common;
         this.scene_from = builder.scene_from;
         this.gift_id = builder.gift_id;
         this.benefit_userid = builder.benefit_userid;
