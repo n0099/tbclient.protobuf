@@ -13,6 +13,8 @@ import "AppInfo.proto";
 import "Baijiahao.proto";
 import "BookThread.proto";
 import "CartoonThread.proto";
+import "ClickBackCard.proto";
+import "CustomState.proto";
 import "DealInfo.proto";
 import "DeclareInfo.proto";
 import "DislikeInfo.proto";
@@ -234,10 +236,13 @@ message ThreadInfo {
     string exposure_monitor_url = 205;
     string click_monitor_url = 206;
     ThreadRecommendTag thread_recommend_tag = 210;
+    CustomState custom_state = 212;
+    int32 is_highlight = 213;
     int32 is_xiuxiu_thread = 214;
     ThreadAblum ablum_info = 215;
     string target_scheme = 217;
     string convert_btn_type = 218;
     int32 is_excellent_thread = 219;
     repeated Post hot_post_list = 221;
+    ClickBackCard click_back_card = 223;
 }
