@@ -108,6 +108,8 @@ public final class ThreadInfo extends Message {
     public final String category_name;
     @ProtoField(tag = 107, type = Message.Datatype.UINT32)
     public final Integer cheak_repeat;
+    @ProtoField(tag = 223)
+    public final ClickBackCard click_back_card;
     @ProtoField(tag = 206, type = Message.Datatype.STRING)
     public final String click_monitor_url;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
@@ -126,7 +128,7 @@ public final class ThreadInfo extends Message {
     public final Integer create_time;
     @ProtoField(tag = AdEventType.VIDEO_LOADING)
     public final CustomFigure custom_figure;
-    @ProtoField(tag = AdEventType.VIDEO_PRELOADED)
+    @ProtoField(tag = 212)
     public final CustomState custom_state;
     @ProtoField(tag = Cea708Decoder.COMMAND_DF2, type = Message.Datatype.STRING)
     public final String daily_paper_time;
@@ -220,7 +222,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_good;
     @ProtoField(tag = 165, type = Message.Datatype.INT32)
     public final Integer is_headlinepost;
-    @ProtoField(tag = AdEventType.VIDEO_PRELOAD_ERROR, type = Message.Datatype.INT32)
+    @ProtoField(tag = 213, type = Message.Datatype.INT32)
     public final Integer is_highlight;
     @ProtoField(tag = 128, type = Message.Datatype.INT32)
     public final Integer is_link_thread;
@@ -1598,11 +1600,11 @@ public final class ThreadInfo extends Message {
             List<Post> list19 = builder.hot_post_list;
             if (list19 == null) {
                 this.hot_post_list = DEFAULT_HOT_POST_LIST;
-                return;
             } else {
                 this.hot_post_list = Message.immutableCopyOf(list19);
-                return;
             }
+            this.click_back_card = builder.click_back_card;
+            return;
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -1815,6 +1817,7 @@ public final class ThreadInfo extends Message {
         this.is_excellent_thread = builder.is_excellent_thread;
         this.literature_flag = builder.literature_flag;
         this.hot_post_list = Message.immutableCopyOf(builder.hot_post_list);
+        this.click_back_card = builder.click_back_card;
     }
 
     /* loaded from: classes2.dex */
@@ -1841,6 +1844,7 @@ public final class ThreadInfo extends Message {
         public CartoonThread cartoon_info;
         public String category_name;
         public Integer cheak_repeat;
+        public ClickBackCard click_back_card;
         public String click_monitor_url;
         public String click_url;
         public String collect_mark_pid;
@@ -2250,6 +2254,7 @@ public final class ThreadInfo extends Message {
             this.is_excellent_thread = threadInfo.is_excellent_thread;
             this.literature_flag = threadInfo.literature_flag;
             this.hot_post_list = Message.copyOf(threadInfo.hot_post_list);
+            this.click_back_card = threadInfo.click_back_card;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
