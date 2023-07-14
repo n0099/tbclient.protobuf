@@ -278,7 +278,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_voice_thread;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer is_vote;
-    @ProtoField(tag = 214, type = Message.Datatype.INT32)
+    @ProtoField(tag = Constants.METHOD_IM_EMOJI, type = Message.Datatype.INT32)
     public final Integer is_xiuxiu_thread;
     @ProtoField(tag = 179)
     public final Item item;

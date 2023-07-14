@@ -45,6 +45,8 @@ public final class DataReq extends Message {
     public final List<String> interest_tag;
     @ProtoField(tag = 29, type = Message.Datatype.STRING)
     public final String invoke_source;
+    @ProtoField(tag = 40, type = Message.Datatype.INT32)
+    public final Integer is_newfeed;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
     public final Integer issdk;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -116,6 +118,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_NEW_INSTALL = 0;
     public static final Integer DEFAULT_REQUEST_TIMES = 0;
     public static final Long DEFAULT_PUSH_TID = 0L;
+    public static final Integer DEFAULT_IS_NEWFEED = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -132,6 +135,7 @@ public final class DataReq extends Message {
         public Long from_tid;
         public List<String> interest_tag;
         public String invoke_source;
+        public Integer is_newfeed;
         public Integer issdk;
         public String lastids;
         public Integer load_type;
@@ -202,6 +206,7 @@ public final class DataReq extends Message {
             this.ad_ext_params = dataReq.ad_ext_params;
             this.app_transmit_data = dataReq.app_transmit_data;
             this.push_tid = dataReq.push_tid;
+            this.is_newfeed = dataReq.is_newfeed;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -412,9 +417,15 @@ public final class DataReq extends Message {
             Long l2 = builder.push_tid;
             if (l2 == null) {
                 this.push_tid = DEFAULT_PUSH_TID;
-                return;
             } else {
                 this.push_tid = l2;
+            }
+            Integer num18 = builder.is_newfeed;
+            if (num18 == null) {
+                this.is_newfeed = DEFAULT_IS_NEWFEED;
+                return;
+            } else {
+                this.is_newfeed = num18;
                 return;
             }
         }
@@ -454,5 +465,6 @@ public final class DataReq extends Message {
         this.ad_ext_params = builder.ad_ext_params;
         this.app_transmit_data = builder.app_transmit_data;
         this.push_tid = builder.push_tid;
+        this.is_newfeed = builder.is_newfeed;
     }
 }

@@ -7,6 +7,8 @@ import java.util.List;
 /* loaded from: classes2.dex */
 public final class FeedLayout extends Message {
     public static final String DEFAULT_SCHEMA = "";
+    @ProtoField(label = Message.Label.REPEATED, tag = 6)
+    public final List<FeedKV> appendix;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<FeedKV> business_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -20,9 +22,11 @@ public final class FeedLayout extends Message {
     public static final List<ComponentFactory> DEFAULT_COMPONENTS = Collections.emptyList();
     public static final List<FeedKV> DEFAULT_LOG_INFO = Collections.emptyList();
     public static final List<FeedKV> DEFAULT_BUSINESS_INFO = Collections.emptyList();
+    public static final List<FeedKV> DEFAULT_APPENDIX = Collections.emptyList();
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FeedLayout> {
+        public List<FeedKV> appendix;
         public List<FeedKV> business_info;
         public List<ComponentFactory> components;
         public FeedFeedback feedback;
@@ -42,6 +46,7 @@ public final class FeedLayout extends Message {
             this.log_info = Message.copyOf(feedLayout.log_info);
             this.feedback = feedLayout.feedback;
             this.business_info = Message.copyOf(feedLayout.business_info);
+            this.appendix = Message.copyOf(feedLayout.appendix);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -76,9 +81,15 @@ public final class FeedLayout extends Message {
             List<FeedKV> list3 = builder.business_info;
             if (list3 == null) {
                 this.business_info = DEFAULT_BUSINESS_INFO;
-                return;
             } else {
                 this.business_info = Message.immutableCopyOf(list3);
+            }
+            List<FeedKV> list4 = builder.appendix;
+            if (list4 == null) {
+                this.appendix = DEFAULT_APPENDIX;
+                return;
+            } else {
+                this.appendix = Message.immutableCopyOf(list4);
                 return;
             }
         }
@@ -87,5 +98,6 @@ public final class FeedLayout extends Message {
         this.log_info = Message.immutableCopyOf(builder.log_info);
         this.feedback = builder.feedback;
         this.business_info = Message.immutableCopyOf(builder.business_info);
+        this.appendix = Message.immutableCopyOf(builder.appendix);
     }
 }

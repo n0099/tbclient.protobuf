@@ -16,6 +16,7 @@ public final class ReplyList extends Message {
     public static final String DEFAULT_ITEM_TYPE = "";
     public static final String DEFAULT_POST_FROM = "";
     public static final String DEFAULT_QUOTE_CONTENT = "";
+    public static final String DEFAULT_TARGET_SCHEME = "";
     public static final String DEFAULT_THREAD_IMG_URL = "";
     public static final String DEFAULT_TITLE = "";
     @ProtoField(tag = 27)
@@ -56,6 +57,8 @@ public final class ReplyList extends Message {
     public final User replyer;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
     public final Integer server_time;
+    @ProtoField(tag = 30, type = Message.Datatype.STRING)
+    public final String target_scheme;
     @ProtoField(tag = 25)
     public final User thread_author_user;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -114,6 +117,7 @@ public final class ReplyList extends Message {
         public User quote_user;
         public User replyer;
         public Integer server_time;
+        public String target_scheme;
         public User thread_author_user;
         public Long thread_id;
         public String thread_img_url;
@@ -162,6 +166,7 @@ public final class ReplyList extends Message {
             this.baijiahao = replyList.baijiahao;
             this.new_floor_info = Message.copyOf(replyList.new_floor_info);
             this.has_agree = replyList.has_agree;
+            this.target_scheme = replyList.target_scheme;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -315,9 +320,15 @@ public final class ReplyList extends Message {
             Integer num11 = builder.has_agree;
             if (num11 == null) {
                 this.has_agree = DEFAULT_HAS_AGREE;
-                return;
             } else {
                 this.has_agree = num11;
+            }
+            String str8 = builder.target_scheme;
+            if (str8 == null) {
+                this.target_scheme = "";
+                return;
+            } else {
+                this.target_scheme = str8;
                 return;
             }
         }
@@ -350,5 +361,6 @@ public final class ReplyList extends Message {
         this.baijiahao = builder.baijiahao;
         this.new_floor_info = Message.immutableCopyOf(builder.new_floor_info);
         this.has_agree = builder.has_agree;
+        this.target_scheme = builder.target_scheme;
     }
 }

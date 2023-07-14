@@ -1,4 +1,4 @@
-package tbclient.Personalized;
+package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;

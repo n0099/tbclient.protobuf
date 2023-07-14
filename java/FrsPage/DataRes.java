@@ -155,6 +155,8 @@ public final class DataRes extends Message {
     public final Group group;
     @ProtoField(tag = 34)
     public final HeadSdk head_sdk;
+    @ProtoField(tag = 122)
+    public final HeaderCard header_card;
     @ProtoField(tag = 26)
     public final ZhiBoInfoTW hot_twzhibo_info;
     @ProtoField(tag = 102)
@@ -229,6 +231,8 @@ public final class DataRes extends Message {
     public final Integer smart_frs_type;
     @ProtoField(tag = 39, type = Message.Datatype.INT32)
     public final Integer sort_type;
+    @ProtoField(tag = 123)
+    public final FrsSpriteBubble sprite_bubble_guide;
     @ProtoField(label = Message.Label.REPEATED, tag = 20)
     public final List<StarEnter> star_enter;
     @ProtoField(tag = 81)
@@ -377,6 +381,7 @@ public final class DataRes extends Message {
         public GconAccount gcon_account;
         public Group group;
         public HeadSdk head_sdk;
+        public HeaderCard header_card;
         public ZhiBoInfoTW hot_twzhibo_info;
         public HotUserRankEntry hot_user_entry;
         public Info info;
@@ -414,6 +419,7 @@ public final class DataRes extends Message {
         public List<String> smart_app_avatar;
         public Integer smart_frs_type;
         public Integer sort_type;
+        public FrsSpriteBubble sprite_bubble_guide;
         public List<StarEnter> star_enter;
         public StarRank star_rank_info;
         public StarVoice star_voice;
@@ -557,6 +563,8 @@ public final class DataRes extends Message {
             this.is_member_broadcast_forum = dataRes.is_member_broadcast_forum;
             this.forum_group = dataRes.forum_group;
             this.frs_banner_header = dataRes.frs_banner_header;
+            this.header_card = dataRes.header_card;
+            this.sprite_bubble_guide = dataRes.sprite_bubble_guide;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -947,6 +955,8 @@ public final class DataRes extends Message {
             }
             this.forum_group = builder.forum_group;
             this.frs_banner_header = builder.frs_banner_header;
+            this.header_card = builder.header_card;
+            this.sprite_bubble_guide = builder.sprite_bubble_guide;
             return;
         }
         this.user = builder.user;
@@ -1062,5 +1072,7 @@ public final class DataRes extends Message {
         this.is_member_broadcast_forum = builder.is_member_broadcast_forum;
         this.forum_group = builder.forum_group;
         this.frs_banner_header = builder.frs_banner_header;
+        this.header_card = builder.header_card;
+        this.sprite_bubble_guide = builder.sprite_bubble_guide;
     }
 }

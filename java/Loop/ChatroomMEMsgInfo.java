@@ -9,6 +9,7 @@ public final class ChatroomMEMsgInfo extends Message {
     public static final Long DEFAULT_FROM_UID = 0L;
     public static final Long DEFAULT_MSG_ID = 0L;
     public static final String DEFAULT_SPECIAL_MSG = "";
+    public static final String DEFAULT_SPECIAL_MSG_TYPE = "";
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String content;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -19,6 +20,8 @@ public final class ChatroomMEMsgInfo extends Message {
     public final Long msg_id;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String special_msg;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String special_msg_type;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ChatroomMEMsgInfo> {
@@ -27,6 +30,7 @@ public final class ChatroomMEMsgInfo extends Message {
         public Long from_uid;
         public Long msg_id;
         public String special_msg;
+        public String special_msg_type;
 
         public Builder() {
         }
@@ -41,6 +45,7 @@ public final class ChatroomMEMsgInfo extends Message {
             this.content = chatroomMEMsgInfo.content;
             this.msg_id = chatroomMEMsgInfo.msg_id;
             this.special_msg = chatroomMEMsgInfo.special_msg;
+            this.special_msg_type = chatroomMEMsgInfo.special_msg_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -80,9 +85,15 @@ public final class ChatroomMEMsgInfo extends Message {
             String str3 = builder.special_msg;
             if (str3 == null) {
                 this.special_msg = "";
-                return;
             } else {
                 this.special_msg = str3;
+            }
+            String str4 = builder.special_msg_type;
+            if (str4 == null) {
+                this.special_msg_type = "";
+                return;
+            } else {
+                this.special_msg_type = str4;
                 return;
             }
         }
@@ -91,5 +102,6 @@ public final class ChatroomMEMsgInfo extends Message {
         this.content = builder.content;
         this.msg_id = builder.msg_id;
         this.special_msg = builder.special_msg;
+        this.special_msg_type = builder.special_msg_type;
     }
 }
