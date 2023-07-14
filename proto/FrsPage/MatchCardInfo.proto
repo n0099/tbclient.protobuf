@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "Personalized/MatchPlayerInfo.proto";
+import "FrsPage/MatchPlayerInfo.proto";
 import "ThreadInfo.proto";
 
 message MatchCardInfo {

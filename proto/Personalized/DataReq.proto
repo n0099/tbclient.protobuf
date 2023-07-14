@@ -40,4 +40,5 @@ message DataReq {
     string ad_ext_params = 37;
     AppTransmitData app_transmit_data = 38;
     int64 push_tid = 39;
+    int32 is_newfeed = 40;
 }

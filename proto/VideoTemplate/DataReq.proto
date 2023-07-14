@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "CommonReq.proto";
-
-message DataReq {
-    int32 source = 2;
-}

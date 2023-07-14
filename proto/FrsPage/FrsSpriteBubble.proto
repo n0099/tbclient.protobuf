@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "SpriteBubble.proto";
+
+message FrsSpriteBubble {
+    SpriteBubble bubble_text = 1;
+    string bubble_uri = 2;
+    int32 bubble_seconds = 3;
+}

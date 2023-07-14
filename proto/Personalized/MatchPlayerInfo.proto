@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "Post.proto";
+
+message MatchPlayerInfo {
+    string name = 1;
+    string avatar = 2;
+    double score = 3;
+    int64 score_cnt = 4;
+    Post hot_post = 5;
+    string sub_avatar = 6;
+    string sub_text = 7;
+    int32 score_self = 8;
+    string score_link = 9;
+    int64 match_id = 10;
+    int32 match_index = 11;
+    int64 player_id = 12;
+}

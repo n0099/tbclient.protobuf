@@ -238,7 +238,6 @@ message ThreadInfo {
     ThreadRecommendTag thread_recommend_tag = 210;
     CustomState custom_state = 212;
     int32 is_highlight = 213;
-    int32 is_xiuxiu_thread = 214;
     ThreadAblum ablum_info = 215;
     string target_scheme = 217;
     string convert_btn_type = 218;
