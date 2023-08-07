@@ -25,4 +25,6 @@ message HistoryForumInfo {
     int32 is_forum_business_account = 20;
     RecomTagInfo tag_info = 21;
     string first_category = 22;
+    int32 is_like = 23;
+    int32 day_thread_num = 24;
 }

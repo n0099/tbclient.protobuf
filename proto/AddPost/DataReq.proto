@@ -69,4 +69,5 @@ message DataReq {
     string from_category_id = 65;
     string to_category_id = 66;
     int32 is_show_bless = 67;
+    string bot_conf = 68;
 }

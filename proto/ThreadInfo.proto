@@ -40,6 +40,7 @@ import "PsInfo.proto";
 import "PushStatus.proto";
 import "RecommendTip.proto";
 import "ReportInfo.proto";
+import "RobotEntrance.proto";
 import "SimpleForum.proto";
 import "SkinInfo.proto";
 import "StarRankIcon.proto";
@@ -243,5 +244,6 @@ message ThreadInfo {
     string convert_btn_type = 218;
     int32 is_excellent_thread = 219;
     repeated Post hot_post_list = 221;
+    RobotEntrance robot_entrance = 222;
     ClickBackCard click_back_card = 223;
 }

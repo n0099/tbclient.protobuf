@@ -8,4 +8,5 @@ message ThemeElement {
     string font_color = 5;
     int64 pattern_image_height = 6;
     int64 pattern_image_width = 7;
+    string pattern_text = 8;
 }

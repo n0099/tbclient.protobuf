@@ -177,4 +177,5 @@ message User {
     string display_intro = 138;
     ThemeTailInUser theme_tail = 141;
     ShakeAdSwitch shake_ad_switch = 145;
+    string ios_b_url = 147;
 }

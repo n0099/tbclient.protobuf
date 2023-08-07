@@ -14,4 +14,5 @@ message NovelInfo {
     string member_text = 11;
     string member_img = 12;
     string buy_url = 13;
+    repeated string category = 14;
 }

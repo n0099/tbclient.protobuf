@@ -189,4 +189,5 @@ message DataRes {
     FrsBannerHeader frs_banner_header = 121;
     HeaderCard header_card = 122;
     FrsSpriteBubble sprite_bubble_guide = 123;
+    int32 is_need_live_ununiq = 124;
 }
