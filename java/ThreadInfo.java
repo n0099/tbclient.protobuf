@@ -380,6 +380,8 @@ public final class ThreadInfo extends Message {
     public final List<PbContent> rich_abstract;
     @ProtoField(label = Message.Label.REPEATED, tag = 111)
     public final List<PbContent> rich_title;
+    @ProtoField(tag = 222)
+    public final RobotEntrance robot_entrance;
     @ProtoField(tag = Constants.METHOD_IM_GET_USERS_PROFILE_BATCH_BY_BAIDU_UID, type = Message.Datatype.STRING)
     public final String scard_packet_id;
     @ProtoField(tag = 135, type = Message.Datatype.INT64)
@@ -1603,6 +1605,7 @@ public final class ThreadInfo extends Message {
             } else {
                 this.hot_post_list = Message.immutableCopyOf(list19);
             }
+            this.robot_entrance = builder.robot_entrance;
             this.click_back_card = builder.click_back_card;
             return;
         }
@@ -1817,6 +1820,7 @@ public final class ThreadInfo extends Message {
         this.is_excellent_thread = builder.is_excellent_thread;
         this.literature_flag = builder.literature_flag;
         this.hot_post_list = Message.immutableCopyOf(builder.hot_post_list);
+        this.robot_entrance = builder.robot_entrance;
         this.click_back_card = builder.click_back_card;
     }
 
@@ -1980,6 +1984,7 @@ public final class ThreadInfo extends Message {
         public Integer repost_num;
         public List<PbContent> rich_abstract;
         public List<PbContent> rich_title;
+        public RobotEntrance robot_entrance;
         public String scard_packet_id;
         public Long share_num;
         public Integer show_ad_subscript;
@@ -2254,6 +2259,7 @@ public final class ThreadInfo extends Message {
             this.is_excellent_thread = threadInfo.is_excellent_thread;
             this.literature_flag = threadInfo.literature_flag;
             this.hot_post_list = Message.copyOf(threadInfo.hot_post_list);
+            this.robot_entrance = threadInfo.robot_entrance;
             this.click_back_card = threadInfo.click_back_card;
         }
 

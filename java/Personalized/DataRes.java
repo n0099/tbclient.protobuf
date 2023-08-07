@@ -42,12 +42,16 @@ public final class DataRes extends Message {
     public final DiscoverHotForum hot_recomforum;
     @ProtoField(label = Message.Label.REPEATED, tag = 11)
     public final List<TagStruct> interestion;
+    @ProtoField(tag = 31, type = Message.Datatype.INT32)
+    public final Integer is_need_live_ununiq;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer is_new_url;
     @ProtoField(label = Message.Label.REPEATED, tag = 14)
     public final List<SimpleForum> like_forums;
     @ProtoField(tag = 17)
     public final LiveAnswer live_answer;
+    @ProtoField(tag = 30)
+    public final NovelCard novel_card;
     @ProtoField(tag = 27)
     public final PageData page_data;
     @ProtoField(tag = 19)
@@ -84,6 +88,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_STYLE_AB_TAG = 0;
     public static final Integer DEFAULT_FRESH_CTRL_NUM = 0;
     public static final Integer DEFAULT_SHOW_ADSENSE = 0;
+    public static final Integer DEFAULT_IS_NEED_LIVE_UNUNIQ = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -101,9 +106,11 @@ public final class DataRes extends Message {
         public HotCard hot_card;
         public DiscoverHotForum hot_recomforum;
         public List<TagStruct> interestion;
+        public Integer is_need_live_ununiq;
         public Integer is_new_url;
         public List<SimpleForum> like_forums;
         public LiveAnswer live_answer;
+        public NovelCard novel_card;
         public PageData page_data;
         public RecomPostTopic recom_post_topic;
         public List<Resource> resource_list;
@@ -152,6 +159,8 @@ public final class DataRes extends Message {
             this.header_card = dataRes.header_card;
             this.page_data = dataRes.page_data;
             this.hot_card = dataRes.hot_card;
+            this.novel_card = dataRes.novel_card;
+            this.is_need_live_ununiq = dataRes.is_need_live_ununiq;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -267,7 +276,15 @@ public final class DataRes extends Message {
             this.header_card = builder.header_card;
             this.page_data = builder.page_data;
             this.hot_card = builder.hot_card;
-            return;
+            this.novel_card = builder.novel_card;
+            Integer num6 = builder.is_need_live_ununiq;
+            if (num6 == null) {
+                this.is_need_live_ununiq = DEFAULT_IS_NEED_LIVE_UNUNIQ;
+                return;
+            } else {
+                this.is_need_live_ununiq = num6;
+                return;
+            }
         }
         this.tag_list = Message.immutableCopyOf(builder.tag_list);
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
@@ -297,5 +314,7 @@ public final class DataRes extends Message {
         this.header_card = builder.header_card;
         this.page_data = builder.page_data;
         this.hot_card = builder.hot_card;
+        this.novel_card = builder.novel_card;
+        this.is_need_live_ununiq = builder.is_need_live_ununiq;
     }
 }

@@ -8,6 +8,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_ANONYMOUS = "";
     public static final String DEFAULT_AUTHSID = "";
     public static final String DEFAULT_BARRAGE_TIME = "";
+    public static final String DEFAULT_BOT_CONF = "";
     public static final String DEFAULT_CAN_NO_FORUM = "";
     public static final String DEFAULT_COMMENT_HEAD = "";
     public static final String DEFAULT_CONTENT = "";
@@ -75,6 +76,8 @@ public final class DataReq extends Message {
     public final String authsid;
     @ProtoField(tag = 32, type = Message.Datatype.STRING)
     public final String barrage_time;
+    @ProtoField(tag = 68, type = Message.Datatype.STRING)
+    public final String bot_conf;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String can_no_forum;
     @ProtoField(tag = 24, type = Message.Datatype.STRING)
@@ -82,7 +85,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1247common;
+    public final CommonReq f1246common;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String content;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -213,11 +216,12 @@ public final class DataReq extends Message {
         public String anonymous;
         public String authsid;
         public String barrage_time;
+        public String bot_conf;
         public String can_no_forum;
         public String comment_head;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1248common;
+        public CommonReq f1247common;
         public String content;
         public String during_time;
         public String entrance_type;
@@ -288,7 +292,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1248common = dataReq.f1247common;
+            this.f1247common = dataReq.f1246common;
             this.authsid = dataReq.authsid;
             this.sig = dataReq.sig;
             this.tbs = dataReq.tbs;
@@ -355,6 +359,7 @@ public final class DataReq extends Message {
             this.from_category_id = dataReq.from_category_id;
             this.to_category_id = dataReq.to_category_id;
             this.is_show_bless = dataReq.is_show_bless;
+            this.bot_conf = dataReq.bot_conf;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -367,7 +372,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1247common = builder.f1248common;
+            this.f1246common = builder.f1247common;
             String str = builder.authsid;
             if (str == null) {
                 this.authsid = "";
@@ -761,13 +766,19 @@ public final class DataReq extends Message {
             Integer num2 = builder.is_show_bless;
             if (num2 == null) {
                 this.is_show_bless = DEFAULT_IS_SHOW_BLESS;
-                return;
             } else {
                 this.is_show_bless = num2;
+            }
+            String str65 = builder.bot_conf;
+            if (str65 == null) {
+                this.bot_conf = "";
+                return;
+            } else {
+                this.bot_conf = str65;
                 return;
             }
         }
-        this.f1247common = builder.f1248common;
+        this.f1246common = builder.f1247common;
         this.authsid = builder.authsid;
         this.sig = builder.sig;
         this.tbs = builder.tbs;
@@ -834,5 +845,6 @@ public final class DataReq extends Message {
         this.from_category_id = builder.from_category_id;
         this.to_category_id = builder.to_category_id;
         this.is_show_bless = builder.is_show_bless;
+        this.bot_conf = builder.bot_conf;
     }
 }

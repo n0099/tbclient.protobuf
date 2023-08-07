@@ -169,6 +169,8 @@ public final class DataRes extends Message {
     public final Integer is_get_horse_race_lamp;
     @ProtoField(tag = 119, type = Message.Datatype.INT32)
     public final Integer is_member_broadcast_forum;
+    @ProtoField(tag = 124, type = Message.Datatype.INT32)
+    public final Integer is_need_live_ununiq;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer is_new_url;
     @ProtoField(tag = 103)
@@ -323,6 +325,7 @@ public final class DataRes extends Message {
     public static final List<LiveFuseForumData> DEFAULT_LIVE_FUSE_FORUM = Collections.emptyList();
     public static final Integer DEFAULT_BAWU_UNREAD_NOTICE_NUM = 0;
     public static final Integer DEFAULT_IS_MEMBER_BROADCAST_FORUM = 0;
+    public static final Integer DEFAULT_IS_NEED_LIVE_UNUNIQ = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -388,6 +391,7 @@ public final class DataRes extends Message {
         public Integer is_auto_play_forumheadvideo;
         public Integer is_get_horse_race_lamp;
         public Integer is_member_broadcast_forum;
+        public Integer is_need_live_ununiq;
         public Integer is_new_url;
         public ItemInfo item_info;
         public AlaLiveNotify live_frs_notify;
@@ -565,6 +569,7 @@ public final class DataRes extends Message {
             this.frs_banner_header = dataRes.frs_banner_header;
             this.header_card = dataRes.header_card;
             this.sprite_bubble_guide = dataRes.sprite_bubble_guide;
+            this.is_need_live_ununiq = dataRes.is_need_live_ununiq;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -957,7 +962,14 @@ public final class DataRes extends Message {
             this.frs_banner_header = builder.frs_banner_header;
             this.header_card = builder.header_card;
             this.sprite_bubble_guide = builder.sprite_bubble_guide;
-            return;
+            Integer num24 = builder.is_need_live_ununiq;
+            if (num24 == null) {
+                this.is_need_live_ununiq = DEFAULT_IS_NEED_LIVE_UNUNIQ;
+                return;
+            } else {
+                this.is_need_live_ununiq = num24;
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -1074,5 +1086,6 @@ public final class DataRes extends Message {
         this.frs_banner_header = builder.frs_banner_header;
         this.header_card = builder.header_card;
         this.sprite_bubble_guide = builder.sprite_bubble_guide;
+        this.is_need_live_ununiq = builder.is_need_live_ununiq;
     }
 }

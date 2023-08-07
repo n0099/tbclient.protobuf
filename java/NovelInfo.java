@@ -2,6 +2,8 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes2.dex */
 public final class NovelInfo extends Message {
     public static final String DEFAULT_AUTHOR = "";
@@ -18,6 +20,8 @@ public final class NovelInfo extends Message {
     public final String author;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String buy_url;
+    @ProtoField(label = Message.Label.REPEATED, tag = 14, type = Message.Datatype.STRING)
+    public final List<String> category;
     @ProtoField(tag = 10, type = Message.Datatype.INT64)
     public final Long chapters;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -43,11 +47,13 @@ public final class NovelInfo extends Message {
     public static final Long DEFAULT_NOVEL_ID = 0L;
     public static final Long DEFAULT_PERCENT = 0L;
     public static final Long DEFAULT_CHAPTERS = 0L;
+    public static final List<String> DEFAULT_CATEGORY = Collections.emptyList();
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<NovelInfo> {
         public String author;
         public String buy_url;
+        public List<String> category;
         public Long chapters;
         public String desc;
         public String discount_price;
@@ -81,6 +87,7 @@ public final class NovelInfo extends Message {
             this.member_text = novelInfo.member_text;
             this.member_img = novelInfo.member_img;
             this.buy_url = novelInfo.buy_url;
+            this.category = Message.copyOf(novelInfo.category);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -168,9 +175,15 @@ public final class NovelInfo extends Message {
             String str10 = builder.buy_url;
             if (str10 == null) {
                 this.buy_url = "";
-                return;
             } else {
                 this.buy_url = str10;
+            }
+            List<String> list = builder.category;
+            if (list == null) {
+                this.category = DEFAULT_CATEGORY;
+                return;
+            } else {
+                this.category = Message.immutableCopyOf(list);
                 return;
             }
         }
@@ -187,5 +200,6 @@ public final class NovelInfo extends Message {
         this.member_text = builder.member_text;
         this.member_img = builder.member_img;
         this.buy_url = builder.buy_url;
+        this.category = Message.immutableCopyOf(builder.category);
     }
 }

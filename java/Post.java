@@ -41,6 +41,8 @@ public final class Post extends Message {
     public final String bimg_url;
     @ProtoField(tag = 74, type = Message.Datatype.STRING)
     public final String bot_reply_content;
+    @ProtoField(label = Message.Label.REPEATED, tag = 75)
+    public final List<BotReplyContent> bot_reply_content_list;
     @ProtoField(tag = 64)
     public final ThemeBubble bubble_info;
     @ProtoField(tag = 72)
@@ -129,6 +131,8 @@ public final class Post extends Message {
     public final PbPresent present;
     @ProtoField(tag = 50, type = Message.Datatype.STRING)
     public final String quote_id;
+    @ProtoField(label = Message.Label.REPEATED, tag = 76)
+    public final List<RobotSkill> robot_skill;
     @ProtoField(tag = 65, type = Message.Datatype.STRING)
     public final String rumor_source_img;
     @ProtoField(tag = 68, type = Message.Datatype.INT32)
@@ -196,6 +200,8 @@ public final class Post extends Message {
     public static final List<CardLinkInfo> DEFAULT_CARD_LINK_INFO = Collections.emptyList();
     public static final Integer DEFAULT_SHIELD_ICON = 0;
     public static final Integer DEFAULT_IS_BOT_REPLY = 0;
+    public static final List<BotReplyContent> DEFAULT_BOT_REPLY_CONTENT_LIST = Collections.emptyList();
+    public static final List<RobotSkill> DEFAULT_ROBOT_SKILL = Collections.emptyList();
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Post> {
@@ -209,6 +215,7 @@ public final class Post extends Message {
         public Long author_id;
         public String bimg_url;
         public String bot_reply_content;
+        public List<BotReplyContent> bot_reply_content_list;
         public ThemeBubble bubble_info;
         public CallRobotEntrance call_robot_entrance;
         public List<CardLinkInfo> card_link_info;
@@ -253,6 +260,7 @@ public final class Post extends Message {
         public PbPostZan post_zan;
         public PbPresent present;
         public String quote_id;
+        public List<RobotSkill> robot_skill;
         public String rumor_source_img;
         public Integer shield_icon;
         public Integer show_squared;
@@ -354,6 +362,8 @@ public final class Post extends Message {
             this.call_robot_entrance = post.call_robot_entrance;
             this.is_bot_reply = post.is_bot_reply;
             this.bot_reply_content = post.bot_reply_content;
+            this.bot_reply_content_list = Message.copyOf(post.bot_reply_content_list);
+            this.robot_skill = Message.copyOf(post.robot_skill);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -656,9 +666,21 @@ public final class Post extends Message {
             String str15 = builder.bot_reply_content;
             if (str15 == null) {
                 this.bot_reply_content = "";
-                return;
             } else {
                 this.bot_reply_content = str15;
+            }
+            List<BotReplyContent> list6 = builder.bot_reply_content_list;
+            if (list6 == null) {
+                this.bot_reply_content_list = DEFAULT_BOT_REPLY_CONTENT_LIST;
+            } else {
+                this.bot_reply_content_list = Message.immutableCopyOf(list6);
+            }
+            List<RobotSkill> list7 = builder.robot_skill;
+            if (list7 == null) {
+                this.robot_skill = DEFAULT_ROBOT_SKILL;
+                return;
+            } else {
+                this.robot_skill = Message.immutableCopyOf(list7);
                 return;
             }
         }
@@ -735,5 +757,7 @@ public final class Post extends Message {
         this.call_robot_entrance = builder.call_robot_entrance;
         this.is_bot_reply = builder.is_bot_reply;
         this.bot_reply_content = builder.bot_reply_content;
+        this.bot_reply_content_list = Message.immutableCopyOf(builder.bot_reply_content_list);
+        this.robot_skill = Message.immutableCopyOf(builder.robot_skill);
     }
 }

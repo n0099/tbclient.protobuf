@@ -23,6 +23,7 @@ import tbclient.Promotion;
 import tbclient.PsRankListItem;
 import tbclient.RecomTopicList;
 import tbclient.RecommendThread;
+import tbclient.RobotEntrance;
 import tbclient.SdkTopicThread;
 import tbclient.SimpleForum;
 import tbclient.SimpleUser;
@@ -153,6 +154,8 @@ public final class DataRes extends Message {
     public final List<RecommendThread> recommend_threads;
     @ProtoField(label = Message.Label.REPEATED, tag = 35)
     public final List<SimpleForum> repost_recommend_forum_list;
+    @ProtoField(tag = 76)
+    public final RobotEntrance robot_entrance;
     @ProtoField(tag = 19)
     public final SdkTopicThread sdk_topic_thread;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
@@ -273,6 +276,7 @@ public final class DataRes extends Message {
         public RecommendBook recommend_book;
         public List<RecommendThread> recommend_threads;
         public List<SimpleForum> repost_recommend_forum_list;
+        public RobotEntrance robot_entrance;
         public SdkTopicThread sdk_topic_thread;
         public Integer server_time;
         public Integer show_adsense;
@@ -368,6 +372,7 @@ public final class DataRes extends Message {
             this.top_answer = dataRes.top_answer;
             this.jump_link_info = dataRes.jump_link_info;
             this.similar_content = dataRes.similar_content;
+            this.robot_entrance = dataRes.robot_entrance;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -637,6 +642,7 @@ public final class DataRes extends Message {
             this.top_answer = builder.top_answer;
             this.jump_link_info = builder.jump_link_info;
             this.similar_content = builder.similar_content;
+            this.robot_entrance = builder.robot_entrance;
             return;
         }
         this.user = builder.user;
@@ -711,5 +717,6 @@ public final class DataRes extends Message {
         this.top_answer = builder.top_answer;
         this.jump_link_info = builder.jump_link_info;
         this.similar_content = builder.similar_content;
+        this.robot_entrance = builder.robot_entrance;
     }
 }

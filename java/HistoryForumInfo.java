@@ -14,6 +14,8 @@ public final class HistoryForumInfo extends Message {
     public final String avatar;
     @ProtoField(tag = 14)
     public final BlockPopInfo block_pop_info;
+    @ProtoField(tag = 24, type = Message.Datatype.INT32)
+    public final Integer day_thread_num;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String first_category;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -28,6 +30,8 @@ public final class HistoryForumInfo extends Message {
     public final Integer hot_num;
     @ProtoField(tag = 20, type = Message.Datatype.INT32)
     public final Integer is_forum_business_account;
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
+    public final Integer is_like;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer is_liveforum;
     @ProtoField(tag = 16, type = Message.Datatype.INT32)
@@ -56,11 +60,14 @@ public final class HistoryForumInfo extends Message {
     public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
     public static final Boolean DEFAULT_HAS_POSTPRE = Boolean.FALSE;
     public static final Integer DEFAULT_IS_FORUM_BUSINESS_ACCOUNT = 0;
+    public static final Integer DEFAULT_IS_LIKE = 0;
+    public static final Integer DEFAULT_DAY_THREAD_NUM = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<HistoryForumInfo> {
         public String avatar;
         public BlockPopInfo block_pop_info;
+        public Integer day_thread_num;
         public String first_category;
         public Integer follow_num;
         public Long forum_id;
@@ -68,6 +75,7 @@ public final class HistoryForumInfo extends Message {
         public Boolean has_postpre;
         public Integer hot_num;
         public Integer is_forum_business_account;
+        public Integer is_like;
         public Integer is_liveforum;
         public Integer level_id;
         public Boolean need_trans;
@@ -104,6 +112,8 @@ public final class HistoryForumInfo extends Message {
             this.is_forum_business_account = historyForumInfo.is_forum_business_account;
             this.tag_info = historyForumInfo.tag_info;
             this.first_category = historyForumInfo.first_category;
+            this.is_like = historyForumInfo.is_like;
+            this.day_thread_num = historyForumInfo.day_thread_num;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -201,9 +211,21 @@ public final class HistoryForumInfo extends Message {
             String str4 = builder.first_category;
             if (str4 == null) {
                 this.first_category = "";
-                return;
             } else {
                 this.first_category = str4;
+            }
+            Integer num7 = builder.is_like;
+            if (num7 == null) {
+                this.is_like = DEFAULT_IS_LIKE;
+            } else {
+                this.is_like = num7;
+            }
+            Integer num8 = builder.day_thread_num;
+            if (num8 == null) {
+                this.day_thread_num = DEFAULT_DAY_THREAD_NUM;
+                return;
+            } else {
+                this.day_thread_num = num8;
                 return;
             }
         }
@@ -225,5 +247,7 @@ public final class HistoryForumInfo extends Message {
         this.is_forum_business_account = builder.is_forum_business_account;
         this.tag_info = builder.tag_info;
         this.first_category = builder.first_category;
+        this.is_like = builder.is_like;
+        this.day_thread_num = builder.day_thread_num;
     }
 }

@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 9)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1461common;
+    public final CommonReq f1460common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long friend_uid;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
@@ -23,6 +23,8 @@ public final class DataReq extends Message {
     public final String history_forum_ids;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String history_forum_names;
+    @ProtoField(tag = 20, type = Message.Datatype.INT32)
+    public final Integer is_enable_naws;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer is_from_usercenter;
     @ProtoField(tag = 4, type = Message.Datatype.UINT32)
@@ -63,17 +65,19 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_IS_FROM_USERCENTER = 0;
     public static final Integer DEFAULT_PAGE = 0;
     public static final Integer DEFAULT_NEED_USERGROWTH_TASK = 0;
+    public static final Integer DEFAULT_IS_ENABLE_NAWS = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1462common;
+        public CommonReq f1461common;
         public Long friend_uid;
         public String friend_uid_portrait;
         public Integer has_plist;
         public String history_forum_ids;
         public String history_forum_names;
+        public Integer is_enable_naws;
         public Integer is_from_usercenter;
         public Integer is_guest;
         public Integer need_post_count;
@@ -104,7 +108,7 @@ public final class DataReq extends Message {
             this.pn = dataReq.pn;
             this.rn = dataReq.rn;
             this.has_plist = dataReq.has_plist;
-            this.f1462common = dataReq.f1461common;
+            this.f1461common = dataReq.f1460common;
             this.scr_w = dataReq.scr_w;
             this.scr_h = dataReq.scr_h;
             this.q_type = dataReq.q_type;
@@ -115,6 +119,7 @@ public final class DataReq extends Message {
             this.history_forum_ids = dataReq.history_forum_ids;
             this.history_forum_names = dataReq.history_forum_names;
             this.need_usergrowth_task = dataReq.need_usergrowth_task;
+            this.is_enable_naws = dataReq.is_enable_naws;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -175,7 +180,7 @@ public final class DataReq extends Message {
             } else {
                 this.has_plist = num5;
             }
-            this.f1461common = builder.f1462common;
+            this.f1460common = builder.f1461common;
             Integer num6 = builder.scr_w;
             if (num6 == null) {
                 this.scr_w = DEFAULT_SCR_W;
@@ -233,9 +238,15 @@ public final class DataReq extends Message {
             Integer num11 = builder.need_usergrowth_task;
             if (num11 == null) {
                 this.need_usergrowth_task = DEFAULT_NEED_USERGROWTH_TASK;
-                return;
             } else {
                 this.need_usergrowth_task = num11;
+            }
+            Integer num12 = builder.is_enable_naws;
+            if (num12 == null) {
+                this.is_enable_naws = DEFAULT_IS_ENABLE_NAWS;
+                return;
+            } else {
+                this.is_enable_naws = num12;
                 return;
             }
         }
@@ -247,7 +258,7 @@ public final class DataReq extends Message {
         this.pn = builder.pn;
         this.rn = builder.rn;
         this.has_plist = builder.has_plist;
-        this.f1461common = builder.f1462common;
+        this.f1460common = builder.f1461common;
         this.scr_w = builder.scr_w;
         this.scr_h = builder.scr_h;
         this.q_type = builder.q_type;
@@ -258,5 +269,6 @@ public final class DataReq extends Message {
         this.history_forum_ids = builder.history_forum_ids;
         this.history_forum_names = builder.history_forum_names;
         this.need_usergrowth_task = builder.need_usergrowth_task;
+        this.is_enable_naws = builder.is_enable_naws;
     }
 }

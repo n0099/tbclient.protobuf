@@ -19,6 +19,7 @@ public final class User extends Message {
     public static final String DEFAULT_FOLLOW_FROM = "";
     public static final String DEFAULT_INTRO = "";
     public static final String DEFAULT_IOS_BIMG_FORMAT = "";
+    public static final String DEFAULT_IOS_B_URL = "";
     public static final String DEFAULT_IP = "";
     public static final String DEFAULT_IP_ADDRESS = "";
     public static final String DEFAULT_LEVEL_INFLUENCE = "";
@@ -132,6 +133,8 @@ public final class User extends Message {
     public final Integer influence;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String intro;
+    @ProtoField(tag = 147, type = Message.Datatype.STRING)
+    public final String ios_b_url;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String ios_bimg_format;
     @ProtoField(tag = 28, type = Message.Datatype.STRING)
@@ -429,6 +432,7 @@ public final class User extends Message {
         public Long id;
         public Integer influence;
         public String intro;
+        public String ios_b_url;
         public String ios_bimg_format;
         public String ip;
         public String ip_address;
@@ -663,6 +667,7 @@ public final class User extends Message {
             this.world_cup_info = user.world_cup_info;
             this.shake_ad_switch = user.shake_ad_switch;
             this.pendants = Message.copyOf(user.pendants);
+            this.ios_b_url = user.ios_b_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1289,9 +1294,15 @@ public final class User extends Message {
             List<String> list13 = builder.pendants;
             if (list13 == null) {
                 this.pendants = DEFAULT_PENDANTS;
-                return;
             } else {
                 this.pendants = Message.immutableCopyOf(list13);
+            }
+            String str28 = builder.ios_b_url;
+            if (str28 == null) {
+                this.ios_b_url = "";
+                return;
+            } else {
+                this.ios_b_url = str28;
                 return;
             }
         }
@@ -1432,5 +1443,6 @@ public final class User extends Message {
         this.world_cup_info = builder.world_cup_info;
         this.shake_ad_switch = builder.shake_ad_switch;
         this.pendants = Message.immutableCopyOf(builder.pendants);
+        this.ios_b_url = builder.ios_b_url;
     }
 }

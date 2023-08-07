@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1329common;
+    public final CommonReq f1328common;
     @ProtoField(tag = 5, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -35,7 +35,7 @@ public final class DataReq extends Message {
         public List<Long> bcast_ids;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1330common;
+        public CommonReq f1329common;
         public Long forum_id;
         public Integer need_cnt;
         public Integer query_type;
@@ -50,7 +50,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1330common = dataReq.f1329common;
+            this.f1329common = dataReq.f1328common;
             this.query_type = dataReq.query_type;
             this.staff_id = dataReq.staff_id;
             this.need_cnt = dataReq.need_cnt;
@@ -69,7 +69,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1329common = builder.f1330common;
+            this.f1328common = builder.f1329common;
             Integer num = builder.query_type;
             if (num == null) {
                 this.query_type = DEFAULT_QUERY_TYPE;
@@ -109,7 +109,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1329common = builder.f1330common;
+        this.f1328common = builder.f1329common;
         this.query_type = builder.query_type;
         this.staff_id = builder.staff_id;
         this.need_cnt = builder.need_cnt;
