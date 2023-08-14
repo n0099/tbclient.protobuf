@@ -5,8 +5,11 @@ import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
 /* loaded from: classes2.dex */
 public final class DataReq extends Message {
+    public static final String DEFAULT_CALL_FROM = "";
     public static final String DEFAULT_ISFORUM = "";
     public static final String DEFAULT_WORD = "";
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String call_from;
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
@@ -18,6 +21,7 @@ public final class DataReq extends Message {
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
+        public String call_from;
 
         /* renamed from: common  reason: collision with root package name */
         public CommonReq f1485common;
@@ -35,6 +39,7 @@ public final class DataReq extends Message {
             this.f1485common = dataReq.f1484common;
             this.word = dataReq.word;
             this.isforum = dataReq.isforum;
+            this.call_from = dataReq.call_from;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -57,14 +62,21 @@ public final class DataReq extends Message {
             String str2 = builder.isforum;
             if (str2 == null) {
                 this.isforum = "";
-                return;
             } else {
                 this.isforum = str2;
+            }
+            String str3 = builder.call_from;
+            if (str3 == null) {
+                this.call_from = "";
+                return;
+            } else {
+                this.call_from = str3;
                 return;
             }
         }
         this.f1484common = builder.f1485common;
         this.word = builder.word;
         this.isforum = builder.isforum;
+        this.call_from = builder.call_from;
     }
 }

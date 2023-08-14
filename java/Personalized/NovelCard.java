@@ -31,6 +31,8 @@ public final class NovelCard extends Message {
     public final Integer offset;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long reader_cnt;
+    @ProtoField(tag = 12, type = Message.Datatype.INT32)
+    public final Integer status;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String target_scheme;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -39,6 +41,7 @@ public final class NovelCard extends Message {
     public static final List<ThemeColorInfo> DEFAULT_CHAPTER_TAGS = Collections.emptyList();
     public static final Long DEFAULT_READER_CNT = 0L;
     public static final Integer DEFAULT_OFFSET = 0;
+    public static final Integer DEFAULT_STATUS = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<NovelCard> {
@@ -51,6 +54,7 @@ public final class NovelCard extends Message {
         public List<ThemeColorInfo> novel_tags;
         public Integer offset;
         public Long reader_cnt;
+        public Integer status;
         public String target_scheme;
         public String title;
 
@@ -73,6 +77,7 @@ public final class NovelCard extends Message {
             this.chapter_scheme = novelCard.chapter_scheme;
             this.background_image = novelCard.background_image;
             this.offset = novelCard.offset;
+            this.status = novelCard.status;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -133,9 +138,15 @@ public final class NovelCard extends Message {
             Integer num = builder.offset;
             if (num == null) {
                 this.offset = DEFAULT_OFFSET;
-                return;
             } else {
                 this.offset = num;
+            }
+            Integer num2 = builder.status;
+            if (num2 == null) {
+                this.status = DEFAULT_STATUS;
+                return;
+            } else {
+                this.status = num2;
                 return;
             }
         }
@@ -150,5 +161,6 @@ public final class NovelCard extends Message {
         this.chapter_scheme = builder.chapter_scheme;
         this.background_image = builder.background_image;
         this.offset = builder.offset;
+        this.status = builder.status;
     }
 }

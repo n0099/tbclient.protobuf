@@ -10,6 +10,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_AD_CONTEXT_LIST = "";
     public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_CALL_URL = "";
+    public static final String DEFAULT_COME_FROM = "";
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_FEED_NID = "";
     public static final String DEFAULT_JFROM = "";
@@ -23,6 +24,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_ORI_UGC_VID = "";
     public static final String DEFAULT_PLATFORM = "";
     public static final String DEFAULT_QUERY_WORD = "";
+    public static final String DEFAULT_SEARCH_QUERY = "";
     public static final String DEFAULT_SHOUBAI_CUID = "";
     public static final String DEFAULT_ST_FROM = "";
     public static final String DEFAULT_ST_LINK = "";
@@ -50,6 +52,8 @@ public final class DataReq extends Message {
     public final Long broadcast_id;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
     public final String call_url;
+    @ProtoField(tag = 83, type = Message.Datatype.STRING)
+    public final String come_from;
     @ProtoField(tag = 25)
 
     /* renamed from: common  reason: collision with root package name */
@@ -148,6 +152,8 @@ public final class DataReq extends Message {
     public final Integer scr_h;
     @ProtoField(tag = 14, type = Message.Datatype.INT32)
     public final Integer scr_w;
+    @ProtoField(tag = 84, type = Message.Datatype.STRING)
+    public final String search_query;
     @ProtoField(tag = 61, type = Message.Datatype.STRING)
     public final String shoubai_cuid;
     @ProtoField(tag = 82, type = Message.Datatype.INT32)
@@ -234,6 +240,7 @@ public final class DataReq extends Message {
         public Integer banner;
         public Long broadcast_id;
         public String call_url;
+        public String come_from;
 
         /* renamed from: common  reason: collision with root package name */
         public CommonReq f1453common;
@@ -284,6 +291,7 @@ public final class DataReq extends Message {
         public Double scr_dip;
         public Integer scr_h;
         public Integer scr_w;
+        public String search_query;
         public String shoubai_cuid;
         public Integer similar_from;
         public Integer source_type;
@@ -379,6 +387,8 @@ public final class DataReq extends Message {
             this.request_times = dataReq.request_times;
             this.last_pid = dataReq.last_pid;
             this.similar_from = dataReq.similar_from;
+            this.come_from = dataReq.come_from;
+            this.search_query = dataReq.search_query;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -800,9 +810,21 @@ public final class DataReq extends Message {
             Integer num36 = builder.similar_from;
             if (num36 == null) {
                 this.similar_from = DEFAULT_SIMILAR_FROM;
-                return;
             } else {
                 this.similar_from = num36;
+            }
+            String str24 = builder.come_from;
+            if (str24 == null) {
+                this.come_from = "";
+            } else {
+                this.come_from = str24;
+            }
+            String str25 = builder.search_query;
+            if (str25 == null) {
+                this.search_query = "";
+                return;
+            } else {
+                this.search_query = str25;
                 return;
             }
         }
@@ -878,5 +900,7 @@ public final class DataReq extends Message {
         this.request_times = builder.request_times;
         this.last_pid = builder.last_pid;
         this.similar_from = builder.similar_from;
+        this.come_from = builder.come_from;
+        this.search_query = builder.search_query;
     }
 }

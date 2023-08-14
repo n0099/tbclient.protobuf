@@ -11,6 +11,7 @@ public final class RecommendForumInfo extends Message {
     public static final String DEFAULT_AVATAR = "";
     public static final String DEFAULT_AVATAR_ORIGIN = "";
     public static final String DEFAULT_EXTRA = "";
+    public static final String DEFAULT_FIRST_CATEGORY = "";
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_HOT_TEXT = "";
     public static final String DEFAULT_LV1_NAME = "";
@@ -26,16 +27,24 @@ public final class RecommendForumInfo extends Message {
     public final String avatar;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String avatar_origin;
+    @ProtoField(tag = 28)
+    public final BlockPopInfo block_pop_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
     public final List<PbContent> content;
+    @ProtoField(tag = 27, type = Message.Datatype.UINT32)
+    public final Integer day_thread_num;
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String extra;
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    public final String first_category;
     @ProtoField(tag = 2, type = Message.Datatype.UINT64)
     public final Long forum_id;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String forum_name;
     @ProtoField(tag = 9, type = Message.Datatype.UINT32)
     public final Integer forum_type;
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    public final Integer has_postpre;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String hot_text;
     @ProtoField(tag = 22, type = Message.Datatype.UINT64)
@@ -48,18 +57,24 @@ public final class RecommendForumInfo extends Message {
     public final Integer is_private_forum;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer is_recommend_forum;
+    @ProtoField(tag = 30, type = Message.Datatype.INT32)
+    public final Integer level_id;
     @ProtoField(tag = 18, type = Message.Datatype.STRING)
     public final String lv1_name;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String lv2_name;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer member_count;
+    @ProtoField(tag = 24)
+    public final PostPrefix post_prefix;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String recom_reason;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
     public final String slogan;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String source;
+    @ProtoField(label = Message.Label.REPEATED, tag = 26)
+    public final List<FrsTabInfo> tab_info;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer thread_count;
     public static final Long DEFAULT_FORUM_ID = 0L;
@@ -72,6 +87,10 @@ public final class RecommendForumInfo extends Message {
     public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
     public static final Long DEFAULT_HOT_THREAD_ID = 0L;
     public static final Integer DEFAULT_IS_RECOMMEND_FORUM = 0;
+    public static final Integer DEFAULT_HAS_POSTPRE = 0;
+    public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_DAY_THREAD_NUM = 0;
+    public static final Integer DEFAULT_LEVEL_ID = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecommendForumInfo> {
@@ -79,23 +98,30 @@ public final class RecommendForumInfo extends Message {
         public String authen;
         public String avatar;
         public String avatar_origin;
+        public BlockPopInfo block_pop_info;
         public List<PbContent> content;
+        public Integer day_thread_num;
         public String extra;
+        public String first_category;
         public Long forum_id;
         public String forum_name;
         public Integer forum_type;
+        public Integer has_postpre;
         public String hot_text;
         public Long hot_thread_id;
         public Integer is_brand_forum;
         public Integer is_like;
         public Integer is_private_forum;
         public Integer is_recommend_forum;
+        public Integer level_id;
         public String lv1_name;
         public String lv2_name;
         public Integer member_count;
+        public PostPrefix post_prefix;
         public String recom_reason;
         public String slogan;
         public String source;
+        public List<FrsTabInfo> tab_info;
         public Integer thread_count;
 
         public Builder() {
@@ -128,6 +154,13 @@ public final class RecommendForumInfo extends Message {
             this.avatar_origin = recommendForumInfo.avatar_origin;
             this.hot_thread_id = recommendForumInfo.hot_thread_id;
             this.is_recommend_forum = recommendForumInfo.is_recommend_forum;
+            this.post_prefix = recommendForumInfo.post_prefix;
+            this.has_postpre = recommendForumInfo.has_postpre;
+            this.tab_info = Message.copyOf(recommendForumInfo.tab_info);
+            this.day_thread_num = recommendForumInfo.day_thread_num;
+            this.block_pop_info = recommendForumInfo.block_pop_info;
+            this.first_category = recommendForumInfo.first_category;
+            this.level_id = recommendForumInfo.level_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -269,9 +302,41 @@ public final class RecommendForumInfo extends Message {
             Integer num7 = builder.is_recommend_forum;
             if (num7 == null) {
                 this.is_recommend_forum = DEFAULT_IS_RECOMMEND_FORUM;
-                return;
             } else {
                 this.is_recommend_forum = num7;
+            }
+            this.post_prefix = builder.post_prefix;
+            Integer num8 = builder.has_postpre;
+            if (num8 == null) {
+                this.has_postpre = DEFAULT_HAS_POSTPRE;
+            } else {
+                this.has_postpre = num8;
+            }
+            List<FrsTabInfo> list2 = builder.tab_info;
+            if (list2 == null) {
+                this.tab_info = DEFAULT_TAB_INFO;
+            } else {
+                this.tab_info = Message.immutableCopyOf(list2);
+            }
+            Integer num9 = builder.day_thread_num;
+            if (num9 == null) {
+                this.day_thread_num = DEFAULT_DAY_THREAD_NUM;
+            } else {
+                this.day_thread_num = num9;
+            }
+            this.block_pop_info = builder.block_pop_info;
+            String str13 = builder.first_category;
+            if (str13 == null) {
+                this.first_category = "";
+            } else {
+                this.first_category = str13;
+            }
+            Integer num10 = builder.level_id;
+            if (num10 == null) {
+                this.level_id = DEFAULT_LEVEL_ID;
+                return;
+            } else {
+                this.level_id = num10;
                 return;
             }
         }
@@ -297,5 +362,12 @@ public final class RecommendForumInfo extends Message {
         this.avatar_origin = builder.avatar_origin;
         this.hot_thread_id = builder.hot_thread_id;
         this.is_recommend_forum = builder.is_recommend_forum;
+        this.post_prefix = builder.post_prefix;
+        this.has_postpre = builder.has_postpre;
+        this.tab_info = Message.immutableCopyOf(builder.tab_info);
+        this.day_thread_num = builder.day_thread_num;
+        this.block_pop_info = builder.block_pop_info;
+        this.first_category = builder.first_category;
+        this.level_id = builder.level_id;
     }
 }
