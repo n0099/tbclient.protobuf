@@ -77,4 +77,6 @@ message DataReq {
     int32 request_times = 80;
     int64 last_pid = 81;
     int32 similar_from = 82;
+    string come_from = 83;
+    string search_query = 84;
 }

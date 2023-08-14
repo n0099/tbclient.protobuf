@@ -16,4 +16,5 @@ message NovelCard {
     string chapter_scheme = 9;
     ThemeColorInfo background_image = 10;
     int32 offset = 11;
+    int32 status = 12;
 }

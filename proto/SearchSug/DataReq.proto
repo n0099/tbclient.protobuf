@@ -5,4 +5,5 @@ import "CommonReq.proto";
 message DataReq {
     string word = 2;
     string isforum = 3;
+    string call_from = 4;
 }
