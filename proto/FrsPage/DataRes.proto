@@ -19,6 +19,7 @@ import "FrsPage/AgreeBanner.proto";
 import "FrsPage/AlaLiveInsert.proto";
 import "FrsPage/BannerThreadInfo.proto";
 import "FrsPage/Bottle.proto";
+import "FrsPage/BountyCard.proto";
 import "FrsPage/BrandForumInfo.proto";
 import "FrsPage/BusinessPromot.proto";
 import "FrsPage/CarrierEnter.proto";
@@ -190,4 +191,5 @@ message DataRes {
     HeaderCard header_card = 122;
     FrsSpriteBubble sprite_bubble_guide = 123;
     int32 is_need_live_ununiq = 124;
+    BountyCard bounty_card = 125;
 }

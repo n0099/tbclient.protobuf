@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "IconUrlInfo.proto";
+
+message BountyCard {
+    IconUrlInfo icon = 1;
+    string title = 2;
+    string subtitle = 3;
+    IconUrlInfo bg_img = 4;
+    int32 award_type = 5;
+    string bonus = 6;
+    string btn_text = 7;
+    repeated string gift_imgs = 8;
+    string url = 9;
+}

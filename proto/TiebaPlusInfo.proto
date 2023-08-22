@@ -26,4 +26,7 @@ message TiebaPlusInfo {
     int32 jump_setting = 21;
     string wx_thumbnail = 22;
     string button_desc = 23;
+    int32 plugin_id = 25;
+    string token = 26;
+    string extra_param = 27;
 }

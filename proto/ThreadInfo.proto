@@ -33,6 +33,7 @@ import "OriginThreadInfo.proto";
 import "PbContent.proto";
 import "PbGoodsInfo.proto";
 import "PbLinkInfo.proto";
+import "PeiwanInfo.proto";
 import "PollInfo.proto";
 import "Post.proto";
 import "PostList.proto";
@@ -246,4 +247,5 @@ message ThreadInfo {
     repeated Post hot_post_list = 221;
     RobotEntrance robot_entrance = 222;
     ClickBackCard click_back_card = 223;
+    PeiwanInfo peiwan_info = 224;
 }
