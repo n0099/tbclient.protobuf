@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1528common;
+    public final CommonReq f1531common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer follow_type;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -33,7 +33,7 @@ public final class DataReq extends Message {
         public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1529common;
+        public CommonReq f1532common;
         public Integer follow_type;
         public Integer is_newfeed;
         public Long last_req_unix;
@@ -48,7 +48,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1529common = dataReq.f1528common;
+            this.f1532common = dataReq.f1531common;
             this.page_tag = dataReq.page_tag;
             this.last_req_unix = dataReq.last_req_unix;
             this.follow_type = dataReq.follow_type;
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1528common = builder.f1529common;
+            this.f1531common = builder.f1532common;
             String str = builder.page_tag;
             if (str == null) {
                 this.page_tag = "";
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1528common = builder.f1529common;
+        this.f1531common = builder.f1532common;
         this.page_tag = builder.page_tag;
         this.last_req_unix = builder.last_req_unix;
         this.follow_type = builder.follow_type;

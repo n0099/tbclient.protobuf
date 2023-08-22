@@ -5,12 +5,15 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes2.dex */
 public final class Voice extends Message {
     public static final String DEFAULT_VOICE_MD5 = "";
+    public static final String DEFAULT_VOICE_URL = "";
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
     public final Integer during_time;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String voice_md5;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String voice_url;
     public static final Integer DEFAULT_TYPE = 0;
     public static final Integer DEFAULT_DURING_TIME = 0;
 
@@ -19,6 +22,7 @@ public final class Voice extends Message {
         public Integer during_time;
         public Integer type;
         public String voice_md5;
+        public String voice_url;
 
         public Builder() {
         }
@@ -31,6 +35,7 @@ public final class Voice extends Message {
             this.type = voice.type;
             this.during_time = voice.during_time;
             this.voice_md5 = voice.voice_md5;
+            this.voice_url = voice.voice_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -58,14 +63,21 @@ public final class Voice extends Message {
             String str = builder.voice_md5;
             if (str == null) {
                 this.voice_md5 = "";
-                return;
             } else {
                 this.voice_md5 = str;
+            }
+            String str2 = builder.voice_url;
+            if (str2 == null) {
+                this.voice_url = "";
+                return;
+            } else {
+                this.voice_url = str2;
                 return;
             }
         }
         this.type = builder.type;
         this.during_time = builder.during_time;
         this.voice_md5 = builder.voice_md5;
+        this.voice_url = builder.voice_url;
     }
 }

@@ -14,12 +14,14 @@ public final class TiebaPlusInfo extends Message {
     public static final String DEFAULT_BUTTON_DESC = "";
     public static final String DEFAULT_DESC = "";
     public static final String DEFAULT_DOWNLOAD_URL = "";
+    public static final String DEFAULT_EXTRA_PARAM = "";
     public static final String DEFAULT_FORUM_NAME = "";
     public static final String DEFAULT_H5_JUMP_NUMBER = "";
     public static final String DEFAULT_H5_JUMP_PARAM = "";
     public static final String DEFAULT_ITEM_ID = "";
     public static final String DEFAULT_JUMP_URL = "";
     public static final String DEFAULT_TITLE = "";
+    public static final String DEFAULT_TOKEN = "";
     public static final String DEFAULT_WX_THUMBNAIL = "";
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String app_company;
@@ -41,6 +43,8 @@ public final class TiebaPlusInfo extends Message {
     public final String desc;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String download_url;
+    @ProtoField(tag = 27, type = Message.Datatype.STRING)
+    public final String extra_param;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String forum_name;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
@@ -59,12 +63,16 @@ public final class TiebaPlusInfo extends Message {
     public final Integer jump_type;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String jump_url;
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    public final Integer plugin_id;
     @ProtoField(tag = 19)
     public final PluginUser plugin_user;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer target_type;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String title;
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
+    public final String token;
     @ProtoField(tag = 22, type = Message.Datatype.STRING)
     public final String wx_thumbnail;
     public static final Integer DEFAULT_TARGET_TYPE = 0;
@@ -72,6 +80,7 @@ public final class TiebaPlusInfo extends Message {
     public static final Integer DEFAULT_JUMP_TYPE = 0;
     public static final Integer DEFAULT_IS_APPOINT = 0;
     public static final Integer DEFAULT_JUMP_SETTING = 0;
+    public static final Integer DEFAULT_PLUGIN_ID = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TiebaPlusInfo> {
@@ -85,6 +94,7 @@ public final class TiebaPlusInfo extends Message {
         public String button_desc;
         public String desc;
         public String download_url;
+        public String extra_param;
         public String forum_name;
         public String h5_jump_number;
         public String h5_jump_param;
@@ -94,9 +104,11 @@ public final class TiebaPlusInfo extends Message {
         public Integer jump_setting;
         public Integer jump_type;
         public String jump_url;
+        public Integer plugin_id;
         public PluginUser plugin_user;
         public Integer target_type;
         public String title;
+        public String token;
         public String wx_thumbnail;
 
         public Builder() {
@@ -130,6 +142,9 @@ public final class TiebaPlusInfo extends Message {
             this.jump_setting = tiebaPlusInfo.jump_setting;
             this.wx_thumbnail = tiebaPlusInfo.wx_thumbnail;
             this.button_desc = tiebaPlusInfo.button_desc;
+            this.plugin_id = tiebaPlusInfo.plugin_id;
+            this.token = tiebaPlusInfo.token;
+            this.extra_param = tiebaPlusInfo.extra_param;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -272,9 +287,27 @@ public final class TiebaPlusInfo extends Message {
             String str17 = builder.button_desc;
             if (str17 == null) {
                 this.button_desc = "";
-                return;
             } else {
                 this.button_desc = str17;
+            }
+            Integer num6 = builder.plugin_id;
+            if (num6 == null) {
+                this.plugin_id = DEFAULT_PLUGIN_ID;
+            } else {
+                this.plugin_id = num6;
+            }
+            String str18 = builder.token;
+            if (str18 == null) {
+                this.token = "";
+            } else {
+                this.token = str18;
+            }
+            String str19 = builder.extra_param;
+            if (str19 == null) {
+                this.extra_param = "";
+                return;
+            } else {
+                this.extra_param = str19;
                 return;
             }
         }
@@ -301,5 +334,8 @@ public final class TiebaPlusInfo extends Message {
         this.jump_setting = builder.jump_setting;
         this.wx_thumbnail = builder.wx_thumbnail;
         this.button_desc = builder.button_desc;
+        this.plugin_id = builder.plugin_id;
+        this.token = builder.token;
+        this.extra_param = builder.extra_param;
     }
 }

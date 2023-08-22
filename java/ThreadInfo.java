@@ -336,6 +336,8 @@ public final class ThreadInfo extends Message {
     public final List<PbGoodsInfo> pb_goods_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 178)
     public final List<PbLinkInfo> pb_link_info;
+    @ProtoField(tag = 224)
+    public final PeiwanInfo peiwan_info;
     @ProtoField(tag = 133)
     public final Media pic_info;
     @ProtoField(tag = 84, type = Message.Datatype.UINT32)
@@ -1607,6 +1609,7 @@ public final class ThreadInfo extends Message {
             }
             this.robot_entrance = builder.robot_entrance;
             this.click_back_card = builder.click_back_card;
+            this.peiwan_info = builder.peiwan_info;
             return;
         }
         this.id = builder.id;
@@ -1822,6 +1825,7 @@ public final class ThreadInfo extends Message {
         this.hot_post_list = Message.immutableCopyOf(builder.hot_post_list);
         this.robot_entrance = builder.robot_entrance;
         this.click_back_card = builder.click_back_card;
+        this.peiwan_info = builder.peiwan_info;
     }
 
     /* loaded from: classes2.dex */
@@ -1962,6 +1966,7 @@ public final class ThreadInfo extends Message {
         public Integer pb_entry;
         public List<PbGoodsInfo> pb_goods_info;
         public List<PbLinkInfo> pb_link_info;
+        public PeiwanInfo peiwan_info;
         public Media pic_info;
         public Integer pic_num;
         public String pids;
@@ -2261,6 +2266,7 @@ public final class ThreadInfo extends Message {
             this.hot_post_list = Message.copyOf(threadInfo.hot_post_list);
             this.robot_entrance = threadInfo.robot_entrance;
             this.click_back_card = threadInfo.click_back_card;
+            this.peiwan_info = threadInfo.peiwan_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */

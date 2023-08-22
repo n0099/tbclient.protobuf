@@ -91,6 +91,8 @@ public final class DataRes extends Message {
     public final Bottle bottle;
     @ProtoField(label = Message.Label.REPEATED, tag = 92)
     public final List<BottomMenu> bottom_menu;
+    @ProtoField(tag = 125)
+    public final BountyCard bounty_card;
     @ProtoField(tag = 91)
     public final BrandForumInfo brand_forum_info;
     @ProtoField(tag = 99)
@@ -352,6 +354,7 @@ public final class DataRes extends Message {
         public ForumBookInfo book_info;
         public Bottle bottle;
         public List<BottomMenu> bottom_menu;
+        public BountyCard bounty_card;
         public BrandForumInfo brand_forum_info;
         public BusinessPromot business_promot;
         public List<ThreadInfo> card_shipin_info;
@@ -570,6 +573,7 @@ public final class DataRes extends Message {
             this.header_card = dataRes.header_card;
             this.sprite_bubble_guide = dataRes.sprite_bubble_guide;
             this.is_need_live_ununiq = dataRes.is_need_live_ununiq;
+            this.bounty_card = dataRes.bounty_card;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -965,11 +969,11 @@ public final class DataRes extends Message {
             Integer num24 = builder.is_need_live_ununiq;
             if (num24 == null) {
                 this.is_need_live_ununiq = DEFAULT_IS_NEED_LIVE_UNUNIQ;
-                return;
             } else {
                 this.is_need_live_ununiq = num24;
-                return;
             }
+            this.bounty_card = builder.bounty_card;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -1087,5 +1091,6 @@ public final class DataRes extends Message {
         this.header_card = builder.header_card;
         this.sprite_bubble_guide = builder.sprite_bubble_guide;
         this.is_need_live_ununiq = builder.is_need_live_ununiq;
+        this.bounty_card = builder.bounty_card;
     }
 }
