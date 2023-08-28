@@ -11,6 +11,7 @@ public final class BusinessPromot extends Message {
     public static final String DEFAULT_DOWNLOAD_APPID = "";
     public static final String DEFAULT_DOWNLOAD_APPNAME = "";
     public static final String DEFAULT_DOWNLOAD_DEVELOPER = "";
+    public static final String DEFAULT_DOWNLOAD_EFFECT = "";
     public static final String DEFAULT_DOWNLOAD_IMG = "";
     public static final String DEFAULT_DOWNLOAD_ITEM_ID = "";
     public static final String DEFAULT_DOWNLOAD_PACKAGE_NAME = "";
@@ -42,6 +43,8 @@ public final class BusinessPromot extends Message {
     public final String download_appname;
     @ProtoField(tag = 17, type = Message.Datatype.STRING)
     public final String download_developer;
+    @ProtoField(tag = 31, type = Message.Datatype.STRING)
+    public final String download_effect;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
     public final String download_img;
     @ProtoField(tag = 25, type = Message.Datatype.STRING)
@@ -105,6 +108,7 @@ public final class BusinessPromot extends Message {
         public String download_appid;
         public String download_appname;
         public String download_developer;
+        public String download_effect;
         public String download_img;
         public String download_item_id;
         public String download_package_name;
@@ -168,6 +172,7 @@ public final class BusinessPromot extends Message {
             this.cover_url = businessPromot.cover_url;
             this.video_url = businessPromot.video_url;
             this.ban_dialog = businessPromot.ban_dialog;
+            this.download_effect = businessPromot.download_effect;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -365,9 +370,15 @@ public final class BusinessPromot extends Message {
             Integer num4 = builder.ban_dialog;
             if (num4 == null) {
                 this.ban_dialog = DEFAULT_BAN_DIALOG;
-                return;
             } else {
                 this.ban_dialog = num4;
+            }
+            String str21 = builder.download_effect;
+            if (str21 == null) {
+                this.download_effect = "";
+                return;
+            } else {
+                this.download_effect = str21;
                 return;
             }
         }
@@ -401,5 +412,6 @@ public final class BusinessPromot extends Message {
         this.cover_url = builder.cover_url;
         this.video_url = builder.video_url;
         this.ban_dialog = builder.ban_dialog;
+        this.download_effect = builder.download_effect;
     }
 }

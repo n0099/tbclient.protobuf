@@ -10,17 +10,21 @@ public final class Voice extends Message {
     public final Integer during_time;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer type;
+    @ProtoField(tag = 5, type = Message.Datatype.INT64)
+    public final Long uid;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String voice_md5;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String voice_url;
     public static final Integer DEFAULT_TYPE = 0;
     public static final Integer DEFAULT_DURING_TIME = 0;
+    public static final Long DEFAULT_UID = 0L;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Voice> {
         public Integer during_time;
         public Integer type;
+        public Long uid;
         public String voice_md5;
         public String voice_url;
 
@@ -36,6 +40,7 @@ public final class Voice extends Message {
             this.during_time = voice.during_time;
             this.voice_md5 = voice.voice_md5;
             this.voice_url = voice.voice_url;
+            this.uid = voice.uid;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -69,9 +74,15 @@ public final class Voice extends Message {
             String str2 = builder.voice_url;
             if (str2 == null) {
                 this.voice_url = "";
-                return;
             } else {
                 this.voice_url = str2;
+            }
+            Long l = builder.uid;
+            if (l == null) {
+                this.uid = DEFAULT_UID;
+                return;
+            } else {
+                this.uid = l;
                 return;
             }
         }
@@ -79,5 +90,6 @@ public final class Voice extends Message {
         this.during_time = builder.during_time;
         this.voice_md5 = builder.voice_md5;
         this.voice_url = builder.voice_url;
+        this.uid = builder.uid;
     }
 }

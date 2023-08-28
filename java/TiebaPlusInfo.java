@@ -5,6 +5,7 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes2.dex */
 public final class TiebaPlusInfo extends Message {
     public static final String DEFAULT_APP_COMPANY = "";
+    public static final String DEFAULT_APP_EFFECT = "";
     public static final String DEFAULT_APP_ICON = "";
     public static final String DEFAULT_APP_ID = "";
     public static final String DEFAULT_APP_PACKAGE = "";
@@ -25,6 +26,8 @@ public final class TiebaPlusInfo extends Message {
     public static final String DEFAULT_WX_THUMBNAIL = "";
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String app_company;
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    public final String app_effect;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String app_icon;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -85,6 +88,7 @@ public final class TiebaPlusInfo extends Message {
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<TiebaPlusInfo> {
         public String app_company;
+        public String app_effect;
         public String app_icon;
         public String app_id;
         public String app_package;
@@ -142,6 +146,7 @@ public final class TiebaPlusInfo extends Message {
             this.jump_setting = tiebaPlusInfo.jump_setting;
             this.wx_thumbnail = tiebaPlusInfo.wx_thumbnail;
             this.button_desc = tiebaPlusInfo.button_desc;
+            this.app_effect = tiebaPlusInfo.app_effect;
             this.plugin_id = tiebaPlusInfo.plugin_id;
             this.token = tiebaPlusInfo.token;
             this.extra_param = tiebaPlusInfo.extra_param;
@@ -290,24 +295,30 @@ public final class TiebaPlusInfo extends Message {
             } else {
                 this.button_desc = str17;
             }
+            String str18 = builder.app_effect;
+            if (str18 == null) {
+                this.app_effect = "";
+            } else {
+                this.app_effect = str18;
+            }
             Integer num6 = builder.plugin_id;
             if (num6 == null) {
                 this.plugin_id = DEFAULT_PLUGIN_ID;
             } else {
                 this.plugin_id = num6;
             }
-            String str18 = builder.token;
-            if (str18 == null) {
+            String str19 = builder.token;
+            if (str19 == null) {
                 this.token = "";
             } else {
-                this.token = str18;
+                this.token = str19;
             }
-            String str19 = builder.extra_param;
-            if (str19 == null) {
+            String str20 = builder.extra_param;
+            if (str20 == null) {
                 this.extra_param = "";
                 return;
             } else {
-                this.extra_param = str19;
+                this.extra_param = str20;
                 return;
             }
         }
@@ -334,6 +345,7 @@ public final class TiebaPlusInfo extends Message {
         this.jump_setting = builder.jump_setting;
         this.wx_thumbnail = builder.wx_thumbnail;
         this.button_desc = builder.button_desc;
+        this.app_effect = builder.app_effect;
         this.plugin_id = builder.plugin_id;
         this.token = builder.token;
         this.extra_param = builder.extra_param;

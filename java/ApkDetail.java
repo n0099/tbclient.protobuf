@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes2.dex */
 public final class ApkDetail extends Message {
+    public static final String DEFAULT_APP_EFFECT = "";
     public static final String DEFAULT_AUTHORITY_URL = "";
     public static final String DEFAULT_DEVELOPER = "";
     public static final String DEFAULT_PRIVACY_URL = "";
@@ -11,6 +12,8 @@ public final class ApkDetail extends Message {
     public static final String DEFAULT_SIZE = "";
     public static final String DEFAULT_UPDATE_TIME = "";
     public static final String DEFAULT_VERSION = "";
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    public final String app_effect;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String authority_url;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -40,6 +43,7 @@ public final class ApkDetail extends Message {
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ApkDetail> {
+        public String app_effect;
         public String authority_url;
         public String developer;
         public Integer need_inner_buy;
@@ -71,6 +75,7 @@ public final class ApkDetail extends Message {
             this.authority_url = apkDetail.authority_url;
             this.privacy_url = apkDetail.privacy_url;
             this.pkg_source = apkDetail.pkg_source;
+            this.app_effect = apkDetail.app_effect;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -146,9 +151,15 @@ public final class ApkDetail extends Message {
             Integer num4 = builder.pkg_source;
             if (num4 == null) {
                 this.pkg_source = DEFAULT_PKG_SOURCE;
-                return;
             } else {
                 this.pkg_source = num4;
+            }
+            String str8 = builder.app_effect;
+            if (str8 == null) {
+                this.app_effect = "";
+                return;
+            } else {
+                this.app_effect = str8;
                 return;
             }
         }
@@ -163,5 +174,6 @@ public final class ApkDetail extends Message {
         this.authority_url = builder.authority_url;
         this.privacy_url = builder.privacy_url;
         this.pkg_source = builder.pkg_source;
+        this.app_effect = builder.app_effect;
     }
 }

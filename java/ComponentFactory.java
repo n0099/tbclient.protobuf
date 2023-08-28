@@ -35,6 +35,8 @@ public final class ComponentFactory extends Message {
     public final FeedPostExpose feed_postexpose;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
     public final List<ThreadRecommendInfo> feed_recomtag;
+    @ProtoField(tag = 21)
+    public final FeedRoomComponent feed_room;
     @ProtoField(tag = 8)
     public final FeedSocialComponent feed_social;
     @ProtoField(tag = 3)
@@ -63,6 +65,7 @@ public final class ComponentFactory extends Message {
         public FeedPicComponent feed_pic;
         public FeedPostExpose feed_postexpose;
         public List<ThreadRecommendInfo> feed_recomtag;
+        public FeedRoomComponent feed_room;
         public FeedSocialComponent feed_social;
         public TitleComponent feed_title;
         public FeedVideoComponent feed_video;
@@ -97,6 +100,7 @@ public final class ComponentFactory extends Message {
             this.feed_recomtag = Message.copyOf(componentFactory.feed_recomtag);
             this.feed_videoad = componentFactory.feed_videoad;
             this.feed_postexpose = componentFactory.feed_postexpose;
+            this.feed_room = componentFactory.feed_room;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -143,6 +147,7 @@ public final class ComponentFactory extends Message {
             }
             this.feed_videoad = builder.feed_videoad;
             this.feed_postexpose = builder.feed_postexpose;
+            this.feed_room = builder.feed_room;
             return;
         }
         this.component = builder.component;
@@ -164,5 +169,6 @@ public final class ComponentFactory extends Message {
         this.feed_recomtag = Message.immutableCopyOf(builder.feed_recomtag);
         this.feed_videoad = builder.feed_videoad;
         this.feed_postexpose = builder.feed_postexpose;
+        this.feed_room = builder.feed_room;
     }
 }

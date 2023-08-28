@@ -14,6 +14,8 @@ public final class PeiwanInfo extends Message {
     public final String cover;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
     public final String extension_info;
+    @ProtoField(tag = 8, type = Message.Datatype.INT64)
+    public final Long room_id;
     @ProtoField(tag = 1, type = Message.Datatype.INT32)
     public final Integer room_status;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -26,11 +28,13 @@ public final class PeiwanInfo extends Message {
     public final Voice voice;
     public static final Integer DEFAULT_ROOM_STATUS = 0;
     public static final List<ThreadRecommendTag> DEFAULT_TAG_LIST = Collections.emptyList();
+    public static final Long DEFAULT_ROOM_ID = 0L;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PeiwanInfo> {
         public String cover;
         public String extension_info;
+        public Long room_id;
         public Integer room_status;
         public String room_status_text;
         public String scheme;
@@ -52,6 +56,7 @@ public final class PeiwanInfo extends Message {
             this.scheme = peiwanInfo.scheme;
             this.extension_info = peiwanInfo.extension_info;
             this.cover = peiwanInfo.cover;
+            this.room_id = peiwanInfo.room_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -98,9 +103,15 @@ public final class PeiwanInfo extends Message {
             String str4 = builder.cover;
             if (str4 == null) {
                 this.cover = "";
-                return;
             } else {
                 this.cover = str4;
+            }
+            Long l = builder.room_id;
+            if (l == null) {
+                this.room_id = DEFAULT_ROOM_ID;
+                return;
+            } else {
+                this.room_id = l;
                 return;
             }
         }
@@ -111,5 +122,6 @@ public final class PeiwanInfo extends Message {
         this.scheme = builder.scheme;
         this.extension_info = builder.extension_info;
         this.cover = builder.cover;
+        this.room_id = builder.room_id;
     }
 }
