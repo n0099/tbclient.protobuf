@@ -10,6 +10,7 @@ import "FeedLiveComponent.proto";
 import "FeedOriginComponent.proto";
 import "FeedPicComponent.proto";
 import "FeedPostExpose.proto";
+import "FeedRoomComponent.proto";
 import "FeedSocialComponent.proto";
 import "FeedVideoAdComponent.proto";
 import "FeedVideoComponent.proto";
@@ -38,4 +39,5 @@ message ComponentFactory {
     repeated ThreadRecommendInfo feed_recomtag = 18;
     FeedVideoAdComponent feed_videoad = 19;
     FeedPostExpose feed_postexpose = 20;
+    FeedRoomComponent feed_room = 21;
 }

@@ -11,4 +11,5 @@ message PeiwanInfo {
     string scheme = 5;
     string extension_info = 6;
     string cover = 7;
+    int64 room_id = 8;
 }
