@@ -3,13 +3,11 @@ package tbclient;
 import com.baidu.android.imsdk.internal.Constants;
 import com.baidu.location.BDLocation;
 import com.baidu.pass.biometrics.face.liveness.PassFaceRecogManager;
-import com.facebook.imageutils.JfifUtil;
 import com.google.android.exoplayer2.extractor.mkv.MatroskaExtractor;
 import com.google.android.exoplayer2.extractor.ts.H262Reader;
 import com.google.android.exoplayer2.extractor.ts.PsExtractor;
 import com.google.android.exoplayer2.extractor.ts.TsExtractor;
 import com.google.android.exoplayer2.text.cea.Cea708Decoder;
-import com.qq.e.comm.adevent.AdEventType;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
@@ -29,6 +27,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_FNAME = "";
     public static final String DEFAULT_FORUM_USER_LIVE_MSG = "";
     public static final String DEFAULT_FROM = "";
+    public static final String DEFAULT_HEAD_TYPE = "";
     public static final String DEFAULT_IF_COMMENT_INFO = "";
     public static final String DEFAULT_IS_TIEBAPLUS_AD = "";
     public static final String DEFAULT_IS_TOP_IMG = "";
@@ -126,7 +125,7 @@ public final class ThreadInfo extends Message {
     public final String convert_btn_type;
     @ProtoField(tag = 45, type = Message.Datatype.INT32)
     public final Integer create_time;
-    @ProtoField(tag = AdEventType.VIDEO_LOADING)
+    @ProtoField(tag = 211)
     public final CustomFigure custom_figure;
     @ProtoField(tag = 212)
     public final CustomState custom_state;
@@ -168,6 +167,8 @@ public final class ThreadInfo extends Message {
     public final Guess guess;
     @ProtoField(tag = 48, type = Message.Datatype.INT32)
     public final Integer has_commented;
+    @ProtoField(tag = 227, type = Message.Datatype.STRING)
+    public final String head_type;
     @ProtoField(tag = 95)
     public final TogetherHi high_together;
     @ProtoField(tag = 71)
@@ -278,7 +279,7 @@ public final class ThreadInfo extends Message {
     public final Integer is_voice_thread;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer is_vote;
-    @ProtoField(tag = Constants.METHOD_IM_EMOJI, type = Message.Datatype.INT32)
+    @ProtoField(tag = 214, type = Message.Datatype.INT32)
     public final Integer is_xiuxiu_thread;
     @ProtoField(tag = 179)
     public final Item item;
@@ -388,7 +389,7 @@ public final class ThreadInfo extends Message {
     public final String scard_packet_id;
     @ProtoField(tag = 135, type = Message.Datatype.INT64)
     public final Long share_num;
-    @ProtoField(tag = JfifUtil.MARKER_SOI, type = Message.Datatype.UINT32)
+    @ProtoField(tag = 216, type = Message.Datatype.UINT32)
     public final Integer show_ad_subscript;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
     public final Integer show_commented;
@@ -1610,7 +1611,14 @@ public final class ThreadInfo extends Message {
             this.robot_entrance = builder.robot_entrance;
             this.click_back_card = builder.click_back_card;
             this.peiwan_info = builder.peiwan_info;
-            return;
+            String str49 = builder.head_type;
+            if (str49 == null) {
+                this.head_type = "";
+                return;
+            } else {
+                this.head_type = str49;
+                return;
+            }
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -1826,6 +1834,7 @@ public final class ThreadInfo extends Message {
         this.robot_entrance = builder.robot_entrance;
         this.click_back_card = builder.click_back_card;
         this.peiwan_info = builder.peiwan_info;
+        this.head_type = builder.head_type;
     }
 
     /* loaded from: classes2.dex */
@@ -1882,6 +1891,7 @@ public final class ThreadInfo extends Message {
         public String from;
         public Guess guess;
         public Integer has_commented;
+        public String head_type;
         public TogetherHi high_together;
         public HotTWThreadInfo hotTWInfo;
         public Integer hot_num;
@@ -2267,6 +2277,7 @@ public final class ThreadInfo extends Message {
             this.robot_entrance = threadInfo.robot_entrance;
             this.click_back_card = threadInfo.click_back_card;
             this.peiwan_info = threadInfo.peiwan_info;
+            this.head_type = threadInfo.head_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */

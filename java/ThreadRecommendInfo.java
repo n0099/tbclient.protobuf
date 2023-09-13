@@ -21,6 +21,8 @@ public final class ThreadRecommendInfo extends Message {
     public final String business_id;
     @ProtoField(tag = 15, type = Message.Datatype.INT32)
     public final Integer business_type;
+    @ProtoField(tag = 20)
+    public final ThemeColorInfo dot_color;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String forum_avatar;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
@@ -51,6 +53,8 @@ public final class ThreadRecommendInfo extends Message {
     public final String show_type;
     @ProtoField(tag = 12)
     public final ThemeColorInfo strip_color;
+    @ProtoField(tag = 21)
+    public final ThemeColorInfo tail_color;
     @ProtoField(tag = 6, type = Message.Datatype.INT64)
     public final Long topic_id;
     public static final Integer DEFAULT_SHOW_NUM = 0;
@@ -62,6 +66,7 @@ public final class ThreadRecommendInfo extends Message {
         public ThemeColorInfo background_color;
         public String business_id;
         public Integer business_type;
+        public ThemeColorInfo dot_color;
         public String forum_avatar;
         public String forum_name;
         public String jump_icon;
@@ -77,6 +82,7 @@ public final class ThreadRecommendInfo extends Message {
         public Integer show_num;
         public String show_type;
         public ThemeColorInfo strip_color;
+        public ThemeColorInfo tail_color;
         public Long topic_id;
 
         public Builder() {
@@ -106,6 +112,8 @@ public final class ThreadRecommendInfo extends Message {
             this.jump_icon = threadRecommendInfo.jump_icon;
             this.jump_text = threadRecommendInfo.jump_text;
             this.jump_text_color = threadRecommendInfo.jump_text_color;
+            this.dot_color = threadRecommendInfo.dot_color;
+            this.tail_color = threadRecommendInfo.tail_color;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -207,6 +215,8 @@ public final class ThreadRecommendInfo extends Message {
                 this.jump_text = str11;
             }
             this.jump_text_color = builder.jump_text_color;
+            this.dot_color = builder.dot_color;
+            this.tail_color = builder.tail_color;
             return;
         }
         this.forum_avatar = builder.forum_avatar;
@@ -228,5 +238,7 @@ public final class ThreadRecommendInfo extends Message {
         this.jump_icon = builder.jump_icon;
         this.jump_text = builder.jump_text;
         this.jump_text_color = builder.jump_text_color;
+        this.dot_color = builder.dot_color;
+        this.tail_color = builder.tail_color;
     }
 }

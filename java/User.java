@@ -95,6 +95,8 @@ public final class User extends Message {
     public final EditConfig edit_config;
     @ProtoField(tag = 129, type = Message.Datatype.STRING)
     public final String editing_nickname;
+    @ProtoField(tag = 149, type = Message.Datatype.INT32)
+    public final Integer enable_new_homepage;
     @ProtoField(tag = 84)
     public final EsportInfo esport_data;
     @ProtoField(tag = 57, type = Message.Datatype.STRING)
@@ -221,6 +223,8 @@ public final class User extends Message {
     public final Integer no_un;
     @ProtoField(tag = 60)
     public final NovelFansInfo novel_fans_info;
+    @ProtoField(tag = 148, type = Message.Datatype.INT64)
+    public final Long pa;
     @ProtoField(tag = 59)
     public final NewParrScores parr_scores;
     @ProtoField(tag = 36, type = Message.Datatype.STRING)
@@ -380,6 +384,8 @@ public final class User extends Message {
     public static final Integer DEFAULT_IS_NICKNAME_EDITING = 0;
     public static final List<String> DEFAULT_NEW_ICON_URL = Collections.emptyList();
     public static final List<String> DEFAULT_PENDANTS = Collections.emptyList();
+    public static final Long DEFAULT_PA = 0L;
+    public static final Integer DEFAULT_ENABLE_NEW_HOMEPAGE = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<User> {
@@ -413,6 +419,7 @@ public final class User extends Message {
         public Ecom ecom;
         public EditConfig edit_config;
         public String editing_nickname;
+        public Integer enable_new_homepage;
         public EsportInfo esport_data;
         public String fans_nickname;
         public Integer fans_num;
@@ -476,6 +483,7 @@ public final class User extends Message {
         public Integer no_post_high;
         public Integer no_un;
         public NovelFansInfo novel_fans_info;
+        public Long pa;
         public NewParrScores parr_scores;
         public String passwd;
         public PayMemberInfo pay_member_info;
@@ -668,6 +676,8 @@ public final class User extends Message {
             this.shake_ad_switch = user.shake_ad_switch;
             this.pendants = Message.copyOf(user.pendants);
             this.ios_b_url = user.ios_b_url;
+            this.pa = user.pa;
+            this.enable_new_homepage = user.enable_new_homepage;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1300,9 +1310,21 @@ public final class User extends Message {
             String str28 = builder.ios_b_url;
             if (str28 == null) {
                 this.ios_b_url = "";
-                return;
             } else {
                 this.ios_b_url = str28;
+            }
+            Long l3 = builder.pa;
+            if (l3 == null) {
+                this.pa = DEFAULT_PA;
+            } else {
+                this.pa = l3;
+            }
+            Integer num55 = builder.enable_new_homepage;
+            if (num55 == null) {
+                this.enable_new_homepage = DEFAULT_ENABLE_NEW_HOMEPAGE;
+                return;
+            } else {
+                this.enable_new_homepage = num55;
                 return;
             }
         }
@@ -1444,5 +1466,7 @@ public final class User extends Message {
         this.shake_ad_switch = builder.shake_ad_switch;
         this.pendants = Message.immutableCopyOf(builder.pendants);
         this.ios_b_url = builder.ios_b_url;
+        this.pa = builder.pa;
+        this.enable_new_homepage = builder.enable_new_homepage;
     }
 }

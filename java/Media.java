@@ -7,7 +7,10 @@ public final class Media extends Message {
     public static final String DEFAULT_BIG_PIC = "";
     public static final String DEFAULT_BSIZE = "";
     public static final String DEFAULT_DYNAMIC_PIC = "";
+    public static final String DEFAULT_GUIDE_TEXT = "";
     public static final Double DEFAULT_HTH_MID_LOC;
+    public static final String DEFAULT_JUMP_URL = "";
+    public static final Integer DEFAULT_LOTTIE_TYPE;
     public static final String DEFAULT_ORIGIN_PIC = "";
     public static final String DEFAULT_SMALL_PIC = "";
     public static final String DEFAULT_SRC_PIC = "";
@@ -27,6 +30,8 @@ public final class Media extends Message {
     public final String dynamic_pic;
     @ProtoField(tag = 14, type = Message.Datatype.UINT32)
     public final Integer e_type;
+    @ProtoField(tag = 25, type = Message.Datatype.STRING)
+    public final String guide_text;
     @ProtoField(tag = 11, type = Message.Datatype.UINT32)
     public final Integer height;
     @ProtoField(tag = 23, type = Message.Datatype.DOUBLE)
@@ -35,6 +40,10 @@ public final class Media extends Message {
     public final Integer is_blocked_pic;
     @ProtoField(tag = 19, type = Message.Datatype.UINT32)
     public final Integer is_long_pic;
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    public final String jump_url;
+    @ProtoField(tag = 26, type = Message.Datatype.INT32)
+    public final Integer lottie_type;
     @ProtoField(tag = 15, type = Message.Datatype.STRING)
     public final String origin_pic;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
@@ -81,10 +90,13 @@ public final class Media extends Message {
         public Integer during_time;
         public String dynamic_pic;
         public Integer e_type;
+        public String guide_text;
         public Integer height;
         public Double hth_mid_loc;
         public Integer is_blocked_pic;
         public Integer is_long_pic;
+        public String jump_url;
+        public Integer lottie_type;
         public String origin_pic;
         public Integer origin_size;
         public Long post_id;
@@ -131,6 +143,9 @@ public final class Media extends Message {
             this.is_blocked_pic = media.is_blocked_pic;
             this.wth_mid_loc = media.wth_mid_loc;
             this.hth_mid_loc = media.hth_mid_loc;
+            this.jump_url = media.jump_url;
+            this.guide_text = media.guide_text;
+            this.lottie_type = media.lottie_type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -144,6 +159,7 @@ public final class Media extends Message {
         Double valueOf = Double.valueOf(0.0d);
         DEFAULT_WTH_MID_LOC = valueOf;
         DEFAULT_HTH_MID_LOC = valueOf;
+        DEFAULT_LOTTIE_TYPE = 0;
     }
 
     public Media(Builder builder, boolean z) {
@@ -284,9 +300,27 @@ public final class Media extends Message {
             Double d2 = builder.hth_mid_loc;
             if (d2 == null) {
                 this.hth_mid_loc = DEFAULT_HTH_MID_LOC;
-                return;
             } else {
                 this.hth_mid_loc = d2;
+            }
+            String str12 = builder.jump_url;
+            if (str12 == null) {
+                this.jump_url = "";
+            } else {
+                this.jump_url = str12;
+            }
+            String str13 = builder.guide_text;
+            if (str13 == null) {
+                this.guide_text = "";
+            } else {
+                this.guide_text = str13;
+            }
+            Integer num10 = builder.lottie_type;
+            if (num10 == null) {
+                this.lottie_type = DEFAULT_LOTTIE_TYPE;
+                return;
+            } else {
+                this.lottie_type = num10;
                 return;
             }
         }
@@ -313,5 +347,8 @@ public final class Media extends Message {
         this.is_blocked_pic = builder.is_blocked_pic;
         this.wth_mid_loc = builder.wth_mid_loc;
         this.hth_mid_loc = builder.hth_mid_loc;
+        this.jump_url = builder.jump_url;
+        this.guide_text = builder.guide_text;
+        this.lottie_type = builder.lottie_type;
     }
 }

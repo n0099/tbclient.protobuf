@@ -10,7 +10,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1421common;
+    public final CommonReq f1417common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String first_class;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -20,7 +20,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1422common;
+        public CommonReq f1418common;
         public String first_class;
         public String second_class;
 
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1422common = dataReq.f1421common;
+            this.f1418common = dataReq.f1417common;
             this.first_class = dataReq.first_class;
             this.second_class = dataReq.second_class;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1421common = builder.f1422common;
+            this.f1417common = builder.f1418common;
             String str = builder.first_class;
             if (str == null) {
                 this.first_class = "";
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1421common = builder.f1422common;
+        this.f1417common = builder.f1418common;
         this.first_class = builder.first_class;
         this.second_class = builder.second_class;
     }

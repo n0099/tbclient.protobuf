@@ -12,6 +12,7 @@ public final class SimpleForum extends Message {
     public static final String DEFAULT_FORUM_TOUTU = "";
     public static final String DEFAULT_NAME = "";
     public static final String DEFAULT_RECOMMEND_TIP = "";
+    public static final String DEFAULT_SCHEME = "";
     public static final String DEFAULT_SECOND_CLASS = "";
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String avatar;
@@ -49,6 +50,8 @@ public final class SimpleForum extends Message {
     public final Integer post_num;
     @ProtoField(tag = 20, type = Message.Datatype.STRING)
     public final String recommend_tip;
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    public final String scheme;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String second_class;
     @ProtoField(tag = 22)
@@ -91,6 +94,7 @@ public final class SimpleForum extends Message {
         public List<String> pendants;
         public Integer post_num;
         public String recommend_tip;
+        public String scheme;
         public String second_class;
         public ForumShowInfo show_info;
         public SpritePBGuide sprite_pb_guide;
@@ -128,6 +132,7 @@ public final class SimpleForum extends Message {
             this.pendants = Message.copyOf(simpleForum.pendants);
             this.show_info = simpleForum.show_info;
             this.sprite_pb_guide = simpleForum.sprite_pb_guide;
+            this.scheme = simpleForum.scheme;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -253,7 +258,14 @@ public final class SimpleForum extends Message {
             }
             this.show_info = builder.show_info;
             this.sprite_pb_guide = builder.sprite_pb_guide;
-            return;
+            String str8 = builder.scheme;
+            if (str8 == null) {
+                this.scheme = "";
+                return;
+            } else {
+                this.scheme = str8;
+                return;
+            }
         }
         this.id = builder.id;
         this.name = builder.name;
@@ -278,5 +290,6 @@ public final class SimpleForum extends Message {
         this.pendants = Message.immutableCopyOf(builder.pendants);
         this.show_info = builder.show_info;
         this.sprite_pb_guide = builder.sprite_pb_guide;
+        this.scheme = builder.scheme;
     }
 }

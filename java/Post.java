@@ -31,6 +31,8 @@ public final class Post extends Message {
     public final Advertisement advertisement;
     @ProtoField(tag = 37)
     public final Agree agree;
+    @ProtoField(tag = 77)
+    public final AigcFeedbackInfo aigc_feedback_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.STRING)
     public final List<String> arr_video;
     @ProtoField(tag = 23)
@@ -49,6 +51,8 @@ public final class Post extends Message {
     public final CallRobotEntrance call_robot_entrance;
     @ProtoField(label = Message.Label.REPEATED, tag = 59)
     public final List<CardLinkInfo> card_link_info;
+    @ProtoField(tag = 78)
+    public final ChatContent chat_content;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
     public final List<PbContent> content;
     @ProtoField(tag = 60)
@@ -210,6 +214,7 @@ public final class Post extends Message {
         public Integer add_post_number;
         public Advertisement advertisement;
         public Agree agree;
+        public AigcFeedbackInfo aigc_feedback_info;
         public List<String> arr_video;
         public User author;
         public Long author_id;
@@ -219,6 +224,7 @@ public final class Post extends Message {
         public ThemeBubble bubble_info;
         public CallRobotEntrance call_robot_entrance;
         public List<CardLinkInfo> card_link_info;
+        public ChatContent chat_content;
         public List<PbContent> content;
         public CustomFigure custom_figure;
         public CustomState custom_state;
@@ -364,6 +370,8 @@ public final class Post extends Message {
             this.bot_reply_content = post.bot_reply_content;
             this.bot_reply_content_list = Message.copyOf(post.bot_reply_content_list);
             this.robot_skill = Message.copyOf(post.robot_skill);
+            this.aigc_feedback_info = post.aigc_feedback_info;
+            this.chat_content = post.chat_content;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -678,11 +686,12 @@ public final class Post extends Message {
             List<RobotSkill> list7 = builder.robot_skill;
             if (list7 == null) {
                 this.robot_skill = DEFAULT_ROBOT_SKILL;
-                return;
             } else {
                 this.robot_skill = Message.immutableCopyOf(list7);
-                return;
             }
+            this.aigc_feedback_info = builder.aigc_feedback_info;
+            this.chat_content = builder.chat_content;
+            return;
         }
         this.id = builder.id;
         this.title = builder.title;
@@ -759,5 +768,7 @@ public final class Post extends Message {
         this.bot_reply_content = builder.bot_reply_content;
         this.bot_reply_content_list = Message.immutableCopyOf(builder.bot_reply_content_list);
         this.robot_skill = Message.immutableCopyOf(builder.robot_skill);
+        this.aigc_feedback_info = builder.aigc_feedback_info;
+        this.chat_content = builder.chat_content;
     }
 }
