@@ -31,4 +31,5 @@ message SimpleForum {
     repeated string pendants = 21;
     ForumShowInfo show_info = 22;
     SpritePBGuide sprite_pb_guide = 23;
+    string scheme = 24;
 }

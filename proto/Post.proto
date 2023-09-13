@@ -4,9 +4,11 @@ import "ActPost.proto";
 import "AddPostList.proto";
 import "Advertisement.proto";
 import "Agree.proto";
+import "AigcFeedbackInfo.proto";
 import "BotReplyContent.proto";
 import "CallRobotEntrance.proto";
 import "CardLinkInfo.proto";
+import "ChatContent.proto";
 import "CustomFigure.proto";
 import "CustomState.proto";
 import "DealInfo.proto";
@@ -110,4 +112,6 @@ message Post {
     string bot_reply_content = 74;
     repeated BotReplyContent bot_reply_content_list = 75;
     repeated RobotSkill robot_skill = 76;
+    AigcFeedbackInfo aigc_feedback_info = 77;
+    ChatContent chat_content = 78;
 }

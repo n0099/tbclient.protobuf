@@ -14,6 +14,7 @@ import "Baijiahao.proto";
 import "BookThread.proto";
 import "CartoonThread.proto";
 import "ClickBackCard.proto";
+import "CustomFigure.proto";
 import "CustomState.proto";
 import "DealInfo.proto";
 import "DeclareInfo.proto";
@@ -238,9 +239,12 @@ message ThreadInfo {
     string exposure_monitor_url = 205;
     string click_monitor_url = 206;
     ThreadRecommendTag thread_recommend_tag = 210;
+    CustomFigure custom_figure = 211;
     CustomState custom_state = 212;
     int32 is_highlight = 213;
+    int32 is_xiuxiu_thread = 214;
     ThreadAblum ablum_info = 215;
+    uint32 show_ad_subscript = 216;
     string target_scheme = 217;
     string convert_btn_type = 218;
     int32 is_excellent_thread = 219;
@@ -248,4 +252,5 @@ message ThreadInfo {
     RobotEntrance robot_entrance = 222;
     ClickBackCard click_back_card = 223;
     PeiwanInfo peiwan_info = 224;
+    string head_type = 227;
 }

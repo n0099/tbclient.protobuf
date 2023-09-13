@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message ChatContent {
+    string scheme = 1;
+}
