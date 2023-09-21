@@ -10,6 +10,7 @@ public final class FloatingIconItem extends Message {
     public static final String DEFAULT_FLOAT_TYPE = "";
     public static final String DEFAULT_FOLD_LOTTIE = "";
     public static final String DEFAULT_FOLD_NAME = "";
+    public static final String DEFAULT_HIDE_CLOSE_ICON = "";
     public static final String DEFAULT_ICON_URL = "";
     public static final String DEFAULT_PACKAGE_NAME = "";
     public static final String DEFAULT_SCHEME = "";
@@ -29,6 +30,8 @@ public final class FloatingIconItem extends Message {
     public final String fold_lottie;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
     public final String fold_name;
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    public final String hide_close_icon;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String icon_url;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -52,6 +55,7 @@ public final class FloatingIconItem extends Message {
         public String float_type;
         public String fold_lottie;
         public String fold_name;
+        public String hide_close_icon;
         public String icon_url;
         public String package_name;
         public String scheme;
@@ -81,6 +85,7 @@ public final class FloatingIconItem extends Message {
             this.fold_name = floatingIconItem.fold_name;
             this.unfold_name = floatingIconItem.unfold_name;
             this.display_ad_icon = floatingIconItem.display_ad_icon;
+            this.hide_close_icon = floatingIconItem.hide_close_icon;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -168,9 +173,15 @@ public final class FloatingIconItem extends Message {
             String str13 = builder.display_ad_icon;
             if (str13 == null) {
                 this.display_ad_icon = "";
-                return;
             } else {
                 this.display_ad_icon = str13;
+            }
+            String str14 = builder.hide_close_icon;
+            if (str14 == null) {
+                this.hide_close_icon = "";
+                return;
+            } else {
+                this.hide_close_icon = str14;
                 return;
             }
         }
@@ -187,5 +198,6 @@ public final class FloatingIconItem extends Message {
         this.fold_name = builder.fold_name;
         this.unfold_name = builder.unfold_name;
         this.display_ad_icon = builder.display_ad_icon;
+        this.hide_close_icon = builder.hide_close_icon;
     }
 }

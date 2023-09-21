@@ -197,6 +197,8 @@ public final class DataRes extends Message {
     public final NtSpreadInfo ntspread;
     @ProtoField(tag = 4)
     public final Page page;
+    @ProtoField(tag = 126)
+    public final PageData page_data;
     @ProtoField(tag = 62, type = Message.Datatype.STRING)
     public final String partial_visible_toast;
     @ProtoField(tag = 98)
@@ -407,6 +409,7 @@ public final class DataRes extends Message {
         public Novel novel;
         public NtSpreadInfo ntspread;
         public Page page;
+        public PageData page_data;
         public String partial_visible_toast;
         public ForumActiveInfo private_forum_active_info;
         public PrivateForumTotalInfo private_forum_info;
@@ -574,6 +577,7 @@ public final class DataRes extends Message {
             this.sprite_bubble_guide = dataRes.sprite_bubble_guide;
             this.is_need_live_ununiq = dataRes.is_need_live_ununiq;
             this.bounty_card = dataRes.bounty_card;
+            this.page_data = dataRes.page_data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -973,6 +977,7 @@ public final class DataRes extends Message {
                 this.is_need_live_ununiq = num24;
             }
             this.bounty_card = builder.bounty_card;
+            this.page_data = builder.page_data;
             return;
         }
         this.user = builder.user;
@@ -1092,5 +1097,6 @@ public final class DataRes extends Message {
         this.sprite_bubble_guide = builder.sprite_bubble_guide;
         this.is_need_live_ununiq = builder.is_need_live_ununiq;
         this.bounty_card = builder.bounty_card;
+        this.page_data = builder.page_data;
     }
 }

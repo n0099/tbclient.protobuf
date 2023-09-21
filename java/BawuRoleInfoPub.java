@@ -4,11 +4,15 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes2.dex */
 public final class BawuRoleInfoPub extends Message {
+    public static final String DEFAULT_AVATAR_URL = "";
     public static final String DEFAULT_LEVEL_NAME = "";
     public static final String DEFAULT_NAME_SHOW = "";
     public static final String DEFAULT_PORTRAIT = "";
     public static final String DEFAULT_ROLE_NAME = "";
+    public static final String DEFAULT_TARGET_SCHEME = "";
     public static final String DEFAULT_USER_NAME = "";
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String avatar_url;
     @ProtoField(tag = 10)
     public final BaijiahaoInfo baijiahao_info;
     @ProtoField(tag = 1, type = Message.Datatype.UINT64)
@@ -23,6 +27,8 @@ public final class BawuRoleInfoPub extends Message {
     public final Integer role_id;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String role_name;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String target_scheme;
     @ProtoField(tag = 2, type = Message.Datatype.INT64)
     public final Long user_id;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
@@ -36,6 +42,7 @@ public final class BawuRoleInfoPub extends Message {
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<BawuRoleInfoPub> {
+        public String avatar_url;
         public BaijiahaoInfo baijiahao_info;
         public Long forum_id;
         public String level_name;
@@ -43,6 +50,7 @@ public final class BawuRoleInfoPub extends Message {
         public String portrait;
         public Integer role_id;
         public String role_name;
+        public String target_scheme;
         public Long user_id;
         public Integer user_level;
         public String user_name;
@@ -65,6 +73,8 @@ public final class BawuRoleInfoPub extends Message {
             this.user_name = bawuRoleInfoPub.user_name;
             this.name_show = bawuRoleInfoPub.name_show;
             this.baijiahao_info = bawuRoleInfoPub.baijiahao_info;
+            this.avatar_url = bawuRoleInfoPub.avatar_url;
+            this.target_scheme = bawuRoleInfoPub.target_scheme;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -132,7 +142,20 @@ public final class BawuRoleInfoPub extends Message {
                 this.name_show = str5;
             }
             this.baijiahao_info = builder.baijiahao_info;
-            return;
+            String str6 = builder.avatar_url;
+            if (str6 == null) {
+                this.avatar_url = "";
+            } else {
+                this.avatar_url = str6;
+            }
+            String str7 = builder.target_scheme;
+            if (str7 == null) {
+                this.target_scheme = "";
+                return;
+            } else {
+                this.target_scheme = str7;
+                return;
+            }
         }
         this.forum_id = builder.forum_id;
         this.user_id = builder.user_id;
@@ -144,5 +167,7 @@ public final class BawuRoleInfoPub extends Message {
         this.user_name = builder.user_name;
         this.name_show = builder.name_show;
         this.baijiahao_info = builder.baijiahao_info;
+        this.avatar_url = builder.avatar_url;
+        this.target_scheme = builder.target_scheme;
     }
 }

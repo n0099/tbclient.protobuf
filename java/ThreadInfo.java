@@ -22,6 +22,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_COLLECT_MARK_PID = "";
     public static final String DEFAULT_CONVERT_BTN_TYPE = "";
     public static final String DEFAULT_DAILY_PAPER_TIME = "";
+    public static final String DEFAULT_DISABLE_SHARE_TOAST = "";
     public static final String DEFAULT_ECOM = "";
     public static final String DEFAULT_EXPOSURE_MONITOR_URL = "";
     public static final String DEFAULT_FNAME = "";
@@ -46,6 +47,7 @@ public final class ThreadInfo extends Message {
     public static final String DEFAULT_RECOM_TAG_ICON = "";
     public static final String DEFAULT_RECOM_WEIGHT = "";
     public static final String DEFAULT_SCARD_PACKET_ID = "";
+    public static final String DEFAULT_SHARE_URL = "";
     public static final String DEFAULT_TAB_NAME = "";
     public static final String DEFAULT_TARGET_SCHEME = "";
     public static final String DEFAULT_THREAD_SHARE_LINK = "";
@@ -135,6 +137,10 @@ public final class ThreadInfo extends Message {
     public final DealInfo deal_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 121)
     public final List<DeclareInfo> declare_list;
+    @ProtoField(tag = 228, type = Message.Datatype.INT64)
+    public final Long disable_share;
+    @ProtoField(tag = 229, type = Message.Datatype.STRING)
+    public final String disable_share_toast;
     @ProtoField(label = Message.Label.REPEATED, tag = 120)
     public final List<DislikeInfo> dislike_info;
     @ProtoField(tag = 60, type = Message.Datatype.STRING)
@@ -389,6 +395,8 @@ public final class ThreadInfo extends Message {
     public final String scard_packet_id;
     @ProtoField(tag = 135, type = Message.Datatype.INT64)
     public final Long share_num;
+    @ProtoField(tag = 230, type = Message.Datatype.STRING)
+    public final String share_url;
     @ProtoField(tag = 216, type = Message.Datatype.UINT32)
     public final Integer show_ad_subscript;
     @ProtoField(tag = 31, type = Message.Datatype.INT32)
@@ -603,6 +611,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_IS_EXCELLENT_THREAD = 0;
     public static final Integer DEFAULT_LITERATURE_FLAG = 0;
     public static final List<Post> DEFAULT_HOT_POST_LIST = Collections.emptyList();
+    public static final Long DEFAULT_DISABLE_SHARE = 0L;
 
     public ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1614,9 +1623,27 @@ public final class ThreadInfo extends Message {
             String str49 = builder.head_type;
             if (str49 == null) {
                 this.head_type = "";
-                return;
             } else {
                 this.head_type = str49;
+            }
+            Long l12 = builder.disable_share;
+            if (l12 == null) {
+                this.disable_share = DEFAULT_DISABLE_SHARE;
+            } else {
+                this.disable_share = l12;
+            }
+            String str50 = builder.disable_share_toast;
+            if (str50 == null) {
+                this.disable_share_toast = "";
+            } else {
+                this.disable_share_toast = str50;
+            }
+            String str51 = builder.share_url;
+            if (str51 == null) {
+                this.share_url = "";
+                return;
+            } else {
+                this.share_url = str51;
                 return;
             }
         }
@@ -1835,6 +1862,9 @@ public final class ThreadInfo extends Message {
         this.click_back_card = builder.click_back_card;
         this.peiwan_info = builder.peiwan_info;
         this.head_type = builder.head_type;
+        this.disable_share = builder.disable_share;
+        this.disable_share_toast = builder.disable_share_toast;
+        this.share_url = builder.share_url;
     }
 
     /* loaded from: classes2.dex */
@@ -1875,6 +1905,8 @@ public final class ThreadInfo extends Message {
         public String daily_paper_time;
         public DealInfo deal_info;
         public List<DeclareInfo> declare_list;
+        public Long disable_share;
+        public String disable_share_toast;
         public List<DislikeInfo> dislike_info;
         public String ecom;
         public EditInfo edit_info;
@@ -2002,6 +2034,7 @@ public final class ThreadInfo extends Message {
         public RobotEntrance robot_entrance;
         public String scard_packet_id;
         public Long share_num;
+        public String share_url;
         public Integer show_ad_subscript;
         public Integer show_commented;
         public SkinInfo skin_info;
@@ -2278,6 +2311,9 @@ public final class ThreadInfo extends Message {
             this.click_back_card = threadInfo.click_back_card;
             this.peiwan_info = threadInfo.peiwan_info;
             this.head_type = threadInfo.head_type;
+            this.disable_share = threadInfo.disable_share;
+            this.disable_share_toast = threadInfo.disable_share_toast;
+            this.share_url = threadInfo.share_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */

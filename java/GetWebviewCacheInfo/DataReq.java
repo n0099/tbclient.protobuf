@@ -9,7 +9,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1415common;
+    public final CommonReq f1410common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String webview_version;
 
@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1416common;
+        public CommonReq f1411common;
         public String webview_version;
 
         public Builder() {
@@ -28,7 +28,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1416common = dataReq.f1415common;
+            this.f1411common = dataReq.f1410common;
             this.webview_version = dataReq.webview_version;
         }
 
@@ -42,7 +42,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1415common = builder.f1416common;
+            this.f1410common = builder.f1411common;
             String str = builder.webview_version;
             if (str == null) {
                 this.webview_version = "";
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1415common = builder.f1416common;
+        this.f1410common = builder.f1411common;
         this.webview_version = builder.webview_version;
     }
 }

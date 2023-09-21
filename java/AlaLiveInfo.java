@@ -10,6 +10,7 @@ public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_COVER_WIDE = "";
     public static final String DEFAULT_DESCRIPTION = "";
     public static final String DEFAULT_FIRST_HEADLINE = "";
+    public static final String DEFAULT_FLV = "";
     public static final String DEFAULT_FORUM_USER_LIVE_MSG = "";
     public static final String DEFAULT_FRS_TOPLIVE_PIC = "";
     public static final String DEFAULT_HLS_URL = "";
@@ -22,6 +23,7 @@ public final class AlaLiveInfo extends Message {
     public static final String DEFAULT_ROOM_NAME = "";
     public static final String DEFAULT_ROUTER_TYPE = "";
     public static final String DEFAULT_RTMP_URL = "";
+    public static final String DEFAULT_SCHEME = "";
     public static final String DEFAULT_SECOND_HEADLINE = "";
     public static final String DEFAULT_SESSION_ID = "";
     public static final String DEFAULT_THIRD_APP_ID = "";
@@ -31,6 +33,8 @@ public final class AlaLiveInfo extends Message {
     public final Integer audience_count;
     @ProtoField(tag = 25)
     public final AlaChallengeInfo challenge_info;
+    @ProtoField(tag = 57)
+    public final WidthHeight container_size;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String cover;
     @ProtoField(tag = 48, type = Message.Datatype.STRING)
@@ -45,6 +49,8 @@ public final class AlaLiveInfo extends Message {
     public final Integer duration;
     @ProtoField(tag = 34, type = Message.Datatype.STRING)
     public final String first_headline;
+    @ProtoField(tag = 52, type = Message.Datatype.STRING)
+    public final String flv;
     @ProtoField(tag = 47, type = Message.Datatype.STRING)
     public final String forum_user_live_msg;
     @ProtoField(tag = 28, type = Message.Datatype.INT32)
@@ -85,8 +91,12 @@ public final class AlaLiveInfo extends Message {
     public final Integer open_recom_location;
     @ProtoField(tag = 38, type = Message.Datatype.UINT32)
     public final Integer open_recom_reason;
+    @ProtoField(tag = 54, type = Message.Datatype.INT32)
+    public final Integer page_from;
     @ProtoField(tag = 36, type = Message.Datatype.UINT32)
     public final Integer pb_display_type;
+    @ProtoField(tag = 56)
+    public final WidthHeight player_size;
     @ProtoField(tag = 37, type = Message.Datatype.STRING)
     public final String recom_reason;
     @ProtoField(tag = 44, type = Message.Datatype.UINT64)
@@ -99,6 +109,8 @@ public final class AlaLiveInfo extends Message {
     public final String router_type;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String rtmp_url;
+    @ProtoField(tag = 55, type = Message.Datatype.STRING)
+    public final String scheme;
     @ProtoField(tag = 16, type = Message.Datatype.UINT32)
     public final Integer screen_direction;
     @ProtoField(tag = 35, type = Message.Datatype.STRING)
@@ -147,11 +159,13 @@ public final class AlaLiveInfo extends Message {
     public static final Long DEFAULT_ROOM_ID = 0L;
     public static final Integer DEFAULT_ROOM_STATUS = 0;
     public static final Integer DEFAULT_SHOW_PAGE = 0;
+    public static final Integer DEFAULT_PAGE_FROM = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<AlaLiveInfo> {
         public Integer audience_count;
         public AlaChallengeInfo challenge_info;
+        public WidthHeight container_size;
         public String cover;
         public String cover_wide;
         public String description;
@@ -159,6 +173,7 @@ public final class AlaLiveInfo extends Message {
         public Long distance;
         public Integer duration;
         public String first_headline;
+        public String flv;
         public String forum_user_live_msg;
         public Integer frs_toplive_force;
         public String frs_toplive_pic;
@@ -179,13 +194,16 @@ public final class AlaLiveInfo extends Message {
         public Integer open_recom_fans;
         public Integer open_recom_location;
         public Integer open_recom_reason;
+        public Integer page_from;
         public Integer pb_display_type;
+        public WidthHeight player_size;
         public String recom_reason;
         public Long room_id;
         public String room_name;
         public Integer room_status;
         public String router_type;
         public String rtmp_url;
+        public String scheme;
         public Integer screen_direction;
         public String second_headline;
         public String session_id;
@@ -257,6 +275,11 @@ public final class AlaLiveInfo extends Message {
             this.yy_ext = alaLiveInfo.yy_ext;
             this.show_page = alaLiveInfo.show_page;
             this.user_label = alaLiveInfo.user_label;
+            this.flv = alaLiveInfo.flv;
+            this.page_from = alaLiveInfo.page_from;
+            this.scheme = alaLiveInfo.scheme;
+            this.player_size = alaLiveInfo.player_size;
+            this.container_size = alaLiveInfo.container_size;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -533,6 +556,26 @@ public final class AlaLiveInfo extends Message {
                 this.show_page = num15;
             }
             this.user_label = builder.user_label;
+            String str22 = builder.flv;
+            if (str22 == null) {
+                this.flv = "";
+            } else {
+                this.flv = str22;
+            }
+            Integer num16 = builder.page_from;
+            if (num16 == null) {
+                this.page_from = DEFAULT_PAGE_FROM;
+            } else {
+                this.page_from = num16;
+            }
+            String str23 = builder.scheme;
+            if (str23 == null) {
+                this.scheme = "";
+            } else {
+                this.scheme = str23;
+            }
+            this.player_size = builder.player_size;
+            this.container_size = builder.container_size;
             return;
         }
         this.live_id = builder.live_id;
@@ -584,5 +627,10 @@ public final class AlaLiveInfo extends Message {
         this.yy_ext = builder.yy_ext;
         this.show_page = builder.show_page;
         this.user_label = builder.user_label;
+        this.flv = builder.flv;
+        this.page_from = builder.page_from;
+        this.scheme = builder.scheme;
+        this.player_size = builder.player_size;
+        this.container_size = builder.container_size;
     }
 }

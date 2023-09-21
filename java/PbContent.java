@@ -21,6 +21,7 @@ public final class PbContent extends Message {
     public static final String DEFAULT_PHONETYPE = "";
     public static final String DEFAULT_SRC = "";
     public static final String DEFAULT_STATIC = "";
+    public static final String DEFAULT_TARGET_SCHEME = "";
     public static final String DEFAULT_TEXT = "";
     public static final String DEFAULT_TOPIC_SPECIAL_ICON = "";
     public static final String DEFAULT_VOICE_MD5 = "";
@@ -94,6 +95,8 @@ public final class PbContent extends Message {
     public final Integer show_original_btn;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String src;
+    @ProtoField(tag = 44, type = Message.Datatype.STRING)
+    public final String target_scheme;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String text;
     @ProtoField(tag = 40)
@@ -165,6 +168,7 @@ public final class PbContent extends Message {
         public Long pic_id;
         public Integer show_original_btn;
         public String src;
+        public String target_scheme;
         public String text;
         public TiebaPlusInfo tiebaplus_info;
         public String topic_special_icon;
@@ -225,6 +229,7 @@ public final class PbContent extends Message {
             this.item = pbContent.item;
             this.pic_id = pbContent.pic_id;
             this.link_type = pbContent.link_type;
+            this.target_scheme = pbContent.target_scheme;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -462,9 +467,15 @@ public final class PbContent extends Message {
             Integer num14 = builder.link_type;
             if (num14 == null) {
                 this.link_type = DEFAULT_LINK_TYPE;
-                return;
             } else {
                 this.link_type = num14;
+            }
+            String str21 = builder.target_scheme;
+            if (str21 == null) {
+                this.target_scheme = "";
+                return;
+            } else {
+                this.target_scheme = str21;
                 return;
             }
         }
@@ -511,5 +522,6 @@ public final class PbContent extends Message {
         this.item = builder.item;
         this.pic_id = builder.pic_id;
         this.link_type = builder.link_type;
+        this.target_scheme = builder.target_scheme;
     }
 }

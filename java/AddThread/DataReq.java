@@ -100,7 +100,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1251common;
+    public final CommonReq f1248common;
     @ProtoField(tag = 19, type = Message.Datatype.STRING)
     public final String content;
     @ProtoField(tag = 12, type = Message.Datatype.STRING)
@@ -275,7 +275,7 @@ public final class DataReq extends Message {
         public String comment_head;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1252common;
+        public CommonReq f1249common;
         public String content;
         public String during_time;
         public String entrance_type;
@@ -364,7 +364,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1252common = dataReq.f1251common;
+            this.f1249common = dataReq.f1248common;
             this.authsid = dataReq.authsid;
             this.sig = dataReq.sig;
             this.tbs = dataReq.tbs;
@@ -462,7 +462,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1251common = builder.f1252common;
+            this.f1248common = builder.f1249common;
             String str = builder.authsid;
             if (str == null) {
                 this.authsid = "";
@@ -976,7 +976,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1251common = builder.f1252common;
+        this.f1248common = builder.f1249common;
         this.authsid = builder.authsid;
         this.sig = builder.sig;
         this.tbs = builder.tbs;

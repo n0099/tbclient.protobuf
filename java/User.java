@@ -8,6 +8,7 @@ import java.util.List;
 /* loaded from: classes2.dex */
 public final class User extends Message {
     public static final String DEFAULT_APPEAL_THREAD_POPOVER = "";
+    public static final String DEFAULT_AVATAR_URL = "";
     public static final String DEFAULT_BAWU_TYPE = "";
     public static final String DEFAULT_BDUSS = "";
     public static final String DEFAULT_BG_PIC = "";
@@ -32,6 +33,7 @@ public final class User extends Message {
     public static final String DEFAULT_PORTRAITH = "";
     public static final String DEFAULT_RANK = "";
     public static final String DEFAULT_SEAL_PREFIX = "";
+    public static final String DEFAULT_TARGET_SCHEME = "";
     public static final String DEFAULT_TB_AGE = "";
     public static final String DEFAULT_TIEBA_UID = "";
     public static final String DEFAULT_UK = "";
@@ -47,6 +49,8 @@ public final class User extends Message {
     public final AlaLiveInfo ala_live_info;
     @ProtoField(tag = 112, type = Message.Datatype.STRING)
     public final String appeal_thread_popover;
+    @ProtoField(tag = Cea708Decoder.COMMAND_DF0, type = Message.Datatype.STRING)
+    public final String avatar_url;
     @ProtoField(tag = 95)
     public final BaijiahaoInfo baijiahao_info;
     @ProtoField(tag = 10)
@@ -259,6 +263,10 @@ public final class User extends Message {
     public final Integer show_pb_private_flag;
     @ProtoField(tag = 82)
     public final SpringVirtualUser spring_virtual_user;
+    @ProtoField(label = Message.Label.REPEATED, tag = Cea708Decoder.COMMAND_SWA)
+    public final List<TagsInfo> tags;
+    @ProtoField(tag = 150, type = Message.Datatype.STRING)
+    public final String target_scheme;
     @ProtoField(tag = 38, type = Message.Datatype.STRING)
     public final String tb_age;
     @ProtoField(tag = 72)
@@ -386,6 +394,7 @@ public final class User extends Message {
     public static final List<String> DEFAULT_PENDANTS = Collections.emptyList();
     public static final Long DEFAULT_PA = 0L;
     public static final Integer DEFAULT_ENABLE_NEW_HOMEPAGE = 0;
+    public static final List<TagsInfo> DEFAULT_TAGS = Collections.emptyList();
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<User> {
@@ -395,6 +404,7 @@ public final class User extends Message {
         public AlaUserInfo ala_info;
         public AlaLiveInfo ala_live_info;
         public String appeal_thread_popover;
+        public String avatar_url;
         public BaijiahaoInfo baijiahao_info;
         public Balv balv;
         public BawuThrones bawu_thrones;
@@ -501,6 +511,8 @@ public final class User extends Message {
         public ShakeAdSwitch shake_ad_switch;
         public Integer show_pb_private_flag;
         public SpringVirtualUser spring_virtual_user;
+        public List<TagsInfo> tags;
+        public String target_scheme;
         public String tb_age;
         public TbVipInfo tb_vip;
         public ThemeBackgroundInUser theme_background;
@@ -678,6 +690,9 @@ public final class User extends Message {
             this.ios_b_url = user.ios_b_url;
             this.pa = user.pa;
             this.enable_new_homepage = user.enable_new_homepage;
+            this.target_scheme = user.target_scheme;
+            this.tags = Message.copyOf(user.tags);
+            this.avatar_url = user.avatar_url;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1322,9 +1337,27 @@ public final class User extends Message {
             Integer num55 = builder.enable_new_homepage;
             if (num55 == null) {
                 this.enable_new_homepage = DEFAULT_ENABLE_NEW_HOMEPAGE;
-                return;
             } else {
                 this.enable_new_homepage = num55;
+            }
+            String str29 = builder.target_scheme;
+            if (str29 == null) {
+                this.target_scheme = "";
+            } else {
+                this.target_scheme = str29;
+            }
+            List<TagsInfo> list14 = builder.tags;
+            if (list14 == null) {
+                this.tags = DEFAULT_TAGS;
+            } else {
+                this.tags = Message.immutableCopyOf(list14);
+            }
+            String str30 = builder.avatar_url;
+            if (str30 == null) {
+                this.avatar_url = "";
+                return;
+            } else {
+                this.avatar_url = str30;
                 return;
             }
         }
@@ -1468,5 +1501,8 @@ public final class User extends Message {
         this.ios_b_url = builder.ios_b_url;
         this.pa = builder.pa;
         this.enable_new_homepage = builder.enable_new_homepage;
+        this.target_scheme = builder.target_scheme;
+        this.tags = Message.immutableCopyOf(builder.tags);
+        this.avatar_url = builder.avatar_url;
     }
 }
