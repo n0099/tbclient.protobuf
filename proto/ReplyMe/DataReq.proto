@@ -9,4 +9,8 @@ message DataReq {
     int32 scr_h = 5;
     double scr_dip = 6;
     int32 q_type = 7;
+    int32 is_first = 8;
+    string call_from = 9;
+    int64 time = 10;
+    int64 tid = 11;
 }

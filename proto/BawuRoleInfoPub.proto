@@ -13,4 +13,6 @@ message BawuRoleInfoPub {
     string user_name = 8;
     string name_show = 9;
     BaijiahaoInfo baijiahao_info = 10;
+    string avatar_url = 11;
+    string target_scheme = 12;
 }

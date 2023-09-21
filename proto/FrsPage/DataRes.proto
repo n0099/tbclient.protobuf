@@ -41,6 +41,7 @@ import "FrsPage/LiveFuseForumData.proto";
 import "FrsPage/NavTabInfo.proto";
 import "FrsPage/NebulaHotThreads.proto";
 import "FrsPage/NtSpreadInfo.proto";
+import "FrsPage/PageData.proto";
 import "FrsPage/PrivateForumTotalInfo.proto";
 import "FrsPage/PushThreadInfo.proto";
 import "FrsPage/RecomPostTopic.proto";
@@ -192,4 +193,5 @@ message DataRes {
     FrsSpriteBubble sprite_bubble_guide = 123;
     int32 is_need_live_ununiq = 124;
     BountyCard bounty_card = 125;
+    PageData page_data = 126;
 }

@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "GetMsgRecForumlist/DataReq.proto";
-
-message GetMsgRecForumlistReqIdl {
-    DataReq data = 1;
-}

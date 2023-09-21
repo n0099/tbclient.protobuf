@@ -253,4 +253,7 @@ message ThreadInfo {
     ClickBackCard click_back_card = 223;
     PeiwanInfo peiwan_info = 224;
     string head_type = 227;
+    int64 disable_share = 228;
+    string disable_share_toast = 229;
+    string share_url = 230;
 }

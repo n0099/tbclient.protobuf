@@ -180,4 +180,5 @@ message User {
     string ios_b_url = 147;
     int64 pa = 148;
     int32 enable_new_homepage = 149;
+    string target_scheme = 150;
 }
