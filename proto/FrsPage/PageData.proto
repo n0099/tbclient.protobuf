@@ -1,7 +1,9 @@
 syntax = "proto3";
 
 import "FeedLayout.proto";
+import "LayoutFactory.proto";
 
 message PageData {
-    repeated FeedLayout feed_list = 1;
+    repeated FeedLayout test_drop = 1;
+    repeated LayoutFactory feed_list = 2;
 }

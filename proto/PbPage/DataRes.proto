@@ -14,6 +14,7 @@ import "NaGuide.proto";
 import "Page.proto";
 import "PbHotPost.proto";
 import "PbPage/AddPost.proto";
+import "PbPage/AiChatCard.proto";
 import "PbPage/AppealInfo.proto";
 import "PbPage/BusinessPromotInfo.proto";
 import "PbPage/FeedExtInfo.proto";
@@ -115,4 +116,5 @@ message DataRes {
     JumpLinkInfo jump_link_info = 74;
     SimilarContent similar_content = 75;
     RobotEntrance robot_entrance = 76;
+    repeated AiChatCard aichat_card = 77;
 }

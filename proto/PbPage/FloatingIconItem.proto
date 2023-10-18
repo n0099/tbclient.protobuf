@@ -15,4 +15,5 @@ message FloatingIconItem {
     string unfold_name = 12;
     string display_ad_icon = 13;
     string hide_close_icon = 14;
+    string activity_id = 15;
 }
