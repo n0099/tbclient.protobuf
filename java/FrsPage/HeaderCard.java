@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.QuizCard;
 import tbclient.ThemeColorInfo;
 import tbclient.ThreadInfo;
 /* loaded from: classes2.dex */
@@ -16,6 +17,8 @@ public final class HeaderCard extends Message {
     public final String card_title;
     @ProtoField(tag = 4)
     public final HeadCardCover cover;
+    @ProtoField(tag = 5)
+    public final QuizCard quiz_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThreadInfo> thread_list;
 
@@ -24,6 +27,7 @@ public final class HeaderCard extends Message {
         public ThemeColorInfo card_background;
         public String card_title;
         public HeadCardCover cover;
+        public QuizCard quiz_card;
         public List<ThreadInfo> thread_list;
 
         public Builder() {
@@ -38,6 +42,7 @@ public final class HeaderCard extends Message {
             this.thread_list = Message.copyOf(headerCard.thread_list);
             this.card_background = headerCard.card_background;
             this.cover = headerCard.cover;
+            this.quiz_card = headerCard.quiz_card;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -64,11 +69,13 @@ public final class HeaderCard extends Message {
             }
             this.card_background = builder.card_background;
             this.cover = builder.cover;
+            this.quiz_card = builder.quiz_card;
             return;
         }
         this.card_title = builder.card_title;
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
         this.card_background = builder.card_background;
         this.cover = builder.cover;
+        this.quiz_card = builder.quiz_card;
     }
 }

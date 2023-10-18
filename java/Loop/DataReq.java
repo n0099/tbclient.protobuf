@@ -18,7 +18,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1432common;
+    public final CommonReq f1428common;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String data_type;
     @ProtoField(tag = 4, type = Message.Datatype.INT64)
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
         public String chatroom_new_msg;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1433common;
+        public CommonReq f1429common;
         public String data_type;
         public Long fid;
         public String forum_name;
@@ -52,7 +52,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1433common = dataReq.f1432common;
+            this.f1429common = dataReq.f1428common;
             this.data_type = dataReq.data_type;
             this.chatroom_new_msg = dataReq.chatroom_new_msg;
             this.fid = dataReq.fid;
@@ -72,7 +72,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1432common = builder.f1433common;
+            this.f1428common = builder.f1429common;
             String str = builder.data_type;
             if (str == null) {
                 this.data_type = "";
@@ -118,7 +118,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1432common = builder.f1433common;
+        this.f1428common = builder.f1429common;
         this.data_type = builder.data_type;
         this.chatroom_new_msg = builder.chatroom_new_msg;
         this.fid = builder.fid;

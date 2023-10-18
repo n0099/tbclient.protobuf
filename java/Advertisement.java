@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes2.dex */
 public final class Advertisement extends Message {
+    public static final String DEFAULT_ACTIVITY_ID = "";
     public static final String DEFAULT_ADVERTISEMENT_ID = "";
     public static final String DEFAULT_CLICK_STATISTICS_URL = "";
     public static final String DEFAULT_DEEPLINK = "";
@@ -16,6 +17,8 @@ public final class Advertisement extends Message {
     public static final String DEFAULT_SCHEME = "";
     public static final Long DEFAULT_TIME = 0L;
     public static final String DEFAULT_VIEW_STATISTICS_URL = "";
+    @ProtoField(tag = 13, type = Message.Datatype.STRING)
+    public final String activity_id;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String advertisement_id;
     @ProtoField(tag = 7, type = Message.Datatype.STRING)
@@ -43,6 +46,7 @@ public final class Advertisement extends Message {
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<Advertisement> {
+        public String activity_id;
         public String advertisement_id;
         public String click_statistics_url;
         public String deeplink;
@@ -76,6 +80,7 @@ public final class Advertisement extends Message {
             this.scheme = advertisement.scheme;
             this.package_name = advertisement.package_name;
             this.display_ad_icon = advertisement.display_ad_icon;
+            this.activity_id = advertisement.activity_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -157,9 +162,15 @@ public final class Advertisement extends Message {
             String str11 = builder.display_ad_icon;
             if (str11 == null) {
                 this.display_ad_icon = "";
-                return;
             } else {
                 this.display_ad_icon = str11;
+            }
+            String str12 = builder.activity_id;
+            if (str12 == null) {
+                this.activity_id = "";
+                return;
+            } else {
+                this.activity_id = str12;
                 return;
             }
         }
@@ -175,5 +186,6 @@ public final class Advertisement extends Message {
         this.scheme = builder.scheme;
         this.package_name = builder.package_name;
         this.display_ad_icon = builder.display_ad_icon;
+        this.activity_id = builder.activity_id;
     }
 }

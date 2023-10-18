@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 /* loaded from: classes2.dex */
 public final class FloatingIconItem extends Message {
+    public static final String DEFAULT_ACTIVITY_ID = "";
     public static final String DEFAULT_CLICK_STATISTICS_URL = "";
     public static final String DEFAULT_DEEPLINK = "";
     public static final String DEFAULT_DISPLAY_AD_ICON = "";
@@ -18,6 +19,8 @@ public final class FloatingIconItem extends Message {
     public static final String DEFAULT_UNFOLD_NAME = "";
     public static final String DEFAULT_URL = "";
     public static final String DEFAULT_VIEW_STATISTICS_URL = "";
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String activity_id;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String click_statistics_url;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -49,6 +52,7 @@ public final class FloatingIconItem extends Message {
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FloatingIconItem> {
+        public String activity_id;
         public String click_statistics_url;
         public String deeplink;
         public String display_ad_icon;
@@ -86,6 +90,7 @@ public final class FloatingIconItem extends Message {
             this.unfold_name = floatingIconItem.unfold_name;
             this.display_ad_icon = floatingIconItem.display_ad_icon;
             this.hide_close_icon = floatingIconItem.hide_close_icon;
+            this.activity_id = floatingIconItem.activity_id;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -179,9 +184,15 @@ public final class FloatingIconItem extends Message {
             String str14 = builder.hide_close_icon;
             if (str14 == null) {
                 this.hide_close_icon = "";
-                return;
             } else {
                 this.hide_close_icon = str14;
+            }
+            String str15 = builder.activity_id;
+            if (str15 == null) {
+                this.activity_id = "";
+                return;
+            } else {
+                this.activity_id = str15;
                 return;
             }
         }
@@ -199,5 +210,6 @@ public final class FloatingIconItem extends Message {
         this.unfold_name = builder.unfold_name;
         this.display_ad_icon = builder.display_ad_icon;
         this.hide_close_icon = builder.hide_close_icon;
+        this.activity_id = builder.activity_id;
     }
 }

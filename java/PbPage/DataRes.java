@@ -40,6 +40,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_PB_NOTICE = "";
     @ProtoField(tag = 5)
     public final AddPost add_post;
+    @ProtoField(label = Message.Label.REPEATED, tag = 77)
+    public final List<AiChatCard> aichat_card;
     @ProtoField(tag = 26)
     public final AlaLiveInfo ala_info;
     @ProtoField(tag = 4)
@@ -215,10 +217,12 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_PB_NOTICE_TYPE = 0;
     public static final Integer DEFAULT_HAS_FOLD_COMMENT = 0;
     public static final Long DEFAULT_FOLD_COMMENT_NUM = 0L;
+    public static final List<AiChatCard> DEFAULT_AICHAT_CARD = Collections.emptyList();
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AddPost add_post;
+        public List<AiChatCard> aichat_card;
         public AlaLiveInfo ala_info;
         public Anti anti;
         public AppealInfo appeal_info;
@@ -373,6 +377,7 @@ public final class DataRes extends Message {
             this.jump_link_info = dataRes.jump_link_info;
             this.similar_content = dataRes.similar_content;
             this.robot_entrance = dataRes.robot_entrance;
+            this.aichat_card = Message.copyOf(dataRes.aichat_card);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -643,7 +648,14 @@ public final class DataRes extends Message {
             this.jump_link_info = builder.jump_link_info;
             this.similar_content = builder.similar_content;
             this.robot_entrance = builder.robot_entrance;
-            return;
+            List<AiChatCard> list15 = builder.aichat_card;
+            if (list15 == null) {
+                this.aichat_card = DEFAULT_AICHAT_CARD;
+                return;
+            } else {
+                this.aichat_card = Message.immutableCopyOf(list15);
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -718,5 +730,6 @@ public final class DataRes extends Message {
         this.jump_link_info = builder.jump_link_info;
         this.similar_content = builder.similar_content;
         this.robot_entrance = builder.robot_entrance;
+        this.aichat_card = Message.immutableCopyOf(builder.aichat_card);
     }
 }

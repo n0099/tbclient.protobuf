@@ -11,7 +11,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1354common;
+    public final CommonReq f1350common;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer pn;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
@@ -27,7 +27,7 @@ public final class DataReq extends Message {
         public Integer account_type;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1355common;
+        public CommonReq f1351common;
         public Integer pn;
         public String st_type;
         public Long uid;
@@ -41,7 +41,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.uid = dataReq.uid;
-            this.f1355common = dataReq.f1354common;
+            this.f1351common = dataReq.f1350common;
             this.pn = dataReq.pn;
             this.st_type = dataReq.st_type;
             this.account_type = dataReq.account_type;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
             } else {
                 this.uid = l;
             }
-            this.f1354common = builder.f1355common;
+            this.f1350common = builder.f1351common;
             Integer num = builder.pn;
             if (num == null) {
                 this.pn = DEFAULT_PN;
@@ -86,7 +86,7 @@ public final class DataReq extends Message {
             }
         }
         this.uid = builder.uid;
-        this.f1354common = builder.f1355common;
+        this.f1350common = builder.f1351common;
         this.pn = builder.pn;
         this.st_type = builder.st_type;
         this.account_type = builder.account_type;

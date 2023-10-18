@@ -12,7 +12,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1262common;
+    public final CommonReq f1258common;
     @ProtoField(tag = 4, type = Message.Datatype.STRING)
     public final String image_info;
 
@@ -21,7 +21,7 @@ public final class DataReq extends Message {
         public Integer card_type;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1263common;
+        public CommonReq f1259common;
         public String image_info;
 
         public Builder() {
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1263common = dataReq.f1262common;
+            this.f1259common = dataReq.f1258common;
             this.card_type = dataReq.card_type;
             this.image_info = dataReq.image_info;
         }
@@ -47,7 +47,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1262common = builder.f1263common;
+            this.f1258common = builder.f1259common;
             Integer num = builder.card_type;
             if (num == null) {
                 this.card_type = DEFAULT_CARD_TYPE;
@@ -63,7 +63,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1262common = builder.f1263common;
+        this.f1258common = builder.f1259common;
         this.card_type = builder.card_type;
         this.image_info = builder.image_info;
     }

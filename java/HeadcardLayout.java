@@ -14,6 +14,8 @@ public final class HeadcardLayout extends Message {
     public final String card_title;
     @ProtoField(tag = 4)
     public final PubHeadCardCover cover;
+    @ProtoField(tag = 5)
+    public final QuizCard quiz_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<ThreadInfo> thread_list;
 
@@ -22,6 +24,7 @@ public final class HeadcardLayout extends Message {
         public ThemeColorInfo card_background;
         public String card_title;
         public PubHeadCardCover cover;
+        public QuizCard quiz_card;
         public List<ThreadInfo> thread_list;
 
         public Builder() {
@@ -36,6 +39,7 @@ public final class HeadcardLayout extends Message {
             this.thread_list = Message.copyOf(headcardLayout.thread_list);
             this.card_background = headcardLayout.card_background;
             this.cover = headcardLayout.cover;
+            this.quiz_card = headcardLayout.quiz_card;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -62,11 +66,13 @@ public final class HeadcardLayout extends Message {
             }
             this.card_background = builder.card_background;
             this.cover = builder.cover;
+            this.quiz_card = builder.quiz_card;
             return;
         }
         this.card_title = builder.card_title;
         this.thread_list = Message.immutableCopyOf(builder.thread_list);
         this.card_background = builder.card_background;
         this.cover = builder.cover;
+        this.quiz_card = builder.quiz_card;
     }
 }
