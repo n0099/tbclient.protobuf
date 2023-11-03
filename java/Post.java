@@ -147,6 +147,8 @@ public final class Post extends Message {
     public final SignatureData signature;
     @ProtoField(tag = 34)
     public final SkinInfo skin_info;
+    @ProtoField(tag = 79)
+    public final SpriteMemeInfo sprite_meme_info;
     @ProtoField(tag = 25, type = Message.Datatype.INT32)
     public final Integer storecount;
     @ProtoField(tag = 15)
@@ -272,6 +274,7 @@ public final class Post extends Message {
         public Integer show_squared;
         public SignatureData signature;
         public SkinInfo skin_info;
+        public SpriteMemeInfo sprite_meme_info;
         public Integer storecount;
         public SubPost sub_post_list;
         public Integer sub_post_number;
@@ -372,6 +375,7 @@ public final class Post extends Message {
             this.robot_skill = Message.copyOf(post.robot_skill);
             this.aigc_feedback_info = post.aigc_feedback_info;
             this.chat_content = post.chat_content;
+            this.sprite_meme_info = post.sprite_meme_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -691,6 +695,7 @@ public final class Post extends Message {
             }
             this.aigc_feedback_info = builder.aigc_feedback_info;
             this.chat_content = builder.chat_content;
+            this.sprite_meme_info = builder.sprite_meme_info;
             return;
         }
         this.id = builder.id;
@@ -770,5 +775,6 @@ public final class Post extends Message {
         this.robot_skill = Message.immutableCopyOf(builder.robot_skill);
         this.aigc_feedback_info = builder.aigc_feedback_info;
         this.chat_content = builder.chat_content;
+        this.sprite_meme_info = builder.sprite_meme_info;
     }
 }

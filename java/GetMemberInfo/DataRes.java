@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.Feedback;
 import tbclient.ForumMember;
 import tbclient.MemberGroupInfo;
 import tbclient.PriManagerApplyInfo;
@@ -17,6 +18,8 @@ public final class DataRes extends Message {
     public final Integer is_private_forum;
     @ProtoField(tag = 4)
     public final ManagerApplyInfo manager_apply_info;
+    @ProtoField(tag = 8)
+    public final Feedback manager_complain_info;
     @ProtoField(tag = 3)
     public final MemberGodInfo member_god_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 1)
@@ -33,6 +36,7 @@ public final class DataRes extends Message {
         public Integer is_bawuapply_show;
         public Integer is_private_forum;
         public ManagerApplyInfo manager_apply_info;
+        public Feedback manager_complain_info;
         public MemberGodInfo member_god_info;
         public List<MemberGroupInfo> member_group_info;
         public PriManagerApplyInfo primanager_apply_info;
@@ -52,6 +56,7 @@ public final class DataRes extends Message {
             this.is_private_forum = dataRes.is_private_forum;
             this.is_bawuapply_show = dataRes.is_bawuapply_show;
             this.primanager_apply_info = dataRes.primanager_apply_info;
+            this.manager_complain_info = dataRes.manager_complain_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -86,6 +91,7 @@ public final class DataRes extends Message {
                 this.is_bawuapply_show = num2;
             }
             this.primanager_apply_info = builder.primanager_apply_info;
+            this.manager_complain_info = builder.manager_complain_info;
             return;
         }
         this.member_group_info = Message.immutableCopyOf(builder.member_group_info);
@@ -95,5 +101,6 @@ public final class DataRes extends Message {
         this.is_private_forum = builder.is_private_forum;
         this.is_bawuapply_show = builder.is_bawuapply_show;
         this.primanager_apply_info = builder.primanager_apply_info;
+        this.manager_complain_info = builder.manager_complain_info;
     }
 }

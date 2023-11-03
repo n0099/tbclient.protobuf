@@ -52,6 +52,8 @@ public final class DataReq extends Message {
     public static final String DEFAULT_REPOSTID = "";
     public static final String DEFAULT_SIG = "";
     public static final String DEFAULT_SN = "";
+    public static final String DEFAULT_SPRITE_MEME_ID = "";
+    public static final String DEFAULT_SPRITE_MEME_QUERY = "";
     public static final String DEFAULT_ST_PARAM = "";
     public static final String DEFAULT_ST_TYPE = "";
     public static final String DEFAULT_SUB_POST_ID = "";
@@ -172,6 +174,10 @@ public final class DataReq extends Message {
     public final String sig;
     @ProtoField(tag = 43, type = Message.Datatype.STRING)
     public final String sn;
+    @ProtoField(tag = 69, type = Message.Datatype.STRING)
+    public final String sprite_meme_id;
+    @ProtoField(tag = 70, type = Message.Datatype.STRING)
+    public final String sprite_meme_query;
     @ProtoField(tag = 33, type = Message.Datatype.STRING)
     public final String st_param;
     @ProtoField(tag = 54, type = Message.Datatype.STRING)
@@ -265,6 +271,8 @@ public final class DataReq extends Message {
         public Integer show_custom_figure;
         public String sig;
         public String sn;
+        public String sprite_meme_id;
+        public String sprite_meme_query;
         public String st_param;
         public String st_type;
         public String sub_post_id;
@@ -360,6 +368,8 @@ public final class DataReq extends Message {
             this.to_category_id = dataReq.to_category_id;
             this.is_show_bless = dataReq.is_show_bless;
             this.bot_conf = dataReq.bot_conf;
+            this.sprite_meme_id = dataReq.sprite_meme_id;
+            this.sprite_meme_query = dataReq.sprite_meme_query;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -772,9 +782,21 @@ public final class DataReq extends Message {
             String str65 = builder.bot_conf;
             if (str65 == null) {
                 this.bot_conf = "";
-                return;
             } else {
                 this.bot_conf = str65;
+            }
+            String str66 = builder.sprite_meme_id;
+            if (str66 == null) {
+                this.sprite_meme_id = "";
+            } else {
+                this.sprite_meme_id = str66;
+            }
+            String str67 = builder.sprite_meme_query;
+            if (str67 == null) {
+                this.sprite_meme_query = "";
+                return;
+            } else {
+                this.sprite_meme_query = str67;
                 return;
             }
         }
@@ -846,5 +868,7 @@ public final class DataReq extends Message {
         this.to_category_id = builder.to_category_id;
         this.is_show_bless = builder.is_show_bless;
         this.bot_conf = builder.bot_conf;
+        this.sprite_meme_id = builder.sprite_meme_id;
+        this.sprite_meme_query = builder.sprite_meme_query;
     }
 }

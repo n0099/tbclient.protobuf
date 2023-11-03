@@ -31,6 +31,8 @@ public final class DataRes extends Message {
     public final ItemInfo item_info;
     @ProtoField(tag = 6, type = Message.Datatype.INT32)
     public final Integer new_thread_num;
+    @ProtoField(tag = 14)
+    public final PageData page_data;
     @ProtoField(label = Message.Label.REPEATED, tag = 9)
     public final List<SortOption> sort_option;
     @ProtoField(tag = 7, type = Message.Datatype.INT32)
@@ -61,6 +63,7 @@ public final class DataRes extends Message {
         public Integer has_more;
         public ItemInfo item_info;
         public Integer new_thread_num;
+        public PageData page_data;
         public List<SortOption> sort_option;
         public Integer sort_type;
         public SportPageHeadInfo sport_head_info;
@@ -88,6 +91,7 @@ public final class DataRes extends Message {
             this.ad_show_select = dataRes.ad_show_select;
             this.ad_mix_list = Message.copyOf(dataRes.ad_mix_list);
             this.ad_sample_map_key = dataRes.ad_sample_map_key;
+            this.page_data = dataRes.page_data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -160,11 +164,11 @@ public final class DataRes extends Message {
             String str = builder.ad_sample_map_key;
             if (str == null) {
                 this.ad_sample_map_key = "";
-                return;
             } else {
                 this.ad_sample_map_key = str;
-                return;
             }
+            this.page_data = builder.page_data;
+            return;
         }
         this.general_list = Message.immutableCopyOf(builder.general_list);
         this.has_more = builder.has_more;
@@ -179,5 +183,6 @@ public final class DataRes extends Message {
         this.ad_show_select = builder.ad_show_select;
         this.ad_mix_list = Message.immutableCopyOf(builder.ad_mix_list);
         this.ad_sample_map_key = builder.ad_sample_map_key;
+        this.page_data = builder.page_data;
     }
 }

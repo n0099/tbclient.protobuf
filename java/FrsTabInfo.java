@@ -2,6 +2,8 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
+import java.util.Collections;
+import java.util.List;
 /* loaded from: classes2.dex */
 public final class FrsTabInfo extends Message {
     public static final String DEFAULT_CLICK_MONITOR_URL = "";
@@ -30,6 +32,12 @@ public final class FrsTabInfo extends Message {
     public final Integer is_no_show_publisher;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer need_page;
+    @ProtoField(tag = 18, type = Message.Datatype.INT32)
+    public final Integer net_tab_type;
+    @ProtoField(label = Message.Label.REPEATED, tag = 19)
+    public final List<SortButton> sort_menu;
+    @ProtoField(label = Message.Label.REPEATED, tag = 20)
+    public final List<TabMenu> sub_tab_list;
     @ProtoField(tag = 8, type = Message.Datatype.STRING)
     public final String tab_code;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
@@ -54,6 +62,9 @@ public final class FrsTabInfo extends Message {
     public static final Integer DEFAULT_NEED_PAGE = 0;
     public static final Integer DEFAULT_IS_NO_SHOW_PUBLISHER = 0;
     public static final Integer DEFAULT_IS_NO_SHOW_IN_PUBLISHER = 0;
+    public static final Integer DEFAULT_NET_TAB_TYPE = 0;
+    public static final List<SortButton> DEFAULT_SORT_MENU = Collections.emptyList();
+    public static final List<TabMenu> DEFAULT_SUB_TAB_LIST = Collections.emptyList();
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FrsTabInfo> {
@@ -66,6 +77,9 @@ public final class FrsTabInfo extends Message {
         public Integer is_no_show_in_publisher;
         public Integer is_no_show_publisher;
         public Integer need_page;
+        public Integer net_tab_type;
+        public List<SortButton> sort_menu;
+        public List<TabMenu> sub_tab_list;
         public String tab_code;
         public String tab_gid;
         public Integer tab_id;
@@ -100,6 +114,9 @@ public final class FrsTabInfo extends Message {
             this.demote_url = frsTabInfo.demote_url;
             this.is_no_show_publisher = frsTabInfo.is_no_show_publisher;
             this.is_no_show_in_publisher = frsTabInfo.is_no_show_in_publisher;
+            this.net_tab_type = frsTabInfo.net_tab_type;
+            this.sort_menu = Message.copyOf(frsTabInfo.sort_menu);
+            this.sub_tab_list = Message.copyOf(frsTabInfo.sub_tab_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -206,9 +223,27 @@ public final class FrsTabInfo extends Message {
             Integer num8 = builder.is_no_show_in_publisher;
             if (num8 == null) {
                 this.is_no_show_in_publisher = DEFAULT_IS_NO_SHOW_IN_PUBLISHER;
-                return;
             } else {
                 this.is_no_show_in_publisher = num8;
+            }
+            Integer num9 = builder.net_tab_type;
+            if (num9 == null) {
+                this.net_tab_type = DEFAULT_NET_TAB_TYPE;
+            } else {
+                this.net_tab_type = num9;
+            }
+            List<SortButton> list = builder.sort_menu;
+            if (list == null) {
+                this.sort_menu = DEFAULT_SORT_MENU;
+            } else {
+                this.sort_menu = Message.immutableCopyOf(list);
+            }
+            List<TabMenu> list2 = builder.sub_tab_list;
+            if (list2 == null) {
+                this.sub_tab_list = DEFAULT_SUB_TAB_LIST;
+                return;
+            } else {
+                this.sub_tab_list = Message.immutableCopyOf(list2);
                 return;
             }
         }
@@ -229,5 +264,8 @@ public final class FrsTabInfo extends Message {
         this.demote_url = builder.demote_url;
         this.is_no_show_publisher = builder.is_no_show_publisher;
         this.is_no_show_in_publisher = builder.is_no_show_in_publisher;
+        this.net_tab_type = builder.net_tab_type;
+        this.sort_menu = Message.immutableCopyOf(builder.sort_menu);
+        this.sub_tab_list = Message.immutableCopyOf(builder.sub_tab_list);
     }
 }

@@ -44,6 +44,7 @@ public final class DataRes extends Message {
     public static final String DEFAULT_ASP_SHOWN_INFO = "";
     public static final String DEFAULT_BAWU_ENTER_URL = "";
     public static final String DEFAULT_FORTUNE_DESC = "";
+    public static final String DEFAULT_FRS_COMMON_INFO = "";
     public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
     @ProtoField(tag = 87)
     public final ActivityConfig activity_config;
@@ -139,8 +140,14 @@ public final class DataRes extends Message {
     public final ForumRuleStatus forum_rule;
     @ProtoField(tag = 121)
     public final FrsBannerHeader frs_banner_header;
+    @ProtoField(tag = 128)
+    public final FrsBottom frs_bottom;
+    @ProtoField(tag = 129, type = Message.Datatype.STRING)
+    public final String frs_common_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 68)
     public final List<FrsTabInfo> frs_game_tab_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 127)
+    public final List<FrsTabInfo> frs_main_tab_list;
     @ProtoField(tag = 3)
     public final StarInfo frs_star;
     @ProtoField(tag = 38, type = Message.Datatype.INT32)
@@ -330,6 +337,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_BAWU_UNREAD_NOTICE_NUM = 0;
     public static final Integer DEFAULT_IS_MEMBER_BROADCAST_FORUM = 0;
     public static final Integer DEFAULT_IS_NEED_LIVE_UNUNIQ = 0;
+    public static final List<FrsTabInfo> DEFAULT_FRS_MAIN_TAB_LIST = Collections.emptyList();
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -380,7 +388,10 @@ public final class DataRes extends Message {
         public ForumPresentInfo forum_present_info;
         public ForumRuleStatus forum_rule;
         public FrsBannerHeader frs_banner_header;
+        public FrsBottom frs_bottom;
+        public String frs_common_info;
         public List<FrsTabInfo> frs_game_tab_info;
+        public List<FrsTabInfo> frs_main_tab_list;
         public StarInfo frs_star;
         public Integer frs_tab_default;
         public List<FrsTabInfo> frs_tab_info;
@@ -578,6 +589,9 @@ public final class DataRes extends Message {
             this.is_need_live_ununiq = dataRes.is_need_live_ununiq;
             this.bounty_card = dataRes.bounty_card;
             this.page_data = dataRes.page_data;
+            this.frs_main_tab_list = Message.copyOf(dataRes.frs_main_tab_list);
+            this.frs_bottom = dataRes.frs_bottom;
+            this.frs_common_info = dataRes.frs_common_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -978,7 +992,21 @@ public final class DataRes extends Message {
             }
             this.bounty_card = builder.bounty_card;
             this.page_data = builder.page_data;
-            return;
+            List<FrsTabInfo> list25 = builder.frs_main_tab_list;
+            if (list25 == null) {
+                this.frs_main_tab_list = DEFAULT_FRS_MAIN_TAB_LIST;
+            } else {
+                this.frs_main_tab_list = Message.immutableCopyOf(list25);
+            }
+            this.frs_bottom = builder.frs_bottom;
+            String str6 = builder.frs_common_info;
+            if (str6 == null) {
+                this.frs_common_info = "";
+                return;
+            } else {
+                this.frs_common_info = str6;
+                return;
+            }
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -1098,5 +1126,8 @@ public final class DataRes extends Message {
         this.is_need_live_ununiq = builder.is_need_live_ununiq;
         this.bounty_card = builder.bounty_card;
         this.page_data = builder.page_data;
+        this.frs_main_tab_list = Message.immutableCopyOf(builder.frs_main_tab_list);
+        this.frs_bottom = builder.frs_bottom;
+        this.frs_common_info = builder.frs_common_info;
     }
 }

@@ -9,6 +9,8 @@ public final class PollInfo extends Message {
     public static final String DEFAULT_POLLED_VALUE = "";
     public static final String DEFAULT_TIPS = "";
     public static final String DEFAULT_TITLE = "";
+    @ProtoField(label = Message.Label.REPEATED, tag = 14)
+    public final List<FeedKV> business_info;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
     public final Integer end_time;
     @ProtoField(tag = 2, type = Message.Datatype.INT32)
@@ -45,9 +47,11 @@ public final class PollInfo extends Message {
     public static final Integer DEFAULT_STATUS = 0;
     public static final Long DEFAULT_TOTAL_POLL = 0L;
     public static final Integer DEFAULT_LAST_TIME = 0;
+    public static final List<FeedKV> DEFAULT_BUSINESS_INFO = Collections.emptyList();
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<PollInfo> {
+        public List<FeedKV> business_info;
         public Integer end_time;
         public Integer is_multi;
         public Integer is_polled;
@@ -83,6 +87,7 @@ public final class PollInfo extends Message {
             this.total_poll = pollInfo.total_poll;
             this.title = pollInfo.title;
             this.last_time = pollInfo.last_time;
+            this.business_info = Message.copyOf(pollInfo.business_info);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -170,9 +175,15 @@ public final class PollInfo extends Message {
             Integer num7 = builder.last_time;
             if (num7 == null) {
                 this.last_time = DEFAULT_LAST_TIME;
-                return;
             } else {
                 this.last_time = num7;
+            }
+            List<FeedKV> list2 = builder.business_info;
+            if (list2 == null) {
+                this.business_info = DEFAULT_BUSINESS_INFO;
+                return;
+            } else {
+                this.business_info = Message.immutableCopyOf(list2);
                 return;
             }
         }
@@ -189,5 +200,6 @@ public final class PollInfo extends Message {
         this.total_poll = builder.total_poll;
         this.title = builder.title;
         this.last_time = builder.last_time;
+        this.business_info = Message.immutableCopyOf(builder.business_info);
     }
 }

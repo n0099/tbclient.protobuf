@@ -14,7 +14,10 @@ public final class DataReq extends Message {
     public static final String DEFAULT_AD_EXT_PARAMS = "";
     public static final String DEFAULT_DA_IDFA = "";
     public static final String DEFAULT_FORUM_NAME = "";
+    public static final String DEFAULT_FRS_COMMON_INFO = "";
     public static final Integer DEFAULT_HAS_AD_BEAR;
+    public static final Integer DEFAULT_IS_GOODTAB;
+    public static final Integer DEFAULT_IS_NEWFRS;
     public static final Long DEFAULT_LAST_CLICK_TID;
     public static final String DEFAULT_PLATFORM = "";
     public static final Integer DEFAULT_PN;
@@ -48,8 +51,14 @@ public final class DataReq extends Message {
     public final Long forum_id;
     @ProtoField(tag = 14, type = Message.Datatype.STRING)
     public final String forum_name;
+    @ProtoField(tag = 27, type = Message.Datatype.STRING)
+    public final String frs_common_info;
     @ProtoField(tag = 23, type = Message.Datatype.INT32)
     public final Integer has_ad_bear;
+    @ProtoField(tag = 29, type = Message.Datatype.INT32)
+    public final Integer is_goodtab;
+    @ProtoField(tag = 28, type = Message.Datatype.INT32)
+    public final Integer is_newfrs;
     @ProtoField(tag = 15, type = Message.Datatype.UINT64)
     public final Long last_click_tid;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
@@ -100,7 +109,10 @@ public final class DataReq extends Message {
         public String da_idfa;
         public Long forum_id;
         public String forum_name;
+        public String frs_common_info;
         public Integer has_ad_bear;
+        public Integer is_goodtab;
+        public Integer is_newfrs;
         public Long last_click_tid;
         public Integer need_abstract;
         public String platform;
@@ -149,6 +161,9 @@ public final class DataReq extends Message {
             this.ad_bear_sid = dataReq.ad_bear_sid;
             this.ad_bear_sid_price = dataReq.ad_bear_sid_price;
             this.request_times = dataReq.request_times;
+            this.frs_common_info = dataReq.frs_common_info;
+            this.is_newfrs = dataReq.is_newfrs;
+            this.is_goodtab = dataReq.is_goodtab;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -167,6 +182,8 @@ public final class DataReq extends Message {
         DEFAULT_HAS_AD_BEAR = 0;
         DEFAULT_AD_BEAR_SID_PRICE = valueOf;
         DEFAULT_REQUEST_TIMES = 0;
+        DEFAULT_IS_NEWFRS = 0;
+        DEFAULT_IS_GOODTAB = 0;
     }
 
     public DataReq(Builder builder, boolean z) {
@@ -305,9 +322,27 @@ public final class DataReq extends Message {
             Integer num9 = builder.request_times;
             if (num9 == null) {
                 this.request_times = DEFAULT_REQUEST_TIMES;
-                return;
             } else {
                 this.request_times = num9;
+            }
+            String str9 = builder.frs_common_info;
+            if (str9 == null) {
+                this.frs_common_info = "";
+            } else {
+                this.frs_common_info = str9;
+            }
+            Integer num10 = builder.is_newfrs;
+            if (num10 == null) {
+                this.is_newfrs = DEFAULT_IS_NEWFRS;
+            } else {
+                this.is_newfrs = num10;
+            }
+            Integer num11 = builder.is_goodtab;
+            if (num11 == null) {
+                this.is_goodtab = DEFAULT_IS_GOODTAB;
+                return;
+            } else {
+                this.is_goodtab = num11;
                 return;
             }
         }
@@ -337,5 +372,8 @@ public final class DataReq extends Message {
         this.ad_bear_sid = builder.ad_bear_sid;
         this.ad_bear_sid_price = builder.ad_bear_sid_price;
         this.request_times = builder.request_times;
+        this.frs_common_info = builder.frs_common_info;
+        this.is_newfrs = builder.is_newfrs;
+        this.is_goodtab = builder.is_goodtab;
     }
 }

@@ -453,6 +453,8 @@ public final class ThreadInfo extends Message {
     public final String title;
     @ProtoField(tag = 125)
     public final Post top_agree_post;
+    @ProtoField(tag = 231, type = Message.Datatype.INT64)
+    public final Long top_thread_set_time;
     @ProtoField(tag = 47)
     public final Topic topic;
     @ProtoField(tag = 150, type = Message.Datatype.STRING)
@@ -612,6 +614,7 @@ public final class ThreadInfo extends Message {
     public static final Integer DEFAULT_LITERATURE_FLAG = 0;
     public static final List<Post> DEFAULT_HOT_POST_LIST = Collections.emptyList();
     public static final Long DEFAULT_DISABLE_SHARE = 0L;
+    public static final Long DEFAULT_TOP_THREAD_SET_TIME = 0L;
 
     public ThreadInfo(Builder builder, boolean z) {
         super(builder);
@@ -1641,9 +1644,15 @@ public final class ThreadInfo extends Message {
             String str51 = builder.share_url;
             if (str51 == null) {
                 this.share_url = "";
-                return;
             } else {
                 this.share_url = str51;
+            }
+            Long l13 = builder.top_thread_set_time;
+            if (l13 == null) {
+                this.top_thread_set_time = DEFAULT_TOP_THREAD_SET_TIME;
+                return;
+            } else {
+                this.top_thread_set_time = l13;
                 return;
             }
         }
@@ -1865,6 +1874,7 @@ public final class ThreadInfo extends Message {
         this.disable_share = builder.disable_share;
         this.disable_share_toast = builder.disable_share_toast;
         this.share_url = builder.share_url;
+        this.top_thread_set_time = builder.top_thread_set_time;
     }
 
     /* loaded from: classes2.dex */
@@ -2063,6 +2073,7 @@ public final class ThreadInfo extends Message {
         public Integer timeline;
         public String title;
         public Post top_agree_post;
+        public Long top_thread_set_time;
         public Topic topic;
         public String topic_h5_url;
         public TopicModule topic_module;
@@ -2314,6 +2325,7 @@ public final class ThreadInfo extends Message {
             this.disable_share = threadInfo.disable_share;
             this.disable_share_toast = threadInfo.disable_share_toast;
             this.share_url = threadInfo.share_url;
+            this.top_thread_set_time = threadInfo.top_thread_set_time;
         }
 
         /* JADX DEBUG: Method merged with bridge method */

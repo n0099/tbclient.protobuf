@@ -8,6 +8,7 @@ public final class DataReq extends Message {
     public static final String DEFAULT_AD_BEAR_CONTEXT = "";
     public static final String DEFAULT_AD_BEAR_SID = "";
     public static final String DEFAULT_AD_EXT_PARAMS = "";
+    public static final String DEFAULT_FRS_COMMON_INFO = "";
     public static final String DEFAULT_TAB_NAME = "";
     @ProtoField(tag = 16, type = Message.Datatype.STRING)
     public final String ad_bear_context;
@@ -23,12 +24,16 @@ public final class DataReq extends Message {
     public final CommonReq f1292common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
+    @ProtoField(tag = 21, type = Message.Datatype.STRING)
+    public final String frs_common_info;
     @ProtoField(tag = 17, type = Message.Datatype.INT32)
     public final Integer has_ad_bear;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
     public final Integer is_default_navtab;
     @ProtoField(tag = 12, type = Message.Datatype.INT32)
     public final Integer is_general_tab;
+    @ProtoField(tag = 22, type = Message.Datatype.INT32)
+    public final Integer is_newfrs;
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
     public final Long last_thread_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -66,6 +71,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_HAS_AD_BEAR = 0;
     public static final Double DEFAULT_AD_BEAR_SID_PRICE = Double.valueOf(0.0d);
     public static final Integer DEFAULT_REQUEST_TIMES = 0;
+    public static final Integer DEFAULT_IS_NEWFRS = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -77,9 +83,11 @@ public final class DataReq extends Message {
         /* renamed from: common  reason: collision with root package name */
         public CommonReq f1293common;
         public Long forum_id;
+        public String frs_common_info;
         public Integer has_ad_bear;
         public Integer is_default_navtab;
         public Integer is_general_tab;
+        public Integer is_newfrs;
         public Long last_thread_id;
         public Integer pn;
         public Integer request_times;
@@ -120,6 +128,8 @@ public final class DataReq extends Message {
             this.ad_bear_sid = dataReq.ad_bear_sid;
             this.ad_bear_sid_price = dataReq.ad_bear_sid_price;
             this.request_times = dataReq.request_times;
+            this.frs_common_info = dataReq.frs_common_info;
+            this.is_newfrs = dataReq.is_newfrs;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -244,9 +254,21 @@ public final class DataReq extends Message {
             Integer num12 = builder.request_times;
             if (num12 == null) {
                 this.request_times = DEFAULT_REQUEST_TIMES;
-                return;
             } else {
                 this.request_times = num12;
+            }
+            String str5 = builder.frs_common_info;
+            if (str5 == null) {
+                this.frs_common_info = "";
+            } else {
+                this.frs_common_info = str5;
+            }
+            Integer num13 = builder.is_newfrs;
+            if (num13 == null) {
+                this.is_newfrs = DEFAULT_IS_NEWFRS;
+                return;
+            } else {
+                this.is_newfrs = num13;
                 return;
             }
         }
@@ -270,5 +292,7 @@ public final class DataReq extends Message {
         this.ad_bear_sid = builder.ad_bear_sid;
         this.ad_bear_sid_price = builder.ad_bear_sid_price;
         this.request_times = builder.request_times;
+        this.frs_common_info = builder.frs_common_info;
+        this.is_newfrs = builder.is_newfrs;
     }
 }

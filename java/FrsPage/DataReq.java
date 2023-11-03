@@ -15,6 +15,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_CALL_FROM;
     public static final String DEFAULT_CALL_URL = "";
     public static final Integer DEFAULT_CATEGORY_ID;
+    public static final String DEFAULT_CHATROOM_NEW_MSG = "";
     public static final Boolean DEFAULT_CHECK_LOGIN;
     public static final Integer DEFAULT_CLASS_ID;
     public static final String DEFAULT_COOKIE = "";
@@ -32,6 +33,7 @@ public final class DataReq extends Message {
     public static final Integer DEFAULT_ISSDK;
     public static final Integer DEFAULT_IS_DEFAULT_NAVTAB;
     public static final Integer DEFAULT_IS_NEWFEED;
+    public static final Integer DEFAULT_IS_NEWFRS;
     public static final Integer DEFAULT_IS_SELECTION;
     public static final String DEFAULT_KW = "";
     public static final String DEFAULT_LASTIDS = "";
@@ -85,6 +87,8 @@ public final class DataReq extends Message {
     public final String call_url;
     @ProtoField(tag = 44, type = Message.Datatype.INT32)
     public final Integer category_id;
+    @ProtoField(tag = 72, type = Message.Datatype.STRING)
+    public final String chatroom_new_msg;
     @ProtoField(tag = 20, type = Message.Datatype.BOOL)
     public final Boolean check_login;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
@@ -127,6 +131,8 @@ public final class DataReq extends Message {
     public final Integer is_good;
     @ProtoField(tag = 71, type = Message.Datatype.INT32)
     public final Integer is_newfeed;
+    @ProtoField(tag = 73, type = Message.Datatype.INT32)
+    public final Integer is_newfrs;
     @ProtoField(tag = 55, type = Message.Datatype.INT32)
     public final Integer is_selection;
     @ProtoField(tag = 41, type = Message.Datatype.INT32)
@@ -232,6 +238,7 @@ public final class DataReq extends Message {
         public Integer call_from;
         public String call_url;
         public Integer category_id;
+        public String chatroom_new_msg;
         public Boolean check_login;
         public Integer cid;
         public Integer class_id;
@@ -254,6 +261,7 @@ public final class DataReq extends Message {
         public Integer is_default_navtab;
         public Integer is_good;
         public Integer is_newfeed;
+        public Integer is_newfrs;
         public Integer is_selection;
         public Integer issdk;
         public String kw;
@@ -374,6 +382,8 @@ public final class DataReq extends Message {
             this.request_times = dataReq.request_times;
             this.push_tid = dataReq.push_tid;
             this.is_newfeed = dataReq.is_newfeed;
+            this.chatroom_new_msg = dataReq.chatroom_new_msg;
+            this.is_newfrs = dataReq.is_newfrs;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -418,6 +428,7 @@ public final class DataReq extends Message {
         DEFAULT_REQUEST_TIMES = 0;
         DEFAULT_PUSH_TID = 0L;
         DEFAULT_IS_NEWFEED = 0;
+        DEFAULT_IS_NEWFRS = 0;
     }
 
     public DataReq(Builder builder, boolean z) {
@@ -826,9 +837,21 @@ public final class DataReq extends Message {
             Integer num33 = builder.is_newfeed;
             if (num33 == null) {
                 this.is_newfeed = DEFAULT_IS_NEWFEED;
-                return;
             } else {
                 this.is_newfeed = num33;
+            }
+            String str25 = builder.chatroom_new_msg;
+            if (str25 == null) {
+                this.chatroom_new_msg = "";
+            } else {
+                this.chatroom_new_msg = str25;
+            }
+            Integer num34 = builder.is_newfrs;
+            if (num34 == null) {
+                this.is_newfrs = DEFAULT_IS_NEWFRS;
+                return;
+            } else {
+                this.is_newfrs = num34;
                 return;
             }
         }
@@ -903,5 +926,7 @@ public final class DataReq extends Message {
         this.request_times = builder.request_times;
         this.push_tid = builder.push_tid;
         this.is_newfeed = builder.is_newfeed;
+        this.chatroom_new_msg = builder.chatroom_new_msg;
+        this.is_newfrs = builder.is_newfrs;
     }
 }

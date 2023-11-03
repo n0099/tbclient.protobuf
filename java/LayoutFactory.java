@@ -7,6 +7,8 @@ public final class LayoutFactory extends Message {
     public static final String DEFAULT_LAYOUT = "";
     @ProtoField(tag = 2)
     public final FeedLayout feed;
+    @ProtoField(tag = 5)
+    public final FrsTopThreadCardLayout frs_top_thread_card;
     @ProtoField(tag = 4)
     public final HeadcardLayout headcard;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
@@ -17,6 +19,7 @@ public final class LayoutFactory extends Message {
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<LayoutFactory> {
         public FeedLayout feed;
+        public FrsTopThreadCardLayout frs_top_thread_card;
         public HeadcardLayout headcard;
         public String layout;
         public SidewayLayout sideway;
@@ -33,6 +36,7 @@ public final class LayoutFactory extends Message {
             this.feed = layoutFactory.feed;
             this.sideway = layoutFactory.sideway;
             this.headcard = layoutFactory.headcard;
+            this.frs_top_thread_card = layoutFactory.frs_top_thread_card;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -54,11 +58,13 @@ public final class LayoutFactory extends Message {
             this.feed = builder.feed;
             this.sideway = builder.sideway;
             this.headcard = builder.headcard;
+            this.frs_top_thread_card = builder.frs_top_thread_card;
             return;
         }
         this.layout = builder.layout;
         this.feed = builder.feed;
         this.sideway = builder.sideway;
         this.headcard = builder.headcard;
+        this.frs_top_thread_card = builder.frs_top_thread_card;
     }
 }

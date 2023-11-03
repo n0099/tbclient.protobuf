@@ -31,6 +31,8 @@ public final class ComponentFactory extends Message {
     public final FeedOriginComponent feed_origin;
     @ProtoField(tag = 7)
     public final FeedPicComponent feed_pic;
+    @ProtoField(tag = 22)
+    public final PollInfo feed_poll;
     @ProtoField(tag = 20)
     public final FeedPostExpose feed_postexpose;
     @ProtoField(label = Message.Label.REPEATED, tag = 18)
@@ -41,12 +43,16 @@ public final class ComponentFactory extends Message {
     public final FeedSocialComponent feed_social;
     @ProtoField(tag = 3)
     public final TitleComponent feed_title;
+    @ProtoField(tag = 23)
+    public final FeedToutiao feed_toutiao;
     @ProtoField(tag = 9)
     public final FeedVideoComponent feed_video;
     @ProtoField(tag = 19)
     public final FeedVideoAdComponent feed_videoad;
     @ProtoField(tag = 11)
     public final Voice feed_voice;
+    @ProtoField(tag = 24)
+    public final FrsTopThreadComponent frs_top_thread;
     @ProtoField(tag = 14)
     public final SidewayRecomComponent sideway_recom;
 
@@ -63,14 +69,17 @@ public final class ComponentFactory extends Message {
         public FeedLiveComponent feed_live;
         public FeedOriginComponent feed_origin;
         public FeedPicComponent feed_pic;
+        public PollInfo feed_poll;
         public FeedPostExpose feed_postexpose;
         public List<ThreadRecommendInfo> feed_recomtag;
         public FeedRoomComponent feed_room;
         public FeedSocialComponent feed_social;
         public TitleComponent feed_title;
+        public FeedToutiao feed_toutiao;
         public FeedVideoComponent feed_video;
         public FeedVideoAdComponent feed_videoad;
         public Voice feed_voice;
+        public FrsTopThreadComponent frs_top_thread;
         public SidewayRecomComponent sideway_recom;
 
         public Builder() {
@@ -101,6 +110,9 @@ public final class ComponentFactory extends Message {
             this.feed_videoad = componentFactory.feed_videoad;
             this.feed_postexpose = componentFactory.feed_postexpose;
             this.feed_room = componentFactory.feed_room;
+            this.feed_poll = componentFactory.feed_poll;
+            this.feed_toutiao = componentFactory.feed_toutiao;
+            this.frs_top_thread = componentFactory.frs_top_thread;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -148,6 +160,9 @@ public final class ComponentFactory extends Message {
             this.feed_videoad = builder.feed_videoad;
             this.feed_postexpose = builder.feed_postexpose;
             this.feed_room = builder.feed_room;
+            this.feed_poll = builder.feed_poll;
+            this.feed_toutiao = builder.feed_toutiao;
+            this.frs_top_thread = builder.frs_top_thread;
             return;
         }
         this.component = builder.component;
@@ -170,5 +185,8 @@ public final class ComponentFactory extends Message {
         this.feed_videoad = builder.feed_videoad;
         this.feed_postexpose = builder.feed_postexpose;
         this.feed_room = builder.feed_room;
+        this.feed_poll = builder.feed_poll;
+        this.feed_toutiao = builder.feed_toutiao;
+        this.frs_top_thread = builder.frs_top_thread;
     }
 }

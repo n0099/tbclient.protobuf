@@ -65,6 +65,8 @@ public final class RecommendForumInfo extends Message {
     public final String lv2_name;
     @ProtoField(tag = 5, type = Message.Datatype.UINT32)
     public final Integer member_count;
+    @ProtoField(tag = 32, type = Message.Datatype.INT32)
+    public final Integer post_num;
     @ProtoField(tag = 24)
     public final PostPrefix post_prefix;
     @ProtoField(tag = 11, type = Message.Datatype.STRING)
@@ -77,6 +79,8 @@ public final class RecommendForumInfo extends Message {
     public final List<FrsTabInfo> tab_info;
     @ProtoField(tag = 6, type = Message.Datatype.UINT32)
     public final Integer thread_count;
+    @ProtoField(tag = 31, type = Message.Datatype.UINT32)
+    public final Integer thread_num;
     public static final Long DEFAULT_FORUM_ID = 0L;
     public static final Integer DEFAULT_IS_LIKE = 0;
     public static final Integer DEFAULT_MEMBER_COUNT = 0;
@@ -91,6 +95,8 @@ public final class RecommendForumInfo extends Message {
     public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
     public static final Integer DEFAULT_DAY_THREAD_NUM = 0;
     public static final Integer DEFAULT_LEVEL_ID = 0;
+    public static final Integer DEFAULT_THREAD_NUM = 0;
+    public static final Integer DEFAULT_POST_NUM = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<RecommendForumInfo> {
@@ -117,12 +123,14 @@ public final class RecommendForumInfo extends Message {
         public String lv1_name;
         public String lv2_name;
         public Integer member_count;
+        public Integer post_num;
         public PostPrefix post_prefix;
         public String recom_reason;
         public String slogan;
         public String source;
         public List<FrsTabInfo> tab_info;
         public Integer thread_count;
+        public Integer thread_num;
 
         public Builder() {
         }
@@ -161,6 +169,8 @@ public final class RecommendForumInfo extends Message {
             this.block_pop_info = recommendForumInfo.block_pop_info;
             this.first_category = recommendForumInfo.first_category;
             this.level_id = recommendForumInfo.level_id;
+            this.thread_num = recommendForumInfo.thread_num;
+            this.post_num = recommendForumInfo.post_num;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -334,9 +344,21 @@ public final class RecommendForumInfo extends Message {
             Integer num10 = builder.level_id;
             if (num10 == null) {
                 this.level_id = DEFAULT_LEVEL_ID;
-                return;
             } else {
                 this.level_id = num10;
+            }
+            Integer num11 = builder.thread_num;
+            if (num11 == null) {
+                this.thread_num = DEFAULT_THREAD_NUM;
+            } else {
+                this.thread_num = num11;
+            }
+            Integer num12 = builder.post_num;
+            if (num12 == null) {
+                this.post_num = DEFAULT_POST_NUM;
+                return;
+            } else {
+                this.post_num = num12;
                 return;
             }
         }
@@ -369,5 +391,7 @@ public final class RecommendForumInfo extends Message {
         this.block_pop_info = builder.block_pop_info;
         this.first_category = builder.first_category;
         this.level_id = builder.level_id;
+        this.thread_num = builder.thread_num;
+        this.post_num = builder.post_num;
     }
 }

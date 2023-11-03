@@ -7,6 +7,8 @@ import java.util.List;
 /* loaded from: classes2.dex */
 public final class FeedHeadSymbol extends Message {
     public static final String DEFAULT_SCHEMA = "";
+    @ProtoField(tag = 6)
+    public final FeedContentCustom custom;
     @ProtoField(tag = 1)
     public final FeedHeadIcon icon;
     @ProtoField(label = Message.Label.REPEATED, tag = 5)
@@ -22,6 +24,7 @@ public final class FeedHeadSymbol extends Message {
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FeedHeadSymbol> {
+        public FeedContentCustom custom;
         public FeedHeadIcon icon;
         public List<FeedKV> log_info;
         public String schema;
@@ -41,6 +44,7 @@ public final class FeedHeadSymbol extends Message {
             this.text = feedHeadSymbol.text;
             this.schema = feedHeadSymbol.schema;
             this.log_info = Message.copyOf(feedHeadSymbol.log_info);
+            this.custom = feedHeadSymbol.custom;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -70,16 +74,17 @@ public final class FeedHeadSymbol extends Message {
             List<FeedKV> list = builder.log_info;
             if (list == null) {
                 this.log_info = DEFAULT_LOG_INFO;
-                return;
             } else {
                 this.log_info = Message.immutableCopyOf(list);
-                return;
             }
+            this.custom = builder.custom;
+            return;
         }
         this.icon = builder.icon;
         this.type = builder.type;
         this.text = builder.text;
         this.schema = builder.schema;
         this.log_info = Message.immutableCopyOf(builder.log_info);
+        this.custom = builder.custom;
     }
 }

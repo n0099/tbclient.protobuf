@@ -38,6 +38,8 @@ public final class HistoryForumInfo extends Message {
     public final Integer level_id;
     @ProtoField(tag = 10, type = Message.Datatype.BOOL)
     public final Boolean need_trans;
+    @ProtoField(tag = 26, type = Message.Datatype.INT32)
+    public final Integer post_num;
     @ProtoField(tag = 19)
     public final PostPrefix post_prefix;
     @ProtoField(label = Message.Label.REPEATED, tag = 17)
@@ -46,6 +48,8 @@ public final class HistoryForumInfo extends Message {
     public final RecomTagInfo tag_info;
     @ProtoField(tag = 8)
     public final ThemeColorInfo theme_color;
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    public final Integer thread_num;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer unread_num;
     @ProtoField(tag = 6, type = Message.Datatype.STRING)
@@ -62,6 +66,8 @@ public final class HistoryForumInfo extends Message {
     public static final Integer DEFAULT_IS_FORUM_BUSINESS_ACCOUNT = 0;
     public static final Integer DEFAULT_IS_LIKE = 0;
     public static final Integer DEFAULT_DAY_THREAD_NUM = 0;
+    public static final Integer DEFAULT_THREAD_NUM = 0;
+    public static final Integer DEFAULT_POST_NUM = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<HistoryForumInfo> {
@@ -79,10 +85,12 @@ public final class HistoryForumInfo extends Message {
         public Integer is_liveforum;
         public Integer level_id;
         public Boolean need_trans;
+        public Integer post_num;
         public PostPrefix post_prefix;
         public List<FrsTabInfo> tab_info;
         public RecomTagInfo tag_info;
         public ThemeColorInfo theme_color;
+        public Integer thread_num;
         public Integer unread_num;
         public String visit_time;
 
@@ -114,6 +122,8 @@ public final class HistoryForumInfo extends Message {
             this.first_category = historyForumInfo.first_category;
             this.is_like = historyForumInfo.is_like;
             this.day_thread_num = historyForumInfo.day_thread_num;
+            this.thread_num = historyForumInfo.thread_num;
+            this.post_num = historyForumInfo.post_num;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -223,9 +233,21 @@ public final class HistoryForumInfo extends Message {
             Integer num8 = builder.day_thread_num;
             if (num8 == null) {
                 this.day_thread_num = DEFAULT_DAY_THREAD_NUM;
-                return;
             } else {
                 this.day_thread_num = num8;
+            }
+            Integer num9 = builder.thread_num;
+            if (num9 == null) {
+                this.thread_num = DEFAULT_THREAD_NUM;
+            } else {
+                this.thread_num = num9;
+            }
+            Integer num10 = builder.post_num;
+            if (num10 == null) {
+                this.post_num = DEFAULT_POST_NUM;
+                return;
+            } else {
+                this.post_num = num10;
                 return;
             }
         }
@@ -249,5 +271,7 @@ public final class HistoryForumInfo extends Message {
         this.first_category = builder.first_category;
         this.is_like = builder.is_like;
         this.day_thread_num = builder.day_thread_num;
+        this.thread_num = builder.thread_num;
+        this.post_num = builder.post_num;
     }
 }

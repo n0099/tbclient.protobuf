@@ -3,6 +3,7 @@ package tbclient.GetBawuInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.BawuTeam;
+import tbclient.Feedback;
 /* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
@@ -12,12 +13,15 @@ public final class DataRes extends Message {
     public final Integer is_private_forum;
     @ProtoField(tag = 2)
     public final ManagerApplyInfo manager_apply_info;
+    @ProtoField(tag = 4)
+    public final Feedback manager_complain_info;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public BawuTeam bawu_team_info;
         public Integer is_private_forum;
         public ManagerApplyInfo manager_apply_info;
+        public Feedback manager_complain_info;
 
         public Builder() {
         }
@@ -30,6 +34,7 @@ public final class DataRes extends Message {
             this.bawu_team_info = dataRes.bawu_team_info;
             this.manager_apply_info = dataRes.manager_apply_info;
             this.is_private_forum = dataRes.is_private_forum;
+            this.manager_complain_info = dataRes.manager_complain_info;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -47,14 +52,15 @@ public final class DataRes extends Message {
             Integer num = builder.is_private_forum;
             if (num == null) {
                 this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
-                return;
             } else {
                 this.is_private_forum = num;
-                return;
             }
+            this.manager_complain_info = builder.manager_complain_info;
+            return;
         }
         this.bawu_team_info = builder.bawu_team_info;
         this.manager_apply_info = builder.manager_apply_info;
         this.is_private_forum = builder.is_private_forum;
+        this.manager_complain_info = builder.manager_complain_info;
     }
 }

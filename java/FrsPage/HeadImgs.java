@@ -79,6 +79,8 @@ public final class HeadImgs extends Message {
     public final List<String> third_statistics_url;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String title;
+    @ProtoField(tag = 28, type = Message.Datatype.INT32)
+    public final Integer type;
     @ProtoField(label = Message.Label.REPEATED, tag = 27)
     public final List<VideoImageColor> video_image_color;
     public static final List<String> DEFAULT_THIRD_STATISTICS_URL = Collections.emptyList();
@@ -86,6 +88,7 @@ public final class HeadImgs extends Message {
     public static final Integer DEFAULT_DOWNLOAD_IS_THIRDPAGE = 0;
     public static final Integer DEFAULT_DOWNLOAD_ITEM_ID = 0;
     public static final List<VideoImageColor> DEFAULT_VIDEO_IMAGE_COLOR = Collections.emptyList();
+    public static final Integer DEFAULT_TYPE = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<HeadImgs> {
@@ -115,6 +118,7 @@ public final class HeadImgs extends Message {
         public String tag_name_wh;
         public List<String> third_statistics_url;
         public String title;
+        public Integer type;
         public List<VideoImageColor> video_image_color;
 
         public Builder() {
@@ -152,6 +156,7 @@ public final class HeadImgs extends Message {
             this.play_url = headImgs.play_url;
             this.cover_image_color = headImgs.cover_image_color;
             this.video_image_color = Message.copyOf(headImgs.video_image_color);
+            this.type = headImgs.type;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -318,9 +323,15 @@ public final class HeadImgs extends Message {
             List<VideoImageColor> list2 = builder.video_image_color;
             if (list2 == null) {
                 this.video_image_color = DEFAULT_VIDEO_IMAGE_COLOR;
-                return;
             } else {
                 this.video_image_color = Message.immutableCopyOf(list2);
+            }
+            Integer num4 = builder.type;
+            if (num4 == null) {
+                this.type = DEFAULT_TYPE;
+                return;
+            } else {
+                this.type = num4;
                 return;
             }
         }
@@ -351,5 +362,6 @@ public final class HeadImgs extends Message {
         this.play_url = builder.play_url;
         this.cover_image_color = builder.cover_image_color;
         this.video_image_color = Message.immutableCopyOf(builder.video_image_color);
+        this.type = builder.type;
     }
 }

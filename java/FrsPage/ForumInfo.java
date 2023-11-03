@@ -53,6 +53,8 @@ public final class ForumInfo extends Message {
     public final Banner banner;
     @ProtoField(tag = 33)
     public final BannerList banner_list;
+    @ProtoField(tag = 88, type = Message.Datatype.INT64)
+    public final Long be_top_limit_time;
     @ProtoField(tag = 49, type = Message.Datatype.INT32)
     public final Integer can_use_accelerate;
     @ProtoField(tag = 13, type = Message.Datatype.INT32)
@@ -141,6 +143,12 @@ public final class ForumInfo extends Message {
     public final Integer meizhi_tag;
     @ProtoField(tag = 9, type = Message.Datatype.INT32)
     public final Integer member_num;
+    @ProtoField(tag = 87, type = Message.Datatype.INT32)
+    public final Integer msg_bubble_guide_frequency;
+    @ProtoField(tag = 90, type = Message.Datatype.INT32)
+    public final Integer msg_bubble_guide_frequency_special;
+    @ProtoField(tag = 89, type = Message.Datatype.INT32)
+    public final Integer msg_bubble_guide_frequency_unread;
     @ProtoField(tag = 2, type = Message.Datatype.STRING)
     public final String name;
     @ProtoField(tag = 52)
@@ -240,6 +248,10 @@ public final class ForumInfo extends Message {
     public static final List<TipInfo> DEFAULT_TIP_LIST = Collections.emptyList();
     public static final Integer DEFAULT_IS_SHOW_FORUMRULE = 0;
     public static final Integer DEFAULT_IS_FRS_MASK = 0;
+    public static final Integer DEFAULT_MSG_BUBBLE_GUIDE_FREQUENCY = 0;
+    public static final Long DEFAULT_BE_TOP_LIMIT_TIME = 0L;
+    public static final Integer DEFAULT_MSG_BUBBLE_GUIDE_FREQUENCY_UNREAD = 0;
+    public static final Integer DEFAULT_MSG_BUBBLE_GUIDE_FREQUENCY_SPECIAL = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<ForumInfo> {
@@ -253,6 +265,7 @@ public final class ForumInfo extends Message {
         public List<Badges> badges;
         public Banner banner;
         public BannerList banner_list;
+        public Long be_top_limit_time;
         public Integer can_use_accelerate;
         public Integer cur_score;
         public DeletedReasonInfo deleted_reason_info;
@@ -297,6 +310,9 @@ public final class ForumInfo extends Message {
         public List<Manager> managers;
         public Integer meizhi_tag;
         public Integer member_num;
+        public Integer msg_bubble_guide_frequency;
+        public Integer msg_bubble_guide_frequency_special;
+        public Integer msg_bubble_guide_frequency_unread;
         public String name;
         public TopNews news_info;
         public Integer post_num;
@@ -420,6 +436,10 @@ public final class ForumInfo extends Message {
             this.is_show_forumrule = forumInfo.is_show_forumrule;
             this.deleted_reason_info = forumInfo.deleted_reason_info;
             this.is_frs_mask = forumInfo.is_frs_mask;
+            this.msg_bubble_guide_frequency = forumInfo.msg_bubble_guide_frequency;
+            this.be_top_limit_time = forumInfo.be_top_limit_time;
+            this.msg_bubble_guide_frequency_unread = forumInfo.msg_bubble_guide_frequency_unread;
+            this.msg_bubble_guide_frequency_special = forumInfo.msg_bubble_guide_frequency_special;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -823,9 +843,33 @@ public final class ForumInfo extends Message {
             Integer num31 = builder.is_frs_mask;
             if (num31 == null) {
                 this.is_frs_mask = DEFAULT_IS_FRS_MASK;
-                return;
             } else {
                 this.is_frs_mask = num31;
+            }
+            Integer num32 = builder.msg_bubble_guide_frequency;
+            if (num32 == null) {
+                this.msg_bubble_guide_frequency = DEFAULT_MSG_BUBBLE_GUIDE_FREQUENCY;
+            } else {
+                this.msg_bubble_guide_frequency = num32;
+            }
+            Long l2 = builder.be_top_limit_time;
+            if (l2 == null) {
+                this.be_top_limit_time = DEFAULT_BE_TOP_LIMIT_TIME;
+            } else {
+                this.be_top_limit_time = l2;
+            }
+            Integer num33 = builder.msg_bubble_guide_frequency_unread;
+            if (num33 == null) {
+                this.msg_bubble_guide_frequency_unread = DEFAULT_MSG_BUBBLE_GUIDE_FREQUENCY_UNREAD;
+            } else {
+                this.msg_bubble_guide_frequency_unread = num33;
+            }
+            Integer num34 = builder.msg_bubble_guide_frequency_special;
+            if (num34 == null) {
+                this.msg_bubble_guide_frequency_special = DEFAULT_MSG_BUBBLE_GUIDE_FREQUENCY_SPECIAL;
+                return;
+            } else {
+                this.msg_bubble_guide_frequency_special = num34;
                 return;
             }
         }
@@ -913,5 +957,9 @@ public final class ForumInfo extends Message {
         this.is_show_forumrule = builder.is_show_forumrule;
         this.deleted_reason_info = builder.deleted_reason_info;
         this.is_frs_mask = builder.is_frs_mask;
+        this.msg_bubble_guide_frequency = builder.msg_bubble_guide_frequency;
+        this.be_top_limit_time = builder.be_top_limit_time;
+        this.msg_bubble_guide_frequency_unread = builder.msg_bubble_guide_frequency_unread;
+        this.msg_bubble_guide_frequency_special = builder.msg_bubble_guide_frequency_special;
     }
 }
