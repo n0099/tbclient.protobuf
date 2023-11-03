@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "FrsBottomActivityBase.proto";
+import "FrsBottomChatroomBase.proto";
+import "FrsBottomSmartBgColor.proto";
+
+message FrsBottom {
+    FrsBottomActivityBase frs_activity = 1;
+    FrsBottomChatroomBase frs_chatroom = 2;
+    FrsBottomSmartBgColor frs_smart_bg_color = 3;
+    int32 has_more_module = 4;
+}

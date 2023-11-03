@@ -10,4 +10,5 @@ message ChatroomList {
     ChatroomMEMsgInfo msg_info = 3;
     string jump_url = 4;
     ChatRoomAtInfo at_info = 5;
+    uint32 is_subscribe = 6;
 }

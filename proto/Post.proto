@@ -27,6 +27,7 @@ import "RobotSkill.proto";
 import "SignatureData.proto";
 import "SimpleForum.proto";
 import "SkinInfo.proto";
+import "SpriteMemeInfo.proto";
 import "SubPost.proto";
 import "TPointPost.proto";
 import "TailInfo.proto";
@@ -114,4 +115,5 @@ message Post {
     repeated RobotSkill robot_skill = 76;
     AigcFeedbackInfo aigc_feedback_info = 77;
     ChatContent chat_content = 78;
+    SpriteMemeInfo sprite_meme_info = 79;
 }

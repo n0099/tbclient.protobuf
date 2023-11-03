@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "FeedLayout.proto";
+import "FrsTopThreadCardLayout.proto";
 import "HeadcardLayout.proto";
 import "SidewayLayout.proto";
 
@@ -9,4 +10,5 @@ message LayoutFactory {
     FeedLayout feed = 2;
     SidewayLayout sideway = 3;
     HeadcardLayout headcard = 4;
+    FrsTopThreadCardLayout frs_top_thread_card = 5;
 }

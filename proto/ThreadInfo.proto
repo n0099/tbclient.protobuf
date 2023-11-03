@@ -256,4 +256,5 @@ message ThreadInfo {
     int64 disable_share = 228;
     string disable_share_toast = 229;
     string share_url = 230;
+    int64 top_thread_set_time = 231;
 }

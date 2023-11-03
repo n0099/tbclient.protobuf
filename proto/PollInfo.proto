@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "FeedKV.proto";
 import "PollOption.proto";
 
 message PollInfo {
@@ -16,4 +17,5 @@ message PollInfo {
     int64 total_poll = 11;
     string title = 12;
     uint32 last_time = 13;
+    repeated FeedKV business_info = 14;
 }

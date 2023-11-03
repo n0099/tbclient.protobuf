@@ -31,6 +31,7 @@ import "FrsPage/ForumGroup.proto";
 import "FrsPage/ForumHeadIcon.proto";
 import "FrsPage/ForumHeadlineImgInfo.proto";
 import "FrsPage/FrsBannerHeader.proto";
+import "FrsPage/FrsBottom.proto";
 import "FrsPage/FrsSpriteBubble.proto";
 import "FrsPage/GconAccount.proto";
 import "FrsPage/Group.proto";
@@ -194,4 +195,7 @@ message DataRes {
     int32 is_need_live_ununiq = 124;
     BountyCard bounty_card = 125;
     PageData page_data = 126;
+    repeated FrsTabInfo frs_main_tab_list = 127;
+    FrsBottom frs_bottom = 128;
+    string frs_common_info = 129;
 }

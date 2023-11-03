@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "AdMixFloor.proto";
 import "App.proto";
+import "GeneralTabList/PageData.proto";
 import "ItemInfo.proto";
 import "SortOption.proto";
 import "SportPageHeadInfo.proto";
@@ -23,4 +24,5 @@ message DataRes {
     int32 ad_show_select = 11;
     repeated AdMixFloor ad_mix_list = 12;
     string ad_sample_map_key = 13;
+    PageData page_data = 14;
 }

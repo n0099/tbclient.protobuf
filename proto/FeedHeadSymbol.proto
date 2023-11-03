@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "FeedContentCustom.proto";
 import "FeedHeadIcon.proto";
 import "FeedHeadText.proto";
 import "FeedKV.proto";
@@ -10,4 +11,5 @@ message FeedHeadSymbol {
     FeedHeadText text = 3;
     string schema = 4;
     repeated FeedKV log_info = 5;
+    FeedContentCustom custom = 6;
 }

@@ -76,4 +76,6 @@ message DataReq {
     int32 request_times = 69;
     int64 push_tid = 70;
     int32 is_newfeed = 71;
+    string chatroom_new_msg = 72;
+    int32 is_newfrs = 73;
 }

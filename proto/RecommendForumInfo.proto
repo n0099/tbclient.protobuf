@@ -35,4 +35,6 @@ message RecommendForumInfo {
     BlockPopInfo block_pop_info = 28;
     string first_category = 29;
     int32 level_id = 30;
+    uint32 thread_num = 31;
+    int32 post_num = 32;
 }

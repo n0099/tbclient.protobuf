@@ -1,7 +1,7 @@
 syntax = "proto3";
 
+import "ChatroomList.proto";
 import "Loop/ChatroomGuide.proto";
-import "Loop/ChatroomList.proto";
 
 message ChatroomFrsRes {
     repeated int64 hot_list = 1;

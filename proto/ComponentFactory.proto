@@ -12,8 +12,11 @@ import "FeedPicComponent.proto";
 import "FeedPostExpose.proto";
 import "FeedRoomComponent.proto";
 import "FeedSocialComponent.proto";
+import "FeedToutiao.proto";
 import "FeedVideoAdComponent.proto";
 import "FeedVideoComponent.proto";
+import "FrsTopThreadComponent.proto";
+import "PollInfo.proto";
 import "SidewayRecomComponent.proto";
 import "ThreadRecommendInfo.proto";
 import "TitleComponent.proto";
@@ -40,4 +43,7 @@ message ComponentFactory {
     FeedVideoAdComponent feed_videoad = 19;
     FeedPostExpose feed_postexpose = 20;
     FeedRoomComponent feed_room = 21;
+    PollInfo feed_poll = 22;
+    FeedToutiao feed_toutiao = 23;
+    FrsTopThreadComponent frs_top_thread = 24;
 }
