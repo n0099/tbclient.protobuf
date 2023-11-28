@@ -6,6 +6,8 @@ import tbclient.ThreadInfo;
 /* loaded from: classes2.dex */
 public final class DataRes extends Message {
     public static final String DEFAULT_PARTIAL_VISIBLE_TOAST = "";
+    @ProtoField(tag = 4)
+    public final PageData page_data;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
     public final String partial_visible_toast;
     @ProtoField(tag = 2)
@@ -15,6 +17,7 @@ public final class DataRes extends Message {
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public PageData page_data;
         public String partial_visible_toast;
         public ThreadInfo thread_info;
         public User_Info user_info;
@@ -30,6 +33,7 @@ public final class DataRes extends Message {
             this.user_info = dataRes.user_info;
             this.thread_info = dataRes.thread_info;
             this.partial_visible_toast = dataRes.partial_visible_toast;
+            this.page_data = dataRes.page_data;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -47,14 +51,15 @@ public final class DataRes extends Message {
             String str = builder.partial_visible_toast;
             if (str == null) {
                 this.partial_visible_toast = "";
-                return;
             } else {
                 this.partial_visible_toast = str;
-                return;
             }
+            this.page_data = builder.page_data;
+            return;
         }
         this.user_info = builder.user_info;
         this.thread_info = builder.thread_info;
         this.partial_visible_toast = builder.partial_visible_toast;
+        this.page_data = builder.page_data;
     }
 }

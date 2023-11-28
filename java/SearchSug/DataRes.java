@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.AiCard;
 import tbclient.ForumInfo;
 import tbclient.Item;
 import tbclient.RecommendForumInfo;
@@ -11,6 +12,8 @@ import tbclient.SugLiveInfo;
 import tbclient.SugRankingInfo;
 /* loaded from: classes2.dex */
 public final class DataRes extends Message {
+    @ProtoField(label = Message.Label.REPEATED, tag = 9)
+    public final List<AiCard> ai_card;
     @ProtoField(tag = 4)
     public final RecommendForumInfo forum_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 8)
@@ -32,9 +35,11 @@ public final class DataRes extends Message {
     public static final List<ForumInfo> DEFAULT_FORUM_LIST = Collections.emptyList();
     public static final List<SugLiveInfo> DEFAULT_LIVE_CARD = Collections.emptyList();
     public static final List<RecommendForumInfo> DEFAULT_FORUM_CARDS = Collections.emptyList();
+    public static final List<AiCard> DEFAULT_AI_CARD = Collections.emptyList();
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
+        public List<AiCard> ai_card;
         public RecommendForumInfo forum_card;
         public List<RecommendForumInfo> forum_cards;
         public List<ForumInfo> forum_list;
@@ -60,6 +65,7 @@ public final class DataRes extends Message {
             this.live_card = Message.copyOf(dataRes.live_card);
             this.ranking_card = dataRes.ranking_card;
             this.forum_cards = Message.copyOf(dataRes.forum_cards);
+            this.ai_card = Message.copyOf(dataRes.ai_card);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -102,9 +108,15 @@ public final class DataRes extends Message {
             List<RecommendForumInfo> list4 = builder.forum_cards;
             if (list4 == null) {
                 this.forum_cards = DEFAULT_FORUM_CARDS;
-                return;
             } else {
                 this.forum_cards = Message.immutableCopyOf(list4);
+            }
+            List<AiCard> list5 = builder.ai_card;
+            if (list5 == null) {
+                this.ai_card = DEFAULT_AI_CARD;
+                return;
+            } else {
+                this.ai_card = Message.immutableCopyOf(list5);
                 return;
             }
         }
@@ -116,5 +128,6 @@ public final class DataRes extends Message {
         this.live_card = Message.immutableCopyOf(builder.live_card);
         this.ranking_card = builder.ranking_card;
         this.forum_cards = Message.immutableCopyOf(builder.forum_cards);
+        this.ai_card = Message.immutableCopyOf(builder.ai_card);
     }
 }

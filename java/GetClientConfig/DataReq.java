@@ -9,7 +9,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 2)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1316common;
+    public final CommonReq f1315common;
     @ProtoField(tag = 1, type = Message.Datatype.STRING)
     public final String type;
 
@@ -17,7 +17,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1317common;
+        public CommonReq f1316common;
         public String type;
 
         public Builder() {
@@ -29,7 +29,7 @@ public final class DataReq extends Message {
                 return;
             }
             this.type = dataReq.type;
-            this.f1317common = dataReq.f1316common;
+            this.f1316common = dataReq.f1315common;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -48,10 +48,10 @@ public final class DataReq extends Message {
             } else {
                 this.type = str;
             }
-            this.f1316common = builder.f1317common;
+            this.f1315common = builder.f1316common;
             return;
         }
         this.type = builder.type;
-        this.f1316common = builder.f1317common;
+        this.f1315common = builder.f1316common;
     }
 }

@@ -31,6 +31,8 @@ public final class Post extends Message {
     public final Advertisement advertisement;
     @ProtoField(tag = 37)
     public final Agree agree;
+    @ProtoField(tag = 80)
+    public final AichatBotCommentCard aichat_bot_comment_card;
     @ProtoField(tag = 77)
     public final AigcFeedbackInfo aigc_feedback_info;
     @ProtoField(label = Message.Label.REPEATED, tag = 6, type = Message.Datatype.STRING)
@@ -216,6 +218,7 @@ public final class Post extends Message {
         public Integer add_post_number;
         public Advertisement advertisement;
         public Agree agree;
+        public AichatBotCommentCard aichat_bot_comment_card;
         public AigcFeedbackInfo aigc_feedback_info;
         public List<String> arr_video;
         public User author;
@@ -376,6 +379,7 @@ public final class Post extends Message {
             this.aigc_feedback_info = post.aigc_feedback_info;
             this.chat_content = post.chat_content;
             this.sprite_meme_info = post.sprite_meme_info;
+            this.aichat_bot_comment_card = post.aichat_bot_comment_card;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -696,6 +700,7 @@ public final class Post extends Message {
             this.aigc_feedback_info = builder.aigc_feedback_info;
             this.chat_content = builder.chat_content;
             this.sprite_meme_info = builder.sprite_meme_info;
+            this.aichat_bot_comment_card = builder.aichat_bot_comment_card;
             return;
         }
         this.id = builder.id;
@@ -776,5 +781,6 @@ public final class Post extends Message {
         this.aigc_feedback_info = builder.aigc_feedback_info;
         this.chat_content = builder.chat_content;
         this.sprite_meme_info = builder.sprite_meme_info;
+        this.aichat_bot_comment_card = builder.aichat_bot_comment_card;
     }
 }

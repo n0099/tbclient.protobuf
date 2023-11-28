@@ -15,6 +15,8 @@ public final class ComponentFactory extends Message {
     public final String component;
     @ProtoField(tag = 4)
     public final AbstractComponent feed_abstract;
+    @ProtoField(tag = 25)
+    public final FeedAuthorSocial feed_author_social;
     @ProtoField(tag = 10)
     public final FeedEntrybarComponent feed_entrybar;
     @ProtoField(tag = 5)
@@ -61,6 +63,7 @@ public final class ComponentFactory extends Message {
         public String base_text;
         public String component;
         public AbstractComponent feed_abstract;
+        public FeedAuthorSocial feed_author_social;
         public FeedEntrybarComponent feed_entrybar;
         public FeedHeadComponent feed_head;
         public FeedHeadFigureComponent feed_head_figure;
@@ -113,6 +116,7 @@ public final class ComponentFactory extends Message {
             this.feed_poll = componentFactory.feed_poll;
             this.feed_toutiao = componentFactory.feed_toutiao;
             this.frs_top_thread = componentFactory.frs_top_thread;
+            this.feed_author_social = componentFactory.feed_author_social;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -163,6 +167,7 @@ public final class ComponentFactory extends Message {
             this.feed_poll = builder.feed_poll;
             this.feed_toutiao = builder.feed_toutiao;
             this.frs_top_thread = builder.frs_top_thread;
+            this.feed_author_social = builder.feed_author_social;
             return;
         }
         this.component = builder.component;
@@ -188,5 +193,6 @@ public final class ComponentFactory extends Message {
         this.feed_poll = builder.feed_poll;
         this.feed_toutiao = builder.feed_toutiao;
         this.frs_top_thread = builder.frs_top_thread;
+        this.feed_author_social = builder.feed_author_social;
     }
 }

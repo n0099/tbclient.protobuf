@@ -4,6 +4,7 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
+import tbclient.AichatBotCard;
 import tbclient.AlaLiveInfo;
 import tbclient.Anti;
 import tbclient.BannerList;
@@ -40,6 +41,8 @@ public final class DataRes extends Message {
     public static final String DEFAULT_PB_NOTICE = "";
     @ProtoField(tag = 5)
     public final AddPost add_post;
+    @ProtoField(tag = 79)
+    public final AichatBotCard aichat_bot_card;
     @ProtoField(label = Message.Label.REPEATED, tag = 77)
     public final List<AiChatCard> aichat_card;
     @ProtoField(tag = 26)
@@ -222,6 +225,7 @@ public final class DataRes extends Message {
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
         public AddPost add_post;
+        public AichatBotCard aichat_bot_card;
         public List<AiChatCard> aichat_card;
         public AlaLiveInfo ala_info;
         public Anti anti;
@@ -378,6 +382,7 @@ public final class DataRes extends Message {
             this.similar_content = dataRes.similar_content;
             this.robot_entrance = dataRes.robot_entrance;
             this.aichat_card = Message.copyOf(dataRes.aichat_card);
+            this.aichat_bot_card = dataRes.aichat_bot_card;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -651,11 +656,11 @@ public final class DataRes extends Message {
             List<AiChatCard> list15 = builder.aichat_card;
             if (list15 == null) {
                 this.aichat_card = DEFAULT_AICHAT_CARD;
-                return;
             } else {
                 this.aichat_card = Message.immutableCopyOf(list15);
-                return;
             }
+            this.aichat_bot_card = builder.aichat_bot_card;
+            return;
         }
         this.user = builder.user;
         this.forum = builder.forum;
@@ -731,5 +736,6 @@ public final class DataRes extends Message {
         this.similar_content = builder.similar_content;
         this.robot_entrance = builder.robot_entrance;
         this.aichat_card = Message.immutableCopyOf(builder.aichat_card);
+        this.aichat_bot_card = builder.aichat_bot_card;
     }
 }

@@ -6,6 +6,7 @@ import tbclient.CommonReq;
 /* loaded from: classes2.dex */
 public final class DataReq extends Message {
     public static final String DEFAULT_BFROM = "";
+    public static final String DEFAULT_FRS_COMMON_INFO = "";
     @ProtoField(tag = 9, type = Message.Datatype.STRING)
     public final String bfrom;
     @ProtoField(tag = 10, type = Message.Datatype.INT32)
@@ -13,9 +14,13 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1352common;
+    public final CommonReq f1351common;
     @ProtoField(tag = 4, type = Message.Datatype.UINT64)
     public final Long forum_id;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String frs_common_info;
+    @ProtoField(tag = 12, type = Message.Datatype.INT32)
+    public final Integer is_newfrs;
     @ProtoField(tag = 3, type = Message.Datatype.UINT64)
     public final Long post_id;
     @ProtoField(tag = 8, type = Message.Datatype.INT32)
@@ -36,6 +41,7 @@ public final class DataReq extends Message {
     public static final Double DEFAULT_SCR_DIP = Double.valueOf(0.0d);
     public static final Integer DEFAULT_Q_TYPE = 0;
     public static final Integer DEFAULT_CALL_FROM = 0;
+    public static final Integer DEFAULT_IS_NEWFRS = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -43,8 +49,10 @@ public final class DataReq extends Message {
         public Integer call_from;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1353common;
+        public CommonReq f1352common;
         public Long forum_id;
+        public String frs_common_info;
+        public Integer is_newfrs;
         public Long post_id;
         public Integer q_type;
         public Double scr_dip;
@@ -60,7 +68,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1353common = dataReq.f1352common;
+            this.f1352common = dataReq.f1351common;
             this.thread_id = dataReq.thread_id;
             this.post_id = dataReq.post_id;
             this.forum_id = dataReq.forum_id;
@@ -70,6 +78,8 @@ public final class DataReq extends Message {
             this.q_type = dataReq.q_type;
             this.bfrom = dataReq.bfrom;
             this.call_from = dataReq.call_from;
+            this.frs_common_info = dataReq.frs_common_info;
+            this.is_newfrs = dataReq.is_newfrs;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -82,7 +92,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1352common = builder.f1353common;
+            this.f1351common = builder.f1352common;
             Long l = builder.thread_id;
             if (l == null) {
                 this.thread_id = DEFAULT_THREAD_ID;
@@ -134,13 +144,25 @@ public final class DataReq extends Message {
             Integer num4 = builder.call_from;
             if (num4 == null) {
                 this.call_from = DEFAULT_CALL_FROM;
-                return;
             } else {
                 this.call_from = num4;
+            }
+            String str2 = builder.frs_common_info;
+            if (str2 == null) {
+                this.frs_common_info = "";
+            } else {
+                this.frs_common_info = str2;
+            }
+            Integer num5 = builder.is_newfrs;
+            if (num5 == null) {
+                this.is_newfrs = DEFAULT_IS_NEWFRS;
+                return;
+            } else {
+                this.is_newfrs = num5;
                 return;
             }
         }
-        this.f1352common = builder.f1353common;
+        this.f1351common = builder.f1352common;
         this.thread_id = builder.thread_id;
         this.post_id = builder.post_id;
         this.forum_id = builder.forum_id;
@@ -150,5 +172,7 @@ public final class DataReq extends Message {
         this.q_type = builder.q_type;
         this.bfrom = builder.bfrom;
         this.call_from = builder.call_from;
+        this.frs_common_info = builder.frs_common_info;
+        this.is_newfrs = builder.is_newfrs;
     }
 }

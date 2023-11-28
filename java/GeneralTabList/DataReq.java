@@ -21,7 +21,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1292common;
+    public final CommonReq f1291common;
     @ProtoField(tag = 3, type = Message.Datatype.INT64)
     public final Long forum_id;
     @ProtoField(tag = 21, type = Message.Datatype.STRING)
@@ -34,6 +34,8 @@ public final class DataReq extends Message {
     public final Integer is_general_tab;
     @ProtoField(tag = 22, type = Message.Datatype.INT32)
     public final Integer is_newfrs;
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
+    public final Integer is_video_doublerow;
     @ProtoField(tag = 9, type = Message.Datatype.INT64)
     public final Long last_thread_id;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
@@ -72,6 +74,7 @@ public final class DataReq extends Message {
     public static final Double DEFAULT_AD_BEAR_SID_PRICE = Double.valueOf(0.0d);
     public static final Integer DEFAULT_REQUEST_TIMES = 0;
     public static final Integer DEFAULT_IS_NEWFRS = 0;
+    public static final Integer DEFAULT_IS_VIDEO_DOUBLEROW = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataReq> {
@@ -81,13 +84,14 @@ public final class DataReq extends Message {
         public String ad_ext_params;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1293common;
+        public CommonReq f1292common;
         public Long forum_id;
         public String frs_common_info;
         public Integer has_ad_bear;
         public Integer is_default_navtab;
         public Integer is_general_tab;
         public Integer is_newfrs;
+        public Integer is_video_doublerow;
         public Long last_thread_id;
         public Integer pn;
         public Integer request_times;
@@ -108,7 +112,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1293common = dataReq.f1292common;
+            this.f1292common = dataReq.f1291common;
             this.tab_id = dataReq.tab_id;
             this.forum_id = dataReq.forum_id;
             this.pn = dataReq.pn;
@@ -130,6 +134,7 @@ public final class DataReq extends Message {
             this.request_times = dataReq.request_times;
             this.frs_common_info = dataReq.frs_common_info;
             this.is_newfrs = dataReq.is_newfrs;
+            this.is_video_doublerow = dataReq.is_video_doublerow;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -142,7 +147,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1292common = builder.f1293common;
+            this.f1291common = builder.f1292common;
             Integer num = builder.tab_id;
             if (num == null) {
                 this.tab_id = DEFAULT_TAB_ID;
@@ -266,13 +271,19 @@ public final class DataReq extends Message {
             Integer num13 = builder.is_newfrs;
             if (num13 == null) {
                 this.is_newfrs = DEFAULT_IS_NEWFRS;
-                return;
             } else {
                 this.is_newfrs = num13;
+            }
+            Integer num14 = builder.is_video_doublerow;
+            if (num14 == null) {
+                this.is_video_doublerow = DEFAULT_IS_VIDEO_DOUBLEROW;
+                return;
+            } else {
+                this.is_video_doublerow = num14;
                 return;
             }
         }
-        this.f1292common = builder.f1293common;
+        this.f1291common = builder.f1292common;
         this.tab_id = builder.tab_id;
         this.forum_id = builder.forum_id;
         this.pn = builder.pn;
@@ -294,5 +305,6 @@ public final class DataReq extends Message {
         this.request_times = builder.request_times;
         this.frs_common_info = builder.frs_common_info;
         this.is_newfrs = builder.is_newfrs;
+        this.is_video_doublerow = builder.is_video_doublerow;
     }
 }

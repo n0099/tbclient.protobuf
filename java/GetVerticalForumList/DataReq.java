@@ -14,7 +14,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1402common;
+    public final CommonReq f1401common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer pn;
     public static final List<Integer> DEFAULT_CLASSID_LIST = Collections.emptyList();
@@ -27,7 +27,7 @@ public final class DataReq extends Message {
         public List<Integer> classid_list;
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1403common;
+        public CommonReq f1402common;
         public Integer pn;
 
         public Builder() {
@@ -38,7 +38,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1403common = dataReq.f1402common;
+            this.f1402common = dataReq.f1401common;
             this.classid_list = Message.copyOf(dataReq.classid_list);
             this.begin_id = dataReq.begin_id;
             this.pn = dataReq.pn;
@@ -54,7 +54,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1402common = builder.f1403common;
+            this.f1401common = builder.f1402common;
             List<Integer> list = builder.classid_list;
             if (list == null) {
                 this.classid_list = DEFAULT_CLASSID_LIST;
@@ -76,7 +76,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1402common = builder.f1403common;
+        this.f1401common = builder.f1402common;
         this.classid_list = Message.immutableCopyOf(builder.classid_list);
         this.begin_id = builder.begin_id;
         this.pn = builder.pn;

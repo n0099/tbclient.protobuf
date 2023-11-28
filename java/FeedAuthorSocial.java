@@ -16,6 +16,8 @@ public final class FeedAuthorSocial extends Message {
     public final FeedHeadImg image_data;
     @ProtoField(label = Message.Label.REPEATED, tag = 2)
     public final List<FeedHeadSymbol> main_data;
+    @ProtoField(label = Message.Label.REPEATED, tag = 8)
+    public final List<LayoutManageInfo> manage_list;
     @ProtoField(tag = 5, type = Message.Datatype.INT32)
     public final Integer share_num;
     @ProtoField(tag = 6, type = Message.Datatype.UINT64)
@@ -25,6 +27,7 @@ public final class FeedAuthorSocial extends Message {
     public static final Integer DEFAULT_SHARE_NUM = 0;
     public static final Long DEFAULT_TID = 0L;
     public static final Long DEFAULT_FID = 0L;
+    public static final List<LayoutManageInfo> DEFAULT_MANAGE_LIST = Collections.emptyList();
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<FeedAuthorSocial> {
@@ -33,6 +36,7 @@ public final class FeedAuthorSocial extends Message {
         public Long fid;
         public FeedHeadImg image_data;
         public List<FeedHeadSymbol> main_data;
+        public List<LayoutManageInfo> manage_list;
         public Integer share_num;
         public Long tid;
 
@@ -51,6 +55,7 @@ public final class FeedAuthorSocial extends Message {
             this.share_num = feedAuthorSocial.share_num;
             this.tid = feedAuthorSocial.tid;
             this.fid = feedAuthorSocial.fid;
+            this.manage_list = Message.copyOf(feedAuthorSocial.manage_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -92,9 +97,15 @@ public final class FeedAuthorSocial extends Message {
             Long l2 = builder.fid;
             if (l2 == null) {
                 this.fid = DEFAULT_FID;
-                return;
             } else {
                 this.fid = l2;
+            }
+            List<LayoutManageInfo> list2 = builder.manage_list;
+            if (list2 == null) {
+                this.manage_list = DEFAULT_MANAGE_LIST;
+                return;
+            } else {
+                this.manage_list = Message.immutableCopyOf(list2);
                 return;
             }
         }
@@ -105,5 +116,6 @@ public final class FeedAuthorSocial extends Message {
         this.share_num = builder.share_num;
         this.tid = builder.tid;
         this.fid = builder.fid;
+        this.manage_list = Message.immutableCopyOf(builder.manage_list);
     }
 }

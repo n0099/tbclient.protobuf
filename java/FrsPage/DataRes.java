@@ -60,6 +60,8 @@ public final class DataRes extends Message {
     public final AddBawuPopInfo add_bawu_pop;
     @ProtoField(tag = 65)
     public final AgreeBanner agree_banner;
+    @ProtoField(tag = 130)
+    public final AiChatroomGuide ai_chatroom_guide;
     @ProtoField(tag = 77, type = Message.Datatype.INT32)
     public final Integer ala_insert_floor;
     @ProtoField(label = Message.Label.REPEATED, tag = 75)
@@ -188,6 +190,8 @@ public final class DataRes extends Message {
     public final AlaLiveNotify live_frs_notify;
     @ProtoField(label = Message.Label.REPEATED, tag = 116)
     public final List<LiveFuseForumData> live_fuse_forum;
+    @ProtoField(label = Message.Label.REPEATED, tag = 132)
+    public final List<LiveModuleList> live_module_list;
     @ProtoField(tag = 13, type = Message.Datatype.INT64)
     public final Long logid;
     @ProtoField(tag = 67)
@@ -262,6 +266,8 @@ public final class DataRes extends Message {
     public final List<ThreadInfo> thread_list;
     @ProtoField(tag = 11, type = Message.Datatype.INT32)
     public final Integer time;
+    @ProtoField(tag = 131)
+    public final TopLiveData top_live_data;
     @ProtoField(tag = 82, type = Message.Datatype.INT32)
     public final Integer trends_redpoint;
     @ProtoField(label = Message.Label.REPEATED, tag = 24)
@@ -338,6 +344,7 @@ public final class DataRes extends Message {
     public static final Integer DEFAULT_IS_MEMBER_BROADCAST_FORUM = 0;
     public static final Integer DEFAULT_IS_NEED_LIVE_UNUNIQ = 0;
     public static final List<FrsTabInfo> DEFAULT_FRS_MAIN_TAB_LIST = Collections.emptyList();
+    public static final List<LiveModuleList> DEFAULT_LIVE_MODULE_LIST = Collections.emptyList();
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<DataRes> {
@@ -348,6 +355,7 @@ public final class DataRes extends Message {
         public Integer ad_show_select;
         public AddBawuPopInfo add_bawu_pop;
         public AgreeBanner agree_banner;
+        public AiChatroomGuide ai_chatroom_guide;
         public Integer ala_insert_floor;
         public List<ThreadInfo> ala_insert_thread;
         public Integer ala_live_count;
@@ -412,6 +420,7 @@ public final class DataRes extends Message {
         public ItemInfo item_info;
         public AlaLiveNotify live_frs_notify;
         public List<LiveFuseForumData> live_fuse_forum;
+        public List<LiveModuleList> live_module_list;
         public Long logid;
         public NaGuide na_guide;
         public NavTabInfo nav_tab_info;
@@ -449,6 +458,7 @@ public final class DataRes extends Message {
         public List<ThreadIdListInfo> thread_id_list_info;
         public List<ThreadInfo> thread_list;
         public Integer time;
+        public TopLiveData top_live_data;
         public Integer trends_redpoint;
         public List<ZhiBoInfoTW> twzhibo_info;
         public Integer twzhibo_pos;
@@ -592,6 +602,9 @@ public final class DataRes extends Message {
             this.frs_main_tab_list = Message.copyOf(dataRes.frs_main_tab_list);
             this.frs_bottom = dataRes.frs_bottom;
             this.frs_common_info = dataRes.frs_common_info;
+            this.ai_chatroom_guide = dataRes.ai_chatroom_guide;
+            this.top_live_data = dataRes.top_live_data;
+            this.live_module_list = Message.copyOf(dataRes.live_module_list);
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -1002,9 +1015,17 @@ public final class DataRes extends Message {
             String str6 = builder.frs_common_info;
             if (str6 == null) {
                 this.frs_common_info = "";
-                return;
             } else {
                 this.frs_common_info = str6;
+            }
+            this.ai_chatroom_guide = builder.ai_chatroom_guide;
+            this.top_live_data = builder.top_live_data;
+            List<LiveModuleList> list26 = builder.live_module_list;
+            if (list26 == null) {
+                this.live_module_list = DEFAULT_LIVE_MODULE_LIST;
+                return;
+            } else {
+                this.live_module_list = Message.immutableCopyOf(list26);
                 return;
             }
         }
@@ -1129,5 +1150,8 @@ public final class DataRes extends Message {
         this.frs_main_tab_list = Message.immutableCopyOf(builder.frs_main_tab_list);
         this.frs_bottom = builder.frs_bottom;
         this.frs_common_info = builder.frs_common_info;
+        this.ai_chatroom_guide = builder.ai_chatroom_guide;
+        this.top_live_data = builder.top_live_data;
+        this.live_module_list = Message.immutableCopyOf(builder.live_module_list);
     }
 }

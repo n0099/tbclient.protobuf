@@ -5,6 +5,8 @@ import com.squareup.wire.ProtoField;
 /* loaded from: classes2.dex */
 public final class LayoutFactory extends Message {
     public static final String DEFAULT_LAYOUT = "";
+    @ProtoField(tag = 6)
+    public final VideoDoubleRowLayout double_row_video;
     @ProtoField(tag = 2)
     public final FeedLayout feed;
     @ProtoField(tag = 5)
@@ -18,6 +20,7 @@ public final class LayoutFactory extends Message {
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<LayoutFactory> {
+        public VideoDoubleRowLayout double_row_video;
         public FeedLayout feed;
         public FrsTopThreadCardLayout frs_top_thread_card;
         public HeadcardLayout headcard;
@@ -37,6 +40,7 @@ public final class LayoutFactory extends Message {
             this.sideway = layoutFactory.sideway;
             this.headcard = layoutFactory.headcard;
             this.frs_top_thread_card = layoutFactory.frs_top_thread_card;
+            this.double_row_video = layoutFactory.double_row_video;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -59,6 +63,7 @@ public final class LayoutFactory extends Message {
             this.sideway = builder.sideway;
             this.headcard = builder.headcard;
             this.frs_top_thread_card = builder.frs_top_thread_card;
+            this.double_row_video = builder.double_row_video;
             return;
         }
         this.layout = builder.layout;
@@ -66,5 +71,6 @@ public final class LayoutFactory extends Message {
         this.sideway = builder.sideway;
         this.headcard = builder.headcard;
         this.frs_top_thread_card = builder.frs_top_thread_card;
+        this.double_row_video = builder.double_row_video;
     }
 }

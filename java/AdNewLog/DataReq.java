@@ -14,7 +14,7 @@ public final class DataReq extends Message {
     @ProtoField(tag = 1)
 
     /* renamed from: common  reason: collision with root package name */
-    public final CommonReq f1230common;
+    public final CommonReq f1231common;
     @ProtoField(tag = 4, type = Message.Datatype.INT32)
     public final Integer da_from;
     @ProtoField(tag = 3, type = Message.Datatype.STRING)
@@ -32,7 +32,7 @@ public final class DataReq extends Message {
     public static final class Builder extends Message.Builder<DataReq> {
 
         /* renamed from: common  reason: collision with root package name */
-        public CommonReq f1231common;
+        public CommonReq f1232common;
         public Integer da_from;
         public String da_locate;
         public String da_type;
@@ -48,7 +48,7 @@ public final class DataReq extends Message {
             if (dataReq == null) {
                 return;
             }
-            this.f1231common = dataReq.f1230common;
+            this.f1232common = dataReq.f1231common;
             this.token = dataReq.token;
             this.da_locate = dataReq.da_locate;
             this.da_from = dataReq.da_from;
@@ -67,7 +67,7 @@ public final class DataReq extends Message {
     public DataReq(Builder builder, boolean z) {
         super(builder);
         if (z) {
-            this.f1230common = builder.f1231common;
+            this.f1231common = builder.f1232common;
             String str = builder.token;
             if (str == null) {
                 this.token = "";
@@ -107,7 +107,7 @@ public final class DataReq extends Message {
                 return;
             }
         }
-        this.f1230common = builder.f1231common;
+        this.f1231common = builder.f1232common;
         this.token = builder.token;
         this.da_locate = builder.da_locate;
         this.da_from = builder.da_from;

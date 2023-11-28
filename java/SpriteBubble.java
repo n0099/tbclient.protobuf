@@ -15,6 +15,8 @@ public final class SpriteBubble extends Message {
     public final Integer disappear_seconds;
     @ProtoField(tag = 8)
     public final ThemeColorInfo icon_url;
+    @ProtoField(tag = 15)
+    public final ThemeColorInfo img;
     @ProtoField(tag = 3, type = Message.Datatype.UINT32)
     public final Integer need_send;
     @ProtoField(tag = 1, type = Message.Datatype.UINT32)
@@ -33,18 +35,22 @@ public final class SpriteBubble extends Message {
     public final ThemeColorInfo text_color;
     @ProtoField(tag = 13, type = Message.Datatype.STRING)
     public final String title;
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    public final Integer type;
     @ProtoField(tag = 5, type = Message.Datatype.STRING)
     public final String version;
     public static final Integer DEFAULT_SCENE = 0;
     public static final Integer DEFAULT_NEED_SEND = 0;
     public static final Integer DEFAULT_SPEECH_TYPE = 0;
     public static final Integer DEFAULT_DISAPPEAR_SECONDS = 0;
+    public static final Integer DEFAULT_TYPE = 0;
 
     /* loaded from: classes2.dex */
     public static final class Builder extends Message.Builder<SpriteBubble> {
         public SpriteButton button_info;
         public Integer disappear_seconds;
         public ThemeColorInfo icon_url;
+        public ThemeColorInfo img;
         public Integer need_send;
         public Integer scene;
         public String send_text;
@@ -54,6 +60,7 @@ public final class SpriteBubble extends Message {
         public String text;
         public ThemeColorInfo text_color;
         public String title;
+        public Integer type;
         public String version;
 
         public Builder() {
@@ -77,6 +84,8 @@ public final class SpriteBubble extends Message {
             this.speech_type = spriteBubble.speech_type;
             this.disappear_seconds = spriteBubble.disappear_seconds;
             this.title = spriteBubble.title;
+            this.type = spriteBubble.type;
+            this.img = spriteBubble.img;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
@@ -144,11 +153,17 @@ public final class SpriteBubble extends Message {
             String str5 = builder.title;
             if (str5 == null) {
                 this.title = "";
-                return;
             } else {
                 this.title = str5;
-                return;
             }
+            Integer num5 = builder.type;
+            if (num5 == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num5;
+            }
+            this.img = builder.img;
+            return;
         }
         this.scene = builder.scene;
         this.text = builder.text;
@@ -163,5 +178,7 @@ public final class SpriteBubble extends Message {
         this.speech_type = builder.speech_type;
         this.disappear_seconds = builder.disappear_seconds;
         this.title = builder.title;
+        this.type = builder.type;
+        this.img = builder.img;
     }
 }

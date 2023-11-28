@@ -103,6 +103,8 @@ public final class ThreadInfo extends Message {
     public final Integer bjh_content_tag;
     @ProtoField(tag = 102)
     public final BookThread book_chapter;
+    @ProtoField(tag = 232)
+    public final BusinessMix business_mix;
     @ProtoField(tag = 92)
     public final CartoonThread cartoon_info;
     @ProtoField(tag = 73, type = Message.Datatype.STRING)
@@ -1650,11 +1652,11 @@ public final class ThreadInfo extends Message {
             Long l13 = builder.top_thread_set_time;
             if (l13 == null) {
                 this.top_thread_set_time = DEFAULT_TOP_THREAD_SET_TIME;
-                return;
             } else {
                 this.top_thread_set_time = l13;
-                return;
             }
+            this.business_mix = builder.business_mix;
+            return;
         }
         this.id = builder.id;
         this.tid = builder.tid;
@@ -1875,6 +1877,7 @@ public final class ThreadInfo extends Message {
         this.disable_share_toast = builder.disable_share_toast;
         this.share_url = builder.share_url;
         this.top_thread_set_time = builder.top_thread_set_time;
+        this.business_mix = builder.business_mix;
     }
 
     /* loaded from: classes2.dex */
@@ -1898,6 +1901,7 @@ public final class ThreadInfo extends Message {
         public Baijiahao baijiahao;
         public Integer bjh_content_tag;
         public BookThread book_chapter;
+        public BusinessMix business_mix;
         public CartoonThread cartoon_info;
         public String category_name;
         public Integer cheak_repeat;
@@ -2326,6 +2330,7 @@ public final class ThreadInfo extends Message {
             this.disable_share_toast = threadInfo.disable_share_toast;
             this.share_url = threadInfo.share_url;
             this.top_thread_set_time = threadInfo.top_thread_set_time;
+            this.business_mix = threadInfo.business_mix;
         }
 
         /* JADX DEBUG: Method merged with bridge method */
