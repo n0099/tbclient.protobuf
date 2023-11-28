@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-message TaskInfoItem {
-    uint32 is_finish = 1;
-    uint32 scores = 2;
-}

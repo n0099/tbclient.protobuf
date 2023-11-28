@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "DoDailyTask/ButtonItem.proto";
-
-message DialogItem {
-    string title = 1;
-    string content = 2;
-    repeated ButtonItem button = 3;
-}

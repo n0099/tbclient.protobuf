@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "AiCard.proto";
 import "ForumInfo.proto";
 import "Item.proto";
 import "RecommendForumInfo.proto";
@@ -15,4 +16,5 @@ message DataRes {
     repeated SugLiveInfo live_card = 6;
     SugRankingInfo ranking_card = 7;
     repeated RecommendForumInfo forum_cards = 8;
+    repeated AiCard ai_card = 9;
 }

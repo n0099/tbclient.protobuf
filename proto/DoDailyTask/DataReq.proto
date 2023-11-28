@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "CommonReq.proto";
-
-message DataReq {
-    uint64 task_id = 3;
-}

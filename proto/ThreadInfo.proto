@@ -12,6 +12,7 @@ import "AppCode.proto";
 import "AppInfo.proto";
 import "Baijiahao.proto";
 import "BookThread.proto";
+import "BusinessMix.proto";
 import "CartoonThread.proto";
 import "ClickBackCard.proto";
 import "CustomFigure.proto";
@@ -257,4 +258,5 @@ message ThreadInfo {
     string disable_share_toast = 229;
     string share_url = 230;
     int64 top_thread_set_time = 231;
+    BusinessMix business_mix = 232;
 }

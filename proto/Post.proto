@@ -4,6 +4,7 @@ import "ActPost.proto";
 import "AddPostList.proto";
 import "Advertisement.proto";
 import "Agree.proto";
+import "AichatBotCommentCard.proto";
 import "AigcFeedbackInfo.proto";
 import "BotReplyContent.proto";
 import "CallRobotEntrance.proto";
@@ -116,4 +117,5 @@ message Post {
     AigcFeedbackInfo aigc_feedback_info = 77;
     ChatContent chat_content = 78;
     SpriteMemeInfo sprite_meme_info = 79;
+    AichatBotCommentCard aichat_bot_comment_card = 80;
 }

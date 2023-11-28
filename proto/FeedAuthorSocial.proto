@@ -3,6 +3,7 @@ syntax = "proto3";
 import "Agree.proto";
 import "FeedHeadImg.proto";
 import "FeedHeadSymbol.proto";
+import "LayoutManageInfo.proto";
 
 message FeedAuthorSocial {
     FeedHeadImg image_data = 1;
@@ -12,4 +13,5 @@ message FeedAuthorSocial {
     int32 share_num = 5;
     uint64 tid = 6;
     uint64 fid = 7;
+    repeated LayoutManageInfo manage_list = 8;
 }

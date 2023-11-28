@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "FrsPage/BrandBook.proto";
 import "IconUrlInfo.proto";
 import "ThemeColorInfo.proto";
 
@@ -16,4 +17,9 @@ message FrsBannerHeader {
     string type = 10;
     IconUrlInfo jump_tips_icon = 11;
     IconUrlInfo brand_icon = 12;
+    int32 card_type = 13;
+    string btn_text = 14;
+    string btn_text_after = 15;
+    string background_img = 16;
+    BrandBook book = 17;
 }

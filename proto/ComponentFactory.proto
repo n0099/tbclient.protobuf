@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "AbstractComponent.proto";
+import "FeedAuthorSocial.proto";
 import "FeedEntrybarComponent.proto";
 import "FeedHeadComponent.proto";
 import "FeedHeadFigureComponent.proto";
@@ -46,4 +47,5 @@ message ComponentFactory {
     PollInfo feed_poll = 22;
     FeedToutiao feed_toutiao = 23;
     FrsTopThreadComponent frs_top_thread = 24;
+    FeedAuthorSocial feed_author_social = 25;
 }

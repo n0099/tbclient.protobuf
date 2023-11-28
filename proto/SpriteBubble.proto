@@ -18,4 +18,6 @@ message SpriteBubble {
     int32 speech_type = 11;
     int32 disappear_seconds = 12;
     string title = 13;
+    int32 type = 14;
+    ThemeColorInfo img = 15;
 }

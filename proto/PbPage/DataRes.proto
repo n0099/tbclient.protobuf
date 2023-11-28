@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "AichatBotCard.proto";
 import "AlaLiveInfo.proto";
 import "Anti.proto";
 import "BannerList.proto";
@@ -117,4 +118,5 @@ message DataRes {
     SimilarContent similar_content = 75;
     RobotEntrance robot_entrance = 76;
     repeated AiChatCard aichat_card = 77;
+    AichatBotCard aichat_bot_card = 79;
 }
