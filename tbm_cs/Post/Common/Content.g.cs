@@ -25,7 +25,7 @@ namespace TbClient.Post.Common {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChlQb3N0L0NvbW1vbi9Db250ZW50LnByb3RvEhR0YkNsaWVudC5wb3N0LmNv",
-            "bW1vbhoPSXRlbS9JdGVtLnByb3RvItkQCgdDb250ZW50EgwKBHR5cGUYASAB",
+            "bW1vbhoPSXRlbS9JdGVtLnByb3RvIoMRCgdDb250ZW50EgwKBHR5cGUYASAB",
             "KA0SDAoEdGV4dBgCIAEoCRIMCgRsaW5rGAMgASgJEgsKA3NyYxgEIAEoCRIN",
             "CgVic2l6ZRgFIAEoCRIPCgdiaWdfc3JjGAYgASgJEhAKCGJpZ19zaXplGAcg",
             "ASgJEg8KB2Nkbl9zcmMYCCABKAkSEwoLYmlnX2Nkbl9zcmMYCSABKAkSDwoH",
@@ -48,36 +48,37 @@ namespace TbClient.Post.Common {
             "KAQSFwoPaXRlbV9mb3J1bV9uYW1lGCcgASgJEkMKDnRpZWJhcGx1c19pbmZv",
             "GCggASgLMisudGJDbGllbnQucG9zdC5jb21tb24uQ29udGVudC5UaWViYVBs",
             "dXNJbmZvEiEKBGl0ZW0YKSABKAsyEy50YkNsaWVudC5pdGVtLkl0ZW0SDgoG",
-            "cGljX2lkGCogASgDGlsKCU5hdGl2ZUFwcBIQCghqdW1wX2FuZBgBIAEoCRIQ",
-            "CghqdW1wX2lvcxgCIAEoCRIUCgxkb3dubG9hZF9hbmQYAyABKAkSFAoMZG93",
-            "bmxvYWRfaW9zGAQgASgJGigKDEdyYWZmaXRpSW5mbxILCgN1cmwYASABKAkS",
-            "CwoDZ2lkGAIgASgDGrQBCgpUb2dldGhlckhpEhIKCmFsYnVtX25hbWUYASAB",
-            "KAkSEAoIYWxidW1faWQYAiABKAQSEgoKc3RhcnRfdGltZRgDIAEoDRIQCghl",
-            "bmRfdGltZRgEIAEoDRIQCghsb2NhdGlvbhgFIAEoCRISCgpudW1fc2lnbnVw",
-            "GAYgASgNEhAKCHBvdHJhaXRzGAcgAygJEhAKCG51bV9qb2luGAggASgNEhAK",
-            "CHBpY191cmxzGAkgAygJGoIBCghNZW1lSW5mbxIOCgZwY2tfaWQYASABKA0S",
-            "DgoGcGljX2lkGAIgASgEEg8KB3BpY191cmwYAyABKAkSEQoJdGh1bWJuYWls",
-            "GAQgASgJEg0KBXdpZHRoGAUgASgNEg4KBmhlaWdodBgGIAEoDRITCgtkZXRh",
-            "aWxfbGluaxgHIAEoCRqUBQoNVGllYmFQbHVzSW5mbxINCgV0aXRsZRgBIAEo",
-            "CRIMCgRkZXNjGAIgASgJEhAKCGp1bXBfdXJsGAMgASgJEhQKDGRvd25sb2Fk",
-            "X3VybBgEIAEoCRIOCgZhcHBfaWQYBSABKAkSEAoIYXBwX2ljb24YBiABKAkS",
-            "EwoLYXBwX3BhY2thZ2UYByABKAkSEwoLYXBwX3ZlcnNpb24YCCABKAkSEwoL",
-            "YXBwX3ByaXZhY3kYCSABKAkSEQoJYXBwX3Bvd2VyGAogASgJEhMKC2FwcF9j",
-            "b21wYW55GAsgASgJEhMKC3RhcmdldF90eXBlGAwgASgFEhQKDGg1X2p1bXBf",
-            "dHlwZRgNIAEoBRIWCg5oNV9qdW1wX251bWJlchgOIAEoCRIVCg1oNV9qdW1w",
-            "X3BhcmFtGA8gASgJEhEKCWp1bXBfdHlwZRgQIAEoBRIPCgdpdGVtX2lkGBEg",
-            "ASgJEhIKCmlzX2FwcG9pbnQYEiABKAUSSwoLcGx1Z2luX3VzZXIYEyABKAsy",
-            "Ni50YkNsaWVudC5wb3N0LmNvbW1vbi5Db250ZW50LlRpZWJhUGx1c0luZm8u",
-            "UGx1Z2luVXNlchISCgpmb3J1bV9uYW1lGBQgASgJEhQKDGp1bXBfc2V0dGlu",
-            "ZxgVIAEoBRIUCgx3eF90aHVtYm5haWwYFiABKAkSEwoLYnV0dG9uX2Rlc2MY",
-            "FyABKAkagAEKClBsdWdpblVzZXISDwoHdXNlcl9pZBgBIAEoAxIWCg51c2Vy",
-            "X25hbWVfc2hvdxgCIAEoCRIRCgl1c2VyX3R5cGUYAyABKAUSEgoKdXNlcl9w",
-            "aG90bxgEIAEoCRIiChppc19kb3dubG9hZF9jYXJkX3doaXRldXNlchgFIAEo",
-            "BWIGcHJvdG8z"));
+            "cGljX2lkGCogASgDEhEKCWxpbmtfdHlwZRgrIAEoBRIVCg10YXJnZXRfc2No",
+            "ZW1lGCwgASgJGlsKCU5hdGl2ZUFwcBIQCghqdW1wX2FuZBgBIAEoCRIQCghq",
+            "dW1wX2lvcxgCIAEoCRIUCgxkb3dubG9hZF9hbmQYAyABKAkSFAoMZG93bmxv",
+            "YWRfaW9zGAQgASgJGigKDEdyYWZmaXRpSW5mbxILCgN1cmwYASABKAkSCwoD",
+            "Z2lkGAIgASgDGrQBCgpUb2dldGhlckhpEhIKCmFsYnVtX25hbWUYASABKAkS",
+            "EAoIYWxidW1faWQYAiABKAQSEgoKc3RhcnRfdGltZRgDIAEoDRIQCghlbmRf",
+            "dGltZRgEIAEoDRIQCghsb2NhdGlvbhgFIAEoCRISCgpudW1fc2lnbnVwGAYg",
+            "ASgNEhAKCHBvdHJhaXRzGAcgAygJEhAKCG51bV9qb2luGAggASgNEhAKCHBp",
+            "Y191cmxzGAkgAygJGoIBCghNZW1lSW5mbxIOCgZwY2tfaWQYASABKA0SDgoG",
+            "cGljX2lkGAIgASgEEg8KB3BpY191cmwYAyABKAkSEQoJdGh1bWJuYWlsGAQg",
+            "ASgJEg0KBXdpZHRoGAUgASgNEg4KBmhlaWdodBgGIAEoDRITCgtkZXRhaWxf",
+            "bGluaxgHIAEoCRqUBQoNVGllYmFQbHVzSW5mbxINCgV0aXRsZRgBIAEoCRIM",
+            "CgRkZXNjGAIgASgJEhAKCGp1bXBfdXJsGAMgASgJEhQKDGRvd25sb2FkX3Vy",
+            "bBgEIAEoCRIOCgZhcHBfaWQYBSABKAkSEAoIYXBwX2ljb24YBiABKAkSEwoL",
+            "YXBwX3BhY2thZ2UYByABKAkSEwoLYXBwX3ZlcnNpb24YCCABKAkSEwoLYXBw",
+            "X3ByaXZhY3kYCSABKAkSEQoJYXBwX3Bvd2VyGAogASgJEhMKC2FwcF9jb21w",
+            "YW55GAsgASgJEhMKC3RhcmdldF90eXBlGAwgASgFEhQKDGg1X2p1bXBfdHlw",
+            "ZRgNIAEoBRIWCg5oNV9qdW1wX251bWJlchgOIAEoCRIVCg1oNV9qdW1wX3Bh",
+            "cmFtGA8gASgJEhEKCWp1bXBfdHlwZRgQIAEoBRIPCgdpdGVtX2lkGBEgASgJ",
+            "EhIKCmlzX2FwcG9pbnQYEiABKAUSSwoLcGx1Z2luX3VzZXIYEyABKAsyNi50",
+            "YkNsaWVudC5wb3N0LmNvbW1vbi5Db250ZW50LlRpZWJhUGx1c0luZm8uUGx1",
+            "Z2luVXNlchISCgpmb3J1bV9uYW1lGBQgASgJEhQKDGp1bXBfc2V0dGluZxgV",
+            "IAEoBRIUCgx3eF90aHVtYm5haWwYFiABKAkSEwoLYnV0dG9uX2Rlc2MYFyAB",
+            "KAkagAEKClBsdWdpblVzZXISDwoHdXNlcl9pZBgBIAEoAxIWCg51c2VyX25h",
+            "bWVfc2hvdxgCIAEoCRIRCgl1c2VyX3R5cGUYAyABKAUSEgoKdXNlcl9waG90",
+            "bxgEIAEoCRIiChppc19kb3dubG9hZF9jYXJkX3doaXRldXNlchgFIAEoBWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TbClient.Item.ItemReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content), global::TbClient.Post.Common.Content.Parser, new[]{ "Type", "Text", "Link", "Src", "Bsize", "BigSrc", "BigSize", "CdnSrc", "BigCdnSrc", "Imgtype", "C", "VoiceMd5", "DuringTime", "IsSub", "Uid", "Dynamic", "Static", "Width", "Height", "PacketName", "Phonetype", "IsNativeApp", "NativeApp", "EType", "OriginSrc", "BtnType", "OriginSize", "Count", "GraffitiInfo", "HighTogether", "MediaSubtitle", "UrlType", "MemeInfo", "IsLongPic", "ShowOriginalBtn", "CdnSrcActive", "TopicSpecialIcon", "ItemId", "ItemForumName", "TiebaplusInfo", "Item", "PicId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content.Types.NativeApp), global::TbClient.Post.Common.Content.Types.NativeApp.Parser, new[]{ "JumpAnd", "JumpIos", "DownloadAnd", "DownloadIos" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content), global::TbClient.Post.Common.Content.Parser, new[]{ "Type", "Text", "Link", "Src", "Bsize", "BigSrc", "BigSize", "CdnSrc", "BigCdnSrc", "Imgtype", "C", "VoiceMd5", "DuringTime", "IsSub", "Uid", "Dynamic", "Static", "Width", "Height", "PacketName", "Phonetype", "IsNativeApp", "NativeApp", "EType", "OriginSrc", "BtnType", "OriginSize", "Count", "GraffitiInfo", "HighTogether", "MediaSubtitle", "UrlType", "MemeInfo", "IsLongPic", "ShowOriginalBtn", "CdnSrcActive", "TopicSpecialIcon", "ItemId", "ItemForumName", "TiebaplusInfo", "Item", "PicId", "LinkType", "TargetScheme" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content.Types.NativeApp), global::TbClient.Post.Common.Content.Types.NativeApp.Parser, new[]{ "JumpAnd", "JumpIos", "DownloadAnd", "DownloadIos" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content.Types.GraffitiInfo), global::TbClient.Post.Common.Content.Types.GraffitiInfo.Parser, new[]{ "Url", "Gid" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content.Types.TogetherHi), global::TbClient.Post.Common.Content.Types.TogetherHi.Parser, new[]{ "AlbumName", "AlbumId", "StartTime", "EndTime", "Location", "NumSignup", "Potraits", "NumJoin", "PicUrls" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TbClient.Post.Common.Content.Types.MemeInfo), global::TbClient.Post.Common.Content.Types.MemeInfo.Parser, new[]{ "PckId", "PicId", "PicUrl", "Thumbnail", "Width", "Height", "DetailLink" }, null, null, null, null),
@@ -88,6 +89,7 @@ namespace TbClient.Post.Common {
 
   }
   #region Messages
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class Content : pb::IMessage<Content>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -164,6 +166,8 @@ namespace TbClient.Post.Common {
       tiebaplusInfo_ = other.tiebaplusInfo_ != null ? other.tiebaplusInfo_.Clone() : null;
       item_ = other.item_ != null ? other.item_.Clone() : null;
       picId_ = other.picId_;
+      linkType_ = other.linkType_;
+      targetScheme_ = other.targetScheme_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -677,6 +681,30 @@ namespace TbClient.Post.Common {
       }
     }
 
+    /// <summary>Field number for the "link_type" field.</summary>
+    public const int LinkTypeFieldNumber = 43;
+    private int linkType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int LinkType {
+      get { return linkType_; }
+      set {
+        linkType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_scheme" field.</summary>
+    public const int TargetSchemeFieldNumber = 44;
+    private string targetScheme_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TargetScheme {
+      get { return targetScheme_; }
+      set {
+        targetScheme_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -734,6 +762,8 @@ namespace TbClient.Post.Common {
       if (!object.Equals(TiebaplusInfo, other.TiebaplusInfo)) return false;
       if (!object.Equals(Item, other.Item)) return false;
       if (PicId != other.PicId) return false;
+      if (LinkType != other.LinkType) return false;
+      if (TargetScheme != other.TargetScheme) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -783,6 +813,8 @@ namespace TbClient.Post.Common {
       if (tiebaplusInfo_ != null) hash ^= TiebaplusInfo.GetHashCode();
       if (item_ != null) hash ^= Item.GetHashCode();
       if (PicId != 0L) hash ^= PicId.GetHashCode();
+      if (LinkType != 0) hash ^= LinkType.GetHashCode();
+      if (TargetScheme.Length != 0) hash ^= TargetScheme.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -969,6 +1001,14 @@ namespace TbClient.Post.Common {
         output.WriteRawTag(208, 2);
         output.WriteInt64(PicId);
       }
+      if (LinkType != 0) {
+        output.WriteRawTag(216, 2);
+        output.WriteInt32(LinkType);
+      }
+      if (TargetScheme.Length != 0) {
+        output.WriteRawTag(226, 2);
+        output.WriteString(TargetScheme);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1147,6 +1187,14 @@ namespace TbClient.Post.Common {
         output.WriteRawTag(208, 2);
         output.WriteInt64(PicId);
       }
+      if (LinkType != 0) {
+        output.WriteRawTag(216, 2);
+        output.WriteInt32(LinkType);
+      }
+      if (TargetScheme.Length != 0) {
+        output.WriteRawTag(226, 2);
+        output.WriteString(TargetScheme);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1282,6 +1330,12 @@ namespace TbClient.Post.Common {
       }
       if (PicId != 0L) {
         size += 2 + pb::CodedOutputStream.ComputeInt64Size(PicId);
+      }
+      if (LinkType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(LinkType);
+      }
+      if (TargetScheme.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(TargetScheme);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1438,6 +1492,12 @@ namespace TbClient.Post.Common {
       }
       if (other.PicId != 0L) {
         PicId = other.PicId;
+      }
+      if (other.LinkType != 0) {
+        LinkType = other.LinkType;
+      }
+      if (other.TargetScheme.Length != 0) {
+        TargetScheme = other.TargetScheme;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1638,6 +1698,14 @@ namespace TbClient.Post.Common {
           }
           case 336: {
             PicId = input.ReadInt64();
+            break;
+          }
+          case 344: {
+            LinkType = input.ReadInt32();
+            break;
+          }
+          case 354: {
+            TargetScheme = input.ReadString();
             break;
           }
         }
@@ -1841,6 +1909,14 @@ namespace TbClient.Post.Common {
             PicId = input.ReadInt64();
             break;
           }
+          case 344: {
+            LinkType = input.ReadInt32();
+            break;
+          }
+          case 354: {
+            TargetScheme = input.ReadString();
+            break;
+          }
         }
       }
     }
@@ -1851,6 +1927,7 @@ namespace TbClient.Post.Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class NativeApp : pb::IMessage<NativeApp>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
@@ -2151,6 +2228,7 @@ namespace TbClient.Post.Common {
 
       }
 
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class GraffitiInfo : pb::IMessage<GraffitiInfo>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
@@ -2377,6 +2455,7 @@ namespace TbClient.Post.Common {
 
       }
 
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class TogetherHi : pb::IMessage<TogetherHi>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
@@ -2840,6 +2919,7 @@ namespace TbClient.Post.Common {
 
       }
 
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class MemeInfo : pb::IMessage<MemeInfo>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
@@ -3251,6 +3331,7 @@ namespace TbClient.Post.Common {
 
       }
 
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class TiebaPlusInfo : pb::IMessage<TiebaPlusInfo>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
@@ -4266,6 +4347,7 @@ namespace TbClient.Post.Common {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
+          [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
           public sealed partial class PluginUser : pb::IMessage<PluginUser>
           #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               , pb::IBufferMessage

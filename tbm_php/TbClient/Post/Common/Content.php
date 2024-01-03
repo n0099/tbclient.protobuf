@@ -181,6 +181,14 @@ class Content extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 pic_id = 42;</code>
      */
     protected $pic_id = 0;
+    /**
+     * Generated from protobuf field <code>int32 link_type = 43;</code>
+     */
+    protected $link_type = 0;
+    /**
+     * Generated from protobuf field <code>string target_scheme = 44;</code>
+     */
+    protected $target_scheme = '';
 
     /**
      * Constructor.
@@ -230,6 +238,8 @@ class Content extends \Google\Protobuf\Internal\Message
      *     @type \TbClient\Post\Common\Content\TiebaPlusInfo $tiebaplus_info
      *     @type \TbClient\Item\Item $item
      *     @type int|string $pic_id
+     *     @type int $link_type
+     *     @type string $target_scheme
      * }
      */
     public function __construct($data = NULL) {
@@ -1217,6 +1227,50 @@ class Content extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->pic_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 link_type = 43;</code>
+     * @return int
+     */
+    public function getLinkType()
+    {
+        return $this->link_type;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 link_type = 43;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLinkType($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->link_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string target_scheme = 44;</code>
+     * @return string
+     */
+    public function getTargetScheme()
+    {
+        return $this->target_scheme;
+    }
+
+    /**
+     * Generated from protobuf field <code>string target_scheme = 44;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTargetScheme($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->target_scheme = $var;
 
         return $this;
     }

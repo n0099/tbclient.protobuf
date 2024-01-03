@@ -17,8 +17,8 @@ class Content
         \GPBMetadata\Item\Item::initOnce();
         $pool->internalAddGeneratedFile(
             '
-•
-Post/Common/Content.prototbClient.post.common"Ù
+¿
+Post/Common/Content.prototbClient.post.common"ƒ
 Content
 type (
 text (	
@@ -64,7 +64,9 @@ origin_src (	
 item_forum_name\' (	C
 tiebaplus_info( (2+.tbClient.post.common.Content.TiebaPlusInfo!
 item) (2.tbClient.item.Item
-pic_id* ([
+pic_id* (
+	link_type+ (
+target_scheme, (	[
 	NativeApp
 jump_and (	
 jump_ios (	
