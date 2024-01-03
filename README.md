@@ -1,10 +1,10 @@
 # 跨`repo/barnch`索引
 | repo | branch | 意义 |
 |-|-|-|
-| [`tbclient.protobuf`](https://github.com/n0099/tbclient.protobuf)➡️ | [`main`](https://github.com/n0099/tbclient.protobuf/tree/main)🏠➡️ | 作为`repo default branch`<br>存储此前遗留的几个版本的`.java/.proto`文件<br>以及[tbm](https://github.com/n0099/TiebaMonitor)中所使用的部分`.proto`文件及其字段 |
+| [`tbclient.protobuf`](https://github.com/n0099/tbclient.protobuf)➡️ | [`main`](https://github.com/n0099/tbclient.protobuf/tree/main)🏠➡️ | 作为`repo default branch`<br>存储此前遗留的几个版本的`.java/.proto`文件<br>以及[tbm](https://github.com/n0099/open-tbm)中所使用的部分`.proto`文件及其字段 |
 | [`tbclient.protobuf`](https://github.com/n0099/tbclient.protobuf) | [`tbclient`](https://github.com/n0099/tbclient.protobuf/tree/tbclient) | 210 个历史版本中提取的`.java/.proto`文件 |
 | [`open-tbclient`](https://github.com/n0099/open-tbclient) | [`main`](https://github.com/n0099/open-tbclient/tree/main)🏠 | 作为`repo default branch` |
-| [`open-tbclient`](https://github.com/n0099/open-tbclient) | [`src`](https://github.com/n0099/open-tbclient/tree/src) | 260 个历史版本中的所有`.java`文件 |
+| [`open-tbclient`](https://github.com/n0099/open-tbclient) | [`src`](https://github.com/n0099/open-tbclient/tree/src) | 259 个历史版本中的所有`.java`文件 |
 
 # [`branch/main`](https://github.com/n0099/tbclient.protobuf/tree/main)
 ## 从百度贴吧客户端`12.35.1.0`中提取出的所有 protoBuf 定义文件`.proto`
@@ -14,7 +14,7 @@
 | java | [@Starry-OvO](https://github.com/Starry-OvO) 使用 [dex2jar](https://github.com/ThexXTURBOXx/dex2jar) 与 [jd-cli](https://github.com/intoolswetrust/jd-cli) 反编译贴吧客户端 apk 后取出 tbclient 根命名空间下的 `.class` 源码文件 |
 | proto | 使用 `squareWireProtoBufJavaGeneratedClassesDecompiler.php` 将这些<br>通过 [square/wire](https://github.com/square/wire) 生成的 java 类源码转换回 .proto 文件 |
 | interested | 从 `proto` 中遴选出并重新组织目录结构和 namespace 了的部分 .proto 文件 |
-| tbm | 用于项目 https://github.com/n0099/TiebaMonitor 而从 `interested` 中遴选出的部分 .proto 文件 |
+| tbm | 用于项目 https://github.com/n0099/open-tbm 而从 `interested` 中遴选出的部分 .proto 文件 |
 | `protoc.sh <PROTO_PATH> <lang...>` | 将 `<PROTO_PATH>/**/*.proto` 文件codegen为用于 `<lang>` 语言环境的类文件<br>置于 `<PROTO_PATH>_<lang>` 下并打包为 `<PROTO_PATH>_<lang>.7z`<br>依赖于 [protoc](https://github.com/protocolbuffers/protobuf/releases) 和 [7z](https://7-zip.org/download.html) |
 
 # [`branch/tbclient`](https://github.com/n0099/tbclient.protobuf/tree/tbclient)
@@ -97,7 +97,6 @@
 | 6.1.1     | 14-05-24 16:07:02 | 86   | 2   | 🔴  | 🔴  | 🔴  | ✔️  |
 | 6.1.2     | 14-05-29 15:42:14 | 86   | 2   | 🔴  | 🔴  | ✔️  | ⚠️  |
 | 6.1.3     | 14-06-20 13:46:28 | 86   | 2   | 🔴  | 🔴  | ✔️  | ⚠️  |
-| 6.2.0     | 13-07-02 23:54:42 | 0    | 0   | 🔴  | 🔴  | ✔️  | ⚠️  |
 | 6.2.1     | 14-07-10 12:14:48 | 134  | 9   | 🔴  | 🔴  | ✔️  | ⚠️  |
 | 6.2.2     | 14-08-15 16:01:16 | 202  | 19  | 🔴  | 🔴  | ✔️  | ⚠️  |
 | 6.3.2     | 14-08-21 13:25:06 | 202  | 19  | 🔴  | 🔴  | ✔️  | ⚠️  |
