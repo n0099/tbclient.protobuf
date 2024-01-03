@@ -107,4 +107,6 @@ message Content {
     TiebaPlusInfo tiebaplus_info = 40;
     tbClient.item.Item item = 41;
     int64 pic_id = 42;
+    int32 link_type = 43;
+    string target_scheme = 44;
 }

@@ -7,7 +7,7 @@
 | [`open-tbclient`](https://github.com/n0099/open-tbclient) | [`src`](https://github.com/n0099/open-tbclient/tree/src) | 293 个历史版本中的所有`.java`文件 |
 
 # [`branch/main`](https://github.com/n0099/tbclient.protobuf/tree/main)
-## 从百度贴吧客户端`12.35.1.0`中提取出的所有 protoBuf 定义文件`.proto`
+## 从百度贴吧客户端`12.51.7.1`中提取出的所有 protoBuf 定义文件`.proto`
 
 | 路径 | 其文件用途 |
 |-|-|
