@@ -1,0 +1,13 @@
+syntax = "proto3";
+package tbClient.post.common;
+
+message BotReplyContent {
+    string text = 1;
+    message BotReplyUserInfo {
+        string portrait_url = 1;
+        string name = 2;
+        string icon_url = 3;
+    }
+    BotReplyUserInfo user_info = 2;
+    string target_scheme = 3;
+}

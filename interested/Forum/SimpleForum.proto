@@ -1,5 +1,6 @@
 syntax = "proto3";
 package tbClient.forum;
+import "ThemeColorInfo.proto";
 import "Forum/FrsTabInfo.proto";
 import "Forum/DeletedReasonInfo.proto";
 
@@ -28,17 +29,26 @@ message SimpleForum {
     string forum_toutu = 16;
     DeletedReasonInfo deleted_reason_info = 17;
     int32 is_frs_mask = 18;
-    message ThemeColorInfo {
-        message ThemeElement {
-            string common_color = 1;
-            string dark_color = 2;
-            string light_color = 3;
-            string pattern_image = 4;
-            string font_color = 5;
-        };
-        ThemeElement day = 1;
-        ThemeElement night = 2;
-        ThemeElement dark = 3;
-    };
     ThemeColorInfo theme_color = 19;
+    string recommend_tip = 20;
+    repeated string pendants = 21;
+    message ForumShowInfo {
+        string content = 1;
+        message ForumShowInfoTag {
+            string text = 1;
+            ThemeColorInfo text_color = 2;
+            ThemeColorInfo bg_color = 3;
+        }
+        ForumShowInfoTag tag = 2;
+        int64 show_type = 3;
+    }
+    ForumShowInfo show_info = 22;
+    message SpritePBGuide {
+        int64 guide_type = 1;
+        string guide_text = 2;
+        string button_text = 3;
+        string jump_url = 4;
+    }
+    SpritePBGuide sprite_pb_guide = 23;
+    string scheme = 24;
 }

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package tbClient;
+
+message ThemeColorInfo {
+    message ThemeElement {
+        string common_color = 1;
+        string dark_color = 2;
+        string light_color = 3;
+        string pattern_image = 4;
+        string font_color = 5;
+    };
+    ThemeElement day = 1;
+    ThemeElement night = 2;
+    ThemeElement dark = 3;
+};

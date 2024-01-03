@@ -1,0 +1,37 @@
+syntax = "proto3";
+package tbClient.post.common;
+
+import "Post/Common/StyleContentInfo.proto";
+import "Post/Common/BotReplyContent.proto";
+
+message CallRobotEntrance {
+    string ability_type = 1;
+    message AbilityConf {
+        string bot_uk = 1;
+        int32 skill_id = 2;
+    }
+    AbilityConf ability_conf = 2;
+    message StyleConf {
+        string scene = 1;
+        string content = 2;
+        message StyleConfExtra {
+            string first_post_guide = 1;
+            string guide = 2;
+            string bot_name = 3;
+            string bot_portrait = 4;
+            string bot_reply_content = 5;
+            string bot_loading_content = 6;
+            string guide_content = 7;
+            string guide_icon = 8;
+            string bot_loading_toast = 9;
+            string bot_timeout_content = 10;
+            repeated BotReplyContent bot_reply_content_list = 11;
+        }
+        StyleConfExtra android_extra = 3;
+        StyleConfExtra ios_extra = 4;
+        StyleContentInfo day = 5;
+        StyleContentInfo dark = 6;
+    }
+    StyleConf style_conf = 3;
+    int32 skill_id = 4;
+}

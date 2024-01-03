@@ -1,6 +1,7 @@
 syntax = "proto3";
 package tbClient.post;
 import "User.proto";
+import "ThemeColorInfo.proto";
 import "Item/Item.proto";
 import "Post/SubReply.proto";
 import "Post/Common/Content.proto";
@@ -10,6 +11,9 @@ import "Post/Common/Lbs.proto";
 import "Post/Common/Agree.proto";
 import "Post/Common/Zan.proto";
 import "Post/Common/TailInfo.proto";
+import "Post/Common/RobotSkill.proto";
+import "Post/Common/BotReplyContent.proto";
+import "Post/Common/CallRobotEntrance.proto";
 
 message Reply {
     uint64 pid = 1;
@@ -85,4 +89,108 @@ message Reply {
     repeated CardLinkInfo card_link_info = 59;
     CustomFigure custom_figure = 60;
     CustomState custom_state = 61;
+    message FullLengthNovel {
+        string schema = 1;
+        string has_truncate = 2;
+        int32 button_heigh = 3;
+    }
+    FullLengthNovel full_length_novel = 62;
+    string dynamic_url = 63;
+    message ThemeBubble {
+        int32 props_id = 1;
+        int32 package_id = 2;
+        string jump_url = 3;
+    }
+    ThemeBubble bubble_info = 64;
+    string rumor_source_img = 65;
+    message FestivalTipData {
+        string text = 1;
+        string jump_url = 2;
+        ThemeColorInfo background_color = 3;
+        ThemeColorInfo font_color = 4;
+        message IconUrlInfo {
+            string day = 1;
+            string night = 2;
+            string dark = 3;
+        }
+        IconUrlInfo icon_url = 5;
+    }
+    FestivalTipData festival_tip_data = 66;
+    message NovelRecomCard {
+        string icon_url = 1;
+        string title = 2;
+        repeated ThemeColorInfo title_labels = 3;
+        string author = 4;
+        string _abstract = 5;
+        string chapter_name = 6;
+        int64 chapter_time = 7;
+        ThemeColorInfo chapter_new_labels = 8;
+        string button_name = 9;
+        string button_scheme = 10;
+        string card_scheme = 11;
+        string bottom_title = 12;
+        ThemeColorInfo bottom_left_icon = 13;
+        string bottom_scheme = 14;
+        string bottom_guide = 15;
+        ThemeColorInfo bottom_right_icon = 16;
+        ThemeColorInfo chapter_bg_color = 17;
+        ThemeColorInfo chapter_name_color = 18;
+        ThemeColorInfo bottom_right_icon_2 = 19;
+    }
+    NovelRecomCard novel_recom_card = 67;
+    int32 shield_icon = 68;
+    string icon_url = 69;
+    string toutiao_card_tag = 70;
+    string toutiao_card_tag_color = 71;
+    CallRobotEntrance call_robot_entrance = 72;
+    int32 is_bot_reply = 73;
+    string bot_reply_content = 74;
+    repeated BotReplyContent bot_reply_content_list = 75;
+    repeated RobotSkill robot_skill = 76;
+    message AigcFeedbackInfo {
+        string aigc_chat_id = 1;
+        int32 feedback_fold = 2;
+        string feedback_fold_tip = 3;
+        string positive_text = 4;
+        string negative_text = 5;
+        string feedback_url = 6;
+        message Toast {
+            int32 icon_type = 1;
+            message ToastContent {
+                string text = 1;
+                int32 has_color = 2;
+                string text_color = 3;
+                string text_color_dark = 4;
+            }
+            repeated ToastContent content = 2;
+            string url = 3;
+            string background = 4;
+            string icon_url = 5;
+            string icon_url_dark = 6;
+            repeated int32 task_ids = 7;
+            int32 icon_width = 8;
+            int32 icon_height = 9;
+            int32 hud_width = 10;
+        }
+        Toast feedback_toast = 7;
+    }
+    AigcFeedbackInfo aigc_feedback_info = 77;
+    message ChatContent {
+        string scheme = 1;
+        string btn_text = 2;
+        string bot_uk = 3;
+    }
+    ChatContent chat_content = 78;
+    message SpriteMemeInfo {
+        int64 meme_id = 1;
+        string query = 2;
+        string icon = 3;
+        string use_same_guide = 4;
+        string use_same_text = 5;
+    }
+    SpriteMemeInfo sprite_meme_info = 79;
+    message AichatBotCommentCard {
+        string uk = 1;
+    }
+    AichatBotCommentCard aichat_bot_comment_card = 80;
 }

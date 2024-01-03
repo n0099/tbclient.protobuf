@@ -1,0 +1,7 @@
+syntax = "proto3";
+package tbClient.post.common;
+
+message RobotSkill {
+    string robot_uk = 1;
+    repeated int32 skill_ids = 2;
+}

@@ -121,4 +121,21 @@ message User {
         int32 is_background_firstly = 13;
     };
     VirtualImageInfo virtual_image_info = 136;
+    string display_intro = 138;
+    message ThemeTailInUser {
+        string url = 1;
+        string dynamic = 2;
+        string props_id = 3;
+    }
+    ThemeTailInUser theme_tail = 141;
+    message ShakeAdSwitch {
+        int32 is_show = 1;
+        string title = 2;
+        string desc = 3;
+    }
+    ShakeAdSwitch shake_ad_switch = 145;
+    string ios_b_url = 147;
+    int64 pa = 148;
+    int32 enable_new_homepage = 149;
+    string target_scheme = 150;
 }
