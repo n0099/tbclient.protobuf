@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "Personalized/CardFreq.proto";
+import "Personalized/MatchCardInfo.proto";
+import "ThemeColorInfo.proto";
+
+message HeadCardCover {
+    CardFreq freq = 1;
+    ThemeColorInfo card_background = 2;
+    MatchCardInfo match_info = 3;
+}

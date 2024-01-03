@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "FrsPage/TopLiveDataPostList.proto";
+import "YyExt.proto";
+
+message TopLiveData {
+    string title = 1;
+    string cover = 2;
+    string desc = 3;
+    string live_size = 4;
+    int32 jump_type = 5;
+    string jump_url = 6;
+    string flv = 7;
+    string hls = 8;
+    YyExt yy_ext = 9;
+    repeated TopLiveDataPostList post_list = 10;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message TopLiveDataPostList {
+    string nickname = 1;
+    string content = 2;
+    string seq_id = 3;
+}

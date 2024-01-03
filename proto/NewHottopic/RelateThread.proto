@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-import "NewHottopic/TopicThread.proto";
-
-message RelateThread {
-    int32 has_more = 1;
-    repeated TopicThread thread_list = 2;
-}

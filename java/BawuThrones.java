@@ -2,164 +2,130 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class BawuThrones extends Message {
-  public static final String DEFAULT_BAZHU_LEVEL = "";
-  
-  public static final Integer DEFAULT_HAS_SEND_BCAST;
-  
-  public static final Integer DEFAULT_NEWEST_BCAST_PUSHUSER_CNT;
-  
-  public static final Integer DEFAULT_NEWEST_BCAST_PV;
-  
-  public static final Integer DEFAULT_TOTAL_BCAST_CNT;
-  
-  public static final Integer DEFAULT_TOTAL_RECOMMEND_NUM;
-  
-  public static final Integer DEFAULT_USED_BCAST_CNT;
-  
-  public static final Integer DEFAULT_USED_RECOMMEND_NUM;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String bazhu_level;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.INT32)
-  public final Integer has_send_bcast;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.INT32)
-  public final Integer newest_bcast_pushuser_cnt;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.INT32)
-  public final Integer newest_bcast_pv;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.INT32)
-  public final Integer total_bcast_cnt;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer total_recommend_num;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT32)
-  public final Integer used_bcast_cnt;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer used_recommend_num;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_TOTAL_RECOMMEND_NUM = integer;
-    DEFAULT_USED_RECOMMEND_NUM = integer;
-    DEFAULT_USED_BCAST_CNT = integer;
-    DEFAULT_TOTAL_BCAST_CNT = integer;
-    DEFAULT_NEWEST_BCAST_PV = integer;
-    DEFAULT_HAS_SEND_BCAST = integer;
-    DEFAULT_NEWEST_BCAST_PUSHUSER_CNT = integer;
-  }
-  
-  public BawuThrones(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Integer integer2 = paramBuilder.total_recommend_num;
-      if (integer2 == null) {
-        this.total_recommend_num = DEFAULT_TOTAL_RECOMMEND_NUM;
-      } else {
-        this.total_recommend_num = integer2;
-      } 
-      integer2 = paramBuilder.used_recommend_num;
-      if (integer2 == null) {
-        this.used_recommend_num = DEFAULT_USED_RECOMMEND_NUM;
-      } else {
-        this.used_recommend_num = integer2;
-      } 
-      String str = paramBuilder.bazhu_level;
-      if (str == null) {
-        this.bazhu_level = "";
-      } else {
-        this.bazhu_level = str;
-      } 
-      Integer integer1 = paramBuilder.used_bcast_cnt;
-      if (integer1 == null) {
-        this.used_bcast_cnt = DEFAULT_USED_BCAST_CNT;
-      } else {
-        this.used_bcast_cnt = integer1;
-      } 
-      integer1 = paramBuilder.total_bcast_cnt;
-      if (integer1 == null) {
-        this.total_bcast_cnt = DEFAULT_TOTAL_BCAST_CNT;
-      } else {
-        this.total_bcast_cnt = integer1;
-      } 
-      integer1 = paramBuilder.newest_bcast_pv;
-      if (integer1 == null) {
-        this.newest_bcast_pv = DEFAULT_NEWEST_BCAST_PV;
-      } else {
-        this.newest_bcast_pv = integer1;
-      } 
-      integer1 = paramBuilder.has_send_bcast;
-      if (integer1 == null) {
-        this.has_send_bcast = DEFAULT_HAS_SEND_BCAST;
-      } else {
-        this.has_send_bcast = integer1;
-      } 
-      integer = paramBuilder.newest_bcast_pushuser_cnt;
-      if (integer == null) {
-        this.newest_bcast_pushuser_cnt = DEFAULT_NEWEST_BCAST_PUSHUSER_CNT;
-      } else {
-        this.newest_bcast_pushuser_cnt = integer;
-      } 
-    } else {
-      this.total_recommend_num = ((Builder)integer).total_recommend_num;
-      this.used_recommend_num = ((Builder)integer).used_recommend_num;
-      this.bazhu_level = ((Builder)integer).bazhu_level;
-      this.used_bcast_cnt = ((Builder)integer).used_bcast_cnt;
-      this.total_bcast_cnt = ((Builder)integer).total_bcast_cnt;
-      this.newest_bcast_pv = ((Builder)integer).newest_bcast_pv;
-      this.has_send_bcast = ((Builder)integer).has_send_bcast;
-      this.newest_bcast_pushuser_cnt = ((Builder)integer).newest_bcast_pushuser_cnt;
-    } 
-  }
-  
-  public BawuThrones(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<BawuThrones> {
-    public String bazhu_level;
-    
-    public Integer has_send_bcast;
-    
-    public Integer newest_bcast_pushuser_cnt;
-    
-    public Integer newest_bcast_pv;
-    
-    public Integer total_bcast_cnt;
-    
-    public Integer total_recommend_num;
-    
-    public Integer used_bcast_cnt;
-    
-    public Integer used_recommend_num;
-    
-    public Builder() {}
-    
-    public Builder(BawuThrones param1BawuThrones) {
-      super(param1BawuThrones);
-      if (param1BawuThrones == null)
-        return; 
-      this.total_recommend_num = param1BawuThrones.total_recommend_num;
-      this.used_recommend_num = param1BawuThrones.used_recommend_num;
-      this.bazhu_level = param1BawuThrones.bazhu_level;
-      this.used_bcast_cnt = param1BawuThrones.used_bcast_cnt;
-      this.total_bcast_cnt = param1BawuThrones.total_bcast_cnt;
-      this.newest_bcast_pv = param1BawuThrones.newest_bcast_pv;
-      this.has_send_bcast = param1BawuThrones.has_send_bcast;
-      this.newest_bcast_pushuser_cnt = param1BawuThrones.newest_bcast_pushuser_cnt;
+    public static final String DEFAULT_BAZHU_LEVEL = "";
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String bazhu_level;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer has_send_bcast;
+    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    public final Integer newest_bcast_pushuser_cnt;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer newest_bcast_pv;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer total_bcast_cnt;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer total_recommend_num;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer used_bcast_cnt;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer used_recommend_num;
+    public static final Integer DEFAULT_TOTAL_RECOMMEND_NUM = 0;
+    public static final Integer DEFAULT_USED_RECOMMEND_NUM = 0;
+    public static final Integer DEFAULT_USED_BCAST_CNT = 0;
+    public static final Integer DEFAULT_TOTAL_BCAST_CNT = 0;
+    public static final Integer DEFAULT_NEWEST_BCAST_PV = 0;
+    public static final Integer DEFAULT_HAS_SEND_BCAST = 0;
+    public static final Integer DEFAULT_NEWEST_BCAST_PUSHUSER_CNT = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<BawuThrones> {
+        public String bazhu_level;
+        public Integer has_send_bcast;
+        public Integer newest_bcast_pushuser_cnt;
+        public Integer newest_bcast_pv;
+        public Integer total_bcast_cnt;
+        public Integer total_recommend_num;
+        public Integer used_bcast_cnt;
+        public Integer used_recommend_num;
+
+        public Builder() {
+        }
+
+        public Builder(BawuThrones bawuThrones) {
+            super(bawuThrones);
+            if (bawuThrones == null) {
+                return;
+            }
+            this.total_recommend_num = bawuThrones.total_recommend_num;
+            this.used_recommend_num = bawuThrones.used_recommend_num;
+            this.bazhu_level = bawuThrones.bazhu_level;
+            this.used_bcast_cnt = bawuThrones.used_bcast_cnt;
+            this.total_bcast_cnt = bawuThrones.total_bcast_cnt;
+            this.newest_bcast_pv = bawuThrones.newest_bcast_pv;
+            this.has_send_bcast = bawuThrones.has_send_bcast;
+            this.newest_bcast_pushuser_cnt = bawuThrones.newest_bcast_pushuser_cnt;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public BawuThrones build(boolean z) {
+            return new BawuThrones(this, z);
+        }
     }
-    
-    public BawuThrones build(boolean param1Boolean) {
-      return new BawuThrones(this, param1Boolean, null);
+
+    public BawuThrones(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.total_recommend_num;
+            if (num == null) {
+                this.total_recommend_num = DEFAULT_TOTAL_RECOMMEND_NUM;
+            } else {
+                this.total_recommend_num = num;
+            }
+            Integer num2 = builder.used_recommend_num;
+            if (num2 == null) {
+                this.used_recommend_num = DEFAULT_USED_RECOMMEND_NUM;
+            } else {
+                this.used_recommend_num = num2;
+            }
+            String str = builder.bazhu_level;
+            if (str == null) {
+                this.bazhu_level = "";
+            } else {
+                this.bazhu_level = str;
+            }
+            Integer num3 = builder.used_bcast_cnt;
+            if (num3 == null) {
+                this.used_bcast_cnt = DEFAULT_USED_BCAST_CNT;
+            } else {
+                this.used_bcast_cnt = num3;
+            }
+            Integer num4 = builder.total_bcast_cnt;
+            if (num4 == null) {
+                this.total_bcast_cnt = DEFAULT_TOTAL_BCAST_CNT;
+            } else {
+                this.total_bcast_cnt = num4;
+            }
+            Integer num5 = builder.newest_bcast_pv;
+            if (num5 == null) {
+                this.newest_bcast_pv = DEFAULT_NEWEST_BCAST_PV;
+            } else {
+                this.newest_bcast_pv = num5;
+            }
+            Integer num6 = builder.has_send_bcast;
+            if (num6 == null) {
+                this.has_send_bcast = DEFAULT_HAS_SEND_BCAST;
+            } else {
+                this.has_send_bcast = num6;
+            }
+            Integer num7 = builder.newest_bcast_pushuser_cnt;
+            if (num7 == null) {
+                this.newest_bcast_pushuser_cnt = DEFAULT_NEWEST_BCAST_PUSHUSER_CNT;
+                return;
+            } else {
+                this.newest_bcast_pushuser_cnt = num7;
+                return;
+            }
+        }
+        this.total_recommend_num = builder.total_recommend_num;
+        this.used_recommend_num = builder.used_recommend_num;
+        this.bazhu_level = builder.bazhu_level;
+        this.used_bcast_cnt = builder.used_bcast_cnt;
+        this.total_bcast_cnt = builder.total_bcast_cnt;
+        this.newest_bcast_pv = builder.newest_bcast_pv;
+        this.has_send_bcast = builder.has_send_bcast;
+        this.newest_bcast_pushuser_cnt = builder.newest_bcast_pushuser_cnt;
     }
-  }
-  
-  public static class a {}
 }

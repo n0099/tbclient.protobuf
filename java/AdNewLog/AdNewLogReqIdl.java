@@ -2,40 +2,39 @@ package tbclient.AdNewLog;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class AdNewLogReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public AdNewLogReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public AdNewLogReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<AdNewLogReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(AdNewLogReqIdl param1AdNewLogReqIdl) {
-      super(param1AdNewLogReqIdl);
-      if (param1AdNewLogReqIdl == null)
-        return; 
-      this.data = param1AdNewLogReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<AdNewLogReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(AdNewLogReqIdl adNewLogReqIdl) {
+            super(adNewLogReqIdl);
+            if (adNewLogReqIdl == null) {
+                return;
+            }
+            this.data = adNewLogReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public AdNewLogReqIdl build(boolean z) {
+            return new AdNewLogReqIdl(this, z);
+        }
     }
-    
-    public AdNewLogReqIdl build(boolean param1Boolean) {
-      return new AdNewLogReqIdl(this, param1Boolean, null);
+
+    public AdNewLogReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

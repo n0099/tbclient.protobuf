@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "AiChatBotInfo.proto";
+
+message AiChatroomGuide {
+    string guide_text = 1;
+    string new_bot_guide_text = 2;
+    AiChatBotInfo new_bot_info = 3;
+    string title_img = 4;
+    string button_url = 5;
+    string bg_top_animation_url = 6;
+    repeated AiChatBotInfo bot_list = 7;
+    string h5_url = 8;
+    AiChatBotInfo default_bot_info = 9;
+}

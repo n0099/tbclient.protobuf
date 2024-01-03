@@ -2,56 +2,51 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ThemeColorInfo extends Message {
-  @ProtoField(tag = 3)
-  public final ThemeElement dark;
-  
-  @ProtoField(tag = 1)
-  public final ThemeElement day;
-  
-  @ProtoField(tag = 2)
-  public final ThemeElement night;
-  
-  public ThemeColorInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.day = paramBuilder.day;
-      this.night = paramBuilder.night;
-      this.dark = paramBuilder.dark;
-    } else {
-      this.day = paramBuilder.day;
-      this.night = paramBuilder.night;
-      this.dark = paramBuilder.dark;
-    } 
-  }
-  
-  public ThemeColorInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ThemeColorInfo> {
-    public ThemeElement dark;
-    
-    public ThemeElement day;
-    
-    public ThemeElement night;
-    
-    public Builder() {}
-    
-    public Builder(ThemeColorInfo param1ThemeColorInfo) {
-      super(param1ThemeColorInfo);
-      if (param1ThemeColorInfo == null)
-        return; 
-      this.day = param1ThemeColorInfo.day;
-      this.night = param1ThemeColorInfo.night;
-      this.dark = param1ThemeColorInfo.dark;
+    @ProtoField(tag = 3)
+    public final ThemeElement dark;
+    @ProtoField(tag = 1)
+    public final ThemeElement day;
+    @ProtoField(tag = 2)
+    public final ThemeElement night;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ThemeColorInfo> {
+        public ThemeElement dark;
+        public ThemeElement day;
+        public ThemeElement night;
+
+        public Builder() {
+        }
+
+        public Builder(ThemeColorInfo themeColorInfo) {
+            super(themeColorInfo);
+            if (themeColorInfo == null) {
+                return;
+            }
+            this.day = themeColorInfo.day;
+            this.night = themeColorInfo.night;
+            this.dark = themeColorInfo.dark;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ThemeColorInfo build(boolean z) {
+            return new ThemeColorInfo(this, z);
+        }
     }
-    
-    public ThemeColorInfo build(boolean param1Boolean) {
-      return new ThemeColorInfo(this, param1Boolean, null);
+
+    public ThemeColorInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.day = builder.day;
+            this.night = builder.night;
+            this.dark = builder.dark;
+            return;
+        }
+        this.day = builder.day;
+        this.night = builder.night;
+        this.dark = builder.dark;
     }
-  }
-  
-  public static class a {}
 }

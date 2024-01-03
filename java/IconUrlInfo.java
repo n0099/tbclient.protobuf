@@ -2,78 +2,70 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class IconUrlInfo extends Message {
-  public static final String DEFAULT_DARK = "";
-  
-  public static final String DEFAULT_DAY = "";
-  
-  public static final String DEFAULT_NIGHT = "";
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String dark;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String day;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String night;
-  
-  public IconUrlInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.day;
-      if (str1 == null) {
-        this.day = "";
-      } else {
-        this.day = str1;
-      } 
-      str1 = paramBuilder.night;
-      if (str1 == null) {
-        this.night = "";
-      } else {
-        this.night = str1;
-      } 
-      str = paramBuilder.dark;
-      if (str == null) {
-        this.dark = "";
-      } else {
-        this.dark = str;
-      } 
-    } else {
-      this.day = ((Builder)str).day;
-      this.night = ((Builder)str).night;
-      this.dark = ((Builder)str).dark;
-    } 
-  }
-  
-  public IconUrlInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<IconUrlInfo> {
-    public String dark;
-    
-    public String day;
-    
-    public String night;
-    
-    public Builder() {}
-    
-    public Builder(IconUrlInfo param1IconUrlInfo) {
-      super(param1IconUrlInfo);
-      if (param1IconUrlInfo == null)
-        return; 
-      this.day = param1IconUrlInfo.day;
-      this.night = param1IconUrlInfo.night;
-      this.dark = param1IconUrlInfo.dark;
+    public static final String DEFAULT_DARK = "";
+    public static final String DEFAULT_DAY = "";
+    public static final String DEFAULT_NIGHT = "";
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String dark;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String day;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String night;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<IconUrlInfo> {
+        public String dark;
+        public String day;
+        public String night;
+
+        public Builder() {
+        }
+
+        public Builder(IconUrlInfo iconUrlInfo) {
+            super(iconUrlInfo);
+            if (iconUrlInfo == null) {
+                return;
+            }
+            this.day = iconUrlInfo.day;
+            this.night = iconUrlInfo.night;
+            this.dark = iconUrlInfo.dark;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public IconUrlInfo build(boolean z) {
+            return new IconUrlInfo(this, z);
+        }
     }
-    
-    public IconUrlInfo build(boolean param1Boolean) {
-      return new IconUrlInfo(this, param1Boolean, null);
+
+    public IconUrlInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.day;
+            if (str == null) {
+                this.day = "";
+            } else {
+                this.day = str;
+            }
+            String str2 = builder.night;
+            if (str2 == null) {
+                this.night = "";
+            } else {
+                this.night = str2;
+            }
+            String str3 = builder.dark;
+            if (str3 == null) {
+                this.dark = "";
+                return;
+            } else {
+                this.dark = str3;
+                return;
+            }
+        }
+        this.day = builder.day;
+        this.night = builder.night;
+        this.dark = builder.dark;
     }
-  }
-  
-  public static class a {}
 }

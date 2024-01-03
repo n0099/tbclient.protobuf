@@ -2,48 +2,46 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class Ecom extends Message {
-  public static final Integer DEFAULT_IS_SELLER = Integer.valueOf(0);
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-  public final Integer is_seller;
-  
-  public Ecom(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      integer = paramBuilder.is_seller;
-      if (integer == null) {
-        this.is_seller = DEFAULT_IS_SELLER;
-      } else {
-        this.is_seller = integer;
-      } 
-    } else {
-      this.is_seller = ((Builder)integer).is_seller;
-    } 
-  }
-  
-  public Ecom(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<Ecom> {
-    public Integer is_seller;
-    
-    public Builder() {}
-    
-    public Builder(Ecom param1Ecom) {
-      super(param1Ecom);
-      if (param1Ecom == null)
-        return; 
-      this.is_seller = param1Ecom.is_seller;
+    public static final Integer DEFAULT_IS_SELLER = 0;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer is_seller;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<Ecom> {
+        public Integer is_seller;
+
+        public Builder() {
+        }
+
+        public Builder(Ecom ecom) {
+            super(ecom);
+            if (ecom == null) {
+                return;
+            }
+            this.is_seller = ecom.is_seller;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Ecom build(boolean z) {
+            return new Ecom(this, z);
+        }
     }
-    
-    public Ecom build(boolean param1Boolean) {
-      return new Ecom(this, param1Boolean, null);
+
+    public Ecom(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.is_seller;
+            if (num == null) {
+                this.is_seller = DEFAULT_IS_SELLER;
+                return;
+            } else {
+                this.is_seller = num;
+                return;
+            }
+        }
+        this.is_seller = builder.is_seller;
     }
-  }
-  
-  public static class a {}
 }

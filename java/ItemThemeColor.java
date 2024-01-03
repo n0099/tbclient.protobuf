@@ -2,40 +2,39 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ItemThemeColor extends Message {
-  @ProtoField(tag = 1)
-  public final ItemThemeColorElement day;
-  
-  public ItemThemeColor(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.day = paramBuilder.day;
-    } else {
-      this.day = paramBuilder.day;
-    } 
-  }
-  
-  public ItemThemeColor(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ItemThemeColor> {
-    public ItemThemeColorElement day;
-    
-    public Builder() {}
-    
-    public Builder(ItemThemeColor param1ItemThemeColor) {
-      super(param1ItemThemeColor);
-      if (param1ItemThemeColor == null)
-        return; 
-      this.day = param1ItemThemeColor.day;
+    @ProtoField(tag = 1)
+    public final ItemThemeColorElement day;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ItemThemeColor> {
+        public ItemThemeColorElement day;
+
+        public Builder() {
+        }
+
+        public Builder(ItemThemeColor itemThemeColor) {
+            super(itemThemeColor);
+            if (itemThemeColor == null) {
+                return;
+            }
+            this.day = itemThemeColor.day;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ItemThemeColor build(boolean z) {
+            return new ItemThemeColor(this, z);
+        }
     }
-    
-    public ItemThemeColor build(boolean param1Boolean) {
-      return new ItemThemeColor(this, param1Boolean, null);
+
+    public ItemThemeColor(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.day = builder.day;
+        } else {
+            this.day = builder.day;
+        }
     }
-  }
-  
-  public static class a {}
 }

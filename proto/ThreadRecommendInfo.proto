@@ -22,4 +22,6 @@ message ThreadRecommendInfo {
     string jump_icon = 17;
     string jump_text = 18;
     ThemeColorInfo jump_text_color = 19;
+    ThemeColorInfo dot_color = 20;
+    ThemeColorInfo tail_color = 21;
 }

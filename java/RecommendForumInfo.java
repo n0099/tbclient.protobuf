@@ -4,378 +4,394 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class RecommendForumInfo extends Message {
-  public static final String DEFAULT_ABTEST_TAG = "";
-  
-  public static final String DEFAULT_AUTHEN = "";
-  
-  public static final String DEFAULT_AVATAR = "";
-  
-  public static final String DEFAULT_AVATAR_ORIGIN = "";
-  
-  public static final List<PbContent> DEFAULT_CONTENT;
-  
-  public static final String DEFAULT_EXTRA = "";
-  
-  public static final Long DEFAULT_FORUM_ID;
-  
-  public static final String DEFAULT_FORUM_NAME = "";
-  
-  public static final Integer DEFAULT_FORUM_TYPE;
-  
-  public static final String DEFAULT_HOT_TEXT = "";
-  
-  public static final Long DEFAULT_HOT_THREAD_ID;
-  
-  public static final Integer DEFAULT_IS_BRAND_FORUM;
-  
-  public static final Integer DEFAULT_IS_LIKE;
-  
-  public static final Integer DEFAULT_IS_PRIVATE_FORUM;
-  
-  public static final Integer DEFAULT_IS_RECOMMEND_FORUM;
-  
-  public static final String DEFAULT_LV1_NAME = "";
-  
-  public static final String DEFAULT_LV2_NAME = "";
-  
-  public static final Integer DEFAULT_MEMBER_COUNT;
-  
-  public static final String DEFAULT_RECOM_REASON = "";
-  
-  public static final String DEFAULT_SLOGAN = "";
-  
-  public static final String DEFAULT_SOURCE = "";
-  
-  public static final Integer DEFAULT_THREAD_COUNT;
-  
-  @ProtoField(tag = 14, type = Message.Datatype.STRING)
-  public final String abtest_tag;
-  
-  @ProtoField(tag = 10, type = Message.Datatype.STRING)
-  public final String authen;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String avatar;
-  
-  @ProtoField(tag = 20, type = Message.Datatype.STRING)
-  public final String avatar_origin;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 8)
-  public final List<PbContent> content;
-  
-  @ProtoField(tag = 16, type = Message.Datatype.STRING)
-  public final String extra;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT64)
-  public final Long forum_id;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String forum_name;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.UINT32)
-  public final Integer forum_type;
-  
-  @ProtoField(tag = 13, type = Message.Datatype.STRING)
-  public final String hot_text;
-  
-  @ProtoField(tag = 22, type = Message.Datatype.UINT64)
-  public final Long hot_thread_id;
-  
-  @ProtoField(tag = 12, type = Message.Datatype.UINT32)
-  public final Integer is_brand_forum;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.UINT32)
-  public final Integer is_like;
-  
-  @ProtoField(tag = 17, type = Message.Datatype.UINT32)
-  public final Integer is_private_forum;
-  
-  @ProtoField(tag = 23, type = Message.Datatype.INT32)
-  public final Integer is_recommend_forum;
-  
-  @ProtoField(tag = 18, type = Message.Datatype.STRING)
-  public final String lv1_name;
-  
-  @ProtoField(tag = 19, type = Message.Datatype.STRING)
-  public final String lv2_name;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.UINT32)
-  public final Integer member_count;
-  
-  @ProtoField(tag = 11, type = Message.Datatype.STRING)
-  public final String recom_reason;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.STRING)
-  public final String slogan;
-  
-  @ProtoField(tag = 15, type = Message.Datatype.STRING)
-  public final String source;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.UINT32)
-  public final Integer thread_count;
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_FORUM_ID = long_;
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_IS_LIKE = integer;
-    DEFAULT_MEMBER_COUNT = integer;
-    DEFAULT_THREAD_COUNT = integer;
-    DEFAULT_CONTENT = Collections.emptyList();
-    DEFAULT_FORUM_TYPE = integer;
-    DEFAULT_IS_BRAND_FORUM = integer;
-    DEFAULT_IS_PRIVATE_FORUM = integer;
-    DEFAULT_HOT_THREAD_ID = long_;
-    DEFAULT_IS_RECOMMEND_FORUM = integer;
-  }
-  
-  public RecommendForumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      String str6 = paramBuilder.avatar;
-      if (str6 == null) {
-        this.avatar = "";
-      } else {
-        this.avatar = str6;
-      } 
-      Long long_2 = paramBuilder.forum_id;
-      if (long_2 == null) {
-        this.forum_id = DEFAULT_FORUM_ID;
-      } else {
-        this.forum_id = long_2;
-      } 
-      String str5 = paramBuilder.forum_name;
-      if (str5 == null) {
-        this.forum_name = "";
-      } else {
-        this.forum_name = str5;
-      } 
-      Integer integer4 = paramBuilder.is_like;
-      if (integer4 == null) {
-        this.is_like = DEFAULT_IS_LIKE;
-      } else {
-        this.is_like = integer4;
-      } 
-      integer4 = paramBuilder.member_count;
-      if (integer4 == null) {
-        this.member_count = DEFAULT_MEMBER_COUNT;
-      } else {
-        this.member_count = integer4;
-      } 
-      integer4 = paramBuilder.thread_count;
-      if (integer4 == null) {
-        this.thread_count = DEFAULT_THREAD_COUNT;
-      } else {
-        this.thread_count = integer4;
-      } 
-      String str4 = paramBuilder.slogan;
-      if (str4 == null) {
-        this.slogan = "";
-      } else {
-        this.slogan = str4;
-      } 
-      List<PbContent> list = paramBuilder.content;
-      if (list == null) {
-        this.content = DEFAULT_CONTENT;
-      } else {
-        this.content = Message.immutableCopyOf(list);
-      } 
-      Integer integer3 = paramBuilder.forum_type;
-      if (integer3 == null) {
-        this.forum_type = DEFAULT_FORUM_TYPE;
-      } else {
-        this.forum_type = integer3;
-      } 
-      String str3 = paramBuilder.authen;
-      if (str3 == null) {
-        this.authen = "";
-      } else {
-        this.authen = str3;
-      } 
-      str3 = paramBuilder.recom_reason;
-      if (str3 == null) {
-        this.recom_reason = "";
-      } else {
-        this.recom_reason = str3;
-      } 
-      Integer integer2 = paramBuilder.is_brand_forum;
-      if (integer2 == null) {
-        this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
-      } else {
-        this.is_brand_forum = integer2;
-      } 
-      String str2 = paramBuilder.hot_text;
-      if (str2 == null) {
-        this.hot_text = "";
-      } else {
-        this.hot_text = str2;
-      } 
-      str2 = paramBuilder.abtest_tag;
-      if (str2 == null) {
-        this.abtest_tag = "";
-      } else {
-        this.abtest_tag = str2;
-      } 
-      str2 = paramBuilder.source;
-      if (str2 == null) {
-        this.source = "";
-      } else {
-        this.source = str2;
-      } 
-      str2 = paramBuilder.extra;
-      if (str2 == null) {
-        this.extra = "";
-      } else {
-        this.extra = str2;
-      } 
-      Integer integer1 = paramBuilder.is_private_forum;
-      if (integer1 == null) {
-        this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
-      } else {
-        this.is_private_forum = integer1;
-      } 
-      String str1 = paramBuilder.lv1_name;
-      if (str1 == null) {
-        this.lv1_name = "";
-      } else {
-        this.lv1_name = str1;
-      } 
-      str1 = paramBuilder.lv2_name;
-      if (str1 == null) {
-        this.lv2_name = "";
-      } else {
-        this.lv2_name = str1;
-      } 
-      str1 = paramBuilder.avatar_origin;
-      if (str1 == null) {
-        this.avatar_origin = "";
-      } else {
-        this.avatar_origin = str1;
-      } 
-      Long long_1 = paramBuilder.hot_thread_id;
-      if (long_1 == null) {
-        this.hot_thread_id = DEFAULT_HOT_THREAD_ID;
-      } else {
-        this.hot_thread_id = long_1;
-      } 
-      integer = paramBuilder.is_recommend_forum;
-      if (integer == null) {
-        this.is_recommend_forum = DEFAULT_IS_RECOMMEND_FORUM;
-      } else {
-        this.is_recommend_forum = integer;
-      } 
-    } else {
-      this.avatar = ((Builder)integer).avatar;
-      this.forum_id = ((Builder)integer).forum_id;
-      this.forum_name = ((Builder)integer).forum_name;
-      this.is_like = ((Builder)integer).is_like;
-      this.member_count = ((Builder)integer).member_count;
-      this.thread_count = ((Builder)integer).thread_count;
-      this.slogan = ((Builder)integer).slogan;
-      this.content = Message.immutableCopyOf(((Builder)integer).content);
-      this.forum_type = ((Builder)integer).forum_type;
-      this.authen = ((Builder)integer).authen;
-      this.recom_reason = ((Builder)integer).recom_reason;
-      this.is_brand_forum = ((Builder)integer).is_brand_forum;
-      this.hot_text = ((Builder)integer).hot_text;
-      this.abtest_tag = ((Builder)integer).abtest_tag;
-      this.source = ((Builder)integer).source;
-      this.extra = ((Builder)integer).extra;
-      this.is_private_forum = ((Builder)integer).is_private_forum;
-      this.lv1_name = ((Builder)integer).lv1_name;
-      this.lv2_name = ((Builder)integer).lv2_name;
-      this.avatar_origin = ((Builder)integer).avatar_origin;
-      this.hot_thread_id = ((Builder)integer).hot_thread_id;
-      this.is_recommend_forum = ((Builder)integer).is_recommend_forum;
-    } 
-  }
-  
-  public RecommendForumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<RecommendForumInfo> {
-    public String abtest_tag;
-    
-    public String authen;
-    
-    public String avatar;
-    
-    public String avatar_origin;
-    
-    public List<PbContent> content;
-    
-    public String extra;
-    
-    public Long forum_id;
-    
-    public String forum_name;
-    
-    public Integer forum_type;
-    
-    public String hot_text;
-    
-    public Long hot_thread_id;
-    
-    public Integer is_brand_forum;
-    
-    public Integer is_like;
-    
-    public Integer is_private_forum;
-    
-    public Integer is_recommend_forum;
-    
-    public String lv1_name;
-    
-    public String lv2_name;
-    
-    public Integer member_count;
-    
-    public String recom_reason;
-    
-    public String slogan;
-    
-    public String source;
-    
-    public Integer thread_count;
-    
-    public Builder() {}
-    
-    public Builder(RecommendForumInfo param1RecommendForumInfo) {
-      super(param1RecommendForumInfo);
-      if (param1RecommendForumInfo == null)
-        return; 
-      this.avatar = param1RecommendForumInfo.avatar;
-      this.forum_id = param1RecommendForumInfo.forum_id;
-      this.forum_name = param1RecommendForumInfo.forum_name;
-      this.is_like = param1RecommendForumInfo.is_like;
-      this.member_count = param1RecommendForumInfo.member_count;
-      this.thread_count = param1RecommendForumInfo.thread_count;
-      this.slogan = param1RecommendForumInfo.slogan;
-      this.content = Message.copyOf(param1RecommendForumInfo.content);
-      this.forum_type = param1RecommendForumInfo.forum_type;
-      this.authen = param1RecommendForumInfo.authen;
-      this.recom_reason = param1RecommendForumInfo.recom_reason;
-      this.is_brand_forum = param1RecommendForumInfo.is_brand_forum;
-      this.hot_text = param1RecommendForumInfo.hot_text;
-      this.abtest_tag = param1RecommendForumInfo.abtest_tag;
-      this.source = param1RecommendForumInfo.source;
-      this.extra = param1RecommendForumInfo.extra;
-      this.is_private_forum = param1RecommendForumInfo.is_private_forum;
-      this.lv1_name = param1RecommendForumInfo.lv1_name;
-      this.lv2_name = param1RecommendForumInfo.lv2_name;
-      this.avatar_origin = param1RecommendForumInfo.avatar_origin;
-      this.hot_thread_id = param1RecommendForumInfo.hot_thread_id;
-      this.is_recommend_forum = param1RecommendForumInfo.is_recommend_forum;
+    public static final String DEFAULT_ABTEST_TAG = "";
+    public static final String DEFAULT_AUTHEN = "";
+    public static final String DEFAULT_AVATAR = "";
+    public static final String DEFAULT_AVATAR_ORIGIN = "";
+    public static final String DEFAULT_EXTRA = "";
+    public static final String DEFAULT_FIRST_CATEGORY = "";
+    public static final String DEFAULT_FORUM_NAME = "";
+    public static final String DEFAULT_HOT_TEXT = "";
+    public static final String DEFAULT_LV1_NAME = "";
+    public static final String DEFAULT_LV2_NAME = "";
+    public static final String DEFAULT_RECOM_REASON = "";
+    public static final String DEFAULT_SLOGAN = "";
+    public static final String DEFAULT_SOURCE = "";
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    public final String abtest_tag;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String authen;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String avatar;
+    @ProtoField(tag = 20, type = Message.Datatype.STRING)
+    public final String avatar_origin;
+    @ProtoField(tag = 28)
+    public final BlockPopInfo block_pop_info;
+    @ProtoField(label = Message.Label.REPEATED, tag = 8)
+    public final List<PbContent> content;
+    @ProtoField(tag = 27, type = Message.Datatype.UINT32)
+    public final Integer day_thread_num;
+    @ProtoField(tag = 16, type = Message.Datatype.STRING)
+    public final String extra;
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    public final String first_category;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT64)
+    public final Long forum_id;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String forum_name;
+    @ProtoField(tag = 9, type = Message.Datatype.UINT32)
+    public final Integer forum_type;
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    public final Integer has_postpre;
+    @ProtoField(tag = 13, type = Message.Datatype.STRING)
+    public final String hot_text;
+    @ProtoField(tag = 22, type = Message.Datatype.UINT64)
+    public final Long hot_thread_id;
+    @ProtoField(tag = 12, type = Message.Datatype.UINT32)
+    public final Integer is_brand_forum;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+    public final Integer is_like;
+    @ProtoField(tag = 17, type = Message.Datatype.UINT32)
+    public final Integer is_private_forum;
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
+    public final Integer is_recommend_forum;
+    @ProtoField(tag = 30, type = Message.Datatype.INT32)
+    public final Integer level_id;
+    @ProtoField(tag = 18, type = Message.Datatype.STRING)
+    public final String lv1_name;
+    @ProtoField(tag = 19, type = Message.Datatype.STRING)
+    public final String lv2_name;
+    @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+    public final Integer member_count;
+    @ProtoField(tag = 32, type = Message.Datatype.INT32)
+    public final Integer post_num;
+    @ProtoField(tag = 24)
+    public final PostPrefix post_prefix;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String recom_reason;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String slogan;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String source;
+    @ProtoField(label = Message.Label.REPEATED, tag = 26)
+    public final List<FrsTabInfo> tab_info;
+    @ProtoField(tag = 6, type = Message.Datatype.UINT32)
+    public final Integer thread_count;
+    @ProtoField(tag = 31, type = Message.Datatype.UINT32)
+    public final Integer thread_num;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_IS_LIKE = 0;
+    public static final Integer DEFAULT_MEMBER_COUNT = 0;
+    public static final Integer DEFAULT_THREAD_COUNT = 0;
+    public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
+    public static final Integer DEFAULT_FORUM_TYPE = 0;
+    public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
+    public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
+    public static final Long DEFAULT_HOT_THREAD_ID = 0L;
+    public static final Integer DEFAULT_IS_RECOMMEND_FORUM = 0;
+    public static final Integer DEFAULT_HAS_POSTPRE = 0;
+    public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
+    public static final Integer DEFAULT_DAY_THREAD_NUM = 0;
+    public static final Integer DEFAULT_LEVEL_ID = 0;
+    public static final Integer DEFAULT_THREAD_NUM = 0;
+    public static final Integer DEFAULT_POST_NUM = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<RecommendForumInfo> {
+        public String abtest_tag;
+        public String authen;
+        public String avatar;
+        public String avatar_origin;
+        public BlockPopInfo block_pop_info;
+        public List<PbContent> content;
+        public Integer day_thread_num;
+        public String extra;
+        public String first_category;
+        public Long forum_id;
+        public String forum_name;
+        public Integer forum_type;
+        public Integer has_postpre;
+        public String hot_text;
+        public Long hot_thread_id;
+        public Integer is_brand_forum;
+        public Integer is_like;
+        public Integer is_private_forum;
+        public Integer is_recommend_forum;
+        public Integer level_id;
+        public String lv1_name;
+        public String lv2_name;
+        public Integer member_count;
+        public Integer post_num;
+        public PostPrefix post_prefix;
+        public String recom_reason;
+        public String slogan;
+        public String source;
+        public List<FrsTabInfo> tab_info;
+        public Integer thread_count;
+        public Integer thread_num;
+
+        public Builder() {
+        }
+
+        public Builder(RecommendForumInfo recommendForumInfo) {
+            super(recommendForumInfo);
+            if (recommendForumInfo == null) {
+                return;
+            }
+            this.avatar = recommendForumInfo.avatar;
+            this.forum_id = recommendForumInfo.forum_id;
+            this.forum_name = recommendForumInfo.forum_name;
+            this.is_like = recommendForumInfo.is_like;
+            this.member_count = recommendForumInfo.member_count;
+            this.thread_count = recommendForumInfo.thread_count;
+            this.slogan = recommendForumInfo.slogan;
+            this.content = Message.copyOf(recommendForumInfo.content);
+            this.forum_type = recommendForumInfo.forum_type;
+            this.authen = recommendForumInfo.authen;
+            this.recom_reason = recommendForumInfo.recom_reason;
+            this.is_brand_forum = recommendForumInfo.is_brand_forum;
+            this.hot_text = recommendForumInfo.hot_text;
+            this.abtest_tag = recommendForumInfo.abtest_tag;
+            this.source = recommendForumInfo.source;
+            this.extra = recommendForumInfo.extra;
+            this.is_private_forum = recommendForumInfo.is_private_forum;
+            this.lv1_name = recommendForumInfo.lv1_name;
+            this.lv2_name = recommendForumInfo.lv2_name;
+            this.avatar_origin = recommendForumInfo.avatar_origin;
+            this.hot_thread_id = recommendForumInfo.hot_thread_id;
+            this.is_recommend_forum = recommendForumInfo.is_recommend_forum;
+            this.post_prefix = recommendForumInfo.post_prefix;
+            this.has_postpre = recommendForumInfo.has_postpre;
+            this.tab_info = Message.copyOf(recommendForumInfo.tab_info);
+            this.day_thread_num = recommendForumInfo.day_thread_num;
+            this.block_pop_info = recommendForumInfo.block_pop_info;
+            this.first_category = recommendForumInfo.first_category;
+            this.level_id = recommendForumInfo.level_id;
+            this.thread_num = recommendForumInfo.thread_num;
+            this.post_num = recommendForumInfo.post_num;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public RecommendForumInfo build(boolean z) {
+            return new RecommendForumInfo(this, z);
+        }
     }
-    
-    public RecommendForumInfo build(boolean param1Boolean) {
-      return new RecommendForumInfo(this, param1Boolean, null);
+
+    public RecommendForumInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.avatar;
+            if (str == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str;
+            }
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            String str2 = builder.forum_name;
+            if (str2 == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str2;
+            }
+            Integer num = builder.is_like;
+            if (num == null) {
+                this.is_like = DEFAULT_IS_LIKE;
+            } else {
+                this.is_like = num;
+            }
+            Integer num2 = builder.member_count;
+            if (num2 == null) {
+                this.member_count = DEFAULT_MEMBER_COUNT;
+            } else {
+                this.member_count = num2;
+            }
+            Integer num3 = builder.thread_count;
+            if (num3 == null) {
+                this.thread_count = DEFAULT_THREAD_COUNT;
+            } else {
+                this.thread_count = num3;
+            }
+            String str3 = builder.slogan;
+            if (str3 == null) {
+                this.slogan = "";
+            } else {
+                this.slogan = str3;
+            }
+            List<PbContent> list = builder.content;
+            if (list == null) {
+                this.content = DEFAULT_CONTENT;
+            } else {
+                this.content = Message.immutableCopyOf(list);
+            }
+            Integer num4 = builder.forum_type;
+            if (num4 == null) {
+                this.forum_type = DEFAULT_FORUM_TYPE;
+            } else {
+                this.forum_type = num4;
+            }
+            String str4 = builder.authen;
+            if (str4 == null) {
+                this.authen = "";
+            } else {
+                this.authen = str4;
+            }
+            String str5 = builder.recom_reason;
+            if (str5 == null) {
+                this.recom_reason = "";
+            } else {
+                this.recom_reason = str5;
+            }
+            Integer num5 = builder.is_brand_forum;
+            if (num5 == null) {
+                this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
+            } else {
+                this.is_brand_forum = num5;
+            }
+            String str6 = builder.hot_text;
+            if (str6 == null) {
+                this.hot_text = "";
+            } else {
+                this.hot_text = str6;
+            }
+            String str7 = builder.abtest_tag;
+            if (str7 == null) {
+                this.abtest_tag = "";
+            } else {
+                this.abtest_tag = str7;
+            }
+            String str8 = builder.source;
+            if (str8 == null) {
+                this.source = "";
+            } else {
+                this.source = str8;
+            }
+            String str9 = builder.extra;
+            if (str9 == null) {
+                this.extra = "";
+            } else {
+                this.extra = str9;
+            }
+            Integer num6 = builder.is_private_forum;
+            if (num6 == null) {
+                this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
+            } else {
+                this.is_private_forum = num6;
+            }
+            String str10 = builder.lv1_name;
+            if (str10 == null) {
+                this.lv1_name = "";
+            } else {
+                this.lv1_name = str10;
+            }
+            String str11 = builder.lv2_name;
+            if (str11 == null) {
+                this.lv2_name = "";
+            } else {
+                this.lv2_name = str11;
+            }
+            String str12 = builder.avatar_origin;
+            if (str12 == null) {
+                this.avatar_origin = "";
+            } else {
+                this.avatar_origin = str12;
+            }
+            Long l2 = builder.hot_thread_id;
+            if (l2 == null) {
+                this.hot_thread_id = DEFAULT_HOT_THREAD_ID;
+            } else {
+                this.hot_thread_id = l2;
+            }
+            Integer num7 = builder.is_recommend_forum;
+            if (num7 == null) {
+                this.is_recommend_forum = DEFAULT_IS_RECOMMEND_FORUM;
+            } else {
+                this.is_recommend_forum = num7;
+            }
+            this.post_prefix = builder.post_prefix;
+            Integer num8 = builder.has_postpre;
+            if (num8 == null) {
+                this.has_postpre = DEFAULT_HAS_POSTPRE;
+            } else {
+                this.has_postpre = num8;
+            }
+            List<FrsTabInfo> list2 = builder.tab_info;
+            if (list2 == null) {
+                this.tab_info = DEFAULT_TAB_INFO;
+            } else {
+                this.tab_info = Message.immutableCopyOf(list2);
+            }
+            Integer num9 = builder.day_thread_num;
+            if (num9 == null) {
+                this.day_thread_num = DEFAULT_DAY_THREAD_NUM;
+            } else {
+                this.day_thread_num = num9;
+            }
+            this.block_pop_info = builder.block_pop_info;
+            String str13 = builder.first_category;
+            if (str13 == null) {
+                this.first_category = "";
+            } else {
+                this.first_category = str13;
+            }
+            Integer num10 = builder.level_id;
+            if (num10 == null) {
+                this.level_id = DEFAULT_LEVEL_ID;
+            } else {
+                this.level_id = num10;
+            }
+            Integer num11 = builder.thread_num;
+            if (num11 == null) {
+                this.thread_num = DEFAULT_THREAD_NUM;
+            } else {
+                this.thread_num = num11;
+            }
+            Integer num12 = builder.post_num;
+            if (num12 == null) {
+                this.post_num = DEFAULT_POST_NUM;
+                return;
+            } else {
+                this.post_num = num12;
+                return;
+            }
+        }
+        this.avatar = builder.avatar;
+        this.forum_id = builder.forum_id;
+        this.forum_name = builder.forum_name;
+        this.is_like = builder.is_like;
+        this.member_count = builder.member_count;
+        this.thread_count = builder.thread_count;
+        this.slogan = builder.slogan;
+        this.content = Message.immutableCopyOf(builder.content);
+        this.forum_type = builder.forum_type;
+        this.authen = builder.authen;
+        this.recom_reason = builder.recom_reason;
+        this.is_brand_forum = builder.is_brand_forum;
+        this.hot_text = builder.hot_text;
+        this.abtest_tag = builder.abtest_tag;
+        this.source = builder.source;
+        this.extra = builder.extra;
+        this.is_private_forum = builder.is_private_forum;
+        this.lv1_name = builder.lv1_name;
+        this.lv2_name = builder.lv2_name;
+        this.avatar_origin = builder.avatar_origin;
+        this.hot_thread_id = builder.hot_thread_id;
+        this.is_recommend_forum = builder.is_recommend_forum;
+        this.post_prefix = builder.post_prefix;
+        this.has_postpre = builder.has_postpre;
+        this.tab_info = Message.immutableCopyOf(builder.tab_info);
+        this.day_thread_num = builder.day_thread_num;
+        this.block_pop_info = builder.block_pop_info;
+        this.first_category = builder.first_category;
+        this.level_id = builder.level_id;
+        this.thread_num = builder.thread_num;
+        this.post_num = builder.post_num;
     }
-  }
-  
-  public static class a {}
 }

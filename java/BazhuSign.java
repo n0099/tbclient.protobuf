@@ -2,63 +2,58 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class BazhuSign extends Message {
-  public static final String DEFAULT_DESC = "";
-  
-  public static final String DEFAULT_LEVEL = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String desc;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String level;
-  
-  public BazhuSign(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.desc;
-      if (str1 == null) {
-        this.desc = "";
-      } else {
-        this.desc = str1;
-      } 
-      str = paramBuilder.level;
-      if (str == null) {
-        this.level = "";
-      } else {
-        this.level = str;
-      } 
-    } else {
-      this.desc = ((Builder)str).desc;
-      this.level = ((Builder)str).level;
-    } 
-  }
-  
-  public BazhuSign(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<BazhuSign> {
-    public String desc;
-    
-    public String level;
-    
-    public Builder() {}
-    
-    public Builder(BazhuSign param1BazhuSign) {
-      super(param1BazhuSign);
-      if (param1BazhuSign == null)
-        return; 
-      this.desc = param1BazhuSign.desc;
-      this.level = param1BazhuSign.level;
+    public static final String DEFAULT_DESC = "";
+    public static final String DEFAULT_LEVEL = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String desc;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String level;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<BazhuSign> {
+        public String desc;
+        public String level;
+
+        public Builder() {
+        }
+
+        public Builder(BazhuSign bazhuSign) {
+            super(bazhuSign);
+            if (bazhuSign == null) {
+                return;
+            }
+            this.desc = bazhuSign.desc;
+            this.level = bazhuSign.level;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public BazhuSign build(boolean z) {
+            return new BazhuSign(this, z);
+        }
     }
-    
-    public BazhuSign build(boolean param1Boolean) {
-      return new BazhuSign(this, param1Boolean, null);
+
+    public BazhuSign(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.desc;
+            if (str == null) {
+                this.desc = "";
+            } else {
+                this.desc = str;
+            }
+            String str2 = builder.level;
+            if (str2 == null) {
+                this.level = "";
+                return;
+            } else {
+                this.level = str2;
+                return;
+            }
+        }
+        this.desc = builder.desc;
+        this.level = builder.level;
     }
-  }
-  
-  public static class a {}
 }

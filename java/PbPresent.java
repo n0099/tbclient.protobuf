@@ -4,67 +4,58 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class PbPresent extends Message {
-  public static final List<PbPresentList> DEFAULT_LIST;
-  
-  public static final Integer DEFAULT_TOTAL = Integer.valueOf(0);
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 2)
-  public final List<PbPresentList> list;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-  public final Integer total;
-  
-  static {
-    DEFAULT_LIST = Collections.emptyList();
-  }
-  
-  public PbPresent(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<PbPresentList> list;
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.total;
-      if (integer == null) {
-        this.total = DEFAULT_TOTAL;
-      } else {
-        this.total = integer;
-      } 
-      list = paramBuilder.list;
-      if (list == null) {
-        this.list = DEFAULT_LIST;
-      } else {
-        this.list = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this.total = ((Builder)list).total;
-      this.list = Message.immutableCopyOf(((Builder)list).list);
-    } 
-  }
-  
-  public PbPresent(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<PbPresent> {
-    public List<PbPresentList> list;
-    
-    public Integer total;
-    
-    public Builder() {}
-    
-    public Builder(PbPresent param1PbPresent) {
-      super(param1PbPresent);
-      if (param1PbPresent == null)
-        return; 
-      this.total = param1PbPresent.total;
-      this.list = Message.copyOf(param1PbPresent.list);
+    @ProtoField(label = Message.Label.REPEATED, tag = 2)
+    public final List<PbPresentList> list;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer total;
+    public static final Integer DEFAULT_TOTAL = 0;
+    public static final List<PbPresentList> DEFAULT_LIST = Collections.emptyList();
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<PbPresent> {
+        public List<PbPresentList> list;
+        public Integer total;
+
+        public Builder() {
+        }
+
+        public Builder(PbPresent pbPresent) {
+            super(pbPresent);
+            if (pbPresent == null) {
+                return;
+            }
+            this.total = pbPresent.total;
+            this.list = Message.copyOf(pbPresent.list);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public PbPresent build(boolean z) {
+            return new PbPresent(this, z);
+        }
     }
-    
-    public PbPresent build(boolean param1Boolean) {
-      return new PbPresent(this, param1Boolean, null);
+
+    public PbPresent(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.total;
+            if (num == null) {
+                this.total = DEFAULT_TOTAL;
+            } else {
+                this.total = num;
+            }
+            List<PbPresentList> list = builder.list;
+            if (list == null) {
+                this.list = DEFAULT_LIST;
+                return;
+            } else {
+                this.list = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.total = builder.total;
+        this.list = Message.immutableCopyOf(builder.list);
     }
-  }
-  
-  public static class a {}
 }

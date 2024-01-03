@@ -2,212 +2,166 @@ package tbclient.Search;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
-  public static final Integer DEFAULT_AGREE_NUM;
-  
-  public static final Long DEFAULT_APPLY_ID;
-  
-  public static final Integer DEFAULT_FORUM_LEVEL;
-  
-  public static final Boolean DEFAULT_IS_VOTE;
-  
-  public static final String DEFAULT_NAME_SHOW = "";
-  
-  public static final String DEFAULT_PORTRAIT = "";
-  
-  public static final Integer DEFAULT_POST_NUM;
-  
-  public static final Integer DEFAULT_THREAD_NUM;
-  
-  public static final Long DEFAULT_TID;
-  
-  public static final Long DEFAULT_UID;
-  
-  public static final Integer DEFAULT_VOTE_NUM;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.UINT32)
-  public final Integer agree_num;
-  
-  @ProtoField(tag = 10, type = Message.Datatype.INT64)
-  public final Long apply_id;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.INT32)
-  public final Integer forum_level;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.BOOL)
-  public final Boolean is_vote;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String name_show;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String portrait;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.UINT32)
-  public final Integer post_num;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.UINT32)
-  public final Integer thread_num;
-  
-  @ProtoField(tag = 11, type = Message.Datatype.INT64)
-  public final Long tid;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long uid;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.UINT32)
-  public final Integer vote_num;
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_UID = long_;
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_VOTE_NUM = integer;
-    DEFAULT_IS_VOTE = Boolean.FALSE;
-    DEFAULT_FORUM_LEVEL = integer;
-    DEFAULT_AGREE_NUM = integer;
-    DEFAULT_THREAD_NUM = integer;
-    DEFAULT_POST_NUM = integer;
-    DEFAULT_APPLY_ID = long_;
-    DEFAULT_TID = long_;
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Long long_;
-    if (paramBoolean == true) {
-      Long long_2 = paramBuilder.uid;
-      if (long_2 == null) {
-        this.uid = DEFAULT_UID;
-      } else {
-        this.uid = long_2;
-      } 
-      String str = paramBuilder.portrait;
-      if (str == null) {
-        this.portrait = "";
-      } else {
-        this.portrait = str;
-      } 
-      str = paramBuilder.name_show;
-      if (str == null) {
-        this.name_show = "";
-      } else {
-        this.name_show = str;
-      } 
-      Integer integer2 = paramBuilder.vote_num;
-      if (integer2 == null) {
-        this.vote_num = DEFAULT_VOTE_NUM;
-      } else {
-        this.vote_num = integer2;
-      } 
-      Boolean bool = paramBuilder.is_vote;
-      if (bool == null) {
-        this.is_vote = DEFAULT_IS_VOTE;
-      } else {
-        this.is_vote = bool;
-      } 
-      Integer integer1 = paramBuilder.forum_level;
-      if (integer1 == null) {
-        this.forum_level = DEFAULT_FORUM_LEVEL;
-      } else {
-        this.forum_level = integer1;
-      } 
-      integer1 = paramBuilder.agree_num;
-      if (integer1 == null) {
-        this.agree_num = DEFAULT_AGREE_NUM;
-      } else {
-        this.agree_num = integer1;
-      } 
-      integer1 = paramBuilder.thread_num;
-      if (integer1 == null) {
-        this.thread_num = DEFAULT_THREAD_NUM;
-      } else {
-        this.thread_num = integer1;
-      } 
-      integer1 = paramBuilder.post_num;
-      if (integer1 == null) {
-        this.post_num = DEFAULT_POST_NUM;
-      } else {
-        this.post_num = integer1;
-      } 
-      Long long_1 = paramBuilder.apply_id;
-      if (long_1 == null) {
-        this.apply_id = DEFAULT_APPLY_ID;
-      } else {
-        this.apply_id = long_1;
-      } 
-      long_ = paramBuilder.tid;
-      if (long_ == null) {
-        this.tid = DEFAULT_TID;
-      } else {
-        this.tid = long_;
-      } 
-    } else {
-      this.uid = ((Builder)long_).uid;
-      this.portrait = ((Builder)long_).portrait;
-      this.name_show = ((Builder)long_).name_show;
-      this.vote_num = ((Builder)long_).vote_num;
-      this.is_vote = ((Builder)long_).is_vote;
-      this.forum_level = ((Builder)long_).forum_level;
-      this.agree_num = ((Builder)long_).agree_num;
-      this.thread_num = ((Builder)long_).thread_num;
-      this.post_num = ((Builder)long_).post_num;
-      this.apply_id = ((Builder)long_).apply_id;
-      this.tid = ((Builder)long_).tid;
-    } 
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataRes> {
-    public Integer agree_num;
-    
-    public Long apply_id;
-    
-    public Integer forum_level;
-    
-    public Boolean is_vote;
-    
-    public String name_show;
-    
-    public String portrait;
-    
-    public Integer post_num;
-    
-    public Integer thread_num;
-    
-    public Long tid;
-    
-    public Long uid;
-    
-    public Integer vote_num;
-    
-    public Builder() {}
-    
-    public Builder(DataRes param1DataRes) {
-      super(param1DataRes);
-      if (param1DataRes == null)
-        return; 
-      this.uid = param1DataRes.uid;
-      this.portrait = param1DataRes.portrait;
-      this.name_show = param1DataRes.name_show;
-      this.vote_num = param1DataRes.vote_num;
-      this.is_vote = param1DataRes.is_vote;
-      this.forum_level = param1DataRes.forum_level;
-      this.agree_num = param1DataRes.agree_num;
-      this.thread_num = param1DataRes.thread_num;
-      this.post_num = param1DataRes.post_num;
-      this.apply_id = param1DataRes.apply_id;
-      this.tid = param1DataRes.tid;
+    public static final String DEFAULT_NAME_SHOW = "";
+    public static final String DEFAULT_PORTRAIT = "";
+    @ProtoField(tag = 7, type = Message.Datatype.UINT32)
+    public final Integer agree_num;
+    @ProtoField(tag = 10, type = Message.Datatype.INT64)
+    public final Long apply_id;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer forum_level;
+    @ProtoField(tag = 5, type = Message.Datatype.BOOL)
+    public final Boolean is_vote;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String name_show;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String portrait;
+    @ProtoField(tag = 9, type = Message.Datatype.UINT32)
+    public final Integer post_num;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT32)
+    public final Integer thread_num;
+    @ProtoField(tag = 11, type = Message.Datatype.INT64)
+    public final Long tid;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long uid;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+    public final Integer vote_num;
+    public static final Long DEFAULT_UID = 0L;
+    public static final Integer DEFAULT_VOTE_NUM = 0;
+    public static final Boolean DEFAULT_IS_VOTE = Boolean.FALSE;
+    public static final Integer DEFAULT_FORUM_LEVEL = 0;
+    public static final Integer DEFAULT_AGREE_NUM = 0;
+    public static final Integer DEFAULT_THREAD_NUM = 0;
+    public static final Integer DEFAULT_POST_NUM = 0;
+    public static final Long DEFAULT_APPLY_ID = 0L;
+    public static final Long DEFAULT_TID = 0L;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataRes> {
+        public Integer agree_num;
+        public Long apply_id;
+        public Integer forum_level;
+        public Boolean is_vote;
+        public String name_show;
+        public String portrait;
+        public Integer post_num;
+        public Integer thread_num;
+        public Long tid;
+        public Long uid;
+        public Integer vote_num;
+
+        public Builder() {
+        }
+
+        public Builder(DataRes dataRes) {
+            super(dataRes);
+            if (dataRes == null) {
+                return;
+            }
+            this.uid = dataRes.uid;
+            this.portrait = dataRes.portrait;
+            this.name_show = dataRes.name_show;
+            this.vote_num = dataRes.vote_num;
+            this.is_vote = dataRes.is_vote;
+            this.forum_level = dataRes.forum_level;
+            this.agree_num = dataRes.agree_num;
+            this.thread_num = dataRes.thread_num;
+            this.post_num = dataRes.post_num;
+            this.apply_id = dataRes.apply_id;
+            this.tid = dataRes.tid;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataRes build(boolean z) {
+            return new DataRes(this, z);
+        }
     }
-    
-    public DataRes build(boolean param1Boolean) {
-      return new DataRes(this, param1Boolean, null);
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.uid;
+            if (l == null) {
+                this.uid = DEFAULT_UID;
+            } else {
+                this.uid = l;
+            }
+            String str = builder.portrait;
+            if (str == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = str;
+            }
+            String str2 = builder.name_show;
+            if (str2 == null) {
+                this.name_show = "";
+            } else {
+                this.name_show = str2;
+            }
+            Integer num = builder.vote_num;
+            if (num == null) {
+                this.vote_num = DEFAULT_VOTE_NUM;
+            } else {
+                this.vote_num = num;
+            }
+            Boolean bool = builder.is_vote;
+            if (bool == null) {
+                this.is_vote = DEFAULT_IS_VOTE;
+            } else {
+                this.is_vote = bool;
+            }
+            Integer num2 = builder.forum_level;
+            if (num2 == null) {
+                this.forum_level = DEFAULT_FORUM_LEVEL;
+            } else {
+                this.forum_level = num2;
+            }
+            Integer num3 = builder.agree_num;
+            if (num3 == null) {
+                this.agree_num = DEFAULT_AGREE_NUM;
+            } else {
+                this.agree_num = num3;
+            }
+            Integer num4 = builder.thread_num;
+            if (num4 == null) {
+                this.thread_num = DEFAULT_THREAD_NUM;
+            } else {
+                this.thread_num = num4;
+            }
+            Integer num5 = builder.post_num;
+            if (num5 == null) {
+                this.post_num = DEFAULT_POST_NUM;
+            } else {
+                this.post_num = num5;
+            }
+            Long l2 = builder.apply_id;
+            if (l2 == null) {
+                this.apply_id = DEFAULT_APPLY_ID;
+            } else {
+                this.apply_id = l2;
+            }
+            Long l3 = builder.tid;
+            if (l3 == null) {
+                this.tid = DEFAULT_TID;
+                return;
+            } else {
+                this.tid = l3;
+                return;
+            }
+        }
+        this.uid = builder.uid;
+        this.portrait = builder.portrait;
+        this.name_show = builder.name_show;
+        this.vote_num = builder.vote_num;
+        this.is_vote = builder.is_vote;
+        this.forum_level = builder.forum_level;
+        this.agree_num = builder.agree_num;
+        this.thread_num = builder.thread_num;
+        this.post_num = builder.post_num;
+        this.apply_id = builder.apply_id;
+        this.tid = builder.tid;
     }
-  }
-  
-  public static class a {}
 }

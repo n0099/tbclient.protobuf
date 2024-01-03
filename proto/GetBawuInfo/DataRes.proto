@@ -1,10 +1,12 @@
 syntax = "proto3";
 
 import "BawuTeam.proto";
+import "Feedback.proto";
 import "ManagerApplyInfo.proto";
 
 message DataRes {
     BawuTeam bawu_team_info = 1;
     ManagerApplyInfo manager_apply_info = 2;
     int32 is_private_forum = 3;
+    Feedback manager_complain_info = 4;
 }

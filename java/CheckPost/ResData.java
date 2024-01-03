@@ -2,116 +2,94 @@ package tbclient.CheckPost;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ResData extends Message {
-  public static final String DEFAULT_FNAME = "";
-  
-  public static final Long DEFAULT_FORUMID;
-  
-  public static final Long DEFAULT_POSTSTATE;
-  
-  public static final Long DEFAULT_QUOTEID;
-  
-  public static final Long DEFAULT_REPOSTID;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String fname;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT64)
-  public final Long forumId;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT64)
-  public final Long postState;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT64)
-  public final Long quoteId;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.UINT64)
-  public final Long repostId;
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_POSTSTATE = long_;
-    DEFAULT_FORUMID = long_;
-    DEFAULT_QUOTEID = long_;
-    DEFAULT_REPOSTID = long_;
-  }
-  
-  public ResData(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.postState;
-      if (long_ == null) {
-        this.postState = DEFAULT_POSTSTATE;
-      } else {
-        this.postState = long_;
-      } 
-      long_ = paramBuilder.forumId;
-      if (long_ == null) {
-        this.forumId = DEFAULT_FORUMID;
-      } else {
-        this.forumId = long_;
-      } 
-      long_ = paramBuilder.quoteId;
-      if (long_ == null) {
-        this.quoteId = DEFAULT_QUOTEID;
-      } else {
-        this.quoteId = long_;
-      } 
-      long_ = paramBuilder.repostId;
-      if (long_ == null) {
-        this.repostId = DEFAULT_REPOSTID;
-      } else {
-        this.repostId = long_;
-      } 
-      str = paramBuilder.fname;
-      if (str == null) {
-        this.fname = "";
-      } else {
-        this.fname = str;
-      } 
-    } else {
-      this.postState = ((Builder)str).postState;
-      this.forumId = ((Builder)str).forumId;
-      this.quoteId = ((Builder)str).quoteId;
-      this.repostId = ((Builder)str).repostId;
-      this.fname = ((Builder)str).fname;
-    } 
-  }
-  
-  public ResData(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ResData> {
-    public String fname;
-    
-    public Long forumId;
-    
-    public Long postState;
-    
-    public Long quoteId;
-    
-    public Long repostId;
-    
-    public Builder() {}
-    
-    public Builder(ResData param1ResData) {
-      super(param1ResData);
-      if (param1ResData == null)
-        return; 
-      this.postState = param1ResData.postState;
-      this.forumId = param1ResData.forumId;
-      this.quoteId = param1ResData.quoteId;
-      this.repostId = param1ResData.repostId;
-      this.fname = param1ResData.fname;
+    public static final String DEFAULT_FNAME = "";
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String fname;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT64)
+    public final Long forumId;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long postState;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT64)
+    public final Long quoteId;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT64)
+    public final Long repostId;
+    public static final Long DEFAULT_POSTSTATE = 0L;
+    public static final Long DEFAULT_FORUMID = 0L;
+    public static final Long DEFAULT_QUOTEID = 0L;
+    public static final Long DEFAULT_REPOSTID = 0L;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ResData> {
+        public String fname;
+        public Long forumId;
+        public Long postState;
+        public Long quoteId;
+        public Long repostId;
+
+        public Builder() {
+        }
+
+        public Builder(ResData resData) {
+            super(resData);
+            if (resData == null) {
+                return;
+            }
+            this.postState = resData.postState;
+            this.forumId = resData.forumId;
+            this.quoteId = resData.quoteId;
+            this.repostId = resData.repostId;
+            this.fname = resData.fname;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ResData build(boolean z) {
+            return new ResData(this, z);
+        }
     }
-    
-    public ResData build(boolean param1Boolean) {
-      return new ResData(this, param1Boolean, null);
+
+    public ResData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.postState;
+            if (l == null) {
+                this.postState = DEFAULT_POSTSTATE;
+            } else {
+                this.postState = l;
+            }
+            Long l2 = builder.forumId;
+            if (l2 == null) {
+                this.forumId = DEFAULT_FORUMID;
+            } else {
+                this.forumId = l2;
+            }
+            Long l3 = builder.quoteId;
+            if (l3 == null) {
+                this.quoteId = DEFAULT_QUOTEID;
+            } else {
+                this.quoteId = l3;
+            }
+            Long l4 = builder.repostId;
+            if (l4 == null) {
+                this.repostId = DEFAULT_REPOSTID;
+            } else {
+                this.repostId = l4;
+            }
+            String str = builder.fname;
+            if (str == null) {
+                this.fname = "";
+                return;
+            } else {
+                this.fname = str;
+                return;
+            }
+        }
+        this.postState = builder.postState;
+        this.forumId = builder.forumId;
+        this.quoteId = builder.quoteId;
+        this.repostId = builder.repostId;
+        this.fname = builder.fname;
     }
-  }
-  
-  public static class a {}
 }

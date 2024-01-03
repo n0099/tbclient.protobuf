@@ -2,78 +2,70 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class Feedback extends Message {
-  public static final String DEFAULT_ICON = "";
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  public static final String DEFAULT_URL = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String icon;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String title;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String url;
-  
-  public Feedback(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.icon;
-      if (str1 == null) {
-        this.icon = "";
-      } else {
-        this.icon = str1;
-      } 
-      str1 = paramBuilder.title;
-      if (str1 == null) {
-        this.title = "";
-      } else {
-        this.title = str1;
-      } 
-      str = paramBuilder.url;
-      if (str == null) {
-        this.url = "";
-      } else {
-        this.url = str;
-      } 
-    } else {
-      this.icon = ((Builder)str).icon;
-      this.title = ((Builder)str).title;
-      this.url = ((Builder)str).url;
-    } 
-  }
-  
-  public Feedback(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<Feedback> {
-    public String icon;
-    
-    public String title;
-    
-    public String url;
-    
-    public Builder() {}
-    
-    public Builder(Feedback param1Feedback) {
-      super(param1Feedback);
-      if (param1Feedback == null)
-        return; 
-      this.icon = param1Feedback.icon;
-      this.title = param1Feedback.title;
-      this.url = param1Feedback.url;
+    public static final String DEFAULT_ICON = "";
+    public static final String DEFAULT_TITLE = "";
+    public static final String DEFAULT_URL = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String icon;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String title;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String url;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<Feedback> {
+        public String icon;
+        public String title;
+        public String url;
+
+        public Builder() {
+        }
+
+        public Builder(Feedback feedback) {
+            super(feedback);
+            if (feedback == null) {
+                return;
+            }
+            this.icon = feedback.icon;
+            this.title = feedback.title;
+            this.url = feedback.url;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Feedback build(boolean z) {
+            return new Feedback(this, z);
+        }
     }
-    
-    public Feedback build(boolean param1Boolean) {
-      return new Feedback(this, param1Boolean, null);
+
+    public Feedback(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.icon;
+            if (str == null) {
+                this.icon = "";
+            } else {
+                this.icon = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            String str3 = builder.url;
+            if (str3 == null) {
+                this.url = "";
+                return;
+            } else {
+                this.url = str3;
+                return;
+            }
+        }
+        this.icon = builder.icon;
+        this.title = builder.title;
+        this.url = builder.url;
     }
-  }
-  
-  public static class a {}
 }

@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "GameInfo.proto";
-import "GetGameDetail/RankInfo.proto";
-
-message DataRes {
-    GameInfo game_info = 1;
-    RankInfo rank_info = 2;
-}

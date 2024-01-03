@@ -2,40 +2,39 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class FloatingIcon extends Message {
-  @ProtoField(tag = 1)
-  public final FloatingIconItem pbpage;
-  
-  public FloatingIcon(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.pbpage = paramBuilder.pbpage;
-    } else {
-      this.pbpage = paramBuilder.pbpage;
-    } 
-  }
-  
-  public FloatingIcon(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<FloatingIcon> {
-    public FloatingIconItem pbpage;
-    
-    public Builder() {}
-    
-    public Builder(FloatingIcon param1FloatingIcon) {
-      super(param1FloatingIcon);
-      if (param1FloatingIcon == null)
-        return; 
-      this.pbpage = param1FloatingIcon.pbpage;
+    @ProtoField(tag = 1)
+    public final FloatingIconItem pbpage;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<FloatingIcon> {
+        public FloatingIconItem pbpage;
+
+        public Builder() {
+        }
+
+        public Builder(FloatingIcon floatingIcon) {
+            super(floatingIcon);
+            if (floatingIcon == null) {
+                return;
+            }
+            this.pbpage = floatingIcon.pbpage;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public FloatingIcon build(boolean z) {
+            return new FloatingIcon(this, z);
+        }
     }
-    
-    public FloatingIcon build(boolean param1Boolean) {
-      return new FloatingIcon(this, param1Boolean, null);
+
+    public FloatingIcon(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.pbpage = builder.pbpage;
+        } else {
+            this.pbpage = builder.pbpage;
+        }
     }
-  }
-  
-  public static class a {}
 }

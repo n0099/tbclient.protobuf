@@ -2,40 +2,39 @@ package tbclient.GetBigday;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GetBigdayReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public GetBigdayReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GetBigdayReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetBigdayReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(GetBigdayReqIdl param1GetBigdayReqIdl) {
-      super(param1GetBigdayReqIdl);
-      if (param1GetBigdayReqIdl == null)
-        return; 
-      this.data = param1GetBigdayReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetBigdayReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(GetBigdayReqIdl getBigdayReqIdl) {
+            super(getBigdayReqIdl);
+            if (getBigdayReqIdl == null) {
+                return;
+            }
+            this.data = getBigdayReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetBigdayReqIdl build(boolean z) {
+            return new GetBigdayReqIdl(this, z);
+        }
     }
-    
-    public GetBigdayReqIdl build(boolean param1Boolean) {
-      return new GetBigdayReqIdl(this, param1Boolean, null);
+
+    public GetBigdayReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

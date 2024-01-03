@@ -2,40 +2,39 @@ package tbclient.DeleteFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class DeleteFriendReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final ReqData data;
-  
-  public DeleteFriendReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public DeleteFriendReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DeleteFriendReqIdl> {
-    public ReqData data;
-    
-    public Builder() {}
-    
-    public Builder(DeleteFriendReqIdl param1DeleteFriendReqIdl) {
-      super(param1DeleteFriendReqIdl);
-      if (param1DeleteFriendReqIdl == null)
-        return; 
-      this.data = param1DeleteFriendReqIdl.data;
+    @ProtoField(tag = 1)
+    public final ReqData data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DeleteFriendReqIdl> {
+        public ReqData data;
+
+        public Builder() {
+        }
+
+        public Builder(DeleteFriendReqIdl deleteFriendReqIdl) {
+            super(deleteFriendReqIdl);
+            if (deleteFriendReqIdl == null) {
+                return;
+            }
+            this.data = deleteFriendReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DeleteFriendReqIdl build(boolean z) {
+            return new DeleteFriendReqIdl(this, z);
+        }
     }
-    
-    public DeleteFriendReqIdl build(boolean param1Boolean) {
-      return new DeleteFriendReqIdl(this, param1Boolean, null);
+
+    public DeleteFriendReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

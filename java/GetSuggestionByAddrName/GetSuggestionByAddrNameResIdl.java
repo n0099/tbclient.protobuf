@@ -3,48 +3,45 @@ package tbclient.GetSuggestionByAddrName;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class GetSuggestionByAddrNameResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public GetSuggestionByAddrNameResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GetSuggestionByAddrNameResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetSuggestionByAddrNameResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(GetSuggestionByAddrNameResIdl param1GetSuggestionByAddrNameResIdl) {
-      super(param1GetSuggestionByAddrNameResIdl);
-      if (param1GetSuggestionByAddrNameResIdl == null)
-        return; 
-      this.error = param1GetSuggestionByAddrNameResIdl.error;
-      this.data = param1GetSuggestionByAddrNameResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetSuggestionByAddrNameResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(GetSuggestionByAddrNameResIdl getSuggestionByAddrNameResIdl) {
+            super(getSuggestionByAddrNameResIdl);
+            if (getSuggestionByAddrNameResIdl == null) {
+                return;
+            }
+            this.error = getSuggestionByAddrNameResIdl.error;
+            this.data = getSuggestionByAddrNameResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetSuggestionByAddrNameResIdl build(boolean z) {
+            return new GetSuggestionByAddrNameResIdl(this, z);
+        }
     }
-    
-    public GetSuggestionByAddrNameResIdl build(boolean param1Boolean) {
-      return new GetSuggestionByAddrNameResIdl(this, param1Boolean, null);
+
+    public GetSuggestionByAddrNameResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

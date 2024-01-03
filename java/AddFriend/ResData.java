@@ -2,63 +2,58 @@ package tbclient.AddFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ResData extends Message {
-  public static final Long DEFAULT_FRIEND_ID = Long.valueOf(0L);
-  
-  public static final String DEFAULT_MESSAGE = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long friend_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String message;
-  
-  public ResData(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.friend_id;
-      if (long_ == null) {
-        this.friend_id = DEFAULT_FRIEND_ID;
-      } else {
-        this.friend_id = long_;
-      } 
-      str = paramBuilder.message;
-      if (str == null) {
-        this.message = "";
-      } else {
-        this.message = str;
-      } 
-    } else {
-      this.friend_id = ((Builder)str).friend_id;
-      this.message = ((Builder)str).message;
-    } 
-  }
-  
-  public ResData(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ResData> {
-    public Long friend_id;
-    
-    public String message;
-    
-    public Builder() {}
-    
-    public Builder(ResData param1ResData) {
-      super(param1ResData);
-      if (param1ResData == null)
-        return; 
-      this.friend_id = param1ResData.friend_id;
-      this.message = param1ResData.message;
+    public static final Long DEFAULT_FRIEND_ID = 0L;
+    public static final String DEFAULT_MESSAGE = "";
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long friend_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String message;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ResData> {
+        public Long friend_id;
+        public String message;
+
+        public Builder() {
+        }
+
+        public Builder(ResData resData) {
+            super(resData);
+            if (resData == null) {
+                return;
+            }
+            this.friend_id = resData.friend_id;
+            this.message = resData.message;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ResData build(boolean z) {
+            return new ResData(this, z);
+        }
     }
-    
-    public ResData build(boolean param1Boolean) {
-      return new ResData(this, param1Boolean, null);
+
+    public ResData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.friend_id;
+            if (l == null) {
+                this.friend_id = DEFAULT_FRIEND_ID;
+            } else {
+                this.friend_id = l;
+            }
+            String str = builder.message;
+            if (str == null) {
+                this.message = "";
+                return;
+            } else {
+                this.message = str;
+                return;
+            }
+        }
+        this.friend_id = builder.friend_id;
+        this.message = builder.message;
     }
-  }
-  
-  public static class a {}
 }

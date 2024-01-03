@@ -2,131 +2,106 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class SdkTopicThread extends Message {
-  public static final Integer DEFAULT_NEED_TOPIC;
-  
-  public static final String DEFAULT_PIC_URL = "";
-  
-  public static final Long DEFAULT_POST_NUM;
-  
-  public static final Long DEFAULT_TID;
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  public static final Long DEFAULT_ZAN_NUM;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.INT32)
-  public final Integer need_topic;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String pic_url;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT64)
-  public final Long post_num;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.UINT64)
-  public final Long tid;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String title;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.UINT64)
-  public final Long zan_num;
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_POST_NUM = long_;
-    DEFAULT_ZAN_NUM = long_;
-    DEFAULT_TID = long_;
-    DEFAULT_NEED_TOPIC = Integer.valueOf(0);
-  }
-  
-  public SdkTopicThread(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      String str = paramBuilder.pic_url;
-      if (str == null) {
-        this.pic_url = "";
-      } else {
-        this.pic_url = str;
-      } 
-      str = paramBuilder.title;
-      if (str == null) {
-        this.title = "";
-      } else {
-        this.title = str;
-      } 
-      Long long_ = paramBuilder.post_num;
-      if (long_ == null) {
-        this.post_num = DEFAULT_POST_NUM;
-      } else {
-        this.post_num = long_;
-      } 
-      long_ = paramBuilder.zan_num;
-      if (long_ == null) {
-        this.zan_num = DEFAULT_ZAN_NUM;
-      } else {
-        this.zan_num = long_;
-      } 
-      long_ = paramBuilder.tid;
-      if (long_ == null) {
-        this.tid = DEFAULT_TID;
-      } else {
-        this.tid = long_;
-      } 
-      integer = paramBuilder.need_topic;
-      if (integer == null) {
-        this.need_topic = DEFAULT_NEED_TOPIC;
-      } else {
-        this.need_topic = integer;
-      } 
-    } else {
-      this.pic_url = ((Builder)integer).pic_url;
-      this.title = ((Builder)integer).title;
-      this.post_num = ((Builder)integer).post_num;
-      this.zan_num = ((Builder)integer).zan_num;
-      this.tid = ((Builder)integer).tid;
-      this.need_topic = ((Builder)integer).need_topic;
-    } 
-  }
-  
-  public SdkTopicThread(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<SdkTopicThread> {
-    public Integer need_topic;
-    
-    public String pic_url;
-    
-    public Long post_num;
-    
-    public Long tid;
-    
-    public String title;
-    
-    public Long zan_num;
-    
-    public Builder() {}
-    
-    public Builder(SdkTopicThread param1SdkTopicThread) {
-      super(param1SdkTopicThread);
-      if (param1SdkTopicThread == null)
-        return; 
-      this.pic_url = param1SdkTopicThread.pic_url;
-      this.title = param1SdkTopicThread.title;
-      this.post_num = param1SdkTopicThread.post_num;
-      this.zan_num = param1SdkTopicThread.zan_num;
-      this.tid = param1SdkTopicThread.tid;
-      this.need_topic = param1SdkTopicThread.need_topic;
+    public static final String DEFAULT_PIC_URL = "";
+    public static final String DEFAULT_TITLE = "";
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer need_topic;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String pic_url;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT64)
+    public final Long post_num;
+    @ProtoField(tag = 5, type = Message.Datatype.UINT64)
+    public final Long tid;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String title;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT64)
+    public final Long zan_num;
+    public static final Long DEFAULT_POST_NUM = 0L;
+    public static final Long DEFAULT_ZAN_NUM = 0L;
+    public static final Long DEFAULT_TID = 0L;
+    public static final Integer DEFAULT_NEED_TOPIC = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<SdkTopicThread> {
+        public Integer need_topic;
+        public String pic_url;
+        public Long post_num;
+        public Long tid;
+        public String title;
+        public Long zan_num;
+
+        public Builder() {
+        }
+
+        public Builder(SdkTopicThread sdkTopicThread) {
+            super(sdkTopicThread);
+            if (sdkTopicThread == null) {
+                return;
+            }
+            this.pic_url = sdkTopicThread.pic_url;
+            this.title = sdkTopicThread.title;
+            this.post_num = sdkTopicThread.post_num;
+            this.zan_num = sdkTopicThread.zan_num;
+            this.tid = sdkTopicThread.tid;
+            this.need_topic = sdkTopicThread.need_topic;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public SdkTopicThread build(boolean z) {
+            return new SdkTopicThread(this, z);
+        }
     }
-    
-    public SdkTopicThread build(boolean param1Boolean) {
-      return new SdkTopicThread(this, param1Boolean, null);
+
+    public SdkTopicThread(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.pic_url;
+            if (str == null) {
+                this.pic_url = "";
+            } else {
+                this.pic_url = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            Long l = builder.post_num;
+            if (l == null) {
+                this.post_num = DEFAULT_POST_NUM;
+            } else {
+                this.post_num = l;
+            }
+            Long l2 = builder.zan_num;
+            if (l2 == null) {
+                this.zan_num = DEFAULT_ZAN_NUM;
+            } else {
+                this.zan_num = l2;
+            }
+            Long l3 = builder.tid;
+            if (l3 == null) {
+                this.tid = DEFAULT_TID;
+            } else {
+                this.tid = l3;
+            }
+            Integer num = builder.need_topic;
+            if (num == null) {
+                this.need_topic = DEFAULT_NEED_TOPIC;
+                return;
+            } else {
+                this.need_topic = num;
+                return;
+            }
+        }
+        this.pic_url = builder.pic_url;
+        this.title = builder.title;
+        this.post_num = builder.post_num;
+        this.zan_num = builder.zan_num;
+        this.tid = builder.tid;
+        this.need_topic = builder.need_topic;
     }
-  }
-  
-  public static class a {}
 }

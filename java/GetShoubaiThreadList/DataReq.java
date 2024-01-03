@@ -3,93 +3,80 @@ package tbclient.GetShoubaiThreadList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Long DEFAULT_CURSOR;
-  
-  public static final Integer DEFAULT_PAGE_SIZE;
-  
-  public static final Long DEFAULT_UID;
-  
-  @ProtoField(tag = 1)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT64)
-  public final Long cursor;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT32)
-  public final Integer page_size;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT64)
-  public final Long uid;
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_UID = long_;
-    DEFAULT_CURSOR = long_;
-    DEFAULT_PAGE_SIZE = Integer.valueOf(0);
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      Long long_ = paramBuilder.uid;
-      if (long_ == null) {
-        this.uid = DEFAULT_UID;
-      } else {
-        this.uid = long_;
-      } 
-      long_ = paramBuilder.cursor;
-      if (long_ == null) {
-        this.cursor = DEFAULT_CURSOR;
-      } else {
-        this.cursor = long_;
-      } 
-      integer = paramBuilder.page_size;
-      if (integer == null) {
-        this.page_size = DEFAULT_PAGE_SIZE;
-      } else {
-        this.page_size = integer;
-      } 
-    } else {
-      this.common = ((Builder)integer).common;
-      this.uid = ((Builder)integer).uid;
-      this.cursor = ((Builder)integer).cursor;
-      this.page_size = ((Builder)integer).page_size;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public CommonReq common;
-    
-    public Long cursor;
-    
-    public Integer page_size;
-    
-    public Long uid;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.common = param1DataReq.common;
-      this.uid = param1DataReq.uid;
-      this.cursor = param1DataReq.cursor;
-      this.page_size = param1DataReq.page_size;
+    @ProtoField(tag = 1)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1371common;
+    @ProtoField(tag = 3, type = Message.Datatype.INT64)
+    public final Long cursor;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer page_size;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long uid;
+    public static final Long DEFAULT_UID = 0L;
+    public static final Long DEFAULT_CURSOR = 0L;
+    public static final Integer DEFAULT_PAGE_SIZE = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1372common;
+        public Long cursor;
+        public Integer page_size;
+        public Long uid;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.f1372common = dataReq.f1371common;
+            this.uid = dataReq.uid;
+            this.cursor = dataReq.cursor;
+            this.page_size = dataReq.page_size;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f1371common = builder.f1372common;
+            Long l = builder.uid;
+            if (l == null) {
+                this.uid = DEFAULT_UID;
+            } else {
+                this.uid = l;
+            }
+            Long l2 = builder.cursor;
+            if (l2 == null) {
+                this.cursor = DEFAULT_CURSOR;
+            } else {
+                this.cursor = l2;
+            }
+            Integer num = builder.page_size;
+            if (num == null) {
+                this.page_size = DEFAULT_PAGE_SIZE;
+                return;
+            } else {
+                this.page_size = num;
+                return;
+            }
+        }
+        this.f1371common = builder.f1372common;
+        this.uid = builder.uid;
+        this.cursor = builder.cursor;
+        this.page_size = builder.page_size;
     }
-  }
-  
-  public static class a {}
 }

@@ -4,107 +4,88 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
-  public static final List<TopicList> DEFAULT_FRS_TAB_TOPIC;
-  
-  public static final List<TabList> DEFAULT_TAB_LIST = Collections.emptyList();
-  
-  public static final List<NewTopicList> DEFAULT_TOPIC_LIST;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 7)
-  public final List<TopicList> frs_tab_topic;
-  
-  @ProtoField(tag = 3)
-  public final MediaTopic media_topic;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 6)
-  public final List<TabList> tab_list;
-  
-  @ProtoField(tag = 1)
-  public final TopicListModule topic_bang;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 8)
-  public final List<NewTopicList> topic_list;
-  
-  @ProtoField(tag = 2)
-  public final TopicListModule topic_manual;
-  
-  static {
-    DEFAULT_FRS_TAB_TOPIC = Collections.emptyList();
-    DEFAULT_TOPIC_LIST = Collections.emptyList();
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<NewTopicList> list;
-    if (paramBoolean == true) {
-      this.topic_bang = paramBuilder.topic_bang;
-      this.topic_manual = paramBuilder.topic_manual;
-      this.media_topic = paramBuilder.media_topic;
-      List<TabList> list2 = paramBuilder.tab_list;
-      if (list2 == null) {
-        this.tab_list = DEFAULT_TAB_LIST;
-      } else {
-        this.tab_list = Message.immutableCopyOf(list2);
-      } 
-      List<TopicList> list1 = paramBuilder.frs_tab_topic;
-      if (list1 == null) {
-        this.frs_tab_topic = DEFAULT_FRS_TAB_TOPIC;
-      } else {
-        this.frs_tab_topic = Message.immutableCopyOf(list1);
-      } 
-      list = paramBuilder.topic_list;
-      if (list == null) {
-        this.topic_list = DEFAULT_TOPIC_LIST;
-      } else {
-        this.topic_list = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this.topic_bang = ((Builder)list).topic_bang;
-      this.topic_manual = ((Builder)list).topic_manual;
-      this.media_topic = ((Builder)list).media_topic;
-      this.tab_list = Message.immutableCopyOf(((Builder)list).tab_list);
-      this.frs_tab_topic = Message.immutableCopyOf(((Builder)list).frs_tab_topic);
-      this.topic_list = Message.immutableCopyOf(((Builder)list).topic_list);
-    } 
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataRes> {
-    public List<TopicList> frs_tab_topic;
-    
-    public MediaTopic media_topic;
-    
-    public List<TabList> tab_list;
-    
-    public TopicListModule topic_bang;
-    
-    public List<NewTopicList> topic_list;
-    
-    public TopicListModule topic_manual;
-    
-    public Builder() {}
-    
-    public Builder(DataRes param1DataRes) {
-      super(param1DataRes);
-      if (param1DataRes == null)
-        return; 
-      this.topic_bang = param1DataRes.topic_bang;
-      this.topic_manual = param1DataRes.topic_manual;
-      this.media_topic = param1DataRes.media_topic;
-      this.tab_list = Message.copyOf(param1DataRes.tab_list);
-      this.frs_tab_topic = Message.copyOf(param1DataRes.frs_tab_topic);
-      this.topic_list = Message.copyOf(param1DataRes.topic_list);
+    @ProtoField(label = Message.Label.REPEATED, tag = 7)
+    public final List<TopicList> frs_tab_topic;
+    @ProtoField(tag = 3)
+    public final MediaTopic media_topic;
+    @ProtoField(label = Message.Label.REPEATED, tag = 6)
+    public final List<TabList> tab_list;
+    @ProtoField(tag = 1)
+    public final TopicListModule topic_bang;
+    @ProtoField(label = Message.Label.REPEATED, tag = 8)
+    public final List<NewTopicList> topic_list;
+    @ProtoField(tag = 2)
+    public final TopicListModule topic_manual;
+    public static final List<TabList> DEFAULT_TAB_LIST = Collections.emptyList();
+    public static final List<TopicList> DEFAULT_FRS_TAB_TOPIC = Collections.emptyList();
+    public static final List<NewTopicList> DEFAULT_TOPIC_LIST = Collections.emptyList();
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataRes> {
+        public List<TopicList> frs_tab_topic;
+        public MediaTopic media_topic;
+        public List<TabList> tab_list;
+        public TopicListModule topic_bang;
+        public List<NewTopicList> topic_list;
+        public TopicListModule topic_manual;
+
+        public Builder() {
+        }
+
+        public Builder(DataRes dataRes) {
+            super(dataRes);
+            if (dataRes == null) {
+                return;
+            }
+            this.topic_bang = dataRes.topic_bang;
+            this.topic_manual = dataRes.topic_manual;
+            this.media_topic = dataRes.media_topic;
+            this.tab_list = Message.copyOf(dataRes.tab_list);
+            this.frs_tab_topic = Message.copyOf(dataRes.frs_tab_topic);
+            this.topic_list = Message.copyOf(dataRes.topic_list);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataRes build(boolean z) {
+            return new DataRes(this, z);
+        }
     }
-    
-    public DataRes build(boolean param1Boolean) {
-      return new DataRes(this, param1Boolean, null);
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.topic_bang = builder.topic_bang;
+            this.topic_manual = builder.topic_manual;
+            this.media_topic = builder.media_topic;
+            List<TabList> list = builder.tab_list;
+            if (list == null) {
+                this.tab_list = DEFAULT_TAB_LIST;
+            } else {
+                this.tab_list = Message.immutableCopyOf(list);
+            }
+            List<TopicList> list2 = builder.frs_tab_topic;
+            if (list2 == null) {
+                this.frs_tab_topic = DEFAULT_FRS_TAB_TOPIC;
+            } else {
+                this.frs_tab_topic = Message.immutableCopyOf(list2);
+            }
+            List<NewTopicList> list3 = builder.topic_list;
+            if (list3 == null) {
+                this.topic_list = DEFAULT_TOPIC_LIST;
+                return;
+            } else {
+                this.topic_list = Message.immutableCopyOf(list3);
+                return;
+            }
+        }
+        this.topic_bang = builder.topic_bang;
+        this.topic_manual = builder.topic_manual;
+        this.media_topic = builder.media_topic;
+        this.tab_list = Message.immutableCopyOf(builder.tab_list);
+        this.frs_tab_topic = Message.immutableCopyOf(builder.frs_tab_topic);
+        this.topic_list = Message.immutableCopyOf(builder.topic_list);
     }
-  }
-  
-  public static class a {}
 }

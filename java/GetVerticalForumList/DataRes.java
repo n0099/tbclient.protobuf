@@ -6,55 +6,51 @@ import java.util.Collections;
 import java.util.List;
 import tbclient.ClassForumInfo;
 import tbclient.Page;
-
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
-  public static final List<ClassForumInfo> DEFAULT_CLASS_FORUMINFO = Collections.emptyList();
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 1)
-  public final List<ClassForumInfo> class_foruminfo;
-  
-  @ProtoField(tag = 2)
-  public final Page page;
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      List<ClassForumInfo> list = paramBuilder.class_foruminfo;
-      if (list == null) {
-        this.class_foruminfo = DEFAULT_CLASS_FORUMINFO;
-      } else {
-        this.class_foruminfo = Message.immutableCopyOf(list);
-      } 
-      this.page = paramBuilder.page;
-    } else {
-      this.class_foruminfo = Message.immutableCopyOf(paramBuilder.class_foruminfo);
-      this.page = paramBuilder.page;
-    } 
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataRes> {
-    public List<ClassForumInfo> class_foruminfo;
-    
-    public Page page;
-    
-    public Builder() {}
-    
-    public Builder(DataRes param1DataRes) {
-      super(param1DataRes);
-      if (param1DataRes == null)
-        return; 
-      this.class_foruminfo = Message.copyOf(param1DataRes.class_foruminfo);
-      this.page = param1DataRes.page;
+    public static final List<ClassForumInfo> DEFAULT_CLASS_FORUMINFO = Collections.emptyList();
+    @ProtoField(label = Message.Label.REPEATED, tag = 1)
+    public final List<ClassForumInfo> class_foruminfo;
+    @ProtoField(tag = 2)
+    public final Page page;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataRes> {
+        public List<ClassForumInfo> class_foruminfo;
+        public Page page;
+
+        public Builder() {
+        }
+
+        public Builder(DataRes dataRes) {
+            super(dataRes);
+            if (dataRes == null) {
+                return;
+            }
+            this.class_foruminfo = Message.copyOf(dataRes.class_foruminfo);
+            this.page = dataRes.page;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataRes build(boolean z) {
+            return new DataRes(this, z);
+        }
     }
-    
-    public DataRes build(boolean param1Boolean) {
-      return new DataRes(this, param1Boolean, null);
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<ClassForumInfo> list = builder.class_foruminfo;
+            if (list == null) {
+                this.class_foruminfo = DEFAULT_CLASS_FORUMINFO;
+            } else {
+                this.class_foruminfo = Message.immutableCopyOf(list);
+            }
+            this.page = builder.page;
+            return;
+        }
+        this.class_foruminfo = Message.immutableCopyOf(builder.class_foruminfo);
+        this.page = builder.page;
     }
-  }
-  
-  public static class a {}
 }

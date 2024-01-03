@@ -2,40 +2,39 @@ package tbclient.GameForumGuideTab;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GameForumGuideTabReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public GameForumGuideTabReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GameForumGuideTabReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GameForumGuideTabReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(GameForumGuideTabReqIdl param1GameForumGuideTabReqIdl) {
-      super(param1GameForumGuideTabReqIdl);
-      if (param1GameForumGuideTabReqIdl == null)
-        return; 
-      this.data = param1GameForumGuideTabReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GameForumGuideTabReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(GameForumGuideTabReqIdl gameForumGuideTabReqIdl) {
+            super(gameForumGuideTabReqIdl);
+            if (gameForumGuideTabReqIdl == null) {
+                return;
+            }
+            this.data = gameForumGuideTabReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GameForumGuideTabReqIdl build(boolean z) {
+            return new GameForumGuideTabReqIdl(this, z);
+        }
     }
-    
-    public GameForumGuideTabReqIdl build(boolean param1Boolean) {
-      return new GameForumGuideTabReqIdl(this, param1Boolean, null);
+
+    public GameForumGuideTabReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

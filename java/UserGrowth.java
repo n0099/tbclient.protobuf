@@ -4,118 +4,94 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class UserGrowth extends Message {
-  public static final Integer DEFAULT_LEVEL_ID = Integer.valueOf(0);
-  
-  public static final Long DEFAULT_SCORE;
-  
-  public static final Long DEFAULT_TARGET_SCORE;
-  
-  public static final List<UserTaskInfo> DEFAULT_TASK_INFO;
-  
-  public static final Double DEFAULT_TMONEY = Double.valueOf(0.0D);
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-  public final Integer level_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT64)
-  public final Long score;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT64)
-  public final Long target_score;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 5)
-  public final List<UserTaskInfo> task_info;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.DOUBLE)
-  public final Double tmoney;
-  
-  static {
-    DEFAULT_TASK_INFO = Collections.emptyList();
-  }
-  
-  public UserGrowth(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<UserTaskInfo> list;
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.level_id;
-      if (integer == null) {
-        this.level_id = DEFAULT_LEVEL_ID;
-      } else {
-        this.level_id = integer;
-      } 
-      Long long_ = paramBuilder.score;
-      if (long_ == null) {
-        this.score = DEFAULT_SCORE;
-      } else {
-        this.score = long_;
-      } 
-      long_ = paramBuilder.target_score;
-      if (long_ == null) {
-        this.target_score = DEFAULT_TARGET_SCORE;
-      } else {
-        this.target_score = long_;
-      } 
-      Double double_ = paramBuilder.tmoney;
-      if (double_ == null) {
-        this.tmoney = DEFAULT_TMONEY;
-      } else {
-        this.tmoney = double_;
-      } 
-      list = paramBuilder.task_info;
-      if (list == null) {
-        this.task_info = DEFAULT_TASK_INFO;
-      } else {
-        this.task_info = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this.level_id = ((Builder)list).level_id;
-      this.score = ((Builder)list).score;
-      this.target_score = ((Builder)list).target_score;
-      this.tmoney = ((Builder)list).tmoney;
-      this.task_info = Message.immutableCopyOf(((Builder)list).task_info);
-    } 
-  }
-  
-  public UserGrowth(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_SCORE = long_;
-    DEFAULT_TARGET_SCORE = long_;
-  }
-  
-  public static final class Builder extends Message.Builder<UserGrowth> {
-    public Integer level_id;
-    
-    public Long score;
-    
-    public Long target_score;
-    
-    public List<UserTaskInfo> task_info;
-    
-    public Double tmoney;
-    
-    public Builder() {}
-    
-    public Builder(UserGrowth param1UserGrowth) {
-      super(param1UserGrowth);
-      if (param1UserGrowth == null)
-        return; 
-      this.level_id = param1UserGrowth.level_id;
-      this.score = param1UserGrowth.score;
-      this.target_score = param1UserGrowth.target_score;
-      this.tmoney = param1UserGrowth.tmoney;
-      this.task_info = Message.copyOf(param1UserGrowth.task_info);
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer level_id;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long score;
+    @ProtoField(tag = 3, type = Message.Datatype.INT64)
+    public final Long target_score;
+    @ProtoField(label = Message.Label.REPEATED, tag = 5)
+    public final List<UserTaskInfo> task_info;
+    @ProtoField(tag = 4, type = Message.Datatype.DOUBLE)
+    public final Double tmoney;
+    public static final Integer DEFAULT_LEVEL_ID = 0;
+    public static final Long DEFAULT_SCORE = 0L;
+    public static final Long DEFAULT_TARGET_SCORE = 0L;
+    public static final Double DEFAULT_TMONEY = Double.valueOf(0.0d);
+    public static final List<UserTaskInfo> DEFAULT_TASK_INFO = Collections.emptyList();
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<UserGrowth> {
+        public Integer level_id;
+        public Long score;
+        public Long target_score;
+        public List<UserTaskInfo> task_info;
+        public Double tmoney;
+
+        public Builder() {
+        }
+
+        public Builder(UserGrowth userGrowth) {
+            super(userGrowth);
+            if (userGrowth == null) {
+                return;
+            }
+            this.level_id = userGrowth.level_id;
+            this.score = userGrowth.score;
+            this.target_score = userGrowth.target_score;
+            this.tmoney = userGrowth.tmoney;
+            this.task_info = Message.copyOf(userGrowth.task_info);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public UserGrowth build(boolean z) {
+            return new UserGrowth(this, z);
+        }
     }
-    
-    public UserGrowth build(boolean param1Boolean) {
-      return new UserGrowth(this, param1Boolean, null);
+
+    public UserGrowth(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.level_id;
+            if (num == null) {
+                this.level_id = DEFAULT_LEVEL_ID;
+            } else {
+                this.level_id = num;
+            }
+            Long l = builder.score;
+            if (l == null) {
+                this.score = DEFAULT_SCORE;
+            } else {
+                this.score = l;
+            }
+            Long l2 = builder.target_score;
+            if (l2 == null) {
+                this.target_score = DEFAULT_TARGET_SCORE;
+            } else {
+                this.target_score = l2;
+            }
+            Double d = builder.tmoney;
+            if (d == null) {
+                this.tmoney = DEFAULT_TMONEY;
+            } else {
+                this.tmoney = d;
+            }
+            List<UserTaskInfo> list = builder.task_info;
+            if (list == null) {
+                this.task_info = DEFAULT_TASK_INFO;
+                return;
+            } else {
+                this.task_info = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.level_id = builder.level_id;
+        this.score = builder.score;
+        this.target_score = builder.target_score;
+        this.tmoney = builder.tmoney;
+        this.task_info = Message.immutableCopyOf(builder.task_info);
     }
-  }
-  
-  public static class a {}
 }

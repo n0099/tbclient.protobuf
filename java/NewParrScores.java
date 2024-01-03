@@ -2,87 +2,70 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class NewParrScores extends Message {
-  public static final Long DEFAULT_I_TOTAL;
-  
-  public static final Long DEFAULT_SCORES_TOTAL;
-  
-  public static final Integer DEFAULT_UPDATE_TIME = Integer.valueOf(0);
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT64)
-  public final Long i_total;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT64)
-  public final Long scores_total;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-  public final Integer update_time;
-  
-  static {
-    DEFAULT_I_TOTAL = long_;
-  }
-  
-  public NewParrScores(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Long long_;
-    if (paramBoolean == true) {
-      Long long_1 = paramBuilder.scores_total;
-      if (long_1 == null) {
-        this.scores_total = DEFAULT_SCORES_TOTAL;
-      } else {
-        this.scores_total = long_1;
-      } 
-      Integer integer = paramBuilder.update_time;
-      if (integer == null) {
-        this.update_time = DEFAULT_UPDATE_TIME;
-      } else {
-        this.update_time = integer;
-      } 
-      long_ = paramBuilder.i_total;
-      if (long_ == null) {
-        this.i_total = DEFAULT_I_TOTAL;
-      } else {
-        this.i_total = long_;
-      } 
-    } else {
-      this.scores_total = ((Builder)long_).scores_total;
-      this.update_time = ((Builder)long_).update_time;
-      this.i_total = ((Builder)long_).i_total;
-    } 
-  }
-  
-  public NewParrScores(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_SCORES_TOTAL = long_;
-  }
-  
-  public static final class Builder extends Message.Builder<NewParrScores> {
-    public Long i_total;
-    
-    public Long scores_total;
-    
-    public Integer update_time;
-    
-    public Builder() {}
-    
-    public Builder(NewParrScores param1NewParrScores) {
-      super(param1NewParrScores);
-      if (param1NewParrScores == null)
-        return; 
-      this.scores_total = param1NewParrScores.scores_total;
-      this.update_time = param1NewParrScores.update_time;
-      this.i_total = param1NewParrScores.i_total;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT64)
+    public final Long i_total;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long scores_total;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
+    public final Integer update_time;
+    public static final Long DEFAULT_SCORES_TOTAL = 0L;
+    public static final Integer DEFAULT_UPDATE_TIME = 0;
+    public static final Long DEFAULT_I_TOTAL = 0L;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<NewParrScores> {
+        public Long i_total;
+        public Long scores_total;
+        public Integer update_time;
+
+        public Builder() {
+        }
+
+        public Builder(NewParrScores newParrScores) {
+            super(newParrScores);
+            if (newParrScores == null) {
+                return;
+            }
+            this.scores_total = newParrScores.scores_total;
+            this.update_time = newParrScores.update_time;
+            this.i_total = newParrScores.i_total;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public NewParrScores build(boolean z) {
+            return new NewParrScores(this, z);
+        }
     }
-    
-    public NewParrScores build(boolean param1Boolean) {
-      return new NewParrScores(this, param1Boolean, null);
+
+    public NewParrScores(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.scores_total;
+            if (l == null) {
+                this.scores_total = DEFAULT_SCORES_TOTAL;
+            } else {
+                this.scores_total = l;
+            }
+            Integer num = builder.update_time;
+            if (num == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = num;
+            }
+            Long l2 = builder.i_total;
+            if (l2 == null) {
+                this.i_total = DEFAULT_I_TOTAL;
+                return;
+            } else {
+                this.i_total = l2;
+                return;
+            }
+        }
+        this.scores_total = builder.scores_total;
+        this.update_time = builder.update_time;
+        this.i_total = builder.i_total;
     }
-  }
-  
-  public static class a {}
 }

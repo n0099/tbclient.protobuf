@@ -14,4 +14,5 @@ message AgreeList {
     Post post_info = 9;
     string virtual_image_url = 10;
     int32 snapshoot_pic_id = 11;
+    string target_scheme = 12;
 }

@@ -2,92 +2,75 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class PsRankListItem extends Message {
-  public static final Long DEFAULT_GAME_ID;
-  
-  public static final Long DEFAULT_SCORE;
-  
-  public static final Long DEFAULT_USER_ID;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long game_id;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT64)
-  public final Long score;
-  
-  @ProtoField(tag = 4)
-  public final User user;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT64)
-  public final Long user_id;
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_GAME_ID = long_;
-    DEFAULT_USER_ID = long_;
-    DEFAULT_SCORE = long_;
-  }
-  
-  public PsRankListItem(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.game_id;
-      if (long_ == null) {
-        this.game_id = DEFAULT_GAME_ID;
-      } else {
-        this.game_id = long_;
-      } 
-      long_ = paramBuilder.user_id;
-      if (long_ == null) {
-        this.user_id = DEFAULT_USER_ID;
-      } else {
-        this.user_id = long_;
-      } 
-      long_ = paramBuilder.score;
-      if (long_ == null) {
-        this.score = DEFAULT_SCORE;
-      } else {
-        this.score = long_;
-      } 
-      this.user = paramBuilder.user;
-    } else {
-      this.game_id = paramBuilder.game_id;
-      this.user_id = paramBuilder.user_id;
-      this.score = paramBuilder.score;
-      this.user = paramBuilder.user;
-    } 
-  }
-  
-  public PsRankListItem(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<PsRankListItem> {
-    public Long game_id;
-    
-    public Long score;
-    
-    public User user;
-    
-    public Long user_id;
-    
-    public Builder() {}
-    
-    public Builder(PsRankListItem param1PsRankListItem) {
-      super(param1PsRankListItem);
-      if (param1PsRankListItem == null)
-        return; 
-      this.game_id = param1PsRankListItem.game_id;
-      this.user_id = param1PsRankListItem.user_id;
-      this.score = param1PsRankListItem.score;
-      this.user = param1PsRankListItem.user;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long game_id;
+    @ProtoField(tag = 3, type = Message.Datatype.INT64)
+    public final Long score;
+    @ProtoField(tag = 4)
+    public final User user;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long user_id;
+    public static final Long DEFAULT_GAME_ID = 0L;
+    public static final Long DEFAULT_USER_ID = 0L;
+    public static final Long DEFAULT_SCORE = 0L;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<PsRankListItem> {
+        public Long game_id;
+        public Long score;
+        public User user;
+        public Long user_id;
+
+        public Builder() {
+        }
+
+        public Builder(PsRankListItem psRankListItem) {
+            super(psRankListItem);
+            if (psRankListItem == null) {
+                return;
+            }
+            this.game_id = psRankListItem.game_id;
+            this.user_id = psRankListItem.user_id;
+            this.score = psRankListItem.score;
+            this.user = psRankListItem.user;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public PsRankListItem build(boolean z) {
+            return new PsRankListItem(this, z);
+        }
     }
-    
-    public PsRankListItem build(boolean param1Boolean) {
-      return new PsRankListItem(this, param1Boolean, null);
+
+    public PsRankListItem(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.game_id;
+            if (l == null) {
+                this.game_id = DEFAULT_GAME_ID;
+            } else {
+                this.game_id = l;
+            }
+            Long l2 = builder.user_id;
+            if (l2 == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l2;
+            }
+            Long l3 = builder.score;
+            if (l3 == null) {
+                this.score = DEFAULT_SCORE;
+            } else {
+                this.score = l3;
+            }
+            this.user = builder.user;
+            return;
+        }
+        this.game_id = builder.game_id;
+        this.user_id = builder.user_id;
+        this.score = builder.score;
+        this.user = builder.user;
     }
-  }
-  
-  public static class a {}
 }

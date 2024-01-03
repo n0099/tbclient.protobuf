@@ -3,48 +3,45 @@ package tbclient.UrlParser;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class UrlParserResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public UrlParserResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public UrlParserResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<UrlParserResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(UrlParserResIdl param1UrlParserResIdl) {
-      super(param1UrlParserResIdl);
-      if (param1UrlParserResIdl == null)
-        return; 
-      this.error = param1UrlParserResIdl.error;
-      this.data = param1UrlParserResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<UrlParserResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(UrlParserResIdl urlParserResIdl) {
+            super(urlParserResIdl);
+            if (urlParserResIdl == null) {
+                return;
+            }
+            this.error = urlParserResIdl.error;
+            this.data = urlParserResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public UrlParserResIdl build(boolean z) {
+            return new UrlParserResIdl(this, z);
+        }
     }
-    
-    public UrlParserResIdl build(boolean param1Boolean) {
-      return new UrlParserResIdl(this, param1Boolean, null);
+
+    public UrlParserResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

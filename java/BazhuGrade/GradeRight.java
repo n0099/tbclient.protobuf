@@ -2,78 +2,70 @@ package tbclient.BazhuGrade;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GradeRight extends Message {
-  public static final String DEFAULT_DESC = "";
-  
-  public static final String DEFAULT_IMAGE = "";
-  
-  public static final String DEFAULT_NAME = "";
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String desc;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String image;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String name;
-  
-  public GradeRight(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.image;
-      if (str1 == null) {
-        this.image = "";
-      } else {
-        this.image = str1;
-      } 
-      str1 = paramBuilder.name;
-      if (str1 == null) {
-        this.name = "";
-      } else {
-        this.name = str1;
-      } 
-      str = paramBuilder.desc;
-      if (str == null) {
-        this.desc = "";
-      } else {
-        this.desc = str;
-      } 
-    } else {
-      this.image = ((Builder)str).image;
-      this.name = ((Builder)str).name;
-      this.desc = ((Builder)str).desc;
-    } 
-  }
-  
-  public GradeRight(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GradeRight> {
-    public String desc;
-    
-    public String image;
-    
-    public String name;
-    
-    public Builder() {}
-    
-    public Builder(GradeRight param1GradeRight) {
-      super(param1GradeRight);
-      if (param1GradeRight == null)
-        return; 
-      this.image = param1GradeRight.image;
-      this.name = param1GradeRight.name;
-      this.desc = param1GradeRight.desc;
+    public static final String DEFAULT_DESC = "";
+    public static final String DEFAULT_IMAGE = "";
+    public static final String DEFAULT_NAME = "";
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String desc;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String image;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String name;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GradeRight> {
+        public String desc;
+        public String image;
+        public String name;
+
+        public Builder() {
+        }
+
+        public Builder(GradeRight gradeRight) {
+            super(gradeRight);
+            if (gradeRight == null) {
+                return;
+            }
+            this.image = gradeRight.image;
+            this.name = gradeRight.name;
+            this.desc = gradeRight.desc;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GradeRight build(boolean z) {
+            return new GradeRight(this, z);
+        }
     }
-    
-    public GradeRight build(boolean param1Boolean) {
-      return new GradeRight(this, param1Boolean, null);
+
+    public GradeRight(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.image;
+            if (str == null) {
+                this.image = "";
+            } else {
+                this.image = str;
+            }
+            String str2 = builder.name;
+            if (str2 == null) {
+                this.name = "";
+            } else {
+                this.name = str2;
+            }
+            String str3 = builder.desc;
+            if (str3 == null) {
+                this.desc = "";
+                return;
+            } else {
+                this.desc = str3;
+                return;
+            }
+        }
+        this.image = builder.image;
+        this.name = builder.name;
+        this.desc = builder.desc;
     }
-  }
-  
-  public static class a {}
 }

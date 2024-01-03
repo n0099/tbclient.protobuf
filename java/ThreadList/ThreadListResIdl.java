@@ -3,48 +3,45 @@ package tbclient.ThreadList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class ThreadListResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public ThreadListResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public ThreadListResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ThreadListResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(ThreadListResIdl param1ThreadListResIdl) {
-      super(param1ThreadListResIdl);
-      if (param1ThreadListResIdl == null)
-        return; 
-      this.error = param1ThreadListResIdl.error;
-      this.data = param1ThreadListResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ThreadListResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(ThreadListResIdl threadListResIdl) {
+            super(threadListResIdl);
+            if (threadListResIdl == null) {
+                return;
+            }
+            this.error = threadListResIdl.error;
+            this.data = threadListResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ThreadListResIdl build(boolean z) {
+            return new ThreadListResIdl(this, z);
+        }
     }
-    
-    public ThreadListResIdl build(boolean param1Boolean) {
-      return new ThreadListResIdl(this, param1Boolean, null);
+
+    public ThreadListResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

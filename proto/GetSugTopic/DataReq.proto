@@ -3,7 +3,6 @@ syntax = "proto3";
 import "CommonReq.proto";
 
 message DataReq {
-    CommonReq common = 1;
     string prefix = 2;
     int64 fid = 3;
     string first_dir = 4;

@@ -1,27 +1,26 @@
 package tbclient.DelAllUserData;
 
 import com.squareup.wire.Message;
-
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
-  public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataRes> {
-    public Builder() {}
-    
-    public Builder(DataRes param1DataRes) {
-      super(param1DataRes);
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataRes> {
+        public Builder() {
+        }
+
+        public Builder(DataRes dataRes) {
+            super(dataRes);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataRes build(boolean z) {
+            return new DataRes(this, z);
+        }
     }
-    
-    public DataRes build(boolean param1Boolean) {
-      return new DataRes(this, param1Boolean, null);
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
     }
-  }
-  
-  public static class a {}
 }

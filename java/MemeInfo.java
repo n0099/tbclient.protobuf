@@ -2,148 +2,118 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class MemeInfo extends Message {
-  public static final String DEFAULT_DETAIL_LINK = "";
-  
-  public static final Integer DEFAULT_HEIGHT;
-  
-  public static final Integer DEFAULT_PCK_ID;
-  
-  public static final Long DEFAULT_PIC_ID = Long.valueOf(0L);
-  
-  public static final String DEFAULT_PIC_URL = "";
-  
-  public static final String DEFAULT_THUMBNAIL = "";
-  
-  public static final Integer DEFAULT_WIDTH;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.STRING)
-  public final String detail_link;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.UINT32)
-  public final Integer height;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-  public final Integer pck_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT64)
-  public final Long pic_id;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String pic_url;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String thumbnail;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.UINT32)
-  public final Integer width;
-  
-  static {
-    DEFAULT_WIDTH = integer;
-    DEFAULT_HEIGHT = integer;
-  }
-  
-  public MemeInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Integer integer2 = paramBuilder.pck_id;
-      if (integer2 == null) {
-        this.pck_id = DEFAULT_PCK_ID;
-      } else {
-        this.pck_id = integer2;
-      } 
-      Long long_ = paramBuilder.pic_id;
-      if (long_ == null) {
-        this.pic_id = DEFAULT_PIC_ID;
-      } else {
-        this.pic_id = long_;
-      } 
-      String str1 = paramBuilder.pic_url;
-      if (str1 == null) {
-        this.pic_url = "";
-      } else {
-        this.pic_url = str1;
-      } 
-      str1 = paramBuilder.thumbnail;
-      if (str1 == null) {
-        this.thumbnail = "";
-      } else {
-        this.thumbnail = str1;
-      } 
-      Integer integer1 = paramBuilder.width;
-      if (integer1 == null) {
-        this.width = DEFAULT_WIDTH;
-      } else {
-        this.width = integer1;
-      } 
-      integer1 = paramBuilder.height;
-      if (integer1 == null) {
-        this.height = DEFAULT_HEIGHT;
-      } else {
-        this.height = integer1;
-      } 
-      str = paramBuilder.detail_link;
-      if (str == null) {
-        this.detail_link = "";
-      } else {
-        this.detail_link = str;
-      } 
-    } else {
-      this.pck_id = ((Builder)str).pck_id;
-      this.pic_id = ((Builder)str).pic_id;
-      this.pic_url = ((Builder)str).pic_url;
-      this.thumbnail = ((Builder)str).thumbnail;
-      this.width = ((Builder)str).width;
-      this.height = ((Builder)str).height;
-      this.detail_link = ((Builder)str).detail_link;
-    } 
-  }
-  
-  public MemeInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_PCK_ID = integer;
-  }
-  
-  public static final class Builder extends Message.Builder<MemeInfo> {
-    public String detail_link;
-    
-    public Integer height;
-    
-    public Integer pck_id;
-    
-    public Long pic_id;
-    
-    public String pic_url;
-    
-    public String thumbnail;
-    
-    public Integer width;
-    
-    public Builder() {}
-    
-    public Builder(MemeInfo param1MemeInfo) {
-      super(param1MemeInfo);
-      if (param1MemeInfo == null)
-        return; 
-      this.pck_id = param1MemeInfo.pck_id;
-      this.pic_id = param1MemeInfo.pic_id;
-      this.pic_url = param1MemeInfo.pic_url;
-      this.thumbnail = param1MemeInfo.thumbnail;
-      this.width = param1MemeInfo.width;
-      this.height = param1MemeInfo.height;
-      this.detail_link = param1MemeInfo.detail_link;
+    public static final String DEFAULT_DETAIL_LINK = "";
+    public static final String DEFAULT_PIC_URL = "";
+    public static final String DEFAULT_THUMBNAIL = "";
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String detail_link;
+    @ProtoField(tag = 6, type = Message.Datatype.UINT32)
+    public final Integer height;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer pck_id;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT64)
+    public final Long pic_id;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String pic_url;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String thumbnail;
+    @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+    public final Integer width;
+    public static final Integer DEFAULT_PCK_ID = 0;
+    public static final Long DEFAULT_PIC_ID = 0L;
+    public static final Integer DEFAULT_WIDTH = 0;
+    public static final Integer DEFAULT_HEIGHT = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<MemeInfo> {
+        public String detail_link;
+        public Integer height;
+        public Integer pck_id;
+        public Long pic_id;
+        public String pic_url;
+        public String thumbnail;
+        public Integer width;
+
+        public Builder() {
+        }
+
+        public Builder(MemeInfo memeInfo) {
+            super(memeInfo);
+            if (memeInfo == null) {
+                return;
+            }
+            this.pck_id = memeInfo.pck_id;
+            this.pic_id = memeInfo.pic_id;
+            this.pic_url = memeInfo.pic_url;
+            this.thumbnail = memeInfo.thumbnail;
+            this.width = memeInfo.width;
+            this.height = memeInfo.height;
+            this.detail_link = memeInfo.detail_link;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public MemeInfo build(boolean z) {
+            return new MemeInfo(this, z);
+        }
     }
-    
-    public MemeInfo build(boolean param1Boolean) {
-      return new MemeInfo(this, param1Boolean, null);
+
+    public MemeInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.pck_id;
+            if (num == null) {
+                this.pck_id = DEFAULT_PCK_ID;
+            } else {
+                this.pck_id = num;
+            }
+            Long l = builder.pic_id;
+            if (l == null) {
+                this.pic_id = DEFAULT_PIC_ID;
+            } else {
+                this.pic_id = l;
+            }
+            String str = builder.pic_url;
+            if (str == null) {
+                this.pic_url = "";
+            } else {
+                this.pic_url = str;
+            }
+            String str2 = builder.thumbnail;
+            if (str2 == null) {
+                this.thumbnail = "";
+            } else {
+                this.thumbnail = str2;
+            }
+            Integer num2 = builder.width;
+            if (num2 == null) {
+                this.width = DEFAULT_WIDTH;
+            } else {
+                this.width = num2;
+            }
+            Integer num3 = builder.height;
+            if (num3 == null) {
+                this.height = DEFAULT_HEIGHT;
+            } else {
+                this.height = num3;
+            }
+            String str3 = builder.detail_link;
+            if (str3 == null) {
+                this.detail_link = "";
+                return;
+            } else {
+                this.detail_link = str3;
+                return;
+            }
+        }
+        this.pck_id = builder.pck_id;
+        this.pic_id = builder.pic_id;
+        this.pic_url = builder.pic_url;
+        this.thumbnail = builder.thumbnail;
+        this.width = builder.width;
+        this.height = builder.height;
+        this.detail_link = builder.detail_link;
     }
-  }
-  
-  public static class a {}
 }

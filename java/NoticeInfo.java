@@ -2,63 +2,58 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class NoticeInfo extends Message {
-  public static final String DEFAULT_NOTICE = "";
-  
-  public static final Integer DEFAULT_PULLCOMMENTFREQUENCE = Integer.valueOf(0);
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String notice;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer pullCommentFrequence;
-  
-  public NoticeInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      String str = paramBuilder.notice;
-      if (str == null) {
-        this.notice = "";
-      } else {
-        this.notice = str;
-      } 
-      integer = paramBuilder.pullCommentFrequence;
-      if (integer == null) {
-        this.pullCommentFrequence = DEFAULT_PULLCOMMENTFREQUENCE;
-      } else {
-        this.pullCommentFrequence = integer;
-      } 
-    } else {
-      this.notice = ((Builder)integer).notice;
-      this.pullCommentFrequence = ((Builder)integer).pullCommentFrequence;
-    } 
-  }
-  
-  public NoticeInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<NoticeInfo> {
-    public String notice;
-    
-    public Integer pullCommentFrequence;
-    
-    public Builder() {}
-    
-    public Builder(NoticeInfo param1NoticeInfo) {
-      super(param1NoticeInfo);
-      if (param1NoticeInfo == null)
-        return; 
-      this.notice = param1NoticeInfo.notice;
-      this.pullCommentFrequence = param1NoticeInfo.pullCommentFrequence;
+    public static final String DEFAULT_NOTICE = "";
+    public static final Integer DEFAULT_PULLCOMMENTFREQUENCE = 0;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String notice;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer pullCommentFrequence;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<NoticeInfo> {
+        public String notice;
+        public Integer pullCommentFrequence;
+
+        public Builder() {
+        }
+
+        public Builder(NoticeInfo noticeInfo) {
+            super(noticeInfo);
+            if (noticeInfo == null) {
+                return;
+            }
+            this.notice = noticeInfo.notice;
+            this.pullCommentFrequence = noticeInfo.pullCommentFrequence;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public NoticeInfo build(boolean z) {
+            return new NoticeInfo(this, z);
+        }
     }
-    
-    public NoticeInfo build(boolean param1Boolean) {
-      return new NoticeInfo(this, param1Boolean, null);
+
+    public NoticeInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.notice;
+            if (str == null) {
+                this.notice = "";
+            } else {
+                this.notice = str;
+            }
+            Integer num = builder.pullCommentFrequence;
+            if (num == null) {
+                this.pullCommentFrequence = DEFAULT_PULLCOMMENTFREQUENCE;
+                return;
+            } else {
+                this.pullCommentFrequence = num;
+                return;
+            }
+        }
+        this.notice = builder.notice;
+        this.pullCommentFrequence = builder.pullCommentFrequence;
     }
-  }
-  
-  public static class a {}
 }

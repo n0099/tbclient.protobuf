@@ -4,63 +4,58 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class DealWindow extends Message {
-  public static final List<DisplayWindowInfo> DEFAULT_LIST = Collections.emptyList();
-  
-  public static final Long DEFAULT_TOTAL = Long.valueOf(0L);
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 1)
-  public final List<DisplayWindowInfo> list;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT64)
-  public final Long total;
-  
-  public DealWindow(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Long long_;
-    if (paramBoolean == true) {
-      List<DisplayWindowInfo> list = paramBuilder.list;
-      if (list == null) {
-        this.list = DEFAULT_LIST;
-      } else {
-        this.list = Message.immutableCopyOf(list);
-      } 
-      long_ = paramBuilder.total;
-      if (long_ == null) {
-        this.total = DEFAULT_TOTAL;
-      } else {
-        this.total = long_;
-      } 
-    } else {
-      this.list = Message.immutableCopyOf(((Builder)long_).list);
-      this.total = ((Builder)long_).total;
-    } 
-  }
-  
-  public DealWindow(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DealWindow> {
-    public List<DisplayWindowInfo> list;
-    
-    public Long total;
-    
-    public Builder() {}
-    
-    public Builder(DealWindow param1DealWindow) {
-      super(param1DealWindow);
-      if (param1DealWindow == null)
-        return; 
-      this.list = Message.copyOf(param1DealWindow.list);
-      this.total = param1DealWindow.total;
+    public static final List<DisplayWindowInfo> DEFAULT_LIST = Collections.emptyList();
+    public static final Long DEFAULT_TOTAL = 0L;
+    @ProtoField(label = Message.Label.REPEATED, tag = 1)
+    public final List<DisplayWindowInfo> list;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT64)
+    public final Long total;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DealWindow> {
+        public List<DisplayWindowInfo> list;
+        public Long total;
+
+        public Builder() {
+        }
+
+        public Builder(DealWindow dealWindow) {
+            super(dealWindow);
+            if (dealWindow == null) {
+                return;
+            }
+            this.list = Message.copyOf(dealWindow.list);
+            this.total = dealWindow.total;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DealWindow build(boolean z) {
+            return new DealWindow(this, z);
+        }
     }
-    
-    public DealWindow build(boolean param1Boolean) {
-      return new DealWindow(this, param1Boolean, null);
+
+    public DealWindow(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<DisplayWindowInfo> list = builder.list;
+            if (list == null) {
+                this.list = DEFAULT_LIST;
+            } else {
+                this.list = Message.immutableCopyOf(list);
+            }
+            Long l = builder.total;
+            if (l == null) {
+                this.total = DEFAULT_TOTAL;
+                return;
+            } else {
+                this.total = l;
+                return;
+            }
+        }
+        this.list = Message.immutableCopyOf(builder.list);
+        this.total = builder.total;
     }
-  }
-  
-  public static class a {}
 }

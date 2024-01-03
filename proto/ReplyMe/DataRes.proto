@@ -1,9 +1,13 @@
 syntax = "proto3";
 
+import "ChooseThreadList.proto";
+import "ChooseTimeList.proto";
 import "Page.proto";
 import "ReplyMe/ReplyList.proto";
 
 message DataRes {
     Page page = 1;
     repeated ReplyList reply_list = 2;
+    repeated ChooseThreadList choose_thread_list = 3;
+    repeated ChooseTimeList choose_time_list = 4;
 }

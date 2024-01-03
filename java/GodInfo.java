@@ -2,178 +2,142 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GodInfo extends Message {
-  public static final Integer DEFAULT_CAN_SEND_MSG;
-  
-  public static final Long DEFAULT_FID;
-  
-  public static final Integer DEFAULT_FOLLOWED;
-  
-  public static final String DEFAULT_FORUM_NAME = "";
-  
-  public static final Long DEFAULT_ID;
-  
-  public static final String DEFAULT_INTRO = "";
-  
-  public static final String DEFAULT_PREFIX = "";
-  
-  public static final String DEFAULT_RECOMMEND_REASON = "";
-  
-  public static final Integer DEFAULT_TYPE;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.INT32)
-  public final Integer can_send_msg;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT64)
-  public final Long fid;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.INT32)
-  public final Integer followed;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.STRING)
-  public final String forum_name;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String intro;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.STRING)
-  public final String prefix;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String recommend_reason;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer type;
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_ID = long_;
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_TYPE = integer;
-    DEFAULT_FID = long_;
-    DEFAULT_FOLLOWED = integer;
-    DEFAULT_CAN_SEND_MSG = integer;
-  }
-  
-  public GodInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Long long_2 = paramBuilder.id;
-      if (long_2 == null) {
-        this.id = DEFAULT_ID;
-      } else {
-        this.id = long_2;
-      } 
-      String str2 = paramBuilder.intro;
-      if (str2 == null) {
-        this.intro = "";
-      } else {
-        this.intro = str2;
-      } 
-      Integer integer3 = paramBuilder.type;
-      if (integer3 == null) {
-        this.type = DEFAULT_TYPE;
-      } else {
-        this.type = integer3;
-      } 
-      Long long_1 = paramBuilder.fid;
-      if (long_1 == null) {
-        this.fid = DEFAULT_FID;
-      } else {
-        this.fid = long_1;
-      } 
-      Integer integer2 = paramBuilder.followed;
-      if (integer2 == null) {
-        this.followed = DEFAULT_FOLLOWED;
-      } else {
-        this.followed = integer2;
-      } 
-      String str1 = paramBuilder.recommend_reason;
-      if (str1 == null) {
-        this.recommend_reason = "";
-      } else {
-        this.recommend_reason = str1;
-      } 
-      str1 = paramBuilder.forum_name;
-      if (str1 == null) {
-        this.forum_name = "";
-      } else {
-        this.forum_name = str1;
-      } 
-      Integer integer1 = paramBuilder.can_send_msg;
-      if (integer1 == null) {
-        this.can_send_msg = DEFAULT_CAN_SEND_MSG;
-      } else {
-        this.can_send_msg = integer1;
-      } 
-      str = paramBuilder.prefix;
-      if (str == null) {
-        this.prefix = "";
-      } else {
-        this.prefix = str;
-      } 
-    } else {
-      this.id = ((Builder)str).id;
-      this.intro = ((Builder)str).intro;
-      this.type = ((Builder)str).type;
-      this.fid = ((Builder)str).fid;
-      this.followed = ((Builder)str).followed;
-      this.recommend_reason = ((Builder)str).recommend_reason;
-      this.forum_name = ((Builder)str).forum_name;
-      this.can_send_msg = ((Builder)str).can_send_msg;
-      this.prefix = ((Builder)str).prefix;
-    } 
-  }
-  
-  public GodInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GodInfo> {
-    public Integer can_send_msg;
-    
-    public Long fid;
-    
-    public Integer followed;
-    
-    public String forum_name;
-    
-    public Long id;
-    
-    public String intro;
-    
-    public String prefix;
-    
-    public String recommend_reason;
-    
-    public Integer type;
-    
-    public Builder() {}
-    
-    public Builder(GodInfo param1GodInfo) {
-      super(param1GodInfo);
-      if (param1GodInfo == null)
-        return; 
-      this.id = param1GodInfo.id;
-      this.intro = param1GodInfo.intro;
-      this.type = param1GodInfo.type;
-      this.fid = param1GodInfo.fid;
-      this.followed = param1GodInfo.followed;
-      this.recommend_reason = param1GodInfo.recommend_reason;
-      this.forum_name = param1GodInfo.forum_name;
-      this.can_send_msg = param1GodInfo.can_send_msg;
-      this.prefix = param1GodInfo.prefix;
+    public static final String DEFAULT_FORUM_NAME = "";
+    public static final String DEFAULT_INTRO = "";
+    public static final String DEFAULT_PREFIX = "";
+    public static final String DEFAULT_RECOMMEND_REASON = "";
+    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    public final Integer can_send_msg;
+    @ProtoField(tag = 4, type = Message.Datatype.INT64)
+    public final Long fid;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer followed;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String forum_name;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String intro;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String prefix;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String recommend_reason;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer type;
+    public static final Long DEFAULT_ID = 0L;
+    public static final Integer DEFAULT_TYPE = 0;
+    public static final Long DEFAULT_FID = 0L;
+    public static final Integer DEFAULT_FOLLOWED = 0;
+    public static final Integer DEFAULT_CAN_SEND_MSG = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GodInfo> {
+        public Integer can_send_msg;
+        public Long fid;
+        public Integer followed;
+        public String forum_name;
+        public Long id;
+        public String intro;
+        public String prefix;
+        public String recommend_reason;
+        public Integer type;
+
+        public Builder() {
+        }
+
+        public Builder(GodInfo godInfo) {
+            super(godInfo);
+            if (godInfo == null) {
+                return;
+            }
+            this.id = godInfo.id;
+            this.intro = godInfo.intro;
+            this.type = godInfo.type;
+            this.fid = godInfo.fid;
+            this.followed = godInfo.followed;
+            this.recommend_reason = godInfo.recommend_reason;
+            this.forum_name = godInfo.forum_name;
+            this.can_send_msg = godInfo.can_send_msg;
+            this.prefix = godInfo.prefix;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GodInfo build(boolean z) {
+            return new GodInfo(this, z);
+        }
     }
-    
-    public GodInfo build(boolean param1Boolean) {
-      return new GodInfo(this, param1Boolean, null);
+
+    public GodInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.id;
+            if (l == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = l;
+            }
+            String str = builder.intro;
+            if (str == null) {
+                this.intro = "";
+            } else {
+                this.intro = str;
+            }
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            Long l2 = builder.fid;
+            if (l2 == null) {
+                this.fid = DEFAULT_FID;
+            } else {
+                this.fid = l2;
+            }
+            Integer num2 = builder.followed;
+            if (num2 == null) {
+                this.followed = DEFAULT_FOLLOWED;
+            } else {
+                this.followed = num2;
+            }
+            String str2 = builder.recommend_reason;
+            if (str2 == null) {
+                this.recommend_reason = "";
+            } else {
+                this.recommend_reason = str2;
+            }
+            String str3 = builder.forum_name;
+            if (str3 == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str3;
+            }
+            Integer num3 = builder.can_send_msg;
+            if (num3 == null) {
+                this.can_send_msg = DEFAULT_CAN_SEND_MSG;
+            } else {
+                this.can_send_msg = num3;
+            }
+            String str4 = builder.prefix;
+            if (str4 == null) {
+                this.prefix = "";
+                return;
+            } else {
+                this.prefix = str4;
+                return;
+            }
+        }
+        this.id = builder.id;
+        this.intro = builder.intro;
+        this.type = builder.type;
+        this.fid = builder.fid;
+        this.followed = builder.followed;
+        this.recommend_reason = builder.recommend_reason;
+        this.forum_name = builder.forum_name;
+        this.can_send_msg = builder.can_send_msg;
+        this.prefix = builder.prefix;
     }
-  }
-  
-  public static class a {}
 }

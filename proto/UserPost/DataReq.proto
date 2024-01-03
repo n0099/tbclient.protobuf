@@ -29,7 +29,6 @@ message DataReq {
     string email = 24;
     string cookie = 25;
     uint32 pn = 26;
-    CommonReq common = 27;
     uint32 is_twzhibo = 28;
     int32 scr_w = 29;
     int32 scr_h = 30;

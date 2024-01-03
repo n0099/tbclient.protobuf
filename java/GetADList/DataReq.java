@@ -3,92 +3,80 @@ package tbclient.GetADList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Long DEFAULT_FID;
-  
-  public static final Long DEFAULT_OFFSET;
-  
-  public static final Integer DEFAULT_RN = Integer.valueOf(0);
-  
-  @ProtoField(tag = 1)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT64)
-  public final Long fid;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT64)
-  public final Long offset;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT32)
-  public final Integer rn;
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      Long long_ = paramBuilder.fid;
-      if (long_ == null) {
-        this.fid = DEFAULT_FID;
-      } else {
-        this.fid = long_;
-      } 
-      long_ = paramBuilder.offset;
-      if (long_ == null) {
-        this.offset = DEFAULT_OFFSET;
-      } else {
-        this.offset = long_;
-      } 
-      integer = paramBuilder.rn;
-      if (integer == null) {
-        this.rn = DEFAULT_RN;
-      } else {
-        this.rn = integer;
-      } 
-    } else {
-      this.common = ((Builder)integer).common;
-      this.fid = ((Builder)integer).fid;
-      this.offset = ((Builder)integer).offset;
-      this.rn = ((Builder)integer).rn;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_FID = long_;
-    DEFAULT_OFFSET = long_;
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public CommonReq common;
-    
-    public Long fid;
-    
-    public Long offset;
-    
-    public Integer rn;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.common = param1DataReq.common;
-      this.fid = param1DataReq.fid;
-      this.offset = param1DataReq.offset;
-      this.rn = param1DataReq.rn;
+    public static final Long DEFAULT_FID = 0L;
+    public static final Long DEFAULT_OFFSET = 0L;
+    public static final Integer DEFAULT_RN = 0;
+    @ProtoField(tag = 1)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1293common;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long fid;
+    @ProtoField(tag = 3, type = Message.Datatype.INT64)
+    public final Long offset;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer rn;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1294common;
+        public Long fid;
+        public Long offset;
+        public Integer rn;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.f1294common = dataReq.f1293common;
+            this.fid = dataReq.fid;
+            this.offset = dataReq.offset;
+            this.rn = dataReq.rn;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f1293common = builder.f1294common;
+            Long l = builder.fid;
+            if (l == null) {
+                this.fid = DEFAULT_FID;
+            } else {
+                this.fid = l;
+            }
+            Long l2 = builder.offset;
+            if (l2 == null) {
+                this.offset = DEFAULT_OFFSET;
+            } else {
+                this.offset = l2;
+            }
+            Integer num = builder.rn;
+            if (num == null) {
+                this.rn = DEFAULT_RN;
+                return;
+            } else {
+                this.rn = num;
+                return;
+            }
+        }
+        this.f1293common = builder.f1294common;
+        this.fid = builder.fid;
+        this.offset = builder.offset;
+        this.rn = builder.rn;
     }
-  }
-  
-  public static class a {}
 }

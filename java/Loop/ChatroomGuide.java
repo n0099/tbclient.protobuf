@@ -2,63 +2,57 @@ package tbclient.Loop;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ChatroomGuide extends Message {
-  public static final Integer DEFAULT_HOT_NUM = Integer.valueOf(0);
-  
-  @ProtoField(tag = 2)
-  public final ChatroomGuideConfig hot_config;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer hot_num;
-  
-  @ProtoField(tag = 3)
-  public final ChatroomGuideConfig manual_config;
-  
-  public ChatroomGuide(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.hot_num;
-      if (integer == null) {
-        this.hot_num = DEFAULT_HOT_NUM;
-      } else {
-        this.hot_num = integer;
-      } 
-      this.hot_config = paramBuilder.hot_config;
-      this.manual_config = paramBuilder.manual_config;
-    } else {
-      this.hot_num = paramBuilder.hot_num;
-      this.hot_config = paramBuilder.hot_config;
-      this.manual_config = paramBuilder.manual_config;
-    } 
-  }
-  
-  public ChatroomGuide(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ChatroomGuide> {
-    public ChatroomGuideConfig hot_config;
-    
-    public Integer hot_num;
-    
-    public ChatroomGuideConfig manual_config;
-    
-    public Builder() {}
-    
-    public Builder(ChatroomGuide param1ChatroomGuide) {
-      super(param1ChatroomGuide);
-      if (param1ChatroomGuide == null)
-        return; 
-      this.hot_num = param1ChatroomGuide.hot_num;
-      this.hot_config = param1ChatroomGuide.hot_config;
-      this.manual_config = param1ChatroomGuide.manual_config;
+    public static final Integer DEFAULT_HOT_NUM = 0;
+    @ProtoField(tag = 2)
+    public final ChatroomGuideConfig hot_config;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer hot_num;
+    @ProtoField(tag = 3)
+    public final ChatroomGuideConfig manual_config;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ChatroomGuide> {
+        public ChatroomGuideConfig hot_config;
+        public Integer hot_num;
+        public ChatroomGuideConfig manual_config;
+
+        public Builder() {
+        }
+
+        public Builder(ChatroomGuide chatroomGuide) {
+            super(chatroomGuide);
+            if (chatroomGuide == null) {
+                return;
+            }
+            this.hot_num = chatroomGuide.hot_num;
+            this.hot_config = chatroomGuide.hot_config;
+            this.manual_config = chatroomGuide.manual_config;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ChatroomGuide build(boolean z) {
+            return new ChatroomGuide(this, z);
+        }
     }
-    
-    public ChatroomGuide build(boolean param1Boolean) {
-      return new ChatroomGuide(this, param1Boolean, null);
+
+    public ChatroomGuide(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.hot_num;
+            if (num == null) {
+                this.hot_num = DEFAULT_HOT_NUM;
+            } else {
+                this.hot_num = num;
+            }
+            this.hot_config = builder.hot_config;
+            this.manual_config = builder.manual_config;
+            return;
+        }
+        this.hot_num = builder.hot_num;
+        this.hot_config = builder.hot_config;
+        this.manual_config = builder.manual_config;
     }
-  }
-  
-  public static class a {}
 }

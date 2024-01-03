@@ -2,78 +2,70 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class BannerImage extends Message {
-  public static final String DEFAULT_AHEAD_URL = "";
-  
-  public static final String DEFAULT_IMG_URL = "";
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String ahead_url;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String img_url;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String title;
-  
-  public BannerImage(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.img_url;
-      if (str1 == null) {
-        this.img_url = "";
-      } else {
-        this.img_url = str1;
-      } 
-      str1 = paramBuilder.ahead_url;
-      if (str1 == null) {
-        this.ahead_url = "";
-      } else {
-        this.ahead_url = str1;
-      } 
-      str = paramBuilder.title;
-      if (str == null) {
-        this.title = "";
-      } else {
-        this.title = str;
-      } 
-    } else {
-      this.img_url = ((Builder)str).img_url;
-      this.ahead_url = ((Builder)str).ahead_url;
-      this.title = ((Builder)str).title;
-    } 
-  }
-  
-  public BannerImage(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<BannerImage> {
-    public String ahead_url;
-    
-    public String img_url;
-    
-    public String title;
-    
-    public Builder() {}
-    
-    public Builder(BannerImage param1BannerImage) {
-      super(param1BannerImage);
-      if (param1BannerImage == null)
-        return; 
-      this.img_url = param1BannerImage.img_url;
-      this.ahead_url = param1BannerImage.ahead_url;
-      this.title = param1BannerImage.title;
+    public static final String DEFAULT_AHEAD_URL = "";
+    public static final String DEFAULT_IMG_URL = "";
+    public static final String DEFAULT_TITLE = "";
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String ahead_url;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String img_url;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String title;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<BannerImage> {
+        public String ahead_url;
+        public String img_url;
+        public String title;
+
+        public Builder() {
+        }
+
+        public Builder(BannerImage bannerImage) {
+            super(bannerImage);
+            if (bannerImage == null) {
+                return;
+            }
+            this.img_url = bannerImage.img_url;
+            this.ahead_url = bannerImage.ahead_url;
+            this.title = bannerImage.title;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public BannerImage build(boolean z) {
+            return new BannerImage(this, z);
+        }
     }
-    
-    public BannerImage build(boolean param1Boolean) {
-      return new BannerImage(this, param1Boolean, null);
+
+    public BannerImage(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.img_url;
+            if (str == null) {
+                this.img_url = "";
+            } else {
+                this.img_url = str;
+            }
+            String str2 = builder.ahead_url;
+            if (str2 == null) {
+                this.ahead_url = "";
+            } else {
+                this.ahead_url = str2;
+            }
+            String str3 = builder.title;
+            if (str3 == null) {
+                this.title = "";
+                return;
+            } else {
+                this.title = str3;
+                return;
+            }
+        }
+        this.img_url = builder.img_url;
+        this.ahead_url = builder.ahead_url;
+        this.title = builder.title;
     }
-  }
-  
-  public static class a {}
 }

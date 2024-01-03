@@ -4,731 +4,574 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class BookInfo extends Message {
-  public static final String DEFAULT_AD_CODE = "";
-  
-  public static final String DEFAULT_AUTHOR = "";
-  
-  public static final String DEFAULT_AUTHOR_INTRO = "";
-  
-  public static final String DEFAULT_BIG_COVER = "";
-  
-  public static final String DEFAULT_BOOK_ID = "";
-  
-  public static final Integer DEFAULT_BOOK_SIZE;
-  
-  public static final Integer DEFAULT_BOOK_TYPE;
-  
-  public static final String DEFAULT_BOOK_VER = "";
-  
-  public static final String DEFAULT_CHAPTER_VER = "";
-  
-  public static final Integer DEFAULT_CHARGE_TYPE;
-  
-  public static final Integer DEFAULT_CLASS_ID;
-  
-  public static final String DEFAULT_CLASS_NAME = "";
-  
-  public static final String DEFAULT_COPYRIGHT = "";
-  
-  public static final String DEFAULT_COPYRIGHT_TEXT = "";
-  
-  public static final String DEFAULT_COVER = "";
-  
-  public static final String DEFAULT_CP_ID = "";
-  
-  public static final String DEFAULT_DISCOUNT_ICON = "";
-  
-  public static final String DEFAULT_DISCOUNT_RATIO = "";
-  
-  public static final Integer DEFAULT_DISCOUNT_TYPE;
-  
-  public static final String DEFAULT_DISCUSS = "";
-  
-  public static final Integer DEFAULT_FIRST_CHAPTER;
-  
-  public static final Long DEFAULT_FORUM_ID;
-  
-  public static final String DEFAULT_FORUM_NAME = "";
-  
-  public static final String DEFAULT_FREE_INFO = "";
-  
-  public static final String DEFAULT_INTRO = "";
-  
-  public static final String DEFAULT_ISBN = "";
-  
-  public static final Integer DEFAULT_IS_BUY;
-  
-  public static final Integer DEFAULT_IS_FINISH;
-  
-  public static final Integer DEFAULT_MEMBER_SHOW_TYPE;
-  
-  public static final Integer DEFAULT_ORIGNAL_PRICE;
-  
-  public static final String DEFAULT_PAPER_PRICE = "";
-  
-  public static final Integer DEFAULT_PRICE;
-  
-  public static final String DEFAULT_PUBLISHER = "";
-  
-  public static final String DEFAULT_PUBLISH_TEXT = "";
-  
-  public static final String DEFAULT_PUBLISH_TIME = "";
-  
-  public static final String DEFAULT_PUBLISH_TYPE = "";
-  
-  public static final Integer DEFAULT_READ_COUNT;
-  
-  public static final Integer DEFAULT_SUB_CLASS_ID;
-  
-  public static final String DEFAULT_SUB_CLASS_NAME = "";
-  
-  public static final List<BookTag> DEFAULT_TAGS;
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  public static final Integer DEFAULT_TOTAL_CHAPTER;
-  
-  public static final Integer DEFAULT_TOTAL_PAGE;
-  
-  public static final Integer DEFAULT_UPDATE_TIME;
-  
-  public static final Integer DEFAULT_WORDS;
-  
-  @ProtoField(tag = 20, type = Message.Datatype.STRING)
-  public final String ad_code;
-  
-  @ProtoField(tag = 11, type = Message.Datatype.STRING)
-  public final String author;
-  
-  @ProtoField(tag = 12, type = Message.Datatype.STRING)
-  public final String author_intro;
-  
-  @ProtoField(tag = 31, type = Message.Datatype.STRING)
-  public final String big_cover;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String book_id;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.UINT32)
-  public final Integer book_size;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.UINT32)
-  public final Integer book_type;
-  
-  @ProtoField(tag = 36, type = Message.Datatype.STRING)
-  public final String book_ver;
-  
-  @ProtoField(tag = 37, type = Message.Datatype.STRING)
-  public final String chapter_ver;
-  
-  @ProtoField(tag = 44, type = Message.Datatype.UINT32)
-  public final Integer charge_type;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.UINT32)
-  public final Integer class_id;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String class_name;
-  
-  @ProtoField(tag = 25, type = Message.Datatype.STRING)
-  public final String copyright;
-  
-  @ProtoField(tag = 27, type = Message.Datatype.STRING)
-  public final String copyright_text;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String cover;
-  
-  @ProtoField(tag = 41, type = Message.Datatype.STRING)
-  public final String cp_id;
-  
-  @ProtoField(tag = 33, type = Message.Datatype.STRING)
-  public final String discount_icon;
-  
-  @ProtoField(tag = 18, type = Message.Datatype.STRING)
-  public final String discount_ratio;
-  
-  @ProtoField(tag = 32, type = Message.Datatype.UINT32)
-  public final Integer discount_type;
-  
-  @ProtoField(tag = 40, type = Message.Datatype.STRING)
-  public final String discuss;
-  
-  @ProtoField(tag = 43, type = Message.Datatype.UINT32)
-  public final Integer first_chapter;
-  
-  @ProtoField(tag = 38, type = Message.Datatype.UINT64)
-  public final Long forum_id;
-  
-  @ProtoField(tag = 39, type = Message.Datatype.STRING)
-  public final String forum_name;
-  
-  @ProtoField(tag = 22, type = Message.Datatype.STRING)
-  public final String free_info;
-  
-  @ProtoField(tag = 10, type = Message.Datatype.STRING)
-  public final String intro;
-  
-  @ProtoField(tag = 21, type = Message.Datatype.UINT32)
-  public final Integer is_buy;
-  
-  @ProtoField(tag = 19, type = Message.Datatype.UINT32)
-  public final Integer is_finish;
-  
-  @ProtoField(tag = 24, type = Message.Datatype.STRING)
-  public final String isbn;
-  
-  @ProtoField(tag = 45, type = Message.Datatype.UINT32)
-  public final Integer member_show_type;
-  
-  @ProtoField(tag = 16, type = Message.Datatype.UINT32)
-  public final Integer orignal_price;
-  
-  @ProtoField(tag = 42, type = Message.Datatype.STRING)
-  public final String paper_price;
-  
-  @ProtoField(tag = 17, type = Message.Datatype.UINT32)
-  public final Integer price;
-  
-  @ProtoField(tag = 26, type = Message.Datatype.STRING)
-  public final String publish_text;
-  
-  @ProtoField(tag = 28, type = Message.Datatype.STRING)
-  public final String publish_time;
-  
-  @ProtoField(tag = 29, type = Message.Datatype.STRING)
-  public final String publish_type;
-  
-  @ProtoField(tag = 23, type = Message.Datatype.STRING)
-  public final String publisher;
-  
-  @ProtoField(tag = 34, type = Message.Datatype.UINT32)
-  public final Integer read_count;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.UINT32)
-  public final Integer sub_class_id;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.STRING)
-  public final String sub_class_name;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 13)
-  public final List<BookTag> tags;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String title;
-  
-  @ProtoField(tag = 14, type = Message.Datatype.UINT32)
-  public final Integer total_chapter;
-  
-  @ProtoField(tag = 35, type = Message.Datatype.UINT32)
-  public final Integer total_page;
-  
-  @ProtoField(tag = 30, type = Message.Datatype.UINT32)
-  public final Integer update_time;
-  
-  @ProtoField(tag = 15, type = Message.Datatype.UINT32)
-  public final Integer words;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_BOOK_TYPE = integer;
-    DEFAULT_CLASS_ID = integer;
-    DEFAULT_SUB_CLASS_ID = integer;
-    DEFAULT_BOOK_SIZE = integer;
-    DEFAULT_TAGS = Collections.emptyList();
-    DEFAULT_TOTAL_CHAPTER = integer;
-    DEFAULT_WORDS = integer;
-    DEFAULT_ORIGNAL_PRICE = integer;
-    DEFAULT_PRICE = integer;
-    DEFAULT_IS_FINISH = integer;
-    DEFAULT_IS_BUY = integer;
-    DEFAULT_UPDATE_TIME = integer;
-    DEFAULT_DISCOUNT_TYPE = integer;
-    DEFAULT_READ_COUNT = integer;
-    DEFAULT_TOTAL_PAGE = integer;
-    DEFAULT_FORUM_ID = Long.valueOf(0L);
-    DEFAULT_FIRST_CHAPTER = integer;
-    DEFAULT_CHARGE_TYPE = integer;
-    DEFAULT_MEMBER_SHOW_TYPE = integer;
-  }
-  
-  public BookInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      String str11 = paramBuilder.book_id;
-      if (str11 == null) {
-        this.book_id = "";
-      } else {
-        this.book_id = str11;
-      } 
-      str11 = paramBuilder.title;
-      if (str11 == null) {
-        this.title = "";
-      } else {
-        this.title = str11;
-      } 
-      str11 = paramBuilder.cover;
-      if (str11 == null) {
-        this.cover = "";
-      } else {
-        this.cover = str11;
-      } 
-      Integer integer10 = paramBuilder.book_type;
-      if (integer10 == null) {
-        this.book_type = DEFAULT_BOOK_TYPE;
-      } else {
-        this.book_type = integer10;
-      } 
-      integer10 = paramBuilder.class_id;
-      if (integer10 == null) {
-        this.class_id = DEFAULT_CLASS_ID;
-      } else {
-        this.class_id = integer10;
-      } 
-      String str10 = paramBuilder.class_name;
-      if (str10 == null) {
-        this.class_name = "";
-      } else {
-        this.class_name = str10;
-      } 
-      Integer integer9 = paramBuilder.sub_class_id;
-      if (integer9 == null) {
-        this.sub_class_id = DEFAULT_SUB_CLASS_ID;
-      } else {
-        this.sub_class_id = integer9;
-      } 
-      String str9 = paramBuilder.sub_class_name;
-      if (str9 == null) {
-        this.sub_class_name = "";
-      } else {
-        this.sub_class_name = str9;
-      } 
-      Integer integer8 = paramBuilder.book_size;
-      if (integer8 == null) {
-        this.book_size = DEFAULT_BOOK_SIZE;
-      } else {
-        this.book_size = integer8;
-      } 
-      String str8 = paramBuilder.intro;
-      if (str8 == null) {
-        this.intro = "";
-      } else {
-        this.intro = str8;
-      } 
-      str8 = paramBuilder.author;
-      if (str8 == null) {
-        this.author = "";
-      } else {
-        this.author = str8;
-      } 
-      str8 = paramBuilder.author_intro;
-      if (str8 == null) {
-        this.author_intro = "";
-      } else {
-        this.author_intro = str8;
-      } 
-      List<BookTag> list = paramBuilder.tags;
-      if (list == null) {
-        this.tags = DEFAULT_TAGS;
-      } else {
-        this.tags = Message.immutableCopyOf(list);
-      } 
-      Integer integer7 = paramBuilder.total_chapter;
-      if (integer7 == null) {
-        this.total_chapter = DEFAULT_TOTAL_CHAPTER;
-      } else {
-        this.total_chapter = integer7;
-      } 
-      integer7 = paramBuilder.words;
-      if (integer7 == null) {
-        this.words = DEFAULT_WORDS;
-      } else {
-        this.words = integer7;
-      } 
-      integer7 = paramBuilder.orignal_price;
-      if (integer7 == null) {
-        this.orignal_price = DEFAULT_ORIGNAL_PRICE;
-      } else {
-        this.orignal_price = integer7;
-      } 
-      integer7 = paramBuilder.price;
-      if (integer7 == null) {
-        this.price = DEFAULT_PRICE;
-      } else {
-        this.price = integer7;
-      } 
-      String str7 = paramBuilder.discount_ratio;
-      if (str7 == null) {
-        this.discount_ratio = "";
-      } else {
-        this.discount_ratio = str7;
-      } 
-      Integer integer6 = paramBuilder.is_finish;
-      if (integer6 == null) {
-        this.is_finish = DEFAULT_IS_FINISH;
-      } else {
-        this.is_finish = integer6;
-      } 
-      String str6 = paramBuilder.ad_code;
-      if (str6 == null) {
-        this.ad_code = "";
-      } else {
-        this.ad_code = str6;
-      } 
-      Integer integer5 = paramBuilder.is_buy;
-      if (integer5 == null) {
-        this.is_buy = DEFAULT_IS_BUY;
-      } else {
-        this.is_buy = integer5;
-      } 
-      String str5 = paramBuilder.free_info;
-      if (str5 == null) {
-        this.free_info = "";
-      } else {
-        this.free_info = str5;
-      } 
-      str5 = paramBuilder.publisher;
-      if (str5 == null) {
-        this.publisher = "";
-      } else {
-        this.publisher = str5;
-      } 
-      str5 = paramBuilder.isbn;
-      if (str5 == null) {
-        this.isbn = "";
-      } else {
-        this.isbn = str5;
-      } 
-      str5 = paramBuilder.copyright;
-      if (str5 == null) {
-        this.copyright = "";
-      } else {
-        this.copyright = str5;
-      } 
-      str5 = paramBuilder.publish_text;
-      if (str5 == null) {
-        this.publish_text = "";
-      } else {
-        this.publish_text = str5;
-      } 
-      str5 = paramBuilder.copyright_text;
-      if (str5 == null) {
-        this.copyright_text = "";
-      } else {
-        this.copyright_text = str5;
-      } 
-      str5 = paramBuilder.publish_time;
-      if (str5 == null) {
-        this.publish_time = "";
-      } else {
-        this.publish_time = str5;
-      } 
-      str5 = paramBuilder.publish_type;
-      if (str5 == null) {
-        this.publish_type = "";
-      } else {
-        this.publish_type = str5;
-      } 
-      Integer integer4 = paramBuilder.update_time;
-      if (integer4 == null) {
-        this.update_time = DEFAULT_UPDATE_TIME;
-      } else {
-        this.update_time = integer4;
-      } 
-      String str4 = paramBuilder.big_cover;
-      if (str4 == null) {
-        this.big_cover = "";
-      } else {
-        this.big_cover = str4;
-      } 
-      Integer integer3 = paramBuilder.discount_type;
-      if (integer3 == null) {
-        this.discount_type = DEFAULT_DISCOUNT_TYPE;
-      } else {
-        this.discount_type = integer3;
-      } 
-      String str3 = paramBuilder.discount_icon;
-      if (str3 == null) {
-        this.discount_icon = "";
-      } else {
-        this.discount_icon = str3;
-      } 
-      Integer integer2 = paramBuilder.read_count;
-      if (integer2 == null) {
-        this.read_count = DEFAULT_READ_COUNT;
-      } else {
-        this.read_count = integer2;
-      } 
-      integer2 = paramBuilder.total_page;
-      if (integer2 == null) {
-        this.total_page = DEFAULT_TOTAL_PAGE;
-      } else {
-        this.total_page = integer2;
-      } 
-      String str2 = paramBuilder.book_ver;
-      if (str2 == null) {
-        this.book_ver = "";
-      } else {
-        this.book_ver = str2;
-      } 
-      str2 = paramBuilder.chapter_ver;
-      if (str2 == null) {
-        this.chapter_ver = "";
-      } else {
-        this.chapter_ver = str2;
-      } 
-      Long long_ = paramBuilder.forum_id;
-      if (long_ == null) {
-        this.forum_id = DEFAULT_FORUM_ID;
-      } else {
-        this.forum_id = long_;
-      } 
-      String str1 = paramBuilder.forum_name;
-      if (str1 == null) {
-        this.forum_name = "";
-      } else {
-        this.forum_name = str1;
-      } 
-      str1 = paramBuilder.discuss;
-      if (str1 == null) {
-        this.discuss = "";
-      } else {
-        this.discuss = str1;
-      } 
-      str1 = paramBuilder.cp_id;
-      if (str1 == null) {
-        this.cp_id = "";
-      } else {
-        this.cp_id = str1;
-      } 
-      str1 = paramBuilder.paper_price;
-      if (str1 == null) {
-        this.paper_price = "";
-      } else {
-        this.paper_price = str1;
-      } 
-      Integer integer1 = paramBuilder.first_chapter;
-      if (integer1 == null) {
-        this.first_chapter = DEFAULT_FIRST_CHAPTER;
-      } else {
-        this.first_chapter = integer1;
-      } 
-      integer1 = paramBuilder.charge_type;
-      if (integer1 == null) {
-        this.charge_type = DEFAULT_CHARGE_TYPE;
-      } else {
-        this.charge_type = integer1;
-      } 
-      integer = paramBuilder.member_show_type;
-      if (integer == null) {
-        this.member_show_type = DEFAULT_MEMBER_SHOW_TYPE;
-      } else {
-        this.member_show_type = integer;
-      } 
-    } else {
-      this.book_id = ((Builder)integer).book_id;
-      this.title = ((Builder)integer).title;
-      this.cover = ((Builder)integer).cover;
-      this.book_type = ((Builder)integer).book_type;
-      this.class_id = ((Builder)integer).class_id;
-      this.class_name = ((Builder)integer).class_name;
-      this.sub_class_id = ((Builder)integer).sub_class_id;
-      this.sub_class_name = ((Builder)integer).sub_class_name;
-      this.book_size = ((Builder)integer).book_size;
-      this.intro = ((Builder)integer).intro;
-      this.author = ((Builder)integer).author;
-      this.author_intro = ((Builder)integer).author_intro;
-      this.tags = Message.immutableCopyOf(((Builder)integer).tags);
-      this.total_chapter = ((Builder)integer).total_chapter;
-      this.words = ((Builder)integer).words;
-      this.orignal_price = ((Builder)integer).orignal_price;
-      this.price = ((Builder)integer).price;
-      this.discount_ratio = ((Builder)integer).discount_ratio;
-      this.is_finish = ((Builder)integer).is_finish;
-      this.ad_code = ((Builder)integer).ad_code;
-      this.is_buy = ((Builder)integer).is_buy;
-      this.free_info = ((Builder)integer).free_info;
-      this.publisher = ((Builder)integer).publisher;
-      this.isbn = ((Builder)integer).isbn;
-      this.copyright = ((Builder)integer).copyright;
-      this.publish_text = ((Builder)integer).publish_text;
-      this.copyright_text = ((Builder)integer).copyright_text;
-      this.publish_time = ((Builder)integer).publish_time;
-      this.publish_type = ((Builder)integer).publish_type;
-      this.update_time = ((Builder)integer).update_time;
-      this.big_cover = ((Builder)integer).big_cover;
-      this.discount_type = ((Builder)integer).discount_type;
-      this.discount_icon = ((Builder)integer).discount_icon;
-      this.read_count = ((Builder)integer).read_count;
-      this.total_page = ((Builder)integer).total_page;
-      this.book_ver = ((Builder)integer).book_ver;
-      this.chapter_ver = ((Builder)integer).chapter_ver;
-      this.forum_id = ((Builder)integer).forum_id;
-      this.forum_name = ((Builder)integer).forum_name;
-      this.discuss = ((Builder)integer).discuss;
-      this.cp_id = ((Builder)integer).cp_id;
-      this.paper_price = ((Builder)integer).paper_price;
-      this.first_chapter = ((Builder)integer).first_chapter;
-      this.charge_type = ((Builder)integer).charge_type;
-      this.member_show_type = ((Builder)integer).member_show_type;
-    } 
-  }
-  
-  public BookInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<BookInfo> {
-    public String ad_code;
-    
-    public String author;
-    
-    public String author_intro;
-    
-    public String big_cover;
-    
-    public String book_id;
-    
-    public Integer book_size;
-    
-    public Integer book_type;
-    
-    public String book_ver;
-    
-    public String chapter_ver;
-    
-    public Integer charge_type;
-    
-    public Integer class_id;
-    
-    public String class_name;
-    
-    public String copyright;
-    
-    public String copyright_text;
-    
-    public String cover;
-    
-    public String cp_id;
-    
-    public String discount_icon;
-    
-    public String discount_ratio;
-    
-    public Integer discount_type;
-    
-    public String discuss;
-    
-    public Integer first_chapter;
-    
-    public Long forum_id;
-    
-    public String forum_name;
-    
-    public String free_info;
-    
-    public String intro;
-    
-    public Integer is_buy;
-    
-    public Integer is_finish;
-    
-    public String isbn;
-    
-    public Integer member_show_type;
-    
-    public Integer orignal_price;
-    
-    public String paper_price;
-    
-    public Integer price;
-    
-    public String publish_text;
-    
-    public String publish_time;
-    
-    public String publish_type;
-    
-    public String publisher;
-    
-    public Integer read_count;
-    
-    public Integer sub_class_id;
-    
-    public String sub_class_name;
-    
-    public List<BookTag> tags;
-    
-    public String title;
-    
-    public Integer total_chapter;
-    
-    public Integer total_page;
-    
-    public Integer update_time;
-    
-    public Integer words;
-    
-    public Builder() {}
-    
-    public Builder(BookInfo param1BookInfo) {
-      super(param1BookInfo);
-      if (param1BookInfo == null)
-        return; 
-      this.book_id = param1BookInfo.book_id;
-      this.title = param1BookInfo.title;
-      this.cover = param1BookInfo.cover;
-      this.book_type = param1BookInfo.book_type;
-      this.class_id = param1BookInfo.class_id;
-      this.class_name = param1BookInfo.class_name;
-      this.sub_class_id = param1BookInfo.sub_class_id;
-      this.sub_class_name = param1BookInfo.sub_class_name;
-      this.book_size = param1BookInfo.book_size;
-      this.intro = param1BookInfo.intro;
-      this.author = param1BookInfo.author;
-      this.author_intro = param1BookInfo.author_intro;
-      this.tags = Message.copyOf(param1BookInfo.tags);
-      this.total_chapter = param1BookInfo.total_chapter;
-      this.words = param1BookInfo.words;
-      this.orignal_price = param1BookInfo.orignal_price;
-      this.price = param1BookInfo.price;
-      this.discount_ratio = param1BookInfo.discount_ratio;
-      this.is_finish = param1BookInfo.is_finish;
-      this.ad_code = param1BookInfo.ad_code;
-      this.is_buy = param1BookInfo.is_buy;
-      this.free_info = param1BookInfo.free_info;
-      this.publisher = param1BookInfo.publisher;
-      this.isbn = param1BookInfo.isbn;
-      this.copyright = param1BookInfo.copyright;
-      this.publish_text = param1BookInfo.publish_text;
-      this.copyright_text = param1BookInfo.copyright_text;
-      this.publish_time = param1BookInfo.publish_time;
-      this.publish_type = param1BookInfo.publish_type;
-      this.update_time = param1BookInfo.update_time;
-      this.big_cover = param1BookInfo.big_cover;
-      this.discount_type = param1BookInfo.discount_type;
-      this.discount_icon = param1BookInfo.discount_icon;
-      this.read_count = param1BookInfo.read_count;
-      this.total_page = param1BookInfo.total_page;
-      this.book_ver = param1BookInfo.book_ver;
-      this.chapter_ver = param1BookInfo.chapter_ver;
-      this.forum_id = param1BookInfo.forum_id;
-      this.forum_name = param1BookInfo.forum_name;
-      this.discuss = param1BookInfo.discuss;
-      this.cp_id = param1BookInfo.cp_id;
-      this.paper_price = param1BookInfo.paper_price;
-      this.first_chapter = param1BookInfo.first_chapter;
-      this.charge_type = param1BookInfo.charge_type;
-      this.member_show_type = param1BookInfo.member_show_type;
+    public static final String DEFAULT_AD_CODE = "";
+    public static final String DEFAULT_AUTHOR = "";
+    public static final String DEFAULT_AUTHOR_INTRO = "";
+    public static final String DEFAULT_BIG_COVER = "";
+    public static final String DEFAULT_BOOK_ID = "";
+    public static final String DEFAULT_BOOK_VER = "";
+    public static final String DEFAULT_CHAPTER_VER = "";
+    public static final String DEFAULT_CLASS_NAME = "";
+    public static final String DEFAULT_COPYRIGHT = "";
+    public static final String DEFAULT_COPYRIGHT_TEXT = "";
+    public static final String DEFAULT_COVER = "";
+    public static final String DEFAULT_CP_ID = "";
+    public static final String DEFAULT_DISCOUNT_ICON = "";
+    public static final String DEFAULT_DISCOUNT_RATIO = "";
+    public static final String DEFAULT_DISCUSS = "";
+    public static final String DEFAULT_FORUM_NAME = "";
+    public static final String DEFAULT_FREE_INFO = "";
+    public static final String DEFAULT_INTRO = "";
+    public static final String DEFAULT_ISBN = "";
+    public static final String DEFAULT_PAPER_PRICE = "";
+    public static final String DEFAULT_PUBLISHER = "";
+    public static final String DEFAULT_PUBLISH_TEXT = "";
+    public static final String DEFAULT_PUBLISH_TIME = "";
+    public static final String DEFAULT_PUBLISH_TYPE = "";
+    public static final String DEFAULT_SUB_CLASS_NAME = "";
+    public static final String DEFAULT_TITLE = "";
+    @ProtoField(tag = 20, type = Message.Datatype.STRING)
+    public final String ad_code;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String author;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String author_intro;
+    @ProtoField(tag = 31, type = Message.Datatype.STRING)
+    public final String big_cover;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String book_id;
+    @ProtoField(tag = 9, type = Message.Datatype.UINT32)
+    public final Integer book_size;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+    public final Integer book_type;
+    @ProtoField(tag = 36, type = Message.Datatype.STRING)
+    public final String book_ver;
+    @ProtoField(tag = 37, type = Message.Datatype.STRING)
+    public final String chapter_ver;
+    @ProtoField(tag = 44, type = Message.Datatype.UINT32)
+    public final Integer charge_type;
+    @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+    public final Integer class_id;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String class_name;
+    @ProtoField(tag = 25, type = Message.Datatype.STRING)
+    public final String copyright;
+    @ProtoField(tag = 27, type = Message.Datatype.STRING)
+    public final String copyright_text;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String cover;
+    @ProtoField(tag = 41, type = Message.Datatype.STRING)
+    public final String cp_id;
+    @ProtoField(tag = 33, type = Message.Datatype.STRING)
+    public final String discount_icon;
+    @ProtoField(tag = 18, type = Message.Datatype.STRING)
+    public final String discount_ratio;
+    @ProtoField(tag = 32, type = Message.Datatype.UINT32)
+    public final Integer discount_type;
+    @ProtoField(tag = 40, type = Message.Datatype.STRING)
+    public final String discuss;
+    @ProtoField(tag = 43, type = Message.Datatype.UINT32)
+    public final Integer first_chapter;
+    @ProtoField(tag = 38, type = Message.Datatype.UINT64)
+    public final Long forum_id;
+    @ProtoField(tag = 39, type = Message.Datatype.STRING)
+    public final String forum_name;
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    public final String free_info;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String intro;
+    @ProtoField(tag = 21, type = Message.Datatype.UINT32)
+    public final Integer is_buy;
+    @ProtoField(tag = 19, type = Message.Datatype.UINT32)
+    public final Integer is_finish;
+    @ProtoField(tag = 24, type = Message.Datatype.STRING)
+    public final String isbn;
+    @ProtoField(tag = 45, type = Message.Datatype.UINT32)
+    public final Integer member_show_type;
+    @ProtoField(tag = 16, type = Message.Datatype.UINT32)
+    public final Integer orignal_price;
+    @ProtoField(tag = 42, type = Message.Datatype.STRING)
+    public final String paper_price;
+    @ProtoField(tag = 17, type = Message.Datatype.UINT32)
+    public final Integer price;
+    @ProtoField(tag = 26, type = Message.Datatype.STRING)
+    public final String publish_text;
+    @ProtoField(tag = 28, type = Message.Datatype.STRING)
+    public final String publish_time;
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    public final String publish_type;
+    @ProtoField(tag = 23, type = Message.Datatype.STRING)
+    public final String publisher;
+    @ProtoField(tag = 34, type = Message.Datatype.UINT32)
+    public final Integer read_count;
+    @ProtoField(tag = 7, type = Message.Datatype.UINT32)
+    public final Integer sub_class_id;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String sub_class_name;
+    @ProtoField(label = Message.Label.REPEATED, tag = 13)
+    public final List<BookTag> tags;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String title;
+    @ProtoField(tag = 14, type = Message.Datatype.UINT32)
+    public final Integer total_chapter;
+    @ProtoField(tag = 35, type = Message.Datatype.UINT32)
+    public final Integer total_page;
+    @ProtoField(tag = 30, type = Message.Datatype.UINT32)
+    public final Integer update_time;
+    @ProtoField(tag = 15, type = Message.Datatype.UINT32)
+    public final Integer words;
+    public static final Integer DEFAULT_BOOK_TYPE = 0;
+    public static final Integer DEFAULT_CLASS_ID = 0;
+    public static final Integer DEFAULT_SUB_CLASS_ID = 0;
+    public static final Integer DEFAULT_BOOK_SIZE = 0;
+    public static final List<BookTag> DEFAULT_TAGS = Collections.emptyList();
+    public static final Integer DEFAULT_TOTAL_CHAPTER = 0;
+    public static final Integer DEFAULT_WORDS = 0;
+    public static final Integer DEFAULT_ORIGNAL_PRICE = 0;
+    public static final Integer DEFAULT_PRICE = 0;
+    public static final Integer DEFAULT_IS_FINISH = 0;
+    public static final Integer DEFAULT_IS_BUY = 0;
+    public static final Integer DEFAULT_UPDATE_TIME = 0;
+    public static final Integer DEFAULT_DISCOUNT_TYPE = 0;
+    public static final Integer DEFAULT_READ_COUNT = 0;
+    public static final Integer DEFAULT_TOTAL_PAGE = 0;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_FIRST_CHAPTER = 0;
+    public static final Integer DEFAULT_CHARGE_TYPE = 0;
+    public static final Integer DEFAULT_MEMBER_SHOW_TYPE = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<BookInfo> {
+        public String ad_code;
+        public String author;
+        public String author_intro;
+        public String big_cover;
+        public String book_id;
+        public Integer book_size;
+        public Integer book_type;
+        public String book_ver;
+        public String chapter_ver;
+        public Integer charge_type;
+        public Integer class_id;
+        public String class_name;
+        public String copyright;
+        public String copyright_text;
+        public String cover;
+        public String cp_id;
+        public String discount_icon;
+        public String discount_ratio;
+        public Integer discount_type;
+        public String discuss;
+        public Integer first_chapter;
+        public Long forum_id;
+        public String forum_name;
+        public String free_info;
+        public String intro;
+        public Integer is_buy;
+        public Integer is_finish;
+        public String isbn;
+        public Integer member_show_type;
+        public Integer orignal_price;
+        public String paper_price;
+        public Integer price;
+        public String publish_text;
+        public String publish_time;
+        public String publish_type;
+        public String publisher;
+        public Integer read_count;
+        public Integer sub_class_id;
+        public String sub_class_name;
+        public List<BookTag> tags;
+        public String title;
+        public Integer total_chapter;
+        public Integer total_page;
+        public Integer update_time;
+        public Integer words;
+
+        public Builder() {
+        }
+
+        public Builder(BookInfo bookInfo) {
+            super(bookInfo);
+            if (bookInfo == null) {
+                return;
+            }
+            this.book_id = bookInfo.book_id;
+            this.title = bookInfo.title;
+            this.cover = bookInfo.cover;
+            this.book_type = bookInfo.book_type;
+            this.class_id = bookInfo.class_id;
+            this.class_name = bookInfo.class_name;
+            this.sub_class_id = bookInfo.sub_class_id;
+            this.sub_class_name = bookInfo.sub_class_name;
+            this.book_size = bookInfo.book_size;
+            this.intro = bookInfo.intro;
+            this.author = bookInfo.author;
+            this.author_intro = bookInfo.author_intro;
+            this.tags = Message.copyOf(bookInfo.tags);
+            this.total_chapter = bookInfo.total_chapter;
+            this.words = bookInfo.words;
+            this.orignal_price = bookInfo.orignal_price;
+            this.price = bookInfo.price;
+            this.discount_ratio = bookInfo.discount_ratio;
+            this.is_finish = bookInfo.is_finish;
+            this.ad_code = bookInfo.ad_code;
+            this.is_buy = bookInfo.is_buy;
+            this.free_info = bookInfo.free_info;
+            this.publisher = bookInfo.publisher;
+            this.isbn = bookInfo.isbn;
+            this.copyright = bookInfo.copyright;
+            this.publish_text = bookInfo.publish_text;
+            this.copyright_text = bookInfo.copyright_text;
+            this.publish_time = bookInfo.publish_time;
+            this.publish_type = bookInfo.publish_type;
+            this.update_time = bookInfo.update_time;
+            this.big_cover = bookInfo.big_cover;
+            this.discount_type = bookInfo.discount_type;
+            this.discount_icon = bookInfo.discount_icon;
+            this.read_count = bookInfo.read_count;
+            this.total_page = bookInfo.total_page;
+            this.book_ver = bookInfo.book_ver;
+            this.chapter_ver = bookInfo.chapter_ver;
+            this.forum_id = bookInfo.forum_id;
+            this.forum_name = bookInfo.forum_name;
+            this.discuss = bookInfo.discuss;
+            this.cp_id = bookInfo.cp_id;
+            this.paper_price = bookInfo.paper_price;
+            this.first_chapter = bookInfo.first_chapter;
+            this.charge_type = bookInfo.charge_type;
+            this.member_show_type = bookInfo.member_show_type;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public BookInfo build(boolean z) {
+            return new BookInfo(this, z);
+        }
     }
-    
-    public BookInfo build(boolean param1Boolean) {
-      return new BookInfo(this, param1Boolean, null);
+
+    public BookInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.book_id;
+            if (str == null) {
+                this.book_id = "";
+            } else {
+                this.book_id = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            String str3 = builder.cover;
+            if (str3 == null) {
+                this.cover = "";
+            } else {
+                this.cover = str3;
+            }
+            Integer num = builder.book_type;
+            if (num == null) {
+                this.book_type = DEFAULT_BOOK_TYPE;
+            } else {
+                this.book_type = num;
+            }
+            Integer num2 = builder.class_id;
+            if (num2 == null) {
+                this.class_id = DEFAULT_CLASS_ID;
+            } else {
+                this.class_id = num2;
+            }
+            String str4 = builder.class_name;
+            if (str4 == null) {
+                this.class_name = "";
+            } else {
+                this.class_name = str4;
+            }
+            Integer num3 = builder.sub_class_id;
+            if (num3 == null) {
+                this.sub_class_id = DEFAULT_SUB_CLASS_ID;
+            } else {
+                this.sub_class_id = num3;
+            }
+            String str5 = builder.sub_class_name;
+            if (str5 == null) {
+                this.sub_class_name = "";
+            } else {
+                this.sub_class_name = str5;
+            }
+            Integer num4 = builder.book_size;
+            if (num4 == null) {
+                this.book_size = DEFAULT_BOOK_SIZE;
+            } else {
+                this.book_size = num4;
+            }
+            String str6 = builder.intro;
+            if (str6 == null) {
+                this.intro = "";
+            } else {
+                this.intro = str6;
+            }
+            String str7 = builder.author;
+            if (str7 == null) {
+                this.author = "";
+            } else {
+                this.author = str7;
+            }
+            String str8 = builder.author_intro;
+            if (str8 == null) {
+                this.author_intro = "";
+            } else {
+                this.author_intro = str8;
+            }
+            List<BookTag> list = builder.tags;
+            if (list == null) {
+                this.tags = DEFAULT_TAGS;
+            } else {
+                this.tags = Message.immutableCopyOf(list);
+            }
+            Integer num5 = builder.total_chapter;
+            if (num5 == null) {
+                this.total_chapter = DEFAULT_TOTAL_CHAPTER;
+            } else {
+                this.total_chapter = num5;
+            }
+            Integer num6 = builder.words;
+            if (num6 == null) {
+                this.words = DEFAULT_WORDS;
+            } else {
+                this.words = num6;
+            }
+            Integer num7 = builder.orignal_price;
+            if (num7 == null) {
+                this.orignal_price = DEFAULT_ORIGNAL_PRICE;
+            } else {
+                this.orignal_price = num7;
+            }
+            Integer num8 = builder.price;
+            if (num8 == null) {
+                this.price = DEFAULT_PRICE;
+            } else {
+                this.price = num8;
+            }
+            String str9 = builder.discount_ratio;
+            if (str9 == null) {
+                this.discount_ratio = "";
+            } else {
+                this.discount_ratio = str9;
+            }
+            Integer num9 = builder.is_finish;
+            if (num9 == null) {
+                this.is_finish = DEFAULT_IS_FINISH;
+            } else {
+                this.is_finish = num9;
+            }
+            String str10 = builder.ad_code;
+            if (str10 == null) {
+                this.ad_code = "";
+            } else {
+                this.ad_code = str10;
+            }
+            Integer num10 = builder.is_buy;
+            if (num10 == null) {
+                this.is_buy = DEFAULT_IS_BUY;
+            } else {
+                this.is_buy = num10;
+            }
+            String str11 = builder.free_info;
+            if (str11 == null) {
+                this.free_info = "";
+            } else {
+                this.free_info = str11;
+            }
+            String str12 = builder.publisher;
+            if (str12 == null) {
+                this.publisher = "";
+            } else {
+                this.publisher = str12;
+            }
+            String str13 = builder.isbn;
+            if (str13 == null) {
+                this.isbn = "";
+            } else {
+                this.isbn = str13;
+            }
+            String str14 = builder.copyright;
+            if (str14 == null) {
+                this.copyright = "";
+            } else {
+                this.copyright = str14;
+            }
+            String str15 = builder.publish_text;
+            if (str15 == null) {
+                this.publish_text = "";
+            } else {
+                this.publish_text = str15;
+            }
+            String str16 = builder.copyright_text;
+            if (str16 == null) {
+                this.copyright_text = "";
+            } else {
+                this.copyright_text = str16;
+            }
+            String str17 = builder.publish_time;
+            if (str17 == null) {
+                this.publish_time = "";
+            } else {
+                this.publish_time = str17;
+            }
+            String str18 = builder.publish_type;
+            if (str18 == null) {
+                this.publish_type = "";
+            } else {
+                this.publish_type = str18;
+            }
+            Integer num11 = builder.update_time;
+            if (num11 == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = num11;
+            }
+            String str19 = builder.big_cover;
+            if (str19 == null) {
+                this.big_cover = "";
+            } else {
+                this.big_cover = str19;
+            }
+            Integer num12 = builder.discount_type;
+            if (num12 == null) {
+                this.discount_type = DEFAULT_DISCOUNT_TYPE;
+            } else {
+                this.discount_type = num12;
+            }
+            String str20 = builder.discount_icon;
+            if (str20 == null) {
+                this.discount_icon = "";
+            } else {
+                this.discount_icon = str20;
+            }
+            Integer num13 = builder.read_count;
+            if (num13 == null) {
+                this.read_count = DEFAULT_READ_COUNT;
+            } else {
+                this.read_count = num13;
+            }
+            Integer num14 = builder.total_page;
+            if (num14 == null) {
+                this.total_page = DEFAULT_TOTAL_PAGE;
+            } else {
+                this.total_page = num14;
+            }
+            String str21 = builder.book_ver;
+            if (str21 == null) {
+                this.book_ver = "";
+            } else {
+                this.book_ver = str21;
+            }
+            String str22 = builder.chapter_ver;
+            if (str22 == null) {
+                this.chapter_ver = "";
+            } else {
+                this.chapter_ver = str22;
+            }
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            String str23 = builder.forum_name;
+            if (str23 == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str23;
+            }
+            String str24 = builder.discuss;
+            if (str24 == null) {
+                this.discuss = "";
+            } else {
+                this.discuss = str24;
+            }
+            String str25 = builder.cp_id;
+            if (str25 == null) {
+                this.cp_id = "";
+            } else {
+                this.cp_id = str25;
+            }
+            String str26 = builder.paper_price;
+            if (str26 == null) {
+                this.paper_price = "";
+            } else {
+                this.paper_price = str26;
+            }
+            Integer num15 = builder.first_chapter;
+            if (num15 == null) {
+                this.first_chapter = DEFAULT_FIRST_CHAPTER;
+            } else {
+                this.first_chapter = num15;
+            }
+            Integer num16 = builder.charge_type;
+            if (num16 == null) {
+                this.charge_type = DEFAULT_CHARGE_TYPE;
+            } else {
+                this.charge_type = num16;
+            }
+            Integer num17 = builder.member_show_type;
+            if (num17 == null) {
+                this.member_show_type = DEFAULT_MEMBER_SHOW_TYPE;
+                return;
+            } else {
+                this.member_show_type = num17;
+                return;
+            }
+        }
+        this.book_id = builder.book_id;
+        this.title = builder.title;
+        this.cover = builder.cover;
+        this.book_type = builder.book_type;
+        this.class_id = builder.class_id;
+        this.class_name = builder.class_name;
+        this.sub_class_id = builder.sub_class_id;
+        this.sub_class_name = builder.sub_class_name;
+        this.book_size = builder.book_size;
+        this.intro = builder.intro;
+        this.author = builder.author;
+        this.author_intro = builder.author_intro;
+        this.tags = Message.immutableCopyOf(builder.tags);
+        this.total_chapter = builder.total_chapter;
+        this.words = builder.words;
+        this.orignal_price = builder.orignal_price;
+        this.price = builder.price;
+        this.discount_ratio = builder.discount_ratio;
+        this.is_finish = builder.is_finish;
+        this.ad_code = builder.ad_code;
+        this.is_buy = builder.is_buy;
+        this.free_info = builder.free_info;
+        this.publisher = builder.publisher;
+        this.isbn = builder.isbn;
+        this.copyright = builder.copyright;
+        this.publish_text = builder.publish_text;
+        this.copyright_text = builder.copyright_text;
+        this.publish_time = builder.publish_time;
+        this.publish_type = builder.publish_type;
+        this.update_time = builder.update_time;
+        this.big_cover = builder.big_cover;
+        this.discount_type = builder.discount_type;
+        this.discount_icon = builder.discount_icon;
+        this.read_count = builder.read_count;
+        this.total_page = builder.total_page;
+        this.book_ver = builder.book_ver;
+        this.chapter_ver = builder.chapter_ver;
+        this.forum_id = builder.forum_id;
+        this.forum_name = builder.forum_name;
+        this.discuss = builder.discuss;
+        this.cp_id = builder.cp_id;
+        this.paper_price = builder.paper_price;
+        this.first_chapter = builder.first_chapter;
+        this.charge_type = builder.charge_type;
+        this.member_show_type = builder.member_show_type;
     }
-  }
-  
-  public static class a {}
 }

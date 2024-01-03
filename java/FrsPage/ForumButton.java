@@ -2,48 +2,46 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ForumButton extends Message {
-  public static final Integer DEFAULT_IS_BLUEV = Integer.valueOf(0);
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer is_blueV;
-  
-  public ForumButton(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      integer = paramBuilder.is_blueV;
-      if (integer == null) {
-        this.is_blueV = DEFAULT_IS_BLUEV;
-      } else {
-        this.is_blueV = integer;
-      } 
-    } else {
-      this.is_blueV = ((Builder)integer).is_blueV;
-    } 
-  }
-  
-  public ForumButton(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ForumButton> {
-    public Integer is_blueV;
-    
-    public Builder() {}
-    
-    public Builder(ForumButton param1ForumButton) {
-      super(param1ForumButton);
-      if (param1ForumButton == null)
-        return; 
-      this.is_blueV = param1ForumButton.is_blueV;
+    public static final Integer DEFAULT_IS_BLUEV = 0;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer is_blueV;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ForumButton> {
+        public Integer is_blueV;
+
+        public Builder() {
+        }
+
+        public Builder(ForumButton forumButton) {
+            super(forumButton);
+            if (forumButton == null) {
+                return;
+            }
+            this.is_blueV = forumButton.is_blueV;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ForumButton build(boolean z) {
+            return new ForumButton(this, z);
+        }
     }
-    
-    public ForumButton build(boolean param1Boolean) {
-      return new ForumButton(this, param1Boolean, null);
+
+    public ForumButton(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.is_blueV;
+            if (num == null) {
+                this.is_blueV = DEFAULT_IS_BLUEV;
+                return;
+            } else {
+                this.is_blueV = num;
+                return;
+            }
+        }
+        this.is_blueV = builder.is_blueV;
     }
-  }
-  
-  public static class a {}
 }

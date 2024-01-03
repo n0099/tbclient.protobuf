@@ -4,7 +4,6 @@ import "CommonReq.proto";
 
 message DataReq {
     uint64 uid = 1;
-    CommonReq common = 2;
     uint32 pn = 3;
     string st_type = 4;
     int32 account_type = 5;

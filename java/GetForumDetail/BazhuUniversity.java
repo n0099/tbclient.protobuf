@@ -4,83 +4,70 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class BazhuUniversity extends Message {
-  public static final List<UniversityInfo> DEFAULT_BANNER;
-  
-  public static final List<UniversityInfo> DEFAULT_ENTRANCE = Collections.emptyList();
-  
-  public static final List<UniversityTabInfo> DEFAULT_TAB;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 2)
-  public final List<UniversityInfo> banner;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 1)
-  public final List<UniversityInfo> entrance;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 3)
-  public final List<UniversityTabInfo> tab;
-  
-  static {
-    DEFAULT_BANNER = Collections.emptyList();
-    DEFAULT_TAB = Collections.emptyList();
-  }
-  
-  public BazhuUniversity(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<UniversityTabInfo> list;
-    if (paramBoolean == true) {
-      List<UniversityInfo> list1 = paramBuilder.entrance;
-      if (list1 == null) {
-        this.entrance = DEFAULT_ENTRANCE;
-      } else {
-        this.entrance = Message.immutableCopyOf(list1);
-      } 
-      list1 = paramBuilder.banner;
-      if (list1 == null) {
-        this.banner = DEFAULT_BANNER;
-      } else {
-        this.banner = Message.immutableCopyOf(list1);
-      } 
-      list = paramBuilder.tab;
-      if (list == null) {
-        this.tab = DEFAULT_TAB;
-      } else {
-        this.tab = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this.entrance = Message.immutableCopyOf(((Builder)list).entrance);
-      this.banner = Message.immutableCopyOf(((Builder)list).banner);
-      this.tab = Message.immutableCopyOf(((Builder)list).tab);
-    } 
-  }
-  
-  public BazhuUniversity(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<BazhuUniversity> {
-    public List<UniversityInfo> banner;
-    
-    public List<UniversityInfo> entrance;
-    
-    public List<UniversityTabInfo> tab;
-    
-    public Builder() {}
-    
-    public Builder(BazhuUniversity param1BazhuUniversity) {
-      super(param1BazhuUniversity);
-      if (param1BazhuUniversity == null)
-        return; 
-      this.entrance = Message.copyOf(param1BazhuUniversity.entrance);
-      this.banner = Message.copyOf(param1BazhuUniversity.banner);
-      this.tab = Message.copyOf(param1BazhuUniversity.tab);
+    @ProtoField(label = Message.Label.REPEATED, tag = 2)
+    public final List<UniversityInfo> banner;
+    @ProtoField(label = Message.Label.REPEATED, tag = 1)
+    public final List<UniversityInfo> entrance;
+    @ProtoField(label = Message.Label.REPEATED, tag = 3)
+    public final List<UniversityTabInfo> tab;
+    public static final List<UniversityInfo> DEFAULT_ENTRANCE = Collections.emptyList();
+    public static final List<UniversityInfo> DEFAULT_BANNER = Collections.emptyList();
+    public static final List<UniversityTabInfo> DEFAULT_TAB = Collections.emptyList();
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<BazhuUniversity> {
+        public List<UniversityInfo> banner;
+        public List<UniversityInfo> entrance;
+        public List<UniversityTabInfo> tab;
+
+        public Builder() {
+        }
+
+        public Builder(BazhuUniversity bazhuUniversity) {
+            super(bazhuUniversity);
+            if (bazhuUniversity == null) {
+                return;
+            }
+            this.entrance = Message.copyOf(bazhuUniversity.entrance);
+            this.banner = Message.copyOf(bazhuUniversity.banner);
+            this.tab = Message.copyOf(bazhuUniversity.tab);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public BazhuUniversity build(boolean z) {
+            return new BazhuUniversity(this, z);
+        }
     }
-    
-    public BazhuUniversity build(boolean param1Boolean) {
-      return new BazhuUniversity(this, param1Boolean, null);
+
+    public BazhuUniversity(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<UniversityInfo> list = builder.entrance;
+            if (list == null) {
+                this.entrance = DEFAULT_ENTRANCE;
+            } else {
+                this.entrance = Message.immutableCopyOf(list);
+            }
+            List<UniversityInfo> list2 = builder.banner;
+            if (list2 == null) {
+                this.banner = DEFAULT_BANNER;
+            } else {
+                this.banner = Message.immutableCopyOf(list2);
+            }
+            List<UniversityTabInfo> list3 = builder.tab;
+            if (list3 == null) {
+                this.tab = DEFAULT_TAB;
+                return;
+            } else {
+                this.tab = Message.immutableCopyOf(list3);
+                return;
+            }
+        }
+        this.entrance = Message.immutableCopyOf(builder.entrance);
+        this.banner = Message.immutableCopyOf(builder.banner);
+        this.tab = Message.immutableCopyOf(builder.tab);
     }
-  }
-  
-  public static class a {}
 }

@@ -5,67 +5,58 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.AlaLiveInfo;
-
+/* loaded from: classes2.dex */
 public final class UserFollowLive extends Message {
-  public static final Integer DEFAULT_SWITCH;
-  
-  public static final List<AlaLiveInfo> DEFAULT_USER_FOLLOW_LIVE = Collections.emptyList();
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-  public final Integer _switch;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 1)
-  public final List<AlaLiveInfo> user_follow_live;
-  
-  static {
-    DEFAULT_SWITCH = Integer.valueOf(0);
-  }
-  
-  public UserFollowLive(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      List<AlaLiveInfo> list = paramBuilder.user_follow_live;
-      if (list == null) {
-        this.user_follow_live = DEFAULT_USER_FOLLOW_LIVE;
-      } else {
-        this.user_follow_live = Message.immutableCopyOf(list);
-      } 
-      integer = paramBuilder._switch;
-      if (integer == null) {
-        this._switch = DEFAULT_SWITCH;
-      } else {
-        this._switch = integer;
-      } 
-    } else {
-      this.user_follow_live = Message.immutableCopyOf(((Builder)integer).user_follow_live);
-      this._switch = ((Builder)integer)._switch;
-    } 
-  }
-  
-  public UserFollowLive(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<UserFollowLive> {
-    public Integer _switch;
-    
-    public List<AlaLiveInfo> user_follow_live;
-    
-    public Builder() {}
-    
-    public Builder(UserFollowLive param1UserFollowLive) {
-      super(param1UserFollowLive);
-      if (param1UserFollowLive == null)
-        return; 
-      this.user_follow_live = Message.copyOf(param1UserFollowLive.user_follow_live);
-      this._switch = param1UserFollowLive._switch;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
+    public final Integer _switch;
+    @ProtoField(label = Message.Label.REPEATED, tag = 1)
+    public final List<AlaLiveInfo> user_follow_live;
+    public static final List<AlaLiveInfo> DEFAULT_USER_FOLLOW_LIVE = Collections.emptyList();
+    public static final Integer DEFAULT_SWITCH = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<UserFollowLive> {
+        public Integer _switch;
+        public List<AlaLiveInfo> user_follow_live;
+
+        public Builder() {
+        }
+
+        public Builder(UserFollowLive userFollowLive) {
+            super(userFollowLive);
+            if (userFollowLive == null) {
+                return;
+            }
+            this.user_follow_live = Message.copyOf(userFollowLive.user_follow_live);
+            this._switch = userFollowLive._switch;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public UserFollowLive build(boolean z) {
+            return new UserFollowLive(this, z);
+        }
     }
-    
-    public UserFollowLive build(boolean param1Boolean) {
-      return new UserFollowLive(this, param1Boolean, null);
+
+    public UserFollowLive(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<AlaLiveInfo> list = builder.user_follow_live;
+            if (list == null) {
+                this.user_follow_live = DEFAULT_USER_FOLLOW_LIVE;
+            } else {
+                this.user_follow_live = Message.immutableCopyOf(list);
+            }
+            Integer num = builder._switch;
+            if (num == null) {
+                this._switch = DEFAULT_SWITCH;
+                return;
+            } else {
+                this._switch = num;
+                return;
+            }
+        }
+        this.user_follow_live = Message.immutableCopyOf(builder.user_follow_live);
+        this._switch = builder._switch;
     }
-  }
-  
-  public static class a {}
 }

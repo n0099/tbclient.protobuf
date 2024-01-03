@@ -2,67 +2,58 @@ package tbclient.ForumPersonas;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class MembersSex extends Message {
-  public static final Double DEFAULT_RATE;
-  
-  public static final Integer DEFAULT_SEX = Integer.valueOf(0);
-  
-  @ProtoField(tag = 2, type = Message.Datatype.DOUBLE)
-  public final Double rate;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer sex;
-  
-  static {
-    DEFAULT_RATE = Double.valueOf(0.0D);
-  }
-  
-  public MembersSex(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Double double_;
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.sex;
-      if (integer == null) {
-        this.sex = DEFAULT_SEX;
-      } else {
-        this.sex = integer;
-      } 
-      double_ = paramBuilder.rate;
-      if (double_ == null) {
-        this.rate = DEFAULT_RATE;
-      } else {
-        this.rate = double_;
-      } 
-    } else {
-      this.sex = ((Builder)double_).sex;
-      this.rate = ((Builder)double_).rate;
-    } 
-  }
-  
-  public MembersSex(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<MembersSex> {
-    public Double rate;
-    
-    public Integer sex;
-    
-    public Builder() {}
-    
-    public Builder(MembersSex param1MembersSex) {
-      super(param1MembersSex);
-      if (param1MembersSex == null)
-        return; 
-      this.sex = param1MembersSex.sex;
-      this.rate = param1MembersSex.rate;
+    @ProtoField(tag = 2, type = Message.Datatype.DOUBLE)
+    public final Double rate;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer sex;
+    public static final Integer DEFAULT_SEX = 0;
+    public static final Double DEFAULT_RATE = Double.valueOf(0.0d);
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<MembersSex> {
+        public Double rate;
+        public Integer sex;
+
+        public Builder() {
+        }
+
+        public Builder(MembersSex membersSex) {
+            super(membersSex);
+            if (membersSex == null) {
+                return;
+            }
+            this.sex = membersSex.sex;
+            this.rate = membersSex.rate;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public MembersSex build(boolean z) {
+            return new MembersSex(this, z);
+        }
     }
-    
-    public MembersSex build(boolean param1Boolean) {
-      return new MembersSex(this, param1Boolean, null);
+
+    public MembersSex(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.sex;
+            if (num == null) {
+                this.sex = DEFAULT_SEX;
+            } else {
+                this.sex = num;
+            }
+            Double d = builder.rate;
+            if (d == null) {
+                this.rate = DEFAULT_RATE;
+                return;
+            } else {
+                this.rate = d;
+                return;
+            }
+        }
+        this.sex = builder.sex;
+        this.rate = builder.rate;
     }
-  }
-  
-  public static class a {}
 }

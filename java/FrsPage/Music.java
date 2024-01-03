@@ -2,100 +2,82 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class Music extends Message {
-  public static final Integer DEFAULT_ISOPEN;
-  
-  public static final Integer DEFAULT_NUM;
-  
-  public static final String DEFAULT_PIC = "";
-  
-  public static final Integer DEFAULT_SID;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT32)
-  public final Integer isopen;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer num;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String pic;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer sid;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_NUM = integer;
-    DEFAULT_SID = integer;
-    DEFAULT_ISOPEN = integer;
-  }
-  
-  public Music(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      String str = paramBuilder.pic;
-      if (str == null) {
-        this.pic = "";
-      } else {
-        this.pic = str;
-      } 
-      Integer integer1 = paramBuilder.num;
-      if (integer1 == null) {
-        this.num = DEFAULT_NUM;
-      } else {
-        this.num = integer1;
-      } 
-      integer1 = paramBuilder.sid;
-      if (integer1 == null) {
-        this.sid = DEFAULT_SID;
-      } else {
-        this.sid = integer1;
-      } 
-      integer = paramBuilder.isopen;
-      if (integer == null) {
-        this.isopen = DEFAULT_ISOPEN;
-      } else {
-        this.isopen = integer;
-      } 
-    } else {
-      this.pic = ((Builder)integer).pic;
-      this.num = ((Builder)integer).num;
-      this.sid = ((Builder)integer).sid;
-      this.isopen = ((Builder)integer).isopen;
-    } 
-  }
-  
-  public Music(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<Music> {
-    public Integer isopen;
-    
-    public Integer num;
-    
-    public String pic;
-    
-    public Integer sid;
-    
-    public Builder() {}
-    
-    public Builder(Music param1Music) {
-      super(param1Music);
-      if (param1Music == null)
-        return; 
-      this.pic = param1Music.pic;
-      this.num = param1Music.num;
-      this.sid = param1Music.sid;
-      this.isopen = param1Music.isopen;
+    public static final String DEFAULT_PIC = "";
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer isopen;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer num;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String pic;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer sid;
+    public static final Integer DEFAULT_NUM = 0;
+    public static final Integer DEFAULT_SID = 0;
+    public static final Integer DEFAULT_ISOPEN = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<Music> {
+        public Integer isopen;
+        public Integer num;
+        public String pic;
+        public Integer sid;
+
+        public Builder() {
+        }
+
+        public Builder(Music music) {
+            super(music);
+            if (music == null) {
+                return;
+            }
+            this.pic = music.pic;
+            this.num = music.num;
+            this.sid = music.sid;
+            this.isopen = music.isopen;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Music build(boolean z) {
+            return new Music(this, z);
+        }
     }
-    
-    public Music build(boolean param1Boolean) {
-      return new Music(this, param1Boolean, null);
+
+    public Music(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.pic;
+            if (str == null) {
+                this.pic = "";
+            } else {
+                this.pic = str;
+            }
+            Integer num = builder.num;
+            if (num == null) {
+                this.num = DEFAULT_NUM;
+            } else {
+                this.num = num;
+            }
+            Integer num2 = builder.sid;
+            if (num2 == null) {
+                this.sid = DEFAULT_SID;
+            } else {
+                this.sid = num2;
+            }
+            Integer num3 = builder.isopen;
+            if (num3 == null) {
+                this.isopen = DEFAULT_ISOPEN;
+                return;
+            } else {
+                this.isopen = num3;
+                return;
+            }
+        }
+        this.pic = builder.pic;
+        this.num = builder.num;
+        this.sid = builder.sid;
+        this.isopen = builder.isopen;
     }
-  }
-  
-  public static class a {}
 }

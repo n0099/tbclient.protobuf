@@ -2,78 +2,70 @@ package tbclient.GetRecommendForumData;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ThreadList extends Message {
-  public static final String DEFAULT_PIC = "";
-  
-  public static final Long DEFAULT_TID = Long.valueOf(0L);
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String pic;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT64)
-  public final Long tid;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String title;
-  
-  public ThreadList(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.tid;
-      if (long_ == null) {
-        this.tid = DEFAULT_TID;
-      } else {
-        this.tid = long_;
-      } 
-      String str1 = paramBuilder.title;
-      if (str1 == null) {
-        this.title = "";
-      } else {
-        this.title = str1;
-      } 
-      str = paramBuilder.pic;
-      if (str == null) {
-        this.pic = "";
-      } else {
-        this.pic = str;
-      } 
-    } else {
-      this.tid = ((Builder)str).tid;
-      this.title = ((Builder)str).title;
-      this.pic = ((Builder)str).pic;
-    } 
-  }
-  
-  public ThreadList(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ThreadList> {
-    public String pic;
-    
-    public Long tid;
-    
-    public String title;
-    
-    public Builder() {}
-    
-    public Builder(ThreadList param1ThreadList) {
-      super(param1ThreadList);
-      if (param1ThreadList == null)
-        return; 
-      this.tid = param1ThreadList.tid;
-      this.title = param1ThreadList.title;
-      this.pic = param1ThreadList.pic;
+    public static final String DEFAULT_PIC = "";
+    public static final Long DEFAULT_TID = 0L;
+    public static final String DEFAULT_TITLE = "";
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String pic;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long tid;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String title;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ThreadList> {
+        public String pic;
+        public Long tid;
+        public String title;
+
+        public Builder() {
+        }
+
+        public Builder(ThreadList threadList) {
+            super(threadList);
+            if (threadList == null) {
+                return;
+            }
+            this.tid = threadList.tid;
+            this.title = threadList.title;
+            this.pic = threadList.pic;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ThreadList build(boolean z) {
+            return new ThreadList(this, z);
+        }
     }
-    
-    public ThreadList build(boolean param1Boolean) {
-      return new ThreadList(this, param1Boolean, null);
+
+    public ThreadList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.tid;
+            if (l == null) {
+                this.tid = DEFAULT_TID;
+            } else {
+                this.tid = l;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.pic;
+            if (str2 == null) {
+                this.pic = "";
+                return;
+            } else {
+                this.pic = str2;
+                return;
+            }
+        }
+        this.tid = builder.tid;
+        this.title = builder.title;
+        this.pic = builder.pic;
     }
-  }
-  
-  public static class a {}
 }

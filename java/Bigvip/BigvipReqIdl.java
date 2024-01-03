@@ -2,40 +2,39 @@ package tbclient.Bigvip;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class BigvipReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public BigvipReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public BigvipReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<BigvipReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(BigvipReqIdl param1BigvipReqIdl) {
-      super(param1BigvipReqIdl);
-      if (param1BigvipReqIdl == null)
-        return; 
-      this.data = param1BigvipReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<BigvipReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(BigvipReqIdl bigvipReqIdl) {
+            super(bigvipReqIdl);
+            if (bigvipReqIdl == null) {
+                return;
+            }
+            this.data = bigvipReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public BigvipReqIdl build(boolean z) {
+            return new BigvipReqIdl(this, z);
+        }
     }
-    
-    public BigvipReqIdl build(boolean param1Boolean) {
-      return new BigvipReqIdl(this, param1Boolean, null);
+
+    public BigvipReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

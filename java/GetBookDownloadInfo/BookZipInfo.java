@@ -2,93 +2,82 @@ package tbclient.GetBookDownloadInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class BookZipInfo extends Message {
-  public static final String DEFAULT_MD5 = "";
-  
-  public static final String DEFAULT_NAME = "";
-  
-  public static final String DEFAULT_SIZE = "";
-  
-  public static final String DEFAULT_URL = "";
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String md5;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String name;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String size;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String url;
-  
-  public BookZipInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.name;
-      if (str1 == null) {
-        this.name = "";
-      } else {
-        this.name = str1;
-      } 
-      str1 = paramBuilder.url;
-      if (str1 == null) {
-        this.url = "";
-      } else {
-        this.url = str1;
-      } 
-      str1 = paramBuilder.size;
-      if (str1 == null) {
-        this.size = "";
-      } else {
-        this.size = str1;
-      } 
-      str = paramBuilder.md5;
-      if (str == null) {
-        this.md5 = "";
-      } else {
-        this.md5 = str;
-      } 
-    } else {
-      this.name = ((Builder)str).name;
-      this.url = ((Builder)str).url;
-      this.size = ((Builder)str).size;
-      this.md5 = ((Builder)str).md5;
-    } 
-  }
-  
-  public BookZipInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<BookZipInfo> {
-    public String md5;
-    
-    public String name;
-    
-    public String size;
-    
-    public String url;
-    
-    public Builder() {}
-    
-    public Builder(BookZipInfo param1BookZipInfo) {
-      super(param1BookZipInfo);
-      if (param1BookZipInfo == null)
-        return; 
-      this.name = param1BookZipInfo.name;
-      this.url = param1BookZipInfo.url;
-      this.size = param1BookZipInfo.size;
-      this.md5 = param1BookZipInfo.md5;
+    public static final String DEFAULT_MD5 = "";
+    public static final String DEFAULT_NAME = "";
+    public static final String DEFAULT_SIZE = "";
+    public static final String DEFAULT_URL = "";
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String md5;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String name;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String size;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String url;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<BookZipInfo> {
+        public String md5;
+        public String name;
+        public String size;
+        public String url;
+
+        public Builder() {
+        }
+
+        public Builder(BookZipInfo bookZipInfo) {
+            super(bookZipInfo);
+            if (bookZipInfo == null) {
+                return;
+            }
+            this.name = bookZipInfo.name;
+            this.url = bookZipInfo.url;
+            this.size = bookZipInfo.size;
+            this.md5 = bookZipInfo.md5;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public BookZipInfo build(boolean z) {
+            return new BookZipInfo(this, z);
+        }
     }
-    
-    public BookZipInfo build(boolean param1Boolean) {
-      return new BookZipInfo(this, param1Boolean, null);
+
+    public BookZipInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.url;
+            if (str2 == null) {
+                this.url = "";
+            } else {
+                this.url = str2;
+            }
+            String str3 = builder.size;
+            if (str3 == null) {
+                this.size = "";
+            } else {
+                this.size = str3;
+            }
+            String str4 = builder.md5;
+            if (str4 == null) {
+                this.md5 = "";
+                return;
+            } else {
+                this.md5 = str4;
+                return;
+            }
+        }
+        this.name = builder.name;
+        this.url = builder.url;
+        this.size = builder.size;
+        this.md5 = builder.md5;
     }
-  }
-  
-  public static class a {}
 }

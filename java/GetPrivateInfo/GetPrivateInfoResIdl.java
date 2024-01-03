@@ -3,48 +3,45 @@ package tbclient.GetPrivateInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class GetPrivateInfoResIdl extends Message {
-  @ProtoField(tag = 1)
-  public final ResData data;
-  
-  @ProtoField(tag = 2)
-  public final Error error;
-  
-  public GetPrivateInfoResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } else {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } 
-  }
-  
-  public GetPrivateInfoResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetPrivateInfoResIdl> {
-    public ResData data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(GetPrivateInfoResIdl param1GetPrivateInfoResIdl) {
-      super(param1GetPrivateInfoResIdl);
-      if (param1GetPrivateInfoResIdl == null)
-        return; 
-      this.data = param1GetPrivateInfoResIdl.data;
-      this.error = param1GetPrivateInfoResIdl.error;
+    @ProtoField(tag = 1)
+    public final ResData data;
+    @ProtoField(tag = 2)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetPrivateInfoResIdl> {
+        public ResData data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(GetPrivateInfoResIdl getPrivateInfoResIdl) {
+            super(getPrivateInfoResIdl);
+            if (getPrivateInfoResIdl == null) {
+                return;
+            }
+            this.data = getPrivateInfoResIdl.data;
+            this.error = getPrivateInfoResIdl.error;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetPrivateInfoResIdl build(boolean z) {
+            return new GetPrivateInfoResIdl(this, z);
+        }
     }
-    
-    public GetPrivateInfoResIdl build(boolean param1Boolean) {
-      return new GetPrivateInfoResIdl(this, param1Boolean, null);
+
+    public GetPrivateInfoResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+            this.error = builder.error;
+            return;
+        }
+        this.data = builder.data;
+        this.error = builder.error;
     }
-  }
-  
-  public static class a {}
 }

@@ -2,40 +2,39 @@ package tbclient.GetPrivateInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GetPrivateInfoReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final ReqData data;
-  
-  public GetPrivateInfoReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GetPrivateInfoReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetPrivateInfoReqIdl> {
-    public ReqData data;
-    
-    public Builder() {}
-    
-    public Builder(GetPrivateInfoReqIdl param1GetPrivateInfoReqIdl) {
-      super(param1GetPrivateInfoReqIdl);
-      if (param1GetPrivateInfoReqIdl == null)
-        return; 
-      this.data = param1GetPrivateInfoReqIdl.data;
+    @ProtoField(tag = 1)
+    public final ReqData data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetPrivateInfoReqIdl> {
+        public ReqData data;
+
+        public Builder() {
+        }
+
+        public Builder(GetPrivateInfoReqIdl getPrivateInfoReqIdl) {
+            super(getPrivateInfoReqIdl);
+            if (getPrivateInfoReqIdl == null) {
+                return;
+            }
+            this.data = getPrivateInfoReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetPrivateInfoReqIdl build(boolean z) {
+            return new GetPrivateInfoReqIdl(this, z);
+        }
     }
-    
-    public GetPrivateInfoReqIdl build(boolean param1Boolean) {
-      return new GetPrivateInfoReqIdl(this, param1Boolean, null);
+
+    public GetPrivateInfoReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

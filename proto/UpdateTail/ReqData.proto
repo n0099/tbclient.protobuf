@@ -7,5 +7,4 @@ message ReqData {
     uint32 tailId = 2;
     string fontColor = 3;
     string fontKeyName = 4;
-    CommonReq common = 5;
 }

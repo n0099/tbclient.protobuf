@@ -2,40 +2,39 @@ package tbclient.ForumRecommend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ForumRecommendReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public ForumRecommendReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public ForumRecommendReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ForumRecommendReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(ForumRecommendReqIdl param1ForumRecommendReqIdl) {
-      super(param1ForumRecommendReqIdl);
-      if (param1ForumRecommendReqIdl == null)
-        return; 
-      this.data = param1ForumRecommendReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ForumRecommendReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(ForumRecommendReqIdl forumRecommendReqIdl) {
+            super(forumRecommendReqIdl);
+            if (forumRecommendReqIdl == null) {
+                return;
+            }
+            this.data = forumRecommendReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ForumRecommendReqIdl build(boolean z) {
+            return new ForumRecommendReqIdl(this, z);
+        }
     }
-    
-    public ForumRecommendReqIdl build(boolean param1Boolean) {
-      return new ForumRecommendReqIdl(this, param1Boolean, null);
+
+    public ForumRecommendReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

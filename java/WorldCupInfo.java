@@ -2,48 +2,46 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class WorldCupInfo extends Message {
-  public static final String DEFAULT_AVATAR_TEAMFLAG_URL = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String avatar_teamflag_url;
-  
-  public WorldCupInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      str = paramBuilder.avatar_teamflag_url;
-      if (str == null) {
-        this.avatar_teamflag_url = "";
-      } else {
-        this.avatar_teamflag_url = str;
-      } 
-    } else {
-      this.avatar_teamflag_url = ((Builder)str).avatar_teamflag_url;
-    } 
-  }
-  
-  public WorldCupInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<WorldCupInfo> {
-    public String avatar_teamflag_url;
-    
-    public Builder() {}
-    
-    public Builder(WorldCupInfo param1WorldCupInfo) {
-      super(param1WorldCupInfo);
-      if (param1WorldCupInfo == null)
-        return; 
-      this.avatar_teamflag_url = param1WorldCupInfo.avatar_teamflag_url;
+    public static final String DEFAULT_AVATAR_TEAMFLAG_URL = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String avatar_teamflag_url;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<WorldCupInfo> {
+        public String avatar_teamflag_url;
+
+        public Builder() {
+        }
+
+        public Builder(WorldCupInfo worldCupInfo) {
+            super(worldCupInfo);
+            if (worldCupInfo == null) {
+                return;
+            }
+            this.avatar_teamflag_url = worldCupInfo.avatar_teamflag_url;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public WorldCupInfo build(boolean z) {
+            return new WorldCupInfo(this, z);
+        }
     }
-    
-    public WorldCupInfo build(boolean param1Boolean) {
-      return new WorldCupInfo(this, param1Boolean, null);
+
+    public WorldCupInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.avatar_teamflag_url;
+            if (str == null) {
+                this.avatar_teamflag_url = "";
+                return;
+            } else {
+                this.avatar_teamflag_url = str;
+                return;
+            }
+        }
+        this.avatar_teamflag_url = builder.avatar_teamflag_url;
     }
-  }
-  
-  public static class a {}
 }

@@ -2,159 +2,130 @@ package tbclient.Bigvip;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class UserInfoBigVip extends Message {
-  public static final Integer DEFAULT_MESSAGE_ACCEPT;
-  
-  public static final Integer DEFAULT_MUTE_NOTIFICATIONS;
-  
-  public static final String DEFAULT_PORTRAIT = "";
-  
-  public static final String DEFAULT_PORTRAITH = "";
-  
-  public static final String DEFAULT_USER_DETAIL = "";
-  
-  public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
-  
-  public static final String DEFAULT_USER_NAME = "";
-  
-  public static final String DEFAULT_USER_TYPE = "";
-  
-  @ProtoField(tag = 5, type = Message.Datatype.UINT32)
-  public final Integer message_accept;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.UINT32)
-  public final Integer mute_notifications;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String portrait;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.STRING)
-  public final String portraith;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String user_detail;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long user_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String user_name;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String user_type;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_MESSAGE_ACCEPT = integer;
-    DEFAULT_MUTE_NOTIFICATIONS = integer;
-  }
-  
-  public UserInfoBigVip(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.user_id;
-      if (long_ == null) {
-        this.user_id = DEFAULT_USER_ID;
-      } else {
-        this.user_id = long_;
-      } 
-      String str2 = paramBuilder.user_name;
-      if (str2 == null) {
-        this.user_name = "";
-      } else {
-        this.user_name = str2;
-      } 
-      str2 = paramBuilder.user_type;
-      if (str2 == null) {
-        this.user_type = "";
-      } else {
-        this.user_type = str2;
-      } 
-      str2 = paramBuilder.user_detail;
-      if (str2 == null) {
-        this.user_detail = "";
-      } else {
-        this.user_detail = str2;
-      } 
-      Integer integer1 = paramBuilder.message_accept;
-      if (integer1 == null) {
-        this.message_accept = DEFAULT_MESSAGE_ACCEPT;
-      } else {
-        this.message_accept = integer1;
-      } 
-      String str1 = paramBuilder.portrait;
-      if (str1 == null) {
-        this.portrait = "";
-      } else {
-        this.portrait = str1;
-      } 
-      str1 = paramBuilder.portraith;
-      if (str1 == null) {
-        this.portraith = "";
-      } else {
-        this.portraith = str1;
-      } 
-      integer = paramBuilder.mute_notifications;
-      if (integer == null) {
-        this.mute_notifications = DEFAULT_MUTE_NOTIFICATIONS;
-      } else {
-        this.mute_notifications = integer;
-      } 
-    } else {
-      this.user_id = ((Builder)integer).user_id;
-      this.user_name = ((Builder)integer).user_name;
-      this.user_type = ((Builder)integer).user_type;
-      this.user_detail = ((Builder)integer).user_detail;
-      this.message_accept = ((Builder)integer).message_accept;
-      this.portrait = ((Builder)integer).portrait;
-      this.portraith = ((Builder)integer).portraith;
-      this.mute_notifications = ((Builder)integer).mute_notifications;
-    } 
-  }
-  
-  public UserInfoBigVip(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<UserInfoBigVip> {
-    public Integer message_accept;
-    
-    public Integer mute_notifications;
-    
-    public String portrait;
-    
-    public String portraith;
-    
-    public String user_detail;
-    
-    public Long user_id;
-    
-    public String user_name;
-    
-    public String user_type;
-    
-    public Builder() {}
-    
-    public Builder(UserInfoBigVip param1UserInfoBigVip) {
-      super(param1UserInfoBigVip);
-      if (param1UserInfoBigVip == null)
-        return; 
-      this.user_id = param1UserInfoBigVip.user_id;
-      this.user_name = param1UserInfoBigVip.user_name;
-      this.user_type = param1UserInfoBigVip.user_type;
-      this.user_detail = param1UserInfoBigVip.user_detail;
-      this.message_accept = param1UserInfoBigVip.message_accept;
-      this.portrait = param1UserInfoBigVip.portrait;
-      this.portraith = param1UserInfoBigVip.portraith;
-      this.mute_notifications = param1UserInfoBigVip.mute_notifications;
+    public static final String DEFAULT_PORTRAIT = "";
+    public static final String DEFAULT_PORTRAITH = "";
+    public static final String DEFAULT_USER_DETAIL = "";
+    public static final String DEFAULT_USER_NAME = "";
+    public static final String DEFAULT_USER_TYPE = "";
+    @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+    public final Integer message_accept;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT32)
+    public final Integer mute_notifications;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String portrait;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String portraith;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String user_detail;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long user_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String user_name;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String user_type;
+    public static final Long DEFAULT_USER_ID = 0L;
+    public static final Integer DEFAULT_MESSAGE_ACCEPT = 0;
+    public static final Integer DEFAULT_MUTE_NOTIFICATIONS = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<UserInfoBigVip> {
+        public Integer message_accept;
+        public Integer mute_notifications;
+        public String portrait;
+        public String portraith;
+        public String user_detail;
+        public Long user_id;
+        public String user_name;
+        public String user_type;
+
+        public Builder() {
+        }
+
+        public Builder(UserInfoBigVip userInfoBigVip) {
+            super(userInfoBigVip);
+            if (userInfoBigVip == null) {
+                return;
+            }
+            this.user_id = userInfoBigVip.user_id;
+            this.user_name = userInfoBigVip.user_name;
+            this.user_type = userInfoBigVip.user_type;
+            this.user_detail = userInfoBigVip.user_detail;
+            this.message_accept = userInfoBigVip.message_accept;
+            this.portrait = userInfoBigVip.portrait;
+            this.portraith = userInfoBigVip.portraith;
+            this.mute_notifications = userInfoBigVip.mute_notifications;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public UserInfoBigVip build(boolean z) {
+            return new UserInfoBigVip(this, z);
+        }
     }
-    
-    public UserInfoBigVip build(boolean param1Boolean) {
-      return new UserInfoBigVip(this, param1Boolean, null);
+
+    public UserInfoBigVip(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.user_id;
+            if (l == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l;
+            }
+            String str = builder.user_name;
+            if (str == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str;
+            }
+            String str2 = builder.user_type;
+            if (str2 == null) {
+                this.user_type = "";
+            } else {
+                this.user_type = str2;
+            }
+            String str3 = builder.user_detail;
+            if (str3 == null) {
+                this.user_detail = "";
+            } else {
+                this.user_detail = str3;
+            }
+            Integer num = builder.message_accept;
+            if (num == null) {
+                this.message_accept = DEFAULT_MESSAGE_ACCEPT;
+            } else {
+                this.message_accept = num;
+            }
+            String str4 = builder.portrait;
+            if (str4 == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = str4;
+            }
+            String str5 = builder.portraith;
+            if (str5 == null) {
+                this.portraith = "";
+            } else {
+                this.portraith = str5;
+            }
+            Integer num2 = builder.mute_notifications;
+            if (num2 == null) {
+                this.mute_notifications = DEFAULT_MUTE_NOTIFICATIONS;
+                return;
+            } else {
+                this.mute_notifications = num2;
+                return;
+            }
+        }
+        this.user_id = builder.user_id;
+        this.user_name = builder.user_name;
+        this.user_type = builder.user_type;
+        this.user_detail = builder.user_detail;
+        this.message_accept = builder.message_accept;
+        this.portrait = builder.portrait;
+        this.portraith = builder.portraith;
+        this.mute_notifications = builder.mute_notifications;
     }
-  }
-  
-  public static class a {}
 }

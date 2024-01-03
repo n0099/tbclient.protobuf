@@ -2,40 +2,39 @@ package tbclient.ReplyFriend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ReplyFriendReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final ReqData data;
-  
-  public ReplyFriendReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public ReplyFriendReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ReplyFriendReqIdl> {
-    public ReqData data;
-    
-    public Builder() {}
-    
-    public Builder(ReplyFriendReqIdl param1ReplyFriendReqIdl) {
-      super(param1ReplyFriendReqIdl);
-      if (param1ReplyFriendReqIdl == null)
-        return; 
-      this.data = param1ReplyFriendReqIdl.data;
+    @ProtoField(tag = 1)
+    public final ReqData data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ReplyFriendReqIdl> {
+        public ReqData data;
+
+        public Builder() {
+        }
+
+        public Builder(ReplyFriendReqIdl replyFriendReqIdl) {
+            super(replyFriendReqIdl);
+            if (replyFriendReqIdl == null) {
+                return;
+            }
+            this.data = replyFriendReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ReplyFriendReqIdl build(boolean z) {
+            return new ReplyFriendReqIdl(this, z);
+        }
     }
-    
-    public ReplyFriendReqIdl build(boolean param1Boolean) {
-      return new ReplyFriendReqIdl(this, param1Boolean, null);
+
+    public ReplyFriendReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

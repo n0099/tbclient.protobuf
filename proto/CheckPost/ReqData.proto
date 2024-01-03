@@ -6,7 +6,6 @@ message ReqData {
     uint64 pid = 1;
     uint32 postType = 2;
     string forumName = 3;
-    CommonReq common = 4;
     uint64 tid = 5;
     int32 ori_ugc_type = 6;
     string ori_ugc_nid = 7;

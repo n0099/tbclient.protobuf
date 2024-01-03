@@ -3,56 +3,56 @@ package tbclient.GetCard;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Long DEFAULT_PROPS_ID = Long.valueOf(0L);
-  
-  @ProtoField(tag = 1)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT64)
-  public final Long props_id;
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Long long_;
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      long_ = paramBuilder.props_id;
-      if (long_ == null) {
-        this.props_id = DEFAULT_PROPS_ID;
-      } else {
-        this.props_id = long_;
-      } 
-    } else {
-      this.common = ((Builder)long_).common;
-      this.props_id = ((Builder)long_).props_id;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public CommonReq common;
-    
-    public Long props_id;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.common = param1DataReq.common;
-      this.props_id = param1DataReq.props_id;
+    public static final Long DEFAULT_PROPS_ID = 0L;
+    @ProtoField(tag = 1)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1311common;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT64)
+    public final Long props_id;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1312common;
+        public Long props_id;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.f1312common = dataReq.f1311common;
+            this.props_id = dataReq.props_id;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f1311common = builder.f1312common;
+            Long l = builder.props_id;
+            if (l == null) {
+                this.props_id = DEFAULT_PROPS_ID;
+                return;
+            } else {
+                this.props_id = l;
+                return;
+            }
+        }
+        this.f1311common = builder.f1312common;
+        this.props_id = builder.props_id;
     }
-  }
-  
-  public static class a {}
 }

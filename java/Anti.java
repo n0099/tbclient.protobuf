@@ -4,498 +4,388 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class Anti extends Message {
-  public static final Integer DEFAULT_BLOCK_STAT;
-  
-  public static final Integer DEFAULT_CAN_GOODS;
-  
-  public static final Integer DEFAULT_DAYS_TOFREE;
-  
-  public static final List<DelThreadText> DEFAULT_DEL_THREAD_TEXT;
-  
-  public static final Integer DEFAULT_FORBID_FLAG;
-  
-  public static final String DEFAULT_FORBID_INFO = "";
-  
-  public static final Integer DEFAULT_HAS_CHANCE;
-  
-  public static final Integer DEFAULT_HIDE_STAT;
-  
-  public static final Integer DEFAULT_IFADDITION;
-  
-  public static final Integer DEFAULT_IFPOST;
-  
-  public static final Integer DEFAULT_IFPOSTA;
-  
-  public static final Integer DEFAULT_IFVOICE;
-  
-  public static final String DEFAULT_IFXIAOYING = "";
-  
-  public static final Boolean DEFAULT_IS_SEXYFORUM;
-  
-  public static final Integer DEFAULT_MULTI_DELTHREAD;
-  
-  public static final Integer DEFAULT_NEED_VCODE;
-  
-  public static final Integer DEFAULT_POLL_LEVEL;
-  
-  public static final String DEFAULT_POLL_MESSAGE = "";
-  
-  public static final Integer DEFAULT_REPLY_PRIVATE_FLAG;
-  
-  public static final String DEFAULT_TBS = "";
-  
-  public static final String DEFAULT_TEENMODE_INTERVAL = "";
-  
-  public static final Integer DEFAULT_USER_CHAT_BLOCK;
-  
-  public static final String DEFAULT_USER_MUTE = "";
-  
-  public static final String DEFAULT_VCODE_MD5 = "";
-  
-  public static final String DEFAULT_VCODE_PIC_URL = "";
-  
-  public static final Integer DEFAULT_VCODE_STAT;
-  
-  public static final String DEFAULT_VIDEO_LOCAL_MESSAGE = "";
-  
-  public static final String DEFAULT_VIDEO_MESSAGE = "";
-  
-  public static final String DEFAULT_VOICE_MESSAGE = "";
-  
-  @ProtoField(tag = 22)
-  public final BlockPopInfo block_pop_info;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.INT32)
-  public final Integer block_stat;
-  
-  @ProtoField(tag = 27, type = Message.Datatype.INT32)
-  public final Integer can_goods;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.INT32)
-  public final Integer days_tofree;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 24)
-  public final List<DelThreadText> del_thread_text;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT32)
-  public final Integer forbid_flag;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String forbid_info;
-  
-  @ProtoField(tag = 10, type = Message.Datatype.INT32)
-  public final Integer has_chance;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.INT32)
-  public final Integer hide_stat;
-  
-  @ProtoField(tag = 13, type = Message.Datatype.INT32)
-  public final Integer ifaddition;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer ifpost;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer ifposta;
-  
-  @ProtoField(tag = 11, type = Message.Datatype.INT32)
-  public final Integer ifvoice;
-  
-  @ProtoField(tag = 18, type = Message.Datatype.STRING)
-  public final String ifxiaoying;
-  
-  @ProtoField(tag = 28, type = Message.Datatype.BOOL)
-  public final Boolean is_sexyforum;
-  
-  @ProtoField(tag = 25, type = Message.Datatype.INT32)
-  public final Integer multi_delthread;
-  
-  @ProtoField(tag = 14, type = Message.Datatype.INT32)
-  public final Integer need_vcode;
-  
-  @ProtoField(tag = 26, type = Message.Datatype.UINT32)
-  public final Integer poll_level;
-  
-  @ProtoField(tag = 19, type = Message.Datatype.STRING)
-  public final String poll_message;
-  
-  @ProtoField(tag = 23, type = Message.Datatype.INT32)
-  public final Integer reply_private_flag;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String tbs;
-  
-  @ProtoField(tag = 29, type = Message.Datatype.STRING)
-  public final String teenmode_interval;
-  
-  @ProtoField(tag = 30, type = Message.Datatype.INT32)
-  public final Integer user_chat_block;
-  
-  @ProtoField(tag = 17, type = Message.Datatype.STRING)
-  public final String user_mute;
-  
-  @ProtoField(tag = 15, type = Message.Datatype.STRING)
-  public final String vcode_md5;
-  
-  @ProtoField(tag = 16, type = Message.Datatype.STRING)
-  public final String vcode_pic_url;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.INT32)
-  public final Integer vcode_stat;
-  
-  @ProtoField(tag = 21, type = Message.Datatype.STRING)
-  public final String video_local_message;
-  
-  @ProtoField(tag = 20, type = Message.Datatype.STRING)
-  public final String video_message;
-  
-  @ProtoField(tag = 12, type = Message.Datatype.STRING)
-  public final String voice_message;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_IFPOST = integer;
-    DEFAULT_IFPOSTA = integer;
-    DEFAULT_FORBID_FLAG = integer;
-    DEFAULT_BLOCK_STAT = integer;
-    DEFAULT_HIDE_STAT = integer;
-    DEFAULT_VCODE_STAT = integer;
-    DEFAULT_DAYS_TOFREE = integer;
-    DEFAULT_HAS_CHANCE = integer;
-    DEFAULT_IFVOICE = integer;
-    DEFAULT_IFADDITION = integer;
-    DEFAULT_NEED_VCODE = integer;
-    DEFAULT_REPLY_PRIVATE_FLAG = integer;
-    DEFAULT_DEL_THREAD_TEXT = Collections.emptyList();
-    DEFAULT_MULTI_DELTHREAD = integer;
-    DEFAULT_POLL_LEVEL = integer;
-    DEFAULT_CAN_GOODS = integer;
-    DEFAULT_IS_SEXYFORUM = Boolean.FALSE;
-    DEFAULT_USER_CHAT_BLOCK = integer;
-  }
-  
-  public Anti(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      String str5 = paramBuilder.tbs;
-      if (str5 == null) {
-        this.tbs = "";
-      } else {
-        this.tbs = str5;
-      } 
-      Integer integer5 = paramBuilder.ifpost;
-      if (integer5 == null) {
-        this.ifpost = DEFAULT_IFPOST;
-      } else {
-        this.ifpost = integer5;
-      } 
-      integer5 = paramBuilder.ifposta;
-      if (integer5 == null) {
-        this.ifposta = DEFAULT_IFPOSTA;
-      } else {
-        this.ifposta = integer5;
-      } 
-      integer5 = paramBuilder.forbid_flag;
-      if (integer5 == null) {
-        this.forbid_flag = DEFAULT_FORBID_FLAG;
-      } else {
-        this.forbid_flag = integer5;
-      } 
-      String str4 = paramBuilder.forbid_info;
-      if (str4 == null) {
-        this.forbid_info = "";
-      } else {
-        this.forbid_info = str4;
-      } 
-      Integer integer4 = paramBuilder.block_stat;
-      if (integer4 == null) {
-        this.block_stat = DEFAULT_BLOCK_STAT;
-      } else {
-        this.block_stat = integer4;
-      } 
-      integer4 = paramBuilder.hide_stat;
-      if (integer4 == null) {
-        this.hide_stat = DEFAULT_HIDE_STAT;
-      } else {
-        this.hide_stat = integer4;
-      } 
-      integer4 = paramBuilder.vcode_stat;
-      if (integer4 == null) {
-        this.vcode_stat = DEFAULT_VCODE_STAT;
-      } else {
-        this.vcode_stat = integer4;
-      } 
-      integer4 = paramBuilder.days_tofree;
-      if (integer4 == null) {
-        this.days_tofree = DEFAULT_DAYS_TOFREE;
-      } else {
-        this.days_tofree = integer4;
-      } 
-      integer4 = paramBuilder.has_chance;
-      if (integer4 == null) {
-        this.has_chance = DEFAULT_HAS_CHANCE;
-      } else {
-        this.has_chance = integer4;
-      } 
-      integer4 = paramBuilder.ifvoice;
-      if (integer4 == null) {
-        this.ifvoice = DEFAULT_IFVOICE;
-      } else {
-        this.ifvoice = integer4;
-      } 
-      String str3 = paramBuilder.voice_message;
-      if (str3 == null) {
-        this.voice_message = "";
-      } else {
-        this.voice_message = str3;
-      } 
-      Integer integer3 = paramBuilder.ifaddition;
-      if (integer3 == null) {
-        this.ifaddition = DEFAULT_IFADDITION;
-      } else {
-        this.ifaddition = integer3;
-      } 
-      integer3 = paramBuilder.need_vcode;
-      if (integer3 == null) {
-        this.need_vcode = DEFAULT_NEED_VCODE;
-      } else {
-        this.need_vcode = integer3;
-      } 
-      String str2 = paramBuilder.vcode_md5;
-      if (str2 == null) {
-        this.vcode_md5 = "";
-      } else {
-        this.vcode_md5 = str2;
-      } 
-      str2 = paramBuilder.vcode_pic_url;
-      if (str2 == null) {
-        this.vcode_pic_url = "";
-      } else {
-        this.vcode_pic_url = str2;
-      } 
-      str2 = paramBuilder.user_mute;
-      if (str2 == null) {
-        this.user_mute = "";
-      } else {
-        this.user_mute = str2;
-      } 
-      str2 = paramBuilder.ifxiaoying;
-      if (str2 == null) {
-        this.ifxiaoying = "";
-      } else {
-        this.ifxiaoying = str2;
-      } 
-      str2 = paramBuilder.poll_message;
-      if (str2 == null) {
-        this.poll_message = "";
-      } else {
-        this.poll_message = str2;
-      } 
-      str2 = paramBuilder.video_message;
-      if (str2 == null) {
-        this.video_message = "";
-      } else {
-        this.video_message = str2;
-      } 
-      str2 = paramBuilder.video_local_message;
-      if (str2 == null) {
-        this.video_local_message = "";
-      } else {
-        this.video_local_message = str2;
-      } 
-      this.block_pop_info = paramBuilder.block_pop_info;
-      Integer integer2 = paramBuilder.reply_private_flag;
-      if (integer2 == null) {
-        this.reply_private_flag = DEFAULT_REPLY_PRIVATE_FLAG;
-      } else {
-        this.reply_private_flag = integer2;
-      } 
-      List<DelThreadText> list = paramBuilder.del_thread_text;
-      if (list == null) {
-        this.del_thread_text = DEFAULT_DEL_THREAD_TEXT;
-      } else {
-        this.del_thread_text = Message.immutableCopyOf(list);
-      } 
-      Integer integer1 = paramBuilder.multi_delthread;
-      if (integer1 == null) {
-        this.multi_delthread = DEFAULT_MULTI_DELTHREAD;
-      } else {
-        this.multi_delthread = integer1;
-      } 
-      integer1 = paramBuilder.poll_level;
-      if (integer1 == null) {
-        this.poll_level = DEFAULT_POLL_LEVEL;
-      } else {
-        this.poll_level = integer1;
-      } 
-      integer1 = paramBuilder.can_goods;
-      if (integer1 == null) {
-        this.can_goods = DEFAULT_CAN_GOODS;
-      } else {
-        this.can_goods = integer1;
-      } 
-      Boolean bool = paramBuilder.is_sexyforum;
-      if (bool == null) {
-        this.is_sexyforum = DEFAULT_IS_SEXYFORUM;
-      } else {
-        this.is_sexyforum = bool;
-      } 
-      String str1 = paramBuilder.teenmode_interval;
-      if (str1 == null) {
-        this.teenmode_interval = "";
-      } else {
-        this.teenmode_interval = str1;
-      } 
-      integer = paramBuilder.user_chat_block;
-      if (integer == null) {
-        this.user_chat_block = DEFAULT_USER_CHAT_BLOCK;
-      } else {
-        this.user_chat_block = integer;
-      } 
-    } else {
-      this.tbs = ((Builder)integer).tbs;
-      this.ifpost = ((Builder)integer).ifpost;
-      this.ifposta = ((Builder)integer).ifposta;
-      this.forbid_flag = ((Builder)integer).forbid_flag;
-      this.forbid_info = ((Builder)integer).forbid_info;
-      this.block_stat = ((Builder)integer).block_stat;
-      this.hide_stat = ((Builder)integer).hide_stat;
-      this.vcode_stat = ((Builder)integer).vcode_stat;
-      this.days_tofree = ((Builder)integer).days_tofree;
-      this.has_chance = ((Builder)integer).has_chance;
-      this.ifvoice = ((Builder)integer).ifvoice;
-      this.voice_message = ((Builder)integer).voice_message;
-      this.ifaddition = ((Builder)integer).ifaddition;
-      this.need_vcode = ((Builder)integer).need_vcode;
-      this.vcode_md5 = ((Builder)integer).vcode_md5;
-      this.vcode_pic_url = ((Builder)integer).vcode_pic_url;
-      this.user_mute = ((Builder)integer).user_mute;
-      this.ifxiaoying = ((Builder)integer).ifxiaoying;
-      this.poll_message = ((Builder)integer).poll_message;
-      this.video_message = ((Builder)integer).video_message;
-      this.video_local_message = ((Builder)integer).video_local_message;
-      this.block_pop_info = ((Builder)integer).block_pop_info;
-      this.reply_private_flag = ((Builder)integer).reply_private_flag;
-      this.del_thread_text = Message.immutableCopyOf(((Builder)integer).del_thread_text);
-      this.multi_delthread = ((Builder)integer).multi_delthread;
-      this.poll_level = ((Builder)integer).poll_level;
-      this.can_goods = ((Builder)integer).can_goods;
-      this.is_sexyforum = ((Builder)integer).is_sexyforum;
-      this.teenmode_interval = ((Builder)integer).teenmode_interval;
-      this.user_chat_block = ((Builder)integer).user_chat_block;
-    } 
-  }
-  
-  public Anti(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<Anti> {
-    public BlockPopInfo block_pop_info;
-    
-    public Integer block_stat;
-    
-    public Integer can_goods;
-    
-    public Integer days_tofree;
-    
-    public List<DelThreadText> del_thread_text;
-    
-    public Integer forbid_flag;
-    
-    public String forbid_info;
-    
-    public Integer has_chance;
-    
-    public Integer hide_stat;
-    
-    public Integer ifaddition;
-    
-    public Integer ifpost;
-    
-    public Integer ifposta;
-    
-    public Integer ifvoice;
-    
-    public String ifxiaoying;
-    
-    public Boolean is_sexyforum;
-    
-    public Integer multi_delthread;
-    
-    public Integer need_vcode;
-    
-    public Integer poll_level;
-    
-    public String poll_message;
-    
-    public Integer reply_private_flag;
-    
-    public String tbs;
-    
-    public String teenmode_interval;
-    
-    public Integer user_chat_block;
-    
-    public String user_mute;
-    
-    public String vcode_md5;
-    
-    public String vcode_pic_url;
-    
-    public Integer vcode_stat;
-    
-    public String video_local_message;
-    
-    public String video_message;
-    
-    public String voice_message;
-    
-    public Builder() {}
-    
-    public Builder(Anti param1Anti) {
-      super(param1Anti);
-      if (param1Anti == null)
-        return; 
-      this.tbs = param1Anti.tbs;
-      this.ifpost = param1Anti.ifpost;
-      this.ifposta = param1Anti.ifposta;
-      this.forbid_flag = param1Anti.forbid_flag;
-      this.forbid_info = param1Anti.forbid_info;
-      this.block_stat = param1Anti.block_stat;
-      this.hide_stat = param1Anti.hide_stat;
-      this.vcode_stat = param1Anti.vcode_stat;
-      this.days_tofree = param1Anti.days_tofree;
-      this.has_chance = param1Anti.has_chance;
-      this.ifvoice = param1Anti.ifvoice;
-      this.voice_message = param1Anti.voice_message;
-      this.ifaddition = param1Anti.ifaddition;
-      this.need_vcode = param1Anti.need_vcode;
-      this.vcode_md5 = param1Anti.vcode_md5;
-      this.vcode_pic_url = param1Anti.vcode_pic_url;
-      this.user_mute = param1Anti.user_mute;
-      this.ifxiaoying = param1Anti.ifxiaoying;
-      this.poll_message = param1Anti.poll_message;
-      this.video_message = param1Anti.video_message;
-      this.video_local_message = param1Anti.video_local_message;
-      this.block_pop_info = param1Anti.block_pop_info;
-      this.reply_private_flag = param1Anti.reply_private_flag;
-      this.del_thread_text = Message.copyOf(param1Anti.del_thread_text);
-      this.multi_delthread = param1Anti.multi_delthread;
-      this.poll_level = param1Anti.poll_level;
-      this.can_goods = param1Anti.can_goods;
-      this.is_sexyforum = param1Anti.is_sexyforum;
-      this.teenmode_interval = param1Anti.teenmode_interval;
-      this.user_chat_block = param1Anti.user_chat_block;
+    public static final String DEFAULT_FORBID_INFO = "";
+    public static final String DEFAULT_IFXIAOYING = "";
+    public static final String DEFAULT_POLL_MESSAGE = "";
+    public static final String DEFAULT_TBS = "";
+    public static final String DEFAULT_TEENMODE_INTERVAL = "";
+    public static final String DEFAULT_USER_MUTE = "";
+    public static final String DEFAULT_VCODE_MD5 = "";
+    public static final String DEFAULT_VCODE_PIC_URL = "";
+    public static final String DEFAULT_VIDEO_LOCAL_MESSAGE = "";
+    public static final String DEFAULT_VIDEO_MESSAGE = "";
+    public static final String DEFAULT_VOICE_MESSAGE = "";
+    @ProtoField(tag = 22)
+    public final BlockPopInfo block_pop_info;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer block_stat;
+    @ProtoField(tag = 27, type = Message.Datatype.INT32)
+    public final Integer can_goods;
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer days_tofree;
+    @ProtoField(label = Message.Label.REPEATED, tag = 24)
+    public final List<DelThreadText> del_thread_text;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer forbid_flag;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String forbid_info;
+    @ProtoField(tag = 10, type = Message.Datatype.INT32)
+    public final Integer has_chance;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer hide_stat;
+    @ProtoField(tag = 13, type = Message.Datatype.INT32)
+    public final Integer ifaddition;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer ifpost;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer ifposta;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer ifvoice;
+    @ProtoField(tag = 18, type = Message.Datatype.STRING)
+    public final String ifxiaoying;
+    @ProtoField(tag = 28, type = Message.Datatype.BOOL)
+    public final Boolean is_sexyforum;
+    @ProtoField(tag = 25, type = Message.Datatype.INT32)
+    public final Integer multi_delthread;
+    @ProtoField(tag = 14, type = Message.Datatype.INT32)
+    public final Integer need_vcode;
+    @ProtoField(tag = 26, type = Message.Datatype.UINT32)
+    public final Integer poll_level;
+    @ProtoField(tag = 19, type = Message.Datatype.STRING)
+    public final String poll_message;
+    @ProtoField(tag = 23, type = Message.Datatype.INT32)
+    public final Integer reply_private_flag;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String tbs;
+    @ProtoField(tag = 29, type = Message.Datatype.STRING)
+    public final String teenmode_interval;
+    @ProtoField(tag = 30, type = Message.Datatype.INT32)
+    public final Integer user_chat_block;
+    @ProtoField(tag = 17, type = Message.Datatype.STRING)
+    public final String user_mute;
+    @ProtoField(tag = 15, type = Message.Datatype.STRING)
+    public final String vcode_md5;
+    @ProtoField(tag = 16, type = Message.Datatype.STRING)
+    public final String vcode_pic_url;
+    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    public final Integer vcode_stat;
+    @ProtoField(tag = 21, type = Message.Datatype.STRING)
+    public final String video_local_message;
+    @ProtoField(tag = 20, type = Message.Datatype.STRING)
+    public final String video_message;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String voice_message;
+    public static final Integer DEFAULT_IFPOST = 0;
+    public static final Integer DEFAULT_IFPOSTA = 0;
+    public static final Integer DEFAULT_FORBID_FLAG = 0;
+    public static final Integer DEFAULT_BLOCK_STAT = 0;
+    public static final Integer DEFAULT_HIDE_STAT = 0;
+    public static final Integer DEFAULT_VCODE_STAT = 0;
+    public static final Integer DEFAULT_DAYS_TOFREE = 0;
+    public static final Integer DEFAULT_HAS_CHANCE = 0;
+    public static final Integer DEFAULT_IFVOICE = 0;
+    public static final Integer DEFAULT_IFADDITION = 0;
+    public static final Integer DEFAULT_NEED_VCODE = 0;
+    public static final Integer DEFAULT_REPLY_PRIVATE_FLAG = 0;
+    public static final List<DelThreadText> DEFAULT_DEL_THREAD_TEXT = Collections.emptyList();
+    public static final Integer DEFAULT_MULTI_DELTHREAD = 0;
+    public static final Integer DEFAULT_POLL_LEVEL = 0;
+    public static final Integer DEFAULT_CAN_GOODS = 0;
+    public static final Boolean DEFAULT_IS_SEXYFORUM = Boolean.FALSE;
+    public static final Integer DEFAULT_USER_CHAT_BLOCK = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<Anti> {
+        public BlockPopInfo block_pop_info;
+        public Integer block_stat;
+        public Integer can_goods;
+        public Integer days_tofree;
+        public List<DelThreadText> del_thread_text;
+        public Integer forbid_flag;
+        public String forbid_info;
+        public Integer has_chance;
+        public Integer hide_stat;
+        public Integer ifaddition;
+        public Integer ifpost;
+        public Integer ifposta;
+        public Integer ifvoice;
+        public String ifxiaoying;
+        public Boolean is_sexyforum;
+        public Integer multi_delthread;
+        public Integer need_vcode;
+        public Integer poll_level;
+        public String poll_message;
+        public Integer reply_private_flag;
+        public String tbs;
+        public String teenmode_interval;
+        public Integer user_chat_block;
+        public String user_mute;
+        public String vcode_md5;
+        public String vcode_pic_url;
+        public Integer vcode_stat;
+        public String video_local_message;
+        public String video_message;
+        public String voice_message;
+
+        public Builder() {
+        }
+
+        public Builder(Anti anti) {
+            super(anti);
+            if (anti == null) {
+                return;
+            }
+            this.tbs = anti.tbs;
+            this.ifpost = anti.ifpost;
+            this.ifposta = anti.ifposta;
+            this.forbid_flag = anti.forbid_flag;
+            this.forbid_info = anti.forbid_info;
+            this.block_stat = anti.block_stat;
+            this.hide_stat = anti.hide_stat;
+            this.vcode_stat = anti.vcode_stat;
+            this.days_tofree = anti.days_tofree;
+            this.has_chance = anti.has_chance;
+            this.ifvoice = anti.ifvoice;
+            this.voice_message = anti.voice_message;
+            this.ifaddition = anti.ifaddition;
+            this.need_vcode = anti.need_vcode;
+            this.vcode_md5 = anti.vcode_md5;
+            this.vcode_pic_url = anti.vcode_pic_url;
+            this.user_mute = anti.user_mute;
+            this.ifxiaoying = anti.ifxiaoying;
+            this.poll_message = anti.poll_message;
+            this.video_message = anti.video_message;
+            this.video_local_message = anti.video_local_message;
+            this.block_pop_info = anti.block_pop_info;
+            this.reply_private_flag = anti.reply_private_flag;
+            this.del_thread_text = Message.copyOf(anti.del_thread_text);
+            this.multi_delthread = anti.multi_delthread;
+            this.poll_level = anti.poll_level;
+            this.can_goods = anti.can_goods;
+            this.is_sexyforum = anti.is_sexyforum;
+            this.teenmode_interval = anti.teenmode_interval;
+            this.user_chat_block = anti.user_chat_block;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Anti build(boolean z) {
+            return new Anti(this, z);
+        }
     }
-    
-    public Anti build(boolean param1Boolean) {
-      return new Anti(this, param1Boolean, null);
+
+    public Anti(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.tbs;
+            if (str == null) {
+                this.tbs = "";
+            } else {
+                this.tbs = str;
+            }
+            Integer num = builder.ifpost;
+            if (num == null) {
+                this.ifpost = DEFAULT_IFPOST;
+            } else {
+                this.ifpost = num;
+            }
+            Integer num2 = builder.ifposta;
+            if (num2 == null) {
+                this.ifposta = DEFAULT_IFPOSTA;
+            } else {
+                this.ifposta = num2;
+            }
+            Integer num3 = builder.forbid_flag;
+            if (num3 == null) {
+                this.forbid_flag = DEFAULT_FORBID_FLAG;
+            } else {
+                this.forbid_flag = num3;
+            }
+            String str2 = builder.forbid_info;
+            if (str2 == null) {
+                this.forbid_info = "";
+            } else {
+                this.forbid_info = str2;
+            }
+            Integer num4 = builder.block_stat;
+            if (num4 == null) {
+                this.block_stat = DEFAULT_BLOCK_STAT;
+            } else {
+                this.block_stat = num4;
+            }
+            Integer num5 = builder.hide_stat;
+            if (num5 == null) {
+                this.hide_stat = DEFAULT_HIDE_STAT;
+            } else {
+                this.hide_stat = num5;
+            }
+            Integer num6 = builder.vcode_stat;
+            if (num6 == null) {
+                this.vcode_stat = DEFAULT_VCODE_STAT;
+            } else {
+                this.vcode_stat = num6;
+            }
+            Integer num7 = builder.days_tofree;
+            if (num7 == null) {
+                this.days_tofree = DEFAULT_DAYS_TOFREE;
+            } else {
+                this.days_tofree = num7;
+            }
+            Integer num8 = builder.has_chance;
+            if (num8 == null) {
+                this.has_chance = DEFAULT_HAS_CHANCE;
+            } else {
+                this.has_chance = num8;
+            }
+            Integer num9 = builder.ifvoice;
+            if (num9 == null) {
+                this.ifvoice = DEFAULT_IFVOICE;
+            } else {
+                this.ifvoice = num9;
+            }
+            String str3 = builder.voice_message;
+            if (str3 == null) {
+                this.voice_message = "";
+            } else {
+                this.voice_message = str3;
+            }
+            Integer num10 = builder.ifaddition;
+            if (num10 == null) {
+                this.ifaddition = DEFAULT_IFADDITION;
+            } else {
+                this.ifaddition = num10;
+            }
+            Integer num11 = builder.need_vcode;
+            if (num11 == null) {
+                this.need_vcode = DEFAULT_NEED_VCODE;
+            } else {
+                this.need_vcode = num11;
+            }
+            String str4 = builder.vcode_md5;
+            if (str4 == null) {
+                this.vcode_md5 = "";
+            } else {
+                this.vcode_md5 = str4;
+            }
+            String str5 = builder.vcode_pic_url;
+            if (str5 == null) {
+                this.vcode_pic_url = "";
+            } else {
+                this.vcode_pic_url = str5;
+            }
+            String str6 = builder.user_mute;
+            if (str6 == null) {
+                this.user_mute = "";
+            } else {
+                this.user_mute = str6;
+            }
+            String str7 = builder.ifxiaoying;
+            if (str7 == null) {
+                this.ifxiaoying = "";
+            } else {
+                this.ifxiaoying = str7;
+            }
+            String str8 = builder.poll_message;
+            if (str8 == null) {
+                this.poll_message = "";
+            } else {
+                this.poll_message = str8;
+            }
+            String str9 = builder.video_message;
+            if (str9 == null) {
+                this.video_message = "";
+            } else {
+                this.video_message = str9;
+            }
+            String str10 = builder.video_local_message;
+            if (str10 == null) {
+                this.video_local_message = "";
+            } else {
+                this.video_local_message = str10;
+            }
+            this.block_pop_info = builder.block_pop_info;
+            Integer num12 = builder.reply_private_flag;
+            if (num12 == null) {
+                this.reply_private_flag = DEFAULT_REPLY_PRIVATE_FLAG;
+            } else {
+                this.reply_private_flag = num12;
+            }
+            List<DelThreadText> list = builder.del_thread_text;
+            if (list == null) {
+                this.del_thread_text = DEFAULT_DEL_THREAD_TEXT;
+            } else {
+                this.del_thread_text = Message.immutableCopyOf(list);
+            }
+            Integer num13 = builder.multi_delthread;
+            if (num13 == null) {
+                this.multi_delthread = DEFAULT_MULTI_DELTHREAD;
+            } else {
+                this.multi_delthread = num13;
+            }
+            Integer num14 = builder.poll_level;
+            if (num14 == null) {
+                this.poll_level = DEFAULT_POLL_LEVEL;
+            } else {
+                this.poll_level = num14;
+            }
+            Integer num15 = builder.can_goods;
+            if (num15 == null) {
+                this.can_goods = DEFAULT_CAN_GOODS;
+            } else {
+                this.can_goods = num15;
+            }
+            Boolean bool = builder.is_sexyforum;
+            if (bool == null) {
+                this.is_sexyforum = DEFAULT_IS_SEXYFORUM;
+            } else {
+                this.is_sexyforum = bool;
+            }
+            String str11 = builder.teenmode_interval;
+            if (str11 == null) {
+                this.teenmode_interval = "";
+            } else {
+                this.teenmode_interval = str11;
+            }
+            Integer num16 = builder.user_chat_block;
+            if (num16 == null) {
+                this.user_chat_block = DEFAULT_USER_CHAT_BLOCK;
+                return;
+            } else {
+                this.user_chat_block = num16;
+                return;
+            }
+        }
+        this.tbs = builder.tbs;
+        this.ifpost = builder.ifpost;
+        this.ifposta = builder.ifposta;
+        this.forbid_flag = builder.forbid_flag;
+        this.forbid_info = builder.forbid_info;
+        this.block_stat = builder.block_stat;
+        this.hide_stat = builder.hide_stat;
+        this.vcode_stat = builder.vcode_stat;
+        this.days_tofree = builder.days_tofree;
+        this.has_chance = builder.has_chance;
+        this.ifvoice = builder.ifvoice;
+        this.voice_message = builder.voice_message;
+        this.ifaddition = builder.ifaddition;
+        this.need_vcode = builder.need_vcode;
+        this.vcode_md5 = builder.vcode_md5;
+        this.vcode_pic_url = builder.vcode_pic_url;
+        this.user_mute = builder.user_mute;
+        this.ifxiaoying = builder.ifxiaoying;
+        this.poll_message = builder.poll_message;
+        this.video_message = builder.video_message;
+        this.video_local_message = builder.video_local_message;
+        this.block_pop_info = builder.block_pop_info;
+        this.reply_private_flag = builder.reply_private_flag;
+        this.del_thread_text = Message.immutableCopyOf(builder.del_thread_text);
+        this.multi_delthread = builder.multi_delthread;
+        this.poll_level = builder.poll_level;
+        this.can_goods = builder.can_goods;
+        this.is_sexyforum = builder.is_sexyforum;
+        this.teenmode_interval = builder.teenmode_interval;
+        this.user_chat_block = builder.user_chat_block;
     }
-  }
-  
-  public static class a {}
 }

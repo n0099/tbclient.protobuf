@@ -3,48 +3,45 @@ package tbclient.HistorySwan;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class HistorySwanResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public HistorySwanResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public HistorySwanResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<HistorySwanResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(HistorySwanResIdl param1HistorySwanResIdl) {
-      super(param1HistorySwanResIdl);
-      if (param1HistorySwanResIdl == null)
-        return; 
-      this.error = param1HistorySwanResIdl.error;
-      this.data = param1HistorySwanResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<HistorySwanResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(HistorySwanResIdl historySwanResIdl) {
+            super(historySwanResIdl);
+            if (historySwanResIdl == null) {
+                return;
+            }
+            this.error = historySwanResIdl.error;
+            this.data = historySwanResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public HistorySwanResIdl build(boolean z) {
+            return new HistorySwanResIdl(this, z);
+        }
     }
-    
-    public HistorySwanResIdl build(boolean param1Boolean) {
-      return new HistorySwanResIdl(this, param1Boolean, null);
+
+    public HistorySwanResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

@@ -4,5 +4,4 @@ import "CommonReq.proto";
 
 message DataReq {
     uint32 category_id = 1;
-    CommonReq common = 2;
 }

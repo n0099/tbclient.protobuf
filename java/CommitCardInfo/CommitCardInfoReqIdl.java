@@ -2,40 +2,39 @@ package tbclient.CommitCardInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class CommitCardInfoReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public CommitCardInfoReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public CommitCardInfoReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<CommitCardInfoReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(CommitCardInfoReqIdl param1CommitCardInfoReqIdl) {
-      super(param1CommitCardInfoReqIdl);
-      if (param1CommitCardInfoReqIdl == null)
-        return; 
-      this.data = param1CommitCardInfoReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<CommitCardInfoReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(CommitCardInfoReqIdl commitCardInfoReqIdl) {
+            super(commitCardInfoReqIdl);
+            if (commitCardInfoReqIdl == null) {
+                return;
+            }
+            this.data = commitCardInfoReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public CommitCardInfoReqIdl build(boolean z) {
+            return new CommitCardInfoReqIdl(this, z);
+        }
     }
-    
-    public CommitCardInfoReqIdl build(boolean param1Boolean) {
-      return new CommitCardInfoReqIdl(this, param1Boolean, null);
+
+    public CommitCardInfoReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

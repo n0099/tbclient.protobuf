@@ -2,67 +2,58 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class PbPostZan extends Message {
-  public static final Integer DEFAULT_HAS_ZAN;
-  
-  public static final Long DEFAULT_ZAN_NUM = Long.valueOf(0L);
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer has_zan;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long zan_num;
-  
-  static {
-    DEFAULT_HAS_ZAN = Integer.valueOf(0);
-  }
-  
-  public PbPostZan(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.zan_num;
-      if (long_ == null) {
-        this.zan_num = DEFAULT_ZAN_NUM;
-      } else {
-        this.zan_num = long_;
-      } 
-      integer = paramBuilder.has_zan;
-      if (integer == null) {
-        this.has_zan = DEFAULT_HAS_ZAN;
-      } else {
-        this.has_zan = integer;
-      } 
-    } else {
-      this.zan_num = ((Builder)integer).zan_num;
-      this.has_zan = ((Builder)integer).has_zan;
-    } 
-  }
-  
-  public PbPostZan(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<PbPostZan> {
-    public Integer has_zan;
-    
-    public Long zan_num;
-    
-    public Builder() {}
-    
-    public Builder(PbPostZan param1PbPostZan) {
-      super(param1PbPostZan);
-      if (param1PbPostZan == null)
-        return; 
-      this.zan_num = param1PbPostZan.zan_num;
-      this.has_zan = param1PbPostZan.has_zan;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer has_zan;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long zan_num;
+    public static final Long DEFAULT_ZAN_NUM = 0L;
+    public static final Integer DEFAULT_HAS_ZAN = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<PbPostZan> {
+        public Integer has_zan;
+        public Long zan_num;
+
+        public Builder() {
+        }
+
+        public Builder(PbPostZan pbPostZan) {
+            super(pbPostZan);
+            if (pbPostZan == null) {
+                return;
+            }
+            this.zan_num = pbPostZan.zan_num;
+            this.has_zan = pbPostZan.has_zan;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public PbPostZan build(boolean z) {
+            return new PbPostZan(this, z);
+        }
     }
-    
-    public PbPostZan build(boolean param1Boolean) {
-      return new PbPostZan(this, param1Boolean, null);
+
+    public PbPostZan(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.zan_num;
+            if (l == null) {
+                this.zan_num = DEFAULT_ZAN_NUM;
+            } else {
+                this.zan_num = l;
+            }
+            Integer num = builder.has_zan;
+            if (num == null) {
+                this.has_zan = DEFAULT_HAS_ZAN;
+                return;
+            } else {
+                this.has_zan = num;
+                return;
+            }
+        }
+        this.zan_num = builder.zan_num;
+        this.has_zan = builder.has_zan;
     }
-  }
-  
-  public static class a {}
 }

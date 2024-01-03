@@ -3,48 +3,45 @@ package tbclient.GetRecommendGodList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class GetRecommendGodListResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public GetRecommendGodListResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GetRecommendGodListResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetRecommendGodListResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(GetRecommendGodListResIdl param1GetRecommendGodListResIdl) {
-      super(param1GetRecommendGodListResIdl);
-      if (param1GetRecommendGodListResIdl == null)
-        return; 
-      this.error = param1GetRecommendGodListResIdl.error;
-      this.data = param1GetRecommendGodListResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetRecommendGodListResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(GetRecommendGodListResIdl getRecommendGodListResIdl) {
+            super(getRecommendGodListResIdl);
+            if (getRecommendGodListResIdl == null) {
+                return;
+            }
+            this.error = getRecommendGodListResIdl.error;
+            this.data = getRecommendGodListResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetRecommendGodListResIdl build(boolean z) {
+            return new GetRecommendGodListResIdl(this, z);
+        }
     }
-    
-    public GetRecommendGodListResIdl build(boolean param1Boolean) {
-      return new GetRecommendGodListResIdl(this, param1Boolean, null);
+
+    public GetRecommendGodListResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

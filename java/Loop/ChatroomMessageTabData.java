@@ -2,48 +2,46 @@ package tbclient.Loop;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ChatroomMessageTabData extends Message {
-  public static final Boolean DEFAULT_HAVE_NEW_MSG = Boolean.FALSE;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.BOOL)
-  public final Boolean have_new_msg;
-  
-  public ChatroomMessageTabData(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Boolean bool;
-    if (paramBoolean == true) {
-      bool = paramBuilder.have_new_msg;
-      if (bool == null) {
-        this.have_new_msg = DEFAULT_HAVE_NEW_MSG;
-      } else {
-        this.have_new_msg = bool;
-      } 
-    } else {
-      this.have_new_msg = ((Builder)bool).have_new_msg;
-    } 
-  }
-  
-  public ChatroomMessageTabData(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ChatroomMessageTabData> {
-    public Boolean have_new_msg;
-    
-    public Builder() {}
-    
-    public Builder(ChatroomMessageTabData param1ChatroomMessageTabData) {
-      super(param1ChatroomMessageTabData);
-      if (param1ChatroomMessageTabData == null)
-        return; 
-      this.have_new_msg = param1ChatroomMessageTabData.have_new_msg;
+    public static final Boolean DEFAULT_HAVE_NEW_MSG = Boolean.FALSE;
+    @ProtoField(tag = 1, type = Message.Datatype.BOOL)
+    public final Boolean have_new_msg;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ChatroomMessageTabData> {
+        public Boolean have_new_msg;
+
+        public Builder() {
+        }
+
+        public Builder(ChatroomMessageTabData chatroomMessageTabData) {
+            super(chatroomMessageTabData);
+            if (chatroomMessageTabData == null) {
+                return;
+            }
+            this.have_new_msg = chatroomMessageTabData.have_new_msg;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ChatroomMessageTabData build(boolean z) {
+            return new ChatroomMessageTabData(this, z);
+        }
     }
-    
-    public ChatroomMessageTabData build(boolean param1Boolean) {
-      return new ChatroomMessageTabData(this, param1Boolean, null);
+
+    public ChatroomMessageTabData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Boolean bool = builder.have_new_msg;
+            if (bool == null) {
+                this.have_new_msg = DEFAULT_HAVE_NEW_MSG;
+                return;
+            } else {
+                this.have_new_msg = bool;
+                return;
+            }
+        }
+        this.have_new_msg = builder.have_new_msg;
     }
-  }
-  
-  public static class a {}
 }

@@ -3,64 +3,64 @@ package tbclient.GetBawuInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.BawuTeam;
-
+import tbclient.Feedback;
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
-  public static final Integer DEFAULT_IS_PRIVATE_FORUM = Integer.valueOf(0);
-  
-  @ProtoField(tag = 1)
-  public final BawuTeam bawu_team_info;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer is_private_forum;
-  
-  @ProtoField(tag = 2)
-  public final ManagerApplyInfo manager_apply_info;
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      this.bawu_team_info = paramBuilder.bawu_team_info;
-      this.manager_apply_info = paramBuilder.manager_apply_info;
-      integer = paramBuilder.is_private_forum;
-      if (integer == null) {
-        this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
-      } else {
-        this.is_private_forum = integer;
-      } 
-    } else {
-      this.bawu_team_info = ((Builder)integer).bawu_team_info;
-      this.manager_apply_info = ((Builder)integer).manager_apply_info;
-      this.is_private_forum = ((Builder)integer).is_private_forum;
-    } 
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataRes> {
-    public BawuTeam bawu_team_info;
-    
-    public Integer is_private_forum;
-    
-    public ManagerApplyInfo manager_apply_info;
-    
-    public Builder() {}
-    
-    public Builder(DataRes param1DataRes) {
-      super(param1DataRes);
-      if (param1DataRes == null)
-        return; 
-      this.bawu_team_info = param1DataRes.bawu_team_info;
-      this.manager_apply_info = param1DataRes.manager_apply_info;
-      this.is_private_forum = param1DataRes.is_private_forum;
+    public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
+    @ProtoField(tag = 1)
+    public final BawuTeam bawu_team_info;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer is_private_forum;
+    @ProtoField(tag = 2)
+    public final ManagerApplyInfo manager_apply_info;
+    @ProtoField(tag = 4)
+    public final Feedback manager_complain_info;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataRes> {
+        public BawuTeam bawu_team_info;
+        public Integer is_private_forum;
+        public ManagerApplyInfo manager_apply_info;
+        public Feedback manager_complain_info;
+
+        public Builder() {
+        }
+
+        public Builder(DataRes dataRes) {
+            super(dataRes);
+            if (dataRes == null) {
+                return;
+            }
+            this.bawu_team_info = dataRes.bawu_team_info;
+            this.manager_apply_info = dataRes.manager_apply_info;
+            this.is_private_forum = dataRes.is_private_forum;
+            this.manager_complain_info = dataRes.manager_complain_info;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataRes build(boolean z) {
+            return new DataRes(this, z);
+        }
     }
-    
-    public DataRes build(boolean param1Boolean) {
-      return new DataRes(this, param1Boolean, null);
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.bawu_team_info = builder.bawu_team_info;
+            this.manager_apply_info = builder.manager_apply_info;
+            Integer num = builder.is_private_forum;
+            if (num == null) {
+                this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
+            } else {
+                this.is_private_forum = num;
+            }
+            this.manager_complain_info = builder.manager_complain_info;
+            return;
+        }
+        this.bawu_team_info = builder.bawu_team_info;
+        this.manager_apply_info = builder.manager_apply_info;
+        this.is_private_forum = builder.is_private_forum;
+        this.manager_complain_info = builder.manager_complain_info;
     }
-  }
-  
-  public static class a {}
 }

@@ -5,97 +5,82 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.FeatureCardHotSubNode;
-
+/* loaded from: classes2.dex */
 public final class FeatureCardHot extends Message {
-  public static final Integer DEFAULT_FLOOR;
-  
-  public static final List<FeatureCardHotSubNode> DEFAULT_SUB_NODES = Collections.emptyList();
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  public static final String DEFAULT_TYPE = "";
-  
-  @ProtoField(tag = 4, type = Message.Datatype.UINT32)
-  public final Integer floor;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 1)
-  public final List<FeatureCardHotSubNode> sub_nodes;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String title;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String type;
-  
-  static {
-    DEFAULT_FLOOR = Integer.valueOf(0);
-  }
-  
-  public FeatureCardHot(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      List<FeatureCardHotSubNode> list = paramBuilder.sub_nodes;
-      if (list == null) {
-        this.sub_nodes = DEFAULT_SUB_NODES;
-      } else {
-        this.sub_nodes = Message.immutableCopyOf(list);
-      } 
-      String str = paramBuilder.type;
-      if (str == null) {
-        this.type = "";
-      } else {
-        this.type = str;
-      } 
-      str = paramBuilder.title;
-      if (str == null) {
-        this.title = "";
-      } else {
-        this.title = str;
-      } 
-      integer = paramBuilder.floor;
-      if (integer == null) {
-        this.floor = DEFAULT_FLOOR;
-      } else {
-        this.floor = integer;
-      } 
-    } else {
-      this.sub_nodes = Message.immutableCopyOf(((Builder)integer).sub_nodes);
-      this.type = ((Builder)integer).type;
-      this.title = ((Builder)integer).title;
-      this.floor = ((Builder)integer).floor;
-    } 
-  }
-  
-  public FeatureCardHot(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<FeatureCardHot> {
-    public Integer floor;
-    
-    public List<FeatureCardHotSubNode> sub_nodes;
-    
-    public String title;
-    
-    public String type;
-    
-    public Builder() {}
-    
-    public Builder(FeatureCardHot param1FeatureCardHot) {
-      super(param1FeatureCardHot);
-      if (param1FeatureCardHot == null)
-        return; 
-      this.sub_nodes = Message.copyOf(param1FeatureCardHot.sub_nodes);
-      this.type = param1FeatureCardHot.type;
-      this.title = param1FeatureCardHot.title;
-      this.floor = param1FeatureCardHot.floor;
+    public static final String DEFAULT_TITLE = "";
+    public static final String DEFAULT_TYPE = "";
+    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+    public final Integer floor;
+    @ProtoField(label = Message.Label.REPEATED, tag = 1)
+    public final List<FeatureCardHotSubNode> sub_nodes;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String title;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String type;
+    public static final List<FeatureCardHotSubNode> DEFAULT_SUB_NODES = Collections.emptyList();
+    public static final Integer DEFAULT_FLOOR = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<FeatureCardHot> {
+        public Integer floor;
+        public List<FeatureCardHotSubNode> sub_nodes;
+        public String title;
+        public String type;
+
+        public Builder() {
+        }
+
+        public Builder(FeatureCardHot featureCardHot) {
+            super(featureCardHot);
+            if (featureCardHot == null) {
+                return;
+            }
+            this.sub_nodes = Message.copyOf(featureCardHot.sub_nodes);
+            this.type = featureCardHot.type;
+            this.title = featureCardHot.title;
+            this.floor = featureCardHot.floor;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public FeatureCardHot build(boolean z) {
+            return new FeatureCardHot(this, z);
+        }
     }
-    
-    public FeatureCardHot build(boolean param1Boolean) {
-      return new FeatureCardHot(this, param1Boolean, null);
+
+    public FeatureCardHot(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<FeatureCardHotSubNode> list = builder.sub_nodes;
+            if (list == null) {
+                this.sub_nodes = DEFAULT_SUB_NODES;
+            } else {
+                this.sub_nodes = Message.immutableCopyOf(list);
+            }
+            String str = builder.type;
+            if (str == null) {
+                this.type = "";
+            } else {
+                this.type = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            Integer num = builder.floor;
+            if (num == null) {
+                this.floor = DEFAULT_FLOOR;
+                return;
+            } else {
+                this.floor = num;
+                return;
+            }
+        }
+        this.sub_nodes = Message.immutableCopyOf(builder.sub_nodes);
+        this.type = builder.type;
+        this.title = builder.title;
+        this.floor = builder.floor;
     }
-  }
-  
-  public static class a {}
 }

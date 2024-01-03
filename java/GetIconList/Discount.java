@@ -2,69 +2,58 @@ package tbclient.GetIconList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class Discount extends Message {
-  public static final Integer DEFAULT_REBATE;
-  
-  public static final Integer DEFAULT_RECHARGE;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer rebate;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer recharge;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_RECHARGE = integer;
-    DEFAULT_REBATE = integer;
-  }
-  
-  public Discount(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Integer integer1 = paramBuilder.recharge;
-      if (integer1 == null) {
-        this.recharge = DEFAULT_RECHARGE;
-      } else {
-        this.recharge = integer1;
-      } 
-      integer = paramBuilder.rebate;
-      if (integer == null) {
-        this.rebate = DEFAULT_REBATE;
-      } else {
-        this.rebate = integer;
-      } 
-    } else {
-      this.recharge = ((Builder)integer).recharge;
-      this.rebate = ((Builder)integer).rebate;
-    } 
-  }
-  
-  public Discount(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<Discount> {
-    public Integer rebate;
-    
-    public Integer recharge;
-    
-    public Builder() {}
-    
-    public Builder(Discount param1Discount) {
-      super(param1Discount);
-      if (param1Discount == null)
-        return; 
-      this.recharge = param1Discount.recharge;
-      this.rebate = param1Discount.rebate;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer rebate;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer recharge;
+    public static final Integer DEFAULT_RECHARGE = 0;
+    public static final Integer DEFAULT_REBATE = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<Discount> {
+        public Integer rebate;
+        public Integer recharge;
+
+        public Builder() {
+        }
+
+        public Builder(Discount discount) {
+            super(discount);
+            if (discount == null) {
+                return;
+            }
+            this.recharge = discount.recharge;
+            this.rebate = discount.rebate;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Discount build(boolean z) {
+            return new Discount(this, z);
+        }
     }
-    
-    public Discount build(boolean param1Boolean) {
-      return new Discount(this, param1Boolean, null);
+
+    public Discount(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.recharge;
+            if (num == null) {
+                this.recharge = DEFAULT_RECHARGE;
+            } else {
+                this.recharge = num;
+            }
+            Integer num2 = builder.rebate;
+            if (num2 == null) {
+                this.rebate = DEFAULT_REBATE;
+                return;
+            } else {
+                this.rebate = num2;
+                return;
+            }
+        }
+        this.recharge = builder.recharge;
+        this.rebate = builder.rebate;
     }
-  }
-  
-  public static class a {}
 }

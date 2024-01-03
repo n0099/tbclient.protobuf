@@ -2,40 +2,39 @@ package tbclient.MoreTreasureTrove;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class MoreTreasureTroveReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public MoreTreasureTroveReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public MoreTreasureTroveReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<MoreTreasureTroveReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(MoreTreasureTroveReqIdl param1MoreTreasureTroveReqIdl) {
-      super(param1MoreTreasureTroveReqIdl);
-      if (param1MoreTreasureTroveReqIdl == null)
-        return; 
-      this.data = param1MoreTreasureTroveReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<MoreTreasureTroveReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(MoreTreasureTroveReqIdl moreTreasureTroveReqIdl) {
+            super(moreTreasureTroveReqIdl);
+            if (moreTreasureTroveReqIdl == null) {
+                return;
+            }
+            this.data = moreTreasureTroveReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public MoreTreasureTroveReqIdl build(boolean z) {
+            return new MoreTreasureTroveReqIdl(this, z);
+        }
     }
-    
-    public MoreTreasureTroveReqIdl build(boolean param1Boolean) {
-      return new MoreTreasureTroveReqIdl(this, param1Boolean, null);
+
+    public MoreTreasureTroveReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

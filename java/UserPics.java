@@ -2,63 +2,58 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class UserPics extends Message {
-  public static final String DEFAULT_BIG = "";
-  
-  public static final String DEFAULT_SMALL = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String big;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String small;
-  
-  public UserPics(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.big;
-      if (str1 == null) {
-        this.big = "";
-      } else {
-        this.big = str1;
-      } 
-      str = paramBuilder.small;
-      if (str == null) {
-        this.small = "";
-      } else {
-        this.small = str;
-      } 
-    } else {
-      this.big = ((Builder)str).big;
-      this.small = ((Builder)str).small;
-    } 
-  }
-  
-  public UserPics(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<UserPics> {
-    public String big;
-    
-    public String small;
-    
-    public Builder() {}
-    
-    public Builder(UserPics param1UserPics) {
-      super(param1UserPics);
-      if (param1UserPics == null)
-        return; 
-      this.big = param1UserPics.big;
-      this.small = param1UserPics.small;
+    public static final String DEFAULT_BIG = "";
+    public static final String DEFAULT_SMALL = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String big;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String small;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<UserPics> {
+        public String big;
+        public String small;
+
+        public Builder() {
+        }
+
+        public Builder(UserPics userPics) {
+            super(userPics);
+            if (userPics == null) {
+                return;
+            }
+            this.big = userPics.big;
+            this.small = userPics.small;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public UserPics build(boolean z) {
+            return new UserPics(this, z);
+        }
     }
-    
-    public UserPics build(boolean param1Boolean) {
-      return new UserPics(this, param1Boolean, null);
+
+    public UserPics(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.big;
+            if (str == null) {
+                this.big = "";
+            } else {
+                this.big = str;
+            }
+            String str2 = builder.small;
+            if (str2 == null) {
+                this.small = "";
+                return;
+            } else {
+                this.small = str2;
+                return;
+            }
+        }
+        this.big = builder.big;
+        this.small = builder.small;
     }
-  }
-  
-  public static class a {}
 }

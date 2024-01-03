@@ -3,108 +3,92 @@ package tbclient.UserMuteQuery;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Integer DEFAULT_MUTE_TYPE;
-  
-  public static final Integer DEFAULT_PN;
-  
-  public static final Integer DEFAULT_RN;
-  
-  public static final Long DEFAULT_USER_ID = Long.valueOf(0L);
-  
-  @ProtoField(tag = 2)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer mute_type;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.UINT32)
-  public final Integer pn;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.UINT32)
-  public final Integer rn;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long user_id;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_MUTE_TYPE = integer;
-    DEFAULT_PN = integer;
-    DEFAULT_RN = integer;
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.user_id;
-      if (long_ == null) {
-        this.user_id = DEFAULT_USER_ID;
-      } else {
-        this.user_id = long_;
-      } 
-      this.common = paramBuilder.common;
-      Integer integer1 = paramBuilder.mute_type;
-      if (integer1 == null) {
-        this.mute_type = DEFAULT_MUTE_TYPE;
-      } else {
-        this.mute_type = integer1;
-      } 
-      integer1 = paramBuilder.pn;
-      if (integer1 == null) {
-        this.pn = DEFAULT_PN;
-      } else {
-        this.pn = integer1;
-      } 
-      integer = paramBuilder.rn;
-      if (integer == null) {
-        this.rn = DEFAULT_RN;
-      } else {
-        this.rn = integer;
-      } 
-    } else {
-      this.user_id = ((Builder)integer).user_id;
-      this.common = ((Builder)integer).common;
-      this.mute_type = ((Builder)integer).mute_type;
-      this.pn = ((Builder)integer).pn;
-      this.rn = ((Builder)integer).rn;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public CommonReq common;
-    
-    public Integer mute_type;
-    
-    public Integer pn;
-    
-    public Integer rn;
-    
-    public Long user_id;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.user_id = param1DataReq.user_id;
-      this.common = param1DataReq.common;
-      this.mute_type = param1DataReq.mute_type;
-      this.pn = param1DataReq.pn;
-      this.rn = param1DataReq.rn;
+    @ProtoField(tag = 2)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1505common;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer mute_type;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+    public final Integer pn;
+    @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+    public final Integer rn;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long user_id;
+    public static final Long DEFAULT_USER_ID = 0L;
+    public static final Integer DEFAULT_MUTE_TYPE = 0;
+    public static final Integer DEFAULT_PN = 0;
+    public static final Integer DEFAULT_RN = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1506common;
+        public Integer mute_type;
+        public Integer pn;
+        public Integer rn;
+        public Long user_id;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.user_id = dataReq.user_id;
+            this.f1506common = dataReq.f1505common;
+            this.mute_type = dataReq.mute_type;
+            this.pn = dataReq.pn;
+            this.rn = dataReq.rn;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.user_id;
+            if (l == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l;
+            }
+            this.f1505common = builder.f1506common;
+            Integer num = builder.mute_type;
+            if (num == null) {
+                this.mute_type = DEFAULT_MUTE_TYPE;
+            } else {
+                this.mute_type = num;
+            }
+            Integer num2 = builder.pn;
+            if (num2 == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num2;
+            }
+            Integer num3 = builder.rn;
+            if (num3 == null) {
+                this.rn = DEFAULT_RN;
+                return;
+            } else {
+                this.rn = num3;
+                return;
+            }
+        }
+        this.user_id = builder.user_id;
+        this.f1505common = builder.f1506common;
+        this.mute_type = builder.mute_type;
+        this.pn = builder.pn;
+        this.rn = builder.rn;
     }
-  }
-  
-  public static class a {}
 }

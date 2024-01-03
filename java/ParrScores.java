@@ -2,198 +2,154 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ParrScores extends Message {
-  public static final Long DEFAULT_I_MONEY;
-  
-  public static final Long DEFAULT_I_OTHER;
-  
-  public static final Long DEFAULT_I_TOTAL;
-  
-  public static final Integer DEFAULT_LEVEL;
-  
-  public static final Integer DEFAULT_LIMIT;
-  
-  public static final Integer DEFAULT_SCORES_FETCH;
-  
-  public static final Integer DEFAULT_SCORES_MONEY;
-  
-  public static final Integer DEFAULT_SCORES_OTHER;
-  
-  public static final Integer DEFAULT_SCORES_TOTAL;
-  
-  public static final Integer DEFAULT_UPDATE_TIME;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.UINT64)
-  public final Long i_money;
-  
-  @ProtoField(tag = 10, type = Message.Datatype.UINT64)
-  public final Long i_other;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.UINT64)
-  public final Long i_total;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.INT32)
-  public final Integer level;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.INT32)
-  public final Integer limit;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer scores_fetch;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer scores_money;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT32)
-  public final Integer scores_other;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer scores_total;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.INT32)
-  public final Integer update_time;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_SCORES_TOTAL = integer;
-    DEFAULT_SCORES_FETCH = integer;
-    DEFAULT_SCORES_MONEY = integer;
-    DEFAULT_SCORES_OTHER = integer;
-    DEFAULT_UPDATE_TIME = integer;
-    DEFAULT_LEVEL = integer;
-    DEFAULT_LIMIT = integer;
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_I_TOTAL = long_;
-    DEFAULT_I_MONEY = long_;
-    DEFAULT_I_OTHER = long_;
-  }
-  
-  public ParrScores(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Long long_;
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.scores_total;
-      if (integer == null) {
-        this.scores_total = DEFAULT_SCORES_TOTAL;
-      } else {
-        this.scores_total = integer;
-      } 
-      integer = paramBuilder.scores_fetch;
-      if (integer == null) {
-        this.scores_fetch = DEFAULT_SCORES_FETCH;
-      } else {
-        this.scores_fetch = integer;
-      } 
-      integer = paramBuilder.scores_money;
-      if (integer == null) {
-        this.scores_money = DEFAULT_SCORES_MONEY;
-      } else {
-        this.scores_money = integer;
-      } 
-      integer = paramBuilder.scores_other;
-      if (integer == null) {
-        this.scores_other = DEFAULT_SCORES_OTHER;
-      } else {
-        this.scores_other = integer;
-      } 
-      integer = paramBuilder.update_time;
-      if (integer == null) {
-        this.update_time = DEFAULT_UPDATE_TIME;
-      } else {
-        this.update_time = integer;
-      } 
-      integer = paramBuilder.level;
-      if (integer == null) {
-        this.level = DEFAULT_LEVEL;
-      } else {
-        this.level = integer;
-      } 
-      integer = paramBuilder.limit;
-      if (integer == null) {
-        this.limit = DEFAULT_LIMIT;
-      } else {
-        this.limit = integer;
-      } 
-      Long long_1 = paramBuilder.i_total;
-      if (long_1 == null) {
-        this.i_total = DEFAULT_I_TOTAL;
-      } else {
-        this.i_total = long_1;
-      } 
-      long_1 = paramBuilder.i_money;
-      if (long_1 == null) {
-        this.i_money = DEFAULT_I_MONEY;
-      } else {
-        this.i_money = long_1;
-      } 
-      long_ = paramBuilder.i_other;
-      if (long_ == null) {
-        this.i_other = DEFAULT_I_OTHER;
-      } else {
-        this.i_other = long_;
-      } 
-    } else {
-      this.scores_total = ((Builder)long_).scores_total;
-      this.scores_fetch = ((Builder)long_).scores_fetch;
-      this.scores_money = ((Builder)long_).scores_money;
-      this.scores_other = ((Builder)long_).scores_other;
-      this.update_time = ((Builder)long_).update_time;
-      this.level = ((Builder)long_).level;
-      this.limit = ((Builder)long_).limit;
-      this.i_total = ((Builder)long_).i_total;
-      this.i_money = ((Builder)long_).i_money;
-      this.i_other = ((Builder)long_).i_other;
-    } 
-  }
-  
-  public ParrScores(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ParrScores> {
-    public Long i_money;
-    
-    public Long i_other;
-    
-    public Long i_total;
-    
-    public Integer level;
-    
-    public Integer limit;
-    
-    public Integer scores_fetch;
-    
-    public Integer scores_money;
-    
-    public Integer scores_other;
-    
-    public Integer scores_total;
-    
-    public Integer update_time;
-    
-    public Builder() {}
-    
-    public Builder(ParrScores param1ParrScores) {
-      super(param1ParrScores);
-      if (param1ParrScores == null)
-        return; 
-      this.scores_total = param1ParrScores.scores_total;
-      this.scores_fetch = param1ParrScores.scores_fetch;
-      this.scores_money = param1ParrScores.scores_money;
-      this.scores_other = param1ParrScores.scores_other;
-      this.update_time = param1ParrScores.update_time;
-      this.level = param1ParrScores.level;
-      this.limit = param1ParrScores.limit;
-      this.i_total = param1ParrScores.i_total;
-      this.i_money = param1ParrScores.i_money;
-      this.i_other = param1ParrScores.i_other;
+    @ProtoField(tag = 9, type = Message.Datatype.UINT64)
+    public final Long i_money;
+    @ProtoField(tag = 10, type = Message.Datatype.UINT64)
+    public final Long i_other;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT64)
+    public final Long i_total;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer level;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer limit;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer scores_fetch;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer scores_money;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer scores_other;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer scores_total;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer update_time;
+    public static final Integer DEFAULT_SCORES_TOTAL = 0;
+    public static final Integer DEFAULT_SCORES_FETCH = 0;
+    public static final Integer DEFAULT_SCORES_MONEY = 0;
+    public static final Integer DEFAULT_SCORES_OTHER = 0;
+    public static final Integer DEFAULT_UPDATE_TIME = 0;
+    public static final Integer DEFAULT_LEVEL = 0;
+    public static final Integer DEFAULT_LIMIT = 0;
+    public static final Long DEFAULT_I_TOTAL = 0L;
+    public static final Long DEFAULT_I_MONEY = 0L;
+    public static final Long DEFAULT_I_OTHER = 0L;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ParrScores> {
+        public Long i_money;
+        public Long i_other;
+        public Long i_total;
+        public Integer level;
+        public Integer limit;
+        public Integer scores_fetch;
+        public Integer scores_money;
+        public Integer scores_other;
+        public Integer scores_total;
+        public Integer update_time;
+
+        public Builder() {
+        }
+
+        public Builder(ParrScores parrScores) {
+            super(parrScores);
+            if (parrScores == null) {
+                return;
+            }
+            this.scores_total = parrScores.scores_total;
+            this.scores_fetch = parrScores.scores_fetch;
+            this.scores_money = parrScores.scores_money;
+            this.scores_other = parrScores.scores_other;
+            this.update_time = parrScores.update_time;
+            this.level = parrScores.level;
+            this.limit = parrScores.limit;
+            this.i_total = parrScores.i_total;
+            this.i_money = parrScores.i_money;
+            this.i_other = parrScores.i_other;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ParrScores build(boolean z) {
+            return new ParrScores(this, z);
+        }
     }
-    
-    public ParrScores build(boolean param1Boolean) {
-      return new ParrScores(this, param1Boolean, null);
+
+    public ParrScores(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.scores_total;
+            if (num == null) {
+                this.scores_total = DEFAULT_SCORES_TOTAL;
+            } else {
+                this.scores_total = num;
+            }
+            Integer num2 = builder.scores_fetch;
+            if (num2 == null) {
+                this.scores_fetch = DEFAULT_SCORES_FETCH;
+            } else {
+                this.scores_fetch = num2;
+            }
+            Integer num3 = builder.scores_money;
+            if (num3 == null) {
+                this.scores_money = DEFAULT_SCORES_MONEY;
+            } else {
+                this.scores_money = num3;
+            }
+            Integer num4 = builder.scores_other;
+            if (num4 == null) {
+                this.scores_other = DEFAULT_SCORES_OTHER;
+            } else {
+                this.scores_other = num4;
+            }
+            Integer num5 = builder.update_time;
+            if (num5 == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = num5;
+            }
+            Integer num6 = builder.level;
+            if (num6 == null) {
+                this.level = DEFAULT_LEVEL;
+            } else {
+                this.level = num6;
+            }
+            Integer num7 = builder.limit;
+            if (num7 == null) {
+                this.limit = DEFAULT_LIMIT;
+            } else {
+                this.limit = num7;
+            }
+            Long l = builder.i_total;
+            if (l == null) {
+                this.i_total = DEFAULT_I_TOTAL;
+            } else {
+                this.i_total = l;
+            }
+            Long l2 = builder.i_money;
+            if (l2 == null) {
+                this.i_money = DEFAULT_I_MONEY;
+            } else {
+                this.i_money = l2;
+            }
+            Long l3 = builder.i_other;
+            if (l3 == null) {
+                this.i_other = DEFAULT_I_OTHER;
+                return;
+            } else {
+                this.i_other = l3;
+                return;
+            }
+        }
+        this.scores_total = builder.scores_total;
+        this.scores_fetch = builder.scores_fetch;
+        this.scores_money = builder.scores_money;
+        this.scores_other = builder.scores_other;
+        this.update_time = builder.update_time;
+        this.level = builder.level;
+        this.limit = builder.limit;
+        this.i_total = builder.i_total;
+        this.i_money = builder.i_money;
+        this.i_other = builder.i_other;
     }
-  }
-  
-  public static class a {}
 }

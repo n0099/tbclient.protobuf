@@ -4,5 +4,4 @@ import "CommonReq.proto";
 
 message ReqData {
     uint32 tailId = 1;
-    CommonReq common = 2;
 }

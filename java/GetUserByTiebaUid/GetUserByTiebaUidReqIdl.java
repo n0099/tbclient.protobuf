@@ -2,40 +2,39 @@ package tbclient.GetUserByTiebaUid;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GetUserByTiebaUidReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public GetUserByTiebaUidReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GetUserByTiebaUidReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetUserByTiebaUidReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(GetUserByTiebaUidReqIdl param1GetUserByTiebaUidReqIdl) {
-      super(param1GetUserByTiebaUidReqIdl);
-      if (param1GetUserByTiebaUidReqIdl == null)
-        return; 
-      this.data = param1GetUserByTiebaUidReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetUserByTiebaUidReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(GetUserByTiebaUidReqIdl getUserByTiebaUidReqIdl) {
+            super(getUserByTiebaUidReqIdl);
+            if (getUserByTiebaUidReqIdl == null) {
+                return;
+            }
+            this.data = getUserByTiebaUidReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetUserByTiebaUidReqIdl build(boolean z) {
+            return new GetUserByTiebaUidReqIdl(this, z);
+        }
     }
-    
-    public GetUserByTiebaUidReqIdl build(boolean param1Boolean) {
-      return new GetUserByTiebaUidReqIdl(this, param1Boolean, null);
+
+    public GetUserByTiebaUidReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

@@ -7,275 +7,214 @@ import java.util.List;
 import tbclient.FrsTabInfo;
 import tbclient.PrivateForumInfo;
 import tbclient.ThemeColorInfo;
-
+/* loaded from: classes2.dex */
 public final class LikeForum extends Message {
-  public static final String DEFAULT_AVATAR = "";
-  
-  public static final String DEFAULT_CONTENT = "";
-  
-  public static final Long DEFAULT_FORUM_ID;
-  
-  public static final String DEFAULT_FORUM_NAME = "";
-  
-  public static final Long DEFAULT_HOT_THREAD_ID;
-  
-  public static final Integer DEFAULT_IS_BRAND_FORUM;
-  
-  public static final Integer DEFAULT_IS_MANAGER;
-  
-  public static final Integer DEFAULT_IS_PRIVATE_FORUM;
-  
-  public static final Integer DEFAULT_IS_SIGN;
-  
-  public static final Integer DEFAULT_IS_TOP;
-  
-  public static final Integer DEFAULT_LEVEL_ID;
-  
-  public static final Boolean DEFAULT_NEED_TRANS;
-  
-  public static final Integer DEFAULT_SORT_TYPE;
-  
-  public static final List<FrsTabInfo> DEFAULT_TAB_INFO;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String avatar;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.STRING)
-  public final String content;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long forum_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String forum_name;
-  
-  @ProtoField(tag = 20, type = Message.Datatype.INT64)
-  public final Long hot_thread_id;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.UINT32)
-  public final Integer is_brand_forum;
-  
-  @ProtoField(tag = 18, type = Message.Datatype.INT32)
-  public final Integer is_manager;
-  
-  @ProtoField(tag = 15, type = Message.Datatype.INT32)
-  public final Integer is_private_forum;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT32)
-  public final Integer is_sign;
-  
-  @ProtoField(tag = 10, type = Message.Datatype.INT32)
-  public final Integer is_top;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.INT32)
-  public final Integer level_id;
-  
-  @ProtoField(tag = 14, type = Message.Datatype.BOOL)
-  public final Boolean need_trans;
-  
-  @ProtoField(tag = 19)
-  public final PrivateForumInfo private_forum_info;
-  
-  @ProtoField(tag = 11, type = Message.Datatype.INT32)
-  public final Integer sort_type;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 21)
-  public final List<FrsTabInfo> tab_info;
-  
-  @ProtoField(tag = 12)
-  public final ThemeColorInfo theme_color;
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_FORUM_ID = long_;
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_IS_SIGN = integer;
-    DEFAULT_LEVEL_ID = integer;
-    DEFAULT_IS_BRAND_FORUM = integer;
-    DEFAULT_IS_TOP = integer;
-    DEFAULT_SORT_TYPE = integer;
-    DEFAULT_NEED_TRANS = Boolean.FALSE;
-    DEFAULT_IS_PRIVATE_FORUM = integer;
-    DEFAULT_IS_MANAGER = integer;
-    DEFAULT_HOT_THREAD_ID = long_;
-    DEFAULT_TAB_INFO = Collections.emptyList();
-  }
-  
-  public LikeForum(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<FrsTabInfo> list;
-    if (paramBoolean == true) {
-      Long long_2 = paramBuilder.forum_id;
-      if (long_2 == null) {
-        this.forum_id = DEFAULT_FORUM_ID;
-      } else {
-        this.forum_id = long_2;
-      } 
-      String str2 = paramBuilder.forum_name;
-      if (str2 == null) {
-        this.forum_name = "";
-      } else {
-        this.forum_name = str2;
-      } 
-      str2 = paramBuilder.avatar;
-      if (str2 == null) {
-        this.avatar = "";
-      } else {
-        this.avatar = str2;
-      } 
-      Integer integer3 = paramBuilder.is_sign;
-      if (integer3 == null) {
-        this.is_sign = DEFAULT_IS_SIGN;
-      } else {
-        this.is_sign = integer3;
-      } 
-      integer3 = paramBuilder.level_id;
-      if (integer3 == null) {
-        this.level_id = DEFAULT_LEVEL_ID;
-      } else {
-        this.level_id = integer3;
-      } 
-      integer3 = paramBuilder.is_brand_forum;
-      if (integer3 == null) {
-        this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
-      } else {
-        this.is_brand_forum = integer3;
-      } 
-      String str1 = paramBuilder.content;
-      if (str1 == null) {
-        this.content = "";
-      } else {
-        this.content = str1;
-      } 
-      Integer integer2 = paramBuilder.is_top;
-      if (integer2 == null) {
-        this.is_top = DEFAULT_IS_TOP;
-      } else {
-        this.is_top = integer2;
-      } 
-      integer2 = paramBuilder.sort_type;
-      if (integer2 == null) {
-        this.sort_type = DEFAULT_SORT_TYPE;
-      } else {
-        this.sort_type = integer2;
-      } 
-      this.theme_color = paramBuilder.theme_color;
-      Boolean bool = paramBuilder.need_trans;
-      if (bool == null) {
-        this.need_trans = DEFAULT_NEED_TRANS;
-      } else {
-        this.need_trans = bool;
-      } 
-      Integer integer1 = paramBuilder.is_private_forum;
-      if (integer1 == null) {
-        this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
-      } else {
-        this.is_private_forum = integer1;
-      } 
-      integer1 = paramBuilder.is_manager;
-      if (integer1 == null) {
-        this.is_manager = DEFAULT_IS_MANAGER;
-      } else {
-        this.is_manager = integer1;
-      } 
-      this.private_forum_info = paramBuilder.private_forum_info;
-      Long long_1 = paramBuilder.hot_thread_id;
-      if (long_1 == null) {
-        this.hot_thread_id = DEFAULT_HOT_THREAD_ID;
-      } else {
-        this.hot_thread_id = long_1;
-      } 
-      list = paramBuilder.tab_info;
-      if (list == null) {
-        this.tab_info = DEFAULT_TAB_INFO;
-      } else {
-        this.tab_info = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this.forum_id = ((Builder)list).forum_id;
-      this.forum_name = ((Builder)list).forum_name;
-      this.avatar = ((Builder)list).avatar;
-      this.is_sign = ((Builder)list).is_sign;
-      this.level_id = ((Builder)list).level_id;
-      this.is_brand_forum = ((Builder)list).is_brand_forum;
-      this.content = ((Builder)list).content;
-      this.is_top = ((Builder)list).is_top;
-      this.sort_type = ((Builder)list).sort_type;
-      this.theme_color = ((Builder)list).theme_color;
-      this.need_trans = ((Builder)list).need_trans;
-      this.is_private_forum = ((Builder)list).is_private_forum;
-      this.is_manager = ((Builder)list).is_manager;
-      this.private_forum_info = ((Builder)list).private_forum_info;
-      this.hot_thread_id = ((Builder)list).hot_thread_id;
-      this.tab_info = Message.immutableCopyOf(((Builder)list).tab_info);
-    } 
-  }
-  
-  public LikeForum(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<LikeForum> {
-    public String avatar;
-    
-    public String content;
-    
-    public Long forum_id;
-    
-    public String forum_name;
-    
-    public Long hot_thread_id;
-    
-    public Integer is_brand_forum;
-    
-    public Integer is_manager;
-    
-    public Integer is_private_forum;
-    
-    public Integer is_sign;
-    
-    public Integer is_top;
-    
-    public Integer level_id;
-    
-    public Boolean need_trans;
-    
-    public PrivateForumInfo private_forum_info;
-    
-    public Integer sort_type;
-    
-    public List<FrsTabInfo> tab_info;
-    
-    public ThemeColorInfo theme_color;
-    
-    public Builder() {}
-    
-    public Builder(LikeForum param1LikeForum) {
-      super(param1LikeForum);
-      if (param1LikeForum == null)
-        return; 
-      this.forum_id = param1LikeForum.forum_id;
-      this.forum_name = param1LikeForum.forum_name;
-      this.avatar = param1LikeForum.avatar;
-      this.is_sign = param1LikeForum.is_sign;
-      this.level_id = param1LikeForum.level_id;
-      this.is_brand_forum = param1LikeForum.is_brand_forum;
-      this.content = param1LikeForum.content;
-      this.is_top = param1LikeForum.is_top;
-      this.sort_type = param1LikeForum.sort_type;
-      this.theme_color = param1LikeForum.theme_color;
-      this.need_trans = param1LikeForum.need_trans;
-      this.is_private_forum = param1LikeForum.is_private_forum;
-      this.is_manager = param1LikeForum.is_manager;
-      this.private_forum_info = param1LikeForum.private_forum_info;
-      this.hot_thread_id = param1LikeForum.hot_thread_id;
-      this.tab_info = Message.copyOf(param1LikeForum.tab_info);
+    public static final String DEFAULT_AVATAR = "";
+    public static final String DEFAULT_CONTENT = "";
+    public static final String DEFAULT_FORUM_NAME = "";
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String avatar;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String content;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long forum_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String forum_name;
+    @ProtoField(tag = 20, type = Message.Datatype.INT64)
+    public final Long hot_thread_id;
+    @ProtoField(tag = 7, type = Message.Datatype.UINT32)
+    public final Integer is_brand_forum;
+    @ProtoField(tag = 18, type = Message.Datatype.INT32)
+    public final Integer is_manager;
+    @ProtoField(tag = 15, type = Message.Datatype.INT32)
+    public final Integer is_private_forum;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer is_sign;
+    @ProtoField(tag = 10, type = Message.Datatype.INT32)
+    public final Integer is_top;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer level_id;
+    @ProtoField(tag = 14, type = Message.Datatype.BOOL)
+    public final Boolean need_trans;
+    @ProtoField(tag = 19)
+    public final PrivateForumInfo private_forum_info;
+    @ProtoField(tag = 11, type = Message.Datatype.INT32)
+    public final Integer sort_type;
+    @ProtoField(label = Message.Label.REPEATED, tag = 21)
+    public final List<FrsTabInfo> tab_info;
+    @ProtoField(tag = 12)
+    public final ThemeColorInfo theme_color;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_IS_SIGN = 0;
+    public static final Integer DEFAULT_LEVEL_ID = 0;
+    public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
+    public static final Integer DEFAULT_IS_TOP = 0;
+    public static final Integer DEFAULT_SORT_TYPE = 0;
+    public static final Boolean DEFAULT_NEED_TRANS = Boolean.FALSE;
+    public static final Integer DEFAULT_IS_PRIVATE_FORUM = 0;
+    public static final Integer DEFAULT_IS_MANAGER = 0;
+    public static final Long DEFAULT_HOT_THREAD_ID = 0L;
+    public static final List<FrsTabInfo> DEFAULT_TAB_INFO = Collections.emptyList();
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<LikeForum> {
+        public String avatar;
+        public String content;
+        public Long forum_id;
+        public String forum_name;
+        public Long hot_thread_id;
+        public Integer is_brand_forum;
+        public Integer is_manager;
+        public Integer is_private_forum;
+        public Integer is_sign;
+        public Integer is_top;
+        public Integer level_id;
+        public Boolean need_trans;
+        public PrivateForumInfo private_forum_info;
+        public Integer sort_type;
+        public List<FrsTabInfo> tab_info;
+        public ThemeColorInfo theme_color;
+
+        public Builder() {
+        }
+
+        public Builder(LikeForum likeForum) {
+            super(likeForum);
+            if (likeForum == null) {
+                return;
+            }
+            this.forum_id = likeForum.forum_id;
+            this.forum_name = likeForum.forum_name;
+            this.avatar = likeForum.avatar;
+            this.is_sign = likeForum.is_sign;
+            this.level_id = likeForum.level_id;
+            this.is_brand_forum = likeForum.is_brand_forum;
+            this.content = likeForum.content;
+            this.is_top = likeForum.is_top;
+            this.sort_type = likeForum.sort_type;
+            this.theme_color = likeForum.theme_color;
+            this.need_trans = likeForum.need_trans;
+            this.is_private_forum = likeForum.is_private_forum;
+            this.is_manager = likeForum.is_manager;
+            this.private_forum_info = likeForum.private_forum_info;
+            this.hot_thread_id = likeForum.hot_thread_id;
+            this.tab_info = Message.copyOf(likeForum.tab_info);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public LikeForum build(boolean z) {
+            return new LikeForum(this, z);
+        }
     }
-    
-    public LikeForum build(boolean param1Boolean) {
-      return new LikeForum(this, param1Boolean, null);
+
+    public LikeForum(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            String str = builder.forum_name;
+            if (str == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str;
+            }
+            String str2 = builder.avatar;
+            if (str2 == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str2;
+            }
+            Integer num = builder.is_sign;
+            if (num == null) {
+                this.is_sign = DEFAULT_IS_SIGN;
+            } else {
+                this.is_sign = num;
+            }
+            Integer num2 = builder.level_id;
+            if (num2 == null) {
+                this.level_id = DEFAULT_LEVEL_ID;
+            } else {
+                this.level_id = num2;
+            }
+            Integer num3 = builder.is_brand_forum;
+            if (num3 == null) {
+                this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
+            } else {
+                this.is_brand_forum = num3;
+            }
+            String str3 = builder.content;
+            if (str3 == null) {
+                this.content = "";
+            } else {
+                this.content = str3;
+            }
+            Integer num4 = builder.is_top;
+            if (num4 == null) {
+                this.is_top = DEFAULT_IS_TOP;
+            } else {
+                this.is_top = num4;
+            }
+            Integer num5 = builder.sort_type;
+            if (num5 == null) {
+                this.sort_type = DEFAULT_SORT_TYPE;
+            } else {
+                this.sort_type = num5;
+            }
+            this.theme_color = builder.theme_color;
+            Boolean bool = builder.need_trans;
+            if (bool == null) {
+                this.need_trans = DEFAULT_NEED_TRANS;
+            } else {
+                this.need_trans = bool;
+            }
+            Integer num6 = builder.is_private_forum;
+            if (num6 == null) {
+                this.is_private_forum = DEFAULT_IS_PRIVATE_FORUM;
+            } else {
+                this.is_private_forum = num6;
+            }
+            Integer num7 = builder.is_manager;
+            if (num7 == null) {
+                this.is_manager = DEFAULT_IS_MANAGER;
+            } else {
+                this.is_manager = num7;
+            }
+            this.private_forum_info = builder.private_forum_info;
+            Long l2 = builder.hot_thread_id;
+            if (l2 == null) {
+                this.hot_thread_id = DEFAULT_HOT_THREAD_ID;
+            } else {
+                this.hot_thread_id = l2;
+            }
+            List<FrsTabInfo> list = builder.tab_info;
+            if (list == null) {
+                this.tab_info = DEFAULT_TAB_INFO;
+                return;
+            } else {
+                this.tab_info = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.forum_id = builder.forum_id;
+        this.forum_name = builder.forum_name;
+        this.avatar = builder.avatar;
+        this.is_sign = builder.is_sign;
+        this.level_id = builder.level_id;
+        this.is_brand_forum = builder.is_brand_forum;
+        this.content = builder.content;
+        this.is_top = builder.is_top;
+        this.sort_type = builder.sort_type;
+        this.theme_color = builder.theme_color;
+        this.need_trans = builder.need_trans;
+        this.is_private_forum = builder.is_private_forum;
+        this.is_manager = builder.is_manager;
+        this.private_forum_info = builder.private_forum_info;
+        this.hot_thread_id = builder.hot_thread_id;
+        this.tab_info = Message.immutableCopyOf(builder.tab_info);
     }
-  }
-  
-  public static class a {}
 }

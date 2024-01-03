@@ -4,178 +4,142 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class TogetherHi extends Message {
-  public static final Long DEFAULT_ALBUM_ID = Long.valueOf(0L);
-  
-  public static final String DEFAULT_ALBUM_NAME = "";
-  
-  public static final Integer DEFAULT_END_TIME;
-  
-  public static final String DEFAULT_LOCATION = "";
-  
-  public static final Integer DEFAULT_NUM_JOIN;
-  
-  public static final Integer DEFAULT_NUM_SIGNUP;
-  
-  public static final List<String> DEFAULT_PIC_URLS;
-  
-  public static final List<String> DEFAULT_POTRAITS;
-  
-  public static final Integer DEFAULT_START_TIME;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT64)
-  public final Long album_id;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String album_name;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.UINT32)
-  public final Integer end_time;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String location;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.UINT32)
-  public final Integer num_join;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.UINT32)
-  public final Integer num_signup;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 9, type = Message.Datatype.STRING)
-  public final List<String> pic_urls;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 7, type = Message.Datatype.STRING)
-  public final List<String> potraits;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT32)
-  public final Integer start_time;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_START_TIME = integer;
-    DEFAULT_END_TIME = integer;
-    DEFAULT_NUM_SIGNUP = integer;
-    DEFAULT_POTRAITS = Collections.emptyList();
-    DEFAULT_NUM_JOIN = integer;
-    DEFAULT_PIC_URLS = Collections.emptyList();
-  }
-  
-  public TogetherHi(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<String> list;
-    if (paramBoolean == true) {
-      String str2 = paramBuilder.album_name;
-      if (str2 == null) {
-        this.album_name = "";
-      } else {
-        this.album_name = str2;
-      } 
-      Long long_ = paramBuilder.album_id;
-      if (long_ == null) {
-        this.album_id = DEFAULT_ALBUM_ID;
-      } else {
-        this.album_id = long_;
-      } 
-      Integer integer3 = paramBuilder.start_time;
-      if (integer3 == null) {
-        this.start_time = DEFAULT_START_TIME;
-      } else {
-        this.start_time = integer3;
-      } 
-      integer3 = paramBuilder.end_time;
-      if (integer3 == null) {
-        this.end_time = DEFAULT_END_TIME;
-      } else {
-        this.end_time = integer3;
-      } 
-      String str1 = paramBuilder.location;
-      if (str1 == null) {
-        this.location = "";
-      } else {
-        this.location = str1;
-      } 
-      Integer integer2 = paramBuilder.num_signup;
-      if (integer2 == null) {
-        this.num_signup = DEFAULT_NUM_SIGNUP;
-      } else {
-        this.num_signup = integer2;
-      } 
-      List<String> list1 = paramBuilder.potraits;
-      if (list1 == null) {
-        this.potraits = DEFAULT_POTRAITS;
-      } else {
-        this.potraits = Message.immutableCopyOf(list1);
-      } 
-      Integer integer1 = paramBuilder.num_join;
-      if (integer1 == null) {
-        this.num_join = DEFAULT_NUM_JOIN;
-      } else {
-        this.num_join = integer1;
-      } 
-      list = paramBuilder.pic_urls;
-      if (list == null) {
-        this.pic_urls = DEFAULT_PIC_URLS;
-      } else {
-        this.pic_urls = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this.album_name = ((Builder)list).album_name;
-      this.album_id = ((Builder)list).album_id;
-      this.start_time = ((Builder)list).start_time;
-      this.end_time = ((Builder)list).end_time;
-      this.location = ((Builder)list).location;
-      this.num_signup = ((Builder)list).num_signup;
-      this.potraits = Message.immutableCopyOf(((Builder)list).potraits);
-      this.num_join = ((Builder)list).num_join;
-      this.pic_urls = Message.immutableCopyOf(((Builder)list).pic_urls);
-    } 
-  }
-  
-  public TogetherHi(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<TogetherHi> {
-    public Long album_id;
-    
-    public String album_name;
-    
-    public Integer end_time;
-    
-    public String location;
-    
-    public Integer num_join;
-    
-    public Integer num_signup;
-    
-    public List<String> pic_urls;
-    
-    public List<String> potraits;
-    
-    public Integer start_time;
-    
-    public Builder() {}
-    
-    public Builder(TogetherHi param1TogetherHi) {
-      super(param1TogetherHi);
-      if (param1TogetherHi == null)
-        return; 
-      this.album_name = param1TogetherHi.album_name;
-      this.album_id = param1TogetherHi.album_id;
-      this.start_time = param1TogetherHi.start_time;
-      this.end_time = param1TogetherHi.end_time;
-      this.location = param1TogetherHi.location;
-      this.num_signup = param1TogetherHi.num_signup;
-      this.potraits = Message.copyOf(param1TogetherHi.potraits);
-      this.num_join = param1TogetherHi.num_join;
-      this.pic_urls = Message.copyOf(param1TogetherHi.pic_urls);
+    public static final String DEFAULT_ALBUM_NAME = "";
+    public static final String DEFAULT_LOCATION = "";
+    @ProtoField(tag = 2, type = Message.Datatype.UINT64)
+    public final Long album_id;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String album_name;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+    public final Integer end_time;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String location;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT32)
+    public final Integer num_join;
+    @ProtoField(tag = 6, type = Message.Datatype.UINT32)
+    public final Integer num_signup;
+    @ProtoField(label = Message.Label.REPEATED, tag = 9, type = Message.Datatype.STRING)
+    public final List<String> pic_urls;
+    @ProtoField(label = Message.Label.REPEATED, tag = 7, type = Message.Datatype.STRING)
+    public final List<String> potraits;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
+    public final Integer start_time;
+    public static final Long DEFAULT_ALBUM_ID = 0L;
+    public static final Integer DEFAULT_START_TIME = 0;
+    public static final Integer DEFAULT_END_TIME = 0;
+    public static final Integer DEFAULT_NUM_SIGNUP = 0;
+    public static final List<String> DEFAULT_POTRAITS = Collections.emptyList();
+    public static final Integer DEFAULT_NUM_JOIN = 0;
+    public static final List<String> DEFAULT_PIC_URLS = Collections.emptyList();
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<TogetherHi> {
+        public Long album_id;
+        public String album_name;
+        public Integer end_time;
+        public String location;
+        public Integer num_join;
+        public Integer num_signup;
+        public List<String> pic_urls;
+        public List<String> potraits;
+        public Integer start_time;
+
+        public Builder() {
+        }
+
+        public Builder(TogetherHi togetherHi) {
+            super(togetherHi);
+            if (togetherHi == null) {
+                return;
+            }
+            this.album_name = togetherHi.album_name;
+            this.album_id = togetherHi.album_id;
+            this.start_time = togetherHi.start_time;
+            this.end_time = togetherHi.end_time;
+            this.location = togetherHi.location;
+            this.num_signup = togetherHi.num_signup;
+            this.potraits = Message.copyOf(togetherHi.potraits);
+            this.num_join = togetherHi.num_join;
+            this.pic_urls = Message.copyOf(togetherHi.pic_urls);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public TogetherHi build(boolean z) {
+            return new TogetherHi(this, z);
+        }
     }
-    
-    public TogetherHi build(boolean param1Boolean) {
-      return new TogetherHi(this, param1Boolean, null);
+
+    public TogetherHi(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.album_name;
+            if (str == null) {
+                this.album_name = "";
+            } else {
+                this.album_name = str;
+            }
+            Long l = builder.album_id;
+            if (l == null) {
+                this.album_id = DEFAULT_ALBUM_ID;
+            } else {
+                this.album_id = l;
+            }
+            Integer num = builder.start_time;
+            if (num == null) {
+                this.start_time = DEFAULT_START_TIME;
+            } else {
+                this.start_time = num;
+            }
+            Integer num2 = builder.end_time;
+            if (num2 == null) {
+                this.end_time = DEFAULT_END_TIME;
+            } else {
+                this.end_time = num2;
+            }
+            String str2 = builder.location;
+            if (str2 == null) {
+                this.location = "";
+            } else {
+                this.location = str2;
+            }
+            Integer num3 = builder.num_signup;
+            if (num3 == null) {
+                this.num_signup = DEFAULT_NUM_SIGNUP;
+            } else {
+                this.num_signup = num3;
+            }
+            List<String> list = builder.potraits;
+            if (list == null) {
+                this.potraits = DEFAULT_POTRAITS;
+            } else {
+                this.potraits = Message.immutableCopyOf(list);
+            }
+            Integer num4 = builder.num_join;
+            if (num4 == null) {
+                this.num_join = DEFAULT_NUM_JOIN;
+            } else {
+                this.num_join = num4;
+            }
+            List<String> list2 = builder.pic_urls;
+            if (list2 == null) {
+                this.pic_urls = DEFAULT_PIC_URLS;
+                return;
+            } else {
+                this.pic_urls = Message.immutableCopyOf(list2);
+                return;
+            }
+        }
+        this.album_name = builder.album_name;
+        this.album_id = builder.album_id;
+        this.start_time = builder.start_time;
+        this.end_time = builder.end_time;
+        this.location = builder.location;
+        this.num_signup = builder.num_signup;
+        this.potraits = Message.immutableCopyOf(builder.potraits);
+        this.num_join = builder.num_join;
+        this.pic_urls = Message.immutableCopyOf(builder.pic_urls);
     }
-  }
-  
-  public static class a {}
 }

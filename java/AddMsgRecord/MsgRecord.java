@@ -2,63 +2,58 @@ package tbclient.AddMsgRecord;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class MsgRecord extends Message {
-  public static final String DEFAULT_TASK_IDS = "";
-  
-  public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String task_ids;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer type;
-  
-  public MsgRecord(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.type;
-      if (integer == null) {
-        this.type = DEFAULT_TYPE;
-      } else {
-        this.type = integer;
-      } 
-      str = paramBuilder.task_ids;
-      if (str == null) {
-        this.task_ids = "";
-      } else {
-        this.task_ids = str;
-      } 
-    } else {
-      this.type = ((Builder)str).type;
-      this.task_ids = ((Builder)str).task_ids;
-    } 
-  }
-  
-  public MsgRecord(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<MsgRecord> {
-    public String task_ids;
-    
-    public Integer type;
-    
-    public Builder() {}
-    
-    public Builder(MsgRecord param1MsgRecord) {
-      super(param1MsgRecord);
-      if (param1MsgRecord == null)
-        return; 
-      this.type = param1MsgRecord.type;
-      this.task_ids = param1MsgRecord.task_ids;
+    public static final String DEFAULT_TASK_IDS = "";
+    public static final Integer DEFAULT_TYPE = 0;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String task_ids;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer type;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<MsgRecord> {
+        public String task_ids;
+        public Integer type;
+
+        public Builder() {
+        }
+
+        public Builder(MsgRecord msgRecord) {
+            super(msgRecord);
+            if (msgRecord == null) {
+                return;
+            }
+            this.type = msgRecord.type;
+            this.task_ids = msgRecord.task_ids;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public MsgRecord build(boolean z) {
+            return new MsgRecord(this, z);
+        }
     }
-    
-    public MsgRecord build(boolean param1Boolean) {
-      return new MsgRecord(this, param1Boolean, null);
+
+    public MsgRecord(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            String str = builder.task_ids;
+            if (str == null) {
+                this.task_ids = "";
+                return;
+            } else {
+                this.task_ids = str;
+                return;
+            }
+        }
+        this.type = builder.type;
+        this.task_ids = builder.task_ids;
     }
-  }
-  
-  public static class a {}
 }

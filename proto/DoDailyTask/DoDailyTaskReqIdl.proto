@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "DoDailyTask/DataReq.proto";
-
-message DoDailyTaskReqIdl {
-    DataReq data = 1;
-}

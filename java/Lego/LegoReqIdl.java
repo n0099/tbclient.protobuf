@@ -2,40 +2,39 @@ package tbclient.Lego;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class LegoReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public LegoReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public LegoReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<LegoReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(LegoReqIdl param1LegoReqIdl) {
-      super(param1LegoReqIdl);
-      if (param1LegoReqIdl == null)
-        return; 
-      this.data = param1LegoReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<LegoReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(LegoReqIdl legoReqIdl) {
+            super(legoReqIdl);
+            if (legoReqIdl == null) {
+                return;
+            }
+            this.data = legoReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public LegoReqIdl build(boolean z) {
+            return new LegoReqIdl(this, z);
+        }
     }
-    
-    public LegoReqIdl build(boolean param1Boolean) {
-      return new LegoReqIdl(this, param1Boolean, null);
+
+    public LegoReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

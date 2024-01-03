@@ -2,78 +2,70 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class TiebaPlusAd extends Message {
-  public static final String DEFAULT_AD_SOURCE = "";
-  
-  public static final String DEFAULT_COST_URL = "";
-  
-  public static final String DEFAULT_SHOW_URL = "";
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String ad_source;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String cost_url;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String show_url;
-  
-  public TiebaPlusAd(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.cost_url;
-      if (str1 == null) {
-        this.cost_url = "";
-      } else {
-        this.cost_url = str1;
-      } 
-      str1 = paramBuilder.show_url;
-      if (str1 == null) {
-        this.show_url = "";
-      } else {
-        this.show_url = str1;
-      } 
-      str = paramBuilder.ad_source;
-      if (str == null) {
-        this.ad_source = "";
-      } else {
-        this.ad_source = str;
-      } 
-    } else {
-      this.cost_url = ((Builder)str).cost_url;
-      this.show_url = ((Builder)str).show_url;
-      this.ad_source = ((Builder)str).ad_source;
-    } 
-  }
-  
-  public TiebaPlusAd(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<TiebaPlusAd> {
-    public String ad_source;
-    
-    public String cost_url;
-    
-    public String show_url;
-    
-    public Builder() {}
-    
-    public Builder(TiebaPlusAd param1TiebaPlusAd) {
-      super(param1TiebaPlusAd);
-      if (param1TiebaPlusAd == null)
-        return; 
-      this.cost_url = param1TiebaPlusAd.cost_url;
-      this.show_url = param1TiebaPlusAd.show_url;
-      this.ad_source = param1TiebaPlusAd.ad_source;
+    public static final String DEFAULT_AD_SOURCE = "";
+    public static final String DEFAULT_COST_URL = "";
+    public static final String DEFAULT_SHOW_URL = "";
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String ad_source;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String cost_url;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String show_url;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<TiebaPlusAd> {
+        public String ad_source;
+        public String cost_url;
+        public String show_url;
+
+        public Builder() {
+        }
+
+        public Builder(TiebaPlusAd tiebaPlusAd) {
+            super(tiebaPlusAd);
+            if (tiebaPlusAd == null) {
+                return;
+            }
+            this.cost_url = tiebaPlusAd.cost_url;
+            this.show_url = tiebaPlusAd.show_url;
+            this.ad_source = tiebaPlusAd.ad_source;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public TiebaPlusAd build(boolean z) {
+            return new TiebaPlusAd(this, z);
+        }
     }
-    
-    public TiebaPlusAd build(boolean param1Boolean) {
-      return new TiebaPlusAd(this, param1Boolean, null);
+
+    public TiebaPlusAd(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.cost_url;
+            if (str == null) {
+                this.cost_url = "";
+            } else {
+                this.cost_url = str;
+            }
+            String str2 = builder.show_url;
+            if (str2 == null) {
+                this.show_url = "";
+            } else {
+                this.show_url = str2;
+            }
+            String str3 = builder.ad_source;
+            if (str3 == null) {
+                this.ad_source = "";
+                return;
+            } else {
+                this.ad_source = str3;
+                return;
+            }
+        }
+        this.cost_url = builder.cost_url;
+        this.show_url = builder.show_url;
+        this.ad_source = builder.ad_source;
     }
-  }
-  
-  public static class a {}
 }

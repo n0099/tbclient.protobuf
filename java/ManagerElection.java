@@ -4,196 +4,154 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class ManagerElection extends Message {
-  public static final Integer DEFAULT_BEGIN_VOTE_TIME;
-  
-  public static final Integer DEFAULT_CAN_VOTE;
-  
-  public static final Integer DEFAULT_IS_SHOW_DISTRIBUTE;
-  
-  public static final Integer DEFAULT_REMAINDER_TIME;
-  
-  public static final Integer DEFAULT_STATUS;
-  
-  public static final String DEFAULT_TAIL_TEXT = "";
-  
-  public static final List<String> DEFAULT_VOTE_CONDITION;
-  
-  public static final List<String> DEFAULT_VOTE_CONDITION_PIC;
-  
-  public static final List<String> DEFAULT_VOTE_CONDITION_TITLE;
-  
-  public static final Integer DEFAULT_VOTE_NUM;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT32)
-  public final Integer begin_vote_time;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-  public final Integer can_vote;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.UINT32)
-  public final Integer is_show_distribute;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.UINT32)
-  public final Integer remainder_time;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.UINT32)
-  public final Integer status;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String tail_text;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 5, type = Message.Datatype.STRING)
-  public final List<String> vote_condition;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 11, type = Message.Datatype.STRING)
-  public final List<String> vote_condition_pic;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 10, type = Message.Datatype.STRING)
-  public final List<String> vote_condition_title;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-  public final Integer vote_num;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_CAN_VOTE = integer;
-    DEFAULT_VOTE_NUM = integer;
-    DEFAULT_BEGIN_VOTE_TIME = integer;
-    DEFAULT_VOTE_CONDITION = Collections.emptyList();
-    DEFAULT_IS_SHOW_DISTRIBUTE = integer;
-    DEFAULT_REMAINDER_TIME = integer;
-    DEFAULT_STATUS = integer;
-    DEFAULT_VOTE_CONDITION_TITLE = Collections.emptyList();
-    DEFAULT_VOTE_CONDITION_PIC = Collections.emptyList();
-  }
-  
-  public ManagerElection(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<String> list;
-    if (paramBoolean == true) {
-      Integer integer2 = paramBuilder.can_vote;
-      if (integer2 == null) {
-        this.can_vote = DEFAULT_CAN_VOTE;
-      } else {
-        this.can_vote = integer2;
-      } 
-      integer2 = paramBuilder.vote_num;
-      if (integer2 == null) {
-        this.vote_num = DEFAULT_VOTE_NUM;
-      } else {
-        this.vote_num = integer2;
-      } 
-      integer2 = paramBuilder.begin_vote_time;
-      if (integer2 == null) {
-        this.begin_vote_time = DEFAULT_BEGIN_VOTE_TIME;
-      } else {
-        this.begin_vote_time = integer2;
-      } 
-      List<String> list2 = paramBuilder.vote_condition;
-      if (list2 == null) {
-        this.vote_condition = DEFAULT_VOTE_CONDITION;
-      } else {
-        this.vote_condition = Message.immutableCopyOf(list2);
-      } 
-      String str = paramBuilder.tail_text;
-      if (str == null) {
-        this.tail_text = "";
-      } else {
-        this.tail_text = str;
-      } 
-      Integer integer1 = paramBuilder.is_show_distribute;
-      if (integer1 == null) {
-        this.is_show_distribute = DEFAULT_IS_SHOW_DISTRIBUTE;
-      } else {
-        this.is_show_distribute = integer1;
-      } 
-      integer1 = paramBuilder.remainder_time;
-      if (integer1 == null) {
-        this.remainder_time = DEFAULT_REMAINDER_TIME;
-      } else {
-        this.remainder_time = integer1;
-      } 
-      integer1 = paramBuilder.status;
-      if (integer1 == null) {
-        this.status = DEFAULT_STATUS;
-      } else {
-        this.status = integer1;
-      } 
-      List<String> list1 = paramBuilder.vote_condition_title;
-      if (list1 == null) {
-        this.vote_condition_title = DEFAULT_VOTE_CONDITION_TITLE;
-      } else {
-        this.vote_condition_title = Message.immutableCopyOf(list1);
-      } 
-      list = paramBuilder.vote_condition_pic;
-      if (list == null) {
-        this.vote_condition_pic = DEFAULT_VOTE_CONDITION_PIC;
-      } else {
-        this.vote_condition_pic = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this.can_vote = ((Builder)list).can_vote;
-      this.vote_num = ((Builder)list).vote_num;
-      this.begin_vote_time = ((Builder)list).begin_vote_time;
-      this.vote_condition = Message.immutableCopyOf(((Builder)list).vote_condition);
-      this.tail_text = ((Builder)list).tail_text;
-      this.is_show_distribute = ((Builder)list).is_show_distribute;
-      this.remainder_time = ((Builder)list).remainder_time;
-      this.status = ((Builder)list).status;
-      this.vote_condition_title = Message.immutableCopyOf(((Builder)list).vote_condition_title);
-      this.vote_condition_pic = Message.immutableCopyOf(((Builder)list).vote_condition_pic);
-    } 
-  }
-  
-  public ManagerElection(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ManagerElection> {
-    public Integer begin_vote_time;
-    
-    public Integer can_vote;
-    
-    public Integer is_show_distribute;
-    
-    public Integer remainder_time;
-    
-    public Integer status;
-    
-    public String tail_text;
-    
-    public List<String> vote_condition;
-    
-    public List<String> vote_condition_pic;
-    
-    public List<String> vote_condition_title;
-    
-    public Integer vote_num;
-    
-    public Builder() {}
-    
-    public Builder(ManagerElection param1ManagerElection) {
-      super(param1ManagerElection);
-      if (param1ManagerElection == null)
-        return; 
-      this.can_vote = param1ManagerElection.can_vote;
-      this.vote_num = param1ManagerElection.vote_num;
-      this.begin_vote_time = param1ManagerElection.begin_vote_time;
-      this.vote_condition = Message.copyOf(param1ManagerElection.vote_condition);
-      this.tail_text = param1ManagerElection.tail_text;
-      this.is_show_distribute = param1ManagerElection.is_show_distribute;
-      this.remainder_time = param1ManagerElection.remainder_time;
-      this.status = param1ManagerElection.status;
-      this.vote_condition_title = Message.copyOf(param1ManagerElection.vote_condition_title);
-      this.vote_condition_pic = Message.copyOf(param1ManagerElection.vote_condition_pic);
+    public static final String DEFAULT_TAIL_TEXT = "";
+    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
+    public final Integer begin_vote_time;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer can_vote;
+    @ProtoField(tag = 7, type = Message.Datatype.UINT32)
+    public final Integer is_show_distribute;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT32)
+    public final Integer remainder_time;
+    @ProtoField(tag = 9, type = Message.Datatype.UINT32)
+    public final Integer status;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String tail_text;
+    @ProtoField(label = Message.Label.REPEATED, tag = 5, type = Message.Datatype.STRING)
+    public final List<String> vote_condition;
+    @ProtoField(label = Message.Label.REPEATED, tag = 11, type = Message.Datatype.STRING)
+    public final List<String> vote_condition_pic;
+    @ProtoField(label = Message.Label.REPEATED, tag = 10, type = Message.Datatype.STRING)
+    public final List<String> vote_condition_title;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
+    public final Integer vote_num;
+    public static final Integer DEFAULT_CAN_VOTE = 0;
+    public static final Integer DEFAULT_VOTE_NUM = 0;
+    public static final Integer DEFAULT_BEGIN_VOTE_TIME = 0;
+    public static final List<String> DEFAULT_VOTE_CONDITION = Collections.emptyList();
+    public static final Integer DEFAULT_IS_SHOW_DISTRIBUTE = 0;
+    public static final Integer DEFAULT_REMAINDER_TIME = 0;
+    public static final Integer DEFAULT_STATUS = 0;
+    public static final List<String> DEFAULT_VOTE_CONDITION_TITLE = Collections.emptyList();
+    public static final List<String> DEFAULT_VOTE_CONDITION_PIC = Collections.emptyList();
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ManagerElection> {
+        public Integer begin_vote_time;
+        public Integer can_vote;
+        public Integer is_show_distribute;
+        public Integer remainder_time;
+        public Integer status;
+        public String tail_text;
+        public List<String> vote_condition;
+        public List<String> vote_condition_pic;
+        public List<String> vote_condition_title;
+        public Integer vote_num;
+
+        public Builder() {
+        }
+
+        public Builder(ManagerElection managerElection) {
+            super(managerElection);
+            if (managerElection == null) {
+                return;
+            }
+            this.can_vote = managerElection.can_vote;
+            this.vote_num = managerElection.vote_num;
+            this.begin_vote_time = managerElection.begin_vote_time;
+            this.vote_condition = Message.copyOf(managerElection.vote_condition);
+            this.tail_text = managerElection.tail_text;
+            this.is_show_distribute = managerElection.is_show_distribute;
+            this.remainder_time = managerElection.remainder_time;
+            this.status = managerElection.status;
+            this.vote_condition_title = Message.copyOf(managerElection.vote_condition_title);
+            this.vote_condition_pic = Message.copyOf(managerElection.vote_condition_pic);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ManagerElection build(boolean z) {
+            return new ManagerElection(this, z);
+        }
     }
-    
-    public ManagerElection build(boolean param1Boolean) {
-      return new ManagerElection(this, param1Boolean, null);
+
+    public ManagerElection(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.can_vote;
+            if (num == null) {
+                this.can_vote = DEFAULT_CAN_VOTE;
+            } else {
+                this.can_vote = num;
+            }
+            Integer num2 = builder.vote_num;
+            if (num2 == null) {
+                this.vote_num = DEFAULT_VOTE_NUM;
+            } else {
+                this.vote_num = num2;
+            }
+            Integer num3 = builder.begin_vote_time;
+            if (num3 == null) {
+                this.begin_vote_time = DEFAULT_BEGIN_VOTE_TIME;
+            } else {
+                this.begin_vote_time = num3;
+            }
+            List<String> list = builder.vote_condition;
+            if (list == null) {
+                this.vote_condition = DEFAULT_VOTE_CONDITION;
+            } else {
+                this.vote_condition = Message.immutableCopyOf(list);
+            }
+            String str = builder.tail_text;
+            if (str == null) {
+                this.tail_text = "";
+            } else {
+                this.tail_text = str;
+            }
+            Integer num4 = builder.is_show_distribute;
+            if (num4 == null) {
+                this.is_show_distribute = DEFAULT_IS_SHOW_DISTRIBUTE;
+            } else {
+                this.is_show_distribute = num4;
+            }
+            Integer num5 = builder.remainder_time;
+            if (num5 == null) {
+                this.remainder_time = DEFAULT_REMAINDER_TIME;
+            } else {
+                this.remainder_time = num5;
+            }
+            Integer num6 = builder.status;
+            if (num6 == null) {
+                this.status = DEFAULT_STATUS;
+            } else {
+                this.status = num6;
+            }
+            List<String> list2 = builder.vote_condition_title;
+            if (list2 == null) {
+                this.vote_condition_title = DEFAULT_VOTE_CONDITION_TITLE;
+            } else {
+                this.vote_condition_title = Message.immutableCopyOf(list2);
+            }
+            List<String> list3 = builder.vote_condition_pic;
+            if (list3 == null) {
+                this.vote_condition_pic = DEFAULT_VOTE_CONDITION_PIC;
+                return;
+            } else {
+                this.vote_condition_pic = Message.immutableCopyOf(list3);
+                return;
+            }
+        }
+        this.can_vote = builder.can_vote;
+        this.vote_num = builder.vote_num;
+        this.begin_vote_time = builder.begin_vote_time;
+        this.vote_condition = Message.immutableCopyOf(builder.vote_condition);
+        this.tail_text = builder.tail_text;
+        this.is_show_distribute = builder.is_show_distribute;
+        this.remainder_time = builder.remainder_time;
+        this.status = builder.status;
+        this.vote_condition_title = Message.immutableCopyOf(builder.vote_condition_title);
+        this.vote_condition_pic = Message.immutableCopyOf(builder.vote_condition_pic);
     }
-  }
-  
-  public static class a {}
 }

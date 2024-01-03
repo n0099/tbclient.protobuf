@@ -2,48 +2,45 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ForumGroup extends Message {
-  @ProtoField(tag = 2)
-  public final GroupFeedCard feed_card;
-  
-  @ProtoField(tag = 1)
-  public final TopbarEntrance topbar_entrance;
-  
-  public ForumGroup(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.topbar_entrance = paramBuilder.topbar_entrance;
-      this.feed_card = paramBuilder.feed_card;
-    } else {
-      this.topbar_entrance = paramBuilder.topbar_entrance;
-      this.feed_card = paramBuilder.feed_card;
-    } 
-  }
-  
-  public ForumGroup(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ForumGroup> {
-    public GroupFeedCard feed_card;
-    
-    public TopbarEntrance topbar_entrance;
-    
-    public Builder() {}
-    
-    public Builder(ForumGroup param1ForumGroup) {
-      super(param1ForumGroup);
-      if (param1ForumGroup == null)
-        return; 
-      this.topbar_entrance = param1ForumGroup.topbar_entrance;
-      this.feed_card = param1ForumGroup.feed_card;
+    @ProtoField(tag = 2)
+    public final GroupFeedCard feed_card;
+    @ProtoField(tag = 1)
+    public final TopbarEntrance topbar_entrance;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ForumGroup> {
+        public GroupFeedCard feed_card;
+        public TopbarEntrance topbar_entrance;
+
+        public Builder() {
+        }
+
+        public Builder(ForumGroup forumGroup) {
+            super(forumGroup);
+            if (forumGroup == null) {
+                return;
+            }
+            this.topbar_entrance = forumGroup.topbar_entrance;
+            this.feed_card = forumGroup.feed_card;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ForumGroup build(boolean z) {
+            return new ForumGroup(this, z);
+        }
     }
-    
-    public ForumGroup build(boolean param1Boolean) {
-      return new ForumGroup(this, param1Boolean, null);
+
+    public ForumGroup(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.topbar_entrance = builder.topbar_entrance;
+            this.feed_card = builder.feed_card;
+            return;
+        }
+        this.topbar_entrance = builder.topbar_entrance;
+        this.feed_card = builder.feed_card;
     }
-  }
-  
-  public static class a {}
 }

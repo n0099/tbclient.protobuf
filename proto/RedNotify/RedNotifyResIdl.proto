@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "Error.proto";
-import "RedNotify/DataRes.proto";
-
-message RedNotifyResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

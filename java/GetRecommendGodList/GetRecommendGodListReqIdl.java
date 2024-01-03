@@ -2,40 +2,39 @@ package tbclient.GetRecommendGodList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GetRecommendGodListReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public GetRecommendGodListReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GetRecommendGodListReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetRecommendGodListReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(GetRecommendGodListReqIdl param1GetRecommendGodListReqIdl) {
-      super(param1GetRecommendGodListReqIdl);
-      if (param1GetRecommendGodListReqIdl == null)
-        return; 
-      this.data = param1GetRecommendGodListReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetRecommendGodListReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(GetRecommendGodListReqIdl getRecommendGodListReqIdl) {
+            super(getRecommendGodListReqIdl);
+            if (getRecommendGodListReqIdl == null) {
+                return;
+            }
+            this.data = getRecommendGodListReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetRecommendGodListReqIdl build(boolean z) {
+            return new GetRecommendGodListReqIdl(this, z);
+        }
     }
-    
-    public GetRecommendGodListReqIdl build(boolean param1Boolean) {
-      return new GetRecommendGodListReqIdl(this, param1Boolean, null);
+
+    public GetRecommendGodListReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

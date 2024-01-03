@@ -2,40 +2,39 @@ package tbclient.GetStoreRemindTime;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GetStoreRemindTimeReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public GetStoreRemindTimeReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GetStoreRemindTimeReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetStoreRemindTimeReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(GetStoreRemindTimeReqIdl param1GetStoreRemindTimeReqIdl) {
-      super(param1GetStoreRemindTimeReqIdl);
-      if (param1GetStoreRemindTimeReqIdl == null)
-        return; 
-      this.data = param1GetStoreRemindTimeReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetStoreRemindTimeReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(GetStoreRemindTimeReqIdl getStoreRemindTimeReqIdl) {
+            super(getStoreRemindTimeReqIdl);
+            if (getStoreRemindTimeReqIdl == null) {
+                return;
+            }
+            this.data = getStoreRemindTimeReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetStoreRemindTimeReqIdl build(boolean z) {
+            return new GetStoreRemindTimeReqIdl(this, z);
+        }
     }
-    
-    public GetStoreRemindTimeReqIdl build(boolean param1Boolean) {
-      return new GetStoreRemindTimeReqIdl(this, param1Boolean, null);
+
+    public GetStoreRemindTimeReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

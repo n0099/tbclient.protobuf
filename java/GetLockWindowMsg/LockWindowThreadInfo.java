@@ -5,98 +5,82 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.PbContent;
-
+/* loaded from: classes2.dex */
 public final class LockWindowThreadInfo extends Message {
-  public static final List<PbContent> DEFAULT_CONTENT;
-  
-  public static final Integer DEFAULT_POST_NUM;
-  
-  public static final Long DEFAULT_TID = Long.valueOf(0L);
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 3)
-  public final List<PbContent> content;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.UINT32)
-  public final Integer post_num;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT64)
-  public final Long tid;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String title;
-  
-  static {
-    DEFAULT_CONTENT = Collections.emptyList();
-    DEFAULT_POST_NUM = Integer.valueOf(0);
-  }
-  
-  public LockWindowThreadInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.tid;
-      if (long_ == null) {
-        this.tid = DEFAULT_TID;
-      } else {
-        this.tid = long_;
-      } 
-      String str = paramBuilder.title;
-      if (str == null) {
-        this.title = "";
-      } else {
-        this.title = str;
-      } 
-      List<PbContent> list = paramBuilder.content;
-      if (list == null) {
-        this.content = DEFAULT_CONTENT;
-      } else {
-        this.content = Message.immutableCopyOf(list);
-      } 
-      integer = paramBuilder.post_num;
-      if (integer == null) {
-        this.post_num = DEFAULT_POST_NUM;
-      } else {
-        this.post_num = integer;
-      } 
-    } else {
-      this.tid = ((Builder)integer).tid;
-      this.title = ((Builder)integer).title;
-      this.content = Message.immutableCopyOf(((Builder)integer).content);
-      this.post_num = ((Builder)integer).post_num;
-    } 
-  }
-  
-  public LockWindowThreadInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<LockWindowThreadInfo> {
-    public List<PbContent> content;
-    
-    public Integer post_num;
-    
-    public Long tid;
-    
-    public String title;
-    
-    public Builder() {}
-    
-    public Builder(LockWindowThreadInfo param1LockWindowThreadInfo) {
-      super(param1LockWindowThreadInfo);
-      if (param1LockWindowThreadInfo == null)
-        return; 
-      this.tid = param1LockWindowThreadInfo.tid;
-      this.title = param1LockWindowThreadInfo.title;
-      this.content = Message.copyOf(param1LockWindowThreadInfo.content);
-      this.post_num = param1LockWindowThreadInfo.post_num;
+    public static final String DEFAULT_TITLE = "";
+    @ProtoField(label = Message.Label.REPEATED, tag = 3)
+    public final List<PbContent> content;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+    public final Integer post_num;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long tid;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String title;
+    public static final Long DEFAULT_TID = 0L;
+    public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
+    public static final Integer DEFAULT_POST_NUM = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<LockWindowThreadInfo> {
+        public List<PbContent> content;
+        public Integer post_num;
+        public Long tid;
+        public String title;
+
+        public Builder() {
+        }
+
+        public Builder(LockWindowThreadInfo lockWindowThreadInfo) {
+            super(lockWindowThreadInfo);
+            if (lockWindowThreadInfo == null) {
+                return;
+            }
+            this.tid = lockWindowThreadInfo.tid;
+            this.title = lockWindowThreadInfo.title;
+            this.content = Message.copyOf(lockWindowThreadInfo.content);
+            this.post_num = lockWindowThreadInfo.post_num;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public LockWindowThreadInfo build(boolean z) {
+            return new LockWindowThreadInfo(this, z);
+        }
     }
-    
-    public LockWindowThreadInfo build(boolean param1Boolean) {
-      return new LockWindowThreadInfo(this, param1Boolean, null);
+
+    public LockWindowThreadInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.tid;
+            if (l == null) {
+                this.tid = DEFAULT_TID;
+            } else {
+                this.tid = l;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            List<PbContent> list = builder.content;
+            if (list == null) {
+                this.content = DEFAULT_CONTENT;
+            } else {
+                this.content = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.post_num;
+            if (num == null) {
+                this.post_num = DEFAULT_POST_NUM;
+                return;
+            } else {
+                this.post_num = num;
+                return;
+            }
+        }
+        this.tid = builder.tid;
+        this.title = builder.title;
+        this.content = Message.immutableCopyOf(builder.content);
+        this.post_num = builder.post_num;
     }
-  }
-  
-  public static class a {}
 }

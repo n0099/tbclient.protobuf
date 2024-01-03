@@ -3,48 +3,45 @@ package tbclient.IncrForumAccessCount;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class IncrForumAccessCountResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public IncrForumAccessCountResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public IncrForumAccessCountResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<IncrForumAccessCountResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(IncrForumAccessCountResIdl param1IncrForumAccessCountResIdl) {
-      super(param1IncrForumAccessCountResIdl);
-      if (param1IncrForumAccessCountResIdl == null)
-        return; 
-      this.error = param1IncrForumAccessCountResIdl.error;
-      this.data = param1IncrForumAccessCountResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<IncrForumAccessCountResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(IncrForumAccessCountResIdl incrForumAccessCountResIdl) {
+            super(incrForumAccessCountResIdl);
+            if (incrForumAccessCountResIdl == null) {
+                return;
+            }
+            this.error = incrForumAccessCountResIdl.error;
+            this.data = incrForumAccessCountResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public IncrForumAccessCountResIdl build(boolean z) {
+            return new IncrForumAccessCountResIdl(this, z);
+        }
     }
-    
-    public IncrForumAccessCountResIdl build(boolean param1Boolean) {
-      return new IncrForumAccessCountResIdl(this, param1Boolean, null);
+
+    public IncrForumAccessCountResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

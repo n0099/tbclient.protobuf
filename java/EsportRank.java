@@ -2,101 +2,88 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class EsportRank extends Message {
-  public static final Integer DEFAULT_RANK = Integer.valueOf(0);
-  
-  public static final String DEFAULT_TEXT = "";
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  public static final String DEFAULT_URL = "";
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer rank;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String text;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String title;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String url;
-  
-  @ProtoField(tag = 3)
-  public final EsportUser user;
-  
-  public EsportRank(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str2 = paramBuilder.title;
-      if (str2 == null) {
-        this.title = "";
-      } else {
-        this.title = str2;
-      } 
-      Integer integer = paramBuilder.rank;
-      if (integer == null) {
-        this.rank = DEFAULT_RANK;
-      } else {
-        this.rank = integer;
-      } 
-      this.user = paramBuilder.user;
-      String str1 = paramBuilder.text;
-      if (str1 == null) {
-        this.text = "";
-      } else {
-        this.text = str1;
-      } 
-      str = paramBuilder.url;
-      if (str == null) {
-        this.url = "";
-      } else {
-        this.url = str;
-      } 
-    } else {
-      this.title = ((Builder)str).title;
-      this.rank = ((Builder)str).rank;
-      this.user = ((Builder)str).user;
-      this.text = ((Builder)str).text;
-      this.url = ((Builder)str).url;
-    } 
-  }
-  
-  public EsportRank(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<EsportRank> {
-    public Integer rank;
-    
-    public String text;
-    
-    public String title;
-    
-    public String url;
-    
-    public EsportUser user;
-    
-    public Builder() {}
-    
-    public Builder(EsportRank param1EsportRank) {
-      super(param1EsportRank);
-      if (param1EsportRank == null)
-        return; 
-      this.title = param1EsportRank.title;
-      this.rank = param1EsportRank.rank;
-      this.user = param1EsportRank.user;
-      this.text = param1EsportRank.text;
-      this.url = param1EsportRank.url;
+    public static final Integer DEFAULT_RANK = 0;
+    public static final String DEFAULT_TEXT = "";
+    public static final String DEFAULT_TITLE = "";
+    public static final String DEFAULT_URL = "";
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer rank;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String text;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String title;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String url;
+    @ProtoField(tag = 3)
+    public final EsportUser user;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<EsportRank> {
+        public Integer rank;
+        public String text;
+        public String title;
+        public String url;
+        public EsportUser user;
+
+        public Builder() {
+        }
+
+        public Builder(EsportRank esportRank) {
+            super(esportRank);
+            if (esportRank == null) {
+                return;
+            }
+            this.title = esportRank.title;
+            this.rank = esportRank.rank;
+            this.user = esportRank.user;
+            this.text = esportRank.text;
+            this.url = esportRank.url;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public EsportRank build(boolean z) {
+            return new EsportRank(this, z);
+        }
     }
-    
-    public EsportRank build(boolean param1Boolean) {
-      return new EsportRank(this, param1Boolean, null);
+
+    public EsportRank(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            Integer num = builder.rank;
+            if (num == null) {
+                this.rank = DEFAULT_RANK;
+            } else {
+                this.rank = num;
+            }
+            this.user = builder.user;
+            String str2 = builder.text;
+            if (str2 == null) {
+                this.text = "";
+            } else {
+                this.text = str2;
+            }
+            String str3 = builder.url;
+            if (str3 == null) {
+                this.url = "";
+                return;
+            } else {
+                this.url = str3;
+                return;
+            }
+        }
+        this.title = builder.title;
+        this.rank = builder.rank;
+        this.user = builder.user;
+        this.text = builder.text;
+        this.url = builder.url;
     }
-  }
-  
-  public static class a {}
 }

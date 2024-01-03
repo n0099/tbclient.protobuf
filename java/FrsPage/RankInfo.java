@@ -2,101 +2,82 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class RankInfo extends Message {
-  public static final Double DEFAULT_DIR_RATE;
-  
-  public static final Integer DEFAULT_MEMBER_COUNT;
-  
-  public static final Integer DEFAULT_SIGN_COUNT;
-  
-  public static final Integer DEFAULT_SIGN_RANK;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.DOUBLE)
-  public final Double dir_rate;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer member_count;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer sign_count;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer sign_rank;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_SIGN_COUNT = integer;
-    DEFAULT_SIGN_RANK = integer;
-    DEFAULT_MEMBER_COUNT = integer;
-    DEFAULT_DIR_RATE = Double.valueOf(0.0D);
-  }
-  
-  public RankInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Double double_;
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.sign_count;
-      if (integer == null) {
-        this.sign_count = DEFAULT_SIGN_COUNT;
-      } else {
-        this.sign_count = integer;
-      } 
-      integer = paramBuilder.sign_rank;
-      if (integer == null) {
-        this.sign_rank = DEFAULT_SIGN_RANK;
-      } else {
-        this.sign_rank = integer;
-      } 
-      integer = paramBuilder.member_count;
-      if (integer == null) {
-        this.member_count = DEFAULT_MEMBER_COUNT;
-      } else {
-        this.member_count = integer;
-      } 
-      double_ = paramBuilder.dir_rate;
-      if (double_ == null) {
-        this.dir_rate = DEFAULT_DIR_RATE;
-      } else {
-        this.dir_rate = double_;
-      } 
-    } else {
-      this.sign_count = ((Builder)double_).sign_count;
-      this.sign_rank = ((Builder)double_).sign_rank;
-      this.member_count = ((Builder)double_).member_count;
-      this.dir_rate = ((Builder)double_).dir_rate;
-    } 
-  }
-  
-  public RankInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<RankInfo> {
-    public Double dir_rate;
-    
-    public Integer member_count;
-    
-    public Integer sign_count;
-    
-    public Integer sign_rank;
-    
-    public Builder() {}
-    
-    public Builder(RankInfo param1RankInfo) {
-      super(param1RankInfo);
-      if (param1RankInfo == null)
-        return; 
-      this.sign_count = param1RankInfo.sign_count;
-      this.sign_rank = param1RankInfo.sign_rank;
-      this.member_count = param1RankInfo.member_count;
-      this.dir_rate = param1RankInfo.dir_rate;
+    @ProtoField(tag = 4, type = Message.Datatype.DOUBLE)
+    public final Double dir_rate;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer member_count;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer sign_count;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer sign_rank;
+    public static final Integer DEFAULT_SIGN_COUNT = 0;
+    public static final Integer DEFAULT_SIGN_RANK = 0;
+    public static final Integer DEFAULT_MEMBER_COUNT = 0;
+    public static final Double DEFAULT_DIR_RATE = Double.valueOf(0.0d);
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<RankInfo> {
+        public Double dir_rate;
+        public Integer member_count;
+        public Integer sign_count;
+        public Integer sign_rank;
+
+        public Builder() {
+        }
+
+        public Builder(RankInfo rankInfo) {
+            super(rankInfo);
+            if (rankInfo == null) {
+                return;
+            }
+            this.sign_count = rankInfo.sign_count;
+            this.sign_rank = rankInfo.sign_rank;
+            this.member_count = rankInfo.member_count;
+            this.dir_rate = rankInfo.dir_rate;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public RankInfo build(boolean z) {
+            return new RankInfo(this, z);
+        }
     }
-    
-    public RankInfo build(boolean param1Boolean) {
-      return new RankInfo(this, param1Boolean, null);
+
+    public RankInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.sign_count;
+            if (num == null) {
+                this.sign_count = DEFAULT_SIGN_COUNT;
+            } else {
+                this.sign_count = num;
+            }
+            Integer num2 = builder.sign_rank;
+            if (num2 == null) {
+                this.sign_rank = DEFAULT_SIGN_RANK;
+            } else {
+                this.sign_rank = num2;
+            }
+            Integer num3 = builder.member_count;
+            if (num3 == null) {
+                this.member_count = DEFAULT_MEMBER_COUNT;
+            } else {
+                this.member_count = num3;
+            }
+            Double d = builder.dir_rate;
+            if (d == null) {
+                this.dir_rate = DEFAULT_DIR_RATE;
+                return;
+            } else {
+                this.dir_rate = d;
+                return;
+            }
+        }
+        this.sign_count = builder.sign_count;
+        this.sign_rank = builder.sign_rank;
+        this.member_count = builder.member_count;
+        this.dir_rate = builder.dir_rate;
     }
-  }
-  
-  public static class a {}
 }

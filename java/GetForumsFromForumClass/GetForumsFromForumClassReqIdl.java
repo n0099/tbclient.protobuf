@@ -2,40 +2,39 @@ package tbclient.GetForumsFromForumClass;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GetForumsFromForumClassReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public GetForumsFromForumClassReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GetForumsFromForumClassReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetForumsFromForumClassReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(GetForumsFromForumClassReqIdl param1GetForumsFromForumClassReqIdl) {
-      super(param1GetForumsFromForumClassReqIdl);
-      if (param1GetForumsFromForumClassReqIdl == null)
-        return; 
-      this.data = param1GetForumsFromForumClassReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetForumsFromForumClassReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(GetForumsFromForumClassReqIdl getForumsFromForumClassReqIdl) {
+            super(getForumsFromForumClassReqIdl);
+            if (getForumsFromForumClassReqIdl == null) {
+                return;
+            }
+            this.data = getForumsFromForumClassReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetForumsFromForumClassReqIdl build(boolean z) {
+            return new GetForumsFromForumClassReqIdl(this, z);
+        }
     }
-    
-    public GetForumsFromForumClassReqIdl build(boolean param1Boolean) {
-      return new GetForumsFromForumClassReqIdl(this, param1Boolean, null);
+
+    public GetForumsFromForumClassReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

@@ -2,114 +2,94 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class MultipleForum extends Message {
-  public static final String DEFAULT_BAWU_TYPE = "";
-  
-  public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
-  
-  public static final String DEFAULT_FORUM_NAME = "";
-  
-  public static final Integer DEFAULT_IS_BAWU;
-  
-  public static final Integer DEFAULT_IS_DELETED;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String bawu_type;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long forum_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String forum_name;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer is_bawu;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.INT32)
-  public final Integer is_deleted;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_IS_BAWU = integer;
-    DEFAULT_IS_DELETED = integer;
-  }
-  
-  public MultipleForum(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.forum_id;
-      if (long_ == null) {
-        this.forum_id = DEFAULT_FORUM_ID;
-      } else {
-        this.forum_id = long_;
-      } 
-      String str2 = paramBuilder.forum_name;
-      if (str2 == null) {
-        this.forum_name = "";
-      } else {
-        this.forum_name = str2;
-      } 
-      Integer integer1 = paramBuilder.is_bawu;
-      if (integer1 == null) {
-        this.is_bawu = DEFAULT_IS_BAWU;
-      } else {
-        this.is_bawu = integer1;
-      } 
-      String str1 = paramBuilder.bawu_type;
-      if (str1 == null) {
-        this.bawu_type = "";
-      } else {
-        this.bawu_type = str1;
-      } 
-      integer = paramBuilder.is_deleted;
-      if (integer == null) {
-        this.is_deleted = DEFAULT_IS_DELETED;
-      } else {
-        this.is_deleted = integer;
-      } 
-    } else {
-      this.forum_id = ((Builder)integer).forum_id;
-      this.forum_name = ((Builder)integer).forum_name;
-      this.is_bawu = ((Builder)integer).is_bawu;
-      this.bawu_type = ((Builder)integer).bawu_type;
-      this.is_deleted = ((Builder)integer).is_deleted;
-    } 
-  }
-  
-  public MultipleForum(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<MultipleForum> {
-    public String bawu_type;
-    
-    public Long forum_id;
-    
-    public String forum_name;
-    
-    public Integer is_bawu;
-    
-    public Integer is_deleted;
-    
-    public Builder() {}
-    
-    public Builder(MultipleForum param1MultipleForum) {
-      super(param1MultipleForum);
-      if (param1MultipleForum == null)
-        return; 
-      this.forum_id = param1MultipleForum.forum_id;
-      this.forum_name = param1MultipleForum.forum_name;
-      this.is_bawu = param1MultipleForum.is_bawu;
-      this.bawu_type = param1MultipleForum.bawu_type;
-      this.is_deleted = param1MultipleForum.is_deleted;
+    public static final String DEFAULT_BAWU_TYPE = "";
+    public static final String DEFAULT_FORUM_NAME = "";
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String bawu_type;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long forum_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String forum_name;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer is_bawu;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer is_deleted;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_IS_BAWU = 0;
+    public static final Integer DEFAULT_IS_DELETED = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<MultipleForum> {
+        public String bawu_type;
+        public Long forum_id;
+        public String forum_name;
+        public Integer is_bawu;
+        public Integer is_deleted;
+
+        public Builder() {
+        }
+
+        public Builder(MultipleForum multipleForum) {
+            super(multipleForum);
+            if (multipleForum == null) {
+                return;
+            }
+            this.forum_id = multipleForum.forum_id;
+            this.forum_name = multipleForum.forum_name;
+            this.is_bawu = multipleForum.is_bawu;
+            this.bawu_type = multipleForum.bawu_type;
+            this.is_deleted = multipleForum.is_deleted;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public MultipleForum build(boolean z) {
+            return new MultipleForum(this, z);
+        }
     }
-    
-    public MultipleForum build(boolean param1Boolean) {
-      return new MultipleForum(this, param1Boolean, null);
+
+    public MultipleForum(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            String str = builder.forum_name;
+            if (str == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str;
+            }
+            Integer num = builder.is_bawu;
+            if (num == null) {
+                this.is_bawu = DEFAULT_IS_BAWU;
+            } else {
+                this.is_bawu = num;
+            }
+            String str2 = builder.bawu_type;
+            if (str2 == null) {
+                this.bawu_type = "";
+            } else {
+                this.bawu_type = str2;
+            }
+            Integer num2 = builder.is_deleted;
+            if (num2 == null) {
+                this.is_deleted = DEFAULT_IS_DELETED;
+                return;
+            } else {
+                this.is_deleted = num2;
+                return;
+            }
+        }
+        this.forum_id = builder.forum_id;
+        this.forum_name = builder.forum_name;
+        this.is_bawu = builder.is_bawu;
+        this.bawu_type = builder.bawu_type;
+        this.is_deleted = builder.is_deleted;
     }
-  }
-  
-  public static class a {}
 }

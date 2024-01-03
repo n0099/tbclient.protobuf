@@ -3,55 +3,55 @@ package tbclient.GetSuggestionByAddrName;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final String DEFAULT_ADDR_NAME = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String addr_name;
-  
-  @ProtoField(tag = 2)
-  public final CommonReq common;
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      String str = paramBuilder.addr_name;
-      if (str == null) {
-        this.addr_name = "";
-      } else {
-        this.addr_name = str;
-      } 
-      this.common = paramBuilder.common;
-    } else {
-      this.addr_name = paramBuilder.addr_name;
-      this.common = paramBuilder.common;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public String addr_name;
-    
-    public CommonReq common;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.addr_name = param1DataReq.addr_name;
-      this.common = param1DataReq.common;
+    public static final String DEFAULT_ADDR_NAME = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String addr_name;
+    @ProtoField(tag = 2)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1379common;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+        public String addr_name;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1380common;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.addr_name = dataReq.addr_name;
+            this.f1380common = dataReq.f1379common;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.addr_name;
+            if (str == null) {
+                this.addr_name = "";
+            } else {
+                this.addr_name = str;
+            }
+            this.f1379common = builder.f1380common;
+            return;
+        }
+        this.addr_name = builder.addr_name;
+        this.f1379common = builder.f1380common;
     }
-  }
-  
-  public static class a {}
 }

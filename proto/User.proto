@@ -29,17 +29,15 @@ import "NovelFansInfo.proto";
 import "PayMemberInfo.proto";
 import "Pendant.proto";
 import "PrivSets.proto";
+import "ShakeAdSwitch.proto";
 import "SimpleUser.proto";
 import "SpringVirtualUser.proto";
 import "TbVipInfo.proto";
-import "ThemeBackgroundInUser.proto";
 import "ThemeCardInUser.proto";
-import "ThemeMyTab.proto";
 import "ThemeTailInUser.proto";
 import "TshowInfo.proto";
 import "TwAnchorProfitItem.proto";
 import "TwZhiBoUser.proto";
-import "UserGrowth.proto";
 import "UserPics.proto";
 import "UserVideoChannelInfo.proto";
 import "UserVipInfo.proto";
@@ -47,7 +45,6 @@ import "VipCloseAd.proto";
 import "VipShowInfo.proto";
 import "VirtualImageInfo.proto";
 import "WorkCreatorInfo.proto";
-import "WorldCupInfo.proto";
 
 message User {
     int32 is_login = 1;
@@ -177,12 +174,11 @@ message User {
     int32 is_nickname_editing = 128;
     string editing_nickname = 129;
     VirtualImageInfo virtual_image_info = 136;
-    UserGrowth user_growth = 137;
     string display_intro = 138;
-    repeated string new_icon_url = 139;
-    string dynamic_url = 140;
     ThemeTailInUser theme_tail = 141;
-    ThemeBackgroundInUser theme_background = 142;
-    ThemeMyTab theme_my_tab = 143;
-    WorldCupInfo world_cup_info = 144;
+    ShakeAdSwitch shake_ad_switch = 145;
+    string ios_b_url = 147;
+    int64 pa = 148;
+    int32 enable_new_homepage = 149;
+    string target_scheme = 150;
 }

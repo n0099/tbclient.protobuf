@@ -3,48 +3,45 @@ package tbclient.UserPk;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class UserPkResIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataRes data;
-  
-  @ProtoField(tag = 2)
-  public final Error error;
-  
-  public UserPkResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } else {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } 
-  }
-  
-  public UserPkResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<UserPkResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(UserPkResIdl param1UserPkResIdl) {
-      super(param1UserPkResIdl);
-      if (param1UserPkResIdl == null)
-        return; 
-      this.data = param1UserPkResIdl.data;
-      this.error = param1UserPkResIdl.error;
+    @ProtoField(tag = 1)
+    public final DataRes data;
+    @ProtoField(tag = 2)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<UserPkResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(UserPkResIdl userPkResIdl) {
+            super(userPkResIdl);
+            if (userPkResIdl == null) {
+                return;
+            }
+            this.data = userPkResIdl.data;
+            this.error = userPkResIdl.error;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public UserPkResIdl build(boolean z) {
+            return new UserPkResIdl(this, z);
+        }
     }
-    
-    public UserPkResIdl build(boolean param1Boolean) {
-      return new UserPkResIdl(this, param1Boolean, null);
+
+    public UserPkResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+            this.error = builder.error;
+            return;
+        }
+        this.data = builder.data;
+        this.error = builder.error;
     }
-  }
-  
-  public static class a {}
 }

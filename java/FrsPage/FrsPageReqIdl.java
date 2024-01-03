@@ -2,40 +2,39 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class FrsPageReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public FrsPageReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public FrsPageReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<FrsPageReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(FrsPageReqIdl param1FrsPageReqIdl) {
-      super(param1FrsPageReqIdl);
-      if (param1FrsPageReqIdl == null)
-        return; 
-      this.data = param1FrsPageReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<FrsPageReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(FrsPageReqIdl frsPageReqIdl) {
+            super(frsPageReqIdl);
+            if (frsPageReqIdl == null) {
+                return;
+            }
+            this.data = frsPageReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public FrsPageReqIdl build(boolean z) {
+            return new FrsPageReqIdl(this, z);
+        }
     }
-    
-    public FrsPageReqIdl build(boolean param1Boolean) {
-      return new FrsPageReqIdl(this, param1Boolean, null);
+
+    public FrsPageReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

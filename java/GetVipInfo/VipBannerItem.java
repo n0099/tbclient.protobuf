@@ -2,93 +2,82 @@ package tbclient.GetVipInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class VipBannerItem extends Message {
-  public static final String DEFAULT_DESC = "";
-  
-  public static final String DEFAULT_IMG_URL = "";
-  
-  public static final String DEFAULT_LINK = "";
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String desc;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String img_url;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String link;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String title;
-  
-  public VipBannerItem(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.img_url;
-      if (str1 == null) {
-        this.img_url = "";
-      } else {
-        this.img_url = str1;
-      } 
-      str1 = paramBuilder.title;
-      if (str1 == null) {
-        this.title = "";
-      } else {
-        this.title = str1;
-      } 
-      str1 = paramBuilder.desc;
-      if (str1 == null) {
-        this.desc = "";
-      } else {
-        this.desc = str1;
-      } 
-      str = paramBuilder.link;
-      if (str == null) {
-        this.link = "";
-      } else {
-        this.link = str;
-      } 
-    } else {
-      this.img_url = ((Builder)str).img_url;
-      this.title = ((Builder)str).title;
-      this.desc = ((Builder)str).desc;
-      this.link = ((Builder)str).link;
-    } 
-  }
-  
-  public VipBannerItem(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<VipBannerItem> {
-    public String desc;
-    
-    public String img_url;
-    
-    public String link;
-    
-    public String title;
-    
-    public Builder() {}
-    
-    public Builder(VipBannerItem param1VipBannerItem) {
-      super(param1VipBannerItem);
-      if (param1VipBannerItem == null)
-        return; 
-      this.img_url = param1VipBannerItem.img_url;
-      this.title = param1VipBannerItem.title;
-      this.desc = param1VipBannerItem.desc;
-      this.link = param1VipBannerItem.link;
+    public static final String DEFAULT_DESC = "";
+    public static final String DEFAULT_IMG_URL = "";
+    public static final String DEFAULT_LINK = "";
+    public static final String DEFAULT_TITLE = "";
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String desc;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String img_url;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String link;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String title;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<VipBannerItem> {
+        public String desc;
+        public String img_url;
+        public String link;
+        public String title;
+
+        public Builder() {
+        }
+
+        public Builder(VipBannerItem vipBannerItem) {
+            super(vipBannerItem);
+            if (vipBannerItem == null) {
+                return;
+            }
+            this.img_url = vipBannerItem.img_url;
+            this.title = vipBannerItem.title;
+            this.desc = vipBannerItem.desc;
+            this.link = vipBannerItem.link;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public VipBannerItem build(boolean z) {
+            return new VipBannerItem(this, z);
+        }
     }
-    
-    public VipBannerItem build(boolean param1Boolean) {
-      return new VipBannerItem(this, param1Boolean, null);
+
+    public VipBannerItem(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.img_url;
+            if (str == null) {
+                this.img_url = "";
+            } else {
+                this.img_url = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            String str3 = builder.desc;
+            if (str3 == null) {
+                this.desc = "";
+            } else {
+                this.desc = str3;
+            }
+            String str4 = builder.link;
+            if (str4 == null) {
+                this.link = "";
+                return;
+            } else {
+                this.link = str4;
+                return;
+            }
+        }
+        this.img_url = builder.img_url;
+        this.title = builder.title;
+        this.desc = builder.desc;
+        this.link = builder.link;
     }
-  }
-  
-  public static class a {}
 }

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message BrandBook {
+    bool is_book = 1;
+    int64 book_num = 2;
+    int64 end_time = 3;
+    string ext = 4;
+}

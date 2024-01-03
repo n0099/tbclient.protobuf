@@ -3,48 +3,45 @@ package tbclient.CloseAd;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class CloseAdResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public CloseAdResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public CloseAdResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<CloseAdResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(CloseAdResIdl param1CloseAdResIdl) {
-      super(param1CloseAdResIdl);
-      if (param1CloseAdResIdl == null)
-        return; 
-      this.error = param1CloseAdResIdl.error;
-      this.data = param1CloseAdResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<CloseAdResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(CloseAdResIdl closeAdResIdl) {
+            super(closeAdResIdl);
+            if (closeAdResIdl == null) {
+                return;
+            }
+            this.error = closeAdResIdl.error;
+            this.data = closeAdResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public CloseAdResIdl build(boolean z) {
+            return new CloseAdResIdl(this, z);
+        }
     }
-    
-    public CloseAdResIdl build(boolean param1Boolean) {
-      return new CloseAdResIdl(this, param1Boolean, null);
+
+    public CloseAdResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

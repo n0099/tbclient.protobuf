@@ -3,131 +3,116 @@ package tbclient.AdNewLog;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Integer DEFAULT_DA_FROM = Integer.valueOf(0);
-  
-  public static final String DEFAULT_DA_LOCATE = "";
-  
-  public static final String DEFAULT_DA_TYPE = "";
-  
-  public static final String DEFAULT_EXTRA_PARAM = "";
-  
-  public static final String DEFAULT_ORDER_ID = "";
-  
-  public static final String DEFAULT_TOKEN = "";
-  
-  @ProtoField(tag = 1)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT32)
-  public final Integer da_from;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String da_locate;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.STRING)
-  public final String da_type;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String extra_param;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String order_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String token;
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      String str2 = paramBuilder.token;
-      if (str2 == null) {
-        this.token = "";
-      } else {
-        this.token = str2;
-      } 
-      str2 = paramBuilder.da_locate;
-      if (str2 == null) {
-        this.da_locate = "";
-      } else {
-        this.da_locate = str2;
-      } 
-      Integer integer = paramBuilder.da_from;
-      if (integer == null) {
-        this.da_from = DEFAULT_DA_FROM;
-      } else {
-        this.da_from = integer;
-      } 
-      String str1 = paramBuilder.extra_param;
-      if (str1 == null) {
-        this.extra_param = "";
-      } else {
-        this.extra_param = str1;
-      } 
-      str1 = paramBuilder.order_id;
-      if (str1 == null) {
-        this.order_id = "";
-      } else {
-        this.order_id = str1;
-      } 
-      str = paramBuilder.da_type;
-      if (str == null) {
-        this.da_type = "";
-      } else {
-        this.da_type = str;
-      } 
-    } else {
-      this.common = ((Builder)str).common;
-      this.token = ((Builder)str).token;
-      this.da_locate = ((Builder)str).da_locate;
-      this.da_from = ((Builder)str).da_from;
-      this.extra_param = ((Builder)str).extra_param;
-      this.order_id = ((Builder)str).order_id;
-      this.da_type = ((Builder)str).da_type;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public CommonReq common;
-    
-    public Integer da_from;
-    
-    public String da_locate;
-    
-    public String da_type;
-    
-    public String extra_param;
-    
-    public String order_id;
-    
-    public String token;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.common = param1DataReq.common;
-      this.token = param1DataReq.token;
-      this.da_locate = param1DataReq.da_locate;
-      this.da_from = param1DataReq.da_from;
-      this.extra_param = param1DataReq.extra_param;
-      this.order_id = param1DataReq.order_id;
-      this.da_type = param1DataReq.da_type;
+    public static final Integer DEFAULT_DA_FROM = 0;
+    public static final String DEFAULT_DA_LOCATE = "";
+    public static final String DEFAULT_DA_TYPE = "";
+    public static final String DEFAULT_EXTRA_PARAM = "";
+    public static final String DEFAULT_ORDER_ID = "";
+    public static final String DEFAULT_TOKEN = "";
+    @ProtoField(tag = 1)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1231common;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer da_from;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String da_locate;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String da_type;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String extra_param;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String order_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String token;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1232common;
+        public Integer da_from;
+        public String da_locate;
+        public String da_type;
+        public String extra_param;
+        public String order_id;
+        public String token;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.f1232common = dataReq.f1231common;
+            this.token = dataReq.token;
+            this.da_locate = dataReq.da_locate;
+            this.da_from = dataReq.da_from;
+            this.extra_param = dataReq.extra_param;
+            this.order_id = dataReq.order_id;
+            this.da_type = dataReq.da_type;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f1231common = builder.f1232common;
+            String str = builder.token;
+            if (str == null) {
+                this.token = "";
+            } else {
+                this.token = str;
+            }
+            String str2 = builder.da_locate;
+            if (str2 == null) {
+                this.da_locate = "";
+            } else {
+                this.da_locate = str2;
+            }
+            Integer num = builder.da_from;
+            if (num == null) {
+                this.da_from = DEFAULT_DA_FROM;
+            } else {
+                this.da_from = num;
+            }
+            String str3 = builder.extra_param;
+            if (str3 == null) {
+                this.extra_param = "";
+            } else {
+                this.extra_param = str3;
+            }
+            String str4 = builder.order_id;
+            if (str4 == null) {
+                this.order_id = "";
+            } else {
+                this.order_id = str4;
+            }
+            String str5 = builder.da_type;
+            if (str5 == null) {
+                this.da_type = "";
+                return;
+            } else {
+                this.da_type = str5;
+                return;
+            }
+        }
+        this.f1231common = builder.f1232common;
+        this.token = builder.token;
+        this.da_locate = builder.da_locate;
+        this.da_from = builder.da_from;
+        this.extra_param = builder.extra_param;
+        this.order_id = builder.order_id;
+        this.da_type = builder.da_type;
     }
-  }
-  
-  public static class a {}
 }

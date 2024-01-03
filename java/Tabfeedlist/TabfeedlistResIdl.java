@@ -3,48 +3,45 @@ package tbclient.Tabfeedlist;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class TabfeedlistResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public TabfeedlistResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public TabfeedlistResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<TabfeedlistResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(TabfeedlistResIdl param1TabfeedlistResIdl) {
-      super(param1TabfeedlistResIdl);
-      if (param1TabfeedlistResIdl == null)
-        return; 
-      this.error = param1TabfeedlistResIdl.error;
-      this.data = param1TabfeedlistResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<TabfeedlistResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(TabfeedlistResIdl tabfeedlistResIdl) {
+            super(tabfeedlistResIdl);
+            if (tabfeedlistResIdl == null) {
+                return;
+            }
+            this.error = tabfeedlistResIdl.error;
+            this.data = tabfeedlistResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public TabfeedlistResIdl build(boolean z) {
+            return new TabfeedlistResIdl(this, z);
+        }
     }
-    
-    public TabfeedlistResIdl build(boolean param1Boolean) {
-      return new TabfeedlistResIdl(this, param1Boolean, null);
+
+    public TabfeedlistResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

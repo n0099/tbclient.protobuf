@@ -2,93 +2,82 @@ package tbclient.ForumGuide;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class HotSearch extends Message {
-  public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
-  
-  public static final String DEFAULT_FORUM_NAME = "";
-  
-  public static final String DEFAULT_SEARCH_TITLE = "";
-  
-  public static final String DEFAULT_SLOGAN = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT64)
-  public final Long forum_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String forum_name;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String search_title;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String slogan;
-  
-  public HotSearch(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.forum_id;
-      if (long_ == null) {
-        this.forum_id = DEFAULT_FORUM_ID;
-      } else {
-        this.forum_id = long_;
-      } 
-      String str1 = paramBuilder.forum_name;
-      if (str1 == null) {
-        this.forum_name = "";
-      } else {
-        this.forum_name = str1;
-      } 
-      str1 = paramBuilder.slogan;
-      if (str1 == null) {
-        this.slogan = "";
-      } else {
-        this.slogan = str1;
-      } 
-      str = paramBuilder.search_title;
-      if (str == null) {
-        this.search_title = "";
-      } else {
-        this.search_title = str;
-      } 
-    } else {
-      this.forum_id = ((Builder)str).forum_id;
-      this.forum_name = ((Builder)str).forum_name;
-      this.slogan = ((Builder)str).slogan;
-      this.search_title = ((Builder)str).search_title;
-    } 
-  }
-  
-  public HotSearch(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<HotSearch> {
-    public Long forum_id;
-    
-    public String forum_name;
-    
-    public String search_title;
-    
-    public String slogan;
-    
-    public Builder() {}
-    
-    public Builder(HotSearch param1HotSearch) {
-      super(param1HotSearch);
-      if (param1HotSearch == null)
-        return; 
-      this.forum_id = param1HotSearch.forum_id;
-      this.forum_name = param1HotSearch.forum_name;
-      this.slogan = param1HotSearch.slogan;
-      this.search_title = param1HotSearch.search_title;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final String DEFAULT_FORUM_NAME = "";
+    public static final String DEFAULT_SEARCH_TITLE = "";
+    public static final String DEFAULT_SLOGAN = "";
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long forum_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String forum_name;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String search_title;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String slogan;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<HotSearch> {
+        public Long forum_id;
+        public String forum_name;
+        public String search_title;
+        public String slogan;
+
+        public Builder() {
+        }
+
+        public Builder(HotSearch hotSearch) {
+            super(hotSearch);
+            if (hotSearch == null) {
+                return;
+            }
+            this.forum_id = hotSearch.forum_id;
+            this.forum_name = hotSearch.forum_name;
+            this.slogan = hotSearch.slogan;
+            this.search_title = hotSearch.search_title;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public HotSearch build(boolean z) {
+            return new HotSearch(this, z);
+        }
     }
-    
-    public HotSearch build(boolean param1Boolean) {
-      return new HotSearch(this, param1Boolean, null);
+
+    public HotSearch(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            String str = builder.forum_name;
+            if (str == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str;
+            }
+            String str2 = builder.slogan;
+            if (str2 == null) {
+                this.slogan = "";
+            } else {
+                this.slogan = str2;
+            }
+            String str3 = builder.search_title;
+            if (str3 == null) {
+                this.search_title = "";
+                return;
+            } else {
+                this.search_title = str3;
+                return;
+            }
+        }
+        this.forum_id = builder.forum_id;
+        this.forum_name = builder.forum_name;
+        this.slogan = builder.slogan;
+        this.search_title = builder.search_title;
     }
-  }
-  
-  public static class a {}
 }

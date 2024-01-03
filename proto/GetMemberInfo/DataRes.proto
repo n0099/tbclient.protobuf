@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "Feedback.proto";
 import "ForumMember.proto";
 import "GetMemberInfo/MemberGodInfo.proto";
 import "ManagerApplyInfo.proto";
@@ -14,4 +15,5 @@ message DataRes {
     int32 is_private_forum = 5;
     int32 is_bawuapply_show = 6;
     PriManagerApplyInfo primanager_apply_info = 7;
+    Feedback manager_complain_info = 8;
 }

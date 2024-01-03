@@ -3,48 +3,45 @@ package tbclient.GetUserFreeChance;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class GetUserFreeChanceResIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataRes data;
-  
-  @ProtoField(tag = 2)
-  public final Error error;
-  
-  public GetUserFreeChanceResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } else {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } 
-  }
-  
-  public GetUserFreeChanceResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetUserFreeChanceResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(GetUserFreeChanceResIdl param1GetUserFreeChanceResIdl) {
-      super(param1GetUserFreeChanceResIdl);
-      if (param1GetUserFreeChanceResIdl == null)
-        return; 
-      this.data = param1GetUserFreeChanceResIdl.data;
-      this.error = param1GetUserFreeChanceResIdl.error;
+    @ProtoField(tag = 1)
+    public final DataRes data;
+    @ProtoField(tag = 2)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetUserFreeChanceResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(GetUserFreeChanceResIdl getUserFreeChanceResIdl) {
+            super(getUserFreeChanceResIdl);
+            if (getUserFreeChanceResIdl == null) {
+                return;
+            }
+            this.data = getUserFreeChanceResIdl.data;
+            this.error = getUserFreeChanceResIdl.error;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetUserFreeChanceResIdl build(boolean z) {
+            return new GetUserFreeChanceResIdl(this, z);
+        }
     }
-    
-    public GetUserFreeChanceResIdl build(boolean param1Boolean) {
-      return new GetUserFreeChanceResIdl(this, param1Boolean, null);
+
+    public GetUserFreeChanceResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+            this.error = builder.error;
+            return;
+        }
+        this.data = builder.data;
+        this.error = builder.error;
     }
-  }
-  
-  public static class a {}
 }

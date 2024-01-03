@@ -4,7 +4,6 @@ import "CommonReq.proto";
 import "PermissionList.proto";
 
 message DataReq {
-    CommonReq common = 1;
     int64 black_uid = 2;
     PermissionList perm_list = 3;
 }

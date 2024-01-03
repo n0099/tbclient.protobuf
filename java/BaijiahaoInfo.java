@@ -2,144 +2,118 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class BaijiahaoInfo extends Message {
-  public static final String DEFAULT_AUTH_DESC = "";
-  
-  public static final Integer DEFAULT_AUTH_ID;
-  
-  public static final String DEFAULT_AVATAR = "";
-  
-  public static final String DEFAULT_AVATAR_H = "";
-  
-  public static final String DEFAULT_BRIEF = "";
-  
-  public static final Integer DEFAULT_CAN_MODIFY_AVATAR;
-  
-  public static final String DEFAULT_NAME = "";
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String auth_desc;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.INT32)
-  public final Integer auth_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String avatar;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String avatar_h;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String brief;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.INT32)
-  public final Integer can_modify_avatar;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String name;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_AUTH_ID = integer;
-    DEFAULT_CAN_MODIFY_AVATAR = integer;
-  }
-  
-  public BaijiahaoInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      String str2 = paramBuilder.name;
-      if (str2 == null) {
-        this.name = "";
-      } else {
-        this.name = str2;
-      } 
-      str2 = paramBuilder.avatar;
-      if (str2 == null) {
-        this.avatar = "";
-      } else {
-        this.avatar = str2;
-      } 
-      str2 = paramBuilder.avatar_h;
-      if (str2 == null) {
-        this.avatar_h = "";
-      } else {
-        this.avatar_h = str2;
-      } 
-      str2 = paramBuilder.brief;
-      if (str2 == null) {
-        this.brief = "";
-      } else {
-        this.brief = str2;
-      } 
-      Integer integer1 = paramBuilder.auth_id;
-      if (integer1 == null) {
-        this.auth_id = DEFAULT_AUTH_ID;
-      } else {
-        this.auth_id = integer1;
-      } 
-      String str1 = paramBuilder.auth_desc;
-      if (str1 == null) {
-        this.auth_desc = "";
-      } else {
-        this.auth_desc = str1;
-      } 
-      integer = paramBuilder.can_modify_avatar;
-      if (integer == null) {
-        this.can_modify_avatar = DEFAULT_CAN_MODIFY_AVATAR;
-      } else {
-        this.can_modify_avatar = integer;
-      } 
-    } else {
-      this.name = ((Builder)integer).name;
-      this.avatar = ((Builder)integer).avatar;
-      this.avatar_h = ((Builder)integer).avatar_h;
-      this.brief = ((Builder)integer).brief;
-      this.auth_id = ((Builder)integer).auth_id;
-      this.auth_desc = ((Builder)integer).auth_desc;
-      this.can_modify_avatar = ((Builder)integer).can_modify_avatar;
-    } 
-  }
-  
-  public BaijiahaoInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<BaijiahaoInfo> {
-    public String auth_desc;
-    
-    public Integer auth_id;
-    
-    public String avatar;
-    
-    public String avatar_h;
-    
-    public String brief;
-    
-    public Integer can_modify_avatar;
-    
-    public String name;
-    
-    public Builder() {}
-    
-    public Builder(BaijiahaoInfo param1BaijiahaoInfo) {
-      super(param1BaijiahaoInfo);
-      if (param1BaijiahaoInfo == null)
-        return; 
-      this.name = param1BaijiahaoInfo.name;
-      this.avatar = param1BaijiahaoInfo.avatar;
-      this.avatar_h = param1BaijiahaoInfo.avatar_h;
-      this.brief = param1BaijiahaoInfo.brief;
-      this.auth_id = param1BaijiahaoInfo.auth_id;
-      this.auth_desc = param1BaijiahaoInfo.auth_desc;
-      this.can_modify_avatar = param1BaijiahaoInfo.can_modify_avatar;
+    public static final String DEFAULT_AUTH_DESC = "";
+    public static final String DEFAULT_AVATAR = "";
+    public static final String DEFAULT_AVATAR_H = "";
+    public static final String DEFAULT_BRIEF = "";
+    public static final String DEFAULT_NAME = "";
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String auth_desc;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer auth_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String avatar;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String avatar_h;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String brief;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer can_modify_avatar;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String name;
+    public static final Integer DEFAULT_AUTH_ID = 0;
+    public static final Integer DEFAULT_CAN_MODIFY_AVATAR = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<BaijiahaoInfo> {
+        public String auth_desc;
+        public Integer auth_id;
+        public String avatar;
+        public String avatar_h;
+        public String brief;
+        public Integer can_modify_avatar;
+        public String name;
+
+        public Builder() {
+        }
+
+        public Builder(BaijiahaoInfo baijiahaoInfo) {
+            super(baijiahaoInfo);
+            if (baijiahaoInfo == null) {
+                return;
+            }
+            this.name = baijiahaoInfo.name;
+            this.avatar = baijiahaoInfo.avatar;
+            this.avatar_h = baijiahaoInfo.avatar_h;
+            this.brief = baijiahaoInfo.brief;
+            this.auth_id = baijiahaoInfo.auth_id;
+            this.auth_desc = baijiahaoInfo.auth_desc;
+            this.can_modify_avatar = baijiahaoInfo.can_modify_avatar;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public BaijiahaoInfo build(boolean z) {
+            return new BaijiahaoInfo(this, z);
+        }
     }
-    
-    public BaijiahaoInfo build(boolean param1Boolean) {
-      return new BaijiahaoInfo(this, param1Boolean, null);
+
+    public BaijiahaoInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.avatar;
+            if (str2 == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str2;
+            }
+            String str3 = builder.avatar_h;
+            if (str3 == null) {
+                this.avatar_h = "";
+            } else {
+                this.avatar_h = str3;
+            }
+            String str4 = builder.brief;
+            if (str4 == null) {
+                this.brief = "";
+            } else {
+                this.brief = str4;
+            }
+            Integer num = builder.auth_id;
+            if (num == null) {
+                this.auth_id = DEFAULT_AUTH_ID;
+            } else {
+                this.auth_id = num;
+            }
+            String str5 = builder.auth_desc;
+            if (str5 == null) {
+                this.auth_desc = "";
+            } else {
+                this.auth_desc = str5;
+            }
+            Integer num2 = builder.can_modify_avatar;
+            if (num2 == null) {
+                this.can_modify_avatar = DEFAULT_CAN_MODIFY_AVATAR;
+                return;
+            } else {
+                this.can_modify_avatar = num2;
+                return;
+            }
+        }
+        this.name = builder.name;
+        this.avatar = builder.avatar;
+        this.avatar_h = builder.avatar_h;
+        this.brief = builder.brief;
+        this.auth_id = builder.auth_id;
+        this.auth_desc = builder.auth_desc;
+        this.can_modify_avatar = builder.can_modify_avatar;
     }
-  }
-  
-  public static class a {}
 }

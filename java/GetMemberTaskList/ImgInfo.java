@@ -2,99 +2,82 @@ package tbclient.GetMemberTaskList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ImgInfo extends Message {
-  public static final Integer DEFAULT_ID;
-  
-  public static final String DEFAULT_IMG_URL = "";
-  
-  public static final String DEFAULT_JUMP_URL = "";
-  
-  public static final Integer DEFAULT_TYPE;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer id;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String img_url;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String jump_url;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer type;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_ID = integer;
-    DEFAULT_TYPE = integer;
-  }
-  
-  public ImgInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.id;
-      if (integer == null) {
-        this.id = DEFAULT_ID;
-      } else {
-        this.id = integer;
-      } 
-      integer = paramBuilder.type;
-      if (integer == null) {
-        this.type = DEFAULT_TYPE;
-      } else {
-        this.type = integer;
-      } 
-      String str1 = paramBuilder.img_url;
-      if (str1 == null) {
-        this.img_url = "";
-      } else {
-        this.img_url = str1;
-      } 
-      str = paramBuilder.jump_url;
-      if (str == null) {
-        this.jump_url = "";
-      } else {
-        this.jump_url = str;
-      } 
-    } else {
-      this.id = ((Builder)str).id;
-      this.type = ((Builder)str).type;
-      this.img_url = ((Builder)str).img_url;
-      this.jump_url = ((Builder)str).jump_url;
-    } 
-  }
-  
-  public ImgInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ImgInfo> {
-    public Integer id;
-    
-    public String img_url;
-    
-    public String jump_url;
-    
-    public Integer type;
-    
-    public Builder() {}
-    
-    public Builder(ImgInfo param1ImgInfo) {
-      super(param1ImgInfo);
-      if (param1ImgInfo == null)
-        return; 
-      this.id = param1ImgInfo.id;
-      this.type = param1ImgInfo.type;
-      this.img_url = param1ImgInfo.img_url;
-      this.jump_url = param1ImgInfo.jump_url;
+    public static final String DEFAULT_IMG_URL = "";
+    public static final String DEFAULT_JUMP_URL = "";
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer id;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String img_url;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String jump_url;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer type;
+    public static final Integer DEFAULT_ID = 0;
+    public static final Integer DEFAULT_TYPE = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ImgInfo> {
+        public Integer id;
+        public String img_url;
+        public String jump_url;
+        public Integer type;
+
+        public Builder() {
+        }
+
+        public Builder(ImgInfo imgInfo) {
+            super(imgInfo);
+            if (imgInfo == null) {
+                return;
+            }
+            this.id = imgInfo.id;
+            this.type = imgInfo.type;
+            this.img_url = imgInfo.img_url;
+            this.jump_url = imgInfo.jump_url;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ImgInfo build(boolean z) {
+            return new ImgInfo(this, z);
+        }
     }
-    
-    public ImgInfo build(boolean param1Boolean) {
-      return new ImgInfo(this, param1Boolean, null);
+
+    public ImgInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.id;
+            if (num == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = num;
+            }
+            Integer num2 = builder.type;
+            if (num2 == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num2;
+            }
+            String str = builder.img_url;
+            if (str == null) {
+                this.img_url = "";
+            } else {
+                this.img_url = str;
+            }
+            String str2 = builder.jump_url;
+            if (str2 == null) {
+                this.jump_url = "";
+                return;
+            } else {
+                this.jump_url = str2;
+                return;
+            }
+        }
+        this.id = builder.id;
+        this.type = builder.type;
+        this.img_url = builder.img_url;
+        this.jump_url = builder.jump_url;
     }
-  }
-  
-  public static class a {}
 }

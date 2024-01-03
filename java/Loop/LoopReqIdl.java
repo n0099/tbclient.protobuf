@@ -2,40 +2,39 @@ package tbclient.Loop;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class LoopReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public LoopReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public LoopReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<LoopReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(LoopReqIdl param1LoopReqIdl) {
-      super(param1LoopReqIdl);
-      if (param1LoopReqIdl == null)
-        return; 
-      this.data = param1LoopReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<LoopReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(LoopReqIdl loopReqIdl) {
+            super(loopReqIdl);
+            if (loopReqIdl == null) {
+                return;
+            }
+            this.data = loopReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public LoopReqIdl build(boolean z) {
+            return new LoopReqIdl(this, z);
+        }
     }
-    
-    public LoopReqIdl build(boolean param1Boolean) {
-      return new LoopReqIdl(this, param1Boolean, null);
+
+    public LoopReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

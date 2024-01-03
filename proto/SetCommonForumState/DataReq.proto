@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "CommonReq.proto";
-
-message DataReq {
-    CommonReq common = 1;
-    uint64 forum_id = 2;
-    uint32 operation = 3;
-}

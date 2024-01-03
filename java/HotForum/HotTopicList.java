@@ -2,117 +2,94 @@ package tbclient.HotForum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class HotTopicList extends Message {
-  public static final Long DEFAULT_DISCUSS_NUM;
-  
-  public static final Integer DEFAULT_TAG;
-  
-  public static final Long DEFAULT_TOPIC_ID;
-  
-  public static final String DEFAULT_TOPIC_NAME = "";
-  
-  public static final Integer DEFAULT_TYPE;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.UINT64)
-  public final Long discuss_num;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.INT32)
-  public final Integer tag;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT64)
-  public final Long topic_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String topic_name;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT32)
-  public final Integer type;
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_TOPIC_ID = long_;
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_TYPE = integer;
-    DEFAULT_DISCUSS_NUM = long_;
-    DEFAULT_TAG = integer;
-  }
-  
-  public HotTopicList(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Long long_2 = paramBuilder.topic_id;
-      if (long_2 == null) {
-        this.topic_id = DEFAULT_TOPIC_ID;
-      } else {
-        this.topic_id = long_2;
-      } 
-      String str = paramBuilder.topic_name;
-      if (str == null) {
-        this.topic_name = "";
-      } else {
-        this.topic_name = str;
-      } 
-      Integer integer1 = paramBuilder.type;
-      if (integer1 == null) {
-        this.type = DEFAULT_TYPE;
-      } else {
-        this.type = integer1;
-      } 
-      Long long_1 = paramBuilder.discuss_num;
-      if (long_1 == null) {
-        this.discuss_num = DEFAULT_DISCUSS_NUM;
-      } else {
-        this.discuss_num = long_1;
-      } 
-      integer = paramBuilder.tag;
-      if (integer == null) {
-        this.tag = DEFAULT_TAG;
-      } else {
-        this.tag = integer;
-      } 
-    } else {
-      this.topic_id = ((Builder)integer).topic_id;
-      this.topic_name = ((Builder)integer).topic_name;
-      this.type = ((Builder)integer).type;
-      this.discuss_num = ((Builder)integer).discuss_num;
-      this.tag = ((Builder)integer).tag;
-    } 
-  }
-  
-  public HotTopicList(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<HotTopicList> {
-    public Long discuss_num;
-    
-    public Integer tag;
-    
-    public Long topic_id;
-    
-    public String topic_name;
-    
-    public Integer type;
-    
-    public Builder() {}
-    
-    public Builder(HotTopicList param1HotTopicList) {
-      super(param1HotTopicList);
-      if (param1HotTopicList == null)
-        return; 
-      this.topic_id = param1HotTopicList.topic_id;
-      this.topic_name = param1HotTopicList.topic_name;
-      this.type = param1HotTopicList.type;
-      this.discuss_num = param1HotTopicList.discuss_num;
-      this.tag = param1HotTopicList.tag;
+    public static final String DEFAULT_TOPIC_NAME = "";
+    @ProtoField(tag = 4, type = Message.Datatype.UINT64)
+    public final Long discuss_num;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer tag;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long topic_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String topic_name;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
+    public final Integer type;
+    public static final Long DEFAULT_TOPIC_ID = 0L;
+    public static final Integer DEFAULT_TYPE = 0;
+    public static final Long DEFAULT_DISCUSS_NUM = 0L;
+    public static final Integer DEFAULT_TAG = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<HotTopicList> {
+        public Long discuss_num;
+        public Integer tag;
+        public Long topic_id;
+        public String topic_name;
+        public Integer type;
+
+        public Builder() {
+        }
+
+        public Builder(HotTopicList hotTopicList) {
+            super(hotTopicList);
+            if (hotTopicList == null) {
+                return;
+            }
+            this.topic_id = hotTopicList.topic_id;
+            this.topic_name = hotTopicList.topic_name;
+            this.type = hotTopicList.type;
+            this.discuss_num = hotTopicList.discuss_num;
+            this.tag = hotTopicList.tag;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public HotTopicList build(boolean z) {
+            return new HotTopicList(this, z);
+        }
     }
-    
-    public HotTopicList build(boolean param1Boolean) {
-      return new HotTopicList(this, param1Boolean, null);
+
+    public HotTopicList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.topic_id;
+            if (l == null) {
+                this.topic_id = DEFAULT_TOPIC_ID;
+            } else {
+                this.topic_id = l;
+            }
+            String str = builder.topic_name;
+            if (str == null) {
+                this.topic_name = "";
+            } else {
+                this.topic_name = str;
+            }
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            Long l2 = builder.discuss_num;
+            if (l2 == null) {
+                this.discuss_num = DEFAULT_DISCUSS_NUM;
+            } else {
+                this.discuss_num = l2;
+            }
+            Integer num2 = builder.tag;
+            if (num2 == null) {
+                this.tag = DEFAULT_TAG;
+                return;
+            } else {
+                this.tag = num2;
+                return;
+            }
+        }
+        this.topic_id = builder.topic_id;
+        this.topic_name = builder.topic_name;
+        this.type = builder.type;
+        this.discuss_num = builder.discuss_num;
+        this.tag = builder.tag;
     }
-  }
-  
-  public static class a {}
 }

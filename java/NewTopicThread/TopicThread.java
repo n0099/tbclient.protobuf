@@ -3,86 +3,76 @@ package tbclient.NewTopicThread;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.ThreadInfo;
-
+/* loaded from: classes2.dex */
 public final class TopicThread extends Message {
-  public static final Long DEFAULT_FEED_ID = Long.valueOf(0L);
-  
-  public static final Integer DEFAULT_SOURCE = Integer.valueOf(0);
-  
-  public static final String DEFAULT_USER_AGREE = "";
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT64)
-  public final Long feed_id;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.INT32)
-  public final Integer source;
-  
-  @ProtoField(tag = 3)
-  public final ThreadInfo thread_info;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String user_agree;
-  
-  public TopicThread(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.feed_id;
-      if (long_ == null) {
-        this.feed_id = DEFAULT_FEED_ID;
-      } else {
-        this.feed_id = long_;
-      } 
-      this.thread_info = paramBuilder.thread_info;
-      String str = paramBuilder.user_agree;
-      if (str == null) {
-        this.user_agree = "";
-      } else {
-        this.user_agree = str;
-      } 
-      integer = paramBuilder.source;
-      if (integer == null) {
-        this.source = DEFAULT_SOURCE;
-      } else {
-        this.source = integer;
-      } 
-    } else {
-      this.feed_id = ((Builder)integer).feed_id;
-      this.thread_info = ((Builder)integer).thread_info;
-      this.user_agree = ((Builder)integer).user_agree;
-      this.source = ((Builder)integer).source;
-    } 
-  }
-  
-  public TopicThread(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<TopicThread> {
-    public Long feed_id;
-    
-    public Integer source;
-    
-    public ThreadInfo thread_info;
-    
-    public String user_agree;
-    
-    public Builder() {}
-    
-    public Builder(TopicThread param1TopicThread) {
-      super(param1TopicThread);
-      if (param1TopicThread == null)
-        return; 
-      this.feed_id = param1TopicThread.feed_id;
-      this.thread_info = param1TopicThread.thread_info;
-      this.user_agree = param1TopicThread.user_agree;
-      this.source = param1TopicThread.source;
+    public static final Long DEFAULT_FEED_ID = 0L;
+    public static final Integer DEFAULT_SOURCE = 0;
+    public static final String DEFAULT_USER_AGREE = "";
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long feed_id;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer source;
+    @ProtoField(tag = 3)
+    public final ThreadInfo thread_info;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String user_agree;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<TopicThread> {
+        public Long feed_id;
+        public Integer source;
+        public ThreadInfo thread_info;
+        public String user_agree;
+
+        public Builder() {
+        }
+
+        public Builder(TopicThread topicThread) {
+            super(topicThread);
+            if (topicThread == null) {
+                return;
+            }
+            this.feed_id = topicThread.feed_id;
+            this.thread_info = topicThread.thread_info;
+            this.user_agree = topicThread.user_agree;
+            this.source = topicThread.source;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public TopicThread build(boolean z) {
+            return new TopicThread(this, z);
+        }
     }
-    
-    public TopicThread build(boolean param1Boolean) {
-      return new TopicThread(this, param1Boolean, null);
+
+    public TopicThread(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.feed_id;
+            if (l == null) {
+                this.feed_id = DEFAULT_FEED_ID;
+            } else {
+                this.feed_id = l;
+            }
+            this.thread_info = builder.thread_info;
+            String str = builder.user_agree;
+            if (str == null) {
+                this.user_agree = "";
+            } else {
+                this.user_agree = str;
+            }
+            Integer num = builder.source;
+            if (num == null) {
+                this.source = DEFAULT_SOURCE;
+                return;
+            } else {
+                this.source = num;
+                return;
+            }
+        }
+        this.feed_id = builder.feed_id;
+        this.thread_info = builder.thread_info;
+        this.user_agree = builder.user_agree;
+        this.source = builder.source;
     }
-  }
-  
-  public static class a {}
 }

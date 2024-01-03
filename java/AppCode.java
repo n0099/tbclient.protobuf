@@ -2,78 +2,70 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class AppCode extends Message {
-  public static final String DEFAULT_BUTTON_TEXT = "";
-  
-  public static final String DEFAULT_GAME_ICON = "";
-  
-  public static final String DEFAULT_POST_URL = "";
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String button_text;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String game_icon;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String post_url;
-  
-  public AppCode(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.game_icon;
-      if (str1 == null) {
-        this.game_icon = "";
-      } else {
-        this.game_icon = str1;
-      } 
-      str1 = paramBuilder.post_url;
-      if (str1 == null) {
-        this.post_url = "";
-      } else {
-        this.post_url = str1;
-      } 
-      str = paramBuilder.button_text;
-      if (str == null) {
-        this.button_text = "";
-      } else {
-        this.button_text = str;
-      } 
-    } else {
-      this.game_icon = ((Builder)str).game_icon;
-      this.post_url = ((Builder)str).post_url;
-      this.button_text = ((Builder)str).button_text;
-    } 
-  }
-  
-  public AppCode(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<AppCode> {
-    public String button_text;
-    
-    public String game_icon;
-    
-    public String post_url;
-    
-    public Builder() {}
-    
-    public Builder(AppCode param1AppCode) {
-      super(param1AppCode);
-      if (param1AppCode == null)
-        return; 
-      this.game_icon = param1AppCode.game_icon;
-      this.post_url = param1AppCode.post_url;
-      this.button_text = param1AppCode.button_text;
+    public static final String DEFAULT_BUTTON_TEXT = "";
+    public static final String DEFAULT_GAME_ICON = "";
+    public static final String DEFAULT_POST_URL = "";
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String button_text;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String game_icon;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String post_url;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<AppCode> {
+        public String button_text;
+        public String game_icon;
+        public String post_url;
+
+        public Builder() {
+        }
+
+        public Builder(AppCode appCode) {
+            super(appCode);
+            if (appCode == null) {
+                return;
+            }
+            this.game_icon = appCode.game_icon;
+            this.post_url = appCode.post_url;
+            this.button_text = appCode.button_text;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public AppCode build(boolean z) {
+            return new AppCode(this, z);
+        }
     }
-    
-    public AppCode build(boolean param1Boolean) {
-      return new AppCode(this, param1Boolean, null);
+
+    public AppCode(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.game_icon;
+            if (str == null) {
+                this.game_icon = "";
+            } else {
+                this.game_icon = str;
+            }
+            String str2 = builder.post_url;
+            if (str2 == null) {
+                this.post_url = "";
+            } else {
+                this.post_url = str2;
+            }
+            String str3 = builder.button_text;
+            if (str3 == null) {
+                this.button_text = "";
+                return;
+            } else {
+                this.button_text = str3;
+                return;
+            }
+        }
+        this.game_icon = builder.game_icon;
+        this.post_url = builder.post_url;
+        this.button_text = builder.button_text;
     }
-  }
-  
-  public static class a {}
 }

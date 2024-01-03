@@ -3,48 +3,45 @@ package tbclient.QueryCollectUpdateNum;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class QueryCollectUpdateNumResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public QueryCollectUpdateNumResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public QueryCollectUpdateNumResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<QueryCollectUpdateNumResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(QueryCollectUpdateNumResIdl param1QueryCollectUpdateNumResIdl) {
-      super(param1QueryCollectUpdateNumResIdl);
-      if (param1QueryCollectUpdateNumResIdl == null)
-        return; 
-      this.error = param1QueryCollectUpdateNumResIdl.error;
-      this.data = param1QueryCollectUpdateNumResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<QueryCollectUpdateNumResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(QueryCollectUpdateNumResIdl queryCollectUpdateNumResIdl) {
+            super(queryCollectUpdateNumResIdl);
+            if (queryCollectUpdateNumResIdl == null) {
+                return;
+            }
+            this.error = queryCollectUpdateNumResIdl.error;
+            this.data = queryCollectUpdateNumResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public QueryCollectUpdateNumResIdl build(boolean z) {
+            return new QueryCollectUpdateNumResIdl(this, z);
+        }
     }
-    
-    public QueryCollectUpdateNumResIdl build(boolean param1Boolean) {
-      return new QueryCollectUpdateNumResIdl(this, param1Boolean, null);
+
+    public QueryCollectUpdateNumResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

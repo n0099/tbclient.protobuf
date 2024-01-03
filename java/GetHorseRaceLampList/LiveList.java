@@ -2,148 +2,118 @@ package tbclient.GetHorseRaceLampList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class LiveList extends Message {
-  public static final Integer DEFAULT_AMOUNT;
-  
-  public static final Long DEFAULT_LIVE_ID;
-  
-  public static final String DEFAULT_LIVE_TITLE = "";
-  
-  public static final Long DEFAULT_ROB_END_TM;
-  
-  public static final Integer DEFAULT_SCREEN_DIRECTION;
-  
-  public static final Long DEFAULT_USER_ID;
-  
-  public static final String DEFAULT_USER_NICKNAME = "";
-  
-  @ProtoField(tag = 5, type = Message.Datatype.INT32)
-  public final Integer amount;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT64)
-  public final Long live_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String live_title;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.UINT64)
-  public final Long rob_end_tm;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.INT32)
-  public final Integer screen_direction;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT64)
-  public final Long user_id;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String user_nickname;
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_LIVE_ID = long_;
-    DEFAULT_USER_ID = long_;
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_AMOUNT = integer;
-    DEFAULT_ROB_END_TM = long_;
-    DEFAULT_SCREEN_DIRECTION = integer;
-  }
-  
-  public LiveList(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Long long_3 = paramBuilder.live_id;
-      if (long_3 == null) {
-        this.live_id = DEFAULT_LIVE_ID;
-      } else {
-        this.live_id = long_3;
-      } 
-      String str2 = paramBuilder.live_title;
-      if (str2 == null) {
-        this.live_title = "";
-      } else {
-        this.live_title = str2;
-      } 
-      Long long_2 = paramBuilder.user_id;
-      if (long_2 == null) {
-        this.user_id = DEFAULT_USER_ID;
-      } else {
-        this.user_id = long_2;
-      } 
-      String str1 = paramBuilder.user_nickname;
-      if (str1 == null) {
-        this.user_nickname = "";
-      } else {
-        this.user_nickname = str1;
-      } 
-      Integer integer1 = paramBuilder.amount;
-      if (integer1 == null) {
-        this.amount = DEFAULT_AMOUNT;
-      } else {
-        this.amount = integer1;
-      } 
-      Long long_1 = paramBuilder.rob_end_tm;
-      if (long_1 == null) {
-        this.rob_end_tm = DEFAULT_ROB_END_TM;
-      } else {
-        this.rob_end_tm = long_1;
-      } 
-      integer = paramBuilder.screen_direction;
-      if (integer == null) {
-        this.screen_direction = DEFAULT_SCREEN_DIRECTION;
-      } else {
-        this.screen_direction = integer;
-      } 
-    } else {
-      this.live_id = ((Builder)integer).live_id;
-      this.live_title = ((Builder)integer).live_title;
-      this.user_id = ((Builder)integer).user_id;
-      this.user_nickname = ((Builder)integer).user_nickname;
-      this.amount = ((Builder)integer).amount;
-      this.rob_end_tm = ((Builder)integer).rob_end_tm;
-      this.screen_direction = ((Builder)integer).screen_direction;
-    } 
-  }
-  
-  public LiveList(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<LiveList> {
-    public Integer amount;
-    
-    public Long live_id;
-    
-    public String live_title;
-    
-    public Long rob_end_tm;
-    
-    public Integer screen_direction;
-    
-    public Long user_id;
-    
-    public String user_nickname;
-    
-    public Builder() {}
-    
-    public Builder(LiveList param1LiveList) {
-      super(param1LiveList);
-      if (param1LiveList == null)
-        return; 
-      this.live_id = param1LiveList.live_id;
-      this.live_title = param1LiveList.live_title;
-      this.user_id = param1LiveList.user_id;
-      this.user_nickname = param1LiveList.user_nickname;
-      this.amount = param1LiveList.amount;
-      this.rob_end_tm = param1LiveList.rob_end_tm;
-      this.screen_direction = param1LiveList.screen_direction;
+    public static final String DEFAULT_LIVE_TITLE = "";
+    public static final String DEFAULT_USER_NICKNAME = "";
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer amount;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long live_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String live_title;
+    @ProtoField(tag = 6, type = Message.Datatype.UINT64)
+    public final Long rob_end_tm;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer screen_direction;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT64)
+    public final Long user_id;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String user_nickname;
+    public static final Long DEFAULT_LIVE_ID = 0L;
+    public static final Long DEFAULT_USER_ID = 0L;
+    public static final Integer DEFAULT_AMOUNT = 0;
+    public static final Long DEFAULT_ROB_END_TM = 0L;
+    public static final Integer DEFAULT_SCREEN_DIRECTION = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<LiveList> {
+        public Integer amount;
+        public Long live_id;
+        public String live_title;
+        public Long rob_end_tm;
+        public Integer screen_direction;
+        public Long user_id;
+        public String user_nickname;
+
+        public Builder() {
+        }
+
+        public Builder(LiveList liveList) {
+            super(liveList);
+            if (liveList == null) {
+                return;
+            }
+            this.live_id = liveList.live_id;
+            this.live_title = liveList.live_title;
+            this.user_id = liveList.user_id;
+            this.user_nickname = liveList.user_nickname;
+            this.amount = liveList.amount;
+            this.rob_end_tm = liveList.rob_end_tm;
+            this.screen_direction = liveList.screen_direction;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public LiveList build(boolean z) {
+            return new LiveList(this, z);
+        }
     }
-    
-    public LiveList build(boolean param1Boolean) {
-      return new LiveList(this, param1Boolean, null);
+
+    public LiveList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.live_id;
+            if (l == null) {
+                this.live_id = DEFAULT_LIVE_ID;
+            } else {
+                this.live_id = l;
+            }
+            String str = builder.live_title;
+            if (str == null) {
+                this.live_title = "";
+            } else {
+                this.live_title = str;
+            }
+            Long l2 = builder.user_id;
+            if (l2 == null) {
+                this.user_id = DEFAULT_USER_ID;
+            } else {
+                this.user_id = l2;
+            }
+            String str2 = builder.user_nickname;
+            if (str2 == null) {
+                this.user_nickname = "";
+            } else {
+                this.user_nickname = str2;
+            }
+            Integer num = builder.amount;
+            if (num == null) {
+                this.amount = DEFAULT_AMOUNT;
+            } else {
+                this.amount = num;
+            }
+            Long l3 = builder.rob_end_tm;
+            if (l3 == null) {
+                this.rob_end_tm = DEFAULT_ROB_END_TM;
+            } else {
+                this.rob_end_tm = l3;
+            }
+            Integer num2 = builder.screen_direction;
+            if (num2 == null) {
+                this.screen_direction = DEFAULT_SCREEN_DIRECTION;
+                return;
+            } else {
+                this.screen_direction = num2;
+                return;
+            }
+        }
+        this.live_id = builder.live_id;
+        this.live_title = builder.live_title;
+        this.user_id = builder.user_id;
+        this.user_nickname = builder.user_nickname;
+        this.amount = builder.amount;
+        this.rob_end_tm = builder.rob_end_tm;
+        this.screen_direction = builder.screen_direction;
     }
-  }
-  
-  public static class a {}
 }

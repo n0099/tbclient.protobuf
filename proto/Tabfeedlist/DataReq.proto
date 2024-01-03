@@ -3,7 +3,6 @@ syntax = "proto3";
 import "CommonReq.proto";
 
 message DataReq {
-    CommonReq common = 1;
     string tab_name = 2;
     string tab_code = 3;
     uint32 load_type = 4;

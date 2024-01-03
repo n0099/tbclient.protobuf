@@ -2,40 +2,39 @@ package tbclient.RelateRecThread;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class RelateRecThreadReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public RelateRecThreadReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public RelateRecThreadReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<RelateRecThreadReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(RelateRecThreadReqIdl param1RelateRecThreadReqIdl) {
-      super(param1RelateRecThreadReqIdl);
-      if (param1RelateRecThreadReqIdl == null)
-        return; 
-      this.data = param1RelateRecThreadReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<RelateRecThreadReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(RelateRecThreadReqIdl relateRecThreadReqIdl) {
+            super(relateRecThreadReqIdl);
+            if (relateRecThreadReqIdl == null) {
+                return;
+            }
+            this.data = relateRecThreadReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public RelateRecThreadReqIdl build(boolean z) {
+            return new RelateRecThreadReqIdl(this, z);
+        }
     }
-    
-    public RelateRecThreadReqIdl build(boolean param1Boolean) {
-      return new RelateRecThreadReqIdl(this, param1Boolean, null);
+
+    public RelateRecThreadReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

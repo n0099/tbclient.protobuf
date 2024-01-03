@@ -31,4 +31,5 @@ message HeadImgs {
     string play_url = 25;
     CoverImageColor cover_image_color = 26;
     repeated VideoImageColor video_image_color = 27;
+    int32 type = 28;
 }

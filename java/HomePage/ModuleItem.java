@@ -2,48 +2,46 @@ package tbclient.HomePage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ModuleItem extends Message {
-  public static final Long DEFAULT_MID = Long.valueOf(0L);
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long mid;
-  
-  public ModuleItem(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Long long_;
-    if (paramBoolean == true) {
-      long_ = paramBuilder.mid;
-      if (long_ == null) {
-        this.mid = DEFAULT_MID;
-      } else {
-        this.mid = long_;
-      } 
-    } else {
-      this.mid = ((Builder)long_).mid;
-    } 
-  }
-  
-  public ModuleItem(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ModuleItem> {
-    public Long mid;
-    
-    public Builder() {}
-    
-    public Builder(ModuleItem param1ModuleItem) {
-      super(param1ModuleItem);
-      if (param1ModuleItem == null)
-        return; 
-      this.mid = param1ModuleItem.mid;
+    public static final Long DEFAULT_MID = 0L;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long mid;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ModuleItem> {
+        public Long mid;
+
+        public Builder() {
+        }
+
+        public Builder(ModuleItem moduleItem) {
+            super(moduleItem);
+            if (moduleItem == null) {
+                return;
+            }
+            this.mid = moduleItem.mid;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ModuleItem build(boolean z) {
+            return new ModuleItem(this, z);
+        }
     }
-    
-    public ModuleItem build(boolean param1Boolean) {
-      return new ModuleItem(this, param1Boolean, null);
+
+    public ModuleItem(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.mid;
+            if (l == null) {
+                this.mid = DEFAULT_MID;
+                return;
+            } else {
+                this.mid = l;
+                return;
+            }
+        }
+        this.mid = builder.mid;
     }
-  }
-  
-  public static class a {}
 }

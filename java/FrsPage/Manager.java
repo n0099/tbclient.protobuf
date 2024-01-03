@@ -2,93 +2,82 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class Manager extends Message {
-  public static final Long DEFAULT_ID = Long.valueOf(0L);
-  
-  public static final String DEFAULT_NAME = "";
-  
-  public static final String DEFAULT_PORTRAIT = "";
-  
-  public static final String DEFAULT_SHOW_NAME = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String name;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String portrait;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String show_name;
-  
-  public Manager(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.id;
-      if (long_ == null) {
-        this.id = DEFAULT_ID;
-      } else {
-        this.id = long_;
-      } 
-      String str1 = paramBuilder.name;
-      if (str1 == null) {
-        this.name = "";
-      } else {
-        this.name = str1;
-      } 
-      str1 = paramBuilder.show_name;
-      if (str1 == null) {
-        this.show_name = "";
-      } else {
-        this.show_name = str1;
-      } 
-      str = paramBuilder.portrait;
-      if (str == null) {
-        this.portrait = "";
-      } else {
-        this.portrait = str;
-      } 
-    } else {
-      this.id = ((Builder)str).id;
-      this.name = ((Builder)str).name;
-      this.show_name = ((Builder)str).show_name;
-      this.portrait = ((Builder)str).portrait;
-    } 
-  }
-  
-  public Manager(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<Manager> {
-    public Long id;
-    
-    public String name;
-    
-    public String portrait;
-    
-    public String show_name;
-    
-    public Builder() {}
-    
-    public Builder(Manager param1Manager) {
-      super(param1Manager);
-      if (param1Manager == null)
-        return; 
-      this.id = param1Manager.id;
-      this.name = param1Manager.name;
-      this.show_name = param1Manager.show_name;
-      this.portrait = param1Manager.portrait;
+    public static final Long DEFAULT_ID = 0L;
+    public static final String DEFAULT_NAME = "";
+    public static final String DEFAULT_PORTRAIT = "";
+    public static final String DEFAULT_SHOW_NAME = "";
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String name;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String portrait;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String show_name;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<Manager> {
+        public Long id;
+        public String name;
+        public String portrait;
+        public String show_name;
+
+        public Builder() {
+        }
+
+        public Builder(Manager manager) {
+            super(manager);
+            if (manager == null) {
+                return;
+            }
+            this.id = manager.id;
+            this.name = manager.name;
+            this.show_name = manager.show_name;
+            this.portrait = manager.portrait;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Manager build(boolean z) {
+            return new Manager(this, z);
+        }
     }
-    
-    public Manager build(boolean param1Boolean) {
-      return new Manager(this, param1Boolean, null);
+
+    public Manager(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.id;
+            if (l == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = l;
+            }
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.show_name;
+            if (str2 == null) {
+                this.show_name = "";
+            } else {
+                this.show_name = str2;
+            }
+            String str3 = builder.portrait;
+            if (str3 == null) {
+                this.portrait = "";
+                return;
+            } else {
+                this.portrait = str3;
+                return;
+            }
+        }
+        this.id = builder.id;
+        this.name = builder.name;
+        this.show_name = builder.show_name;
+        this.portrait = builder.portrait;
     }
-  }
-  
-  public static class a {}
 }

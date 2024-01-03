@@ -4,78 +4,70 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class Tag extends Message {
-  public static final String DEFAULT_FIRST_CLASS = "";
-  
-  public static final String DEFAULT_SECOND_CLASS = "";
-  
-  public static final List<String> DEFAULT_TAGS = Collections.emptyList();
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String first_class;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String second_class;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.STRING)
-  public final List<String> tags;
-  
-  public Tag(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<String> list;
-    if (paramBoolean == true) {
-      String str = paramBuilder.first_class;
-      if (str == null) {
-        this.first_class = "";
-      } else {
-        this.first_class = str;
-      } 
-      str = paramBuilder.second_class;
-      if (str == null) {
-        this.second_class = "";
-      } else {
-        this.second_class = str;
-      } 
-      list = paramBuilder.tags;
-      if (list == null) {
-        this.tags = DEFAULT_TAGS;
-      } else {
-        this.tags = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this.first_class = ((Builder)list).first_class;
-      this.second_class = ((Builder)list).second_class;
-      this.tags = Message.immutableCopyOf(((Builder)list).tags);
-    } 
-  }
-  
-  public Tag(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<Tag> {
-    public String first_class;
-    
-    public String second_class;
-    
-    public List<String> tags;
-    
-    public Builder() {}
-    
-    public Builder(Tag param1Tag) {
-      super(param1Tag);
-      if (param1Tag == null)
-        return; 
-      this.first_class = param1Tag.first_class;
-      this.second_class = param1Tag.second_class;
-      this.tags = Message.copyOf(param1Tag.tags);
+    public static final String DEFAULT_FIRST_CLASS = "";
+    public static final String DEFAULT_SECOND_CLASS = "";
+    public static final List<String> DEFAULT_TAGS = Collections.emptyList();
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String first_class;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String second_class;
+    @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.STRING)
+    public final List<String> tags;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<Tag> {
+        public String first_class;
+        public String second_class;
+        public List<String> tags;
+
+        public Builder() {
+        }
+
+        public Builder(Tag tag) {
+            super(tag);
+            if (tag == null) {
+                return;
+            }
+            this.first_class = tag.first_class;
+            this.second_class = tag.second_class;
+            this.tags = Message.copyOf(tag.tags);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Tag build(boolean z) {
+            return new Tag(this, z);
+        }
     }
-    
-    public Tag build(boolean param1Boolean) {
-      return new Tag(this, param1Boolean, null);
+
+    public Tag(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.first_class;
+            if (str == null) {
+                this.first_class = "";
+            } else {
+                this.first_class = str;
+            }
+            String str2 = builder.second_class;
+            if (str2 == null) {
+                this.second_class = "";
+            } else {
+                this.second_class = str2;
+            }
+            List<String> list = builder.tags;
+            if (list == null) {
+                this.tags = DEFAULT_TAGS;
+                return;
+            } else {
+                this.tags = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.first_class = builder.first_class;
+        this.second_class = builder.second_class;
+        this.tags = Message.immutableCopyOf(builder.tags);
     }
-  }
-  
-  public static class a {}
 }

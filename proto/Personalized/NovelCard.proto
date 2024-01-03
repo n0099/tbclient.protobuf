@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "NovelChapterInfo.proto";
+import "NovelInfo.proto";
+import "ThemeColorInfo.proto";
+
+message NovelCard {
+    string title = 1;
+    NovelInfo novel_info = 2;
+    NovelChapterInfo chapter_info = 3;
+    repeated ThemeColorInfo novel_tags = 4;
+    repeated ThemeColorInfo chapter_tags = 5;
+    int64 reader_cnt = 6;
+    string entry_text = 7;
+    string target_scheme = 8;
+    string chapter_scheme = 9;
+    ThemeColorInfo background_image = 10;
+    int32 offset = 11;
+    int32 status = 12;
+}

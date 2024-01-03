@@ -3,56 +3,56 @@ package tbclient.CloseAd;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Integer DEFAULT_VIP_CLOSE = Integer.valueOf(0);
-  
-  @ProtoField(tag = 1)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer vip_close;
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      integer = paramBuilder.vip_close;
-      if (integer == null) {
-        this.vip_close = DEFAULT_VIP_CLOSE;
-      } else {
-        this.vip_close = integer;
-      } 
-    } else {
-      this.common = ((Builder)integer).common;
-      this.vip_close = ((Builder)integer).vip_close;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public CommonReq common;
-    
-    public Integer vip_close;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.common = param1DataReq.common;
-      this.vip_close = param1DataReq.vip_close;
+    public static final Integer DEFAULT_VIP_CLOSE = 0;
+    @ProtoField(tag = 1)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1257common;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer vip_close;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1258common;
+        public Integer vip_close;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.f1258common = dataReq.f1257common;
+            this.vip_close = dataReq.vip_close;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f1257common = builder.f1258common;
+            Integer num = builder.vip_close;
+            if (num == null) {
+                this.vip_close = DEFAULT_VIP_CLOSE;
+                return;
+            } else {
+                this.vip_close = num;
+                return;
+            }
+        }
+        this.f1257common = builder.f1258common;
+        this.vip_close = builder.vip_close;
     }
-  }
-  
-  public static class a {}
 }

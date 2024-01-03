@@ -3,48 +3,45 @@ package tbclient.ElectionInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class ElectionInfoResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public ElectionInfoResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public ElectionInfoResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ElectionInfoResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(ElectionInfoResIdl param1ElectionInfoResIdl) {
-      super(param1ElectionInfoResIdl);
-      if (param1ElectionInfoResIdl == null)
-        return; 
-      this.error = param1ElectionInfoResIdl.error;
-      this.data = param1ElectionInfoResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ElectionInfoResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(ElectionInfoResIdl electionInfoResIdl) {
+            super(electionInfoResIdl);
+            if (electionInfoResIdl == null) {
+                return;
+            }
+            this.error = electionInfoResIdl.error;
+            this.data = electionInfoResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ElectionInfoResIdl build(boolean z) {
+            return new ElectionInfoResIdl(this, z);
+        }
     }
-    
-    public ElectionInfoResIdl build(boolean param1Boolean) {
-      return new ElectionInfoResIdl(this, param1Boolean, null);
+
+    public ElectionInfoResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

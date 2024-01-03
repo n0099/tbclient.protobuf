@@ -4,84 +4,70 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
-  public static final Integer DEFAULT_HAS_MENU;
-  
-  public static final List<Menu> DEFAULT_PARENT_MENU = Collections.emptyList();
-  
-  public static final Integer DEFAULT_UPDATE_TIME;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer has_menu;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 1)
-  public final List<Menu> parent_menu;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer update_time;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_UPDATE_TIME = integer;
-    DEFAULT_HAS_MENU = integer;
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      List<Menu> list = paramBuilder.parent_menu;
-      if (list == null) {
-        this.parent_menu = DEFAULT_PARENT_MENU;
-      } else {
-        this.parent_menu = Message.immutableCopyOf(list);
-      } 
-      Integer integer1 = paramBuilder.update_time;
-      if (integer1 == null) {
-        this.update_time = DEFAULT_UPDATE_TIME;
-      } else {
-        this.update_time = integer1;
-      } 
-      integer = paramBuilder.has_menu;
-      if (integer == null) {
-        this.has_menu = DEFAULT_HAS_MENU;
-      } else {
-        this.has_menu = integer;
-      } 
-    } else {
-      this.parent_menu = Message.immutableCopyOf(((Builder)integer).parent_menu);
-      this.update_time = ((Builder)integer).update_time;
-      this.has_menu = ((Builder)integer).has_menu;
-    } 
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataRes> {
-    public Integer has_menu;
-    
-    public List<Menu> parent_menu;
-    
-    public Integer update_time;
-    
-    public Builder() {}
-    
-    public Builder(DataRes param1DataRes) {
-      super(param1DataRes);
-      if (param1DataRes == null)
-        return; 
-      this.parent_menu = Message.copyOf(param1DataRes.parent_menu);
-      this.update_time = param1DataRes.update_time;
-      this.has_menu = param1DataRes.has_menu;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer has_menu;
+    @ProtoField(label = Message.Label.REPEATED, tag = 1)
+    public final List<Menu> parent_menu;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer update_time;
+    public static final List<Menu> DEFAULT_PARENT_MENU = Collections.emptyList();
+    public static final Integer DEFAULT_UPDATE_TIME = 0;
+    public static final Integer DEFAULT_HAS_MENU = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataRes> {
+        public Integer has_menu;
+        public List<Menu> parent_menu;
+        public Integer update_time;
+
+        public Builder() {
+        }
+
+        public Builder(DataRes dataRes) {
+            super(dataRes);
+            if (dataRes == null) {
+                return;
+            }
+            this.parent_menu = Message.copyOf(dataRes.parent_menu);
+            this.update_time = dataRes.update_time;
+            this.has_menu = dataRes.has_menu;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataRes build(boolean z) {
+            return new DataRes(this, z);
+        }
     }
-    
-    public DataRes build(boolean param1Boolean) {
-      return new DataRes(this, param1Boolean, null);
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<Menu> list = builder.parent_menu;
+            if (list == null) {
+                this.parent_menu = DEFAULT_PARENT_MENU;
+            } else {
+                this.parent_menu = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.update_time;
+            if (num == null) {
+                this.update_time = DEFAULT_UPDATE_TIME;
+            } else {
+                this.update_time = num;
+            }
+            Integer num2 = builder.has_menu;
+            if (num2 == null) {
+                this.has_menu = DEFAULT_HAS_MENU;
+                return;
+            } else {
+                this.has_menu = num2;
+                return;
+            }
+        }
+        this.parent_menu = Message.immutableCopyOf(builder.parent_menu);
+        this.update_time = builder.update_time;
+        this.has_menu = builder.has_menu;
     }
-  }
-  
-  public static class a {}
 }

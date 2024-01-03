@@ -3,86 +3,80 @@ package tbclient.SetLikeForumSort;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final String DEFAULT_NEW_LIKE_LIST = "";
-  
-  public static final String DEFAULT_ORIGINAL_LIKE_LIST = "";
-  
-  public static final String DEFAULT_TBS = "";
-  
-  @ProtoField(tag = 1)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String new_like_list;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String original_like_list;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String tbs;
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      String str1 = paramBuilder.original_like_list;
-      if (str1 == null) {
-        this.original_like_list = "";
-      } else {
-        this.original_like_list = str1;
-      } 
-      str1 = paramBuilder.new_like_list;
-      if (str1 == null) {
-        this.new_like_list = "";
-      } else {
-        this.new_like_list = str1;
-      } 
-      str = paramBuilder.tbs;
-      if (str == null) {
-        this.tbs = "";
-      } else {
-        this.tbs = str;
-      } 
-    } else {
-      this.common = ((Builder)str).common;
-      this.original_like_list = ((Builder)str).original_like_list;
-      this.new_like_list = ((Builder)str).new_like_list;
-      this.tbs = ((Builder)str).tbs;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public CommonReq common;
-    
-    public String new_like_list;
-    
-    public String original_like_list;
-    
-    public String tbs;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.common = param1DataReq.common;
-      this.original_like_list = param1DataReq.original_like_list;
-      this.new_like_list = param1DataReq.new_like_list;
-      this.tbs = param1DataReq.tbs;
+    public static final String DEFAULT_NEW_LIKE_LIST = "";
+    public static final String DEFAULT_ORIGINAL_LIKE_LIST = "";
+    public static final String DEFAULT_TBS = "";
+    @ProtoField(tag = 1)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1477common;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String new_like_list;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String original_like_list;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String tbs;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1478common;
+        public String new_like_list;
+        public String original_like_list;
+        public String tbs;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.f1478common = dataReq.f1477common;
+            this.original_like_list = dataReq.original_like_list;
+            this.new_like_list = dataReq.new_like_list;
+            this.tbs = dataReq.tbs;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f1477common = builder.f1478common;
+            String str = builder.original_like_list;
+            if (str == null) {
+                this.original_like_list = "";
+            } else {
+                this.original_like_list = str;
+            }
+            String str2 = builder.new_like_list;
+            if (str2 == null) {
+                this.new_like_list = "";
+            } else {
+                this.new_like_list = str2;
+            }
+            String str3 = builder.tbs;
+            if (str3 == null) {
+                this.tbs = "";
+                return;
+            } else {
+                this.tbs = str3;
+                return;
+            }
+        }
+        this.f1477common = builder.f1478common;
+        this.original_like_list = builder.original_like_list;
+        this.new_like_list = builder.new_like_list;
+        this.tbs = builder.tbs;
     }
-  }
-  
-  public static class a {}
 }

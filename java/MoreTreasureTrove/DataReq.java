@@ -4,93 +4,85 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.AppPosInfo;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final String DEFAULT_LF_USER = "";
-  
-  public static final String DEFAULT_LF_USER_TASKID = "";
-  
-  public static final String DEFAULT_TAB_CODE = "";
-  
-  @ProtoField(tag = 5)
-  public final AppPosInfo app_pos;
-  
-  @ProtoField(tag = 1)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String lf_user;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String lf_user_taskid;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String tab_code;
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      String str = paramBuilder.tab_code;
-      if (str == null) {
-        this.tab_code = "";
-      } else {
-        this.tab_code = str;
-      } 
-      str = paramBuilder.lf_user;
-      if (str == null) {
-        this.lf_user = "";
-      } else {
-        this.lf_user = str;
-      } 
-      str = paramBuilder.lf_user_taskid;
-      if (str == null) {
-        this.lf_user_taskid = "";
-      } else {
-        this.lf_user_taskid = str;
-      } 
-      this.app_pos = paramBuilder.app_pos;
-    } else {
-      this.common = paramBuilder.common;
-      this.tab_code = paramBuilder.tab_code;
-      this.lf_user = paramBuilder.lf_user;
-      this.lf_user_taskid = paramBuilder.lf_user_taskid;
-      this.app_pos = paramBuilder.app_pos;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public AppPosInfo app_pos;
-    
-    public CommonReq common;
-    
-    public String lf_user;
-    
-    public String lf_user_taskid;
-    
-    public String tab_code;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.common = param1DataReq.common;
-      this.tab_code = param1DataReq.tab_code;
-      this.lf_user = param1DataReq.lf_user;
-      this.lf_user_taskid = param1DataReq.lf_user_taskid;
-      this.app_pos = param1DataReq.app_pos;
+    public static final String DEFAULT_LF_USER = "";
+    public static final String DEFAULT_LF_USER_TASKID = "";
+    public static final String DEFAULT_TAB_CODE = "";
+    @ProtoField(tag = 5)
+    public final AppPosInfo app_pos;
+    @ProtoField(tag = 1)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1429common;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String lf_user;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String lf_user_taskid;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String tab_code;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+        public AppPosInfo app_pos;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1430common;
+        public String lf_user;
+        public String lf_user_taskid;
+        public String tab_code;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.f1430common = dataReq.f1429common;
+            this.tab_code = dataReq.tab_code;
+            this.lf_user = dataReq.lf_user;
+            this.lf_user_taskid = dataReq.lf_user_taskid;
+            this.app_pos = dataReq.app_pos;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f1429common = builder.f1430common;
+            String str = builder.tab_code;
+            if (str == null) {
+                this.tab_code = "";
+            } else {
+                this.tab_code = str;
+            }
+            String str2 = builder.lf_user;
+            if (str2 == null) {
+                this.lf_user = "";
+            } else {
+                this.lf_user = str2;
+            }
+            String str3 = builder.lf_user_taskid;
+            if (str3 == null) {
+                this.lf_user_taskid = "";
+            } else {
+                this.lf_user_taskid = str3;
+            }
+            this.app_pos = builder.app_pos;
+            return;
+        }
+        this.f1429common = builder.f1430common;
+        this.tab_code = builder.tab_code;
+        this.lf_user = builder.lf_user;
+        this.lf_user_taskid = builder.lf_user_taskid;
+        this.app_pos = builder.app_pos;
     }
-  }
-  
-  public static class a {}
 }

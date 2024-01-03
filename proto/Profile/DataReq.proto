@@ -11,7 +11,6 @@ message DataReq {
     uint32 pn = 6;
     uint32 rn = 7;
     uint32 has_plist = 8;
-    CommonReq common = 9;
     uint32 scr_w = 10;
     uint32 scr_h = 11;
     uint32 q_type = 12;
@@ -22,4 +21,5 @@ message DataReq {
     string history_forum_ids = 17;
     string history_forum_names = 18;
     int32 need_usergrowth_task = 19;
+    int32 is_enable_naws = 20;
 }

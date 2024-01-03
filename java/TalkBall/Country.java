@@ -2,63 +2,58 @@ package tbclient.TalkBall;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class Country extends Message {
-  public static final String DEFAULT_ICON = "";
-  
-  public static final String DEFAULT_NAME = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String icon;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String name;
-  
-  public Country(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.icon;
-      if (str1 == null) {
-        this.icon = "";
-      } else {
-        this.icon = str1;
-      } 
-      str = paramBuilder.name;
-      if (str == null) {
-        this.name = "";
-      } else {
-        this.name = str;
-      } 
-    } else {
-      this.icon = ((Builder)str).icon;
-      this.name = ((Builder)str).name;
-    } 
-  }
-  
-  public Country(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<Country> {
-    public String icon;
-    
-    public String name;
-    
-    public Builder() {}
-    
-    public Builder(Country param1Country) {
-      super(param1Country);
-      if (param1Country == null)
-        return; 
-      this.icon = param1Country.icon;
-      this.name = param1Country.name;
+    public static final String DEFAULT_ICON = "";
+    public static final String DEFAULT_NAME = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String icon;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String name;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<Country> {
+        public String icon;
+        public String name;
+
+        public Builder() {
+        }
+
+        public Builder(Country country) {
+            super(country);
+            if (country == null) {
+                return;
+            }
+            this.icon = country.icon;
+            this.name = country.name;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Country build(boolean z) {
+            return new Country(this, z);
+        }
     }
-    
-    public Country build(boolean param1Boolean) {
-      return new Country(this, param1Boolean, null);
+
+    public Country(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.icon;
+            if (str == null) {
+                this.icon = "";
+            } else {
+                this.icon = str;
+            }
+            String str2 = builder.name;
+            if (str2 == null) {
+                this.name = "";
+                return;
+            } else {
+                this.name = str2;
+                return;
+            }
+        }
+        this.icon = builder.icon;
+        this.name = builder.name;
     }
-  }
-  
-  public static class a {}
 }

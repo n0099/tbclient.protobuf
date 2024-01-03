@@ -2,40 +2,39 @@ package tbclient.UpdateTail;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class UpdateTailReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final ReqData data;
-  
-  public UpdateTailReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public UpdateTailReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<UpdateTailReqIdl> {
-    public ReqData data;
-    
-    public Builder() {}
-    
-    public Builder(UpdateTailReqIdl param1UpdateTailReqIdl) {
-      super(param1UpdateTailReqIdl);
-      if (param1UpdateTailReqIdl == null)
-        return; 
-      this.data = param1UpdateTailReqIdl.data;
+    @ProtoField(tag = 1)
+    public final ReqData data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<UpdateTailReqIdl> {
+        public ReqData data;
+
+        public Builder() {
+        }
+
+        public Builder(UpdateTailReqIdl updateTailReqIdl) {
+            super(updateTailReqIdl);
+            if (updateTailReqIdl == null) {
+                return;
+            }
+            this.data = updateTailReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public UpdateTailReqIdl build(boolean z) {
+            return new UpdateTailReqIdl(this, z);
+        }
     }
-    
-    public UpdateTailReqIdl build(boolean param1Boolean) {
-      return new UpdateTailReqIdl(this, param1Boolean, null);
+
+    public UpdateTailReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

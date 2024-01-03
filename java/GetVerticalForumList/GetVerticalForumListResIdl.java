@@ -3,48 +3,45 @@ package tbclient.GetVerticalForumList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class GetVerticalForumListResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public GetVerticalForumListResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GetVerticalForumListResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetVerticalForumListResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(GetVerticalForumListResIdl param1GetVerticalForumListResIdl) {
-      super(param1GetVerticalForumListResIdl);
-      if (param1GetVerticalForumListResIdl == null)
-        return; 
-      this.error = param1GetVerticalForumListResIdl.error;
-      this.data = param1GetVerticalForumListResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetVerticalForumListResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(GetVerticalForumListResIdl getVerticalForumListResIdl) {
+            super(getVerticalForumListResIdl);
+            if (getVerticalForumListResIdl == null) {
+                return;
+            }
+            this.error = getVerticalForumListResIdl.error;
+            this.data = getVerticalForumListResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetVerticalForumListResIdl build(boolean z) {
+            return new GetVerticalForumListResIdl(this, z);
+        }
     }
-    
-    public GetVerticalForumListResIdl build(boolean param1Boolean) {
-      return new GetVerticalForumListResIdl(this, param1Boolean, null);
+
+    public GetVerticalForumListResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

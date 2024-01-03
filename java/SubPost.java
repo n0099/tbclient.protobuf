@@ -4,63 +4,58 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class SubPost extends Message {
-  public static final Long DEFAULT_PID = Long.valueOf(0L);
-  
-  public static final List<SubPostList> DEFAULT_SUB_POST_LIST = Collections.emptyList();
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT64)
-  public final Long pid;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 2)
-  public final List<SubPostList> sub_post_list;
-  
-  public SubPost(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<SubPostList> list;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.pid;
-      if (long_ == null) {
-        this.pid = DEFAULT_PID;
-      } else {
-        this.pid = long_;
-      } 
-      list = paramBuilder.sub_post_list;
-      if (list == null) {
-        this.sub_post_list = DEFAULT_SUB_POST_LIST;
-      } else {
-        this.sub_post_list = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this.pid = ((Builder)list).pid;
-      this.sub_post_list = Message.immutableCopyOf(((Builder)list).sub_post_list);
-    } 
-  }
-  
-  public SubPost(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<SubPost> {
-    public Long pid;
-    
-    public List<SubPostList> sub_post_list;
-    
-    public Builder() {}
-    
-    public Builder(SubPost param1SubPost) {
-      super(param1SubPost);
-      if (param1SubPost == null)
-        return; 
-      this.pid = param1SubPost.pid;
-      this.sub_post_list = Message.copyOf(param1SubPost.sub_post_list);
+    public static final Long DEFAULT_PID = 0L;
+    public static final List<SubPostList> DEFAULT_SUB_POST_LIST = Collections.emptyList();
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long pid;
+    @ProtoField(label = Message.Label.REPEATED, tag = 2)
+    public final List<SubPostList> sub_post_list;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<SubPost> {
+        public Long pid;
+        public List<SubPostList> sub_post_list;
+
+        public Builder() {
+        }
+
+        public Builder(SubPost subPost) {
+            super(subPost);
+            if (subPost == null) {
+                return;
+            }
+            this.pid = subPost.pid;
+            this.sub_post_list = Message.copyOf(subPost.sub_post_list);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public SubPost build(boolean z) {
+            return new SubPost(this, z);
+        }
     }
-    
-    public SubPost build(boolean param1Boolean) {
-      return new SubPost(this, param1Boolean, null);
+
+    public SubPost(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.pid;
+            if (l == null) {
+                this.pid = DEFAULT_PID;
+            } else {
+                this.pid = l;
+            }
+            List<SubPostList> list = builder.sub_post_list;
+            if (list == null) {
+                this.sub_post_list = DEFAULT_SUB_POST_LIST;
+                return;
+            } else {
+                this.sub_post_list = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.pid = builder.pid;
+        this.sub_post_list = Message.immutableCopyOf(builder.sub_post_list);
     }
-  }
-  
-  public static class a {}
 }

@@ -2,114 +2,94 @@ package tbclient.ForumRecommend;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class NewRecommend extends Message {
-  public static final String DEFAULT_AVATAR = "";
-  
-  public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
-  
-  public static final String DEFAULT_FORUM_NAME = "";
-  
-  public static final Integer DEFAULT_IS_BRAND_FORUM;
-  
-  public static final Integer DEFAULT_MEMBER_COUNT;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String avatar;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long forum_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String forum_name;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.UINT32)
-  public final Integer is_brand_forum;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer member_count;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_MEMBER_COUNT = integer;
-    DEFAULT_IS_BRAND_FORUM = integer;
-  }
-  
-  public NewRecommend(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.forum_id;
-      if (long_ == null) {
-        this.forum_id = DEFAULT_FORUM_ID;
-      } else {
-        this.forum_id = long_;
-      } 
-      String str2 = paramBuilder.forum_name;
-      if (str2 == null) {
-        this.forum_name = "";
-      } else {
-        this.forum_name = str2;
-      } 
-      Integer integer1 = paramBuilder.member_count;
-      if (integer1 == null) {
-        this.member_count = DEFAULT_MEMBER_COUNT;
-      } else {
-        this.member_count = integer1;
-      } 
-      String str1 = paramBuilder.avatar;
-      if (str1 == null) {
-        this.avatar = "";
-      } else {
-        this.avatar = str1;
-      } 
-      integer = paramBuilder.is_brand_forum;
-      if (integer == null) {
-        this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
-      } else {
-        this.is_brand_forum = integer;
-      } 
-    } else {
-      this.forum_id = ((Builder)integer).forum_id;
-      this.forum_name = ((Builder)integer).forum_name;
-      this.member_count = ((Builder)integer).member_count;
-      this.avatar = ((Builder)integer).avatar;
-      this.is_brand_forum = ((Builder)integer).is_brand_forum;
-    } 
-  }
-  
-  public NewRecommend(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<NewRecommend> {
-    public String avatar;
-    
-    public Long forum_id;
-    
-    public String forum_name;
-    
-    public Integer is_brand_forum;
-    
-    public Integer member_count;
-    
-    public Builder() {}
-    
-    public Builder(NewRecommend param1NewRecommend) {
-      super(param1NewRecommend);
-      if (param1NewRecommend == null)
-        return; 
-      this.forum_id = param1NewRecommend.forum_id;
-      this.forum_name = param1NewRecommend.forum_name;
-      this.member_count = param1NewRecommend.member_count;
-      this.avatar = param1NewRecommend.avatar;
-      this.is_brand_forum = param1NewRecommend.is_brand_forum;
+    public static final String DEFAULT_AVATAR = "";
+    public static final String DEFAULT_FORUM_NAME = "";
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String avatar;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long forum_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String forum_name;
+    @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+    public final Integer is_brand_forum;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer member_count;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_MEMBER_COUNT = 0;
+    public static final Integer DEFAULT_IS_BRAND_FORUM = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<NewRecommend> {
+        public String avatar;
+        public Long forum_id;
+        public String forum_name;
+        public Integer is_brand_forum;
+        public Integer member_count;
+
+        public Builder() {
+        }
+
+        public Builder(NewRecommend newRecommend) {
+            super(newRecommend);
+            if (newRecommend == null) {
+                return;
+            }
+            this.forum_id = newRecommend.forum_id;
+            this.forum_name = newRecommend.forum_name;
+            this.member_count = newRecommend.member_count;
+            this.avatar = newRecommend.avatar;
+            this.is_brand_forum = newRecommend.is_brand_forum;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public NewRecommend build(boolean z) {
+            return new NewRecommend(this, z);
+        }
     }
-    
-    public NewRecommend build(boolean param1Boolean) {
-      return new NewRecommend(this, param1Boolean, null);
+
+    public NewRecommend(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            String str = builder.forum_name;
+            if (str == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str;
+            }
+            Integer num = builder.member_count;
+            if (num == null) {
+                this.member_count = DEFAULT_MEMBER_COUNT;
+            } else {
+                this.member_count = num;
+            }
+            String str2 = builder.avatar;
+            if (str2 == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str2;
+            }
+            Integer num2 = builder.is_brand_forum;
+            if (num2 == null) {
+                this.is_brand_forum = DEFAULT_IS_BRAND_FORUM;
+                return;
+            } else {
+                this.is_brand_forum = num2;
+                return;
+            }
+        }
+        this.forum_id = builder.forum_id;
+        this.forum_name = builder.forum_name;
+        this.member_count = builder.member_count;
+        this.avatar = builder.avatar;
+        this.is_brand_forum = builder.is_brand_forum;
     }
-  }
-  
-  public static class a {}
 }

@@ -4,194 +4,154 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class TAInfo extends Message {
-  public static final List<String> DEFAULT_FORUMINFO = Collections.emptyList();
-  
-  public static final List<String> DEFAULT_FRIENDINFO;
-  
-  public static final Integer DEFAULT_FRIENDNUM;
-  
-  public static final List<String> DEFAULT_GROUPINFO = Collections.emptyList();
-  
-  public static final Integer DEFAULT_GROUPNUM;
-  
-  public static final String DEFAULT_HIDE_USER_FEED = "";
-  
-  public static final Integer DEFAULT_IS_FRIEND;
-  
-  public static final List<ReplyList> DEFAULT_REPLY_LIST;
-  
-  public static final Integer DEFAULT_USERCLIENTVERSIONISLOWER;
-  
-  @ProtoField(tag = 4)
-  public final CommonDistance distanceinfo;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.STRING)
-  public final List<String> foruminfo;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.STRING)
-  public final List<String> friendinfo;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.UINT32)
-  public final Integer friendnum;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 2, type = Message.Datatype.STRING)
-  public final List<String> groupinfo;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.UINT32)
-  public final Integer groupnum;
-  
-  @ProtoField(tag = 11, type = Message.Datatype.STRING)
-  public final String hide_user_feed;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.UINT32)
-  public final Integer is_friend;
-  
-  @ProtoField(tag = 10)
-  public final CommonLocation location;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 8)
-  public final List<ReplyList> reply_list;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.UINT32)
-  public final Integer userClientVersionIsLower;
-  
-  static {
-    DEFAULT_FRIENDINFO = Collections.emptyList();
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_GROUPNUM = integer;
-    DEFAULT_FRIENDNUM = integer;
-    DEFAULT_IS_FRIEND = integer;
-    DEFAULT_REPLY_LIST = Collections.emptyList();
-    DEFAULT_USERCLIENTVERSIONISLOWER = integer;
-  }
-  
-  public TAInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      List<String> list1 = paramBuilder.foruminfo;
-      if (list1 == null) {
-        this.foruminfo = DEFAULT_FORUMINFO;
-      } else {
-        this.foruminfo = Message.immutableCopyOf(list1);
-      } 
-      list1 = paramBuilder.groupinfo;
-      if (list1 == null) {
-        this.groupinfo = DEFAULT_GROUPINFO;
-      } else {
-        this.groupinfo = Message.immutableCopyOf(list1);
-      } 
-      list1 = paramBuilder.friendinfo;
-      if (list1 == null) {
-        this.friendinfo = DEFAULT_FRIENDINFO;
-      } else {
-        this.friendinfo = Message.immutableCopyOf(list1);
-      } 
-      this.distanceinfo = paramBuilder.distanceinfo;
-      Integer integer2 = paramBuilder.groupnum;
-      if (integer2 == null) {
-        this.groupnum = DEFAULT_GROUPNUM;
-      } else {
-        this.groupnum = integer2;
-      } 
-      integer2 = paramBuilder.friendnum;
-      if (integer2 == null) {
-        this.friendnum = DEFAULT_FRIENDNUM;
-      } else {
-        this.friendnum = integer2;
-      } 
-      integer2 = paramBuilder.is_friend;
-      if (integer2 == null) {
-        this.is_friend = DEFAULT_IS_FRIEND;
-      } else {
-        this.is_friend = integer2;
-      } 
-      List<ReplyList> list = paramBuilder.reply_list;
-      if (list == null) {
-        this.reply_list = DEFAULT_REPLY_LIST;
-      } else {
-        this.reply_list = Message.immutableCopyOf(list);
-      } 
-      Integer integer1 = paramBuilder.userClientVersionIsLower;
-      if (integer1 == null) {
-        this.userClientVersionIsLower = DEFAULT_USERCLIENTVERSIONISLOWER;
-      } else {
-        this.userClientVersionIsLower = integer1;
-      } 
-      this.location = paramBuilder.location;
-      str = paramBuilder.hide_user_feed;
-      if (str == null) {
-        this.hide_user_feed = "";
-      } else {
-        this.hide_user_feed = str;
-      } 
-    } else {
-      this.foruminfo = Message.immutableCopyOf(((Builder)str).foruminfo);
-      this.groupinfo = Message.immutableCopyOf(((Builder)str).groupinfo);
-      this.friendinfo = Message.immutableCopyOf(((Builder)str).friendinfo);
-      this.distanceinfo = ((Builder)str).distanceinfo;
-      this.groupnum = ((Builder)str).groupnum;
-      this.friendnum = ((Builder)str).friendnum;
-      this.is_friend = ((Builder)str).is_friend;
-      this.reply_list = Message.immutableCopyOf(((Builder)str).reply_list);
-      this.userClientVersionIsLower = ((Builder)str).userClientVersionIsLower;
-      this.location = ((Builder)str).location;
-      this.hide_user_feed = ((Builder)str).hide_user_feed;
-    } 
-  }
-  
-  public TAInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<TAInfo> {
-    public CommonDistance distanceinfo;
-    
-    public List<String> foruminfo;
-    
-    public List<String> friendinfo;
-    
-    public Integer friendnum;
-    
-    public List<String> groupinfo;
-    
-    public Integer groupnum;
-    
-    public String hide_user_feed;
-    
-    public Integer is_friend;
-    
-    public CommonLocation location;
-    
-    public List<ReplyList> reply_list;
-    
-    public Integer userClientVersionIsLower;
-    
-    public Builder() {}
-    
-    public Builder(TAInfo param1TAInfo) {
-      super(param1TAInfo);
-      if (param1TAInfo == null)
-        return; 
-      this.foruminfo = Message.copyOf(param1TAInfo.foruminfo);
-      this.groupinfo = Message.copyOf(param1TAInfo.groupinfo);
-      this.friendinfo = Message.copyOf(param1TAInfo.friendinfo);
-      this.distanceinfo = param1TAInfo.distanceinfo;
-      this.groupnum = param1TAInfo.groupnum;
-      this.friendnum = param1TAInfo.friendnum;
-      this.is_friend = param1TAInfo.is_friend;
-      this.reply_list = Message.copyOf(param1TAInfo.reply_list);
-      this.userClientVersionIsLower = param1TAInfo.userClientVersionIsLower;
-      this.location = param1TAInfo.location;
-      this.hide_user_feed = param1TAInfo.hide_user_feed;
+    public static final String DEFAULT_HIDE_USER_FEED = "";
+    @ProtoField(tag = 4)
+    public final CommonDistance distanceinfo;
+    @ProtoField(label = Message.Label.REPEATED, tag = 1, type = Message.Datatype.STRING)
+    public final List<String> foruminfo;
+    @ProtoField(label = Message.Label.REPEATED, tag = 3, type = Message.Datatype.STRING)
+    public final List<String> friendinfo;
+    @ProtoField(tag = 6, type = Message.Datatype.UINT32)
+    public final Integer friendnum;
+    @ProtoField(label = Message.Label.REPEATED, tag = 2, type = Message.Datatype.STRING)
+    public final List<String> groupinfo;
+    @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+    public final Integer groupnum;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String hide_user_feed;
+    @ProtoField(tag = 7, type = Message.Datatype.UINT32)
+    public final Integer is_friend;
+    @ProtoField(tag = 10)
+    public final CommonLocation location;
+    @ProtoField(label = Message.Label.REPEATED, tag = 8)
+    public final List<ReplyList> reply_list;
+    @ProtoField(tag = 9, type = Message.Datatype.UINT32)
+    public final Integer userClientVersionIsLower;
+    public static final List<String> DEFAULT_FORUMINFO = Collections.emptyList();
+    public static final List<String> DEFAULT_GROUPINFO = Collections.emptyList();
+    public static final List<String> DEFAULT_FRIENDINFO = Collections.emptyList();
+    public static final Integer DEFAULT_GROUPNUM = 0;
+    public static final Integer DEFAULT_FRIENDNUM = 0;
+    public static final Integer DEFAULT_IS_FRIEND = 0;
+    public static final List<ReplyList> DEFAULT_REPLY_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_USERCLIENTVERSIONISLOWER = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<TAInfo> {
+        public CommonDistance distanceinfo;
+        public List<String> foruminfo;
+        public List<String> friendinfo;
+        public Integer friendnum;
+        public List<String> groupinfo;
+        public Integer groupnum;
+        public String hide_user_feed;
+        public Integer is_friend;
+        public CommonLocation location;
+        public List<ReplyList> reply_list;
+        public Integer userClientVersionIsLower;
+
+        public Builder() {
+        }
+
+        public Builder(TAInfo tAInfo) {
+            super(tAInfo);
+            if (tAInfo == null) {
+                return;
+            }
+            this.foruminfo = Message.copyOf(tAInfo.foruminfo);
+            this.groupinfo = Message.copyOf(tAInfo.groupinfo);
+            this.friendinfo = Message.copyOf(tAInfo.friendinfo);
+            this.distanceinfo = tAInfo.distanceinfo;
+            this.groupnum = tAInfo.groupnum;
+            this.friendnum = tAInfo.friendnum;
+            this.is_friend = tAInfo.is_friend;
+            this.reply_list = Message.copyOf(tAInfo.reply_list);
+            this.userClientVersionIsLower = tAInfo.userClientVersionIsLower;
+            this.location = tAInfo.location;
+            this.hide_user_feed = tAInfo.hide_user_feed;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public TAInfo build(boolean z) {
+            return new TAInfo(this, z);
+        }
     }
-    
-    public TAInfo build(boolean param1Boolean) {
-      return new TAInfo(this, param1Boolean, null);
+
+    public TAInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<String> list = builder.foruminfo;
+            if (list == null) {
+                this.foruminfo = DEFAULT_FORUMINFO;
+            } else {
+                this.foruminfo = Message.immutableCopyOf(list);
+            }
+            List<String> list2 = builder.groupinfo;
+            if (list2 == null) {
+                this.groupinfo = DEFAULT_GROUPINFO;
+            } else {
+                this.groupinfo = Message.immutableCopyOf(list2);
+            }
+            List<String> list3 = builder.friendinfo;
+            if (list3 == null) {
+                this.friendinfo = DEFAULT_FRIENDINFO;
+            } else {
+                this.friendinfo = Message.immutableCopyOf(list3);
+            }
+            this.distanceinfo = builder.distanceinfo;
+            Integer num = builder.groupnum;
+            if (num == null) {
+                this.groupnum = DEFAULT_GROUPNUM;
+            } else {
+                this.groupnum = num;
+            }
+            Integer num2 = builder.friendnum;
+            if (num2 == null) {
+                this.friendnum = DEFAULT_FRIENDNUM;
+            } else {
+                this.friendnum = num2;
+            }
+            Integer num3 = builder.is_friend;
+            if (num3 == null) {
+                this.is_friend = DEFAULT_IS_FRIEND;
+            } else {
+                this.is_friend = num3;
+            }
+            List<ReplyList> list4 = builder.reply_list;
+            if (list4 == null) {
+                this.reply_list = DEFAULT_REPLY_LIST;
+            } else {
+                this.reply_list = Message.immutableCopyOf(list4);
+            }
+            Integer num4 = builder.userClientVersionIsLower;
+            if (num4 == null) {
+                this.userClientVersionIsLower = DEFAULT_USERCLIENTVERSIONISLOWER;
+            } else {
+                this.userClientVersionIsLower = num4;
+            }
+            this.location = builder.location;
+            String str = builder.hide_user_feed;
+            if (str == null) {
+                this.hide_user_feed = "";
+                return;
+            } else {
+                this.hide_user_feed = str;
+                return;
+            }
+        }
+        this.foruminfo = Message.immutableCopyOf(builder.foruminfo);
+        this.groupinfo = Message.immutableCopyOf(builder.groupinfo);
+        this.friendinfo = Message.immutableCopyOf(builder.friendinfo);
+        this.distanceinfo = builder.distanceinfo;
+        this.groupnum = builder.groupnum;
+        this.friendnum = builder.friendnum;
+        this.is_friend = builder.is_friend;
+        this.reply_list = Message.immutableCopyOf(builder.reply_list);
+        this.userClientVersionIsLower = builder.userClientVersionIsLower;
+        this.location = builder.location;
+        this.hide_user_feed = builder.hide_user_feed;
     }
-  }
-  
-  public static class a {}
 }

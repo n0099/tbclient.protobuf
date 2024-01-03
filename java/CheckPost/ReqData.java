@@ -3,170 +3,140 @@ package tbclient.CheckPost;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class ReqData extends Message {
-  public static final String DEFAULT_FORUMNAME = "";
-  
-  public static final String DEFAULT_ORI_UGC_NID = "";
-  
-  public static final String DEFAULT_ORI_UGC_TID = "";
-  
-  public static final Integer DEFAULT_ORI_UGC_TYPE;
-  
-  public static final String DEFAULT_ORI_UGC_VID = "";
-  
-  public static final Long DEFAULT_PID;
-  
-  public static final Integer DEFAULT_POSTTYPE;
-  
-  public static final Long DEFAULT_TID;
-  
-  @ProtoField(tag = 4)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String forumName;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.STRING)
-  public final String ori_ugc_nid;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.STRING)
-  public final String ori_ugc_tid;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.INT32)
-  public final Integer ori_ugc_type;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.STRING)
-  public final String ori_ugc_vid;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT64)
-  public final Long pid;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-  public final Integer postType;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.UINT64)
-  public final Long tid;
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_PID = long_;
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_POSTTYPE = integer;
-    DEFAULT_TID = long_;
-    DEFAULT_ORI_UGC_TYPE = integer;
-  }
-  
-  public ReqData(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Long long_2 = paramBuilder.pid;
-      if (long_2 == null) {
-        this.pid = DEFAULT_PID;
-      } else {
-        this.pid = long_2;
-      } 
-      Integer integer2 = paramBuilder.postType;
-      if (integer2 == null) {
-        this.postType = DEFAULT_POSTTYPE;
-      } else {
-        this.postType = integer2;
-      } 
-      String str2 = paramBuilder.forumName;
-      if (str2 == null) {
-        this.forumName = "";
-      } else {
-        this.forumName = str2;
-      } 
-      this.common = paramBuilder.common;
-      Long long_1 = paramBuilder.tid;
-      if (long_1 == null) {
-        this.tid = DEFAULT_TID;
-      } else {
-        this.tid = long_1;
-      } 
-      Integer integer1 = paramBuilder.ori_ugc_type;
-      if (integer1 == null) {
-        this.ori_ugc_type = DEFAULT_ORI_UGC_TYPE;
-      } else {
-        this.ori_ugc_type = integer1;
-      } 
-      String str1 = paramBuilder.ori_ugc_nid;
-      if (str1 == null) {
-        this.ori_ugc_nid = "";
-      } else {
-        this.ori_ugc_nid = str1;
-      } 
-      str1 = paramBuilder.ori_ugc_vid;
-      if (str1 == null) {
-        this.ori_ugc_vid = "";
-      } else {
-        this.ori_ugc_vid = str1;
-      } 
-      str = paramBuilder.ori_ugc_tid;
-      if (str == null) {
-        this.ori_ugc_tid = "";
-      } else {
-        this.ori_ugc_tid = str;
-      } 
-    } else {
-      this.pid = ((Builder)str).pid;
-      this.postType = ((Builder)str).postType;
-      this.forumName = ((Builder)str).forumName;
-      this.common = ((Builder)str).common;
-      this.tid = ((Builder)str).tid;
-      this.ori_ugc_type = ((Builder)str).ori_ugc_type;
-      this.ori_ugc_nid = ((Builder)str).ori_ugc_nid;
-      this.ori_ugc_vid = ((Builder)str).ori_ugc_vid;
-      this.ori_ugc_tid = ((Builder)str).ori_ugc_tid;
-    } 
-  }
-  
-  public ReqData(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ReqData> {
-    public CommonReq common;
-    
-    public String forumName;
-    
-    public String ori_ugc_nid;
-    
-    public String ori_ugc_tid;
-    
-    public Integer ori_ugc_type;
-    
-    public String ori_ugc_vid;
-    
-    public Long pid;
-    
-    public Integer postType;
-    
-    public Long tid;
-    
-    public Builder() {}
-    
-    public Builder(ReqData param1ReqData) {
-      super(param1ReqData);
-      if (param1ReqData == null)
-        return; 
-      this.pid = param1ReqData.pid;
-      this.postType = param1ReqData.postType;
-      this.forumName = param1ReqData.forumName;
-      this.common = param1ReqData.common;
-      this.tid = param1ReqData.tid;
-      this.ori_ugc_type = param1ReqData.ori_ugc_type;
-      this.ori_ugc_nid = param1ReqData.ori_ugc_nid;
-      this.ori_ugc_vid = param1ReqData.ori_ugc_vid;
-      this.ori_ugc_tid = param1ReqData.ori_ugc_tid;
+    public static final String DEFAULT_FORUMNAME = "";
+    public static final String DEFAULT_ORI_UGC_NID = "";
+    public static final String DEFAULT_ORI_UGC_TID = "";
+    public static final String DEFAULT_ORI_UGC_VID = "";
+    @ProtoField(tag = 4)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1253common;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String forumName;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String ori_ugc_nid;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String ori_ugc_tid;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer ori_ugc_type;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String ori_ugc_vid;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long pid;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
+    public final Integer postType;
+    @ProtoField(tag = 5, type = Message.Datatype.UINT64)
+    public final Long tid;
+    public static final Long DEFAULT_PID = 0L;
+    public static final Integer DEFAULT_POSTTYPE = 0;
+    public static final Long DEFAULT_TID = 0L;
+    public static final Integer DEFAULT_ORI_UGC_TYPE = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ReqData> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1254common;
+        public String forumName;
+        public String ori_ugc_nid;
+        public String ori_ugc_tid;
+        public Integer ori_ugc_type;
+        public String ori_ugc_vid;
+        public Long pid;
+        public Integer postType;
+        public Long tid;
+
+        public Builder() {
+        }
+
+        public Builder(ReqData reqData) {
+            super(reqData);
+            if (reqData == null) {
+                return;
+            }
+            this.pid = reqData.pid;
+            this.postType = reqData.postType;
+            this.forumName = reqData.forumName;
+            this.f1254common = reqData.f1253common;
+            this.tid = reqData.tid;
+            this.ori_ugc_type = reqData.ori_ugc_type;
+            this.ori_ugc_nid = reqData.ori_ugc_nid;
+            this.ori_ugc_vid = reqData.ori_ugc_vid;
+            this.ori_ugc_tid = reqData.ori_ugc_tid;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ReqData build(boolean z) {
+            return new ReqData(this, z);
+        }
     }
-    
-    public ReqData build(boolean param1Boolean) {
-      return new ReqData(this, param1Boolean, null);
+
+    public ReqData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.pid;
+            if (l == null) {
+                this.pid = DEFAULT_PID;
+            } else {
+                this.pid = l;
+            }
+            Integer num = builder.postType;
+            if (num == null) {
+                this.postType = DEFAULT_POSTTYPE;
+            } else {
+                this.postType = num;
+            }
+            String str = builder.forumName;
+            if (str == null) {
+                this.forumName = "";
+            } else {
+                this.forumName = str;
+            }
+            this.f1253common = builder.f1254common;
+            Long l2 = builder.tid;
+            if (l2 == null) {
+                this.tid = DEFAULT_TID;
+            } else {
+                this.tid = l2;
+            }
+            Integer num2 = builder.ori_ugc_type;
+            if (num2 == null) {
+                this.ori_ugc_type = DEFAULT_ORI_UGC_TYPE;
+            } else {
+                this.ori_ugc_type = num2;
+            }
+            String str2 = builder.ori_ugc_nid;
+            if (str2 == null) {
+                this.ori_ugc_nid = "";
+            } else {
+                this.ori_ugc_nid = str2;
+            }
+            String str3 = builder.ori_ugc_vid;
+            if (str3 == null) {
+                this.ori_ugc_vid = "";
+            } else {
+                this.ori_ugc_vid = str3;
+            }
+            String str4 = builder.ori_ugc_tid;
+            if (str4 == null) {
+                this.ori_ugc_tid = "";
+                return;
+            } else {
+                this.ori_ugc_tid = str4;
+                return;
+            }
+        }
+        this.pid = builder.pid;
+        this.postType = builder.postType;
+        this.forumName = builder.forumName;
+        this.f1253common = builder.f1254common;
+        this.tid = builder.tid;
+        this.ori_ugc_type = builder.ori_ugc_type;
+        this.ori_ugc_nid = builder.ori_ugc_nid;
+        this.ori_ugc_vid = builder.ori_ugc_vid;
+        this.ori_ugc_tid = builder.ori_ugc_tid;
     }
-  }
-  
-  public static class a {}
 }

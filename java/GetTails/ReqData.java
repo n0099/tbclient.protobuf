@@ -3,55 +3,55 @@ package tbclient.GetTails;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class ReqData extends Message {
-  public static final String DEFAULT_ST_TYPE = "";
-  
-  @ProtoField(tag = 2)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String st_type;
-  
-  public ReqData(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      String str = paramBuilder.st_type;
-      if (str == null) {
-        this.st_type = "";
-      } else {
-        this.st_type = str;
-      } 
-      this.common = paramBuilder.common;
-    } else {
-      this.st_type = paramBuilder.st_type;
-      this.common = paramBuilder.common;
-    } 
-  }
-  
-  public ReqData(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ReqData> {
-    public CommonReq common;
-    
-    public String st_type;
-    
-    public Builder() {}
-    
-    public Builder(ReqData param1ReqData) {
-      super(param1ReqData);
-      if (param1ReqData == null)
-        return; 
-      this.st_type = param1ReqData.st_type;
-      this.common = param1ReqData.common;
+    public static final String DEFAULT_ST_TYPE = "";
+    @ProtoField(tag = 2)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1383common;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String st_type;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ReqData> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1384common;
+        public String st_type;
+
+        public Builder() {
+        }
+
+        public Builder(ReqData reqData) {
+            super(reqData);
+            if (reqData == null) {
+                return;
+            }
+            this.st_type = reqData.st_type;
+            this.f1384common = reqData.f1383common;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ReqData build(boolean z) {
+            return new ReqData(this, z);
+        }
     }
-    
-    public ReqData build(boolean param1Boolean) {
-      return new ReqData(this, param1Boolean, null);
+
+    public ReqData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.st_type;
+            if (str == null) {
+                this.st_type = "";
+            } else {
+                this.st_type = str;
+            }
+            this.f1383common = builder.f1384common;
+            return;
+        }
+        this.st_type = builder.st_type;
+        this.f1383common = builder.f1384common;
     }
-  }
-  
-  public static class a {}
 }

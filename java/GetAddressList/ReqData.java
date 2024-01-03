@@ -3,55 +3,55 @@ package tbclient.GetAddressList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class ReqData extends Message {
-  public static final Integer DEFAULT_TIMESTAMP = Integer.valueOf(0);
-  
-  @ProtoField(tag = 2)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer timestamp;
-  
-  public ReqData(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.timestamp;
-      if (integer == null) {
-        this.timestamp = DEFAULT_TIMESTAMP;
-      } else {
-        this.timestamp = integer;
-      } 
-      this.common = paramBuilder.common;
-    } else {
-      this.timestamp = paramBuilder.timestamp;
-      this.common = paramBuilder.common;
-    } 
-  }
-  
-  public ReqData(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ReqData> {
-    public CommonReq common;
-    
-    public Integer timestamp;
-    
-    public Builder() {}
-    
-    public Builder(ReqData param1ReqData) {
-      super(param1ReqData);
-      if (param1ReqData == null)
-        return; 
-      this.timestamp = param1ReqData.timestamp;
-      this.common = param1ReqData.common;
+    public static final Integer DEFAULT_TIMESTAMP = 0;
+    @ProtoField(tag = 2)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1295common;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer timestamp;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ReqData> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1296common;
+        public Integer timestamp;
+
+        public Builder() {
+        }
+
+        public Builder(ReqData reqData) {
+            super(reqData);
+            if (reqData == null) {
+                return;
+            }
+            this.timestamp = reqData.timestamp;
+            this.f1296common = reqData.f1295common;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ReqData build(boolean z) {
+            return new ReqData(this, z);
+        }
     }
-    
-    public ReqData build(boolean param1Boolean) {
-      return new ReqData(this, param1Boolean, null);
+
+    public ReqData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.timestamp;
+            if (num == null) {
+                this.timestamp = DEFAULT_TIMESTAMP;
+            } else {
+                this.timestamp = num;
+            }
+            this.f1295common = builder.f1296common;
+            return;
+        }
+        this.timestamp = builder.timestamp;
+        this.f1295common = builder.f1296common;
     }
-  }
-  
-  public static class a {}
 }

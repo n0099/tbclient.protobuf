@@ -12,403 +12,310 @@ import tbclient.MediaNum;
 import tbclient.User;
 import tbclient.Voice;
 import tbclient.Zan;
-
+/* loaded from: classes2.dex */
 public final class FriendThreadInfo extends Message {
-  public static final List<Abstract> DEFAULT_ABSTRACT;
-  
-  public static final Long DEFAULT_AUTHOR_ID;
-  
-  public static final Long DEFAULT_FID;
-  
-  public static final Long DEFAULT_FIRST_POST_ID;
-  
-  public static final String DEFAULT_FNAME = "";
-  
-  public static final Long DEFAULT_ID;
-  
-  public static final Integer DEFAULT_IS_GOOD;
-  
-  public static final Integer DEFAULT_IS_LIVEPOST;
-  
-  public static final Integer DEFAULT_IS_MEMBERTOP;
-  
-  public static final Integer DEFAULT_IS_NTITLE;
-  
-  public static final Integer DEFAULT_IS_TOP;
-  
-  public static final Integer DEFAULT_IS_VOICE_THREAD;
-  
-  public static final Integer DEFAULT_LAST_TIME_INT;
-  
-  public static final List<Media> DEFAULT_MEDIA;
-  
-  public static final List<MediaNum> DEFAULT_MEDIA_NUM;
-  
-  public static final Integer DEFAULT_REPLY_NUM;
-  
-  public static final Long DEFAULT_THREAD_TYPE;
-  
-  public static final Long DEFAULT_TID;
-  
-  public static final String DEFAULT_TIMELINE = "";
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  public static final List<Voice> DEFAULT_VOICE_INFO;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 14)
-  public final List<Abstract> _abstract;
-  
-  @ProtoField(tag = 23)
-  public final AnchorInfo anchor_info;
-  
-  @ProtoField(tag = 20)
-  public final Anti anti;
-  
-  @ProtoField(tag = 11)
-  public final User author;
-  
-  @ProtoField(tag = 10, type = Message.Datatype.INT64)
-  public final Long author_id;
-  
-  @ProtoField(tag = 21, type = Message.Datatype.INT64)
-  public final Long fid;
-  
-  @ProtoField(tag = 18, type = Message.Datatype.INT64)
-  public final Long first_post_id;
-  
-  @ProtoField(tag = 22, type = Message.Datatype.STRING)
-  public final String fname;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long id;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.INT32)
-  public final Integer is_good;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.INT32)
-  public final Integer is_livepost;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.INT32)
-  public final Integer is_membertop;
-  
-  @ProtoField(tag = 12, type = Message.Datatype.INT32)
-  public final Integer is_ntitle;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.INT32)
-  public final Integer is_top;
-  
-  @ProtoField(tag = 24, type = Message.Datatype.INT32)
-  public final Integer is_voice_thread;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.INT32)
-  public final Integer last_time_int;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 15)
-  public final List<Media> media;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 16)
-  public final List<MediaNum> media_num;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT32)
-  public final Integer reply_num;
-  
-  @ProtoField(tag = 25, type = Message.Datatype.UINT64)
-  public final Long thread_type;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT64)
-  public final Long tid;
-  
-  @ProtoField(tag = 13, type = Message.Datatype.STRING)
-  public final String timeline;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String title;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 17)
-  public final List<Voice> voice_info;
-  
-  @ProtoField(tag = 19)
-  public final Zan zan;
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_ID = long_;
-    DEFAULT_TID = long_;
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_REPLY_NUM = integer;
-    DEFAULT_LAST_TIME_INT = integer;
-    DEFAULT_IS_TOP = integer;
-    DEFAULT_IS_MEMBERTOP = integer;
-    DEFAULT_IS_GOOD = integer;
-    DEFAULT_IS_LIVEPOST = integer;
-    DEFAULT_AUTHOR_ID = long_;
-    DEFAULT_IS_NTITLE = integer;
-    DEFAULT_ABSTRACT = Collections.emptyList();
-    DEFAULT_MEDIA = Collections.emptyList();
-    DEFAULT_MEDIA_NUM = Collections.emptyList();
-    DEFAULT_VOICE_INFO = Collections.emptyList();
-    DEFAULT_FIRST_POST_ID = long_;
-    DEFAULT_FID = long_;
-    DEFAULT_IS_VOICE_THREAD = integer;
-    DEFAULT_THREAD_TYPE = long_;
-  }
-  
-  public FriendThreadInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Long long_;
-    if (paramBoolean == true) {
-      Long long_3 = paramBuilder.id;
-      if (long_3 == null) {
-        this.id = DEFAULT_ID;
-      } else {
-        this.id = long_3;
-      } 
-      long_3 = paramBuilder.tid;
-      if (long_3 == null) {
-        this.tid = DEFAULT_TID;
-      } else {
-        this.tid = long_3;
-      } 
-      String str3 = paramBuilder.title;
-      if (str3 == null) {
-        this.title = "";
-      } else {
-        this.title = str3;
-      } 
-      Integer integer3 = paramBuilder.reply_num;
-      if (integer3 == null) {
-        this.reply_num = DEFAULT_REPLY_NUM;
-      } else {
-        this.reply_num = integer3;
-      } 
-      integer3 = paramBuilder.last_time_int;
-      if (integer3 == null) {
-        this.last_time_int = DEFAULT_LAST_TIME_INT;
-      } else {
-        this.last_time_int = integer3;
-      } 
-      integer3 = paramBuilder.is_top;
-      if (integer3 == null) {
-        this.is_top = DEFAULT_IS_TOP;
-      } else {
-        this.is_top = integer3;
-      } 
-      integer3 = paramBuilder.is_membertop;
-      if (integer3 == null) {
-        this.is_membertop = DEFAULT_IS_MEMBERTOP;
-      } else {
-        this.is_membertop = integer3;
-      } 
-      integer3 = paramBuilder.is_good;
-      if (integer3 == null) {
-        this.is_good = DEFAULT_IS_GOOD;
-      } else {
-        this.is_good = integer3;
-      } 
-      integer3 = paramBuilder.is_livepost;
-      if (integer3 == null) {
-        this.is_livepost = DEFAULT_IS_LIVEPOST;
-      } else {
-        this.is_livepost = integer3;
-      } 
-      Long long_2 = paramBuilder.author_id;
-      if (long_2 == null) {
-        this.author_id = DEFAULT_AUTHOR_ID;
-      } else {
-        this.author_id = long_2;
-      } 
-      this.author = paramBuilder.author;
-      Integer integer2 = paramBuilder.is_ntitle;
-      if (integer2 == null) {
-        this.is_ntitle = DEFAULT_IS_NTITLE;
-      } else {
-        this.is_ntitle = integer2;
-      } 
-      String str2 = paramBuilder.timeline;
-      if (str2 == null) {
-        this.timeline = "";
-      } else {
-        this.timeline = str2;
-      } 
-      List<Abstract> list3 = paramBuilder._abstract;
-      if (list3 == null) {
-        this._abstract = DEFAULT_ABSTRACT;
-      } else {
-        this._abstract = Message.immutableCopyOf(list3);
-      } 
-      List<Media> list2 = paramBuilder.media;
-      if (list2 == null) {
-        this.media = DEFAULT_MEDIA;
-      } else {
-        this.media = Message.immutableCopyOf(list2);
-      } 
-      List<MediaNum> list1 = paramBuilder.media_num;
-      if (list1 == null) {
-        this.media_num = DEFAULT_MEDIA_NUM;
-      } else {
-        this.media_num = Message.immutableCopyOf(list1);
-      } 
-      List<Voice> list = paramBuilder.voice_info;
-      if (list == null) {
-        this.voice_info = DEFAULT_VOICE_INFO;
-      } else {
-        this.voice_info = Message.immutableCopyOf(list);
-      } 
-      Long long_1 = paramBuilder.first_post_id;
-      if (long_1 == null) {
-        this.first_post_id = DEFAULT_FIRST_POST_ID;
-      } else {
-        this.first_post_id = long_1;
-      } 
-      this.zan = paramBuilder.zan;
-      this.anti = paramBuilder.anti;
-      long_1 = paramBuilder.fid;
-      if (long_1 == null) {
-        this.fid = DEFAULT_FID;
-      } else {
-        this.fid = long_1;
-      } 
-      String str1 = paramBuilder.fname;
-      if (str1 == null) {
-        this.fname = "";
-      } else {
-        this.fname = str1;
-      } 
-      this.anchor_info = paramBuilder.anchor_info;
-      Integer integer1 = paramBuilder.is_voice_thread;
-      if (integer1 == null) {
-        this.is_voice_thread = DEFAULT_IS_VOICE_THREAD;
-      } else {
-        this.is_voice_thread = integer1;
-      } 
-      long_ = paramBuilder.thread_type;
-      if (long_ == null) {
-        this.thread_type = DEFAULT_THREAD_TYPE;
-      } else {
-        this.thread_type = long_;
-      } 
-    } else {
-      this.id = ((Builder)long_).id;
-      this.tid = ((Builder)long_).tid;
-      this.title = ((Builder)long_).title;
-      this.reply_num = ((Builder)long_).reply_num;
-      this.last_time_int = ((Builder)long_).last_time_int;
-      this.is_top = ((Builder)long_).is_top;
-      this.is_membertop = ((Builder)long_).is_membertop;
-      this.is_good = ((Builder)long_).is_good;
-      this.is_livepost = ((Builder)long_).is_livepost;
-      this.author_id = ((Builder)long_).author_id;
-      this.author = ((Builder)long_).author;
-      this.is_ntitle = ((Builder)long_).is_ntitle;
-      this.timeline = ((Builder)long_).timeline;
-      this._abstract = Message.immutableCopyOf(((Builder)long_)._abstract);
-      this.media = Message.immutableCopyOf(((Builder)long_).media);
-      this.media_num = Message.immutableCopyOf(((Builder)long_).media_num);
-      this.voice_info = Message.immutableCopyOf(((Builder)long_).voice_info);
-      this.first_post_id = ((Builder)long_).first_post_id;
-      this.zan = ((Builder)long_).zan;
-      this.anti = ((Builder)long_).anti;
-      this.fid = ((Builder)long_).fid;
-      this.fname = ((Builder)long_).fname;
-      this.anchor_info = ((Builder)long_).anchor_info;
-      this.is_voice_thread = ((Builder)long_).is_voice_thread;
-      this.thread_type = ((Builder)long_).thread_type;
-    } 
-  }
-  
-  public FriendThreadInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<FriendThreadInfo> {
-    public List<Abstract> _abstract;
-    
-    public AnchorInfo anchor_info;
-    
-    public Anti anti;
-    
-    public User author;
-    
-    public Long author_id;
-    
-    public Long fid;
-    
-    public Long first_post_id;
-    
-    public String fname;
-    
-    public Long id;
-    
-    public Integer is_good;
-    
-    public Integer is_livepost;
-    
-    public Integer is_membertop;
-    
-    public Integer is_ntitle;
-    
-    public Integer is_top;
-    
-    public Integer is_voice_thread;
-    
-    public Integer last_time_int;
-    
-    public List<Media> media;
-    
-    public List<MediaNum> media_num;
-    
-    public Integer reply_num;
-    
-    public Long thread_type;
-    
-    public Long tid;
-    
-    public String timeline;
-    
-    public String title;
-    
-    public List<Voice> voice_info;
-    
-    public Zan zan;
-    
-    public Builder() {}
-    
-    public Builder(FriendThreadInfo param1FriendThreadInfo) {
-      super(param1FriendThreadInfo);
-      if (param1FriendThreadInfo == null)
-        return; 
-      this.id = param1FriendThreadInfo.id;
-      this.tid = param1FriendThreadInfo.tid;
-      this.title = param1FriendThreadInfo.title;
-      this.reply_num = param1FriendThreadInfo.reply_num;
-      this.last_time_int = param1FriendThreadInfo.last_time_int;
-      this.is_top = param1FriendThreadInfo.is_top;
-      this.is_membertop = param1FriendThreadInfo.is_membertop;
-      this.is_good = param1FriendThreadInfo.is_good;
-      this.is_livepost = param1FriendThreadInfo.is_livepost;
-      this.author_id = param1FriendThreadInfo.author_id;
-      this.author = param1FriendThreadInfo.author;
-      this.is_ntitle = param1FriendThreadInfo.is_ntitle;
-      this.timeline = param1FriendThreadInfo.timeline;
-      this._abstract = Message.copyOf(param1FriendThreadInfo._abstract);
-      this.media = Message.copyOf(param1FriendThreadInfo.media);
-      this.media_num = Message.copyOf(param1FriendThreadInfo.media_num);
-      this.voice_info = Message.copyOf(param1FriendThreadInfo.voice_info);
-      this.first_post_id = param1FriendThreadInfo.first_post_id;
-      this.zan = param1FriendThreadInfo.zan;
-      this.anti = param1FriendThreadInfo.anti;
-      this.fid = param1FriendThreadInfo.fid;
-      this.fname = param1FriendThreadInfo.fname;
-      this.anchor_info = param1FriendThreadInfo.anchor_info;
-      this.is_voice_thread = param1FriendThreadInfo.is_voice_thread;
-      this.thread_type = param1FriendThreadInfo.thread_type;
+    public static final String DEFAULT_FNAME = "";
+    public static final String DEFAULT_TIMELINE = "";
+    public static final String DEFAULT_TITLE = "";
+    @ProtoField(label = Message.Label.REPEATED, tag = 14)
+    public final List<Abstract> _abstract;
+    @ProtoField(tag = 23)
+    public final AnchorInfo anchor_info;
+    @ProtoField(tag = 20)
+    public final Anti anti;
+    @ProtoField(tag = 11)
+    public final User author;
+    @ProtoField(tag = 10, type = Message.Datatype.INT64)
+    public final Long author_id;
+    @ProtoField(tag = 21, type = Message.Datatype.INT64)
+    public final Long fid;
+    @ProtoField(tag = 18, type = Message.Datatype.INT64)
+    public final Long first_post_id;
+    @ProtoField(tag = 22, type = Message.Datatype.STRING)
+    public final String fname;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long id;
+    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    public final Integer is_good;
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer is_livepost;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer is_membertop;
+    @ProtoField(tag = 12, type = Message.Datatype.INT32)
+    public final Integer is_ntitle;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer is_top;
+    @ProtoField(tag = 24, type = Message.Datatype.INT32)
+    public final Integer is_voice_thread;
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer last_time_int;
+    @ProtoField(label = Message.Label.REPEATED, tag = 15)
+    public final List<Media> media;
+    @ProtoField(label = Message.Label.REPEATED, tag = 16)
+    public final List<MediaNum> media_num;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer reply_num;
+    @ProtoField(tag = 25, type = Message.Datatype.UINT64)
+    public final Long thread_type;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long tid;
+    @ProtoField(tag = 13, type = Message.Datatype.STRING)
+    public final String timeline;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String title;
+    @ProtoField(label = Message.Label.REPEATED, tag = 17)
+    public final List<Voice> voice_info;
+    @ProtoField(tag = 19)
+    public final Zan zan;
+    public static final Long DEFAULT_ID = 0L;
+    public static final Long DEFAULT_TID = 0L;
+    public static final Integer DEFAULT_REPLY_NUM = 0;
+    public static final Integer DEFAULT_LAST_TIME_INT = 0;
+    public static final Integer DEFAULT_IS_TOP = 0;
+    public static final Integer DEFAULT_IS_MEMBERTOP = 0;
+    public static final Integer DEFAULT_IS_GOOD = 0;
+    public static final Integer DEFAULT_IS_LIVEPOST = 0;
+    public static final Long DEFAULT_AUTHOR_ID = 0L;
+    public static final Integer DEFAULT_IS_NTITLE = 0;
+    public static final List<Abstract> DEFAULT_ABSTRACT = Collections.emptyList();
+    public static final List<Media> DEFAULT_MEDIA = Collections.emptyList();
+    public static final List<MediaNum> DEFAULT_MEDIA_NUM = Collections.emptyList();
+    public static final List<Voice> DEFAULT_VOICE_INFO = Collections.emptyList();
+    public static final Long DEFAULT_FIRST_POST_ID = 0L;
+    public static final Long DEFAULT_FID = 0L;
+    public static final Integer DEFAULT_IS_VOICE_THREAD = 0;
+    public static final Long DEFAULT_THREAD_TYPE = 0L;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<FriendThreadInfo> {
+        public List<Abstract> _abstract;
+        public AnchorInfo anchor_info;
+        public Anti anti;
+        public User author;
+        public Long author_id;
+        public Long fid;
+        public Long first_post_id;
+        public String fname;
+        public Long id;
+        public Integer is_good;
+        public Integer is_livepost;
+        public Integer is_membertop;
+        public Integer is_ntitle;
+        public Integer is_top;
+        public Integer is_voice_thread;
+        public Integer last_time_int;
+        public List<Media> media;
+        public List<MediaNum> media_num;
+        public Integer reply_num;
+        public Long thread_type;
+        public Long tid;
+        public String timeline;
+        public String title;
+        public List<Voice> voice_info;
+        public Zan zan;
+
+        public Builder() {
+        }
+
+        public Builder(FriendThreadInfo friendThreadInfo) {
+            super(friendThreadInfo);
+            if (friendThreadInfo == null) {
+                return;
+            }
+            this.id = friendThreadInfo.id;
+            this.tid = friendThreadInfo.tid;
+            this.title = friendThreadInfo.title;
+            this.reply_num = friendThreadInfo.reply_num;
+            this.last_time_int = friendThreadInfo.last_time_int;
+            this.is_top = friendThreadInfo.is_top;
+            this.is_membertop = friendThreadInfo.is_membertop;
+            this.is_good = friendThreadInfo.is_good;
+            this.is_livepost = friendThreadInfo.is_livepost;
+            this.author_id = friendThreadInfo.author_id;
+            this.author = friendThreadInfo.author;
+            this.is_ntitle = friendThreadInfo.is_ntitle;
+            this.timeline = friendThreadInfo.timeline;
+            this._abstract = Message.copyOf(friendThreadInfo._abstract);
+            this.media = Message.copyOf(friendThreadInfo.media);
+            this.media_num = Message.copyOf(friendThreadInfo.media_num);
+            this.voice_info = Message.copyOf(friendThreadInfo.voice_info);
+            this.first_post_id = friendThreadInfo.first_post_id;
+            this.zan = friendThreadInfo.zan;
+            this.anti = friendThreadInfo.anti;
+            this.fid = friendThreadInfo.fid;
+            this.fname = friendThreadInfo.fname;
+            this.anchor_info = friendThreadInfo.anchor_info;
+            this.is_voice_thread = friendThreadInfo.is_voice_thread;
+            this.thread_type = friendThreadInfo.thread_type;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public FriendThreadInfo build(boolean z) {
+            return new FriendThreadInfo(this, z);
+        }
     }
-    
-    public FriendThreadInfo build(boolean param1Boolean) {
-      return new FriendThreadInfo(this, param1Boolean, null);
+
+    public FriendThreadInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.id;
+            if (l == null) {
+                this.id = DEFAULT_ID;
+            } else {
+                this.id = l;
+            }
+            Long l2 = builder.tid;
+            if (l2 == null) {
+                this.tid = DEFAULT_TID;
+            } else {
+                this.tid = l2;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            Integer num = builder.reply_num;
+            if (num == null) {
+                this.reply_num = DEFAULT_REPLY_NUM;
+            } else {
+                this.reply_num = num;
+            }
+            Integer num2 = builder.last_time_int;
+            if (num2 == null) {
+                this.last_time_int = DEFAULT_LAST_TIME_INT;
+            } else {
+                this.last_time_int = num2;
+            }
+            Integer num3 = builder.is_top;
+            if (num3 == null) {
+                this.is_top = DEFAULT_IS_TOP;
+            } else {
+                this.is_top = num3;
+            }
+            Integer num4 = builder.is_membertop;
+            if (num4 == null) {
+                this.is_membertop = DEFAULT_IS_MEMBERTOP;
+            } else {
+                this.is_membertop = num4;
+            }
+            Integer num5 = builder.is_good;
+            if (num5 == null) {
+                this.is_good = DEFAULT_IS_GOOD;
+            } else {
+                this.is_good = num5;
+            }
+            Integer num6 = builder.is_livepost;
+            if (num6 == null) {
+                this.is_livepost = DEFAULT_IS_LIVEPOST;
+            } else {
+                this.is_livepost = num6;
+            }
+            Long l3 = builder.author_id;
+            if (l3 == null) {
+                this.author_id = DEFAULT_AUTHOR_ID;
+            } else {
+                this.author_id = l3;
+            }
+            this.author = builder.author;
+            Integer num7 = builder.is_ntitle;
+            if (num7 == null) {
+                this.is_ntitle = DEFAULT_IS_NTITLE;
+            } else {
+                this.is_ntitle = num7;
+            }
+            String str2 = builder.timeline;
+            if (str2 == null) {
+                this.timeline = "";
+            } else {
+                this.timeline = str2;
+            }
+            List<Abstract> list = builder._abstract;
+            if (list == null) {
+                this._abstract = DEFAULT_ABSTRACT;
+            } else {
+                this._abstract = Message.immutableCopyOf(list);
+            }
+            List<Media> list2 = builder.media;
+            if (list2 == null) {
+                this.media = DEFAULT_MEDIA;
+            } else {
+                this.media = Message.immutableCopyOf(list2);
+            }
+            List<MediaNum> list3 = builder.media_num;
+            if (list3 == null) {
+                this.media_num = DEFAULT_MEDIA_NUM;
+            } else {
+                this.media_num = Message.immutableCopyOf(list3);
+            }
+            List<Voice> list4 = builder.voice_info;
+            if (list4 == null) {
+                this.voice_info = DEFAULT_VOICE_INFO;
+            } else {
+                this.voice_info = Message.immutableCopyOf(list4);
+            }
+            Long l4 = builder.first_post_id;
+            if (l4 == null) {
+                this.first_post_id = DEFAULT_FIRST_POST_ID;
+            } else {
+                this.first_post_id = l4;
+            }
+            this.zan = builder.zan;
+            this.anti = builder.anti;
+            Long l5 = builder.fid;
+            if (l5 == null) {
+                this.fid = DEFAULT_FID;
+            } else {
+                this.fid = l5;
+            }
+            String str3 = builder.fname;
+            if (str3 == null) {
+                this.fname = "";
+            } else {
+                this.fname = str3;
+            }
+            this.anchor_info = builder.anchor_info;
+            Integer num8 = builder.is_voice_thread;
+            if (num8 == null) {
+                this.is_voice_thread = DEFAULT_IS_VOICE_THREAD;
+            } else {
+                this.is_voice_thread = num8;
+            }
+            Long l6 = builder.thread_type;
+            if (l6 == null) {
+                this.thread_type = DEFAULT_THREAD_TYPE;
+                return;
+            } else {
+                this.thread_type = l6;
+                return;
+            }
+        }
+        this.id = builder.id;
+        this.tid = builder.tid;
+        this.title = builder.title;
+        this.reply_num = builder.reply_num;
+        this.last_time_int = builder.last_time_int;
+        this.is_top = builder.is_top;
+        this.is_membertop = builder.is_membertop;
+        this.is_good = builder.is_good;
+        this.is_livepost = builder.is_livepost;
+        this.author_id = builder.author_id;
+        this.author = builder.author;
+        this.is_ntitle = builder.is_ntitle;
+        this.timeline = builder.timeline;
+        this._abstract = Message.immutableCopyOf(builder._abstract);
+        this.media = Message.immutableCopyOf(builder.media);
+        this.media_num = Message.immutableCopyOf(builder.media_num);
+        this.voice_info = Message.immutableCopyOf(builder.voice_info);
+        this.first_post_id = builder.first_post_id;
+        this.zan = builder.zan;
+        this.anti = builder.anti;
+        this.fid = builder.fid;
+        this.fname = builder.fname;
+        this.anchor_info = builder.anchor_info;
+        this.is_voice_thread = builder.is_voice_thread;
+        this.thread_type = builder.thread_type;
     }
-  }
-  
-  public static class a {}
 }

@@ -2,108 +2,94 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class SkinInfo extends Message {
-  public static final String DEFAULT_MONITOR_ID = "";
-  
-  public static final String DEFAULT_OBJ_ID = "";
-  
-  public static final String DEFAULT_SKIN = "";
-  
-  public static final String DEFAULT_SKIN_SIZE = "";
-  
-  public static final String DEFAULT_URL = "";
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String monitor_id;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String obj_id;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String skin;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String skin_size;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String url;
-  
-  public SkinInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.skin;
-      if (str1 == null) {
-        this.skin = "";
-      } else {
-        this.skin = str1;
-      } 
-      str1 = paramBuilder.skin_size;
-      if (str1 == null) {
-        this.skin_size = "";
-      } else {
-        this.skin_size = str1;
-      } 
-      str1 = paramBuilder.url;
-      if (str1 == null) {
-        this.url = "";
-      } else {
-        this.url = str1;
-      } 
-      str1 = paramBuilder.obj_id;
-      if (str1 == null) {
-        this.obj_id = "";
-      } else {
-        this.obj_id = str1;
-      } 
-      str = paramBuilder.monitor_id;
-      if (str == null) {
-        this.monitor_id = "";
-      } else {
-        this.monitor_id = str;
-      } 
-    } else {
-      this.skin = ((Builder)str).skin;
-      this.skin_size = ((Builder)str).skin_size;
-      this.url = ((Builder)str).url;
-      this.obj_id = ((Builder)str).obj_id;
-      this.monitor_id = ((Builder)str).monitor_id;
-    } 
-  }
-  
-  public SkinInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<SkinInfo> {
-    public String monitor_id;
-    
-    public String obj_id;
-    
-    public String skin;
-    
-    public String skin_size;
-    
-    public String url;
-    
-    public Builder() {}
-    
-    public Builder(SkinInfo param1SkinInfo) {
-      super(param1SkinInfo);
-      if (param1SkinInfo == null)
-        return; 
-      this.skin = param1SkinInfo.skin;
-      this.skin_size = param1SkinInfo.skin_size;
-      this.url = param1SkinInfo.url;
-      this.obj_id = param1SkinInfo.obj_id;
-      this.monitor_id = param1SkinInfo.monitor_id;
+    public static final String DEFAULT_MONITOR_ID = "";
+    public static final String DEFAULT_OBJ_ID = "";
+    public static final String DEFAULT_SKIN = "";
+    public static final String DEFAULT_SKIN_SIZE = "";
+    public static final String DEFAULT_URL = "";
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String monitor_id;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String obj_id;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String skin;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String skin_size;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String url;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<SkinInfo> {
+        public String monitor_id;
+        public String obj_id;
+        public String skin;
+        public String skin_size;
+        public String url;
+
+        public Builder() {
+        }
+
+        public Builder(SkinInfo skinInfo) {
+            super(skinInfo);
+            if (skinInfo == null) {
+                return;
+            }
+            this.skin = skinInfo.skin;
+            this.skin_size = skinInfo.skin_size;
+            this.url = skinInfo.url;
+            this.obj_id = skinInfo.obj_id;
+            this.monitor_id = skinInfo.monitor_id;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public SkinInfo build(boolean z) {
+            return new SkinInfo(this, z);
+        }
     }
-    
-    public SkinInfo build(boolean param1Boolean) {
-      return new SkinInfo(this, param1Boolean, null);
+
+    public SkinInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.skin;
+            if (str == null) {
+                this.skin = "";
+            } else {
+                this.skin = str;
+            }
+            String str2 = builder.skin_size;
+            if (str2 == null) {
+                this.skin_size = "";
+            } else {
+                this.skin_size = str2;
+            }
+            String str3 = builder.url;
+            if (str3 == null) {
+                this.url = "";
+            } else {
+                this.url = str3;
+            }
+            String str4 = builder.obj_id;
+            if (str4 == null) {
+                this.obj_id = "";
+            } else {
+                this.obj_id = str4;
+            }
+            String str5 = builder.monitor_id;
+            if (str5 == null) {
+                this.monitor_id = "";
+                return;
+            } else {
+                this.monitor_id = str5;
+                return;
+            }
+        }
+        this.skin = builder.skin;
+        this.skin_size = builder.skin_size;
+        this.url = builder.url;
+        this.obj_id = builder.obj_id;
+        this.monitor_id = builder.monitor_id;
     }
-  }
-  
-  public static class a {}
 }

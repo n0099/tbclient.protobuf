@@ -3,48 +3,45 @@ package tbclient.ThreadPublish;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class ThreadPublishResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public ThreadPublishResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public ThreadPublishResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ThreadPublishResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(ThreadPublishResIdl param1ThreadPublishResIdl) {
-      super(param1ThreadPublishResIdl);
-      if (param1ThreadPublishResIdl == null)
-        return; 
-      this.error = param1ThreadPublishResIdl.error;
-      this.data = param1ThreadPublishResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ThreadPublishResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(ThreadPublishResIdl threadPublishResIdl) {
+            super(threadPublishResIdl);
+            if (threadPublishResIdl == null) {
+                return;
+            }
+            this.error = threadPublishResIdl.error;
+            this.data = threadPublishResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ThreadPublishResIdl build(boolean z) {
+            return new ThreadPublishResIdl(this, z);
+        }
     }
-    
-    public ThreadPublishResIdl build(boolean param1Boolean) {
-      return new ThreadPublishResIdl(this, param1Boolean, null);
+
+    public ThreadPublishResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

@@ -2,71 +2,64 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GameAttr extends Message {
-  public static final String DEFAULT_IS_OPEN = "";
-  
-  public static final String DEFAULT_USER_ID = "";
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String is_open;
-  
-  @ProtoField(tag = 2)
-  public final SignatureInfo signature_info;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String user_id;
-  
-  public GameAttr(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.user_id;
-      if (str1 == null) {
-        this.user_id = "";
-      } else {
-        this.user_id = str1;
-      } 
-      this.signature_info = paramBuilder.signature_info;
-      str = paramBuilder.is_open;
-      if (str == null) {
-        this.is_open = "";
-      } else {
-        this.is_open = str;
-      } 
-    } else {
-      this.user_id = ((Builder)str).user_id;
-      this.signature_info = ((Builder)str).signature_info;
-      this.is_open = ((Builder)str).is_open;
-    } 
-  }
-  
-  public GameAttr(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GameAttr> {
-    public String is_open;
-    
-    public SignatureInfo signature_info;
-    
-    public String user_id;
-    
-    public Builder() {}
-    
-    public Builder(GameAttr param1GameAttr) {
-      super(param1GameAttr);
-      if (param1GameAttr == null)
-        return; 
-      this.user_id = param1GameAttr.user_id;
-      this.signature_info = param1GameAttr.signature_info;
-      this.is_open = param1GameAttr.is_open;
+    public static final String DEFAULT_IS_OPEN = "";
+    public static final String DEFAULT_USER_ID = "";
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String is_open;
+    @ProtoField(tag = 2)
+    public final SignatureInfo signature_info;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String user_id;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GameAttr> {
+        public String is_open;
+        public SignatureInfo signature_info;
+        public String user_id;
+
+        public Builder() {
+        }
+
+        public Builder(GameAttr gameAttr) {
+            super(gameAttr);
+            if (gameAttr == null) {
+                return;
+            }
+            this.user_id = gameAttr.user_id;
+            this.signature_info = gameAttr.signature_info;
+            this.is_open = gameAttr.is_open;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GameAttr build(boolean z) {
+            return new GameAttr(this, z);
+        }
     }
-    
-    public GameAttr build(boolean param1Boolean) {
-      return new GameAttr(this, param1Boolean, null);
+
+    public GameAttr(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.user_id;
+            if (str == null) {
+                this.user_id = "";
+            } else {
+                this.user_id = str;
+            }
+            this.signature_info = builder.signature_info;
+            String str2 = builder.is_open;
+            if (str2 == null) {
+                this.is_open = "";
+                return;
+            } else {
+                this.is_open = str2;
+                return;
+            }
+        }
+        this.user_id = builder.user_id;
+        this.signature_info = builder.signature_info;
+        this.is_open = builder.is_open;
     }
-  }
-  
-  public static class a {}
 }

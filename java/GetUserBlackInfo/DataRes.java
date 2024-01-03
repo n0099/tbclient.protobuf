@@ -3,55 +3,51 @@ package tbclient.GetUserBlackInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.PermissionList;
-
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
-  public static final Integer DEFAULT_IS_BLACK_WHITE = Integer.valueOf(0);
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer is_black_white;
-  
-  @ProtoField(tag = 2)
-  public final PermissionList perm_list;
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.is_black_white;
-      if (integer == null) {
-        this.is_black_white = DEFAULT_IS_BLACK_WHITE;
-      } else {
-        this.is_black_white = integer;
-      } 
-      this.perm_list = paramBuilder.perm_list;
-    } else {
-      this.is_black_white = paramBuilder.is_black_white;
-      this.perm_list = paramBuilder.perm_list;
-    } 
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataRes> {
-    public Integer is_black_white;
-    
-    public PermissionList perm_list;
-    
-    public Builder() {}
-    
-    public Builder(DataRes param1DataRes) {
-      super(param1DataRes);
-      if (param1DataRes == null)
-        return; 
-      this.is_black_white = param1DataRes.is_black_white;
-      this.perm_list = param1DataRes.perm_list;
+    public static final Integer DEFAULT_IS_BLACK_WHITE = 0;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer is_black_white;
+    @ProtoField(tag = 2)
+    public final PermissionList perm_list;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataRes> {
+        public Integer is_black_white;
+        public PermissionList perm_list;
+
+        public Builder() {
+        }
+
+        public Builder(DataRes dataRes) {
+            super(dataRes);
+            if (dataRes == null) {
+                return;
+            }
+            this.is_black_white = dataRes.is_black_white;
+            this.perm_list = dataRes.perm_list;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataRes build(boolean z) {
+            return new DataRes(this, z);
+        }
     }
-    
-    public DataRes build(boolean param1Boolean) {
-      return new DataRes(this, param1Boolean, null);
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.is_black_white;
+            if (num == null) {
+                this.is_black_white = DEFAULT_IS_BLACK_WHITE;
+            } else {
+                this.is_black_white = num;
+            }
+            this.perm_list = builder.perm_list;
+            return;
+        }
+        this.is_black_white = builder.is_black_white;
+        this.perm_list = builder.perm_list;
     }
-  }
-  
-  public static class a {}
 }

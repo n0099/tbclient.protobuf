@@ -3,48 +3,45 @@ package tbclient.SetCard;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class SetCardResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public SetCardResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public SetCardResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<SetCardResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(SetCardResIdl param1SetCardResIdl) {
-      super(param1SetCardResIdl);
-      if (param1SetCardResIdl == null)
-        return; 
-      this.error = param1SetCardResIdl.error;
-      this.data = param1SetCardResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<SetCardResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(SetCardResIdl setCardResIdl) {
+            super(setCardResIdl);
+            if (setCardResIdl == null) {
+                return;
+            }
+            this.error = setCardResIdl.error;
+            this.data = setCardResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public SetCardResIdl build(boolean z) {
+            return new SetCardResIdl(this, z);
+        }
     }
-    
-    public SetCardResIdl build(boolean param1Boolean) {
-      return new SetCardResIdl(this, param1Boolean, null);
+
+    public SetCardResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

@@ -2,63 +2,58 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ItemPoint extends Message {
-  public static final Double DEFAULT_POINT = Double.valueOf(0.0D);
-  
-  public static final String DEFAULT_TIME_INTVAL = "";
-  
-  @ProtoField(tag = 2, type = Message.Datatype.DOUBLE)
-  public final Double point;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String time_intval;
-  
-  public ItemPoint(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Double double_;
-    if (paramBoolean == true) {
-      String str = paramBuilder.time_intval;
-      if (str == null) {
-        this.time_intval = "";
-      } else {
-        this.time_intval = str;
-      } 
-      double_ = paramBuilder.point;
-      if (double_ == null) {
-        this.point = DEFAULT_POINT;
-      } else {
-        this.point = double_;
-      } 
-    } else {
-      this.time_intval = ((Builder)double_).time_intval;
-      this.point = ((Builder)double_).point;
-    } 
-  }
-  
-  public ItemPoint(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ItemPoint> {
-    public Double point;
-    
-    public String time_intval;
-    
-    public Builder() {}
-    
-    public Builder(ItemPoint param1ItemPoint) {
-      super(param1ItemPoint);
-      if (param1ItemPoint == null)
-        return; 
-      this.time_intval = param1ItemPoint.time_intval;
-      this.point = param1ItemPoint.point;
+    public static final Double DEFAULT_POINT = Double.valueOf(0.0d);
+    public static final String DEFAULT_TIME_INTVAL = "";
+    @ProtoField(tag = 2, type = Message.Datatype.DOUBLE)
+    public final Double point;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String time_intval;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ItemPoint> {
+        public Double point;
+        public String time_intval;
+
+        public Builder() {
+        }
+
+        public Builder(ItemPoint itemPoint) {
+            super(itemPoint);
+            if (itemPoint == null) {
+                return;
+            }
+            this.time_intval = itemPoint.time_intval;
+            this.point = itemPoint.point;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ItemPoint build(boolean z) {
+            return new ItemPoint(this, z);
+        }
     }
-    
-    public ItemPoint build(boolean param1Boolean) {
-      return new ItemPoint(this, param1Boolean, null);
+
+    public ItemPoint(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.time_intval;
+            if (str == null) {
+                this.time_intval = "";
+            } else {
+                this.time_intval = str;
+            }
+            Double d = builder.point;
+            if (d == null) {
+                this.point = DEFAULT_POINT;
+                return;
+            } else {
+                this.point = d;
+                return;
+            }
+        }
+        this.time_intval = builder.time_intval;
+        this.point = builder.point;
     }
-  }
-  
-  public static class a {}
 }

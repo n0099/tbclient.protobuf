@@ -2,341 +2,267 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class AnchorInfo extends Message {
-  public static final Long DEFAULT_AUTHOR_ID;
-  
-  public static final String DEFAULT_AUTHOR_NAME = "";
-  
-  public static final String DEFAULT_FORUMNAME = "";
-  
-  public static final Integer DEFAULT_FROM_TYPE;
-  
-  public static final Long DEFAULT_GROUP_ID;
-  
-  public static final String DEFAULT_INTRO = "";
-  
-  public static final Integer DEFAULT_IS_VIP;
-  
-  public static final Integer DEFAULT_LABEL_ID;
-  
-  public static final String DEFAULT_LABEL_NAME = "";
-  
-  public static final Integer DEFAULT_LIKERS;
-  
-  public static final Integer DEFAULT_LISTENERS;
-  
-  public static final String DEFAULT_NAME = "";
-  
-  public static final String DEFAULT_PORTRAIT = "";
-  
-  public static final Long DEFAULT_PUBLISHERID;
-  
-  public static final String DEFAULT_PUBLISHERNAME = "";
-  
-  public static final String DEFAULT_PUBLISHERPORTRAIT = "";
-  
-  public static final Integer DEFAULT_START_TIME;
-  
-  public static final Integer DEFAULT_STATUS;
-  
-  public static final Integer DEFAULT_TYPE;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.INT64)
-  public final Long author_id;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String author_name;
-  
-  @ProtoField(tag = 14, type = Message.Datatype.STRING)
-  public final String forumName;
-  
-  @ProtoField(tag = 15, type = Message.Datatype.INT32)
-  public final Integer from_type;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.INT64)
-  public final Long group_id;
-  
-  @ProtoField(tag = 10, type = Message.Datatype.STRING)
-  public final String intro;
-  
-  @ProtoField(tag = 16, type = Message.Datatype.INT32)
-  public final Integer is_vip;
-  
-  @ProtoField(tag = 17, type = Message.Datatype.INT32)
-  public final Integer label_id;
-  
-  @ProtoField(tag = 18, type = Message.Datatype.STRING)
-  public final String label_name;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.INT32)
-  public final Integer likers;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.INT32)
-  public final Integer listeners;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String name;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String portrait;
-  
-  @ProtoField(tag = 13, type = Message.Datatype.INT64)
-  public final Long publisherId;
-  
-  @ProtoField(tag = 12, type = Message.Datatype.STRING)
-  public final String publisherName;
-  
-  @ProtoField(tag = 11, type = Message.Datatype.STRING)
-  public final String publisherPortrait;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer start_time;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT32)
-  public final Integer status;
-  
-  @ProtoField(tag = 20)
-  public final ZhiBoInfoTW twzhibo_info;
-  
-  @ProtoField(tag = 19, type = Message.Datatype.INT32)
-  public final Integer type;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_START_TIME = integer;
-    DEFAULT_STATUS = integer;
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_AUTHOR_ID = long_;
-    DEFAULT_LISTENERS = integer;
-    DEFAULT_LIKERS = integer;
-    DEFAULT_GROUP_ID = long_;
-    DEFAULT_PUBLISHERID = long_;
-    DEFAULT_FROM_TYPE = integer;
-    DEFAULT_IS_VIP = integer;
-    DEFAULT_LABEL_ID = integer;
-    DEFAULT_TYPE = integer;
-  }
-  
-  public AnchorInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      String str5 = paramBuilder.portrait;
-      if (str5 == null) {
-        this.portrait = "";
-      } else {
-        this.portrait = str5;
-      } 
-      str5 = paramBuilder.name;
-      if (str5 == null) {
-        this.name = "";
-      } else {
-        this.name = str5;
-      } 
-      Integer integer4 = paramBuilder.start_time;
-      if (integer4 == null) {
-        this.start_time = DEFAULT_START_TIME;
-      } else {
-        this.start_time = integer4;
-      } 
-      integer4 = paramBuilder.status;
-      if (integer4 == null) {
-        this.status = DEFAULT_STATUS;
-      } else {
-        this.status = integer4;
-      } 
-      Long long_3 = paramBuilder.author_id;
-      if (long_3 == null) {
-        this.author_id = DEFAULT_AUTHOR_ID;
-      } else {
-        this.author_id = long_3;
-      } 
-      String str4 = paramBuilder.author_name;
-      if (str4 == null) {
-        this.author_name = "";
-      } else {
-        this.author_name = str4;
-      } 
-      Integer integer3 = paramBuilder.listeners;
-      if (integer3 == null) {
-        this.listeners = DEFAULT_LISTENERS;
-      } else {
-        this.listeners = integer3;
-      } 
-      integer3 = paramBuilder.likers;
-      if (integer3 == null) {
-        this.likers = DEFAULT_LIKERS;
-      } else {
-        this.likers = integer3;
-      } 
-      Long long_2 = paramBuilder.group_id;
-      if (long_2 == null) {
-        this.group_id = DEFAULT_GROUP_ID;
-      } else {
-        this.group_id = long_2;
-      } 
-      String str3 = paramBuilder.intro;
-      if (str3 == null) {
-        this.intro = "";
-      } else {
-        this.intro = str3;
-      } 
-      str3 = paramBuilder.publisherPortrait;
-      if (str3 == null) {
-        this.publisherPortrait = "";
-      } else {
-        this.publisherPortrait = str3;
-      } 
-      str3 = paramBuilder.publisherName;
-      if (str3 == null) {
-        this.publisherName = "";
-      } else {
-        this.publisherName = str3;
-      } 
-      Long long_1 = paramBuilder.publisherId;
-      if (long_1 == null) {
-        this.publisherId = DEFAULT_PUBLISHERID;
-      } else {
-        this.publisherId = long_1;
-      } 
-      String str2 = paramBuilder.forumName;
-      if (str2 == null) {
-        this.forumName = "";
-      } else {
-        this.forumName = str2;
-      } 
-      Integer integer2 = paramBuilder.from_type;
-      if (integer2 == null) {
-        this.from_type = DEFAULT_FROM_TYPE;
-      } else {
-        this.from_type = integer2;
-      } 
-      integer2 = paramBuilder.is_vip;
-      if (integer2 == null) {
-        this.is_vip = DEFAULT_IS_VIP;
-      } else {
-        this.is_vip = integer2;
-      } 
-      integer2 = paramBuilder.label_id;
-      if (integer2 == null) {
-        this.label_id = DEFAULT_LABEL_ID;
-      } else {
-        this.label_id = integer2;
-      } 
-      String str1 = paramBuilder.label_name;
-      if (str1 == null) {
-        this.label_name = "";
-      } else {
-        this.label_name = str1;
-      } 
-      Integer integer1 = paramBuilder.type;
-      if (integer1 == null) {
-        this.type = DEFAULT_TYPE;
-      } else {
-        this.type = integer1;
-      } 
-      this.twzhibo_info = paramBuilder.twzhibo_info;
-    } else {
-      this.portrait = paramBuilder.portrait;
-      this.name = paramBuilder.name;
-      this.start_time = paramBuilder.start_time;
-      this.status = paramBuilder.status;
-      this.author_id = paramBuilder.author_id;
-      this.author_name = paramBuilder.author_name;
-      this.listeners = paramBuilder.listeners;
-      this.likers = paramBuilder.likers;
-      this.group_id = paramBuilder.group_id;
-      this.intro = paramBuilder.intro;
-      this.publisherPortrait = paramBuilder.publisherPortrait;
-      this.publisherName = paramBuilder.publisherName;
-      this.publisherId = paramBuilder.publisherId;
-      this.forumName = paramBuilder.forumName;
-      this.from_type = paramBuilder.from_type;
-      this.is_vip = paramBuilder.is_vip;
-      this.label_id = paramBuilder.label_id;
-      this.label_name = paramBuilder.label_name;
-      this.type = paramBuilder.type;
-      this.twzhibo_info = paramBuilder.twzhibo_info;
-    } 
-  }
-  
-  public AnchorInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<AnchorInfo> {
-    public Long author_id;
-    
-    public String author_name;
-    
-    public String forumName;
-    
-    public Integer from_type;
-    
-    public Long group_id;
-    
-    public String intro;
-    
-    public Integer is_vip;
-    
-    public Integer label_id;
-    
-    public String label_name;
-    
-    public Integer likers;
-    
-    public Integer listeners;
-    
-    public String name;
-    
-    public String portrait;
-    
-    public Long publisherId;
-    
-    public String publisherName;
-    
-    public String publisherPortrait;
-    
-    public Integer start_time;
-    
-    public Integer status;
-    
-    public ZhiBoInfoTW twzhibo_info;
-    
-    public Integer type;
-    
-    public Builder() {}
-    
-    public Builder(AnchorInfo param1AnchorInfo) {
-      super(param1AnchorInfo);
-      if (param1AnchorInfo == null)
-        return; 
-      this.portrait = param1AnchorInfo.portrait;
-      this.name = param1AnchorInfo.name;
-      this.start_time = param1AnchorInfo.start_time;
-      this.status = param1AnchorInfo.status;
-      this.author_id = param1AnchorInfo.author_id;
-      this.author_name = param1AnchorInfo.author_name;
-      this.listeners = param1AnchorInfo.listeners;
-      this.likers = param1AnchorInfo.likers;
-      this.group_id = param1AnchorInfo.group_id;
-      this.intro = param1AnchorInfo.intro;
-      this.publisherPortrait = param1AnchorInfo.publisherPortrait;
-      this.publisherName = param1AnchorInfo.publisherName;
-      this.publisherId = param1AnchorInfo.publisherId;
-      this.forumName = param1AnchorInfo.forumName;
-      this.from_type = param1AnchorInfo.from_type;
-      this.is_vip = param1AnchorInfo.is_vip;
-      this.label_id = param1AnchorInfo.label_id;
-      this.label_name = param1AnchorInfo.label_name;
-      this.type = param1AnchorInfo.type;
-      this.twzhibo_info = param1AnchorInfo.twzhibo_info;
+    public static final String DEFAULT_AUTHOR_NAME = "";
+    public static final String DEFAULT_FORUMNAME = "";
+    public static final String DEFAULT_INTRO = "";
+    public static final String DEFAULT_LABEL_NAME = "";
+    public static final String DEFAULT_NAME = "";
+    public static final String DEFAULT_PORTRAIT = "";
+    public static final String DEFAULT_PUBLISHERNAME = "";
+    public static final String DEFAULT_PUBLISHERPORTRAIT = "";
+    @ProtoField(tag = 5, type = Message.Datatype.INT64)
+    public final Long author_id;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String author_name;
+    @ProtoField(tag = 14, type = Message.Datatype.STRING)
+    public final String forumName;
+    @ProtoField(tag = 15, type = Message.Datatype.INT32)
+    public final Integer from_type;
+    @ProtoField(tag = 9, type = Message.Datatype.INT64)
+    public final Long group_id;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String intro;
+    @ProtoField(tag = 16, type = Message.Datatype.INT32)
+    public final Integer is_vip;
+    @ProtoField(tag = 17, type = Message.Datatype.INT32)
+    public final Integer label_id;
+    @ProtoField(tag = 18, type = Message.Datatype.STRING)
+    public final String label_name;
+    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    public final Integer likers;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer listeners;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String name;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String portrait;
+    @ProtoField(tag = 13, type = Message.Datatype.INT64)
+    public final Long publisherId;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String publisherName;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String publisherPortrait;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer start_time;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer status;
+    @ProtoField(tag = 20)
+    public final ZhiBoInfoTW twzhibo_info;
+    @ProtoField(tag = 19, type = Message.Datatype.INT32)
+    public final Integer type;
+    public static final Integer DEFAULT_START_TIME = 0;
+    public static final Integer DEFAULT_STATUS = 0;
+    public static final Long DEFAULT_AUTHOR_ID = 0L;
+    public static final Integer DEFAULT_LISTENERS = 0;
+    public static final Integer DEFAULT_LIKERS = 0;
+    public static final Long DEFAULT_GROUP_ID = 0L;
+    public static final Long DEFAULT_PUBLISHERID = 0L;
+    public static final Integer DEFAULT_FROM_TYPE = 0;
+    public static final Integer DEFAULT_IS_VIP = 0;
+    public static final Integer DEFAULT_LABEL_ID = 0;
+    public static final Integer DEFAULT_TYPE = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<AnchorInfo> {
+        public Long author_id;
+        public String author_name;
+        public String forumName;
+        public Integer from_type;
+        public Long group_id;
+        public String intro;
+        public Integer is_vip;
+        public Integer label_id;
+        public String label_name;
+        public Integer likers;
+        public Integer listeners;
+        public String name;
+        public String portrait;
+        public Long publisherId;
+        public String publisherName;
+        public String publisherPortrait;
+        public Integer start_time;
+        public Integer status;
+        public ZhiBoInfoTW twzhibo_info;
+        public Integer type;
+
+        public Builder() {
+        }
+
+        public Builder(AnchorInfo anchorInfo) {
+            super(anchorInfo);
+            if (anchorInfo == null) {
+                return;
+            }
+            this.portrait = anchorInfo.portrait;
+            this.name = anchorInfo.name;
+            this.start_time = anchorInfo.start_time;
+            this.status = anchorInfo.status;
+            this.author_id = anchorInfo.author_id;
+            this.author_name = anchorInfo.author_name;
+            this.listeners = anchorInfo.listeners;
+            this.likers = anchorInfo.likers;
+            this.group_id = anchorInfo.group_id;
+            this.intro = anchorInfo.intro;
+            this.publisherPortrait = anchorInfo.publisherPortrait;
+            this.publisherName = anchorInfo.publisherName;
+            this.publisherId = anchorInfo.publisherId;
+            this.forumName = anchorInfo.forumName;
+            this.from_type = anchorInfo.from_type;
+            this.is_vip = anchorInfo.is_vip;
+            this.label_id = anchorInfo.label_id;
+            this.label_name = anchorInfo.label_name;
+            this.type = anchorInfo.type;
+            this.twzhibo_info = anchorInfo.twzhibo_info;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public AnchorInfo build(boolean z) {
+            return new AnchorInfo(this, z);
+        }
     }
-    
-    public AnchorInfo build(boolean param1Boolean) {
-      return new AnchorInfo(this, param1Boolean, null);
+
+    public AnchorInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.portrait;
+            if (str == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = str;
+            }
+            String str2 = builder.name;
+            if (str2 == null) {
+                this.name = "";
+            } else {
+                this.name = str2;
+            }
+            Integer num = builder.start_time;
+            if (num == null) {
+                this.start_time = DEFAULT_START_TIME;
+            } else {
+                this.start_time = num;
+            }
+            Integer num2 = builder.status;
+            if (num2 == null) {
+                this.status = DEFAULT_STATUS;
+            } else {
+                this.status = num2;
+            }
+            Long l = builder.author_id;
+            if (l == null) {
+                this.author_id = DEFAULT_AUTHOR_ID;
+            } else {
+                this.author_id = l;
+            }
+            String str3 = builder.author_name;
+            if (str3 == null) {
+                this.author_name = "";
+            } else {
+                this.author_name = str3;
+            }
+            Integer num3 = builder.listeners;
+            if (num3 == null) {
+                this.listeners = DEFAULT_LISTENERS;
+            } else {
+                this.listeners = num3;
+            }
+            Integer num4 = builder.likers;
+            if (num4 == null) {
+                this.likers = DEFAULT_LIKERS;
+            } else {
+                this.likers = num4;
+            }
+            Long l2 = builder.group_id;
+            if (l2 == null) {
+                this.group_id = DEFAULT_GROUP_ID;
+            } else {
+                this.group_id = l2;
+            }
+            String str4 = builder.intro;
+            if (str4 == null) {
+                this.intro = "";
+            } else {
+                this.intro = str4;
+            }
+            String str5 = builder.publisherPortrait;
+            if (str5 == null) {
+                this.publisherPortrait = "";
+            } else {
+                this.publisherPortrait = str5;
+            }
+            String str6 = builder.publisherName;
+            if (str6 == null) {
+                this.publisherName = "";
+            } else {
+                this.publisherName = str6;
+            }
+            Long l3 = builder.publisherId;
+            if (l3 == null) {
+                this.publisherId = DEFAULT_PUBLISHERID;
+            } else {
+                this.publisherId = l3;
+            }
+            String str7 = builder.forumName;
+            if (str7 == null) {
+                this.forumName = "";
+            } else {
+                this.forumName = str7;
+            }
+            Integer num5 = builder.from_type;
+            if (num5 == null) {
+                this.from_type = DEFAULT_FROM_TYPE;
+            } else {
+                this.from_type = num5;
+            }
+            Integer num6 = builder.is_vip;
+            if (num6 == null) {
+                this.is_vip = DEFAULT_IS_VIP;
+            } else {
+                this.is_vip = num6;
+            }
+            Integer num7 = builder.label_id;
+            if (num7 == null) {
+                this.label_id = DEFAULT_LABEL_ID;
+            } else {
+                this.label_id = num7;
+            }
+            String str8 = builder.label_name;
+            if (str8 == null) {
+                this.label_name = "";
+            } else {
+                this.label_name = str8;
+            }
+            Integer num8 = builder.type;
+            if (num8 == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num8;
+            }
+            this.twzhibo_info = builder.twzhibo_info;
+            return;
+        }
+        this.portrait = builder.portrait;
+        this.name = builder.name;
+        this.start_time = builder.start_time;
+        this.status = builder.status;
+        this.author_id = builder.author_id;
+        this.author_name = builder.author_name;
+        this.listeners = builder.listeners;
+        this.likers = builder.likers;
+        this.group_id = builder.group_id;
+        this.intro = builder.intro;
+        this.publisherPortrait = builder.publisherPortrait;
+        this.publisherName = builder.publisherName;
+        this.publisherId = builder.publisherId;
+        this.forumName = builder.forumName;
+        this.from_type = builder.from_type;
+        this.is_vip = builder.is_vip;
+        this.label_id = builder.label_id;
+        this.label_name = builder.label_name;
+        this.type = builder.type;
+        this.twzhibo_info = builder.twzhibo_info;
     }
-  }
-  
-  public static class a {}
 }

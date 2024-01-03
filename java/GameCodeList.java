@@ -2,163 +2,130 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GameCodeList extends Message {
-  public static final Integer DEFAULT_BEGIN_TIME;
-  
-  public static final Integer DEFAULT_CLAIMED_STATUS;
-  
-  public static final String DEFAULT_CLAIMED_VALUE = "";
-  
-  public static final Integer DEFAULT_END_TIME;
-  
-  public static final Integer DEFAULT_ITEM_ID;
-  
-  public static final String DEFAULT_LABEL = "";
-  
-  public static final Integer DEFAULT_LIST_ID;
-  
-  public static final Integer DEFAULT_TYPE;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.INT32)
-  public final Integer begin_time;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.INT32)
-  public final Integer claimed_status;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.STRING)
-  public final String claimed_value;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.INT32)
-  public final Integer end_time;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.INT32)
-  public final Integer item_id;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String label;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer list_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer type;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_LIST_ID = integer;
-    DEFAULT_TYPE = integer;
-    DEFAULT_BEGIN_TIME = integer;
-    DEFAULT_END_TIME = integer;
-    DEFAULT_ITEM_ID = integer;
-    DEFAULT_CLAIMED_STATUS = integer;
-  }
-  
-  public GameCodeList(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Integer integer2 = paramBuilder.list_id;
-      if (integer2 == null) {
-        this.list_id = DEFAULT_LIST_ID;
-      } else {
-        this.list_id = integer2;
-      } 
-      integer2 = paramBuilder.type;
-      if (integer2 == null) {
-        this.type = DEFAULT_TYPE;
-      } else {
-        this.type = integer2;
-      } 
-      String str1 = paramBuilder.label;
-      if (str1 == null) {
-        this.label = "";
-      } else {
-        this.label = str1;
-      } 
-      Integer integer1 = paramBuilder.begin_time;
-      if (integer1 == null) {
-        this.begin_time = DEFAULT_BEGIN_TIME;
-      } else {
-        this.begin_time = integer1;
-      } 
-      integer1 = paramBuilder.end_time;
-      if (integer1 == null) {
-        this.end_time = DEFAULT_END_TIME;
-      } else {
-        this.end_time = integer1;
-      } 
-      integer1 = paramBuilder.item_id;
-      if (integer1 == null) {
-        this.item_id = DEFAULT_ITEM_ID;
-      } else {
-        this.item_id = integer1;
-      } 
-      integer1 = paramBuilder.claimed_status;
-      if (integer1 == null) {
-        this.claimed_status = DEFAULT_CLAIMED_STATUS;
-      } else {
-        this.claimed_status = integer1;
-      } 
-      str = paramBuilder.claimed_value;
-      if (str == null) {
-        this.claimed_value = "";
-      } else {
-        this.claimed_value = str;
-      } 
-    } else {
-      this.list_id = ((Builder)str).list_id;
-      this.type = ((Builder)str).type;
-      this.label = ((Builder)str).label;
-      this.begin_time = ((Builder)str).begin_time;
-      this.end_time = ((Builder)str).end_time;
-      this.item_id = ((Builder)str).item_id;
-      this.claimed_status = ((Builder)str).claimed_status;
-      this.claimed_value = ((Builder)str).claimed_value;
-    } 
-  }
-  
-  public GameCodeList(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GameCodeList> {
-    public Integer begin_time;
-    
-    public Integer claimed_status;
-    
-    public String claimed_value;
-    
-    public Integer end_time;
-    
-    public Integer item_id;
-    
-    public String label;
-    
-    public Integer list_id;
-    
-    public Integer type;
-    
-    public Builder() {}
-    
-    public Builder(GameCodeList param1GameCodeList) {
-      super(param1GameCodeList);
-      if (param1GameCodeList == null)
-        return; 
-      this.list_id = param1GameCodeList.list_id;
-      this.type = param1GameCodeList.type;
-      this.label = param1GameCodeList.label;
-      this.begin_time = param1GameCodeList.begin_time;
-      this.end_time = param1GameCodeList.end_time;
-      this.item_id = param1GameCodeList.item_id;
-      this.claimed_status = param1GameCodeList.claimed_status;
-      this.claimed_value = param1GameCodeList.claimed_value;
+    public static final String DEFAULT_CLAIMED_VALUE = "";
+    public static final String DEFAULT_LABEL = "";
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer begin_time;
+    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    public final Integer claimed_status;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String claimed_value;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer end_time;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer item_id;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String label;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer list_id;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer type;
+    public static final Integer DEFAULT_LIST_ID = 0;
+    public static final Integer DEFAULT_TYPE = 0;
+    public static final Integer DEFAULT_BEGIN_TIME = 0;
+    public static final Integer DEFAULT_END_TIME = 0;
+    public static final Integer DEFAULT_ITEM_ID = 0;
+    public static final Integer DEFAULT_CLAIMED_STATUS = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GameCodeList> {
+        public Integer begin_time;
+        public Integer claimed_status;
+        public String claimed_value;
+        public Integer end_time;
+        public Integer item_id;
+        public String label;
+        public Integer list_id;
+        public Integer type;
+
+        public Builder() {
+        }
+
+        public Builder(GameCodeList gameCodeList) {
+            super(gameCodeList);
+            if (gameCodeList == null) {
+                return;
+            }
+            this.list_id = gameCodeList.list_id;
+            this.type = gameCodeList.type;
+            this.label = gameCodeList.label;
+            this.begin_time = gameCodeList.begin_time;
+            this.end_time = gameCodeList.end_time;
+            this.item_id = gameCodeList.item_id;
+            this.claimed_status = gameCodeList.claimed_status;
+            this.claimed_value = gameCodeList.claimed_value;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GameCodeList build(boolean z) {
+            return new GameCodeList(this, z);
+        }
     }
-    
-    public GameCodeList build(boolean param1Boolean) {
-      return new GameCodeList(this, param1Boolean, null);
+
+    public GameCodeList(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.list_id;
+            if (num == null) {
+                this.list_id = DEFAULT_LIST_ID;
+            } else {
+                this.list_id = num;
+            }
+            Integer num2 = builder.type;
+            if (num2 == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num2;
+            }
+            String str = builder.label;
+            if (str == null) {
+                this.label = "";
+            } else {
+                this.label = str;
+            }
+            Integer num3 = builder.begin_time;
+            if (num3 == null) {
+                this.begin_time = DEFAULT_BEGIN_TIME;
+            } else {
+                this.begin_time = num3;
+            }
+            Integer num4 = builder.end_time;
+            if (num4 == null) {
+                this.end_time = DEFAULT_END_TIME;
+            } else {
+                this.end_time = num4;
+            }
+            Integer num5 = builder.item_id;
+            if (num5 == null) {
+                this.item_id = DEFAULT_ITEM_ID;
+            } else {
+                this.item_id = num5;
+            }
+            Integer num6 = builder.claimed_status;
+            if (num6 == null) {
+                this.claimed_status = DEFAULT_CLAIMED_STATUS;
+            } else {
+                this.claimed_status = num6;
+            }
+            String str2 = builder.claimed_value;
+            if (str2 == null) {
+                this.claimed_value = "";
+                return;
+            } else {
+                this.claimed_value = str2;
+                return;
+            }
+        }
+        this.list_id = builder.list_id;
+        this.type = builder.type;
+        this.label = builder.label;
+        this.begin_time = builder.begin_time;
+        this.end_time = builder.end_time;
+        this.item_id = builder.item_id;
+        this.claimed_status = builder.claimed_status;
+        this.claimed_value = builder.claimed_value;
     }
-  }
-  
-  public static class a {}
 }

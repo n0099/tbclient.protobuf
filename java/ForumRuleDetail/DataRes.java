@@ -7,191 +7,154 @@ import java.util.List;
 import tbclient.BawuRoleInfoPub;
 import tbclient.ForumInfo;
 import tbclient.ForumRule;
-
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
-  public static final String DEFAULT_AUDIT_OPINION = "";
-  
-  public static final Integer DEFAULT_AUDIT_STATUS;
-  
-  public static final String DEFAULT_CUR_TIME = "";
-  
-  public static final Long DEFAULT_FORUM_RULE_ID;
-  
-  public static final Integer DEFAULT_IS_MANAGER;
-  
-  public static final String DEFAULT_PREFACE = "";
-  
-  public static final String DEFAULT_PUBLISH_TIME = "";
-  
-  public static final List<ForumRule> DEFAULT_RULES = Collections.emptyList();
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  @ProtoField(tag = 7, type = Message.Datatype.STRING)
-  public final String audit_opinion;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.INT32)
-  public final Integer audit_status;
-  
-  @ProtoField(tag = 11)
-  public final BawuRoleInfoPub bazhu;
-  
-  @ProtoField(tag = 12, type = Message.Datatype.STRING)
-  public final String cur_time;
-  
-  @ProtoField(tag = 2)
-  public final ForumInfo forum;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.INT64)
-  public final Long forum_rule_id;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.INT32)
-  public final Integer is_manager;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String preface;
-  
-  @ProtoField(tag = 10, type = Message.Datatype.STRING)
-  public final String publish_time;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 5)
-  public final List<ForumRule> rules;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String title;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_AUDIT_STATUS = integer;
-    DEFAULT_IS_MANAGER = integer;
-    DEFAULT_FORUM_RULE_ID = Long.valueOf(0L);
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      this.forum = paramBuilder.forum;
-      String str3 = paramBuilder.title;
-      if (str3 == null) {
-        this.title = "";
-      } else {
-        this.title = str3;
-      } 
-      str3 = paramBuilder.preface;
-      if (str3 == null) {
-        this.preface = "";
-      } else {
-        this.preface = str3;
-      } 
-      List<ForumRule> list = paramBuilder.rules;
-      if (list == null) {
-        this.rules = DEFAULT_RULES;
-      } else {
-        this.rules = Message.immutableCopyOf(list);
-      } 
-      Integer integer2 = paramBuilder.audit_status;
-      if (integer2 == null) {
-        this.audit_status = DEFAULT_AUDIT_STATUS;
-      } else {
-        this.audit_status = integer2;
-      } 
-      String str2 = paramBuilder.audit_opinion;
-      if (str2 == null) {
-        this.audit_opinion = "";
-      } else {
-        this.audit_opinion = str2;
-      } 
-      Integer integer1 = paramBuilder.is_manager;
-      if (integer1 == null) {
-        this.is_manager = DEFAULT_IS_MANAGER;
-      } else {
-        this.is_manager = integer1;
-      } 
-      Long long_ = paramBuilder.forum_rule_id;
-      if (long_ == null) {
-        this.forum_rule_id = DEFAULT_FORUM_RULE_ID;
-      } else {
-        this.forum_rule_id = long_;
-      } 
-      String str1 = paramBuilder.publish_time;
-      if (str1 == null) {
-        this.publish_time = "";
-      } else {
-        this.publish_time = str1;
-      } 
-      this.bazhu = paramBuilder.bazhu;
-      str = paramBuilder.cur_time;
-      if (str == null) {
-        this.cur_time = "";
-      } else {
-        this.cur_time = str;
-      } 
-    } else {
-      this.forum = ((Builder)str).forum;
-      this.title = ((Builder)str).title;
-      this.preface = ((Builder)str).preface;
-      this.rules = Message.immutableCopyOf(((Builder)str).rules);
-      this.audit_status = ((Builder)str).audit_status;
-      this.audit_opinion = ((Builder)str).audit_opinion;
-      this.is_manager = ((Builder)str).is_manager;
-      this.forum_rule_id = ((Builder)str).forum_rule_id;
-      this.publish_time = ((Builder)str).publish_time;
-      this.bazhu = ((Builder)str).bazhu;
-      this.cur_time = ((Builder)str).cur_time;
-    } 
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataRes> {
-    public String audit_opinion;
-    
-    public Integer audit_status;
-    
-    public BawuRoleInfoPub bazhu;
-    
-    public String cur_time;
-    
-    public ForumInfo forum;
-    
-    public Long forum_rule_id;
-    
-    public Integer is_manager;
-    
-    public String preface;
-    
-    public String publish_time;
-    
-    public List<ForumRule> rules;
-    
-    public String title;
-    
-    public Builder() {}
-    
-    public Builder(DataRes param1DataRes) {
-      super(param1DataRes);
-      if (param1DataRes == null)
-        return; 
-      this.forum = param1DataRes.forum;
-      this.title = param1DataRes.title;
-      this.preface = param1DataRes.preface;
-      this.rules = Message.copyOf(param1DataRes.rules);
-      this.audit_status = param1DataRes.audit_status;
-      this.audit_opinion = param1DataRes.audit_opinion;
-      this.is_manager = param1DataRes.is_manager;
-      this.forum_rule_id = param1DataRes.forum_rule_id;
-      this.publish_time = param1DataRes.publish_time;
-      this.bazhu = param1DataRes.bazhu;
-      this.cur_time = param1DataRes.cur_time;
+    public static final String DEFAULT_AUDIT_OPINION = "";
+    public static final String DEFAULT_CUR_TIME = "";
+    public static final String DEFAULT_PREFACE = "";
+    public static final String DEFAULT_PUBLISH_TIME = "";
+    public static final String DEFAULT_TITLE = "";
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String audit_opinion;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer audit_status;
+    @ProtoField(tag = 11)
+    public final BawuRoleInfoPub bazhu;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String cur_time;
+    @ProtoField(tag = 2)
+    public final ForumInfo forum;
+    @ProtoField(tag = 9, type = Message.Datatype.INT64)
+    public final Long forum_rule_id;
+    @ProtoField(tag = 8, type = Message.Datatype.INT32)
+    public final Integer is_manager;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String preface;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String publish_time;
+    @ProtoField(label = Message.Label.REPEATED, tag = 5)
+    public final List<ForumRule> rules;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String title;
+    public static final List<ForumRule> DEFAULT_RULES = Collections.emptyList();
+    public static final Integer DEFAULT_AUDIT_STATUS = 0;
+    public static final Integer DEFAULT_IS_MANAGER = 0;
+    public static final Long DEFAULT_FORUM_RULE_ID = 0L;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataRes> {
+        public String audit_opinion;
+        public Integer audit_status;
+        public BawuRoleInfoPub bazhu;
+        public String cur_time;
+        public ForumInfo forum;
+        public Long forum_rule_id;
+        public Integer is_manager;
+        public String preface;
+        public String publish_time;
+        public List<ForumRule> rules;
+        public String title;
+
+        public Builder() {
+        }
+
+        public Builder(DataRes dataRes) {
+            super(dataRes);
+            if (dataRes == null) {
+                return;
+            }
+            this.forum = dataRes.forum;
+            this.title = dataRes.title;
+            this.preface = dataRes.preface;
+            this.rules = Message.copyOf(dataRes.rules);
+            this.audit_status = dataRes.audit_status;
+            this.audit_opinion = dataRes.audit_opinion;
+            this.is_manager = dataRes.is_manager;
+            this.forum_rule_id = dataRes.forum_rule_id;
+            this.publish_time = dataRes.publish_time;
+            this.bazhu = dataRes.bazhu;
+            this.cur_time = dataRes.cur_time;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataRes build(boolean z) {
+            return new DataRes(this, z);
+        }
     }
-    
-    public DataRes build(boolean param1Boolean) {
-      return new DataRes(this, param1Boolean, null);
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.forum = builder.forum;
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.preface;
+            if (str2 == null) {
+                this.preface = "";
+            } else {
+                this.preface = str2;
+            }
+            List<ForumRule> list = builder.rules;
+            if (list == null) {
+                this.rules = DEFAULT_RULES;
+            } else {
+                this.rules = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.audit_status;
+            if (num == null) {
+                this.audit_status = DEFAULT_AUDIT_STATUS;
+            } else {
+                this.audit_status = num;
+            }
+            String str3 = builder.audit_opinion;
+            if (str3 == null) {
+                this.audit_opinion = "";
+            } else {
+                this.audit_opinion = str3;
+            }
+            Integer num2 = builder.is_manager;
+            if (num2 == null) {
+                this.is_manager = DEFAULT_IS_MANAGER;
+            } else {
+                this.is_manager = num2;
+            }
+            Long l = builder.forum_rule_id;
+            if (l == null) {
+                this.forum_rule_id = DEFAULT_FORUM_RULE_ID;
+            } else {
+                this.forum_rule_id = l;
+            }
+            String str4 = builder.publish_time;
+            if (str4 == null) {
+                this.publish_time = "";
+            } else {
+                this.publish_time = str4;
+            }
+            this.bazhu = builder.bazhu;
+            String str5 = builder.cur_time;
+            if (str5 == null) {
+                this.cur_time = "";
+                return;
+            } else {
+                this.cur_time = str5;
+                return;
+            }
+        }
+        this.forum = builder.forum;
+        this.title = builder.title;
+        this.preface = builder.preface;
+        this.rules = Message.immutableCopyOf(builder.rules);
+        this.audit_status = builder.audit_status;
+        this.audit_opinion = builder.audit_opinion;
+        this.is_manager = builder.is_manager;
+        this.forum_rule_id = builder.forum_rule_id;
+        this.publish_time = builder.publish_time;
+        this.bazhu = builder.bazhu;
+        this.cur_time = builder.cur_time;
     }
-  }
-  
-  public static class a {}
 }

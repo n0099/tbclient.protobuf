@@ -2,108 +2,94 @@ package tbclient.GetMoreMsg;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class MsgContent extends Message {
-  public static final String DEFAULT_ID = "";
-  
-  public static final String DEFAULT_SRC = "";
-  
-  public static final String DEFAULT_TEXT = "";
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  public static final String DEFAULT_URL = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String id;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String src;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String text;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String title;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String url;
-  
-  public MsgContent(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.id;
-      if (str1 == null) {
-        this.id = "";
-      } else {
-        this.id = str1;
-      } 
-      str1 = paramBuilder.title;
-      if (str1 == null) {
-        this.title = "";
-      } else {
-        this.title = str1;
-      } 
-      str1 = paramBuilder.url;
-      if (str1 == null) {
-        this.url = "";
-      } else {
-        this.url = str1;
-      } 
-      str1 = paramBuilder.text;
-      if (str1 == null) {
-        this.text = "";
-      } else {
-        this.text = str1;
-      } 
-      str = paramBuilder.src;
-      if (str == null) {
-        this.src = "";
-      } else {
-        this.src = str;
-      } 
-    } else {
-      this.id = ((Builder)str).id;
-      this.title = ((Builder)str).title;
-      this.url = ((Builder)str).url;
-      this.text = ((Builder)str).text;
-      this.src = ((Builder)str).src;
-    } 
-  }
-  
-  public MsgContent(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<MsgContent> {
-    public String id;
-    
-    public String src;
-    
-    public String text;
-    
-    public String title;
-    
-    public String url;
-    
-    public Builder() {}
-    
-    public Builder(MsgContent param1MsgContent) {
-      super(param1MsgContent);
-      if (param1MsgContent == null)
-        return; 
-      this.id = param1MsgContent.id;
-      this.title = param1MsgContent.title;
-      this.url = param1MsgContent.url;
-      this.text = param1MsgContent.text;
-      this.src = param1MsgContent.src;
+    public static final String DEFAULT_ID = "";
+    public static final String DEFAULT_SRC = "";
+    public static final String DEFAULT_TEXT = "";
+    public static final String DEFAULT_TITLE = "";
+    public static final String DEFAULT_URL = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String id;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String src;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String text;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String title;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String url;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<MsgContent> {
+        public String id;
+        public String src;
+        public String text;
+        public String title;
+        public String url;
+
+        public Builder() {
+        }
+
+        public Builder(MsgContent msgContent) {
+            super(msgContent);
+            if (msgContent == null) {
+                return;
+            }
+            this.id = msgContent.id;
+            this.title = msgContent.title;
+            this.url = msgContent.url;
+            this.text = msgContent.text;
+            this.src = msgContent.src;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public MsgContent build(boolean z) {
+            return new MsgContent(this, z);
+        }
     }
-    
-    public MsgContent build(boolean param1Boolean) {
-      return new MsgContent(this, param1Boolean, null);
+
+    public MsgContent(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.id;
+            if (str == null) {
+                this.id = "";
+            } else {
+                this.id = str;
+            }
+            String str2 = builder.title;
+            if (str2 == null) {
+                this.title = "";
+            } else {
+                this.title = str2;
+            }
+            String str3 = builder.url;
+            if (str3 == null) {
+                this.url = "";
+            } else {
+                this.url = str3;
+            }
+            String str4 = builder.text;
+            if (str4 == null) {
+                this.text = "";
+            } else {
+                this.text = str4;
+            }
+            String str5 = builder.src;
+            if (str5 == null) {
+                this.src = "";
+                return;
+            } else {
+                this.src = str5;
+                return;
+            }
+        }
+        this.id = builder.id;
+        this.title = builder.title;
+        this.url = builder.url;
+        this.text = builder.text;
+        this.src = builder.src;
     }
-  }
-  
-  public static class a {}
 }

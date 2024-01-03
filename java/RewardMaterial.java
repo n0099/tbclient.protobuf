@@ -2,99 +2,82 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class RewardMaterial extends Message {
-  public static final String DEFAULT_ICON = "";
-  
-  public static final Integer DEFAULT_IS_MATCHED;
-  
-  public static final Integer DEFAULT_IS_NEWEST_MATCHED_LEVEL;
-  
-  public static final String DEFAULT_UNLOCK_LEVEL = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String icon;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer is_matched;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT32)
-  public final Integer is_newest_matched_level;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String unlock_level;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_IS_MATCHED = integer;
-    DEFAULT_IS_NEWEST_MATCHED_LEVEL = integer;
-  }
-  
-  public RewardMaterial(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      String str = paramBuilder.icon;
-      if (str == null) {
-        this.icon = "";
-      } else {
-        this.icon = str;
-      } 
-      str = paramBuilder.unlock_level;
-      if (str == null) {
-        this.unlock_level = "";
-      } else {
-        this.unlock_level = str;
-      } 
-      Integer integer1 = paramBuilder.is_matched;
-      if (integer1 == null) {
-        this.is_matched = DEFAULT_IS_MATCHED;
-      } else {
-        this.is_matched = integer1;
-      } 
-      integer = paramBuilder.is_newest_matched_level;
-      if (integer == null) {
-        this.is_newest_matched_level = DEFAULT_IS_NEWEST_MATCHED_LEVEL;
-      } else {
-        this.is_newest_matched_level = integer;
-      } 
-    } else {
-      this.icon = ((Builder)integer).icon;
-      this.unlock_level = ((Builder)integer).unlock_level;
-      this.is_matched = ((Builder)integer).is_matched;
-      this.is_newest_matched_level = ((Builder)integer).is_newest_matched_level;
-    } 
-  }
-  
-  public RewardMaterial(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<RewardMaterial> {
-    public String icon;
-    
-    public Integer is_matched;
-    
-    public Integer is_newest_matched_level;
-    
-    public String unlock_level;
-    
-    public Builder() {}
-    
-    public Builder(RewardMaterial param1RewardMaterial) {
-      super(param1RewardMaterial);
-      if (param1RewardMaterial == null)
-        return; 
-      this.icon = param1RewardMaterial.icon;
-      this.unlock_level = param1RewardMaterial.unlock_level;
-      this.is_matched = param1RewardMaterial.is_matched;
-      this.is_newest_matched_level = param1RewardMaterial.is_newest_matched_level;
+    public static final String DEFAULT_ICON = "";
+    public static final Integer DEFAULT_IS_MATCHED = 0;
+    public static final Integer DEFAULT_IS_NEWEST_MATCHED_LEVEL = 0;
+    public static final String DEFAULT_UNLOCK_LEVEL = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String icon;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer is_matched;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer is_newest_matched_level;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String unlock_level;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<RewardMaterial> {
+        public String icon;
+        public Integer is_matched;
+        public Integer is_newest_matched_level;
+        public String unlock_level;
+
+        public Builder() {
+        }
+
+        public Builder(RewardMaterial rewardMaterial) {
+            super(rewardMaterial);
+            if (rewardMaterial == null) {
+                return;
+            }
+            this.icon = rewardMaterial.icon;
+            this.unlock_level = rewardMaterial.unlock_level;
+            this.is_matched = rewardMaterial.is_matched;
+            this.is_newest_matched_level = rewardMaterial.is_newest_matched_level;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public RewardMaterial build(boolean z) {
+            return new RewardMaterial(this, z);
+        }
     }
-    
-    public RewardMaterial build(boolean param1Boolean) {
-      return new RewardMaterial(this, param1Boolean, null);
+
+    public RewardMaterial(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.icon;
+            if (str == null) {
+                this.icon = "";
+            } else {
+                this.icon = str;
+            }
+            String str2 = builder.unlock_level;
+            if (str2 == null) {
+                this.unlock_level = "";
+            } else {
+                this.unlock_level = str2;
+            }
+            Integer num = builder.is_matched;
+            if (num == null) {
+                this.is_matched = DEFAULT_IS_MATCHED;
+            } else {
+                this.is_matched = num;
+            }
+            Integer num2 = builder.is_newest_matched_level;
+            if (num2 == null) {
+                this.is_newest_matched_level = DEFAULT_IS_NEWEST_MATCHED_LEVEL;
+                return;
+            } else {
+                this.is_newest_matched_level = num2;
+                return;
+            }
+        }
+        this.icon = builder.icon;
+        this.unlock_level = builder.unlock_level;
+        this.is_matched = builder.is_matched;
+        this.is_newest_matched_level = builder.is_newest_matched_level;
     }
-  }
-  
-  public static class a {}
 }

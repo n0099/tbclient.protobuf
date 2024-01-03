@@ -1,27 +1,26 @@
 package tbclient;
 
 import com.squareup.wire.Message;
-
+/* loaded from: classes2.dex */
 public final class FeatureCardToutiao extends Message {
-  public FeatureCardToutiao(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-  }
-  
-  public FeatureCardToutiao(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<FeatureCardToutiao> {
-    public Builder() {}
-    
-    public Builder(FeatureCardToutiao param1FeatureCardToutiao) {
-      super(param1FeatureCardToutiao);
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<FeatureCardToutiao> {
+        public Builder() {
+        }
+
+        public Builder(FeatureCardToutiao featureCardToutiao) {
+            super(featureCardToutiao);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public FeatureCardToutiao build(boolean z) {
+            return new FeatureCardToutiao(this, z);
+        }
     }
-    
-    public FeatureCardToutiao build(boolean param1Boolean) {
-      return new FeatureCardToutiao(this, param1Boolean, null);
+
+    public FeatureCardToutiao(Builder builder, boolean z) {
+        super(builder);
     }
-  }
-  
-  public static class a {}
 }

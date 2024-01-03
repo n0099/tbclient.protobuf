@@ -3,48 +3,45 @@ package tbclient.GetBackground;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class GetBackgroundResIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataRes data;
-  
-  @ProtoField(tag = 2)
-  public final Error error;
-  
-  public GetBackgroundResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } else {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } 
-  }
-  
-  public GetBackgroundResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetBackgroundResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(GetBackgroundResIdl param1GetBackgroundResIdl) {
-      super(param1GetBackgroundResIdl);
-      if (param1GetBackgroundResIdl == null)
-        return; 
-      this.data = param1GetBackgroundResIdl.data;
-      this.error = param1GetBackgroundResIdl.error;
+    @ProtoField(tag = 1)
+    public final DataRes data;
+    @ProtoField(tag = 2)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetBackgroundResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(GetBackgroundResIdl getBackgroundResIdl) {
+            super(getBackgroundResIdl);
+            if (getBackgroundResIdl == null) {
+                return;
+            }
+            this.data = getBackgroundResIdl.data;
+            this.error = getBackgroundResIdl.error;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetBackgroundResIdl build(boolean z) {
+            return new GetBackgroundResIdl(this, z);
+        }
     }
-    
-    public GetBackgroundResIdl build(boolean param1Boolean) {
-      return new GetBackgroundResIdl(this, param1Boolean, null);
+
+    public GetBackgroundResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+            this.error = builder.error;
+            return;
+        }
+        this.data = builder.data;
+        this.error = builder.error;
     }
-  }
-  
-  public static class a {}
 }

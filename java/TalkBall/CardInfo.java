@@ -3,48 +3,45 @@ package tbclient.TalkBall;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.ThreadInfo;
-
+/* loaded from: classes2.dex */
 public final class CardInfo extends Message {
-  @ProtoField(tag = 2)
-  public final InsertFloor insert_floor;
-  
-  @ProtoField(tag = 1)
-  public final ThreadInfo thread_info;
-  
-  public CardInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.thread_info = paramBuilder.thread_info;
-      this.insert_floor = paramBuilder.insert_floor;
-    } else {
-      this.thread_info = paramBuilder.thread_info;
-      this.insert_floor = paramBuilder.insert_floor;
-    } 
-  }
-  
-  public CardInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<CardInfo> {
-    public InsertFloor insert_floor;
-    
-    public ThreadInfo thread_info;
-    
-    public Builder() {}
-    
-    public Builder(CardInfo param1CardInfo) {
-      super(param1CardInfo);
-      if (param1CardInfo == null)
-        return; 
-      this.thread_info = param1CardInfo.thread_info;
-      this.insert_floor = param1CardInfo.insert_floor;
+    @ProtoField(tag = 2)
+    public final InsertFloor insert_floor;
+    @ProtoField(tag = 1)
+    public final ThreadInfo thread_info;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<CardInfo> {
+        public InsertFloor insert_floor;
+        public ThreadInfo thread_info;
+
+        public Builder() {
+        }
+
+        public Builder(CardInfo cardInfo) {
+            super(cardInfo);
+            if (cardInfo == null) {
+                return;
+            }
+            this.thread_info = cardInfo.thread_info;
+            this.insert_floor = cardInfo.insert_floor;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public CardInfo build(boolean z) {
+            return new CardInfo(this, z);
+        }
     }
-    
-    public CardInfo build(boolean param1Boolean) {
-      return new CardInfo(this, param1Boolean, null);
+
+    public CardInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.thread_info = builder.thread_info;
+            this.insert_floor = builder.insert_floor;
+            return;
+        }
+        this.thread_info = builder.thread_info;
+        this.insert_floor = builder.insert_floor;
     }
-  }
-  
-  public static class a {}
 }

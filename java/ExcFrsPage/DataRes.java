@@ -4,99 +4,82 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
-  public static final Integer DEFAULT_HAS_MORE;
-  
-  public static final Integer DEFAULT_PN;
-  
-  public static final List<ExcellentTagInfo> DEFAULT_TAG_LIST = Collections.emptyList();
-  
-  public static final List<ExcellentThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT32)
-  public final Integer has_more;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.UINT32)
-  public final Integer pn;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 1)
-  public final List<ExcellentTagInfo> tag_list;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 2)
-  public final List<ExcellentThreadInfo> thread_list;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_HAS_MORE = integer;
-    DEFAULT_PN = integer;
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      List<ExcellentTagInfo> list1 = paramBuilder.tag_list;
-      if (list1 == null) {
-        this.tag_list = DEFAULT_TAG_LIST;
-      } else {
-        this.tag_list = Message.immutableCopyOf(list1);
-      } 
-      List<ExcellentThreadInfo> list = paramBuilder.thread_list;
-      if (list == null) {
-        this.thread_list = DEFAULT_THREAD_LIST;
-      } else {
-        this.thread_list = Message.immutableCopyOf(list);
-      } 
-      Integer integer1 = paramBuilder.has_more;
-      if (integer1 == null) {
-        this.has_more = DEFAULT_HAS_MORE;
-      } else {
-        this.has_more = integer1;
-      } 
-      integer = paramBuilder.pn;
-      if (integer == null) {
-        this.pn = DEFAULT_PN;
-      } else {
-        this.pn = integer;
-      } 
-    } else {
-      this.tag_list = Message.immutableCopyOf(((Builder)integer).tag_list);
-      this.thread_list = Message.immutableCopyOf(((Builder)integer).thread_list);
-      this.has_more = ((Builder)integer).has_more;
-      this.pn = ((Builder)integer).pn;
-    } 
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataRes> {
-    public Integer has_more;
-    
-    public Integer pn;
-    
-    public List<ExcellentTagInfo> tag_list;
-    
-    public List<ExcellentThreadInfo> thread_list;
-    
-    public Builder() {}
-    
-    public Builder(DataRes param1DataRes) {
-      super(param1DataRes);
-      if (param1DataRes == null)
-        return; 
-      this.tag_list = Message.copyOf(param1DataRes.tag_list);
-      this.thread_list = Message.copyOf(param1DataRes.thread_list);
-      this.has_more = param1DataRes.has_more;
-      this.pn = param1DataRes.pn;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
+    public final Integer has_more;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+    public final Integer pn;
+    @ProtoField(label = Message.Label.REPEATED, tag = 1)
+    public final List<ExcellentTagInfo> tag_list;
+    @ProtoField(label = Message.Label.REPEATED, tag = 2)
+    public final List<ExcellentThreadInfo> thread_list;
+    public static final List<ExcellentTagInfo> DEFAULT_TAG_LIST = Collections.emptyList();
+    public static final List<ExcellentThreadInfo> DEFAULT_THREAD_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_HAS_MORE = 0;
+    public static final Integer DEFAULT_PN = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataRes> {
+        public Integer has_more;
+        public Integer pn;
+        public List<ExcellentTagInfo> tag_list;
+        public List<ExcellentThreadInfo> thread_list;
+
+        public Builder() {
+        }
+
+        public Builder(DataRes dataRes) {
+            super(dataRes);
+            if (dataRes == null) {
+                return;
+            }
+            this.tag_list = Message.copyOf(dataRes.tag_list);
+            this.thread_list = Message.copyOf(dataRes.thread_list);
+            this.has_more = dataRes.has_more;
+            this.pn = dataRes.pn;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataRes build(boolean z) {
+            return new DataRes(this, z);
+        }
     }
-    
-    public DataRes build(boolean param1Boolean) {
-      return new DataRes(this, param1Boolean, null);
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<ExcellentTagInfo> list = builder.tag_list;
+            if (list == null) {
+                this.tag_list = DEFAULT_TAG_LIST;
+            } else {
+                this.tag_list = Message.immutableCopyOf(list);
+            }
+            List<ExcellentThreadInfo> list2 = builder.thread_list;
+            if (list2 == null) {
+                this.thread_list = DEFAULT_THREAD_LIST;
+            } else {
+                this.thread_list = Message.immutableCopyOf(list2);
+            }
+            Integer num = builder.has_more;
+            if (num == null) {
+                this.has_more = DEFAULT_HAS_MORE;
+            } else {
+                this.has_more = num;
+            }
+            Integer num2 = builder.pn;
+            if (num2 == null) {
+                this.pn = DEFAULT_PN;
+                return;
+            } else {
+                this.pn = num2;
+                return;
+            }
+        }
+        this.tag_list = Message.immutableCopyOf(builder.tag_list);
+        this.thread_list = Message.immutableCopyOf(builder.thread_list);
+        this.has_more = builder.has_more;
+        this.pn = builder.pn;
     }
-  }
-  
-  public static class a {}
 }

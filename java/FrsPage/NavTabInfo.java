@@ -5,83 +5,70 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.FrsTabInfo;
-
+/* loaded from: classes2.dex */
 public final class NavTabInfo extends Message {
-  public static final List<FrsTabInfo> DEFAULT_HEAD;
-  
-  public static final List<FrsTabInfo> DEFAULT_MENU;
-  
-  public static final List<FrsTabInfo> DEFAULT_TAB = Collections.emptyList();
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 3)
-  public final List<FrsTabInfo> head;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 2)
-  public final List<FrsTabInfo> menu;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 1)
-  public final List<FrsTabInfo> tab;
-  
-  static {
-    DEFAULT_MENU = Collections.emptyList();
-    DEFAULT_HEAD = Collections.emptyList();
-  }
-  
-  public NavTabInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<FrsTabInfo> list;
-    if (paramBoolean == true) {
-      List<FrsTabInfo> list1 = paramBuilder.tab;
-      if (list1 == null) {
-        this.tab = DEFAULT_TAB;
-      } else {
-        this.tab = Message.immutableCopyOf(list1);
-      } 
-      list1 = paramBuilder.menu;
-      if (list1 == null) {
-        this.menu = DEFAULT_MENU;
-      } else {
-        this.menu = Message.immutableCopyOf(list1);
-      } 
-      list = paramBuilder.head;
-      if (list == null) {
-        this.head = DEFAULT_HEAD;
-      } else {
-        this.head = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this.tab = Message.immutableCopyOf(((Builder)list).tab);
-      this.menu = Message.immutableCopyOf(((Builder)list).menu);
-      this.head = Message.immutableCopyOf(((Builder)list).head);
-    } 
-  }
-  
-  public NavTabInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<NavTabInfo> {
-    public List<FrsTabInfo> head;
-    
-    public List<FrsTabInfo> menu;
-    
-    public List<FrsTabInfo> tab;
-    
-    public Builder() {}
-    
-    public Builder(NavTabInfo param1NavTabInfo) {
-      super(param1NavTabInfo);
-      if (param1NavTabInfo == null)
-        return; 
-      this.tab = Message.copyOf(param1NavTabInfo.tab);
-      this.menu = Message.copyOf(param1NavTabInfo.menu);
-      this.head = Message.copyOf(param1NavTabInfo.head);
+    @ProtoField(label = Message.Label.REPEATED, tag = 3)
+    public final List<FrsTabInfo> head;
+    @ProtoField(label = Message.Label.REPEATED, tag = 2)
+    public final List<FrsTabInfo> menu;
+    @ProtoField(label = Message.Label.REPEATED, tag = 1)
+    public final List<FrsTabInfo> tab;
+    public static final List<FrsTabInfo> DEFAULT_TAB = Collections.emptyList();
+    public static final List<FrsTabInfo> DEFAULT_MENU = Collections.emptyList();
+    public static final List<FrsTabInfo> DEFAULT_HEAD = Collections.emptyList();
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<NavTabInfo> {
+        public List<FrsTabInfo> head;
+        public List<FrsTabInfo> menu;
+        public List<FrsTabInfo> tab;
+
+        public Builder() {
+        }
+
+        public Builder(NavTabInfo navTabInfo) {
+            super(navTabInfo);
+            if (navTabInfo == null) {
+                return;
+            }
+            this.tab = Message.copyOf(navTabInfo.tab);
+            this.menu = Message.copyOf(navTabInfo.menu);
+            this.head = Message.copyOf(navTabInfo.head);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public NavTabInfo build(boolean z) {
+            return new NavTabInfo(this, z);
+        }
     }
-    
-    public NavTabInfo build(boolean param1Boolean) {
-      return new NavTabInfo(this, param1Boolean, null);
+
+    public NavTabInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<FrsTabInfo> list = builder.tab;
+            if (list == null) {
+                this.tab = DEFAULT_TAB;
+            } else {
+                this.tab = Message.immutableCopyOf(list);
+            }
+            List<FrsTabInfo> list2 = builder.menu;
+            if (list2 == null) {
+                this.menu = DEFAULT_MENU;
+            } else {
+                this.menu = Message.immutableCopyOf(list2);
+            }
+            List<FrsTabInfo> list3 = builder.head;
+            if (list3 == null) {
+                this.head = DEFAULT_HEAD;
+                return;
+            } else {
+                this.head = Message.immutableCopyOf(list3);
+                return;
+            }
+        }
+        this.tab = Message.immutableCopyOf(builder.tab);
+        this.menu = Message.immutableCopyOf(builder.menu);
+        this.head = Message.immutableCopyOf(builder.head);
     }
-  }
-  
-  public static class a {}
 }

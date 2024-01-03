@@ -3,48 +3,45 @@ package tbclient.CommitCardInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class CommitCardInfoResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public CommitCardInfoResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public CommitCardInfoResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<CommitCardInfoResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(CommitCardInfoResIdl param1CommitCardInfoResIdl) {
-      super(param1CommitCardInfoResIdl);
-      if (param1CommitCardInfoResIdl == null)
-        return; 
-      this.error = param1CommitCardInfoResIdl.error;
-      this.data = param1CommitCardInfoResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<CommitCardInfoResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(CommitCardInfoResIdl commitCardInfoResIdl) {
+            super(commitCardInfoResIdl);
+            if (commitCardInfoResIdl == null) {
+                return;
+            }
+            this.error = commitCardInfoResIdl.error;
+            this.data = commitCardInfoResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public CommitCardInfoResIdl build(boolean z) {
+            return new CommitCardInfoResIdl(this, z);
+        }
     }
-    
-    public CommitCardInfoResIdl build(boolean param1Boolean) {
-      return new CommitCardInfoResIdl(this, param1Boolean, null);
+
+    public CommitCardInfoResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

@@ -2,40 +2,39 @@ package tbclient.UserMuteQuery;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class UserMuteQueryReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public UserMuteQueryReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public UserMuteQueryReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<UserMuteQueryReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(UserMuteQueryReqIdl param1UserMuteQueryReqIdl) {
-      super(param1UserMuteQueryReqIdl);
-      if (param1UserMuteQueryReqIdl == null)
-        return; 
-      this.data = param1UserMuteQueryReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<UserMuteQueryReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(UserMuteQueryReqIdl userMuteQueryReqIdl) {
+            super(userMuteQueryReqIdl);
+            if (userMuteQueryReqIdl == null) {
+                return;
+            }
+            this.data = userMuteQueryReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public UserMuteQueryReqIdl build(boolean z) {
+            return new UserMuteQueryReqIdl(this, z);
+        }
     }
-    
-    public UserMuteQueryReqIdl build(boolean param1Boolean) {
-      return new UserMuteQueryReqIdl(this, param1Boolean, null);
+
+    public UserMuteQueryReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

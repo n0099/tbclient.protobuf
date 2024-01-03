@@ -4,78 +4,70 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class ForumRule extends Message {
-  public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
-  
-  public static final Integer DEFAULT_STATUS = Integer.valueOf(0);
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 2)
-  public final List<PbContent> content;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer status;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String title;
-  
-  public ForumRule(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      String str = paramBuilder.title;
-      if (str == null) {
-        this.title = "";
-      } else {
-        this.title = str;
-      } 
-      List<PbContent> list = paramBuilder.content;
-      if (list == null) {
-        this.content = DEFAULT_CONTENT;
-      } else {
-        this.content = Message.immutableCopyOf(list);
-      } 
-      integer = paramBuilder.status;
-      if (integer == null) {
-        this.status = DEFAULT_STATUS;
-      } else {
-        this.status = integer;
-      } 
-    } else {
-      this.title = ((Builder)integer).title;
-      this.content = Message.immutableCopyOf(((Builder)integer).content);
-      this.status = ((Builder)integer).status;
-    } 
-  }
-  
-  public ForumRule(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ForumRule> {
-    public List<PbContent> content;
-    
-    public Integer status;
-    
-    public String title;
-    
-    public Builder() {}
-    
-    public Builder(ForumRule param1ForumRule) {
-      super(param1ForumRule);
-      if (param1ForumRule == null)
-        return; 
-      this.title = param1ForumRule.title;
-      this.content = Message.copyOf(param1ForumRule.content);
-      this.status = param1ForumRule.status;
+    public static final List<PbContent> DEFAULT_CONTENT = Collections.emptyList();
+    public static final Integer DEFAULT_STATUS = 0;
+    public static final String DEFAULT_TITLE = "";
+    @ProtoField(label = Message.Label.REPEATED, tag = 2)
+    public final List<PbContent> content;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer status;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String title;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ForumRule> {
+        public List<PbContent> content;
+        public Integer status;
+        public String title;
+
+        public Builder() {
+        }
+
+        public Builder(ForumRule forumRule) {
+            super(forumRule);
+            if (forumRule == null) {
+                return;
+            }
+            this.title = forumRule.title;
+            this.content = Message.copyOf(forumRule.content);
+            this.status = forumRule.status;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ForumRule build(boolean z) {
+            return new ForumRule(this, z);
+        }
     }
-    
-    public ForumRule build(boolean param1Boolean) {
-      return new ForumRule(this, param1Boolean, null);
+
+    public ForumRule(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            List<PbContent> list = builder.content;
+            if (list == null) {
+                this.content = DEFAULT_CONTENT;
+            } else {
+                this.content = Message.immutableCopyOf(list);
+            }
+            Integer num = builder.status;
+            if (num == null) {
+                this.status = DEFAULT_STATUS;
+                return;
+            } else {
+                this.status = num;
+                return;
+            }
+        }
+        this.title = builder.title;
+        this.content = Message.immutableCopyOf(builder.content);
+        this.status = builder.status;
     }
-  }
-  
-  public static class a {}
 }

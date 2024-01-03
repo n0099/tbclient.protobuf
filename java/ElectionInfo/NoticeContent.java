@@ -2,48 +2,46 @@ package tbclient.ElectionInfo;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class NoticeContent extends Message {
-  public static final String DEFAULT_PUBLIC_NOTICE = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String public_notice;
-  
-  public NoticeContent(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      str = paramBuilder.public_notice;
-      if (str == null) {
-        this.public_notice = "";
-      } else {
-        this.public_notice = str;
-      } 
-    } else {
-      this.public_notice = ((Builder)str).public_notice;
-    } 
-  }
-  
-  public NoticeContent(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<NoticeContent> {
-    public String public_notice;
-    
-    public Builder() {}
-    
-    public Builder(NoticeContent param1NoticeContent) {
-      super(param1NoticeContent);
-      if (param1NoticeContent == null)
-        return; 
-      this.public_notice = param1NoticeContent.public_notice;
+    public static final String DEFAULT_PUBLIC_NOTICE = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String public_notice;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<NoticeContent> {
+        public String public_notice;
+
+        public Builder() {
+        }
+
+        public Builder(NoticeContent noticeContent) {
+            super(noticeContent);
+            if (noticeContent == null) {
+                return;
+            }
+            this.public_notice = noticeContent.public_notice;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public NoticeContent build(boolean z) {
+            return new NoticeContent(this, z);
+        }
     }
-    
-    public NoticeContent build(boolean param1Boolean) {
-      return new NoticeContent(this, param1Boolean, null);
+
+    public NoticeContent(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.public_notice;
+            if (str == null) {
+                this.public_notice = "";
+                return;
+            } else {
+                this.public_notice = str;
+                return;
+            }
+        }
+        this.public_notice = builder.public_notice;
     }
-  }
-  
-  public static class a {}
 }

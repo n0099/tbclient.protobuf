@@ -3,48 +3,45 @@ package tbclient.SubTagList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class SubTagListResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public SubTagListResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public SubTagListResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<SubTagListResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(SubTagListResIdl param1SubTagListResIdl) {
-      super(param1SubTagListResIdl);
-      if (param1SubTagListResIdl == null)
-        return; 
-      this.error = param1SubTagListResIdl.error;
-      this.data = param1SubTagListResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<SubTagListResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(SubTagListResIdl subTagListResIdl) {
+            super(subTagListResIdl);
+            if (subTagListResIdl == null) {
+                return;
+            }
+            this.error = subTagListResIdl.error;
+            this.data = subTagListResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public SubTagListResIdl build(boolean z) {
+            return new SubTagListResIdl(this, z);
+        }
     }
-    
-    public SubTagListResIdl build(boolean param1Boolean) {
-      return new SubTagListResIdl(this, param1Boolean, null);
+
+    public SubTagListResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

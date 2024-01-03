@@ -2,40 +2,39 @@ package tbclient.GetPendantByCategory;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GetPendantByCategoryReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public GetPendantByCategoryReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GetPendantByCategoryReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetPendantByCategoryReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(GetPendantByCategoryReqIdl param1GetPendantByCategoryReqIdl) {
-      super(param1GetPendantByCategoryReqIdl);
-      if (param1GetPendantByCategoryReqIdl == null)
-        return; 
-      this.data = param1GetPendantByCategoryReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetPendantByCategoryReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(GetPendantByCategoryReqIdl getPendantByCategoryReqIdl) {
+            super(getPendantByCategoryReqIdl);
+            if (getPendantByCategoryReqIdl == null) {
+                return;
+            }
+            this.data = getPendantByCategoryReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetPendantByCategoryReqIdl build(boolean z) {
+            return new GetPendantByCategoryReqIdl(this, z);
+        }
     }
-    
-    public GetPendantByCategoryReqIdl build(boolean param1Boolean) {
-      return new GetPendantByCategoryReqIdl(this, param1Boolean, null);
+
+    public GetPendantByCategoryReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

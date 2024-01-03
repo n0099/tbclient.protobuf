@@ -2,305 +2,238 @@ package tbclient.GetGiftList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class PresentGiftList1 extends Message {
-  public static final Integer DEFAULT_ACTIVITY_TYPE;
-  
-  public static final Integer DEFAULT_BEGIN_TIME;
-  
-  public static final Integer DEFAULT_CURRENCY;
-  
-  public static final Integer DEFAULT_CURRENCY_UNIT;
-  
-  public static final Integer DEFAULT_DISCOUNT;
-  
-  public static final Integer DEFAULT_END_TIME;
-  
-  public static final Integer DEFAULT_GIFT_COUNT;
-  
-  public static final String DEFAULT_GIFT_DESC = "";
-  
-  public static final Integer DEFAULT_GIFT_ID;
-  
-  public static final String DEFAULT_GIFT_NAME = "";
-  
-  public static final Integer DEFAULT_IOS_DISCOUNT;
-  
-  public static final Integer DEFAULT_IOS_PRICE;
-  
-  public static final String DEFAULT_MARK_URL = "";
-  
-  public static final Integer DEFAULT_PITCH_ON;
-  
-  public static final Integer DEFAULT_PRICE;
-  
-  public static final Integer DEFAULT_PROPORTION;
-  
-  public static final String DEFAULT_THUMBNAIL_URL = "";
-  
-  @ProtoField(tag = 7, type = Message.Datatype.UINT32)
-  public final Integer activity_type;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.UINT32)
-  public final Integer begin_time;
-  
-  @ProtoField(tag = 20, type = Message.Datatype.INT32)
-  public final Integer currency;
-  
-  @ProtoField(tag = 16, type = Message.Datatype.UINT32)
-  public final Integer currency_unit;
-  
-  @ProtoField(tag = 11, type = Message.Datatype.UINT32)
-  public final Integer discount;
-  
-  @ProtoField(tag = 10, type = Message.Datatype.UINT32)
-  public final Integer end_time;
-  
-  @ProtoField(tag = 14, type = Message.Datatype.UINT32)
-  public final Integer gift_count;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String gift_desc;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-  public final Integer gift_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String gift_name;
-  
-  @ProtoField(tag = 12, type = Message.Datatype.UINT32)
-  public final Integer ios_discount;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.UINT32)
-  public final Integer ios_price;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.STRING)
-  public final String mark_url;
-  
-  @ProtoField(tag = 15, type = Message.Datatype.UINT32)
-  public final Integer pitch_on;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT32)
-  public final Integer price;
-  
-  @ProtoField(tag = 13, type = Message.Datatype.UINT32)
-  public final Integer proportion;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String thumbnail_url;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_GIFT_ID = integer;
-    DEFAULT_PRICE = integer;
-    DEFAULT_IOS_PRICE = integer;
-    DEFAULT_ACTIVITY_TYPE = integer;
-    DEFAULT_BEGIN_TIME = integer;
-    DEFAULT_END_TIME = integer;
-    DEFAULT_DISCOUNT = integer;
-    DEFAULT_IOS_DISCOUNT = integer;
-    DEFAULT_PROPORTION = integer;
-    DEFAULT_GIFT_COUNT = integer;
-    DEFAULT_PITCH_ON = integer;
-    DEFAULT_CURRENCY_UNIT = integer;
-    DEFAULT_CURRENCY = integer;
-  }
-  
-  public PresentGiftList1(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Integer integer5 = paramBuilder.gift_id;
-      if (integer5 == null) {
-        this.gift_id = DEFAULT_GIFT_ID;
-      } else {
-        this.gift_id = integer5;
-      } 
-      String str4 = paramBuilder.gift_name;
-      if (str4 == null) {
-        this.gift_name = "";
-      } else {
-        this.gift_name = str4;
-      } 
-      Integer integer4 = paramBuilder.price;
-      if (integer4 == null) {
-        this.price = DEFAULT_PRICE;
-      } else {
-        this.price = integer4;
-      } 
-      String str3 = paramBuilder.thumbnail_url;
-      if (str3 == null) {
-        this.thumbnail_url = "";
-      } else {
-        this.thumbnail_url = str3;
-      } 
-      Integer integer3 = paramBuilder.ios_price;
-      if (integer3 == null) {
-        this.ios_price = DEFAULT_IOS_PRICE;
-      } else {
-        this.ios_price = integer3;
-      } 
-      String str2 = paramBuilder.gift_desc;
-      if (str2 == null) {
-        this.gift_desc = "";
-      } else {
-        this.gift_desc = str2;
-      } 
-      Integer integer2 = paramBuilder.activity_type;
-      if (integer2 == null) {
-        this.activity_type = DEFAULT_ACTIVITY_TYPE;
-      } else {
-        this.activity_type = integer2;
-      } 
-      String str1 = paramBuilder.mark_url;
-      if (str1 == null) {
-        this.mark_url = "";
-      } else {
-        this.mark_url = str1;
-      } 
-      Integer integer1 = paramBuilder.begin_time;
-      if (integer1 == null) {
-        this.begin_time = DEFAULT_BEGIN_TIME;
-      } else {
-        this.begin_time = integer1;
-      } 
-      integer1 = paramBuilder.end_time;
-      if (integer1 == null) {
-        this.end_time = DEFAULT_END_TIME;
-      } else {
-        this.end_time = integer1;
-      } 
-      integer1 = paramBuilder.discount;
-      if (integer1 == null) {
-        this.discount = DEFAULT_DISCOUNT;
-      } else {
-        this.discount = integer1;
-      } 
-      integer1 = paramBuilder.ios_discount;
-      if (integer1 == null) {
-        this.ios_discount = DEFAULT_IOS_DISCOUNT;
-      } else {
-        this.ios_discount = integer1;
-      } 
-      integer1 = paramBuilder.proportion;
-      if (integer1 == null) {
-        this.proportion = DEFAULT_PROPORTION;
-      } else {
-        this.proportion = integer1;
-      } 
-      integer1 = paramBuilder.gift_count;
-      if (integer1 == null) {
-        this.gift_count = DEFAULT_GIFT_COUNT;
-      } else {
-        this.gift_count = integer1;
-      } 
-      integer1 = paramBuilder.pitch_on;
-      if (integer1 == null) {
-        this.pitch_on = DEFAULT_PITCH_ON;
-      } else {
-        this.pitch_on = integer1;
-      } 
-      integer1 = paramBuilder.currency_unit;
-      if (integer1 == null) {
-        this.currency_unit = DEFAULT_CURRENCY_UNIT;
-      } else {
-        this.currency_unit = integer1;
-      } 
-      integer = paramBuilder.currency;
-      if (integer == null) {
-        this.currency = DEFAULT_CURRENCY;
-      } else {
-        this.currency = integer;
-      } 
-    } else {
-      this.gift_id = ((Builder)integer).gift_id;
-      this.gift_name = ((Builder)integer).gift_name;
-      this.price = ((Builder)integer).price;
-      this.thumbnail_url = ((Builder)integer).thumbnail_url;
-      this.ios_price = ((Builder)integer).ios_price;
-      this.gift_desc = ((Builder)integer).gift_desc;
-      this.activity_type = ((Builder)integer).activity_type;
-      this.mark_url = ((Builder)integer).mark_url;
-      this.begin_time = ((Builder)integer).begin_time;
-      this.end_time = ((Builder)integer).end_time;
-      this.discount = ((Builder)integer).discount;
-      this.ios_discount = ((Builder)integer).ios_discount;
-      this.proportion = ((Builder)integer).proportion;
-      this.gift_count = ((Builder)integer).gift_count;
-      this.pitch_on = ((Builder)integer).pitch_on;
-      this.currency_unit = ((Builder)integer).currency_unit;
-      this.currency = ((Builder)integer).currency;
-    } 
-  }
-  
-  public PresentGiftList1(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<PresentGiftList1> {
-    public Integer activity_type;
-    
-    public Integer begin_time;
-    
-    public Integer currency;
-    
-    public Integer currency_unit;
-    
-    public Integer discount;
-    
-    public Integer end_time;
-    
-    public Integer gift_count;
-    
-    public String gift_desc;
-    
-    public Integer gift_id;
-    
-    public String gift_name;
-    
-    public Integer ios_discount;
-    
-    public Integer ios_price;
-    
-    public String mark_url;
-    
-    public Integer pitch_on;
-    
-    public Integer price;
-    
-    public Integer proportion;
-    
-    public String thumbnail_url;
-    
-    public Builder() {}
-    
-    public Builder(PresentGiftList1 param1PresentGiftList1) {
-      super(param1PresentGiftList1);
-      if (param1PresentGiftList1 == null)
-        return; 
-      this.gift_id = param1PresentGiftList1.gift_id;
-      this.gift_name = param1PresentGiftList1.gift_name;
-      this.price = param1PresentGiftList1.price;
-      this.thumbnail_url = param1PresentGiftList1.thumbnail_url;
-      this.ios_price = param1PresentGiftList1.ios_price;
-      this.gift_desc = param1PresentGiftList1.gift_desc;
-      this.activity_type = param1PresentGiftList1.activity_type;
-      this.mark_url = param1PresentGiftList1.mark_url;
-      this.begin_time = param1PresentGiftList1.begin_time;
-      this.end_time = param1PresentGiftList1.end_time;
-      this.discount = param1PresentGiftList1.discount;
-      this.ios_discount = param1PresentGiftList1.ios_discount;
-      this.proportion = param1PresentGiftList1.proportion;
-      this.gift_count = param1PresentGiftList1.gift_count;
-      this.pitch_on = param1PresentGiftList1.pitch_on;
-      this.currency_unit = param1PresentGiftList1.currency_unit;
-      this.currency = param1PresentGiftList1.currency;
+    public static final String DEFAULT_GIFT_DESC = "";
+    public static final String DEFAULT_GIFT_NAME = "";
+    public static final String DEFAULT_MARK_URL = "";
+    public static final String DEFAULT_THUMBNAIL_URL = "";
+    @ProtoField(tag = 7, type = Message.Datatype.UINT32)
+    public final Integer activity_type;
+    @ProtoField(tag = 9, type = Message.Datatype.UINT32)
+    public final Integer begin_time;
+    @ProtoField(tag = 20, type = Message.Datatype.INT32)
+    public final Integer currency;
+    @ProtoField(tag = 16, type = Message.Datatype.UINT32)
+    public final Integer currency_unit;
+    @ProtoField(tag = 11, type = Message.Datatype.UINT32)
+    public final Integer discount;
+    @ProtoField(tag = 10, type = Message.Datatype.UINT32)
+    public final Integer end_time;
+    @ProtoField(tag = 14, type = Message.Datatype.UINT32)
+    public final Integer gift_count;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String gift_desc;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer gift_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String gift_name;
+    @ProtoField(tag = 12, type = Message.Datatype.UINT32)
+    public final Integer ios_discount;
+    @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+    public final Integer ios_price;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String mark_url;
+    @ProtoField(tag = 15, type = Message.Datatype.UINT32)
+    public final Integer pitch_on;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
+    public final Integer price;
+    @ProtoField(tag = 13, type = Message.Datatype.UINT32)
+    public final Integer proportion;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String thumbnail_url;
+    public static final Integer DEFAULT_GIFT_ID = 0;
+    public static final Integer DEFAULT_PRICE = 0;
+    public static final Integer DEFAULT_IOS_PRICE = 0;
+    public static final Integer DEFAULT_ACTIVITY_TYPE = 0;
+    public static final Integer DEFAULT_BEGIN_TIME = 0;
+    public static final Integer DEFAULT_END_TIME = 0;
+    public static final Integer DEFAULT_DISCOUNT = 0;
+    public static final Integer DEFAULT_IOS_DISCOUNT = 0;
+    public static final Integer DEFAULT_PROPORTION = 0;
+    public static final Integer DEFAULT_GIFT_COUNT = 0;
+    public static final Integer DEFAULT_PITCH_ON = 0;
+    public static final Integer DEFAULT_CURRENCY_UNIT = 0;
+    public static final Integer DEFAULT_CURRENCY = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<PresentGiftList1> {
+        public Integer activity_type;
+        public Integer begin_time;
+        public Integer currency;
+        public Integer currency_unit;
+        public Integer discount;
+        public Integer end_time;
+        public Integer gift_count;
+        public String gift_desc;
+        public Integer gift_id;
+        public String gift_name;
+        public Integer ios_discount;
+        public Integer ios_price;
+        public String mark_url;
+        public Integer pitch_on;
+        public Integer price;
+        public Integer proportion;
+        public String thumbnail_url;
+
+        public Builder() {
+        }
+
+        public Builder(PresentGiftList1 presentGiftList1) {
+            super(presentGiftList1);
+            if (presentGiftList1 == null) {
+                return;
+            }
+            this.gift_id = presentGiftList1.gift_id;
+            this.gift_name = presentGiftList1.gift_name;
+            this.price = presentGiftList1.price;
+            this.thumbnail_url = presentGiftList1.thumbnail_url;
+            this.ios_price = presentGiftList1.ios_price;
+            this.gift_desc = presentGiftList1.gift_desc;
+            this.activity_type = presentGiftList1.activity_type;
+            this.mark_url = presentGiftList1.mark_url;
+            this.begin_time = presentGiftList1.begin_time;
+            this.end_time = presentGiftList1.end_time;
+            this.discount = presentGiftList1.discount;
+            this.ios_discount = presentGiftList1.ios_discount;
+            this.proportion = presentGiftList1.proportion;
+            this.gift_count = presentGiftList1.gift_count;
+            this.pitch_on = presentGiftList1.pitch_on;
+            this.currency_unit = presentGiftList1.currency_unit;
+            this.currency = presentGiftList1.currency;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public PresentGiftList1 build(boolean z) {
+            return new PresentGiftList1(this, z);
+        }
     }
-    
-    public PresentGiftList1 build(boolean param1Boolean) {
-      return new PresentGiftList1(this, param1Boolean, null);
+
+    public PresentGiftList1(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.gift_id;
+            if (num == null) {
+                this.gift_id = DEFAULT_GIFT_ID;
+            } else {
+                this.gift_id = num;
+            }
+            String str = builder.gift_name;
+            if (str == null) {
+                this.gift_name = "";
+            } else {
+                this.gift_name = str;
+            }
+            Integer num2 = builder.price;
+            if (num2 == null) {
+                this.price = DEFAULT_PRICE;
+            } else {
+                this.price = num2;
+            }
+            String str2 = builder.thumbnail_url;
+            if (str2 == null) {
+                this.thumbnail_url = "";
+            } else {
+                this.thumbnail_url = str2;
+            }
+            Integer num3 = builder.ios_price;
+            if (num3 == null) {
+                this.ios_price = DEFAULT_IOS_PRICE;
+            } else {
+                this.ios_price = num3;
+            }
+            String str3 = builder.gift_desc;
+            if (str3 == null) {
+                this.gift_desc = "";
+            } else {
+                this.gift_desc = str3;
+            }
+            Integer num4 = builder.activity_type;
+            if (num4 == null) {
+                this.activity_type = DEFAULT_ACTIVITY_TYPE;
+            } else {
+                this.activity_type = num4;
+            }
+            String str4 = builder.mark_url;
+            if (str4 == null) {
+                this.mark_url = "";
+            } else {
+                this.mark_url = str4;
+            }
+            Integer num5 = builder.begin_time;
+            if (num5 == null) {
+                this.begin_time = DEFAULT_BEGIN_TIME;
+            } else {
+                this.begin_time = num5;
+            }
+            Integer num6 = builder.end_time;
+            if (num6 == null) {
+                this.end_time = DEFAULT_END_TIME;
+            } else {
+                this.end_time = num6;
+            }
+            Integer num7 = builder.discount;
+            if (num7 == null) {
+                this.discount = DEFAULT_DISCOUNT;
+            } else {
+                this.discount = num7;
+            }
+            Integer num8 = builder.ios_discount;
+            if (num8 == null) {
+                this.ios_discount = DEFAULT_IOS_DISCOUNT;
+            } else {
+                this.ios_discount = num8;
+            }
+            Integer num9 = builder.proportion;
+            if (num9 == null) {
+                this.proportion = DEFAULT_PROPORTION;
+            } else {
+                this.proportion = num9;
+            }
+            Integer num10 = builder.gift_count;
+            if (num10 == null) {
+                this.gift_count = DEFAULT_GIFT_COUNT;
+            } else {
+                this.gift_count = num10;
+            }
+            Integer num11 = builder.pitch_on;
+            if (num11 == null) {
+                this.pitch_on = DEFAULT_PITCH_ON;
+            } else {
+                this.pitch_on = num11;
+            }
+            Integer num12 = builder.currency_unit;
+            if (num12 == null) {
+                this.currency_unit = DEFAULT_CURRENCY_UNIT;
+            } else {
+                this.currency_unit = num12;
+            }
+            Integer num13 = builder.currency;
+            if (num13 == null) {
+                this.currency = DEFAULT_CURRENCY;
+                return;
+            } else {
+                this.currency = num13;
+                return;
+            }
+        }
+        this.gift_id = builder.gift_id;
+        this.gift_name = builder.gift_name;
+        this.price = builder.price;
+        this.thumbnail_url = builder.thumbnail_url;
+        this.ios_price = builder.ios_price;
+        this.gift_desc = builder.gift_desc;
+        this.activity_type = builder.activity_type;
+        this.mark_url = builder.mark_url;
+        this.begin_time = builder.begin_time;
+        this.end_time = builder.end_time;
+        this.discount = builder.discount;
+        this.ios_discount = builder.ios_discount;
+        this.proportion = builder.proportion;
+        this.gift_count = builder.gift_count;
+        this.pitch_on = builder.pitch_on;
+        this.currency_unit = builder.currency_unit;
+        this.currency = builder.currency;
     }
-  }
-  
-  public static class a {}
 }

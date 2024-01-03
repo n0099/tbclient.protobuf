@@ -7,5 +7,4 @@ message DataReq {
     int32 forum_id = 2;
     int32 st_param = 3;
     string cookie = 4;
-    CommonReq common = 5;
 }

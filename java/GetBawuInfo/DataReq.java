@@ -3,56 +3,56 @@ package tbclient.GetBawuInfo;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
-  
-  @ProtoField(tag = 1)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT64)
-  public final Long forum_id;
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Long long_;
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      long_ = paramBuilder.forum_id;
-      if (long_ == null) {
-        this.forum_id = DEFAULT_FORUM_ID;
-      } else {
-        this.forum_id = long_;
-      } 
-    } else {
-      this.common = ((Builder)long_).common;
-      this.forum_id = ((Builder)long_).forum_id;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public CommonReq common;
-    
-    public Long forum_id;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.common = param1DataReq.common;
-      this.forum_id = param1DataReq.forum_id;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    @ProtoField(tag = 1)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1299common;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT64)
+    public final Long forum_id;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1300common;
+        public Long forum_id;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.f1300common = dataReq.f1299common;
+            this.forum_id = dataReq.forum_id;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f1299common = builder.f1300common;
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+                return;
+            } else {
+                this.forum_id = l;
+                return;
+            }
+        }
+        this.f1299common = builder.f1300common;
+        this.forum_id = builder.forum_id;
     }
-  }
-  
-  public static class a {}
 }

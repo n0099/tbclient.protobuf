@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-import "UnreadTip/DataReq.proto";
-
-message UnreadTipReqIdl {
-    DataReq data = 1;
-}

@@ -3,55 +3,55 @@ package tbclient.GetGiftListByCategoryId;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Integer DEFAULT_CATEGORY_ID = Integer.valueOf(0);
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-  public final Integer category_id;
-  
-  @ProtoField(tag = 2)
-  public final CommonReq common;
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.category_id;
-      if (integer == null) {
-        this.category_id = DEFAULT_CATEGORY_ID;
-      } else {
-        this.category_id = integer;
-      } 
-      this.common = paramBuilder.common;
-    } else {
-      this.category_id = paramBuilder.category_id;
-      this.common = paramBuilder.common;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public Integer category_id;
-    
-    public CommonReq common;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.category_id = param1DataReq.category_id;
-      this.common = param1DataReq.common;
+    public static final Integer DEFAULT_CATEGORY_ID = 0;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer category_id;
+    @ProtoField(tag = 2)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1329common;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+        public Integer category_id;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1330common;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.category_id = dataReq.category_id;
+            this.f1330common = dataReq.f1329common;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.category_id;
+            if (num == null) {
+                this.category_id = DEFAULT_CATEGORY_ID;
+            } else {
+                this.category_id = num;
+            }
+            this.f1329common = builder.f1330common;
+            return;
+        }
+        this.category_id = builder.category_id;
+        this.f1329common = builder.f1330common;
     }
-  }
-  
-  public static class a {}
 }

@@ -4,5 +4,4 @@ import "CommonReq.proto";
 
 message ReqData {
     int64 friend_id = 1;
-    CommonReq common = 2;
 }

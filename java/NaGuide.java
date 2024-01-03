@@ -4,63 +4,58 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class NaGuide extends Message {
-  public static final String DEFAULT_DWNL_URL = "";
-  
-  public static final List<RecGuide> DEFAULT_REC_INFO = Collections.emptyList();
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String dwnl_url;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 2)
-  public final List<RecGuide> rec_info;
-  
-  public NaGuide(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<RecGuide> list;
-    if (paramBoolean == true) {
-      String str = paramBuilder.dwnl_url;
-      if (str == null) {
-        this.dwnl_url = "";
-      } else {
-        this.dwnl_url = str;
-      } 
-      list = paramBuilder.rec_info;
-      if (list == null) {
-        this.rec_info = DEFAULT_REC_INFO;
-      } else {
-        this.rec_info = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this.dwnl_url = ((Builder)list).dwnl_url;
-      this.rec_info = Message.immutableCopyOf(((Builder)list).rec_info);
-    } 
-  }
-  
-  public NaGuide(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<NaGuide> {
-    public String dwnl_url;
-    
-    public List<RecGuide> rec_info;
-    
-    public Builder() {}
-    
-    public Builder(NaGuide param1NaGuide) {
-      super(param1NaGuide);
-      if (param1NaGuide == null)
-        return; 
-      this.dwnl_url = param1NaGuide.dwnl_url;
-      this.rec_info = Message.copyOf(param1NaGuide.rec_info);
+    public static final String DEFAULT_DWNL_URL = "";
+    public static final List<RecGuide> DEFAULT_REC_INFO = Collections.emptyList();
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String dwnl_url;
+    @ProtoField(label = Message.Label.REPEATED, tag = 2)
+    public final List<RecGuide> rec_info;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<NaGuide> {
+        public String dwnl_url;
+        public List<RecGuide> rec_info;
+
+        public Builder() {
+        }
+
+        public Builder(NaGuide naGuide) {
+            super(naGuide);
+            if (naGuide == null) {
+                return;
+            }
+            this.dwnl_url = naGuide.dwnl_url;
+            this.rec_info = Message.copyOf(naGuide.rec_info);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public NaGuide build(boolean z) {
+            return new NaGuide(this, z);
+        }
     }
-    
-    public NaGuide build(boolean param1Boolean) {
-      return new NaGuide(this, param1Boolean, null);
+
+    public NaGuide(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.dwnl_url;
+            if (str == null) {
+                this.dwnl_url = "";
+            } else {
+                this.dwnl_url = str;
+            }
+            List<RecGuide> list = builder.rec_info;
+            if (list == null) {
+                this.rec_info = DEFAULT_REC_INFO;
+                return;
+            } else {
+                this.rec_info = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.dwnl_url = builder.dwnl_url;
+        this.rec_info = Message.immutableCopyOf(builder.rec_info);
     }
-  }
-  
-  public static class a {}
 }

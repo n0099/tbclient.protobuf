@@ -2,161 +2,130 @@ package tbclient.GetGiftCommonList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class Item extends Message {
-  public static final Integer DEFAULT_GIFT_ID;
-  
-  public static final Integer DEFAULT_IOS_COUNT;
-  
-  public static final Integer DEFAULT_IOS_PRICE;
-  
-  public static final String DEFAULT_IOS_PRODUCT_ID = "";
-  
-  public static final String DEFAULT_NAME = "";
-  
-  public static final String DEFAULT_PLAY_URL = "";
-  
-  public static final Integer DEFAULT_PRICE;
-  
-  public static final String DEFAULT_THUMBNAIL_URL = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-  public final Integer gift_id;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.UINT32)
-  public final Integer ios_count;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.UINT32)
-  public final Integer ios_price;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String ios_product_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String name;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String play_url;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT32)
-  public final Integer price;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String thumbnail_url;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_GIFT_ID = integer;
-    DEFAULT_PRICE = integer;
-    DEFAULT_IOS_PRICE = integer;
-    DEFAULT_IOS_COUNT = integer;
-  }
-  
-  public Item(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Integer integer3 = paramBuilder.gift_id;
-      if (integer3 == null) {
-        this.gift_id = DEFAULT_GIFT_ID;
-      } else {
-        this.gift_id = integer3;
-      } 
-      String str2 = paramBuilder.name;
-      if (str2 == null) {
-        this.name = "";
-      } else {
-        this.name = str2;
-      } 
-      Integer integer2 = paramBuilder.price;
-      if (integer2 == null) {
-        this.price = DEFAULT_PRICE;
-      } else {
-        this.price = integer2;
-      } 
-      String str1 = paramBuilder.thumbnail_url;
-      if (str1 == null) {
-        this.thumbnail_url = "";
-      } else {
-        this.thumbnail_url = str1;
-      } 
-      str1 = paramBuilder.play_url;
-      if (str1 == null) {
-        this.play_url = "";
-      } else {
-        this.play_url = str1;
-      } 
-      str1 = paramBuilder.ios_product_id;
-      if (str1 == null) {
-        this.ios_product_id = "";
-      } else {
-        this.ios_product_id = str1;
-      } 
-      Integer integer1 = paramBuilder.ios_price;
-      if (integer1 == null) {
-        this.ios_price = DEFAULT_IOS_PRICE;
-      } else {
-        this.ios_price = integer1;
-      } 
-      integer = paramBuilder.ios_count;
-      if (integer == null) {
-        this.ios_count = DEFAULT_IOS_COUNT;
-      } else {
-        this.ios_count = integer;
-      } 
-    } else {
-      this.gift_id = ((Builder)integer).gift_id;
-      this.name = ((Builder)integer).name;
-      this.price = ((Builder)integer).price;
-      this.thumbnail_url = ((Builder)integer).thumbnail_url;
-      this.play_url = ((Builder)integer).play_url;
-      this.ios_product_id = ((Builder)integer).ios_product_id;
-      this.ios_price = ((Builder)integer).ios_price;
-      this.ios_count = ((Builder)integer).ios_count;
-    } 
-  }
-  
-  public Item(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<Item> {
-    public Integer gift_id;
-    
-    public Integer ios_count;
-    
-    public Integer ios_price;
-    
-    public String ios_product_id;
-    
-    public String name;
-    
-    public String play_url;
-    
-    public Integer price;
-    
-    public String thumbnail_url;
-    
-    public Builder() {}
-    
-    public Builder(Item param1Item) {
-      super(param1Item);
-      if (param1Item == null)
-        return; 
-      this.gift_id = param1Item.gift_id;
-      this.name = param1Item.name;
-      this.price = param1Item.price;
-      this.thumbnail_url = param1Item.thumbnail_url;
-      this.play_url = param1Item.play_url;
-      this.ios_product_id = param1Item.ios_product_id;
-      this.ios_price = param1Item.ios_price;
-      this.ios_count = param1Item.ios_count;
+    public static final String DEFAULT_IOS_PRODUCT_ID = "";
+    public static final String DEFAULT_NAME = "";
+    public static final String DEFAULT_PLAY_URL = "";
+    public static final String DEFAULT_THUMBNAIL_URL = "";
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer gift_id;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT32)
+    public final Integer ios_count;
+    @ProtoField(tag = 7, type = Message.Datatype.UINT32)
+    public final Integer ios_price;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String ios_product_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String name;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String play_url;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
+    public final Integer price;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String thumbnail_url;
+    public static final Integer DEFAULT_GIFT_ID = 0;
+    public static final Integer DEFAULT_PRICE = 0;
+    public static final Integer DEFAULT_IOS_PRICE = 0;
+    public static final Integer DEFAULT_IOS_COUNT = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<Item> {
+        public Integer gift_id;
+        public Integer ios_count;
+        public Integer ios_price;
+        public String ios_product_id;
+        public String name;
+        public String play_url;
+        public Integer price;
+        public String thumbnail_url;
+
+        public Builder() {
+        }
+
+        public Builder(Item item) {
+            super(item);
+            if (item == null) {
+                return;
+            }
+            this.gift_id = item.gift_id;
+            this.name = item.name;
+            this.price = item.price;
+            this.thumbnail_url = item.thumbnail_url;
+            this.play_url = item.play_url;
+            this.ios_product_id = item.ios_product_id;
+            this.ios_price = item.ios_price;
+            this.ios_count = item.ios_count;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Item build(boolean z) {
+            return new Item(this, z);
+        }
     }
-    
-    public Item build(boolean param1Boolean) {
-      return new Item(this, param1Boolean, null);
+
+    public Item(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.gift_id;
+            if (num == null) {
+                this.gift_id = DEFAULT_GIFT_ID;
+            } else {
+                this.gift_id = num;
+            }
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            Integer num2 = builder.price;
+            if (num2 == null) {
+                this.price = DEFAULT_PRICE;
+            } else {
+                this.price = num2;
+            }
+            String str2 = builder.thumbnail_url;
+            if (str2 == null) {
+                this.thumbnail_url = "";
+            } else {
+                this.thumbnail_url = str2;
+            }
+            String str3 = builder.play_url;
+            if (str3 == null) {
+                this.play_url = "";
+            } else {
+                this.play_url = str3;
+            }
+            String str4 = builder.ios_product_id;
+            if (str4 == null) {
+                this.ios_product_id = "";
+            } else {
+                this.ios_product_id = str4;
+            }
+            Integer num3 = builder.ios_price;
+            if (num3 == null) {
+                this.ios_price = DEFAULT_IOS_PRICE;
+            } else {
+                this.ios_price = num3;
+            }
+            Integer num4 = builder.ios_count;
+            if (num4 == null) {
+                this.ios_count = DEFAULT_IOS_COUNT;
+                return;
+            } else {
+                this.ios_count = num4;
+                return;
+            }
+        }
+        this.gift_id = builder.gift_id;
+        this.name = builder.name;
+        this.price = builder.price;
+        this.thumbnail_url = builder.thumbnail_url;
+        this.play_url = builder.play_url;
+        this.ios_product_id = builder.ios_product_id;
+        this.ios_price = builder.ios_price;
+        this.ios_count = builder.ios_count;
     }
-  }
-  
-  public static class a {}
 }

@@ -2,40 +2,39 @@ package tbclient.QueryCollectUpdateNum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class QueryCollectUpdateNumReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public QueryCollectUpdateNumReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public QueryCollectUpdateNumReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<QueryCollectUpdateNumReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(QueryCollectUpdateNumReqIdl param1QueryCollectUpdateNumReqIdl) {
-      super(param1QueryCollectUpdateNumReqIdl);
-      if (param1QueryCollectUpdateNumReqIdl == null)
-        return; 
-      this.data = param1QueryCollectUpdateNumReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<QueryCollectUpdateNumReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(QueryCollectUpdateNumReqIdl queryCollectUpdateNumReqIdl) {
+            super(queryCollectUpdateNumReqIdl);
+            if (queryCollectUpdateNumReqIdl == null) {
+                return;
+            }
+            this.data = queryCollectUpdateNumReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public QueryCollectUpdateNumReqIdl build(boolean z) {
+            return new QueryCollectUpdateNumReqIdl(this, z);
+        }
     }
-    
-    public QueryCollectUpdateNumReqIdl build(boolean param1Boolean) {
-      return new QueryCollectUpdateNumReqIdl(this, param1Boolean, null);
+
+    public QueryCollectUpdateNumReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

@@ -2,48 +2,46 @@ package tbclient.QueryCollectUpdateNum;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
-  public static final Integer DEFAULT_COLLECT_UPDATE_NUM = Integer.valueOf(0);
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-  public final Integer collect_update_num;
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      integer = paramBuilder.collect_update_num;
-      if (integer == null) {
-        this.collect_update_num = DEFAULT_COLLECT_UPDATE_NUM;
-      } else {
-        this.collect_update_num = integer;
-      } 
-    } else {
-      this.collect_update_num = ((Builder)integer).collect_update_num;
-    } 
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataRes> {
-    public Integer collect_update_num;
-    
-    public Builder() {}
-    
-    public Builder(DataRes param1DataRes) {
-      super(param1DataRes);
-      if (param1DataRes == null)
-        return; 
-      this.collect_update_num = param1DataRes.collect_update_num;
+    public static final Integer DEFAULT_COLLECT_UPDATE_NUM = 0;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer collect_update_num;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataRes> {
+        public Integer collect_update_num;
+
+        public Builder() {
+        }
+
+        public Builder(DataRes dataRes) {
+            super(dataRes);
+            if (dataRes == null) {
+                return;
+            }
+            this.collect_update_num = dataRes.collect_update_num;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataRes build(boolean z) {
+            return new DataRes(this, z);
+        }
     }
-    
-    public DataRes build(boolean param1Boolean) {
-      return new DataRes(this, param1Boolean, null);
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.collect_update_num;
+            if (num == null) {
+                this.collect_update_num = DEFAULT_COLLECT_UPDATE_NUM;
+                return;
+            } else {
+                this.collect_update_num = num;
+                return;
+            }
+        }
+        this.collect_update_num = builder.collect_update_num;
     }
-  }
-  
-  public static class a {}
 }

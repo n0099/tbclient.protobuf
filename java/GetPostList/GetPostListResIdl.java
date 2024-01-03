@@ -3,48 +3,45 @@ package tbclient.GetPostList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class GetPostListResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public GetPostListResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GetPostListResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetPostListResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(GetPostListResIdl param1GetPostListResIdl) {
-      super(param1GetPostListResIdl);
-      if (param1GetPostListResIdl == null)
-        return; 
-      this.error = param1GetPostListResIdl.error;
-      this.data = param1GetPostListResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetPostListResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(GetPostListResIdl getPostListResIdl) {
+            super(getPostListResIdl);
+            if (getPostListResIdl == null) {
+                return;
+            }
+            this.error = getPostListResIdl.error;
+            this.data = getPostListResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetPostListResIdl build(boolean z) {
+            return new GetPostListResIdl(this, z);
+        }
     }
-    
-    public GetPostListResIdl build(boolean param1Boolean) {
-      return new GetPostListResIdl(this, param1Boolean, null);
+
+    public GetPostListResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

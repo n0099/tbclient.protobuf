@@ -2,138 +2,118 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class FeatureCardCompetitionSubNode extends Message {
-  public static final String DEFAULT_COMPETITION_IMAGE = "";
-  
-  public static final String DEFAULT_TEAM1_IMAGE = "";
-  
-  public static final String DEFAULT_TEAM1_NAME = "";
-  
-  public static final String DEFAULT_TEAM2_IMAGE = "";
-  
-  public static final String DEFAULT_TEAM2_NAME = "";
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  public static final String DEFAULT_URL = "";
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String competition_image;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String team1_image;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String team1_name;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.STRING)
-  public final String team2_image;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String team2_name;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String title;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String url;
-  
-  public FeatureCardCompetitionSubNode(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.title;
-      if (str1 == null) {
-        this.title = "";
-      } else {
-        this.title = str1;
-      } 
-      str1 = paramBuilder.url;
-      if (str1 == null) {
-        this.url = "";
-      } else {
-        this.url = str1;
-      } 
-      str1 = paramBuilder.competition_image;
-      if (str1 == null) {
-        this.competition_image = "";
-      } else {
-        this.competition_image = str1;
-      } 
-      str1 = paramBuilder.team1_name;
-      if (str1 == null) {
-        this.team1_name = "";
-      } else {
-        this.team1_name = str1;
-      } 
-      str1 = paramBuilder.team1_image;
-      if (str1 == null) {
-        this.team1_image = "";
-      } else {
-        this.team1_image = str1;
-      } 
-      str1 = paramBuilder.team2_name;
-      if (str1 == null) {
-        this.team2_name = "";
-      } else {
-        this.team2_name = str1;
-      } 
-      str = paramBuilder.team2_image;
-      if (str == null) {
-        this.team2_image = "";
-      } else {
-        this.team2_image = str;
-      } 
-    } else {
-      this.title = ((Builder)str).title;
-      this.url = ((Builder)str).url;
-      this.competition_image = ((Builder)str).competition_image;
-      this.team1_name = ((Builder)str).team1_name;
-      this.team1_image = ((Builder)str).team1_image;
-      this.team2_name = ((Builder)str).team2_name;
-      this.team2_image = ((Builder)str).team2_image;
-    } 
-  }
-  
-  public FeatureCardCompetitionSubNode(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<FeatureCardCompetitionSubNode> {
-    public String competition_image;
-    
-    public String team1_image;
-    
-    public String team1_name;
-    
-    public String team2_image;
-    
-    public String team2_name;
-    
-    public String title;
-    
-    public String url;
-    
-    public Builder() {}
-    
-    public Builder(FeatureCardCompetitionSubNode param1FeatureCardCompetitionSubNode) {
-      super(param1FeatureCardCompetitionSubNode);
-      if (param1FeatureCardCompetitionSubNode == null)
-        return; 
-      this.title = param1FeatureCardCompetitionSubNode.title;
-      this.url = param1FeatureCardCompetitionSubNode.url;
-      this.competition_image = param1FeatureCardCompetitionSubNode.competition_image;
-      this.team1_name = param1FeatureCardCompetitionSubNode.team1_name;
-      this.team1_image = param1FeatureCardCompetitionSubNode.team1_image;
-      this.team2_name = param1FeatureCardCompetitionSubNode.team2_name;
-      this.team2_image = param1FeatureCardCompetitionSubNode.team2_image;
+    public static final String DEFAULT_COMPETITION_IMAGE = "";
+    public static final String DEFAULT_TEAM1_IMAGE = "";
+    public static final String DEFAULT_TEAM1_NAME = "";
+    public static final String DEFAULT_TEAM2_IMAGE = "";
+    public static final String DEFAULT_TEAM2_NAME = "";
+    public static final String DEFAULT_TITLE = "";
+    public static final String DEFAULT_URL = "";
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String competition_image;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String team1_image;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String team1_name;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String team2_image;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String team2_name;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String title;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String url;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<FeatureCardCompetitionSubNode> {
+        public String competition_image;
+        public String team1_image;
+        public String team1_name;
+        public String team2_image;
+        public String team2_name;
+        public String title;
+        public String url;
+
+        public Builder() {
+        }
+
+        public Builder(FeatureCardCompetitionSubNode featureCardCompetitionSubNode) {
+            super(featureCardCompetitionSubNode);
+            if (featureCardCompetitionSubNode == null) {
+                return;
+            }
+            this.title = featureCardCompetitionSubNode.title;
+            this.url = featureCardCompetitionSubNode.url;
+            this.competition_image = featureCardCompetitionSubNode.competition_image;
+            this.team1_name = featureCardCompetitionSubNode.team1_name;
+            this.team1_image = featureCardCompetitionSubNode.team1_image;
+            this.team2_name = featureCardCompetitionSubNode.team2_name;
+            this.team2_image = featureCardCompetitionSubNode.team2_image;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public FeatureCardCompetitionSubNode build(boolean z) {
+            return new FeatureCardCompetitionSubNode(this, z);
+        }
     }
-    
-    public FeatureCardCompetitionSubNode build(boolean param1Boolean) {
-      return new FeatureCardCompetitionSubNode(this, param1Boolean, null);
+
+    public FeatureCardCompetitionSubNode(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.url;
+            if (str2 == null) {
+                this.url = "";
+            } else {
+                this.url = str2;
+            }
+            String str3 = builder.competition_image;
+            if (str3 == null) {
+                this.competition_image = "";
+            } else {
+                this.competition_image = str3;
+            }
+            String str4 = builder.team1_name;
+            if (str4 == null) {
+                this.team1_name = "";
+            } else {
+                this.team1_name = str4;
+            }
+            String str5 = builder.team1_image;
+            if (str5 == null) {
+                this.team1_image = "";
+            } else {
+                this.team1_image = str5;
+            }
+            String str6 = builder.team2_name;
+            if (str6 == null) {
+                this.team2_name = "";
+            } else {
+                this.team2_name = str6;
+            }
+            String str7 = builder.team2_image;
+            if (str7 == null) {
+                this.team2_image = "";
+                return;
+            } else {
+                this.team2_image = str7;
+                return;
+            }
+        }
+        this.title = builder.title;
+        this.url = builder.url;
+        this.competition_image = builder.competition_image;
+        this.team1_name = builder.team1_name;
+        this.team1_image = builder.team1_image;
+        this.team2_name = builder.team2_name;
+        this.team2_image = builder.team2_image;
     }
-  }
-  
-  public static class a {}
 }

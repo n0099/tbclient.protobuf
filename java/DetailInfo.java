@@ -2,63 +2,58 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class DetailInfo extends Message {
-  public static final String DEFAULT_TEXT = "";
-  
-  public static final String DEFAULT_URL = "";
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String text;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String url;
-  
-  public DetailInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.text;
-      if (str1 == null) {
-        this.text = "";
-      } else {
-        this.text = str1;
-      } 
-      str = paramBuilder.url;
-      if (str == null) {
-        this.url = "";
-      } else {
-        this.url = str;
-      } 
-    } else {
-      this.text = ((Builder)str).text;
-      this.url = ((Builder)str).url;
-    } 
-  }
-  
-  public DetailInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DetailInfo> {
-    public String text;
-    
-    public String url;
-    
-    public Builder() {}
-    
-    public Builder(DetailInfo param1DetailInfo) {
-      super(param1DetailInfo);
-      if (param1DetailInfo == null)
-        return; 
-      this.text = param1DetailInfo.text;
-      this.url = param1DetailInfo.url;
+    public static final String DEFAULT_TEXT = "";
+    public static final String DEFAULT_URL = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String text;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String url;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DetailInfo> {
+        public String text;
+        public String url;
+
+        public Builder() {
+        }
+
+        public Builder(DetailInfo detailInfo) {
+            super(detailInfo);
+            if (detailInfo == null) {
+                return;
+            }
+            this.text = detailInfo.text;
+            this.url = detailInfo.url;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DetailInfo build(boolean z) {
+            return new DetailInfo(this, z);
+        }
     }
-    
-    public DetailInfo build(boolean param1Boolean) {
-      return new DetailInfo(this, param1Boolean, null);
+
+    public DetailInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.text;
+            if (str == null) {
+                this.text = "";
+            } else {
+                this.text = str;
+            }
+            String str2 = builder.url;
+            if (str2 == null) {
+                this.url = "";
+                return;
+            } else {
+                this.url = str2;
+                return;
+            }
+        }
+        this.text = builder.text;
+        this.url = builder.url;
     }
-  }
-  
-  public static class a {}
 }

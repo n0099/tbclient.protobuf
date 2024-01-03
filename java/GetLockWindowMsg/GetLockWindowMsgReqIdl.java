@@ -2,40 +2,39 @@ package tbclient.GetLockWindowMsg;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GetLockWindowMsgReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public GetLockWindowMsgReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GetLockWindowMsgReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetLockWindowMsgReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(GetLockWindowMsgReqIdl param1GetLockWindowMsgReqIdl) {
-      super(param1GetLockWindowMsgReqIdl);
-      if (param1GetLockWindowMsgReqIdl == null)
-        return; 
-      this.data = param1GetLockWindowMsgReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetLockWindowMsgReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(GetLockWindowMsgReqIdl getLockWindowMsgReqIdl) {
+            super(getLockWindowMsgReqIdl);
+            if (getLockWindowMsgReqIdl == null) {
+                return;
+            }
+            this.data = getLockWindowMsgReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetLockWindowMsgReqIdl build(boolean z) {
+            return new GetLockWindowMsgReqIdl(this, z);
+        }
     }
-    
-    public GetLockWindowMsgReqIdl build(boolean param1Boolean) {
-      return new GetLockWindowMsgReqIdl(this, param1Boolean, null);
+
+    public GetLockWindowMsgReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

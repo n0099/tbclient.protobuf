@@ -2,40 +2,39 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class HottopicReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public HottopicReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public HottopicReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<HottopicReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(HottopicReqIdl param1HottopicReqIdl) {
-      super(param1HottopicReqIdl);
-      if (param1HottopicReqIdl == null)
-        return; 
-      this.data = param1HottopicReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<HottopicReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(HottopicReqIdl hottopicReqIdl) {
+            super(hottopicReqIdl);
+            if (hottopicReqIdl == null) {
+                return;
+            }
+            this.data = hottopicReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public HottopicReqIdl build(boolean z) {
+            return new HottopicReqIdl(this, z);
+        }
     }
-    
-    public HottopicReqIdl build(boolean param1Boolean) {
-      return new HottopicReqIdl(this, param1Boolean, null);
+
+    public HottopicReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

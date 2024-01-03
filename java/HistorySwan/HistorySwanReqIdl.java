@@ -2,40 +2,39 @@ package tbclient.HistorySwan;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class HistorySwanReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public HistorySwanReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public HistorySwanReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<HistorySwanReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(HistorySwanReqIdl param1HistorySwanReqIdl) {
-      super(param1HistorySwanReqIdl);
-      if (param1HistorySwanReqIdl == null)
-        return; 
-      this.data = param1HistorySwanReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<HistorySwanReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(HistorySwanReqIdl historySwanReqIdl) {
+            super(historySwanReqIdl);
+            if (historySwanReqIdl == null) {
+                return;
+            }
+            this.data = historySwanReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public HistorySwanReqIdl build(boolean z) {
+            return new HistorySwanReqIdl(this, z);
+        }
     }
-    
-    public HistorySwanReqIdl build(boolean param1Boolean) {
-      return new HistorySwanReqIdl(this, param1Boolean, null);
+
+    public HistorySwanReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

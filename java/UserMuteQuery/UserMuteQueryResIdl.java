@@ -3,48 +3,45 @@ package tbclient.UserMuteQuery;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class UserMuteQueryResIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataRes data;
-  
-  @ProtoField(tag = 2)
-  public final Error error;
-  
-  public UserMuteQueryResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } else {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } 
-  }
-  
-  public UserMuteQueryResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<UserMuteQueryResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(UserMuteQueryResIdl param1UserMuteQueryResIdl) {
-      super(param1UserMuteQueryResIdl);
-      if (param1UserMuteQueryResIdl == null)
-        return; 
-      this.data = param1UserMuteQueryResIdl.data;
-      this.error = param1UserMuteQueryResIdl.error;
+    @ProtoField(tag = 1)
+    public final DataRes data;
+    @ProtoField(tag = 2)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<UserMuteQueryResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(UserMuteQueryResIdl userMuteQueryResIdl) {
+            super(userMuteQueryResIdl);
+            if (userMuteQueryResIdl == null) {
+                return;
+            }
+            this.data = userMuteQueryResIdl.data;
+            this.error = userMuteQueryResIdl.error;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public UserMuteQueryResIdl build(boolean z) {
+            return new UserMuteQueryResIdl(this, z);
+        }
     }
-    
-    public UserMuteQueryResIdl build(boolean param1Boolean) {
-      return new UserMuteQueryResIdl(this, param1Boolean, null);
+
+    public UserMuteQueryResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+            this.error = builder.error;
+            return;
+        }
+        this.data = builder.data;
+        this.error = builder.error;
     }
-  }
-  
-  public static class a {}
 }

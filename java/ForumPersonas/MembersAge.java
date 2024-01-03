@@ -2,82 +2,70 @@ package tbclient.ForumPersonas;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class MembersAge extends Message {
-  public static final String DEFAULT_NAME = "";
-  
-  public static final Double DEFAULT_RATE;
-  
-  public static final Integer DEFAULT_SEQ = Integer.valueOf(0);
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String name;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.DOUBLE)
-  public final Double rate;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer seq;
-  
-  static {
-    DEFAULT_RATE = Double.valueOf(0.0D);
-  }
-  
-  public MembersAge(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Double double_;
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.seq;
-      if (integer == null) {
-        this.seq = DEFAULT_SEQ;
-      } else {
-        this.seq = integer;
-      } 
-      String str = paramBuilder.name;
-      if (str == null) {
-        this.name = "";
-      } else {
-        this.name = str;
-      } 
-      double_ = paramBuilder.rate;
-      if (double_ == null) {
-        this.rate = DEFAULT_RATE;
-      } else {
-        this.rate = double_;
-      } 
-    } else {
-      this.seq = ((Builder)double_).seq;
-      this.name = ((Builder)double_).name;
-      this.rate = ((Builder)double_).rate;
-    } 
-  }
-  
-  public MembersAge(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<MembersAge> {
-    public String name;
-    
-    public Double rate;
-    
-    public Integer seq;
-    
-    public Builder() {}
-    
-    public Builder(MembersAge param1MembersAge) {
-      super(param1MembersAge);
-      if (param1MembersAge == null)
-        return; 
-      this.seq = param1MembersAge.seq;
-      this.name = param1MembersAge.name;
-      this.rate = param1MembersAge.rate;
+    public static final String DEFAULT_NAME = "";
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String name;
+    @ProtoField(tag = 3, type = Message.Datatype.DOUBLE)
+    public final Double rate;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer seq;
+    public static final Integer DEFAULT_SEQ = 0;
+    public static final Double DEFAULT_RATE = Double.valueOf(0.0d);
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<MembersAge> {
+        public String name;
+        public Double rate;
+        public Integer seq;
+
+        public Builder() {
+        }
+
+        public Builder(MembersAge membersAge) {
+            super(membersAge);
+            if (membersAge == null) {
+                return;
+            }
+            this.seq = membersAge.seq;
+            this.name = membersAge.name;
+            this.rate = membersAge.rate;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public MembersAge build(boolean z) {
+            return new MembersAge(this, z);
+        }
     }
-    
-    public MembersAge build(boolean param1Boolean) {
-      return new MembersAge(this, param1Boolean, null);
+
+    public MembersAge(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.seq;
+            if (num == null) {
+                this.seq = DEFAULT_SEQ;
+            } else {
+                this.seq = num;
+            }
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            Double d = builder.rate;
+            if (d == null) {
+                this.rate = DEFAULT_RATE;
+                return;
+            } else {
+                this.rate = d;
+                return;
+            }
+        }
+        this.seq = builder.seq;
+        this.name = builder.name;
+        this.rate = builder.rate;
     }
-  }
-  
-  public static class a {}
 }

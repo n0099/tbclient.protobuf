@@ -2,40 +2,39 @@ package tbclient.CompleteTask;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class CompleteTaskReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public CompleteTaskReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public CompleteTaskReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<CompleteTaskReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(CompleteTaskReqIdl param1CompleteTaskReqIdl) {
-      super(param1CompleteTaskReqIdl);
-      if (param1CompleteTaskReqIdl == null)
-        return; 
-      this.data = param1CompleteTaskReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<CompleteTaskReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(CompleteTaskReqIdl completeTaskReqIdl) {
+            super(completeTaskReqIdl);
+            if (completeTaskReqIdl == null) {
+                return;
+            }
+            this.data = completeTaskReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public CompleteTaskReqIdl build(boolean z) {
+            return new CompleteTaskReqIdl(this, z);
+        }
     }
-    
-    public CompleteTaskReqIdl build(boolean param1Boolean) {
-      return new CompleteTaskReqIdl(this, param1Boolean, null);
+
+    public CompleteTaskReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

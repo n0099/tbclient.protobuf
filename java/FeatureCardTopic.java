@@ -4,100 +4,82 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class FeatureCardTopic extends Message {
-  public static final Integer DEFAULT_FLOOR;
-  
-  public static final List<FeatureCardTopicSubNode> DEFAULT_SUB_NODES;
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  public static final Integer DEFAULT_TYPE;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-  public final Integer floor;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 4)
-  public final List<FeatureCardTopicSubNode> sub_nodes;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String title;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-  public final Integer type;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_TYPE = integer;
-    DEFAULT_FLOOR = integer;
-    DEFAULT_SUB_NODES = Collections.emptyList();
-  }
-  
-  public FeatureCardTopic(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<FeatureCardTopicSubNode> list;
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.type;
-      if (integer == null) {
-        this.type = DEFAULT_TYPE;
-      } else {
-        this.type = integer;
-      } 
-      integer = paramBuilder.floor;
-      if (integer == null) {
-        this.floor = DEFAULT_FLOOR;
-      } else {
-        this.floor = integer;
-      } 
-      String str = paramBuilder.title;
-      if (str == null) {
-        this.title = "";
-      } else {
-        this.title = str;
-      } 
-      list = paramBuilder.sub_nodes;
-      if (list == null) {
-        this.sub_nodes = DEFAULT_SUB_NODES;
-      } else {
-        this.sub_nodes = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this.type = ((Builder)list).type;
-      this.floor = ((Builder)list).floor;
-      this.title = ((Builder)list).title;
-      this.sub_nodes = Message.immutableCopyOf(((Builder)list).sub_nodes);
-    } 
-  }
-  
-  public FeatureCardTopic(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<FeatureCardTopic> {
-    public Integer floor;
-    
-    public List<FeatureCardTopicSubNode> sub_nodes;
-    
-    public String title;
-    
-    public Integer type;
-    
-    public Builder() {}
-    
-    public Builder(FeatureCardTopic param1FeatureCardTopic) {
-      super(param1FeatureCardTopic);
-      if (param1FeatureCardTopic == null)
-        return; 
-      this.type = param1FeatureCardTopic.type;
-      this.floor = param1FeatureCardTopic.floor;
-      this.title = param1FeatureCardTopic.title;
-      this.sub_nodes = Message.copyOf(param1FeatureCardTopic.sub_nodes);
+    public static final String DEFAULT_TITLE = "";
+    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
+    public final Integer floor;
+    @ProtoField(label = Message.Label.REPEATED, tag = 4)
+    public final List<FeatureCardTopicSubNode> sub_nodes;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String title;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer type;
+    public static final Integer DEFAULT_TYPE = 0;
+    public static final Integer DEFAULT_FLOOR = 0;
+    public static final List<FeatureCardTopicSubNode> DEFAULT_SUB_NODES = Collections.emptyList();
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<FeatureCardTopic> {
+        public Integer floor;
+        public List<FeatureCardTopicSubNode> sub_nodes;
+        public String title;
+        public Integer type;
+
+        public Builder() {
+        }
+
+        public Builder(FeatureCardTopic featureCardTopic) {
+            super(featureCardTopic);
+            if (featureCardTopic == null) {
+                return;
+            }
+            this.type = featureCardTopic.type;
+            this.floor = featureCardTopic.floor;
+            this.title = featureCardTopic.title;
+            this.sub_nodes = Message.copyOf(featureCardTopic.sub_nodes);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public FeatureCardTopic build(boolean z) {
+            return new FeatureCardTopic(this, z);
+        }
     }
-    
-    public FeatureCardTopic build(boolean param1Boolean) {
-      return new FeatureCardTopic(this, param1Boolean, null);
+
+    public FeatureCardTopic(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            Integer num2 = builder.floor;
+            if (num2 == null) {
+                this.floor = DEFAULT_FLOOR;
+            } else {
+                this.floor = num2;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            List<FeatureCardTopicSubNode> list = builder.sub_nodes;
+            if (list == null) {
+                this.sub_nodes = DEFAULT_SUB_NODES;
+                return;
+            } else {
+                this.sub_nodes = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.type = builder.type;
+        this.floor = builder.floor;
+        this.title = builder.title;
+        this.sub_nodes = Message.immutableCopyOf(builder.sub_nodes);
     }
-  }
-  
-  public static class a {}
 }

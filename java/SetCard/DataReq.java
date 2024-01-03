@@ -3,71 +3,68 @@ package tbclient.SetCard;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Long DEFAULT_PROPS_ID = Long.valueOf(0L);
-  
-  public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
-  
-  @ProtoField(tag = 1)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT64)
-  public final Long props_id;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT32)
-  public final Integer type;
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      Long long_ = paramBuilder.props_id;
-      if (long_ == null) {
-        this.props_id = DEFAULT_PROPS_ID;
-      } else {
-        this.props_id = long_;
-      } 
-      integer = paramBuilder.type;
-      if (integer == null) {
-        this.type = DEFAULT_TYPE;
-      } else {
-        this.type = integer;
-      } 
-    } else {
-      this.common = ((Builder)integer).common;
-      this.props_id = ((Builder)integer).props_id;
-      this.type = ((Builder)integer).type;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public CommonReq common;
-    
-    public Long props_id;
-    
-    public Integer type;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.common = param1DataReq.common;
-      this.props_id = param1DataReq.props_id;
-      this.type = param1DataReq.type;
+    public static final Long DEFAULT_PROPS_ID = 0L;
+    public static final Integer DEFAULT_TYPE = 0;
+    @ProtoField(tag = 1)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1475common;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT64)
+    public final Long props_id;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
+    public final Integer type;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1476common;
+        public Long props_id;
+        public Integer type;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.f1476common = dataReq.f1475common;
+            this.props_id = dataReq.props_id;
+            this.type = dataReq.type;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f1475common = builder.f1476common;
+            Long l = builder.props_id;
+            if (l == null) {
+                this.props_id = DEFAULT_PROPS_ID;
+            } else {
+                this.props_id = l;
+            }
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+                return;
+            } else {
+                this.type = num;
+                return;
+            }
+        }
+        this.f1475common = builder.f1476common;
+        this.props_id = builder.props_id;
+        this.type = builder.type;
     }
-  }
-  
-  public static class a {}
 }

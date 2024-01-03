@@ -2,124 +2,106 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class SignatureInfo extends Message {
-  public static final String DEFAULT_GAME_ID = "";
-  
-  public static final String DEFAULT_GAME_NAME = "";
-  
-  public static final String DEFAULT_PLAYER = "";
-  
-  public static final String DEFAULT_POWER = "";
-  
-  public static final String DEFAULT_SERVER = "";
-  
-  @ProtoField(tag = 5)
-  public final Avatar avatar;
-  
-  @ProtoField(tag = 1)
-  public final Equipment equipment;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String game_id;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String game_name;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String player;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String power;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.STRING)
-  public final String server;
-  
-  public SignatureInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      this.equipment = paramBuilder.equipment;
-      String str1 = paramBuilder.game_id;
-      if (str1 == null) {
-        this.game_id = "";
-      } else {
-        this.game_id = str1;
-      } 
-      str1 = paramBuilder.game_name;
-      if (str1 == null) {
-        this.game_name = "";
-      } else {
-        this.game_name = str1;
-      } 
-      str1 = paramBuilder.player;
-      if (str1 == null) {
-        this.player = "";
-      } else {
-        this.player = str1;
-      } 
-      this.avatar = paramBuilder.avatar;
-      str1 = paramBuilder.power;
-      if (str1 == null) {
-        this.power = "";
-      } else {
-        this.power = str1;
-      } 
-      str = paramBuilder.server;
-      if (str == null) {
-        this.server = "";
-      } else {
-        this.server = str;
-      } 
-    } else {
-      this.equipment = ((Builder)str).equipment;
-      this.game_id = ((Builder)str).game_id;
-      this.game_name = ((Builder)str).game_name;
-      this.player = ((Builder)str).player;
-      this.avatar = ((Builder)str).avatar;
-      this.power = ((Builder)str).power;
-      this.server = ((Builder)str).server;
-    } 
-  }
-  
-  public SignatureInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<SignatureInfo> {
-    public Avatar avatar;
-    
-    public Equipment equipment;
-    
-    public String game_id;
-    
-    public String game_name;
-    
-    public String player;
-    
-    public String power;
-    
-    public String server;
-    
-    public Builder() {}
-    
-    public Builder(SignatureInfo param1SignatureInfo) {
-      super(param1SignatureInfo);
-      if (param1SignatureInfo == null)
-        return; 
-      this.equipment = param1SignatureInfo.equipment;
-      this.game_id = param1SignatureInfo.game_id;
-      this.game_name = param1SignatureInfo.game_name;
-      this.player = param1SignatureInfo.player;
-      this.avatar = param1SignatureInfo.avatar;
-      this.power = param1SignatureInfo.power;
-      this.server = param1SignatureInfo.server;
+    public static final String DEFAULT_GAME_ID = "";
+    public static final String DEFAULT_GAME_NAME = "";
+    public static final String DEFAULT_PLAYER = "";
+    public static final String DEFAULT_POWER = "";
+    public static final String DEFAULT_SERVER = "";
+    @ProtoField(tag = 5)
+    public final Avatar avatar;
+    @ProtoField(tag = 1)
+    public final Equipment equipment;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String game_id;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String game_name;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String player;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String power;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String server;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<SignatureInfo> {
+        public Avatar avatar;
+        public Equipment equipment;
+        public String game_id;
+        public String game_name;
+        public String player;
+        public String power;
+        public String server;
+
+        public Builder() {
+        }
+
+        public Builder(SignatureInfo signatureInfo) {
+            super(signatureInfo);
+            if (signatureInfo == null) {
+                return;
+            }
+            this.equipment = signatureInfo.equipment;
+            this.game_id = signatureInfo.game_id;
+            this.game_name = signatureInfo.game_name;
+            this.player = signatureInfo.player;
+            this.avatar = signatureInfo.avatar;
+            this.power = signatureInfo.power;
+            this.server = signatureInfo.server;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public SignatureInfo build(boolean z) {
+            return new SignatureInfo(this, z);
+        }
     }
-    
-    public SignatureInfo build(boolean param1Boolean) {
-      return new SignatureInfo(this, param1Boolean, null);
+
+    public SignatureInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.equipment = builder.equipment;
+            String str = builder.game_id;
+            if (str == null) {
+                this.game_id = "";
+            } else {
+                this.game_id = str;
+            }
+            String str2 = builder.game_name;
+            if (str2 == null) {
+                this.game_name = "";
+            } else {
+                this.game_name = str2;
+            }
+            String str3 = builder.player;
+            if (str3 == null) {
+                this.player = "";
+            } else {
+                this.player = str3;
+            }
+            this.avatar = builder.avatar;
+            String str4 = builder.power;
+            if (str4 == null) {
+                this.power = "";
+            } else {
+                this.power = str4;
+            }
+            String str5 = builder.server;
+            if (str5 == null) {
+                this.server = "";
+                return;
+            } else {
+                this.server = str5;
+                return;
+            }
+        }
+        this.equipment = builder.equipment;
+        this.game_id = builder.game_id;
+        this.game_name = builder.game_name;
+        this.player = builder.player;
+        this.avatar = builder.avatar;
+        this.power = builder.power;
+        this.server = builder.server;
     }
-  }
-  
-  public static class a {}
 }

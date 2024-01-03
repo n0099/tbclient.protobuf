@@ -2,78 +2,70 @@ package tbclient.GetPoisByLocation;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class PoiInfo extends Message {
-  public static final String DEFAULT_ADDR = "";
-  
-  public static final String DEFAULT_NAME = "";
-  
-  public static final String DEFAULT_SN = "";
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String addr;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String name;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String sn;
-  
-  public PoiInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.name;
-      if (str1 == null) {
-        this.name = "";
-      } else {
-        this.name = str1;
-      } 
-      str1 = paramBuilder.addr;
-      if (str1 == null) {
-        this.addr = "";
-      } else {
-        this.addr = str1;
-      } 
-      str = paramBuilder.sn;
-      if (str == null) {
-        this.sn = "";
-      } else {
-        this.sn = str;
-      } 
-    } else {
-      this.name = ((Builder)str).name;
-      this.addr = ((Builder)str).addr;
-      this.sn = ((Builder)str).sn;
-    } 
-  }
-  
-  public PoiInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<PoiInfo> {
-    public String addr;
-    
-    public String name;
-    
-    public String sn;
-    
-    public Builder() {}
-    
-    public Builder(PoiInfo param1PoiInfo) {
-      super(param1PoiInfo);
-      if (param1PoiInfo == null)
-        return; 
-      this.name = param1PoiInfo.name;
-      this.addr = param1PoiInfo.addr;
-      this.sn = param1PoiInfo.sn;
+    public static final String DEFAULT_ADDR = "";
+    public static final String DEFAULT_NAME = "";
+    public static final String DEFAULT_SN = "";
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String addr;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String name;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String sn;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<PoiInfo> {
+        public String addr;
+        public String name;
+        public String sn;
+
+        public Builder() {
+        }
+
+        public Builder(PoiInfo poiInfo) {
+            super(poiInfo);
+            if (poiInfo == null) {
+                return;
+            }
+            this.name = poiInfo.name;
+            this.addr = poiInfo.addr;
+            this.sn = poiInfo.sn;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public PoiInfo build(boolean z) {
+            return new PoiInfo(this, z);
+        }
     }
-    
-    public PoiInfo build(boolean param1Boolean) {
-      return new PoiInfo(this, param1Boolean, null);
+
+    public PoiInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.addr;
+            if (str2 == null) {
+                this.addr = "";
+            } else {
+                this.addr = str2;
+            }
+            String str3 = builder.sn;
+            if (str3 == null) {
+                this.sn = "";
+                return;
+            } else {
+                this.sn = str3;
+                return;
+            }
+        }
+        this.name = builder.name;
+        this.addr = builder.addr;
+        this.sn = builder.sn;
     }
-  }
-  
-  public static class a {}
 }

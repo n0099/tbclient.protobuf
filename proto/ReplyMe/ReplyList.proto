@@ -36,4 +36,5 @@ message ReplyList {
     Baijiahao baijiahao = 27;
     repeated NewFloorInfo new_floor_info = 28;
     int32 has_agree = 29;
+    string target_scheme = 30;
 }

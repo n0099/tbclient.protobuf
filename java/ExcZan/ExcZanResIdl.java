@@ -3,48 +3,45 @@ package tbclient.ExcZan;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class ExcZanResIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataRes data;
-  
-  @ProtoField(tag = 2)
-  public final Error error;
-  
-  public ExcZanResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } else {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } 
-  }
-  
-  public ExcZanResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ExcZanResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(ExcZanResIdl param1ExcZanResIdl) {
-      super(param1ExcZanResIdl);
-      if (param1ExcZanResIdl == null)
-        return; 
-      this.data = param1ExcZanResIdl.data;
-      this.error = param1ExcZanResIdl.error;
+    @ProtoField(tag = 1)
+    public final DataRes data;
+    @ProtoField(tag = 2)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ExcZanResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(ExcZanResIdl excZanResIdl) {
+            super(excZanResIdl);
+            if (excZanResIdl == null) {
+                return;
+            }
+            this.data = excZanResIdl.data;
+            this.error = excZanResIdl.error;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ExcZanResIdl build(boolean z) {
+            return new ExcZanResIdl(this, z);
+        }
     }
-    
-    public ExcZanResIdl build(boolean param1Boolean) {
-      return new ExcZanResIdl(this, param1Boolean, null);
+
+    public ExcZanResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+            this.error = builder.error;
+            return;
+        }
+        this.data = builder.data;
+        this.error = builder.error;
     }
-  }
-  
-  public static class a {}
 }

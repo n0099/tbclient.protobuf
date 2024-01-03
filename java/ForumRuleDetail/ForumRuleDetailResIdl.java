@@ -3,48 +3,45 @@ package tbclient.ForumRuleDetail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class ForumRuleDetailResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public ForumRuleDetailResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public ForumRuleDetailResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ForumRuleDetailResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(ForumRuleDetailResIdl param1ForumRuleDetailResIdl) {
-      super(param1ForumRuleDetailResIdl);
-      if (param1ForumRuleDetailResIdl == null)
-        return; 
-      this.error = param1ForumRuleDetailResIdl.error;
-      this.data = param1ForumRuleDetailResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ForumRuleDetailResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(ForumRuleDetailResIdl forumRuleDetailResIdl) {
+            super(forumRuleDetailResIdl);
+            if (forumRuleDetailResIdl == null) {
+                return;
+            }
+            this.error = forumRuleDetailResIdl.error;
+            this.data = forumRuleDetailResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ForumRuleDetailResIdl build(boolean z) {
+            return new ForumRuleDetailResIdl(this, z);
+        }
     }
-    
-    public ForumRuleDetailResIdl build(boolean param1Boolean) {
-      return new ForumRuleDetailResIdl(this, param1Boolean, null);
+
+    public ForumRuleDetailResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

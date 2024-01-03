@@ -4,75 +4,64 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class Esport extends Message {
-  public static final List<EsportRank> DEFAULT_BILLBOARD;
-  
-  public static final Integer DEFAULT_FLOOR_NO = Integer.valueOf(0);
-  
-  @ProtoField(tag = 1)
-  public final EsportStatic _static;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 3)
-  public final List<EsportRank> billboard;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer floor_no;
-  
-  static {
-    DEFAULT_BILLBOARD = Collections.emptyList();
-  }
-  
-  public Esport(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<EsportRank> list;
-    if (paramBoolean == true) {
-      this._static = paramBuilder._static;
-      Integer integer = paramBuilder.floor_no;
-      if (integer == null) {
-        this.floor_no = DEFAULT_FLOOR_NO;
-      } else {
-        this.floor_no = integer;
-      } 
-      list = paramBuilder.billboard;
-      if (list == null) {
-        this.billboard = DEFAULT_BILLBOARD;
-      } else {
-        this.billboard = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this._static = ((Builder)list)._static;
-      this.floor_no = ((Builder)list).floor_no;
-      this.billboard = Message.immutableCopyOf(((Builder)list).billboard);
-    } 
-  }
-  
-  public Esport(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<Esport> {
-    public EsportStatic _static;
-    
-    public List<EsportRank> billboard;
-    
-    public Integer floor_no;
-    
-    public Builder() {}
-    
-    public Builder(Esport param1Esport) {
-      super(param1Esport);
-      if (param1Esport == null)
-        return; 
-      this._static = param1Esport._static;
-      this.floor_no = param1Esport.floor_no;
-      this.billboard = Message.copyOf(param1Esport.billboard);
+    @ProtoField(tag = 1)
+    public final EsportStatic _static;
+    @ProtoField(label = Message.Label.REPEATED, tag = 3)
+    public final List<EsportRank> billboard;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer floor_no;
+    public static final Integer DEFAULT_FLOOR_NO = 0;
+    public static final List<EsportRank> DEFAULT_BILLBOARD = Collections.emptyList();
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<Esport> {
+        public EsportStatic _static;
+        public List<EsportRank> billboard;
+        public Integer floor_no;
+
+        public Builder() {
+        }
+
+        public Builder(Esport esport) {
+            super(esport);
+            if (esport == null) {
+                return;
+            }
+            this._static = esport._static;
+            this.floor_no = esport.floor_no;
+            this.billboard = Message.copyOf(esport.billboard);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Esport build(boolean z) {
+            return new Esport(this, z);
+        }
     }
-    
-    public Esport build(boolean param1Boolean) {
-      return new Esport(this, param1Boolean, null);
+
+    public Esport(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this._static = builder._static;
+            Integer num = builder.floor_no;
+            if (num == null) {
+                this.floor_no = DEFAULT_FLOOR_NO;
+            } else {
+                this.floor_no = num;
+            }
+            List<EsportRank> list = builder.billboard;
+            if (list == null) {
+                this.billboard = DEFAULT_BILLBOARD;
+                return;
+            } else {
+                this.billboard = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this._static = builder._static;
+        this.floor_no = builder.floor_no;
+        this.billboard = Message.immutableCopyOf(builder.billboard);
     }
-  }
-  
-  public static class a {}
 }

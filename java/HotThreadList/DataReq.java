@@ -3,71 +3,68 @@ package tbclient.HotThreadList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final String DEFAULT_TAB_CODE = "";
-  
-  public static final String DEFAULT_TAB_ID = "";
-  
-  @ProtoField(tag = 1)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String tab_code;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String tab_id;
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      String str1 = paramBuilder.tab_id;
-      if (str1 == null) {
-        this.tab_id = "";
-      } else {
-        this.tab_id = str1;
-      } 
-      str = paramBuilder.tab_code;
-      if (str == null) {
-        this.tab_code = "";
-      } else {
-        this.tab_code = str;
-      } 
-    } else {
-      this.common = ((Builder)str).common;
-      this.tab_id = ((Builder)str).tab_id;
-      this.tab_code = ((Builder)str).tab_code;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public CommonReq common;
-    
-    public String tab_code;
-    
-    public String tab_id;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.common = param1DataReq.common;
-      this.tab_id = param1DataReq.tab_id;
-      this.tab_code = param1DataReq.tab_code;
+    public static final String DEFAULT_TAB_CODE = "";
+    public static final String DEFAULT_TAB_ID = "";
+    @ProtoField(tag = 1)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1413common;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String tab_code;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String tab_id;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1414common;
+        public String tab_code;
+        public String tab_id;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.f1414common = dataReq.f1413common;
+            this.tab_id = dataReq.tab_id;
+            this.tab_code = dataReq.tab_code;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f1413common = builder.f1414common;
+            String str = builder.tab_id;
+            if (str == null) {
+                this.tab_id = "";
+            } else {
+                this.tab_id = str;
+            }
+            String str2 = builder.tab_code;
+            if (str2 == null) {
+                this.tab_code = "";
+                return;
+            } else {
+                this.tab_code = str2;
+                return;
+            }
+        }
+        this.f1413common = builder.f1414common;
+        this.tab_id = builder.tab_id;
+        this.tab_code = builder.tab_code;
     }
-  }
-  
-  public static class a {}
 }

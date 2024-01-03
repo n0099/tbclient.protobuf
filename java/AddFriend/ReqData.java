@@ -3,85 +3,79 @@ package tbclient.AddFriend;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class ReqData extends Message {
-  public static final Long DEFAULT_FRIEND_ID = Long.valueOf(0L);
-  
-  public static final String DEFAULT_MESSAGE = "";
-  
-  public static final String DEFAULT_ST_TYPE = "";
-  
-  @ProtoField(tag = 4)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long friend_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String message;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String st_type;
-  
-  public ReqData(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.friend_id;
-      if (long_ == null) {
-        this.friend_id = DEFAULT_FRIEND_ID;
-      } else {
-        this.friend_id = long_;
-      } 
-      String str = paramBuilder.message;
-      if (str == null) {
-        this.message = "";
-      } else {
-        this.message = str;
-      } 
-      str = paramBuilder.st_type;
-      if (str == null) {
-        this.st_type = "";
-      } else {
-        this.st_type = str;
-      } 
-      this.common = paramBuilder.common;
-    } else {
-      this.friend_id = paramBuilder.friend_id;
-      this.message = paramBuilder.message;
-      this.st_type = paramBuilder.st_type;
-      this.common = paramBuilder.common;
-    } 
-  }
-  
-  public ReqData(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ReqData> {
-    public CommonReq common;
-    
-    public Long friend_id;
-    
-    public String message;
-    
-    public String st_type;
-    
-    public Builder() {}
-    
-    public Builder(ReqData param1ReqData) {
-      super(param1ReqData);
-      if (param1ReqData == null)
-        return; 
-      this.friend_id = param1ReqData.friend_id;
-      this.message = param1ReqData.message;
-      this.st_type = param1ReqData.st_type;
-      this.common = param1ReqData.common;
+    public static final Long DEFAULT_FRIEND_ID = 0L;
+    public static final String DEFAULT_MESSAGE = "";
+    public static final String DEFAULT_ST_TYPE = "";
+    @ProtoField(tag = 4)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1233common;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long friend_id;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String message;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String st_type;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ReqData> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1234common;
+        public Long friend_id;
+        public String message;
+        public String st_type;
+
+        public Builder() {
+        }
+
+        public Builder(ReqData reqData) {
+            super(reqData);
+            if (reqData == null) {
+                return;
+            }
+            this.friend_id = reqData.friend_id;
+            this.message = reqData.message;
+            this.st_type = reqData.st_type;
+            this.f1234common = reqData.f1233common;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ReqData build(boolean z) {
+            return new ReqData(this, z);
+        }
     }
-    
-    public ReqData build(boolean param1Boolean) {
-      return new ReqData(this, param1Boolean, null);
+
+    public ReqData(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.friend_id;
+            if (l == null) {
+                this.friend_id = DEFAULT_FRIEND_ID;
+            } else {
+                this.friend_id = l;
+            }
+            String str = builder.message;
+            if (str == null) {
+                this.message = "";
+            } else {
+                this.message = str;
+            }
+            String str2 = builder.st_type;
+            if (str2 == null) {
+                this.st_type = "";
+            } else {
+                this.st_type = str2;
+            }
+            this.f1233common = builder.f1234common;
+            return;
+        }
+        this.friend_id = builder.friend_id;
+        this.message = builder.message;
+        this.st_type = builder.st_type;
+        this.f1233common = builder.f1234common;
     }
-  }
-  
-  public static class a {}
 }

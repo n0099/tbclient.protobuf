@@ -2,123 +2,106 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class PopInfo extends Message {
-  public static final String DEFAULT_AHEAD_INFO = "";
-  
-  public static final String DEFAULT_AHEAD_URL = "";
-  
-  public static final Integer DEFAULT_IF_POP = Integer.valueOf(0);
-  
-  public static final String DEFAULT_OK_INFO = "";
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  public static final String DEFAULT_V_TITLE = "";
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String ahead_info;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String ahead_url;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer if_pop;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String ok_info;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String title;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String v_title;
-  
-  public PopInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.if_pop;
-      if (integer == null) {
-        this.if_pop = DEFAULT_IF_POP;
-      } else {
-        this.if_pop = integer;
-      } 
-      String str1 = paramBuilder.title;
-      if (str1 == null) {
-        this.title = "";
-      } else {
-        this.title = str1;
-      } 
-      str1 = paramBuilder.v_title;
-      if (str1 == null) {
-        this.v_title = "";
-      } else {
-        this.v_title = str1;
-      } 
-      str1 = paramBuilder.ahead_info;
-      if (str1 == null) {
-        this.ahead_info = "";
-      } else {
-        this.ahead_info = str1;
-      } 
-      str1 = paramBuilder.ahead_url;
-      if (str1 == null) {
-        this.ahead_url = "";
-      } else {
-        this.ahead_url = str1;
-      } 
-      str = paramBuilder.ok_info;
-      if (str == null) {
-        this.ok_info = "";
-      } else {
-        this.ok_info = str;
-      } 
-    } else {
-      this.if_pop = ((Builder)str).if_pop;
-      this.title = ((Builder)str).title;
-      this.v_title = ((Builder)str).v_title;
-      this.ahead_info = ((Builder)str).ahead_info;
-      this.ahead_url = ((Builder)str).ahead_url;
-      this.ok_info = ((Builder)str).ok_info;
-    } 
-  }
-  
-  public PopInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<PopInfo> {
-    public String ahead_info;
-    
-    public String ahead_url;
-    
-    public Integer if_pop;
-    
-    public String ok_info;
-    
-    public String title;
-    
-    public String v_title;
-    
-    public Builder() {}
-    
-    public Builder(PopInfo param1PopInfo) {
-      super(param1PopInfo);
-      if (param1PopInfo == null)
-        return; 
-      this.if_pop = param1PopInfo.if_pop;
-      this.title = param1PopInfo.title;
-      this.v_title = param1PopInfo.v_title;
-      this.ahead_info = param1PopInfo.ahead_info;
-      this.ahead_url = param1PopInfo.ahead_url;
-      this.ok_info = param1PopInfo.ok_info;
+    public static final String DEFAULT_AHEAD_INFO = "";
+    public static final String DEFAULT_AHEAD_URL = "";
+    public static final Integer DEFAULT_IF_POP = 0;
+    public static final String DEFAULT_OK_INFO = "";
+    public static final String DEFAULT_TITLE = "";
+    public static final String DEFAULT_V_TITLE = "";
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String ahead_info;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String ahead_url;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer if_pop;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String ok_info;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String title;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String v_title;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<PopInfo> {
+        public String ahead_info;
+        public String ahead_url;
+        public Integer if_pop;
+        public String ok_info;
+        public String title;
+        public String v_title;
+
+        public Builder() {
+        }
+
+        public Builder(PopInfo popInfo) {
+            super(popInfo);
+            if (popInfo == null) {
+                return;
+            }
+            this.if_pop = popInfo.if_pop;
+            this.title = popInfo.title;
+            this.v_title = popInfo.v_title;
+            this.ahead_info = popInfo.ahead_info;
+            this.ahead_url = popInfo.ahead_url;
+            this.ok_info = popInfo.ok_info;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public PopInfo build(boolean z) {
+            return new PopInfo(this, z);
+        }
     }
-    
-    public PopInfo build(boolean param1Boolean) {
-      return new PopInfo(this, param1Boolean, null);
+
+    public PopInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.if_pop;
+            if (num == null) {
+                this.if_pop = DEFAULT_IF_POP;
+            } else {
+                this.if_pop = num;
+            }
+            String str = builder.title;
+            if (str == null) {
+                this.title = "";
+            } else {
+                this.title = str;
+            }
+            String str2 = builder.v_title;
+            if (str2 == null) {
+                this.v_title = "";
+            } else {
+                this.v_title = str2;
+            }
+            String str3 = builder.ahead_info;
+            if (str3 == null) {
+                this.ahead_info = "";
+            } else {
+                this.ahead_info = str3;
+            }
+            String str4 = builder.ahead_url;
+            if (str4 == null) {
+                this.ahead_url = "";
+            } else {
+                this.ahead_url = str4;
+            }
+            String str5 = builder.ok_info;
+            if (str5 == null) {
+                this.ok_info = "";
+                return;
+            } else {
+                this.ok_info = str5;
+                return;
+            }
+        }
+        this.if_pop = builder.if_pop;
+        this.title = builder.title;
+        this.v_title = builder.v_title;
+        this.ahead_info = builder.ahead_info;
+        this.ahead_url = builder.ahead_url;
+        this.ok_info = builder.ok_info;
     }
-  }
-  
-  public static class a {}
 }

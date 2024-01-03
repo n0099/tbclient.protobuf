@@ -4,197 +4,154 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class FrequentlyForumInfo extends Message {
-  public static final Integer DEFAULT_ACCESS_FLAG;
-  
-  public static final String DEFAULT_AVATAR = "";
-  
-  public static final Long DEFAULT_FORUM_ID;
-  
-  public static final String DEFAULT_FORUM_NAME = "";
-  
-  public static final Integer DEFAULT_FORUM_STATE;
-  
-  public static final Integer DEFAULT_IS_SIGN;
-  
-  public static final Long DEFAULT_LAST_ACCESS_TIME;
-  
-  public static final Integer DEFAULT_LEVEL_ID;
-  
-  public static final String DEFAULT_NEW_THREAD_NUM = "";
-  
-  public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
-  
-  @ProtoField(tag = 15, type = Message.Datatype.UINT32)
-  public final Integer access_flag;
-  
-  @ProtoField(tag = 12, type = Message.Datatype.STRING)
-  public final String avatar;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT64)
-  public final Long forum_id;
-  
-  @ProtoField(tag = 11, type = Message.Datatype.STRING)
-  public final String forum_name;
-  
-  @ProtoField(tag = 14, type = Message.Datatype.UINT32)
-  public final Integer forum_state;
-  
-  @ProtoField(tag = 16, type = Message.Datatype.UINT32)
-  public final Integer is_sign;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.UINT64)
-  public final Long last_access_time;
-  
-  @ProtoField(tag = 13, type = Message.Datatype.UINT32)
-  public final Integer level_id;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String new_thread_num;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 7)
-  public final List<User> user_list;
-  
-  static {
-    DEFAULT_LAST_ACCESS_TIME = long_;
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_LEVEL_ID = integer;
-    DEFAULT_FORUM_STATE = integer;
-    DEFAULT_ACCESS_FLAG = integer;
-    DEFAULT_IS_SIGN = integer;
-  }
-  
-  public FrequentlyForumInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Long long_2 = paramBuilder.forum_id;
-      if (long_2 == null) {
-        this.forum_id = DEFAULT_FORUM_ID;
-      } else {
-        this.forum_id = long_2;
-      } 
-      String str2 = paramBuilder.new_thread_num;
-      if (str2 == null) {
-        this.new_thread_num = "";
-      } else {
-        this.new_thread_num = str2;
-      } 
-      List<User> list = paramBuilder.user_list;
-      if (list == null) {
-        this.user_list = DEFAULT_USER_LIST;
-      } else {
-        this.user_list = Message.immutableCopyOf(list);
-      } 
-      Long long_1 = paramBuilder.last_access_time;
-      if (long_1 == null) {
-        this.last_access_time = DEFAULT_LAST_ACCESS_TIME;
-      } else {
-        this.last_access_time = long_1;
-      } 
-      String str1 = paramBuilder.forum_name;
-      if (str1 == null) {
-        this.forum_name = "";
-      } else {
-        this.forum_name = str1;
-      } 
-      str1 = paramBuilder.avatar;
-      if (str1 == null) {
-        this.avatar = "";
-      } else {
-        this.avatar = str1;
-      } 
-      Integer integer1 = paramBuilder.level_id;
-      if (integer1 == null) {
-        this.level_id = DEFAULT_LEVEL_ID;
-      } else {
-        this.level_id = integer1;
-      } 
-      integer1 = paramBuilder.forum_state;
-      if (integer1 == null) {
-        this.forum_state = DEFAULT_FORUM_STATE;
-      } else {
-        this.forum_state = integer1;
-      } 
-      integer1 = paramBuilder.access_flag;
-      if (integer1 == null) {
-        this.access_flag = DEFAULT_ACCESS_FLAG;
-      } else {
-        this.access_flag = integer1;
-      } 
-      integer = paramBuilder.is_sign;
-      if (integer == null) {
-        this.is_sign = DEFAULT_IS_SIGN;
-      } else {
-        this.is_sign = integer;
-      } 
-    } else {
-      this.forum_id = ((Builder)integer).forum_id;
-      this.new_thread_num = ((Builder)integer).new_thread_num;
-      this.user_list = Message.immutableCopyOf(((Builder)integer).user_list);
-      this.last_access_time = ((Builder)integer).last_access_time;
-      this.forum_name = ((Builder)integer).forum_name;
-      this.avatar = ((Builder)integer).avatar;
-      this.level_id = ((Builder)integer).level_id;
-      this.forum_state = ((Builder)integer).forum_state;
-      this.access_flag = ((Builder)integer).access_flag;
-      this.is_sign = ((Builder)integer).is_sign;
-    } 
-  }
-  
-  public FrequentlyForumInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_FORUM_ID = long_;
-  }
-  
-  public static final class Builder extends Message.Builder<FrequentlyForumInfo> {
-    public Integer access_flag;
-    
-    public String avatar;
-    
-    public Long forum_id;
-    
-    public String forum_name;
-    
-    public Integer forum_state;
-    
-    public Integer is_sign;
-    
-    public Long last_access_time;
-    
-    public Integer level_id;
-    
-    public String new_thread_num;
-    
-    public List<User> user_list;
-    
-    public Builder() {}
-    
-    public Builder(FrequentlyForumInfo param1FrequentlyForumInfo) {
-      super(param1FrequentlyForumInfo);
-      if (param1FrequentlyForumInfo == null)
-        return; 
-      this.forum_id = param1FrequentlyForumInfo.forum_id;
-      this.new_thread_num = param1FrequentlyForumInfo.new_thread_num;
-      this.user_list = Message.copyOf(param1FrequentlyForumInfo.user_list);
-      this.last_access_time = param1FrequentlyForumInfo.last_access_time;
-      this.forum_name = param1FrequentlyForumInfo.forum_name;
-      this.avatar = param1FrequentlyForumInfo.avatar;
-      this.level_id = param1FrequentlyForumInfo.level_id;
-      this.forum_state = param1FrequentlyForumInfo.forum_state;
-      this.access_flag = param1FrequentlyForumInfo.access_flag;
-      this.is_sign = param1FrequentlyForumInfo.is_sign;
+    public static final String DEFAULT_AVATAR = "";
+    public static final String DEFAULT_FORUM_NAME = "";
+    public static final String DEFAULT_NEW_THREAD_NUM = "";
+    @ProtoField(tag = 15, type = Message.Datatype.UINT32)
+    public final Integer access_flag;
+    @ProtoField(tag = 12, type = Message.Datatype.STRING)
+    public final String avatar;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long forum_id;
+    @ProtoField(tag = 11, type = Message.Datatype.STRING)
+    public final String forum_name;
+    @ProtoField(tag = 14, type = Message.Datatype.UINT32)
+    public final Integer forum_state;
+    @ProtoField(tag = 16, type = Message.Datatype.UINT32)
+    public final Integer is_sign;
+    @ProtoField(tag = 9, type = Message.Datatype.UINT64)
+    public final Long last_access_time;
+    @ProtoField(tag = 13, type = Message.Datatype.UINT32)
+    public final Integer level_id;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String new_thread_num;
+    @ProtoField(label = Message.Label.REPEATED, tag = 7)
+    public final List<User> user_list;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final List<User> DEFAULT_USER_LIST = Collections.emptyList();
+    public static final Long DEFAULT_LAST_ACCESS_TIME = 0L;
+    public static final Integer DEFAULT_LEVEL_ID = 0;
+    public static final Integer DEFAULT_FORUM_STATE = 0;
+    public static final Integer DEFAULT_ACCESS_FLAG = 0;
+    public static final Integer DEFAULT_IS_SIGN = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<FrequentlyForumInfo> {
+        public Integer access_flag;
+        public String avatar;
+        public Long forum_id;
+        public String forum_name;
+        public Integer forum_state;
+        public Integer is_sign;
+        public Long last_access_time;
+        public Integer level_id;
+        public String new_thread_num;
+        public List<User> user_list;
+
+        public Builder() {
+        }
+
+        public Builder(FrequentlyForumInfo frequentlyForumInfo) {
+            super(frequentlyForumInfo);
+            if (frequentlyForumInfo == null) {
+                return;
+            }
+            this.forum_id = frequentlyForumInfo.forum_id;
+            this.new_thread_num = frequentlyForumInfo.new_thread_num;
+            this.user_list = Message.copyOf(frequentlyForumInfo.user_list);
+            this.last_access_time = frequentlyForumInfo.last_access_time;
+            this.forum_name = frequentlyForumInfo.forum_name;
+            this.avatar = frequentlyForumInfo.avatar;
+            this.level_id = frequentlyForumInfo.level_id;
+            this.forum_state = frequentlyForumInfo.forum_state;
+            this.access_flag = frequentlyForumInfo.access_flag;
+            this.is_sign = frequentlyForumInfo.is_sign;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public FrequentlyForumInfo build(boolean z) {
+            return new FrequentlyForumInfo(this, z);
+        }
     }
-    
-    public FrequentlyForumInfo build(boolean param1Boolean) {
-      return new FrequentlyForumInfo(this, param1Boolean, null);
+
+    public FrequentlyForumInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            String str = builder.new_thread_num;
+            if (str == null) {
+                this.new_thread_num = "";
+            } else {
+                this.new_thread_num = str;
+            }
+            List<User> list = builder.user_list;
+            if (list == null) {
+                this.user_list = DEFAULT_USER_LIST;
+            } else {
+                this.user_list = Message.immutableCopyOf(list);
+            }
+            Long l2 = builder.last_access_time;
+            if (l2 == null) {
+                this.last_access_time = DEFAULT_LAST_ACCESS_TIME;
+            } else {
+                this.last_access_time = l2;
+            }
+            String str2 = builder.forum_name;
+            if (str2 == null) {
+                this.forum_name = "";
+            } else {
+                this.forum_name = str2;
+            }
+            String str3 = builder.avatar;
+            if (str3 == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str3;
+            }
+            Integer num = builder.level_id;
+            if (num == null) {
+                this.level_id = DEFAULT_LEVEL_ID;
+            } else {
+                this.level_id = num;
+            }
+            Integer num2 = builder.forum_state;
+            if (num2 == null) {
+                this.forum_state = DEFAULT_FORUM_STATE;
+            } else {
+                this.forum_state = num2;
+            }
+            Integer num3 = builder.access_flag;
+            if (num3 == null) {
+                this.access_flag = DEFAULT_ACCESS_FLAG;
+            } else {
+                this.access_flag = num3;
+            }
+            Integer num4 = builder.is_sign;
+            if (num4 == null) {
+                this.is_sign = DEFAULT_IS_SIGN;
+                return;
+            } else {
+                this.is_sign = num4;
+                return;
+            }
+        }
+        this.forum_id = builder.forum_id;
+        this.new_thread_num = builder.new_thread_num;
+        this.user_list = Message.immutableCopyOf(builder.user_list);
+        this.last_access_time = builder.last_access_time;
+        this.forum_name = builder.forum_name;
+        this.avatar = builder.avatar;
+        this.level_id = builder.level_id;
+        this.forum_state = builder.forum_state;
+        this.access_flag = builder.access_flag;
+        this.is_sign = builder.is_sign;
     }
-  }
-  
-  public static class a {}
 }

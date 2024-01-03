@@ -2,78 +2,70 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class DealAuthInfo extends Message {
-  public static final String DEFAULT_ITEM_CONTENT = "";
-  
-  public static final String DEFAULT_ITEM_NAME = "";
-  
-  public static final String DEFAULT_ITEM_URL = "";
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String item_content;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String item_name;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String item_url;
-  
-  public DealAuthInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.item_name;
-      if (str1 == null) {
-        this.item_name = "";
-      } else {
-        this.item_name = str1;
-      } 
-      str1 = paramBuilder.item_content;
-      if (str1 == null) {
-        this.item_content = "";
-      } else {
-        this.item_content = str1;
-      } 
-      str = paramBuilder.item_url;
-      if (str == null) {
-        this.item_url = "";
-      } else {
-        this.item_url = str;
-      } 
-    } else {
-      this.item_name = ((Builder)str).item_name;
-      this.item_content = ((Builder)str).item_content;
-      this.item_url = ((Builder)str).item_url;
-    } 
-  }
-  
-  public DealAuthInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DealAuthInfo> {
-    public String item_content;
-    
-    public String item_name;
-    
-    public String item_url;
-    
-    public Builder() {}
-    
-    public Builder(DealAuthInfo param1DealAuthInfo) {
-      super(param1DealAuthInfo);
-      if (param1DealAuthInfo == null)
-        return; 
-      this.item_name = param1DealAuthInfo.item_name;
-      this.item_content = param1DealAuthInfo.item_content;
-      this.item_url = param1DealAuthInfo.item_url;
+    public static final String DEFAULT_ITEM_CONTENT = "";
+    public static final String DEFAULT_ITEM_NAME = "";
+    public static final String DEFAULT_ITEM_URL = "";
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String item_content;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String item_name;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String item_url;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DealAuthInfo> {
+        public String item_content;
+        public String item_name;
+        public String item_url;
+
+        public Builder() {
+        }
+
+        public Builder(DealAuthInfo dealAuthInfo) {
+            super(dealAuthInfo);
+            if (dealAuthInfo == null) {
+                return;
+            }
+            this.item_name = dealAuthInfo.item_name;
+            this.item_content = dealAuthInfo.item_content;
+            this.item_url = dealAuthInfo.item_url;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DealAuthInfo build(boolean z) {
+            return new DealAuthInfo(this, z);
+        }
     }
-    
-    public DealAuthInfo build(boolean param1Boolean) {
-      return new DealAuthInfo(this, param1Boolean, null);
+
+    public DealAuthInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.item_name;
+            if (str == null) {
+                this.item_name = "";
+            } else {
+                this.item_name = str;
+            }
+            String str2 = builder.item_content;
+            if (str2 == null) {
+                this.item_content = "";
+            } else {
+                this.item_content = str2;
+            }
+            String str3 = builder.item_url;
+            if (str3 == null) {
+                this.item_url = "";
+                return;
+            } else {
+                this.item_url = str3;
+                return;
+            }
+        }
+        this.item_name = builder.item_name;
+        this.item_content = builder.item_content;
+        this.item_url = builder.item_url;
     }
-  }
-  
-  public static class a {}
 }

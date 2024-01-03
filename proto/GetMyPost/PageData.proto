@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+import "LayoutFactory.proto";
+
+message PageData {
+    LayoutFactory feed = 1;
+}

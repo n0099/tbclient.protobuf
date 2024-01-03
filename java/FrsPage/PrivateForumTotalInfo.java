@@ -4,79 +4,69 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.PrivateForumInfo;
 import tbclient.PrivatePopInfo;
-
+/* loaded from: classes2.dex */
 public final class PrivateForumTotalInfo extends Message {
-  public static final Integer DEFAULT_PRIVATE_FORUM_TASKPERCENT = Integer.valueOf(0);
-  
-  @ProtoField(tag = 5)
-  public final HeadImgs head_imgs;
-  
-  @ProtoField(tag = 3)
-  public final PrivateForumInfo private_forum_info;
-  
-  @ProtoField(tag = 2)
-  public final PrivatePopInfo private_forum_popinfo;
-  
-  @ProtoField(tag = 1)
-  public final PrivateForumShareinfo private_forum_shareinfo;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT32)
-  public final Integer private_forum_taskpercent;
-  
-  public PrivateForumTotalInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.private_forum_shareinfo = paramBuilder.private_forum_shareinfo;
-      this.private_forum_popinfo = paramBuilder.private_forum_popinfo;
-      this.private_forum_info = paramBuilder.private_forum_info;
-      Integer integer = paramBuilder.private_forum_taskpercent;
-      if (integer == null) {
-        this.private_forum_taskpercent = DEFAULT_PRIVATE_FORUM_TASKPERCENT;
-      } else {
-        this.private_forum_taskpercent = integer;
-      } 
-      this.head_imgs = paramBuilder.head_imgs;
-    } else {
-      this.private_forum_shareinfo = paramBuilder.private_forum_shareinfo;
-      this.private_forum_popinfo = paramBuilder.private_forum_popinfo;
-      this.private_forum_info = paramBuilder.private_forum_info;
-      this.private_forum_taskpercent = paramBuilder.private_forum_taskpercent;
-      this.head_imgs = paramBuilder.head_imgs;
-    } 
-  }
-  
-  public PrivateForumTotalInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<PrivateForumTotalInfo> {
-    public HeadImgs head_imgs;
-    
-    public PrivateForumInfo private_forum_info;
-    
-    public PrivatePopInfo private_forum_popinfo;
-    
-    public PrivateForumShareinfo private_forum_shareinfo;
-    
-    public Integer private_forum_taskpercent;
-    
-    public Builder() {}
-    
-    public Builder(PrivateForumTotalInfo param1PrivateForumTotalInfo) {
-      super(param1PrivateForumTotalInfo);
-      if (param1PrivateForumTotalInfo == null)
-        return; 
-      this.private_forum_shareinfo = param1PrivateForumTotalInfo.private_forum_shareinfo;
-      this.private_forum_popinfo = param1PrivateForumTotalInfo.private_forum_popinfo;
-      this.private_forum_info = param1PrivateForumTotalInfo.private_forum_info;
-      this.private_forum_taskpercent = param1PrivateForumTotalInfo.private_forum_taskpercent;
-      this.head_imgs = param1PrivateForumTotalInfo.head_imgs;
+    public static final Integer DEFAULT_PRIVATE_FORUM_TASKPERCENT = 0;
+    @ProtoField(tag = 5)
+    public final HeadImgs head_imgs;
+    @ProtoField(tag = 3)
+    public final PrivateForumInfo private_forum_info;
+    @ProtoField(tag = 2)
+    public final PrivatePopInfo private_forum_popinfo;
+    @ProtoField(tag = 1)
+    public final PrivateForumShareinfo private_forum_shareinfo;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer private_forum_taskpercent;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<PrivateForumTotalInfo> {
+        public HeadImgs head_imgs;
+        public PrivateForumInfo private_forum_info;
+        public PrivatePopInfo private_forum_popinfo;
+        public PrivateForumShareinfo private_forum_shareinfo;
+        public Integer private_forum_taskpercent;
+
+        public Builder() {
+        }
+
+        public Builder(PrivateForumTotalInfo privateForumTotalInfo) {
+            super(privateForumTotalInfo);
+            if (privateForumTotalInfo == null) {
+                return;
+            }
+            this.private_forum_shareinfo = privateForumTotalInfo.private_forum_shareinfo;
+            this.private_forum_popinfo = privateForumTotalInfo.private_forum_popinfo;
+            this.private_forum_info = privateForumTotalInfo.private_forum_info;
+            this.private_forum_taskpercent = privateForumTotalInfo.private_forum_taskpercent;
+            this.head_imgs = privateForumTotalInfo.head_imgs;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public PrivateForumTotalInfo build(boolean z) {
+            return new PrivateForumTotalInfo(this, z);
+        }
     }
-    
-    public PrivateForumTotalInfo build(boolean param1Boolean) {
-      return new PrivateForumTotalInfo(this, param1Boolean, null);
+
+    public PrivateForumTotalInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.private_forum_shareinfo = builder.private_forum_shareinfo;
+            this.private_forum_popinfo = builder.private_forum_popinfo;
+            this.private_forum_info = builder.private_forum_info;
+            Integer num = builder.private_forum_taskpercent;
+            if (num == null) {
+                this.private_forum_taskpercent = DEFAULT_PRIVATE_FORUM_TASKPERCENT;
+            } else {
+                this.private_forum_taskpercent = num;
+            }
+            this.head_imgs = builder.head_imgs;
+            return;
+        }
+        this.private_forum_shareinfo = builder.private_forum_shareinfo;
+        this.private_forum_popinfo = builder.private_forum_popinfo;
+        this.private_forum_info = builder.private_forum_info;
+        this.private_forum_taskpercent = builder.private_forum_taskpercent;
+        this.head_imgs = builder.head_imgs;
     }
-  }
-  
-  public static class a {}
 }

@@ -2,156 +2,124 @@ package tbclient.Hottopic;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class PkModule extends Message {
-  public static final String DEFAULT_MODULE_NAME = "";
-  
-  public static final Long DEFAULT_PK_ID;
-  
-  public static final Integer DEFAULT_PK_TYPE;
-  
-  public static final String DEFAULT_QUES_DESC = "";
-  
-  public static final Long DEFAULT_USER_PK_ID;
-  
-  public static final Integer DEFAULT_USER_PK_INDEX;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String module_name;
-  
-  @ProtoField(tag = 3)
-  public final PkView pk_1;
-  
-  @ProtoField(tag = 4)
-  public final PkView pk_2;
-  
-  @ProtoField(tag = 5)
-  public final PkView pk_3;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.UINT64)
-  public final Long pk_id;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.INT32)
-  public final Integer pk_type;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String ques_desc;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.UINT64)
-  public final Long user_pk_id;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.INT32)
-  public final Integer user_pk_index;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_PK_TYPE = integer;
-    DEFAULT_USER_PK_INDEX = integer;
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_PK_ID = long_;
-    DEFAULT_USER_PK_ID = long_;
-  }
-  
-  public PkModule(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Long long_;
-    if (paramBoolean == true) {
-      String str = paramBuilder.module_name;
-      if (str == null) {
-        this.module_name = "";
-      } else {
-        this.module_name = str;
-      } 
-      str = paramBuilder.ques_desc;
-      if (str == null) {
-        this.ques_desc = "";
-      } else {
-        this.ques_desc = str;
-      } 
-      this.pk_1 = paramBuilder.pk_1;
-      this.pk_2 = paramBuilder.pk_2;
-      this.pk_3 = paramBuilder.pk_3;
-      Integer integer = paramBuilder.pk_type;
-      if (integer == null) {
-        this.pk_type = DEFAULT_PK_TYPE;
-      } else {
-        this.pk_type = integer;
-      } 
-      integer = paramBuilder.user_pk_index;
-      if (integer == null) {
-        this.user_pk_index = DEFAULT_USER_PK_INDEX;
-      } else {
-        this.user_pk_index = integer;
-      } 
-      Long long_1 = paramBuilder.pk_id;
-      if (long_1 == null) {
-        this.pk_id = DEFAULT_PK_ID;
-      } else {
-        this.pk_id = long_1;
-      } 
-      long_ = paramBuilder.user_pk_id;
-      if (long_ == null) {
-        this.user_pk_id = DEFAULT_USER_PK_ID;
-      } else {
-        this.user_pk_id = long_;
-      } 
-    } else {
-      this.module_name = ((Builder)long_).module_name;
-      this.ques_desc = ((Builder)long_).ques_desc;
-      this.pk_1 = ((Builder)long_).pk_1;
-      this.pk_2 = ((Builder)long_).pk_2;
-      this.pk_3 = ((Builder)long_).pk_3;
-      this.pk_type = ((Builder)long_).pk_type;
-      this.user_pk_index = ((Builder)long_).user_pk_index;
-      this.pk_id = ((Builder)long_).pk_id;
-      this.user_pk_id = ((Builder)long_).user_pk_id;
-    } 
-  }
-  
-  public PkModule(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<PkModule> {
-    public String module_name;
-    
-    public PkView pk_1;
-    
-    public PkView pk_2;
-    
-    public PkView pk_3;
-    
-    public Long pk_id;
-    
-    public Integer pk_type;
-    
-    public String ques_desc;
-    
-    public Long user_pk_id;
-    
-    public Integer user_pk_index;
-    
-    public Builder() {}
-    
-    public Builder(PkModule param1PkModule) {
-      super(param1PkModule);
-      if (param1PkModule == null)
-        return; 
-      this.module_name = param1PkModule.module_name;
-      this.ques_desc = param1PkModule.ques_desc;
-      this.pk_1 = param1PkModule.pk_1;
-      this.pk_2 = param1PkModule.pk_2;
-      this.pk_3 = param1PkModule.pk_3;
-      this.pk_type = param1PkModule.pk_type;
-      this.user_pk_index = param1PkModule.user_pk_index;
-      this.pk_id = param1PkModule.pk_id;
-      this.user_pk_id = param1PkModule.user_pk_id;
+    public static final String DEFAULT_MODULE_NAME = "";
+    public static final String DEFAULT_QUES_DESC = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String module_name;
+    @ProtoField(tag = 3)
+    public final PkView pk_1;
+    @ProtoField(tag = 4)
+    public final PkView pk_2;
+    @ProtoField(tag = 5)
+    public final PkView pk_3;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT64)
+    public final Long pk_id;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer pk_type;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String ques_desc;
+    @ProtoField(tag = 9, type = Message.Datatype.UINT64)
+    public final Long user_pk_id;
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer user_pk_index;
+    public static final Integer DEFAULT_PK_TYPE = 0;
+    public static final Integer DEFAULT_USER_PK_INDEX = 0;
+    public static final Long DEFAULT_PK_ID = 0L;
+    public static final Long DEFAULT_USER_PK_ID = 0L;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<PkModule> {
+        public String module_name;
+        public PkView pk_1;
+        public PkView pk_2;
+        public PkView pk_3;
+        public Long pk_id;
+        public Integer pk_type;
+        public String ques_desc;
+        public Long user_pk_id;
+        public Integer user_pk_index;
+
+        public Builder() {
+        }
+
+        public Builder(PkModule pkModule) {
+            super(pkModule);
+            if (pkModule == null) {
+                return;
+            }
+            this.module_name = pkModule.module_name;
+            this.ques_desc = pkModule.ques_desc;
+            this.pk_1 = pkModule.pk_1;
+            this.pk_2 = pkModule.pk_2;
+            this.pk_3 = pkModule.pk_3;
+            this.pk_type = pkModule.pk_type;
+            this.user_pk_index = pkModule.user_pk_index;
+            this.pk_id = pkModule.pk_id;
+            this.user_pk_id = pkModule.user_pk_id;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public PkModule build(boolean z) {
+            return new PkModule(this, z);
+        }
     }
-    
-    public PkModule build(boolean param1Boolean) {
-      return new PkModule(this, param1Boolean, null);
+
+    public PkModule(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.module_name;
+            if (str == null) {
+                this.module_name = "";
+            } else {
+                this.module_name = str;
+            }
+            String str2 = builder.ques_desc;
+            if (str2 == null) {
+                this.ques_desc = "";
+            } else {
+                this.ques_desc = str2;
+            }
+            this.pk_1 = builder.pk_1;
+            this.pk_2 = builder.pk_2;
+            this.pk_3 = builder.pk_3;
+            Integer num = builder.pk_type;
+            if (num == null) {
+                this.pk_type = DEFAULT_PK_TYPE;
+            } else {
+                this.pk_type = num;
+            }
+            Integer num2 = builder.user_pk_index;
+            if (num2 == null) {
+                this.user_pk_index = DEFAULT_USER_PK_INDEX;
+            } else {
+                this.user_pk_index = num2;
+            }
+            Long l = builder.pk_id;
+            if (l == null) {
+                this.pk_id = DEFAULT_PK_ID;
+            } else {
+                this.pk_id = l;
+            }
+            Long l2 = builder.user_pk_id;
+            if (l2 == null) {
+                this.user_pk_id = DEFAULT_USER_PK_ID;
+                return;
+            } else {
+                this.user_pk_id = l2;
+                return;
+            }
+        }
+        this.module_name = builder.module_name;
+        this.ques_desc = builder.ques_desc;
+        this.pk_1 = builder.pk_1;
+        this.pk_2 = builder.pk_2;
+        this.pk_3 = builder.pk_3;
+        this.pk_type = builder.pk_type;
+        this.user_pk_index = builder.user_pk_index;
+        this.pk_id = builder.pk_id;
+        this.user_pk_id = builder.user_pk_id;
     }
-  }
-  
-  public static class a {}
 }

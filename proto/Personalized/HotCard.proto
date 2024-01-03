@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "ThemeColorInfo.proto";
+import "ThreadInfo.proto";
+
+message HotCard {
+    string card_title = 1;
+    ThemeColorInfo card_background = 2;
+    ThemeColorInfo post_color = 3;
+    string jump_text = 4;
+    repeated ThreadInfo thread_list = 5;
+    int32 card_offset = 6;
+    string jump_link = 7;
+    ThemeColorInfo card_icon = 8;
+}

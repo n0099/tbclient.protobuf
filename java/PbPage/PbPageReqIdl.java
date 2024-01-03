@@ -2,40 +2,39 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class PbPageReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public PbPageReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public PbPageReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<PbPageReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(PbPageReqIdl param1PbPageReqIdl) {
-      super(param1PbPageReqIdl);
-      if (param1PbPageReqIdl == null)
-        return; 
-      this.data = param1PbPageReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<PbPageReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(PbPageReqIdl pbPageReqIdl) {
+            super(pbPageReqIdl);
+            if (pbPageReqIdl == null) {
+                return;
+            }
+            this.data = pbPageReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public PbPageReqIdl build(boolean z) {
+            return new PbPageReqIdl(this, z);
+        }
     }
-    
-    public PbPageReqIdl build(boolean param1Boolean) {
-      return new PbPageReqIdl(this, param1Boolean, null);
+
+    public PbPageReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

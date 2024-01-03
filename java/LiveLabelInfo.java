@@ -2,63 +2,58 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class LiveLabelInfo extends Message {
-  public static final String DEFAULT_ICON = "";
-  
-  public static final String DEFAULT_NAME = "";
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String icon;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String name;
-  
-  public LiveLabelInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.name;
-      if (str1 == null) {
-        this.name = "";
-      } else {
-        this.name = str1;
-      } 
-      str = paramBuilder.icon;
-      if (str == null) {
-        this.icon = "";
-      } else {
-        this.icon = str;
-      } 
-    } else {
-      this.name = ((Builder)str).name;
-      this.icon = ((Builder)str).icon;
-    } 
-  }
-  
-  public LiveLabelInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<LiveLabelInfo> {
-    public String icon;
-    
-    public String name;
-    
-    public Builder() {}
-    
-    public Builder(LiveLabelInfo param1LiveLabelInfo) {
-      super(param1LiveLabelInfo);
-      if (param1LiveLabelInfo == null)
-        return; 
-      this.name = param1LiveLabelInfo.name;
-      this.icon = param1LiveLabelInfo.icon;
+    public static final String DEFAULT_ICON = "";
+    public static final String DEFAULT_NAME = "";
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String icon;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String name;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<LiveLabelInfo> {
+        public String icon;
+        public String name;
+
+        public Builder() {
+        }
+
+        public Builder(LiveLabelInfo liveLabelInfo) {
+            super(liveLabelInfo);
+            if (liveLabelInfo == null) {
+                return;
+            }
+            this.name = liveLabelInfo.name;
+            this.icon = liveLabelInfo.icon;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public LiveLabelInfo build(boolean z) {
+            return new LiveLabelInfo(this, z);
+        }
     }
-    
-    public LiveLabelInfo build(boolean param1Boolean) {
-      return new LiveLabelInfo(this, param1Boolean, null);
+
+    public LiveLabelInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.name;
+            if (str == null) {
+                this.name = "";
+            } else {
+                this.name = str;
+            }
+            String str2 = builder.icon;
+            if (str2 == null) {
+                this.icon = "";
+                return;
+            } else {
+                this.icon = str2;
+                return;
+            }
+        }
+        this.name = builder.name;
+        this.icon = builder.icon;
     }
-  }
-  
-  public static class a {}
 }

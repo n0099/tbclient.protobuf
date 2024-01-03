@@ -2,48 +2,46 @@ package tbclient.SendFreeGift;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
-  public static final Integer DEFAULT_FREE_CHANCE = Integer.valueOf(0);
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-  public final Integer free_chance;
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      integer = paramBuilder.free_chance;
-      if (integer == null) {
-        this.free_chance = DEFAULT_FREE_CHANCE;
-      } else {
-        this.free_chance = integer;
-      } 
-    } else {
-      this.free_chance = ((Builder)integer).free_chance;
-    } 
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataRes> {
-    public Integer free_chance;
-    
-    public Builder() {}
-    
-    public Builder(DataRes param1DataRes) {
-      super(param1DataRes);
-      if (param1DataRes == null)
-        return; 
-      this.free_chance = param1DataRes.free_chance;
+    public static final Integer DEFAULT_FREE_CHANCE = 0;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer free_chance;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataRes> {
+        public Integer free_chance;
+
+        public Builder() {
+        }
+
+        public Builder(DataRes dataRes) {
+            super(dataRes);
+            if (dataRes == null) {
+                return;
+            }
+            this.free_chance = dataRes.free_chance;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataRes build(boolean z) {
+            return new DataRes(this, z);
+        }
     }
-    
-    public DataRes build(boolean param1Boolean) {
-      return new DataRes(this, param1Boolean, null);
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.free_chance;
+            if (num == null) {
+                this.free_chance = DEFAULT_FREE_CHANCE;
+                return;
+            } else {
+                this.free_chance = num;
+                return;
+            }
+        }
+        this.free_chance = builder.free_chance;
     }
-  }
-  
-  public static class a {}
 }

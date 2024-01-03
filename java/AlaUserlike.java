@@ -2,48 +2,45 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class AlaUserlike extends Message {
-  @ProtoField(tag = 2)
-  public final AlaLiveInfo ala_live_info;
-  
-  @ProtoField(tag = 1)
-  public final User user;
-  
-  public AlaUserlike(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.user = paramBuilder.user;
-      this.ala_live_info = paramBuilder.ala_live_info;
-    } else {
-      this.user = paramBuilder.user;
-      this.ala_live_info = paramBuilder.ala_live_info;
-    } 
-  }
-  
-  public AlaUserlike(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<AlaUserlike> {
-    public AlaLiveInfo ala_live_info;
-    
-    public User user;
-    
-    public Builder() {}
-    
-    public Builder(AlaUserlike param1AlaUserlike) {
-      super(param1AlaUserlike);
-      if (param1AlaUserlike == null)
-        return; 
-      this.user = param1AlaUserlike.user;
-      this.ala_live_info = param1AlaUserlike.ala_live_info;
+    @ProtoField(tag = 2)
+    public final AlaLiveInfo ala_live_info;
+    @ProtoField(tag = 1)
+    public final User user;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<AlaUserlike> {
+        public AlaLiveInfo ala_live_info;
+        public User user;
+
+        public Builder() {
+        }
+
+        public Builder(AlaUserlike alaUserlike) {
+            super(alaUserlike);
+            if (alaUserlike == null) {
+                return;
+            }
+            this.user = alaUserlike.user;
+            this.ala_live_info = alaUserlike.ala_live_info;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public AlaUserlike build(boolean z) {
+            return new AlaUserlike(this, z);
+        }
     }
-    
-    public AlaUserlike build(boolean param1Boolean) {
-      return new AlaUserlike(this, param1Boolean, null);
+
+    public AlaUserlike(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.user = builder.user;
+            this.ala_live_info = builder.ala_live_info;
+            return;
+        }
+        this.user = builder.user;
+        this.ala_live_info = builder.ala_live_info;
     }
-  }
-  
-  public static class a {}
 }

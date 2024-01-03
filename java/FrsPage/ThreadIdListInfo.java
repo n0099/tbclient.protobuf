@@ -2,67 +2,58 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ThreadIdListInfo extends Message {
-  public static final Integer DEFAULT_IS_PARTIAL_VISIBLE;
-  
-  public static final Long DEFAULT_TID = Long.valueOf(0L);
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer is_partial_visible;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT64)
-  public final Long tid;
-  
-  static {
-    DEFAULT_IS_PARTIAL_VISIBLE = Integer.valueOf(0);
-  }
-  
-  public ThreadIdListInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.tid;
-      if (long_ == null) {
-        this.tid = DEFAULT_TID;
-      } else {
-        this.tid = long_;
-      } 
-      integer = paramBuilder.is_partial_visible;
-      if (integer == null) {
-        this.is_partial_visible = DEFAULT_IS_PARTIAL_VISIBLE;
-      } else {
-        this.is_partial_visible = integer;
-      } 
-    } else {
-      this.tid = ((Builder)integer).tid;
-      this.is_partial_visible = ((Builder)integer).is_partial_visible;
-    } 
-  }
-  
-  public ThreadIdListInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ThreadIdListInfo> {
-    public Integer is_partial_visible;
-    
-    public Long tid;
-    
-    public Builder() {}
-    
-    public Builder(ThreadIdListInfo param1ThreadIdListInfo) {
-      super(param1ThreadIdListInfo);
-      if (param1ThreadIdListInfo == null)
-        return; 
-      this.tid = param1ThreadIdListInfo.tid;
-      this.is_partial_visible = param1ThreadIdListInfo.is_partial_visible;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer is_partial_visible;
+    @ProtoField(tag = 1, type = Message.Datatype.INT64)
+    public final Long tid;
+    public static final Long DEFAULT_TID = 0L;
+    public static final Integer DEFAULT_IS_PARTIAL_VISIBLE = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ThreadIdListInfo> {
+        public Integer is_partial_visible;
+        public Long tid;
+
+        public Builder() {
+        }
+
+        public Builder(ThreadIdListInfo threadIdListInfo) {
+            super(threadIdListInfo);
+            if (threadIdListInfo == null) {
+                return;
+            }
+            this.tid = threadIdListInfo.tid;
+            this.is_partial_visible = threadIdListInfo.is_partial_visible;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ThreadIdListInfo build(boolean z) {
+            return new ThreadIdListInfo(this, z);
+        }
     }
-    
-    public ThreadIdListInfo build(boolean param1Boolean) {
-      return new ThreadIdListInfo(this, param1Boolean, null);
+
+    public ThreadIdListInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.tid;
+            if (l == null) {
+                this.tid = DEFAULT_TID;
+            } else {
+                this.tid = l;
+            }
+            Integer num = builder.is_partial_visible;
+            if (num == null) {
+                this.is_partial_visible = DEFAULT_IS_PARTIAL_VISIBLE;
+                return;
+            } else {
+                this.is_partial_visible = num;
+                return;
+            }
+        }
+        this.tid = builder.tid;
+        this.is_partial_visible = builder.is_partial_visible;
     }
-  }
-  
-  public static class a {}
 }

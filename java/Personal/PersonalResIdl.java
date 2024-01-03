@@ -3,48 +3,45 @@ package tbclient.Personal;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class PersonalResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public PersonalResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public PersonalResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<PersonalResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(PersonalResIdl param1PersonalResIdl) {
-      super(param1PersonalResIdl);
-      if (param1PersonalResIdl == null)
-        return; 
-      this.error = param1PersonalResIdl.error;
-      this.data = param1PersonalResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<PersonalResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(PersonalResIdl personalResIdl) {
+            super(personalResIdl);
+            if (personalResIdl == null) {
+                return;
+            }
+            this.error = personalResIdl.error;
+            this.data = personalResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public PersonalResIdl build(boolean z) {
+            return new PersonalResIdl(this, z);
+        }
     }
-    
-    public PersonalResIdl build(boolean param1Boolean) {
-      return new PersonalResIdl(this, param1Boolean, null);
+
+    public PersonalResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

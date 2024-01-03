@@ -2,40 +2,39 @@ package tbclient.Share;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ShareReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public ShareReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public ShareReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ShareReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(ShareReqIdl param1ShareReqIdl) {
-      super(param1ShareReqIdl);
-      if (param1ShareReqIdl == null)
-        return; 
-      this.data = param1ShareReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ShareReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(ShareReqIdl shareReqIdl) {
+            super(shareReqIdl);
+            if (shareReqIdl == null) {
+                return;
+            }
+            this.data = shareReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ShareReqIdl build(boolean z) {
+            return new ShareReqIdl(this, z);
+        }
     }
-    
-    public ShareReqIdl build(boolean param1Boolean) {
-      return new ShareReqIdl(this, param1Boolean, null);
+
+    public ShareReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

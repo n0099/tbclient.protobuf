@@ -3,86 +3,80 @@ package tbclient.UrlParser;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Long DEFAULT_FORUM_ID = Long.valueOf(0L);
-  
-  public static final Integer DEFAULT_LINK_NUM = Integer.valueOf(0);
-  
-  public static final String DEFAULT_URL = "";
-  
-  @ProtoField(tag = 1)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT64)
-  public final Long forum_id;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer link_num;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String url;
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      Long long_ = paramBuilder.forum_id;
-      if (long_ == null) {
-        this.forum_id = DEFAULT_FORUM_ID;
-      } else {
-        this.forum_id = long_;
-      } 
-      Integer integer = paramBuilder.link_num;
-      if (integer == null) {
-        this.link_num = DEFAULT_LINK_NUM;
-      } else {
-        this.link_num = integer;
-      } 
-      str = paramBuilder.url;
-      if (str == null) {
-        this.url = "";
-      } else {
-        this.url = str;
-      } 
-    } else {
-      this.common = ((Builder)str).common;
-      this.forum_id = ((Builder)str).forum_id;
-      this.link_num = ((Builder)str).link_num;
-      this.url = ((Builder)str).url;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public CommonReq common;
-    
-    public Long forum_id;
-    
-    public Integer link_num;
-    
-    public String url;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.common = param1DataReq.common;
-      this.forum_id = param1DataReq.forum_id;
-      this.link_num = param1DataReq.link_num;
-      this.url = param1DataReq.url;
+    public static final Long DEFAULT_FORUM_ID = 0L;
+    public static final Integer DEFAULT_LINK_NUM = 0;
+    public static final String DEFAULT_URL = "";
+    @ProtoField(tag = 1)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1501common;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long forum_id;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer link_num;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String url;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1502common;
+        public Long forum_id;
+        public Integer link_num;
+        public String url;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.f1502common = dataReq.f1501common;
+            this.forum_id = dataReq.forum_id;
+            this.link_num = dataReq.link_num;
+            this.url = dataReq.url;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f1501common = builder.f1502common;
+            Long l = builder.forum_id;
+            if (l == null) {
+                this.forum_id = DEFAULT_FORUM_ID;
+            } else {
+                this.forum_id = l;
+            }
+            Integer num = builder.link_num;
+            if (num == null) {
+                this.link_num = DEFAULT_LINK_NUM;
+            } else {
+                this.link_num = num;
+            }
+            String str = builder.url;
+            if (str == null) {
+                this.url = "";
+                return;
+            } else {
+                this.url = str;
+                return;
+            }
+        }
+        this.f1501common = builder.f1502common;
+        this.forum_id = builder.forum_id;
+        this.link_num = builder.link_num;
+        this.url = builder.url;
     }
-  }
-  
-  public static class a {}
 }

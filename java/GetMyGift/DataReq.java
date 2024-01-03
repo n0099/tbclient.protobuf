@@ -3,107 +3,92 @@ package tbclient.GetMyGift;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Integer DEFAULT_ACCOUNT_TYPE;
-  
-  public static final Integer DEFAULT_PN;
-  
-  public static final String DEFAULT_ST_TYPE = "";
-  
-  public static final Long DEFAULT_UID = Long.valueOf(0L);
-  
-  @ProtoField(tag = 5, type = Message.Datatype.INT32)
-  public final Integer account_type;
-  
-  @ProtoField(tag = 2)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT32)
-  public final Integer pn;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String st_type;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT64)
-  public final Long uid;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_PN = integer;
-    DEFAULT_ACCOUNT_TYPE = integer;
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Long long_ = paramBuilder.uid;
-      if (long_ == null) {
-        this.uid = DEFAULT_UID;
-      } else {
-        this.uid = long_;
-      } 
-      this.common = paramBuilder.common;
-      Integer integer1 = paramBuilder.pn;
-      if (integer1 == null) {
-        this.pn = DEFAULT_PN;
-      } else {
-        this.pn = integer1;
-      } 
-      String str = paramBuilder.st_type;
-      if (str == null) {
-        this.st_type = "";
-      } else {
-        this.st_type = str;
-      } 
-      integer = paramBuilder.account_type;
-      if (integer == null) {
-        this.account_type = DEFAULT_ACCOUNT_TYPE;
-      } else {
-        this.account_type = integer;
-      } 
-    } else {
-      this.uid = ((Builder)integer).uid;
-      this.common = ((Builder)integer).common;
-      this.pn = ((Builder)integer).pn;
-      this.st_type = ((Builder)integer).st_type;
-      this.account_type = ((Builder)integer).account_type;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public Integer account_type;
-    
-    public CommonReq common;
-    
-    public Integer pn;
-    
-    public String st_type;
-    
-    public Long uid;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.uid = param1DataReq.uid;
-      this.common = param1DataReq.common;
-      this.pn = param1DataReq.pn;
-      this.st_type = param1DataReq.st_type;
-      this.account_type = param1DataReq.account_type;
+    public static final String DEFAULT_ST_TYPE = "";
+    @ProtoField(tag = 5, type = Message.Datatype.INT32)
+    public final Integer account_type;
+    @ProtoField(tag = 2)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1349common;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
+    public final Integer pn;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String st_type;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT64)
+    public final Long uid;
+    public static final Long DEFAULT_UID = 0L;
+    public static final Integer DEFAULT_PN = 0;
+    public static final Integer DEFAULT_ACCOUNT_TYPE = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+        public Integer account_type;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1350common;
+        public Integer pn;
+        public String st_type;
+        public Long uid;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.uid = dataReq.uid;
+            this.f1350common = dataReq.f1349common;
+            this.pn = dataReq.pn;
+            this.st_type = dataReq.st_type;
+            this.account_type = dataReq.account_type;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Long l = builder.uid;
+            if (l == null) {
+                this.uid = DEFAULT_UID;
+            } else {
+                this.uid = l;
+            }
+            this.f1349common = builder.f1350common;
+            Integer num = builder.pn;
+            if (num == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num;
+            }
+            String str = builder.st_type;
+            if (str == null) {
+                this.st_type = "";
+            } else {
+                this.st_type = str;
+            }
+            Integer num2 = builder.account_type;
+            if (num2 == null) {
+                this.account_type = DEFAULT_ACCOUNT_TYPE;
+                return;
+            } else {
+                this.account_type = num2;
+                return;
+            }
+        }
+        this.uid = builder.uid;
+        this.f1349common = builder.f1350common;
+        this.pn = builder.pn;
+        this.st_type = builder.st_type;
+        this.account_type = builder.account_type;
     }
-  }
-  
-  public static class a {}
 }

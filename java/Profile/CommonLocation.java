@@ -2,63 +2,58 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class CommonLocation extends Message {
-  public static final String DEFAULT_DISTANCE = "";
-  
-  public static final Long DEFAULT_TIME = Long.valueOf(0L);
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String distance;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT64)
-  public final Long time;
-  
-  public CommonLocation(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Long long_;
-    if (paramBoolean == true) {
-      String str = paramBuilder.distance;
-      if (str == null) {
-        this.distance = "";
-      } else {
-        this.distance = str;
-      } 
-      long_ = paramBuilder.time;
-      if (long_ == null) {
-        this.time = DEFAULT_TIME;
-      } else {
-        this.time = long_;
-      } 
-    } else {
-      this.distance = ((Builder)long_).distance;
-      this.time = ((Builder)long_).time;
-    } 
-  }
-  
-  public CommonLocation(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<CommonLocation> {
-    public String distance;
-    
-    public Long time;
-    
-    public Builder() {}
-    
-    public Builder(CommonLocation param1CommonLocation) {
-      super(param1CommonLocation);
-      if (param1CommonLocation == null)
-        return; 
-      this.distance = param1CommonLocation.distance;
-      this.time = param1CommonLocation.time;
+    public static final String DEFAULT_DISTANCE = "";
+    public static final Long DEFAULT_TIME = 0L;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String distance;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long time;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<CommonLocation> {
+        public String distance;
+        public Long time;
+
+        public Builder() {
+        }
+
+        public Builder(CommonLocation commonLocation) {
+            super(commonLocation);
+            if (commonLocation == null) {
+                return;
+            }
+            this.distance = commonLocation.distance;
+            this.time = commonLocation.time;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public CommonLocation build(boolean z) {
+            return new CommonLocation(this, z);
+        }
     }
-    
-    public CommonLocation build(boolean param1Boolean) {
-      return new CommonLocation(this, param1Boolean, null);
+
+    public CommonLocation(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.distance;
+            if (str == null) {
+                this.distance = "";
+            } else {
+                this.distance = str;
+            }
+            Long l = builder.time;
+            if (l == null) {
+                this.time = DEFAULT_TIME;
+                return;
+            } else {
+                this.time = l;
+                return;
+            }
+        }
+        this.distance = builder.distance;
+        this.time = builder.time;
     }
-  }
-  
-  public static class a {}
 }

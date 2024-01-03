@@ -3,48 +3,45 @@ package tbclient.AgreeMe;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class AgreeMeResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public AgreeMeResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public AgreeMeResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<AgreeMeResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(AgreeMeResIdl param1AgreeMeResIdl) {
-      super(param1AgreeMeResIdl);
-      if (param1AgreeMeResIdl == null)
-        return; 
-      this.error = param1AgreeMeResIdl.error;
-      this.data = param1AgreeMeResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<AgreeMeResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(AgreeMeResIdl agreeMeResIdl) {
+            super(agreeMeResIdl);
+            if (agreeMeResIdl == null) {
+                return;
+            }
+            this.error = agreeMeResIdl.error;
+            this.data = agreeMeResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public AgreeMeResIdl build(boolean z) {
+            return new AgreeMeResIdl(this, z);
+        }
     }
-    
-    public AgreeMeResIdl build(boolean param1Boolean) {
-      return new AgreeMeResIdl(this, param1Boolean, null);
+
+    public AgreeMeResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

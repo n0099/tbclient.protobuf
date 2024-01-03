@@ -2,48 +2,46 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class NicknameInfo extends Message {
-  public static final Integer DEFAULT_LEFT_DAYS = Integer.valueOf(0);
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer left_days;
-  
-  public NicknameInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      integer = paramBuilder.left_days;
-      if (integer == null) {
-        this.left_days = DEFAULT_LEFT_DAYS;
-      } else {
-        this.left_days = integer;
-      } 
-    } else {
-      this.left_days = ((Builder)integer).left_days;
-    } 
-  }
-  
-  public NicknameInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<NicknameInfo> {
-    public Integer left_days;
-    
-    public Builder() {}
-    
-    public Builder(NicknameInfo param1NicknameInfo) {
-      super(param1NicknameInfo);
-      if (param1NicknameInfo == null)
-        return; 
-      this.left_days = param1NicknameInfo.left_days;
+    public static final Integer DEFAULT_LEFT_DAYS = 0;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer left_days;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<NicknameInfo> {
+        public Integer left_days;
+
+        public Builder() {
+        }
+
+        public Builder(NicknameInfo nicknameInfo) {
+            super(nicknameInfo);
+            if (nicknameInfo == null) {
+                return;
+            }
+            this.left_days = nicknameInfo.left_days;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public NicknameInfo build(boolean z) {
+            return new NicknameInfo(this, z);
+        }
     }
-    
-    public NicknameInfo build(boolean param1Boolean) {
-      return new NicknameInfo(this, param1Boolean, null);
+
+    public NicknameInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.left_days;
+            if (num == null) {
+                this.left_days = DEFAULT_LEFT_DAYS;
+                return;
+            } else {
+                this.left_days = num;
+                return;
+            }
+        }
+        this.left_days = builder.left_days;
     }
-  }
-  
-  public static class a {}
 }

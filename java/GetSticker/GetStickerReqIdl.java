@@ -2,40 +2,39 @@ package tbclient.GetSticker;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class GetStickerReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public GetStickerReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public GetStickerReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<GetStickerReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(GetStickerReqIdl param1GetStickerReqIdl) {
-      super(param1GetStickerReqIdl);
-      if (param1GetStickerReqIdl == null)
-        return; 
-      this.data = param1GetStickerReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetStickerReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(GetStickerReqIdl getStickerReqIdl) {
+            super(getStickerReqIdl);
+            if (getStickerReqIdl == null) {
+                return;
+            }
+            this.data = getStickerReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetStickerReqIdl build(boolean z) {
+            return new GetStickerReqIdl(this, z);
+        }
     }
-    
-    public GetStickerReqIdl build(boolean param1Boolean) {
-      return new GetStickerReqIdl(this, param1Boolean, null);
+
+    public GetStickerReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

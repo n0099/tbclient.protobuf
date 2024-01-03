@@ -3,42 +3,45 @@ package tbclient.GetOrder;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class GetOrderResIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataRes data;
-  
-  @ProtoField(tag = 2)
-  public final Error error;
-  
-  public GetOrderResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } else {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } 
-  }
-  
-  public static final class Builder extends Message.Builder<GetOrderResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(GetOrderResIdl param1GetOrderResIdl) {
-      super(param1GetOrderResIdl);
-      if (param1GetOrderResIdl == null)
-        return; 
-      this.data = param1GetOrderResIdl.data;
-      this.error = param1GetOrderResIdl.error;
+    @ProtoField(tag = 1)
+    public final DataRes data;
+    @ProtoField(tag = 2)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<GetOrderResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(GetOrderResIdl getOrderResIdl) {
+            super(getOrderResIdl);
+            if (getOrderResIdl == null) {
+                return;
+            }
+            this.data = getOrderResIdl.data;
+            this.error = getOrderResIdl.error;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public GetOrderResIdl build(boolean z) {
+            return new GetOrderResIdl(this, z);
+        }
     }
-    
-    public GetOrderResIdl build(boolean param1Boolean) {
-      return new GetOrderResIdl(this, param1Boolean);
+
+    public GetOrderResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+            this.error = builder.error;
+            return;
+        }
+        this.data = builder.data;
+        this.error = builder.error;
     }
-  }
 }

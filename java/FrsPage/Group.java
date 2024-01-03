@@ -2,69 +2,58 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class Group extends Message {
-  public static final Integer DEFAULT_GROUP_COUNT;
-  
-  public static final Integer DEFAULT_HIDE_RECOMMEND_GROUP;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer group_count;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer hide_recommend_group;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_HIDE_RECOMMEND_GROUP = integer;
-    DEFAULT_GROUP_COUNT = integer;
-  }
-  
-  public Group(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Integer integer1 = paramBuilder.hide_recommend_group;
-      if (integer1 == null) {
-        this.hide_recommend_group = DEFAULT_HIDE_RECOMMEND_GROUP;
-      } else {
-        this.hide_recommend_group = integer1;
-      } 
-      integer = paramBuilder.group_count;
-      if (integer == null) {
-        this.group_count = DEFAULT_GROUP_COUNT;
-      } else {
-        this.group_count = integer;
-      } 
-    } else {
-      this.hide_recommend_group = ((Builder)integer).hide_recommend_group;
-      this.group_count = ((Builder)integer).group_count;
-    } 
-  }
-  
-  public Group(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<Group> {
-    public Integer group_count;
-    
-    public Integer hide_recommend_group;
-    
-    public Builder() {}
-    
-    public Builder(Group param1Group) {
-      super(param1Group);
-      if (param1Group == null)
-        return; 
-      this.hide_recommend_group = param1Group.hide_recommend_group;
-      this.group_count = param1Group.group_count;
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer group_count;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer hide_recommend_group;
+    public static final Integer DEFAULT_HIDE_RECOMMEND_GROUP = 0;
+    public static final Integer DEFAULT_GROUP_COUNT = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<Group> {
+        public Integer group_count;
+        public Integer hide_recommend_group;
+
+        public Builder() {
+        }
+
+        public Builder(Group group) {
+            super(group);
+            if (group == null) {
+                return;
+            }
+            this.hide_recommend_group = group.hide_recommend_group;
+            this.group_count = group.group_count;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Group build(boolean z) {
+            return new Group(this, z);
+        }
     }
-    
-    public Group build(boolean param1Boolean) {
-      return new Group(this, param1Boolean, null);
+
+    public Group(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.hide_recommend_group;
+            if (num == null) {
+                this.hide_recommend_group = DEFAULT_HIDE_RECOMMEND_GROUP;
+            } else {
+                this.hide_recommend_group = num;
+            }
+            Integer num2 = builder.group_count;
+            if (num2 == null) {
+                this.group_count = DEFAULT_GROUP_COUNT;
+                return;
+            } else {
+                this.group_count = num2;
+                return;
+            }
+        }
+        this.hide_recommend_group = builder.hide_recommend_group;
+        this.group_count = builder.group_count;
     }
-  }
-  
-  public static class a {}
 }

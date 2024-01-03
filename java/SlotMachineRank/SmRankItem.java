@@ -2,115 +2,94 @@ package tbclient.SlotMachineRank;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class SmRankItem extends Message {
-  public static final String DEFAULT_PORTRAIT = "";
-  
-  public static final Long DEFAULT_USER_ID;
-  
-  public static final Integer DEFAULT_USER_LEVEL;
-  
-  public static final String DEFAULT_USER_NAME = "";
-  
-  public static final Integer DEFAULT_WIN;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String portrait;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.UINT64)
-  public final Long user_id;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-  public final Integer user_level;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String user_name;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.UINT32)
-  public final Integer win;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_USER_LEVEL = integer;
-    DEFAULT_WIN = integer;
-    DEFAULT_USER_ID = Long.valueOf(0L);
-  }
-  
-  public SmRankItem(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Long long_;
-    if (paramBoolean == true) {
-      String str2 = paramBuilder.portrait;
-      if (str2 == null) {
-        this.portrait = "";
-      } else {
-        this.portrait = str2;
-      } 
-      Integer integer2 = paramBuilder.user_level;
-      if (integer2 == null) {
-        this.user_level = DEFAULT_USER_LEVEL;
-      } else {
-        this.user_level = integer2;
-      } 
-      String str1 = paramBuilder.user_name;
-      if (str1 == null) {
-        this.user_name = "";
-      } else {
-        this.user_name = str1;
-      } 
-      Integer integer1 = paramBuilder.win;
-      if (integer1 == null) {
-        this.win = DEFAULT_WIN;
-      } else {
-        this.win = integer1;
-      } 
-      long_ = paramBuilder.user_id;
-      if (long_ == null) {
-        this.user_id = DEFAULT_USER_ID;
-      } else {
-        this.user_id = long_;
-      } 
-    } else {
-      this.portrait = ((Builder)long_).portrait;
-      this.user_level = ((Builder)long_).user_level;
-      this.user_name = ((Builder)long_).user_name;
-      this.win = ((Builder)long_).win;
-      this.user_id = ((Builder)long_).user_id;
-    } 
-  }
-  
-  public SmRankItem(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<SmRankItem> {
-    public String portrait;
-    
-    public Long user_id;
-    
-    public Integer user_level;
-    
-    public String user_name;
-    
-    public Integer win;
-    
-    public Builder() {}
-    
-    public Builder(SmRankItem param1SmRankItem) {
-      super(param1SmRankItem);
-      if (param1SmRankItem == null)
-        return; 
-      this.portrait = param1SmRankItem.portrait;
-      this.user_level = param1SmRankItem.user_level;
-      this.user_name = param1SmRankItem.user_name;
-      this.win = param1SmRankItem.win;
-      this.user_id = param1SmRankItem.user_id;
+    public static final String DEFAULT_PORTRAIT = "";
+    public static final String DEFAULT_USER_NAME = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String portrait;
+    @ProtoField(tag = 5, type = Message.Datatype.UINT64)
+    public final Long user_id;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
+    public final Integer user_level;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String user_name;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+    public final Integer win;
+    public static final Integer DEFAULT_USER_LEVEL = 0;
+    public static final Integer DEFAULT_WIN = 0;
+    public static final Long DEFAULT_USER_ID = 0L;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<SmRankItem> {
+        public String portrait;
+        public Long user_id;
+        public Integer user_level;
+        public String user_name;
+        public Integer win;
+
+        public Builder() {
+        }
+
+        public Builder(SmRankItem smRankItem) {
+            super(smRankItem);
+            if (smRankItem == null) {
+                return;
+            }
+            this.portrait = smRankItem.portrait;
+            this.user_level = smRankItem.user_level;
+            this.user_name = smRankItem.user_name;
+            this.win = smRankItem.win;
+            this.user_id = smRankItem.user_id;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public SmRankItem build(boolean z) {
+            return new SmRankItem(this, z);
+        }
     }
-    
-    public SmRankItem build(boolean param1Boolean) {
-      return new SmRankItem(this, param1Boolean, null);
+
+    public SmRankItem(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.portrait;
+            if (str == null) {
+                this.portrait = "";
+            } else {
+                this.portrait = str;
+            }
+            Integer num = builder.user_level;
+            if (num == null) {
+                this.user_level = DEFAULT_USER_LEVEL;
+            } else {
+                this.user_level = num;
+            }
+            String str2 = builder.user_name;
+            if (str2 == null) {
+                this.user_name = "";
+            } else {
+                this.user_name = str2;
+            }
+            Integer num2 = builder.win;
+            if (num2 == null) {
+                this.win = DEFAULT_WIN;
+            } else {
+                this.win = num2;
+            }
+            Long l = builder.user_id;
+            if (l == null) {
+                this.user_id = DEFAULT_USER_ID;
+                return;
+            } else {
+                this.user_id = l;
+                return;
+            }
+        }
+        this.portrait = builder.portrait;
+        this.user_level = builder.user_level;
+        this.user_name = builder.user_name;
+        this.win = builder.win;
+        this.user_id = builder.user_id;
     }
-  }
-  
-  public static class a {}
 }

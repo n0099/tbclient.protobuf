@@ -2,40 +2,39 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class VitalityInfo extends Message {
-  @ProtoField(tag = 1)
-  public final FrequentlyForumInfo frequently_forum_info;
-  
-  public VitalityInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.frequently_forum_info = paramBuilder.frequently_forum_info;
-    } else {
-      this.frequently_forum_info = paramBuilder.frequently_forum_info;
-    } 
-  }
-  
-  public VitalityInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<VitalityInfo> {
-    public FrequentlyForumInfo frequently_forum_info;
-    
-    public Builder() {}
-    
-    public Builder(VitalityInfo param1VitalityInfo) {
-      super(param1VitalityInfo);
-      if (param1VitalityInfo == null)
-        return; 
-      this.frequently_forum_info = param1VitalityInfo.frequently_forum_info;
+    @ProtoField(tag = 1)
+    public final FrequentlyForumInfo frequently_forum_info;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<VitalityInfo> {
+        public FrequentlyForumInfo frequently_forum_info;
+
+        public Builder() {
+        }
+
+        public Builder(VitalityInfo vitalityInfo) {
+            super(vitalityInfo);
+            if (vitalityInfo == null) {
+                return;
+            }
+            this.frequently_forum_info = vitalityInfo.frequently_forum_info;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public VitalityInfo build(boolean z) {
+            return new VitalityInfo(this, z);
+        }
     }
-    
-    public VitalityInfo build(boolean param1Boolean) {
-      return new VitalityInfo(this, param1Boolean, null);
+
+    public VitalityInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.frequently_forum_info = builder.frequently_forum_info;
+        } else {
+            this.frequently_forum_info = builder.frequently_forum_info;
+        }
     }
-  }
-  
-  public static class a {}
 }

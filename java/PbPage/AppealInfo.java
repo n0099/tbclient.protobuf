@@ -2,63 +2,58 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class AppealInfo extends Message {
-  public static final String DEFAULT_APPEAL_URL = "";
-  
-  public static final String DEFAULT_SOURCE = "";
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String appeal_url;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String source;
-  
-  public AppealInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.source;
-      if (str1 == null) {
-        this.source = "";
-      } else {
-        this.source = str1;
-      } 
-      str = paramBuilder.appeal_url;
-      if (str == null) {
-        this.appeal_url = "";
-      } else {
-        this.appeal_url = str;
-      } 
-    } else {
-      this.source = ((Builder)str).source;
-      this.appeal_url = ((Builder)str).appeal_url;
-    } 
-  }
-  
-  public AppealInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<AppealInfo> {
-    public String appeal_url;
-    
-    public String source;
-    
-    public Builder() {}
-    
-    public Builder(AppealInfo param1AppealInfo) {
-      super(param1AppealInfo);
-      if (param1AppealInfo == null)
-        return; 
-      this.source = param1AppealInfo.source;
-      this.appeal_url = param1AppealInfo.appeal_url;
+    public static final String DEFAULT_APPEAL_URL = "";
+    public static final String DEFAULT_SOURCE = "";
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String appeal_url;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String source;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<AppealInfo> {
+        public String appeal_url;
+        public String source;
+
+        public Builder() {
+        }
+
+        public Builder(AppealInfo appealInfo) {
+            super(appealInfo);
+            if (appealInfo == null) {
+                return;
+            }
+            this.source = appealInfo.source;
+            this.appeal_url = appealInfo.appeal_url;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public AppealInfo build(boolean z) {
+            return new AppealInfo(this, z);
+        }
     }
-    
-    public AppealInfo build(boolean param1Boolean) {
-      return new AppealInfo(this, param1Boolean, null);
+
+    public AppealInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.source;
+            if (str == null) {
+                this.source = "";
+            } else {
+                this.source = str;
+            }
+            String str2 = builder.appeal_url;
+            if (str2 == null) {
+                this.appeal_url = "";
+                return;
+            } else {
+                this.appeal_url = str2;
+                return;
+            }
+        }
+        this.source = builder.source;
+        this.appeal_url = builder.appeal_url;
     }
-  }
-  
-  public static class a {}
 }

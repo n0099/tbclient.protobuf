@@ -11,7 +11,6 @@ message DataReq {
     int32 scr_h = 6;
     double scr_dip = 7;
     string st_type = 8;
-    CommonReq common = 9;
     int32 is_comm_reverse = 10;
     int64 forum_id = 11;
     string ori_ugc_nid = 12;

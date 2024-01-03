@@ -3,7 +3,6 @@ syntax = "proto3";
 import "CommonReq.proto";
 
 message DataReq {
-    CommonReq common = 1;
     string call_from = 2;
     string list_type = 3;
     string need_tab_list = 4;

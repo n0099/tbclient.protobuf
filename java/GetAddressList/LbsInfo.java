@@ -2,82 +2,70 @@ package tbclient.GetAddressList;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class LbsInfo extends Message {
-  public static final String DEFAULT_DISTANCE = "";
-  
-  public static final Integer DEFAULT_IS_HIDE;
-  
-  public static final Long DEFAULT_TIME = Long.valueOf(0L);
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String distance;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer is_hide;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT64)
-  public final Long time;
-  
-  static {
-    DEFAULT_IS_HIDE = Integer.valueOf(0);
-  }
-  
-  public LbsInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      String str = paramBuilder.distance;
-      if (str == null) {
-        this.distance = "";
-      } else {
-        this.distance = str;
-      } 
-      Long long_ = paramBuilder.time;
-      if (long_ == null) {
-        this.time = DEFAULT_TIME;
-      } else {
-        this.time = long_;
-      } 
-      integer = paramBuilder.is_hide;
-      if (integer == null) {
-        this.is_hide = DEFAULT_IS_HIDE;
-      } else {
-        this.is_hide = integer;
-      } 
-    } else {
-      this.distance = ((Builder)integer).distance;
-      this.time = ((Builder)integer).time;
-      this.is_hide = ((Builder)integer).is_hide;
-    } 
-  }
-  
-  public LbsInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<LbsInfo> {
-    public String distance;
-    
-    public Integer is_hide;
-    
-    public Long time;
-    
-    public Builder() {}
-    
-    public Builder(LbsInfo param1LbsInfo) {
-      super(param1LbsInfo);
-      if (param1LbsInfo == null)
-        return; 
-      this.distance = param1LbsInfo.distance;
-      this.time = param1LbsInfo.time;
-      this.is_hide = param1LbsInfo.is_hide;
+    public static final String DEFAULT_DISTANCE = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String distance;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer is_hide;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long time;
+    public static final Long DEFAULT_TIME = 0L;
+    public static final Integer DEFAULT_IS_HIDE = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<LbsInfo> {
+        public String distance;
+        public Integer is_hide;
+        public Long time;
+
+        public Builder() {
+        }
+
+        public Builder(LbsInfo lbsInfo) {
+            super(lbsInfo);
+            if (lbsInfo == null) {
+                return;
+            }
+            this.distance = lbsInfo.distance;
+            this.time = lbsInfo.time;
+            this.is_hide = lbsInfo.is_hide;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public LbsInfo build(boolean z) {
+            return new LbsInfo(this, z);
+        }
     }
-    
-    public LbsInfo build(boolean param1Boolean) {
-      return new LbsInfo(this, param1Boolean, null);
+
+    public LbsInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.distance;
+            if (str == null) {
+                this.distance = "";
+            } else {
+                this.distance = str;
+            }
+            Long l = builder.time;
+            if (l == null) {
+                this.time = DEFAULT_TIME;
+            } else {
+                this.time = l;
+            }
+            Integer num = builder.is_hide;
+            if (num == null) {
+                this.is_hide = DEFAULT_IS_HIDE;
+                return;
+            } else {
+                this.is_hide = num;
+                return;
+            }
+        }
+        this.distance = builder.distance;
+        this.time = builder.time;
+        this.is_hide = builder.is_hide;
     }
-  }
-  
-  public static class a {}
 }

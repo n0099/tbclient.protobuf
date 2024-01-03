@@ -2,183 +2,154 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class MoneyInfo extends Message {
-  public static final Integer DEFAULT_DEFAULT = Integer.valueOf(0);
-  
-  public static final String DEFAULT_DISCOUNT = "";
-  
-  public static final String DEFAULT_GID = "";
-  
-  public static final String DEFAULT_ICON = "";
-  
-  public static final String DEFAULT_MONEY = "";
-  
-  public static final String DEFAULT_ORIGINAL_COST = "";
-  
-  public static final String DEFAULT_PACKET_TEXT = "";
-  
-  public static final String DEFAULT_PAYMENT_POS_KEY = "";
-  
-  public static final String DEFAULT_PID = "";
-  
-  public static final String DEFAULT_TITLE = "";
-  
-  @ProtoField(tag = 7, type = Message.Datatype.INT32)
-  public final Integer _default;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String discount;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String gid;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String icon;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String money;
-  
-  @ProtoField(tag = 10, type = Message.Datatype.STRING)
-  public final String original_cost;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.STRING)
-  public final String packet_text;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.STRING)
-  public final String payment_pos_key;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String pid;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String title;
-  
-  public MoneyInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str2 = paramBuilder.icon;
-      if (str2 == null) {
-        this.icon = "";
-      } else {
-        this.icon = str2;
-      } 
-      str2 = paramBuilder.gid;
-      if (str2 == null) {
-        this.gid = "";
-      } else {
-        this.gid = str2;
-      } 
-      str2 = paramBuilder.pid;
-      if (str2 == null) {
-        this.pid = "";
-      } else {
-        this.pid = str2;
-      } 
-      str2 = paramBuilder.title;
-      if (str2 == null) {
-        this.title = "";
-      } else {
-        this.title = str2;
-      } 
-      str2 = paramBuilder.money;
-      if (str2 == null) {
-        this.money = "";
-      } else {
-        this.money = str2;
-      } 
-      str2 = paramBuilder.discount;
-      if (str2 == null) {
-        this.discount = "";
-      } else {
-        this.discount = str2;
-      } 
-      Integer integer = paramBuilder._default;
-      if (integer == null) {
-        this._default = DEFAULT_DEFAULT;
-      } else {
-        this._default = integer;
-      } 
-      String str1 = paramBuilder.payment_pos_key;
-      if (str1 == null) {
-        this.payment_pos_key = "";
-      } else {
-        this.payment_pos_key = str1;
-      } 
-      str1 = paramBuilder.packet_text;
-      if (str1 == null) {
-        this.packet_text = "";
-      } else {
-        this.packet_text = str1;
-      } 
-      str = paramBuilder.original_cost;
-      if (str == null) {
-        this.original_cost = "";
-      } else {
-        this.original_cost = str;
-      } 
-    } else {
-      this.icon = ((Builder)str).icon;
-      this.gid = ((Builder)str).gid;
-      this.pid = ((Builder)str).pid;
-      this.title = ((Builder)str).title;
-      this.money = ((Builder)str).money;
-      this.discount = ((Builder)str).discount;
-      this._default = ((Builder)str)._default;
-      this.payment_pos_key = ((Builder)str).payment_pos_key;
-      this.packet_text = ((Builder)str).packet_text;
-      this.original_cost = ((Builder)str).original_cost;
-    } 
-  }
-  
-  public MoneyInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<MoneyInfo> {
-    public Integer _default;
-    
-    public String discount;
-    
-    public String gid;
-    
-    public String icon;
-    
-    public String money;
-    
-    public String original_cost;
-    
-    public String packet_text;
-    
-    public String payment_pos_key;
-    
-    public String pid;
-    
-    public String title;
-    
-    public Builder() {}
-    
-    public Builder(MoneyInfo param1MoneyInfo) {
-      super(param1MoneyInfo);
-      if (param1MoneyInfo == null)
-        return; 
-      this.icon = param1MoneyInfo.icon;
-      this.gid = param1MoneyInfo.gid;
-      this.pid = param1MoneyInfo.pid;
-      this.title = param1MoneyInfo.title;
-      this.money = param1MoneyInfo.money;
-      this.discount = param1MoneyInfo.discount;
-      this._default = param1MoneyInfo._default;
-      this.payment_pos_key = param1MoneyInfo.payment_pos_key;
-      this.packet_text = param1MoneyInfo.packet_text;
-      this.original_cost = param1MoneyInfo.original_cost;
+    public static final Integer DEFAULT_DEFAULT = 0;
+    public static final String DEFAULT_DISCOUNT = "";
+    public static final String DEFAULT_GID = "";
+    public static final String DEFAULT_ICON = "";
+    public static final String DEFAULT_MONEY = "";
+    public static final String DEFAULT_ORIGINAL_COST = "";
+    public static final String DEFAULT_PACKET_TEXT = "";
+    public static final String DEFAULT_PAYMENT_POS_KEY = "";
+    public static final String DEFAULT_PID = "";
+    public static final String DEFAULT_TITLE = "";
+    @ProtoField(tag = 7, type = Message.Datatype.INT32)
+    public final Integer _default;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String discount;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String gid;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String icon;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String money;
+    @ProtoField(tag = 10, type = Message.Datatype.STRING)
+    public final String original_cost;
+    @ProtoField(tag = 9, type = Message.Datatype.STRING)
+    public final String packet_text;
+    @ProtoField(tag = 8, type = Message.Datatype.STRING)
+    public final String payment_pos_key;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String pid;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String title;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<MoneyInfo> {
+        public Integer _default;
+        public String discount;
+        public String gid;
+        public String icon;
+        public String money;
+        public String original_cost;
+        public String packet_text;
+        public String payment_pos_key;
+        public String pid;
+        public String title;
+
+        public Builder() {
+        }
+
+        public Builder(MoneyInfo moneyInfo) {
+            super(moneyInfo);
+            if (moneyInfo == null) {
+                return;
+            }
+            this.icon = moneyInfo.icon;
+            this.gid = moneyInfo.gid;
+            this.pid = moneyInfo.pid;
+            this.title = moneyInfo.title;
+            this.money = moneyInfo.money;
+            this.discount = moneyInfo.discount;
+            this._default = moneyInfo._default;
+            this.payment_pos_key = moneyInfo.payment_pos_key;
+            this.packet_text = moneyInfo.packet_text;
+            this.original_cost = moneyInfo.original_cost;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public MoneyInfo build(boolean z) {
+            return new MoneyInfo(this, z);
+        }
     }
-    
-    public MoneyInfo build(boolean param1Boolean) {
-      return new MoneyInfo(this, param1Boolean, null);
+
+    public MoneyInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.icon;
+            if (str == null) {
+                this.icon = "";
+            } else {
+                this.icon = str;
+            }
+            String str2 = builder.gid;
+            if (str2 == null) {
+                this.gid = "";
+            } else {
+                this.gid = str2;
+            }
+            String str3 = builder.pid;
+            if (str3 == null) {
+                this.pid = "";
+            } else {
+                this.pid = str3;
+            }
+            String str4 = builder.title;
+            if (str4 == null) {
+                this.title = "";
+            } else {
+                this.title = str4;
+            }
+            String str5 = builder.money;
+            if (str5 == null) {
+                this.money = "";
+            } else {
+                this.money = str5;
+            }
+            String str6 = builder.discount;
+            if (str6 == null) {
+                this.discount = "";
+            } else {
+                this.discount = str6;
+            }
+            Integer num = builder._default;
+            if (num == null) {
+                this._default = DEFAULT_DEFAULT;
+            } else {
+                this._default = num;
+            }
+            String str7 = builder.payment_pos_key;
+            if (str7 == null) {
+                this.payment_pos_key = "";
+            } else {
+                this.payment_pos_key = str7;
+            }
+            String str8 = builder.packet_text;
+            if (str8 == null) {
+                this.packet_text = "";
+            } else {
+                this.packet_text = str8;
+            }
+            String str9 = builder.original_cost;
+            if (str9 == null) {
+                this.original_cost = "";
+                return;
+            } else {
+                this.original_cost = str9;
+                return;
+            }
+        }
+        this.icon = builder.icon;
+        this.gid = builder.gid;
+        this.pid = builder.pid;
+        this.title = builder.title;
+        this.money = builder.money;
+        this.discount = builder.discount;
+        this._default = builder._default;
+        this.payment_pos_key = builder.payment_pos_key;
+        this.packet_text = builder.packet_text;
+        this.original_cost = builder.original_cost;
     }
-  }
-  
-  public static class a {}
 }

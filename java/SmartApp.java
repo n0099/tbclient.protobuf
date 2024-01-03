@@ -2,189 +2,154 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class SmartApp extends Message {
-  public static final String DEFAULT_ABSTRACT = "";
-  
-  public static final String DEFAULT_AVATAR = "";
-  
-  public static final String DEFAULT_H5_URL = "";
-  
-  public static final String DEFAULT_ID = "";
-  
-  public static final Integer DEFAULT_IS_GAME;
-  
-  public static final Integer DEFAULT_IS_RECOM;
-  
-  public static final String DEFAULT_LINK = "";
-  
-  public static final String DEFAULT_NAME = "";
-  
-  public static final Long DEFAULT_NAWS_APP_ID = Long.valueOf(0L);
-  
-  public static final String DEFAULT_PIC = "";
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String _abstract;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String avatar;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String h5_url;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.STRING)
-  public final String id;
-  
-  @ProtoField(tag = 10, type = Message.Datatype.INT32)
-  public final Integer is_game;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.INT32)
-  public final Integer is_recom;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.STRING)
-  public final String link;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String name;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.UINT64)
-  public final Long naws_app_id;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String pic;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_IS_RECOM = integer;
-    DEFAULT_IS_GAME = integer;
-  }
-  
-  public SmartApp(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      String str = paramBuilder.avatar;
-      if (str == null) {
-        this.avatar = "";
-      } else {
-        this.avatar = str;
-      } 
-      str = paramBuilder.name;
-      if (str == null) {
-        this.name = "";
-      } else {
-        this.name = str;
-      } 
-      str = paramBuilder._abstract;
-      if (str == null) {
-        this._abstract = "";
-      } else {
-        this._abstract = str;
-      } 
-      str = paramBuilder.pic;
-      if (str == null) {
-        this.pic = "";
-      } else {
-        this.pic = str;
-      } 
-      str = paramBuilder.h5_url;
-      if (str == null) {
-        this.h5_url = "";
-      } else {
-        this.h5_url = str;
-      } 
-      str = paramBuilder.id;
-      if (str == null) {
-        this.id = "";
-      } else {
-        this.id = str;
-      } 
-      str = paramBuilder.link;
-      if (str == null) {
-        this.link = "";
-      } else {
-        this.link = str;
-      } 
-      Long long_ = paramBuilder.naws_app_id;
-      if (long_ == null) {
-        this.naws_app_id = DEFAULT_NAWS_APP_ID;
-      } else {
-        this.naws_app_id = long_;
-      } 
-      Integer integer1 = paramBuilder.is_recom;
-      if (integer1 == null) {
-        this.is_recom = DEFAULT_IS_RECOM;
-      } else {
-        this.is_recom = integer1;
-      } 
-      integer = paramBuilder.is_game;
-      if (integer == null) {
-        this.is_game = DEFAULT_IS_GAME;
-      } else {
-        this.is_game = integer;
-      } 
-    } else {
-      this.avatar = ((Builder)integer).avatar;
-      this.name = ((Builder)integer).name;
-      this._abstract = ((Builder)integer)._abstract;
-      this.pic = ((Builder)integer).pic;
-      this.h5_url = ((Builder)integer).h5_url;
-      this.id = ((Builder)integer).id;
-      this.link = ((Builder)integer).link;
-      this.naws_app_id = ((Builder)integer).naws_app_id;
-      this.is_recom = ((Builder)integer).is_recom;
-      this.is_game = ((Builder)integer).is_game;
-    } 
-  }
-  
-  public SmartApp(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<SmartApp> {
-    public String _abstract;
-    
-    public String avatar;
-    
-    public String h5_url;
-    
-    public String id;
-    
-    public Integer is_game;
-    
-    public Integer is_recom;
-    
-    public String link;
-    
-    public String name;
-    
-    public Long naws_app_id;
-    
-    public String pic;
-    
-    public Builder() {}
-    
-    public Builder(SmartApp param1SmartApp) {
-      super(param1SmartApp);
-      if (param1SmartApp == null)
-        return; 
-      this.avatar = param1SmartApp.avatar;
-      this.name = param1SmartApp.name;
-      this._abstract = param1SmartApp._abstract;
-      this.pic = param1SmartApp.pic;
-      this.h5_url = param1SmartApp.h5_url;
-      this.id = param1SmartApp.id;
-      this.link = param1SmartApp.link;
-      this.naws_app_id = param1SmartApp.naws_app_id;
-      this.is_recom = param1SmartApp.is_recom;
-      this.is_game = param1SmartApp.is_game;
+    public static final String DEFAULT_ABSTRACT = "";
+    public static final String DEFAULT_AVATAR = "";
+    public static final String DEFAULT_H5_URL = "";
+    public static final String DEFAULT_ID = "";
+    public static final String DEFAULT_LINK = "";
+    public static final String DEFAULT_NAME = "";
+    public static final String DEFAULT_PIC = "";
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String _abstract;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String avatar;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String h5_url;
+    @ProtoField(tag = 6, type = Message.Datatype.STRING)
+    public final String id;
+    @ProtoField(tag = 10, type = Message.Datatype.INT32)
+    public final Integer is_game;
+    @ProtoField(tag = 9, type = Message.Datatype.INT32)
+    public final Integer is_recom;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String link;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String name;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT64)
+    public final Long naws_app_id;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String pic;
+    public static final Long DEFAULT_NAWS_APP_ID = 0L;
+    public static final Integer DEFAULT_IS_RECOM = 0;
+    public static final Integer DEFAULT_IS_GAME = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<SmartApp> {
+        public String _abstract;
+        public String avatar;
+        public String h5_url;
+        public String id;
+        public Integer is_game;
+        public Integer is_recom;
+        public String link;
+        public String name;
+        public Long naws_app_id;
+        public String pic;
+
+        public Builder() {
+        }
+
+        public Builder(SmartApp smartApp) {
+            super(smartApp);
+            if (smartApp == null) {
+                return;
+            }
+            this.avatar = smartApp.avatar;
+            this.name = smartApp.name;
+            this._abstract = smartApp._abstract;
+            this.pic = smartApp.pic;
+            this.h5_url = smartApp.h5_url;
+            this.id = smartApp.id;
+            this.link = smartApp.link;
+            this.naws_app_id = smartApp.naws_app_id;
+            this.is_recom = smartApp.is_recom;
+            this.is_game = smartApp.is_game;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public SmartApp build(boolean z) {
+            return new SmartApp(this, z);
+        }
     }
-    
-    public SmartApp build(boolean param1Boolean) {
-      return new SmartApp(this, param1Boolean, null);
+
+    public SmartApp(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.avatar;
+            if (str == null) {
+                this.avatar = "";
+            } else {
+                this.avatar = str;
+            }
+            String str2 = builder.name;
+            if (str2 == null) {
+                this.name = "";
+            } else {
+                this.name = str2;
+            }
+            String str3 = builder._abstract;
+            if (str3 == null) {
+                this._abstract = "";
+            } else {
+                this._abstract = str3;
+            }
+            String str4 = builder.pic;
+            if (str4 == null) {
+                this.pic = "";
+            } else {
+                this.pic = str4;
+            }
+            String str5 = builder.h5_url;
+            if (str5 == null) {
+                this.h5_url = "";
+            } else {
+                this.h5_url = str5;
+            }
+            String str6 = builder.id;
+            if (str6 == null) {
+                this.id = "";
+            } else {
+                this.id = str6;
+            }
+            String str7 = builder.link;
+            if (str7 == null) {
+                this.link = "";
+            } else {
+                this.link = str7;
+            }
+            Long l = builder.naws_app_id;
+            if (l == null) {
+                this.naws_app_id = DEFAULT_NAWS_APP_ID;
+            } else {
+                this.naws_app_id = l;
+            }
+            Integer num = builder.is_recom;
+            if (num == null) {
+                this.is_recom = DEFAULT_IS_RECOM;
+            } else {
+                this.is_recom = num;
+            }
+            Integer num2 = builder.is_game;
+            if (num2 == null) {
+                this.is_game = DEFAULT_IS_GAME;
+                return;
+            } else {
+                this.is_game = num2;
+                return;
+            }
+        }
+        this.avatar = builder.avatar;
+        this.name = builder.name;
+        this._abstract = builder._abstract;
+        this.pic = builder.pic;
+        this.h5_url = builder.h5_url;
+        this.id = builder.id;
+        this.link = builder.link;
+        this.naws_app_id = builder.naws_app_id;
+        this.is_recom = builder.is_recom;
+        this.is_game = builder.is_game;
     }
-  }
-  
-  public static class a {}
 }

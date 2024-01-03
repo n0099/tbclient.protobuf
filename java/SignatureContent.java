@@ -2,63 +2,58 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class SignatureContent extends Message {
-  public static final String DEFAULT_TEXT = "";
-  
-  public static final Integer DEFAULT_TYPE = Integer.valueOf(0);
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String text;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer type;
-  
-  public SignatureContent(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.type;
-      if (integer == null) {
-        this.type = DEFAULT_TYPE;
-      } else {
-        this.type = integer;
-      } 
-      str = paramBuilder.text;
-      if (str == null) {
-        this.text = "";
-      } else {
-        this.text = str;
-      } 
-    } else {
-      this.type = ((Builder)str).type;
-      this.text = ((Builder)str).text;
-    } 
-  }
-  
-  public SignatureContent(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<SignatureContent> {
-    public String text;
-    
-    public Integer type;
-    
-    public Builder() {}
-    
-    public Builder(SignatureContent param1SignatureContent) {
-      super(param1SignatureContent);
-      if (param1SignatureContent == null)
-        return; 
-      this.type = param1SignatureContent.type;
-      this.text = param1SignatureContent.text;
+    public static final String DEFAULT_TEXT = "";
+    public static final Integer DEFAULT_TYPE = 0;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String text;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer type;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<SignatureContent> {
+        public String text;
+        public Integer type;
+
+        public Builder() {
+        }
+
+        public Builder(SignatureContent signatureContent) {
+            super(signatureContent);
+            if (signatureContent == null) {
+                return;
+            }
+            this.type = signatureContent.type;
+            this.text = signatureContent.text;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public SignatureContent build(boolean z) {
+            return new SignatureContent(this, z);
+        }
     }
-    
-    public SignatureContent build(boolean param1Boolean) {
-      return new SignatureContent(this, param1Boolean, null);
+
+    public SignatureContent(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.type;
+            if (num == null) {
+                this.type = DEFAULT_TYPE;
+            } else {
+                this.type = num;
+            }
+            String str = builder.text;
+            if (str == null) {
+                this.text = "";
+                return;
+            } else {
+                this.text = str;
+                return;
+            }
+        }
+        this.type = builder.type;
+        this.text = builder.text;
     }
-  }
-  
-  public static class a {}
 }

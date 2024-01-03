@@ -5,5 +5,4 @@ import "CommonReq.proto";
 message DataReq {
     string lat = 1;
     string lng = 2;
-    CommonReq common = 3;
 }

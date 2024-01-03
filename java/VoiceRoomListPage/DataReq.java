@@ -3,77 +3,68 @@ package tbclient.VoiceRoomListPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Long DEFAULT_CALL_FROM;
-  
-  public static final Long DEFAULT_FID;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT64)
-  public final Long call_from;
-  
-  @ProtoField(tag = 1)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT64)
-  public final Long fid;
-  
-  static {
-    Long long_ = Long.valueOf(0L);
-    DEFAULT_CALL_FROM = long_;
-    DEFAULT_FID = long_;
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Long long_;
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      Long long_1 = paramBuilder.call_from;
-      if (long_1 == null) {
-        this.call_from = DEFAULT_CALL_FROM;
-      } else {
-        this.call_from = long_1;
-      } 
-      long_ = paramBuilder.fid;
-      if (long_ == null) {
-        this.fid = DEFAULT_FID;
-      } else {
-        this.fid = long_;
-      } 
-    } else {
-      this.common = ((Builder)long_).common;
-      this.call_from = ((Builder)long_).call_from;
-      this.fid = ((Builder)long_).fid;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public Long call_from;
-    
-    public CommonReq common;
-    
-    public Long fid;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.common = param1DataReq.common;
-      this.call_from = param1DataReq.call_from;
-      this.fid = param1DataReq.fid;
+    public static final Long DEFAULT_CALL_FROM = 0L;
+    public static final Long DEFAULT_FID = 0L;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long call_from;
+    @ProtoField(tag = 1)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1515common;
+    @ProtoField(tag = 3, type = Message.Datatype.INT64)
+    public final Long fid;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+        public Long call_from;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1516common;
+        public Long fid;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.f1516common = dataReq.f1515common;
+            this.call_from = dataReq.call_from;
+            this.fid = dataReq.fid;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f1515common = builder.f1516common;
+            Long l = builder.call_from;
+            if (l == null) {
+                this.call_from = DEFAULT_CALL_FROM;
+            } else {
+                this.call_from = l;
+            }
+            Long l2 = builder.fid;
+            if (l2 == null) {
+                this.fid = DEFAULT_FID;
+                return;
+            } else {
+                this.fid = l2;
+                return;
+            }
+        }
+        this.f1515common = builder.f1516common;
+        this.call_from = builder.call_from;
+        this.fid = builder.fid;
     }
-  }
-  
-  public static class a {}
 }

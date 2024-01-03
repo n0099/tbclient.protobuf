@@ -3,71 +3,68 @@ package tbclient.GetGiftList;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Long DEFAULT_BENEFIT_USERID = Long.valueOf(0L);
-  
-  public static final String DEFAULT_SCENE_FROM = "";
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT64)
-  public final Long benefit_userid;
-  
-  @ProtoField(tag = 2)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String scene_from;
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Long long_;
-    if (paramBoolean == true) {
-      String str = paramBuilder.scene_from;
-      if (str == null) {
-        this.scene_from = "";
-      } else {
-        this.scene_from = str;
-      } 
-      this.common = paramBuilder.common;
-      long_ = paramBuilder.benefit_userid;
-      if (long_ == null) {
-        this.benefit_userid = DEFAULT_BENEFIT_USERID;
-      } else {
-        this.benefit_userid = long_;
-      } 
-    } else {
-      this.scene_from = ((Builder)long_).scene_from;
-      this.common = ((Builder)long_).common;
-      this.benefit_userid = ((Builder)long_).benefit_userid;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public Long benefit_userid;
-    
-    public CommonReq common;
-    
-    public String scene_from;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.scene_from = param1DataReq.scene_from;
-      this.common = param1DataReq.common;
-      this.benefit_userid = param1DataReq.benefit_userid;
+    public static final Long DEFAULT_BENEFIT_USERID = 0L;
+    public static final String DEFAULT_SCENE_FROM = "";
+    @ProtoField(tag = 3, type = Message.Datatype.UINT64)
+    public final Long benefit_userid;
+    @ProtoField(tag = 2)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1327common;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String scene_from;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+        public Long benefit_userid;
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1328common;
+        public String scene_from;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.scene_from = dataReq.scene_from;
+            this.f1328common = dataReq.f1327common;
+            this.benefit_userid = dataReq.benefit_userid;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.scene_from;
+            if (str == null) {
+                this.scene_from = "";
+            } else {
+                this.scene_from = str;
+            }
+            this.f1327common = builder.f1328common;
+            Long l = builder.benefit_userid;
+            if (l == null) {
+                this.benefit_userid = DEFAULT_BENEFIT_USERID;
+                return;
+            } else {
+                this.benefit_userid = l;
+                return;
+            }
+        }
+        this.scene_from = builder.scene_from;
+        this.f1327common = builder.f1328common;
+        this.benefit_userid = builder.benefit_userid;
     }
-  }
-  
-  public static class a {}
 }

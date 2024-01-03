@@ -3,48 +3,45 @@ package tbclient.VoiceRoomListPage;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class VoiceRoomListPageResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public VoiceRoomListPageResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public VoiceRoomListPageResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<VoiceRoomListPageResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(VoiceRoomListPageResIdl param1VoiceRoomListPageResIdl) {
-      super(param1VoiceRoomListPageResIdl);
-      if (param1VoiceRoomListPageResIdl == null)
-        return; 
-      this.error = param1VoiceRoomListPageResIdl.error;
-      this.data = param1VoiceRoomListPageResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<VoiceRoomListPageResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(VoiceRoomListPageResIdl voiceRoomListPageResIdl) {
+            super(voiceRoomListPageResIdl);
+            if (voiceRoomListPageResIdl == null) {
+                return;
+            }
+            this.error = voiceRoomListPageResIdl.error;
+            this.data = voiceRoomListPageResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public VoiceRoomListPageResIdl build(boolean z) {
+            return new VoiceRoomListPageResIdl(this, z);
+        }
     }
-    
-    public VoiceRoomListPageResIdl build(boolean param1Boolean) {
-      return new VoiceRoomListPageResIdl(this, param1Boolean, null);
+
+    public VoiceRoomListPageResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

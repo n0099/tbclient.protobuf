@@ -3,48 +3,45 @@ package tbclient.PlaceOrder;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class PlaceOrderResIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataRes data;
-  
-  @ProtoField(tag = 2)
-  public final Error error;
-  
-  public PlaceOrderResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } else {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } 
-  }
-  
-  public PlaceOrderResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<PlaceOrderResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(PlaceOrderResIdl param1PlaceOrderResIdl) {
-      super(param1PlaceOrderResIdl);
-      if (param1PlaceOrderResIdl == null)
-        return; 
-      this.data = param1PlaceOrderResIdl.data;
-      this.error = param1PlaceOrderResIdl.error;
+    @ProtoField(tag = 1)
+    public final DataRes data;
+    @ProtoField(tag = 2)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<PlaceOrderResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(PlaceOrderResIdl placeOrderResIdl) {
+            super(placeOrderResIdl);
+            if (placeOrderResIdl == null) {
+                return;
+            }
+            this.data = placeOrderResIdl.data;
+            this.error = placeOrderResIdl.error;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public PlaceOrderResIdl build(boolean z) {
+            return new PlaceOrderResIdl(this, z);
+        }
     }
-    
-    public PlaceOrderResIdl build(boolean param1Boolean) {
-      return new PlaceOrderResIdl(this, param1Boolean, null);
+
+    public PlaceOrderResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+            this.error = builder.error;
+            return;
+        }
+        this.data = builder.data;
+        this.error = builder.error;
     }
-  }
-  
-  public static class a {}
 }

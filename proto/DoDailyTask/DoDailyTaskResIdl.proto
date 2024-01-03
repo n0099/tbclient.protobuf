@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-import "DoDailyTask/DataRes.proto";
-import "Error.proto";
-
-message DoDailyTaskResIdl {
-    Error error = 1;
-    DataRes data = 2;
-}

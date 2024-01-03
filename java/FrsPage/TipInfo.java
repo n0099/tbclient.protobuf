@@ -2,108 +2,94 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class TipInfo extends Message {
-  public static final String DEFAULT_TIP_INTERVAL = "";
-  
-  public static final String DEFAULT_TIP_NAME = "";
-  
-  public static final String DEFAULT_TIP_NOTICE = "";
-  
-  public static final String DEFAULT_TIP_POP = "";
-  
-  public static final String DEFAULT_TIP_POP_TITLE = "";
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String tip_interval;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String tip_name;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.STRING)
-  public final String tip_notice;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String tip_pop;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String tip_pop_title;
-  
-  public TipInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      String str1 = paramBuilder.tip_name;
-      if (str1 == null) {
-        this.tip_name = "";
-      } else {
-        this.tip_name = str1;
-      } 
-      str1 = paramBuilder.tip_pop_title;
-      if (str1 == null) {
-        this.tip_pop_title = "";
-      } else {
-        this.tip_pop_title = str1;
-      } 
-      str1 = paramBuilder.tip_pop;
-      if (str1 == null) {
-        this.tip_pop = "";
-      } else {
-        this.tip_pop = str1;
-      } 
-      str1 = paramBuilder.tip_notice;
-      if (str1 == null) {
-        this.tip_notice = "";
-      } else {
-        this.tip_notice = str1;
-      } 
-      str = paramBuilder.tip_interval;
-      if (str == null) {
-        this.tip_interval = "";
-      } else {
-        this.tip_interval = str;
-      } 
-    } else {
-      this.tip_name = ((Builder)str).tip_name;
-      this.tip_pop_title = ((Builder)str).tip_pop_title;
-      this.tip_pop = ((Builder)str).tip_pop;
-      this.tip_notice = ((Builder)str).tip_notice;
-      this.tip_interval = ((Builder)str).tip_interval;
-    } 
-  }
-  
-  public TipInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<TipInfo> {
-    public String tip_interval;
-    
-    public String tip_name;
-    
-    public String tip_notice;
-    
-    public String tip_pop;
-    
-    public String tip_pop_title;
-    
-    public Builder() {}
-    
-    public Builder(TipInfo param1TipInfo) {
-      super(param1TipInfo);
-      if (param1TipInfo == null)
-        return; 
-      this.tip_name = param1TipInfo.tip_name;
-      this.tip_pop_title = param1TipInfo.tip_pop_title;
-      this.tip_pop = param1TipInfo.tip_pop;
-      this.tip_notice = param1TipInfo.tip_notice;
-      this.tip_interval = param1TipInfo.tip_interval;
+    public static final String DEFAULT_TIP_INTERVAL = "";
+    public static final String DEFAULT_TIP_NAME = "";
+    public static final String DEFAULT_TIP_NOTICE = "";
+    public static final String DEFAULT_TIP_POP = "";
+    public static final String DEFAULT_TIP_POP_TITLE = "";
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String tip_interval;
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String tip_name;
+    @ProtoField(tag = 4, type = Message.Datatype.STRING)
+    public final String tip_notice;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String tip_pop;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String tip_pop_title;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<TipInfo> {
+        public String tip_interval;
+        public String tip_name;
+        public String tip_notice;
+        public String tip_pop;
+        public String tip_pop_title;
+
+        public Builder() {
+        }
+
+        public Builder(TipInfo tipInfo) {
+            super(tipInfo);
+            if (tipInfo == null) {
+                return;
+            }
+            this.tip_name = tipInfo.tip_name;
+            this.tip_pop_title = tipInfo.tip_pop_title;
+            this.tip_pop = tipInfo.tip_pop;
+            this.tip_notice = tipInfo.tip_notice;
+            this.tip_interval = tipInfo.tip_interval;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public TipInfo build(boolean z) {
+            return new TipInfo(this, z);
+        }
     }
-    
-    public TipInfo build(boolean param1Boolean) {
-      return new TipInfo(this, param1Boolean, null);
+
+    public TipInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.tip_name;
+            if (str == null) {
+                this.tip_name = "";
+            } else {
+                this.tip_name = str;
+            }
+            String str2 = builder.tip_pop_title;
+            if (str2 == null) {
+                this.tip_pop_title = "";
+            } else {
+                this.tip_pop_title = str2;
+            }
+            String str3 = builder.tip_pop;
+            if (str3 == null) {
+                this.tip_pop = "";
+            } else {
+                this.tip_pop = str3;
+            }
+            String str4 = builder.tip_notice;
+            if (str4 == null) {
+                this.tip_notice = "";
+            } else {
+                this.tip_notice = str4;
+            }
+            String str5 = builder.tip_interval;
+            if (str5 == null) {
+                this.tip_interval = "";
+                return;
+            } else {
+                this.tip_interval = str5;
+                return;
+            }
+        }
+        this.tip_name = builder.tip_name;
+        this.tip_pop_title = builder.tip_pop_title;
+        this.tip_pop = builder.tip_pop;
+        this.tip_notice = builder.tip_notice;
+        this.tip_interval = builder.tip_interval;
     }
-  }
-  
-  public static class a {}
 }

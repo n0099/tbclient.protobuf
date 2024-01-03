@@ -24,4 +24,7 @@ message Media {
     uint32 is_blocked_pic = 21;
     double wth_mid_loc = 22;
     double hth_mid_loc = 23;
+    string jump_url = 24;
+    string guide_text = 25;
+    int32 lottie_type = 26;
 }

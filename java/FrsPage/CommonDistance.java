@@ -2,85 +2,70 @@ package tbclient.FrsPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class CommonDistance extends Message {
-  public static final Integer DEFAULT_DISTANCE;
-  
-  public static final Integer DEFAULT_IS_HIDE;
-  
-  public static final Integer DEFAULT_TIME;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-  public final Integer distance;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.UINT32)
-  public final Integer is_hide;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-  public final Integer time;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_DISTANCE = integer;
-    DEFAULT_TIME = integer;
-    DEFAULT_IS_HIDE = integer;
-  }
-  
-  public CommonDistance(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Integer integer1 = paramBuilder.distance;
-      if (integer1 == null) {
-        this.distance = DEFAULT_DISTANCE;
-      } else {
-        this.distance = integer1;
-      } 
-      integer1 = paramBuilder.time;
-      if (integer1 == null) {
-        this.time = DEFAULT_TIME;
-      } else {
-        this.time = integer1;
-      } 
-      integer = paramBuilder.is_hide;
-      if (integer == null) {
-        this.is_hide = DEFAULT_IS_HIDE;
-      } else {
-        this.is_hide = integer;
-      } 
-    } else {
-      this.distance = ((Builder)integer).distance;
-      this.time = ((Builder)integer).time;
-      this.is_hide = ((Builder)integer).is_hide;
-    } 
-  }
-  
-  public CommonDistance(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<CommonDistance> {
-    public Integer distance;
-    
-    public Integer is_hide;
-    
-    public Integer time;
-    
-    public Builder() {}
-    
-    public Builder(CommonDistance param1CommonDistance) {
-      super(param1CommonDistance);
-      if (param1CommonDistance == null)
-        return; 
-      this.distance = param1CommonDistance.distance;
-      this.time = param1CommonDistance.time;
-      this.is_hide = param1CommonDistance.is_hide;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer distance;
+    @ProtoField(tag = 3, type = Message.Datatype.UINT32)
+    public final Integer is_hide;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
+    public final Integer time;
+    public static final Integer DEFAULT_DISTANCE = 0;
+    public static final Integer DEFAULT_TIME = 0;
+    public static final Integer DEFAULT_IS_HIDE = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<CommonDistance> {
+        public Integer distance;
+        public Integer is_hide;
+        public Integer time;
+
+        public Builder() {
+        }
+
+        public Builder(CommonDistance commonDistance) {
+            super(commonDistance);
+            if (commonDistance == null) {
+                return;
+            }
+            this.distance = commonDistance.distance;
+            this.time = commonDistance.time;
+            this.is_hide = commonDistance.is_hide;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public CommonDistance build(boolean z) {
+            return new CommonDistance(this, z);
+        }
     }
-    
-    public CommonDistance build(boolean param1Boolean) {
-      return new CommonDistance(this, param1Boolean, null);
+
+    public CommonDistance(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.distance;
+            if (num == null) {
+                this.distance = DEFAULT_DISTANCE;
+            } else {
+                this.distance = num;
+            }
+            Integer num2 = builder.time;
+            if (num2 == null) {
+                this.time = DEFAULT_TIME;
+            } else {
+                this.time = num2;
+            }
+            Integer num3 = builder.is_hide;
+            if (num3 == null) {
+                this.is_hide = DEFAULT_IS_HIDE;
+                return;
+            } else {
+                this.is_hide = num3;
+                return;
+            }
+        }
+        this.distance = builder.distance;
+        this.time = builder.time;
+        this.is_hide = builder.is_hide;
     }
-  }
-  
-  public static class a {}
 }

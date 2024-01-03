@@ -33,4 +33,5 @@ message BusinessPromot {
     string cover_url = 28;
     string video_url = 29;
     int32 ban_dialog = 30;
+    string download_effect = 31;
 }

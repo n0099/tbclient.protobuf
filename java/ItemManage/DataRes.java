@@ -5,82 +5,70 @@ import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
 import tbclient.ManageInfo;
-
+/* loaded from: classes2.dex */
 public final class DataRes extends Message {
-  public static final Integer DEFAULT_HAS_MORE;
-  
-  public static final List<ManageInfo> DEFAULT_MANAGE_LIST = Collections.emptyList();
-  
-  public static final List<ManageInfo> DEFAULT_MANAGE_RECOMM_LIST = Collections.emptyList();
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer has_more;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 1)
-  public final List<ManageInfo> manage_list;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 2)
-  public final List<ManageInfo> manage_recomm_list;
-  
-  static {
-    DEFAULT_HAS_MORE = Integer.valueOf(0);
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      List<ManageInfo> list = paramBuilder.manage_list;
-      if (list == null) {
-        this.manage_list = DEFAULT_MANAGE_LIST;
-      } else {
-        this.manage_list = Message.immutableCopyOf(list);
-      } 
-      list = paramBuilder.manage_recomm_list;
-      if (list == null) {
-        this.manage_recomm_list = DEFAULT_MANAGE_RECOMM_LIST;
-      } else {
-        this.manage_recomm_list = Message.immutableCopyOf(list);
-      } 
-      integer = paramBuilder.has_more;
-      if (integer == null) {
-        this.has_more = DEFAULT_HAS_MORE;
-      } else {
-        this.has_more = integer;
-      } 
-    } else {
-      this.manage_list = Message.immutableCopyOf(((Builder)integer).manage_list);
-      this.manage_recomm_list = Message.immutableCopyOf(((Builder)integer).manage_recomm_list);
-      this.has_more = ((Builder)integer).has_more;
-    } 
-  }
-  
-  public DataRes(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataRes> {
-    public Integer has_more;
-    
-    public List<ManageInfo> manage_list;
-    
-    public List<ManageInfo> manage_recomm_list;
-    
-    public Builder() {}
-    
-    public Builder(DataRes param1DataRes) {
-      super(param1DataRes);
-      if (param1DataRes == null)
-        return; 
-      this.manage_list = Message.copyOf(param1DataRes.manage_list);
-      this.manage_recomm_list = Message.copyOf(param1DataRes.manage_recomm_list);
-      this.has_more = param1DataRes.has_more;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer has_more;
+    @ProtoField(label = Message.Label.REPEATED, tag = 1)
+    public final List<ManageInfo> manage_list;
+    @ProtoField(label = Message.Label.REPEATED, tag = 2)
+    public final List<ManageInfo> manage_recomm_list;
+    public static final List<ManageInfo> DEFAULT_MANAGE_LIST = Collections.emptyList();
+    public static final List<ManageInfo> DEFAULT_MANAGE_RECOMM_LIST = Collections.emptyList();
+    public static final Integer DEFAULT_HAS_MORE = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataRes> {
+        public Integer has_more;
+        public List<ManageInfo> manage_list;
+        public List<ManageInfo> manage_recomm_list;
+
+        public Builder() {
+        }
+
+        public Builder(DataRes dataRes) {
+            super(dataRes);
+            if (dataRes == null) {
+                return;
+            }
+            this.manage_list = Message.copyOf(dataRes.manage_list);
+            this.manage_recomm_list = Message.copyOf(dataRes.manage_recomm_list);
+            this.has_more = dataRes.has_more;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataRes build(boolean z) {
+            return new DataRes(this, z);
+        }
     }
-    
-    public DataRes build(boolean param1Boolean) {
-      return new DataRes(this, param1Boolean, null);
+
+    public DataRes(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            List<ManageInfo> list = builder.manage_list;
+            if (list == null) {
+                this.manage_list = DEFAULT_MANAGE_LIST;
+            } else {
+                this.manage_list = Message.immutableCopyOf(list);
+            }
+            List<ManageInfo> list2 = builder.manage_recomm_list;
+            if (list2 == null) {
+                this.manage_recomm_list = DEFAULT_MANAGE_RECOMM_LIST;
+            } else {
+                this.manage_recomm_list = Message.immutableCopyOf(list2);
+            }
+            Integer num = builder.has_more;
+            if (num == null) {
+                this.has_more = DEFAULT_HAS_MORE;
+                return;
+            } else {
+                this.has_more = num;
+                return;
+            }
+        }
+        this.manage_list = Message.immutableCopyOf(builder.manage_list);
+        this.manage_recomm_list = Message.immutableCopyOf(builder.manage_recomm_list);
+        this.has_more = builder.has_more;
     }
-  }
-  
-  public static class a {}
 }

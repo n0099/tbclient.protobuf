@@ -3,48 +3,45 @@ package tbclient.AdNewLog;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class AdNewLogResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public AdNewLogResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public AdNewLogResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<AdNewLogResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(AdNewLogResIdl param1AdNewLogResIdl) {
-      super(param1AdNewLogResIdl);
-      if (param1AdNewLogResIdl == null)
-        return; 
-      this.error = param1AdNewLogResIdl.error;
-      this.data = param1AdNewLogResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<AdNewLogResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(AdNewLogResIdl adNewLogResIdl) {
+            super(adNewLogResIdl);
+            if (adNewLogResIdl == null) {
+                return;
+            }
+            this.error = adNewLogResIdl.error;
+            this.data = adNewLogResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public AdNewLogResIdl build(boolean z) {
+            return new AdNewLogResIdl(this, z);
+        }
     }
-    
-    public AdNewLogResIdl build(boolean param1Boolean) {
-      return new AdNewLogResIdl(this, param1Boolean, null);
+
+    public AdNewLogResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

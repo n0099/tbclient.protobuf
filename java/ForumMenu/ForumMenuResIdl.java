@@ -3,48 +3,45 @@ package tbclient.ForumMenu;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class ForumMenuResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public ForumMenuResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public ForumMenuResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ForumMenuResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(ForumMenuResIdl param1ForumMenuResIdl) {
-      super(param1ForumMenuResIdl);
-      if (param1ForumMenuResIdl == null)
-        return; 
-      this.error = param1ForumMenuResIdl.error;
-      this.data = param1ForumMenuResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ForumMenuResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(ForumMenuResIdl forumMenuResIdl) {
+            super(forumMenuResIdl);
+            if (forumMenuResIdl == null) {
+                return;
+            }
+            this.error = forumMenuResIdl.error;
+            this.data = forumMenuResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ForumMenuResIdl build(boolean z) {
+            return new ForumMenuResIdl(this, z);
+        }
     }
-    
-    public ForumMenuResIdl build(boolean param1Boolean) {
-      return new ForumMenuResIdl(this, param1Boolean, null);
+
+    public ForumMenuResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }

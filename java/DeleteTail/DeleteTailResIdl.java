@@ -3,48 +3,45 @@ package tbclient.DeleteTail;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class DeleteTailResIdl extends Message {
-  @ProtoField(tag = 1)
-  public final ResData data;
-  
-  @ProtoField(tag = 2)
-  public final Error error;
-  
-  public DeleteTailResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } else {
-      this.data = paramBuilder.data;
-      this.error = paramBuilder.error;
-    } 
-  }
-  
-  public DeleteTailResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DeleteTailResIdl> {
-    public ResData data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(DeleteTailResIdl param1DeleteTailResIdl) {
-      super(param1DeleteTailResIdl);
-      if (param1DeleteTailResIdl == null)
-        return; 
-      this.data = param1DeleteTailResIdl.data;
-      this.error = param1DeleteTailResIdl.error;
+    @ProtoField(tag = 1)
+    public final ResData data;
+    @ProtoField(tag = 2)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DeleteTailResIdl> {
+        public ResData data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(DeleteTailResIdl deleteTailResIdl) {
+            super(deleteTailResIdl);
+            if (deleteTailResIdl == null) {
+                return;
+            }
+            this.data = deleteTailResIdl.data;
+            this.error = deleteTailResIdl.error;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DeleteTailResIdl build(boolean z) {
+            return new DeleteTailResIdl(this, z);
+        }
     }
-    
-    public DeleteTailResIdl build(boolean param1Boolean) {
-      return new DeleteTailResIdl(this, param1Boolean, null);
+
+    public DeleteTailResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+            this.error = builder.error;
+            return;
+        }
+        this.data = builder.data;
+        this.error = builder.error;
     }
-  }
-  
-  public static class a {}
 }

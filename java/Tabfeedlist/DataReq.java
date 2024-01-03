@@ -3,171 +3,140 @@ package tbclient.Tabfeedlist;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.CommonReq;
-
+/* loaded from: classes2.dex */
 public final class DataReq extends Message {
-  public static final Integer DEFAULT_LOAD_TYPE;
-  
-  public static final Integer DEFAULT_PN;
-  
-  public static final Integer DEFAULT_RN;
-  
-  public static final Integer DEFAULT_SCR_D;
-  
-  public static final Integer DEFAULT_SCR_H;
-  
-  public static final Integer DEFAULT_SCR_W;
-  
-  public static final String DEFAULT_TAB_CODE = "";
-  
-  public static final String DEFAULT_TAB_NAME = "";
-  
-  @ProtoField(tag = 1)
-  public final CommonReq common;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.UINT32)
-  public final Integer load_type;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.UINT32)
-  public final Integer pn;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.UINT32)
-  public final Integer rn;
-  
-  @ProtoField(tag = 9, type = Message.Datatype.UINT32)
-  public final Integer scr_d;
-  
-  @ProtoField(tag = 8, type = Message.Datatype.UINT32)
-  public final Integer scr_h;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.UINT32)
-  public final Integer scr_w;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.STRING)
-  public final String tab_code;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String tab_name;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_LOAD_TYPE = integer;
-    DEFAULT_PN = integer;
-    DEFAULT_RN = integer;
-    DEFAULT_SCR_W = integer;
-    DEFAULT_SCR_H = integer;
-    DEFAULT_SCR_D = integer;
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      this.common = paramBuilder.common;
-      String str = paramBuilder.tab_name;
-      if (str == null) {
-        this.tab_name = "";
-      } else {
-        this.tab_name = str;
-      } 
-      str = paramBuilder.tab_code;
-      if (str == null) {
-        this.tab_code = "";
-      } else {
-        this.tab_code = str;
-      } 
-      Integer integer1 = paramBuilder.load_type;
-      if (integer1 == null) {
-        this.load_type = DEFAULT_LOAD_TYPE;
-      } else {
-        this.load_type = integer1;
-      } 
-      integer1 = paramBuilder.pn;
-      if (integer1 == null) {
-        this.pn = DEFAULT_PN;
-      } else {
-        this.pn = integer1;
-      } 
-      integer1 = paramBuilder.rn;
-      if (integer1 == null) {
-        this.rn = DEFAULT_RN;
-      } else {
-        this.rn = integer1;
-      } 
-      integer1 = paramBuilder.scr_w;
-      if (integer1 == null) {
-        this.scr_w = DEFAULT_SCR_W;
-      } else {
-        this.scr_w = integer1;
-      } 
-      integer1 = paramBuilder.scr_h;
-      if (integer1 == null) {
-        this.scr_h = DEFAULT_SCR_H;
-      } else {
-        this.scr_h = integer1;
-      } 
-      integer = paramBuilder.scr_d;
-      if (integer == null) {
-        this.scr_d = DEFAULT_SCR_D;
-      } else {
-        this.scr_d = integer;
-      } 
-    } else {
-      this.common = ((Builder)integer).common;
-      this.tab_name = ((Builder)integer).tab_name;
-      this.tab_code = ((Builder)integer).tab_code;
-      this.load_type = ((Builder)integer).load_type;
-      this.pn = ((Builder)integer).pn;
-      this.rn = ((Builder)integer).rn;
-      this.scr_w = ((Builder)integer).scr_w;
-      this.scr_h = ((Builder)integer).scr_h;
-      this.scr_d = ((Builder)integer).scr_d;
-    } 
-  }
-  
-  public DataReq(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<DataReq> {
-    public CommonReq common;
-    
-    public Integer load_type;
-    
-    public Integer pn;
-    
-    public Integer rn;
-    
-    public Integer scr_d;
-    
-    public Integer scr_h;
-    
-    public Integer scr_w;
-    
-    public String tab_code;
-    
-    public String tab_name;
-    
-    public Builder() {}
-    
-    public Builder(DataReq param1DataReq) {
-      super(param1DataReq);
-      if (param1DataReq == null)
-        return; 
-      this.common = param1DataReq.common;
-      this.tab_name = param1DataReq.tab_name;
-      this.tab_code = param1DataReq.tab_code;
-      this.load_type = param1DataReq.load_type;
-      this.pn = param1DataReq.pn;
-      this.rn = param1DataReq.rn;
-      this.scr_w = param1DataReq.scr_w;
-      this.scr_h = param1DataReq.scr_h;
-      this.scr_d = param1DataReq.scr_d;
+    public static final String DEFAULT_TAB_CODE = "";
+    public static final String DEFAULT_TAB_NAME = "";
+    @ProtoField(tag = 1)
+
+    /* renamed from: common  reason: collision with root package name */
+    public final CommonReq f1491common;
+    @ProtoField(tag = 4, type = Message.Datatype.UINT32)
+    public final Integer load_type;
+    @ProtoField(tag = 5, type = Message.Datatype.UINT32)
+    public final Integer pn;
+    @ProtoField(tag = 6, type = Message.Datatype.UINT32)
+    public final Integer rn;
+    @ProtoField(tag = 9, type = Message.Datatype.UINT32)
+    public final Integer scr_d;
+    @ProtoField(tag = 8, type = Message.Datatype.UINT32)
+    public final Integer scr_h;
+    @ProtoField(tag = 7, type = Message.Datatype.UINT32)
+    public final Integer scr_w;
+    @ProtoField(tag = 3, type = Message.Datatype.STRING)
+    public final String tab_code;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String tab_name;
+    public static final Integer DEFAULT_LOAD_TYPE = 0;
+    public static final Integer DEFAULT_PN = 0;
+    public static final Integer DEFAULT_RN = 0;
+    public static final Integer DEFAULT_SCR_W = 0;
+    public static final Integer DEFAULT_SCR_H = 0;
+    public static final Integer DEFAULT_SCR_D = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<DataReq> {
+
+        /* renamed from: common  reason: collision with root package name */
+        public CommonReq f1492common;
+        public Integer load_type;
+        public Integer pn;
+        public Integer rn;
+        public Integer scr_d;
+        public Integer scr_h;
+        public Integer scr_w;
+        public String tab_code;
+        public String tab_name;
+
+        public Builder() {
+        }
+
+        public Builder(DataReq dataReq) {
+            super(dataReq);
+            if (dataReq == null) {
+                return;
+            }
+            this.f1492common = dataReq.f1491common;
+            this.tab_name = dataReq.tab_name;
+            this.tab_code = dataReq.tab_code;
+            this.load_type = dataReq.load_type;
+            this.pn = dataReq.pn;
+            this.rn = dataReq.rn;
+            this.scr_w = dataReq.scr_w;
+            this.scr_h = dataReq.scr_h;
+            this.scr_d = dataReq.scr_d;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public DataReq build(boolean z) {
+            return new DataReq(this, z);
+        }
     }
-    
-    public DataReq build(boolean param1Boolean) {
-      return new DataReq(this, param1Boolean, null);
+
+    public DataReq(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.f1491common = builder.f1492common;
+            String str = builder.tab_name;
+            if (str == null) {
+                this.tab_name = "";
+            } else {
+                this.tab_name = str;
+            }
+            String str2 = builder.tab_code;
+            if (str2 == null) {
+                this.tab_code = "";
+            } else {
+                this.tab_code = str2;
+            }
+            Integer num = builder.load_type;
+            if (num == null) {
+                this.load_type = DEFAULT_LOAD_TYPE;
+            } else {
+                this.load_type = num;
+            }
+            Integer num2 = builder.pn;
+            if (num2 == null) {
+                this.pn = DEFAULT_PN;
+            } else {
+                this.pn = num2;
+            }
+            Integer num3 = builder.rn;
+            if (num3 == null) {
+                this.rn = DEFAULT_RN;
+            } else {
+                this.rn = num3;
+            }
+            Integer num4 = builder.scr_w;
+            if (num4 == null) {
+                this.scr_w = DEFAULT_SCR_W;
+            } else {
+                this.scr_w = num4;
+            }
+            Integer num5 = builder.scr_h;
+            if (num5 == null) {
+                this.scr_h = DEFAULT_SCR_H;
+            } else {
+                this.scr_h = num5;
+            }
+            Integer num6 = builder.scr_d;
+            if (num6 == null) {
+                this.scr_d = DEFAULT_SCR_D;
+                return;
+            } else {
+                this.scr_d = num6;
+                return;
+            }
+        }
+        this.f1491common = builder.f1492common;
+        this.tab_name = builder.tab_name;
+        this.tab_code = builder.tab_code;
+        this.load_type = builder.load_type;
+        this.pn = builder.pn;
+        this.rn = builder.rn;
+        this.scr_w = builder.scr_w;
+        this.scr_h = builder.scr_h;
+        this.scr_d = builder.scr_d;
     }
-  }
-  
-  public static class a {}
 }

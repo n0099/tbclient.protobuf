@@ -2,40 +2,39 @@ package tbclient.ForumRuleDetail;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ForumRuleDetailReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public ForumRuleDetailReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public ForumRuleDetailReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ForumRuleDetailReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(ForumRuleDetailReqIdl param1ForumRuleDetailReqIdl) {
-      super(param1ForumRuleDetailReqIdl);
-      if (param1ForumRuleDetailReqIdl == null)
-        return; 
-      this.data = param1ForumRuleDetailReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ForumRuleDetailReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(ForumRuleDetailReqIdl forumRuleDetailReqIdl) {
+            super(forumRuleDetailReqIdl);
+            if (forumRuleDetailReqIdl == null) {
+                return;
+            }
+            this.data = forumRuleDetailReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ForumRuleDetailReqIdl build(boolean z) {
+            return new ForumRuleDetailReqIdl(this, z);
+        }
     }
-    
-    public ForumRuleDetailReqIdl build(boolean param1Boolean) {
-      return new ForumRuleDetailReqIdl(this, param1Boolean, null);
+
+    public ForumRuleDetailReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

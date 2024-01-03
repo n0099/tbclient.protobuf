@@ -2,82 +2,70 @@ package tbclient;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class BetInfo extends Message {
-  public static final String DEFAULT_BET = "";
-  
-  public static final Integer DEFAULT_NO;
-  
-  public static final Long DEFAULT_SCORE = Long.valueOf(0L);
-  
-  @ProtoField(tag = 1, type = Message.Datatype.STRING)
-  public final String bet;
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer no;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT64)
-  public final Long score;
-  
-  static {
-    DEFAULT_NO = Integer.valueOf(0);
-  }
-  
-  public BetInfo(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      String str = paramBuilder.bet;
-      if (str == null) {
-        this.bet = "";
-      } else {
-        this.bet = str;
-      } 
-      Long long_ = paramBuilder.score;
-      if (long_ == null) {
-        this.score = DEFAULT_SCORE;
-      } else {
-        this.score = long_;
-      } 
-      integer = paramBuilder.no;
-      if (integer == null) {
-        this.no = DEFAULT_NO;
-      } else {
-        this.no = integer;
-      } 
-    } else {
-      this.bet = ((Builder)integer).bet;
-      this.score = ((Builder)integer).score;
-      this.no = ((Builder)integer).no;
-    } 
-  }
-  
-  public BetInfo(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<BetInfo> {
-    public String bet;
-    
-    public Integer no;
-    
-    public Long score;
-    
-    public Builder() {}
-    
-    public Builder(BetInfo param1BetInfo) {
-      super(param1BetInfo);
-      if (param1BetInfo == null)
-        return; 
-      this.bet = param1BetInfo.bet;
-      this.score = param1BetInfo.score;
-      this.no = param1BetInfo.no;
+    public static final String DEFAULT_BET = "";
+    @ProtoField(tag = 1, type = Message.Datatype.STRING)
+    public final String bet;
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer no;
+    @ProtoField(tag = 2, type = Message.Datatype.INT64)
+    public final Long score;
+    public static final Long DEFAULT_SCORE = 0L;
+    public static final Integer DEFAULT_NO = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<BetInfo> {
+        public String bet;
+        public Integer no;
+        public Long score;
+
+        public Builder() {
+        }
+
+        public Builder(BetInfo betInfo) {
+            super(betInfo);
+            if (betInfo == null) {
+                return;
+            }
+            this.bet = betInfo.bet;
+            this.score = betInfo.score;
+            this.no = betInfo.no;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public BetInfo build(boolean z) {
+            return new BetInfo(this, z);
+        }
     }
-    
-    public BetInfo build(boolean param1Boolean) {
-      return new BetInfo(this, param1Boolean, null);
+
+    public BetInfo(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            String str = builder.bet;
+            if (str == null) {
+                this.bet = "";
+            } else {
+                this.bet = str;
+            }
+            Long l = builder.score;
+            if (l == null) {
+                this.score = DEFAULT_SCORE;
+            } else {
+                this.score = l;
+            }
+            Integer num = builder.no;
+            if (num == null) {
+                this.no = DEFAULT_NO;
+                return;
+            } else {
+                this.no = num;
+                return;
+            }
+        }
+        this.bet = builder.bet;
+        this.score = builder.score;
+        this.no = builder.no;
     }
-  }
-  
-  public static class a {}
 }

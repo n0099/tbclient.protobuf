@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-message RedNotify {
-    int32 notify_status = 1;
-}

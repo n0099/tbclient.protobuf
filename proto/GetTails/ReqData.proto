@@ -4,5 +4,4 @@ import "CommonReq.proto";
 
 message ReqData {
     string st_type = 1;
-    CommonReq common = 2;
 }

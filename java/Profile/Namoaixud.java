@@ -2,69 +2,58 @@ package tbclient.Profile;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class Namoaixud extends Message {
-  public static final Integer DEFAULT_IS_END;
-  
-  public static final Integer DEFAULT_TOTAL_CASH;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.UINT32)
-  public final Integer is_end;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.UINT32)
-  public final Integer total_cash;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_TOTAL_CASH = integer;
-    DEFAULT_IS_END = integer;
-  }
-  
-  public Namoaixud(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    Integer integer;
-    if (paramBoolean == true) {
-      Integer integer1 = paramBuilder.total_cash;
-      if (integer1 == null) {
-        this.total_cash = DEFAULT_TOTAL_CASH;
-      } else {
-        this.total_cash = integer1;
-      } 
-      integer = paramBuilder.is_end;
-      if (integer == null) {
-        this.is_end = DEFAULT_IS_END;
-      } else {
-        this.is_end = integer;
-      } 
-    } else {
-      this.total_cash = ((Builder)integer).total_cash;
-      this.is_end = ((Builder)integer).is_end;
-    } 
-  }
-  
-  public Namoaixud(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<Namoaixud> {
-    public Integer is_end;
-    
-    public Integer total_cash;
-    
-    public Builder() {}
-    
-    public Builder(Namoaixud param1Namoaixud) {
-      super(param1Namoaixud);
-      if (param1Namoaixud == null)
-        return; 
-      this.total_cash = param1Namoaixud.total_cash;
-      this.is_end = param1Namoaixud.is_end;
+    @ProtoField(tag = 2, type = Message.Datatype.UINT32)
+    public final Integer is_end;
+    @ProtoField(tag = 1, type = Message.Datatype.UINT32)
+    public final Integer total_cash;
+    public static final Integer DEFAULT_TOTAL_CASH = 0;
+    public static final Integer DEFAULT_IS_END = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<Namoaixud> {
+        public Integer is_end;
+        public Integer total_cash;
+
+        public Builder() {
+        }
+
+        public Builder(Namoaixud namoaixud) {
+            super(namoaixud);
+            if (namoaixud == null) {
+                return;
+            }
+            this.total_cash = namoaixud.total_cash;
+            this.is_end = namoaixud.is_end;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Namoaixud build(boolean z) {
+            return new Namoaixud(this, z);
+        }
     }
-    
-    public Namoaixud build(boolean param1Boolean) {
-      return new Namoaixud(this, param1Boolean, null);
+
+    public Namoaixud(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.total_cash;
+            if (num == null) {
+                this.total_cash = DEFAULT_TOTAL_CASH;
+            } else {
+                this.total_cash = num;
+            }
+            Integer num2 = builder.is_end;
+            if (num2 == null) {
+                this.is_end = DEFAULT_IS_END;
+                return;
+            } else {
+                this.is_end = num2;
+                return;
+            }
+        }
+        this.total_cash = builder.total_cash;
+        this.is_end = builder.is_end;
     }
-  }
-  
-  public static class a {}
 }

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message LiveModuleList {
+    string id = 1;
+    string forum_id = 2;
+    string module_type = 3;
+    repeated string module_name = 4;
+    string module_desc = 5;
+    string tag_text = 6;
+    string tag_text_color = 7;
+    string background_url = 8;
+    repeated string head_list = 9;
+    string jump_type = 10;
+    string jump_url = 11;
+    string module_sort = 12;
+}

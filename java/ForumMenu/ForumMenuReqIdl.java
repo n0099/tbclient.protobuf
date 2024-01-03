@@ -2,40 +2,39 @@ package tbclient.ForumMenu;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class ForumMenuReqIdl extends Message {
-  @ProtoField(tag = 1)
-  public final DataReq data;
-  
-  public ForumMenuReqIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.data = paramBuilder.data;
-    } else {
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public ForumMenuReqIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<ForumMenuReqIdl> {
-    public DataReq data;
-    
-    public Builder() {}
-    
-    public Builder(ForumMenuReqIdl param1ForumMenuReqIdl) {
-      super(param1ForumMenuReqIdl);
-      if (param1ForumMenuReqIdl == null)
-        return; 
-      this.data = param1ForumMenuReqIdl.data;
+    @ProtoField(tag = 1)
+    public final DataReq data;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<ForumMenuReqIdl> {
+        public DataReq data;
+
+        public Builder() {
+        }
+
+        public Builder(ForumMenuReqIdl forumMenuReqIdl) {
+            super(forumMenuReqIdl);
+            if (forumMenuReqIdl == null) {
+                return;
+            }
+            this.data = forumMenuReqIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public ForumMenuReqIdl build(boolean z) {
+            return new ForumMenuReqIdl(this, z);
+        }
     }
-    
-    public ForumMenuReqIdl build(boolean param1Boolean) {
-      return new ForumMenuReqIdl(this, param1Boolean, null);
+
+    public ForumMenuReqIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.data = builder.data;
+        } else {
+            this.data = builder.data;
+        }
     }
-  }
-  
-  public static class a {}
 }

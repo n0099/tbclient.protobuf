@@ -4,85 +4,70 @@ import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import java.util.Collections;
 import java.util.List;
-
+/* loaded from: classes2.dex */
 public final class Info extends Message {
-  public static final Integer DEFAULT_POST_NUM;
-  
-  public static final List<RecmForumInfo> DEFAULT_RECM_FORUM_LIST;
-  
-  public static final Integer DEFAULT_USER_NUM;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.INT32)
-  public final Integer post_num;
-  
-  @ProtoField(label = Message.Label.REPEATED, tag = 3)
-  public final List<RecmForumInfo> recm_forum_list;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer user_num;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_USER_NUM = integer;
-    DEFAULT_POST_NUM = integer;
-    DEFAULT_RECM_FORUM_LIST = Collections.emptyList();
-  }
-  
-  public Info(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    List<RecmForumInfo> list;
-    if (paramBoolean == true) {
-      Integer integer = paramBuilder.user_num;
-      if (integer == null) {
-        this.user_num = DEFAULT_USER_NUM;
-      } else {
-        this.user_num = integer;
-      } 
-      integer = paramBuilder.post_num;
-      if (integer == null) {
-        this.post_num = DEFAULT_POST_NUM;
-      } else {
-        this.post_num = integer;
-      } 
-      list = paramBuilder.recm_forum_list;
-      if (list == null) {
-        this.recm_forum_list = DEFAULT_RECM_FORUM_LIST;
-      } else {
-        this.recm_forum_list = Message.immutableCopyOf(list);
-      } 
-    } else {
-      this.user_num = ((Builder)list).user_num;
-      this.post_num = ((Builder)list).post_num;
-      this.recm_forum_list = Message.immutableCopyOf(((Builder)list).recm_forum_list);
-    } 
-  }
-  
-  public Info(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<Info> {
-    public Integer post_num;
-    
-    public List<RecmForumInfo> recm_forum_list;
-    
-    public Integer user_num;
-    
-    public Builder() {}
-    
-    public Builder(Info param1Info) {
-      super(param1Info);
-      if (param1Info == null)
-        return; 
-      this.user_num = param1Info.user_num;
-      this.post_num = param1Info.post_num;
-      this.recm_forum_list = Message.copyOf(param1Info.recm_forum_list);
+    @ProtoField(tag = 2, type = Message.Datatype.INT32)
+    public final Integer post_num;
+    @ProtoField(label = Message.Label.REPEATED, tag = 3)
+    public final List<RecmForumInfo> recm_forum_list;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer user_num;
+    public static final Integer DEFAULT_USER_NUM = 0;
+    public static final Integer DEFAULT_POST_NUM = 0;
+    public static final List<RecmForumInfo> DEFAULT_RECM_FORUM_LIST = Collections.emptyList();
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<Info> {
+        public Integer post_num;
+        public List<RecmForumInfo> recm_forum_list;
+        public Integer user_num;
+
+        public Builder() {
+        }
+
+        public Builder(Info info) {
+            super(info);
+            if (info == null) {
+                return;
+            }
+            this.user_num = info.user_num;
+            this.post_num = info.post_num;
+            this.recm_forum_list = Message.copyOf(info.recm_forum_list);
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public Info build(boolean z) {
+            return new Info(this, z);
+        }
     }
-    
-    public Info build(boolean param1Boolean) {
-      return new Info(this, param1Boolean, null);
+
+    public Info(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.user_num;
+            if (num == null) {
+                this.user_num = DEFAULT_USER_NUM;
+            } else {
+                this.user_num = num;
+            }
+            Integer num2 = builder.post_num;
+            if (num2 == null) {
+                this.post_num = DEFAULT_POST_NUM;
+            } else {
+                this.post_num = num2;
+            }
+            List<RecmForumInfo> list = builder.recm_forum_list;
+            if (list == null) {
+                this.recm_forum_list = DEFAULT_RECM_FORUM_LIST;
+                return;
+            } else {
+                this.recm_forum_list = Message.immutableCopyOf(list);
+                return;
+            }
+        }
+        this.user_num = builder.user_num;
+        this.post_num = builder.post_num;
+        this.recm_forum_list = Message.immutableCopyOf(builder.recm_forum_list);
     }
-  }
-  
-  public static class a {}
 }

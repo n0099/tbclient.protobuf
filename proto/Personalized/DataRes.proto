@@ -11,7 +11,10 @@ import "Personalized/CardGod.proto";
 import "Personalized/CardTopic.proto";
 import "Personalized/FloatInfo.proto";
 import "Personalized/HeaderCard.proto";
+import "Personalized/HotCard.proto";
 import "Personalized/LiveAnswer.proto";
+import "Personalized/NovelCard.proto";
+import "Personalized/PageData.proto";
 import "Personalized/RecomPostTopic.proto";
 import "Personalized/Resource.proto";
 import "Personalized/TagStruct.proto";
@@ -48,4 +51,8 @@ message DataRes {
     FavoritePanel favorite_panel = 24;
     int32 show_adsense = 25;
     HeaderCard header_card = 26;
+    PageData page_data = 27;
+    HotCard hot_card = 28;
+    NovelCard novel_card = 30;
+    int32 is_need_live_ununiq = 31;
 }

@@ -2,146 +2,118 @@ package tbclient.PbPage;
 
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
-
+/* loaded from: classes2.dex */
 public final class AddPost extends Message {
-  public static final Integer DEFAULT_ALREADY_COUNT;
-  
-  public static final Integer DEFAULT_CREATE_TIME;
-  
-  public static final String DEFAULT_LAST_ADDITION_CONTENT = "";
-  
-  public static final Integer DEFAULT_LAST_ADDITION_TIME;
-  
-  public static final String DEFAULT_POST_ID = "";
-  
-  public static final Integer DEFAULT_TOTAL_COUNT;
-  
-  public static final String DEFAULT_WARN_MSG = "";
-  
-  @ProtoField(tag = 3, type = Message.Datatype.INT32)
-  public final Integer already_count;
-  
-  @ProtoField(tag = 1, type = Message.Datatype.INT32)
-  public final Integer create_time;
-  
-  @ProtoField(tag = 5, type = Message.Datatype.STRING)
-  public final String last_addition_content;
-  
-  @ProtoField(tag = 6, type = Message.Datatype.INT32)
-  public final Integer last_addition_time;
-  
-  @ProtoField(tag = 2, type = Message.Datatype.STRING)
-  public final String post_id;
-  
-  @ProtoField(tag = 4, type = Message.Datatype.INT32)
-  public final Integer total_count;
-  
-  @ProtoField(tag = 7, type = Message.Datatype.STRING)
-  public final String warn_msg;
-  
-  static {
-    Integer integer = Integer.valueOf(0);
-    DEFAULT_CREATE_TIME = integer;
-    DEFAULT_ALREADY_COUNT = integer;
-    DEFAULT_TOTAL_COUNT = integer;
-    DEFAULT_LAST_ADDITION_TIME = integer;
-  }
-  
-  public AddPost(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    String str;
-    if (paramBoolean == true) {
-      Integer integer3 = paramBuilder.create_time;
-      if (integer3 == null) {
-        this.create_time = DEFAULT_CREATE_TIME;
-      } else {
-        this.create_time = integer3;
-      } 
-      String str2 = paramBuilder.post_id;
-      if (str2 == null) {
-        this.post_id = "";
-      } else {
-        this.post_id = str2;
-      } 
-      Integer integer2 = paramBuilder.already_count;
-      if (integer2 == null) {
-        this.already_count = DEFAULT_ALREADY_COUNT;
-      } else {
-        this.already_count = integer2;
-      } 
-      integer2 = paramBuilder.total_count;
-      if (integer2 == null) {
-        this.total_count = DEFAULT_TOTAL_COUNT;
-      } else {
-        this.total_count = integer2;
-      } 
-      String str1 = paramBuilder.last_addition_content;
-      if (str1 == null) {
-        this.last_addition_content = "";
-      } else {
-        this.last_addition_content = str1;
-      } 
-      Integer integer1 = paramBuilder.last_addition_time;
-      if (integer1 == null) {
-        this.last_addition_time = DEFAULT_LAST_ADDITION_TIME;
-      } else {
-        this.last_addition_time = integer1;
-      } 
-      str = paramBuilder.warn_msg;
-      if (str == null) {
-        this.warn_msg = "";
-      } else {
-        this.warn_msg = str;
-      } 
-    } else {
-      this.create_time = ((Builder)str).create_time;
-      this.post_id = ((Builder)str).post_id;
-      this.already_count = ((Builder)str).already_count;
-      this.total_count = ((Builder)str).total_count;
-      this.last_addition_content = ((Builder)str).last_addition_content;
-      this.last_addition_time = ((Builder)str).last_addition_time;
-      this.warn_msg = ((Builder)str).warn_msg;
-    } 
-  }
-  
-  public AddPost(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<AddPost> {
-    public Integer already_count;
-    
-    public Integer create_time;
-    
-    public String last_addition_content;
-    
-    public Integer last_addition_time;
-    
-    public String post_id;
-    
-    public Integer total_count;
-    
-    public String warn_msg;
-    
-    public Builder() {}
-    
-    public Builder(AddPost param1AddPost) {
-      super(param1AddPost);
-      if (param1AddPost == null)
-        return; 
-      this.create_time = param1AddPost.create_time;
-      this.post_id = param1AddPost.post_id;
-      this.already_count = param1AddPost.already_count;
-      this.total_count = param1AddPost.total_count;
-      this.last_addition_content = param1AddPost.last_addition_content;
-      this.last_addition_time = param1AddPost.last_addition_time;
-      this.warn_msg = param1AddPost.warn_msg;
+    public static final String DEFAULT_LAST_ADDITION_CONTENT = "";
+    public static final String DEFAULT_POST_ID = "";
+    public static final String DEFAULT_WARN_MSG = "";
+    @ProtoField(tag = 3, type = Message.Datatype.INT32)
+    public final Integer already_count;
+    @ProtoField(tag = 1, type = Message.Datatype.INT32)
+    public final Integer create_time;
+    @ProtoField(tag = 5, type = Message.Datatype.STRING)
+    public final String last_addition_content;
+    @ProtoField(tag = 6, type = Message.Datatype.INT32)
+    public final Integer last_addition_time;
+    @ProtoField(tag = 2, type = Message.Datatype.STRING)
+    public final String post_id;
+    @ProtoField(tag = 4, type = Message.Datatype.INT32)
+    public final Integer total_count;
+    @ProtoField(tag = 7, type = Message.Datatype.STRING)
+    public final String warn_msg;
+    public static final Integer DEFAULT_CREATE_TIME = 0;
+    public static final Integer DEFAULT_ALREADY_COUNT = 0;
+    public static final Integer DEFAULT_TOTAL_COUNT = 0;
+    public static final Integer DEFAULT_LAST_ADDITION_TIME = 0;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<AddPost> {
+        public Integer already_count;
+        public Integer create_time;
+        public String last_addition_content;
+        public Integer last_addition_time;
+        public String post_id;
+        public Integer total_count;
+        public String warn_msg;
+
+        public Builder() {
+        }
+
+        public Builder(AddPost addPost) {
+            super(addPost);
+            if (addPost == null) {
+                return;
+            }
+            this.create_time = addPost.create_time;
+            this.post_id = addPost.post_id;
+            this.already_count = addPost.already_count;
+            this.total_count = addPost.total_count;
+            this.last_addition_content = addPost.last_addition_content;
+            this.last_addition_time = addPost.last_addition_time;
+            this.warn_msg = addPost.warn_msg;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public AddPost build(boolean z) {
+            return new AddPost(this, z);
+        }
     }
-    
-    public AddPost build(boolean param1Boolean) {
-      return new AddPost(this, param1Boolean, null);
+
+    public AddPost(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            Integer num = builder.create_time;
+            if (num == null) {
+                this.create_time = DEFAULT_CREATE_TIME;
+            } else {
+                this.create_time = num;
+            }
+            String str = builder.post_id;
+            if (str == null) {
+                this.post_id = "";
+            } else {
+                this.post_id = str;
+            }
+            Integer num2 = builder.already_count;
+            if (num2 == null) {
+                this.already_count = DEFAULT_ALREADY_COUNT;
+            } else {
+                this.already_count = num2;
+            }
+            Integer num3 = builder.total_count;
+            if (num3 == null) {
+                this.total_count = DEFAULT_TOTAL_COUNT;
+            } else {
+                this.total_count = num3;
+            }
+            String str2 = builder.last_addition_content;
+            if (str2 == null) {
+                this.last_addition_content = "";
+            } else {
+                this.last_addition_content = str2;
+            }
+            Integer num4 = builder.last_addition_time;
+            if (num4 == null) {
+                this.last_addition_time = DEFAULT_LAST_ADDITION_TIME;
+            } else {
+                this.last_addition_time = num4;
+            }
+            String str3 = builder.warn_msg;
+            if (str3 == null) {
+                this.warn_msg = "";
+                return;
+            } else {
+                this.warn_msg = str3;
+                return;
+            }
+        }
+        this.create_time = builder.create_time;
+        this.post_id = builder.post_id;
+        this.already_count = builder.already_count;
+        this.total_count = builder.total_count;
+        this.last_addition_content = builder.last_addition_content;
+        this.last_addition_time = builder.last_addition_time;
+        this.warn_msg = builder.warn_msg;
     }
-  }
-  
-  public static class a {}
 }

@@ -3,48 +3,45 @@ package tbclient.Realtime;
 import com.squareup.wire.Message;
 import com.squareup.wire.ProtoField;
 import tbclient.Error;
-
+/* loaded from: classes2.dex */
 public final class RealtimeResIdl extends Message {
-  @ProtoField(tag = 2)
-  public final DataRes data;
-  
-  @ProtoField(tag = 1)
-  public final Error error;
-  
-  public RealtimeResIdl(Builder paramBuilder, boolean paramBoolean) {
-    super(paramBuilder);
-    if (paramBoolean == true) {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } else {
-      this.error = paramBuilder.error;
-      this.data = paramBuilder.data;
-    } 
-  }
-  
-  public RealtimeResIdl(Builder paramBuilder, boolean paramBoolean, a parama) {
-    this(paramBuilder, paramBoolean);
-  }
-  
-  public static final class Builder extends Message.Builder<RealtimeResIdl> {
-    public DataRes data;
-    
-    public Error error;
-    
-    public Builder() {}
-    
-    public Builder(RealtimeResIdl param1RealtimeResIdl) {
-      super(param1RealtimeResIdl);
-      if (param1RealtimeResIdl == null)
-        return; 
-      this.error = param1RealtimeResIdl.error;
-      this.data = param1RealtimeResIdl.data;
+    @ProtoField(tag = 2)
+    public final DataRes data;
+    @ProtoField(tag = 1)
+    public final Error error;
+
+    /* loaded from: classes2.dex */
+    public static final class Builder extends Message.Builder<RealtimeResIdl> {
+        public DataRes data;
+        public Error error;
+
+        public Builder() {
+        }
+
+        public Builder(RealtimeResIdl realtimeResIdl) {
+            super(realtimeResIdl);
+            if (realtimeResIdl == null) {
+                return;
+            }
+            this.error = realtimeResIdl.error;
+            this.data = realtimeResIdl.data;
+        }
+
+        /* JADX DEBUG: Method merged with bridge method */
+        @Override // com.squareup.wire.Message.Builder
+        public RealtimeResIdl build(boolean z) {
+            return new RealtimeResIdl(this, z);
+        }
     }
-    
-    public RealtimeResIdl build(boolean param1Boolean) {
-      return new RealtimeResIdl(this, param1Boolean, null);
+
+    public RealtimeResIdl(Builder builder, boolean z) {
+        super(builder);
+        if (z) {
+            this.error = builder.error;
+            this.data = builder.data;
+            return;
+        }
+        this.error = builder.error;
+        this.data = builder.data;
     }
-  }
-  
-  public static class a {}
 }
