@@ -15,7 +15,7 @@
 | proto | 使用 `squareWireProtoBufJavaGeneratedClassesDecompiler.php` 将这些<br>通过 [square/wire](https://github.com/square/wire) 生成的 java 类源码转换回 .proto 文件 |
 | interested | 从 `proto` 中遴选出并重新组织目录结构和 namespace 了的部分 .proto 文件 |
 | tbm | 用于项目 https://github.com/n0099/open-tbm 而从 `interested` 中遴选出的部分 .proto 文件 |
-| `protoc.sh <PROTO_PATH> <lang...>` | 将 `<PROTO_PATH>/**/*.proto` 文件codegen为用于 `<lang>` 语言环境的类文件<br>置于 `<PROTO_PATH>_<lang>` 下并打包为 `<PROTO_PATH>_<lang>.7z`<br>依赖于 [protoc](https://github.com/protocolbuffers/protobuf/releases) 和 [7z](https://7-zip.org/download.html) |
+| `protoc.sh <proto path> <langs...>` | 将 `<proto path>/**/*.proto` 文件codegen为用于 `<lang>` 语言环境的类文件<br>置于 `<proto path>_<lang>` 下并打包为 `<proto path>_<lang>.zip`<br>依赖于 [protoc](https://github.com/protocolbuffers/protobuf/releases)|
 
 # [`branch/tbclient`](https://github.com/n0099/tbclient.protobuf/tree/tbclient)
 ## 从 244 个历史版本百度贴吧客户端中提取出的所有 Protocol Buffers 定义文件`.proto`
@@ -27,8 +27,8 @@
 | 列名 | 说明 | [`tbclient.protobuf/issues/2`](https://github.com/n0099/tbclient.protobuf/issues/2)<br>中的相关comment |
 |-|-|-|
 | \* | `版本号.apk.zip/classes.dex`文件的修改时间<br>即apk编译时间或者说这个版本的首次发布时间 | https://github.com/n0099/tbclient.protobuf/issues/2#issuecomment-1416769621 |
-| ⑴ | `jadx/版本号.7z`中路径以`版本号/src/tbclient/`开头的文件数量 | https://github.com/n0099/tbclient.protobuf/issues/2#issuecomment-1415365792 |
-| ⑵ | `jadx/版本号.7z`中路径以`版本号/src/tbclient/`开头的目录数量<br>即根命名空间`tbclient`下的子命名空间数量 | https://github.com/n0099/tbclient.protobuf/issues/2#issuecomment-1417424277 |
+| ⑴ | `jadx/版本号.zip`中路径以`版本号/src/tbclient/`开头的文件数量 | https://github.com/n0099/tbclient.protobuf/issues/2#issuecomment-1415365792 |
+| ⑵ | `jadx/版本号.zip`中路径以`版本号/src/tbclient/`开头的目录数量<br>即根命名空间`tbclient`下的子命名空间数量 | https://github.com/n0099/tbclient.protobuf/issues/2#issuecomment-1417424277 |
 | Ⓐ | https://www.wandoujia.com/apps/280375/history 源 | https://github.com/n0099/tbclient.protobuf/issues/2#issue-1560704618 |
 | Ⓑ | http://static.tieba.baidu.com/client/android/tbclient_1_0_0.apk 源 | https://github.com/n0099/tbclient.protobuf/issues/2#issuecomment-1407472050 |
 | Ⓒ | https://soft.shouji.com.cn/down/22020.html 源 | https://github.com/n0099/tbclient.protobuf/issues/2#issuecomment-1407476112 |

@@ -11,5 +11,9 @@ message User {
     int32 level_id = 23;
     int32 gender = 42;
     string fans_nickname = 57;
+    message AlaUserInfo {
+        uint32 live_status = 8;
+    }
+    AlaUserInfo ala_info = 78;
     string ip_address = 127;
 }

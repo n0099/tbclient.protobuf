@@ -1,34 +1,32 @@
 #!/bin/bash
-set -x
-USAGE='Usage: <PROTO_PATH> <langs...>'
-i=0
-for lang in "$@"; do
-    i=$((i+1));
-    if [ $i -eq 1 ]; then
-        PROTO_PATH=$lang
-        echo "PROTO_PATH=$PROTO_PATH"
-        continue
-    fi
+# https://mywiki.wooledge.org/BashFAQ/105
+# https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425
+set -euxo pipefail
 
-    echo "    codegen for $lang started:";
-    DIR=${PROTO_PATH}_$lang;
-    rm -r "$DIR"
-    mkdir -v "$DIR"
-
-    case $lang in
-        cs)
-            find "$PROTO_PATH" -type f -name '*.proto' -printf '"%p" ' | xargs ./protoc --csharp_out="$DIR" --csharp_opt=base_namespace=TbClient,file_extension=.g.cs --proto_path="$PROTO_PATH"
-            ;;
-        *)
-            find "$PROTO_PATH" -type f -name '*.proto' -printf '"%p" ' | xargs ./protoc --"$lang"_out="$DIR" --proto_path="$PROTO_PATH"
-            ;;
-    esac
-
-    rm -vf "$DIR".7z
-    7z a -mx=9 "$DIR".7z ./"$DIR"/*
-    echo '    codegen for' "$lang" 'finished.';
-done
-
-if [ $i -eq 0 ]; then
-    echo "$USAGE"
+if [[ $# -lt 2 ]]; then
+    echo 'Usage: <.proto path> <langs...>'
+    exit
 fi
+proto_path=$1
+echo "proto_path=$proto_path"
+
+for lang in "${@:2}"; do
+    echo "codegen for $lang started:";
+    output_dir=${proto_path}_$lang;
+    rm -rf "$output_dir"
+    mkdir -v "$output_dir"
+
+    # https://github.com/protocolbuffers/protobuf/issues/7474
+    # shellcheck disable=SC2046
+    # shellcheck disable=SC2014
+    find "$proto_path" -type f -name '*.proto' -exec \
+        ./protoc --"$lang"_out="$output_dir" \
+            $([[ $lang == 'csharp' ]] \
+                && echo --proto_path="$proto_path" '--csharp_opt=base_namespace=TbClient,file_extension=.g.cs' \
+                || echo --proto_path="$proto_path") \
+            {} \;
+
+    rm -vf "$output_dir".zip
+    zip -r9 "$output_dir".zip "$output_dir"
+    echo "codegen for $lang finished, results placed under $output_dir.zip";
+done
